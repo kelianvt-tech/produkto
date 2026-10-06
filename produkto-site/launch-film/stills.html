@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Launch Film Stills</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f2ec;--ink:#0b1b35;--mute:#6b7280;--line:#e4dfd6;--green:#16a34a}
+*{box-sizing:border-box;margin:0}
+body{background:#d9d4ca;font-family:Geist,system-ui,sans-serif;color:var(--ink);padding:32px 16px}
+h1{font-size:22px;margin:0 auto 6px;max-width:1340px}
+.sub{color:#555;font-size:14px;max-width:1340px;margin:0 auto 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:1340px;margin:auto}
+figure{background:#fff;border-radius:14px;padding:12px}
+figcaption{font-size:13px;color:#444;padding:10px 4px 2px}
+figcaption b{color:var(--ink)}
+.frame{aspect-ratio:1;position:relative;overflow:hidden;background:var(--bg);border-radius:8px;container-type:inline-size}
+.u{font-size:1cqw}
+/* glass */
+.glass{background:rgba(255,255,255,.28);backdrop-filter:blur(2px) saturate(1.6);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(0,0,0,.06),0 8px 30px rgba(11,27,53,.12)}
+.cursor{position:absolute;width:3.2cqw;height:3.2cqw}
+/* bottles */
+.b{position:absolute;left:50%;bottom:14%;transform:translateX(-50%);width:26%;height:66%;border-radius:18% 18% 12% 12%/8% 8% 6% 6%}
+.b::before{content:"";position:absolute;left:18%;right:18%;top:-10%;height:12%;border-radius:30% 30% 4% 4%;background:inherit;filter:brightness(.8)}
+.b::after{content:"";position:absolute;left:14%;top:8%;width:12%;height:70%;border-radius:40px;background:rgba(255,255,255,.35)}
+.tile{position:absolute;border-radius:2.2cqw;overflow:hidden}
+.tag{position:absolute;left:6%;bottom:5%;font-size:1.5cqw;font-weight:600;color:var(--ink);opacity:.75}
+</style></head><body>
+<h1>Produkto launch film: 4 stills</h1>
+<p class="sub">Frames at beats 3, 13, 31 and 44. Everything shown is invented: <b>Halden</b> is a made-up brand standing in for “your product”, competitors are real bottles, the phone shows your real ChatGPT capture; dashboard numbers are illustrative.</p>
+<div class="grid">
+
+<!-- 1 OPEN -->
+<figure><div class="frame" style="background:#fff">
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:2cqw">
+    <div style="width:50cqw;height:16cqw;overflow:hidden;position:relative"><img src="assets/logo.png" style="position:absolute;left:0;top:50%;height:34cqw;transform:translateY(-50%) scaleX(.85);transform-origin:left"></div>
+    <div style="background:var(--ink);color:#fff;border-radius:99px;padding:3cqw 4.4cqw;font-size:3.2cqw;font-weight:500;white-space:nowrap;overflow:hidden">
+      <span style="display:block;transform:translateY(12%);clip-path:inset(0 0 12% 0)">Is AI recommending<br>your products?</span>
+    </div>
+  </div>
+  <svg class="cursor" style="left:70%;top:60%" viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#0b1b35" stroke="#fff" stroke-width="1.5"/></svg>
+</div><figcaption><b>Open · beat 3.</b> Your logo lockup, letters squeezing toward the pill; label rising out of its mask line. In the film the wordmark is rebuilt as live text in a matching font so the letters can squeeze. Next beat: click → iris.</figcaption></figure>
+
+<!-- 2 ASK -->
+<figure><div class="frame">
+  <div class="tile" style="left:5%;top:8%;width:32%;height:46%;opacity:.6;outline:.5cqw dashed #b9b1a2;outline-offset:-1.2cqw"><img src="assets/halden.webp" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.6)"></div>
+  <div style="position:absolute;left:5%;top:57%;width:32%;font-size:2cqw;color:var(--mute)">Halden Trail 32 oz<br><b style="color:var(--ink);font-size:2.8cqw">not mentioned</b></div>
+  <div class="glass" style="position:absolute;left:41%;right:5%;top:8%;border-radius:3cqw;padding:2.4cqw 2.8cqw;font-size:2.3cqw;line-height:1.35">
+    best insulated water bottle for hiking under $50?<span style="display:inline-block;width:.3cqw;height:2.4cqw;background:var(--ink);vertical-align:middle;margin-left:.3cqw"></span>
+  </div>
+  <div style="position:absolute;left:41%;right:5%;top:24%;display:grid;gap:1.6cqw">
+    <div class="glass" style="border-radius:2.4cqw;padding:1.4cqw;font-size:2cqw;display:flex;gap:1.8cqw;align-items:center"><img src="assets/yeti-rambler.png" style="width:8cqw;height:8cqw;object-fit:contain;background:#fff;border-radius:1.4cqw"><div><b>1. YETI Rambler 20 oz Tumbler</b><br><span style="color:#444">Keeps drinks cold all day.</span></div></div>
+    <div class="glass" style="border-radius:2.4cqw;padding:1.4cqw;font-size:2cqw;display:flex;gap:1.8cqw;align-items:center"><img src="assets/hydro-flask.png" style="width:8cqw;height:8cqw;object-fit:contain;background:#fff;border-radius:1.4cqw"><div><b>2. Hydro Flask Wide Mouth</b><br><span style="color:#444">Light, easy to clean.</span></div></div>
+    <div class="glass" style="border-radius:2.4cqw;padding:1.4cqw;font-size:2cqw;display:flex;gap:1.8cqw;align-items:center;opacity:.6;transform:translateY(1.2cqw) scale(.97)"><img src="assets/larq.png" style="width:8cqw;height:8cqw;object-fit:contain;background:#fff;border-radius:1.4cqw"><div><b>3. LARQ Bottle PureVis</b><br><span style="color:#444">Self-cleaning cap.</span></div></div>
+  </div>
+</div><figcaption><b>Ask · beat 13.</b> Glass prompt bar typed out; answer cards with product photos springing in (3rd still landing). Halden's real photo has dimmed to an outline. Next: it lifts into a glass orb.</figcaption></figure>
+
+<!-- 3 DASHBOARD -->
+<figure><div class="frame" style="background:#eef2f8">
+  <div style="position:absolute;left:5%;right:5%;top:6%;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:2cqw;border:1px solid #dde3ee">
+    <div style="padding:2.2cqw;border-right:1px solid #e6eaf2"><div style="font-size:1.6cqw;color:var(--mute)">Visibility</div><div style="font-size:4.6cqw;font-weight:700">18%</div></div>
+    <div style="padding:2.2cqw;border-right:1px solid #e6eaf2"><div style="font-size:1.6cqw;color:var(--mute)">Avg position</div><div style="font-size:4.6cqw;font-weight:700">3.4</div></div>
+    <div style="padding:2.2cqw;border-right:1px solid #e6eaf2"><div style="font-size:1.6cqw;color:var(--mute)">Share of voice</div><div style="font-size:4.6cqw;font-weight:700">6.2%</div></div>
+    <div style="padding:2.2cqw"><div style="font-size:1.6cqw;color:var(--mute)">Competing</div><div style="font-size:4.6cqw;font-weight:700">41</div></div>
+  </div>
+  <div style="position:absolute;left:5%;right:5%;top:27%;bottom:6%;background:#fff;border-radius:2cqw;border:1px solid #dde3ee;padding:3cqw">
+    <div style="font-size:2.2cqw;font-weight:600">Visibility over time</div>
+    <svg viewBox="0 0 100 52" style="width:100%;margin-top:2cqw">
+      <g stroke="#e3e8f0" stroke-dasharray="1 1" stroke-width=".3"><line x1="0" x2="100" y1="8" y2="8"/><line x1="0" x2="100" y1="24" y2="24"/><line x1="0" x2="100" y1="40" y2="40"/></g>
+      <polyline fill="none" stroke="#3b82f6" stroke-width=".9" points="0,30 14,26 28,31 42,22 56,24 70,19"/>
+      <polyline fill="none" stroke="#22c55e" stroke-width=".9" points="0,14 14,12 28,15 42,13 56,11 70,12"/>
+      <polyline fill="none" stroke="#0b1b35" stroke-width="1.3" points="0,42 14,39 28,40 42,36 56,37 64,35"/>
+      <circle cx="64" cy="35" r="1.4" fill="#0b1b35"/>
+      <g font-size="2.6" fill="#6b7280" font-family="Geist"><text x="0" y="50">Jul 6</text><text x="28" y="50">Jul 20</text><text x="56" y="50">Aug 3</text><text x="86" y="50">Aug 17</text></g>
+    </svg>
+    <div style="display:flex;gap:3cqw;font-size:1.7cqw;margin-top:1cqw">
+      <span><img src="assets/halden.webp" style="width:2.6cqw;height:2.6cqw;object-fit:cover;border-radius:.6cqw;vertical-align:middle;margin-right:.6cqw;background:#fff"><b style="color:#0b1b35">●</b> Halden Trail</span><span><img src="assets/yeti-rambler.png" style="width:2.6cqw;height:2.6cqw;object-fit:cover;border-radius:.6cqw;vertical-align:middle;margin-right:.6cqw;background:#fff"><b style="color:#22c55e">●</b> YETI Rambler</span><span><img src="assets/hydro-flask.png" style="width:2.6cqw;height:2.6cqw;object-fit:cover;border-radius:.6cqw;vertical-align:middle;margin-right:.6cqw;background:#fff"><b style="color:#3b82f6">●</b> Hydro Flask</span>
+    </div>
+  </div>
+</div><figcaption><b>Dashboard · beat 31.</b> KPI strip has counted up; the chart line is mid-draw (navy head still travelling). Flat and mixed on purpose — no hockey stick. Next: click a product row → page pushes into the product view.</figcaption></figure>
+
+<!-- 4 BREAKDOWN -->
+<figure><div class="frame" style="background:linear-gradient(160deg,#cdb89a 0%,#a88d6c 55%,#7d664b 100%)">
+  <div style="position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,244,220,.0) 0 7cqw,rgba(255,244,220,.28) 7cqw 13cqw);mix-blend-mode:soft-light"></div>
+  <div style="position:absolute;left:30%;top:14%;width:40%;height:74%;background:#111;border-radius:6cqw;padding:1.2cqw;transform:rotate(-8deg);box-shadow:3cqw 4cqw 6cqw rgba(40,25,10,.35)">
+    <div style="background:#000;height:100%;border-radius:5cqw;padding:7cqw 1.6cqw 2cqw;position:relative;overflow:hidden">
+      <div style="position:absolute;top:2cqw;left:50%;transform:translateX(-50%);width:28%;height:3cqw;background:#222;border-radius:99px"></div>
+      <div style="background:#16345f;color:#fff;border-radius:3cqw;padding:1.4cqw 2cqw;font-size:1.7cqw;margin-left:14%;margin-bottom:2cqw">What are the best gym shorts for under $100?</div>
+      <img src="assets/chatgpt-gymshark.png" style="width:170%;margin-left:-14%;display:block">
+    </div>
+  </div>
+</div><figcaption><b>Breakdown · beat 44.</b> Phone on the desk footage (placeholder backdrop) showing your real ChatGPT prompt and the Gymshark answer. Next: iris opens onto the Halden tile, then the loop back to the logo.</figcaption></figure>
+</div>
+</body></html>

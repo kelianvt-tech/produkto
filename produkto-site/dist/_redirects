@@ -1,0 +1,10 @@
+# Cold-email sending domains: send any visitor to the real site.
+https://tryprodukto.com/*      https://getprodukto.com/:splat 301!
+https://www.tryprodukto.com/*  https://getprodukto.com/:splat 301!
+https://useprodukto.com/*      https://getprodukto.com/:splat 301!
+https://www.useprodukto.com/*  https://getprodukto.com/:splat 301!
+https://produktohq.com/*       https://getprodukto.com/:splat 301!
+https://www.produktohq.com/*   https://getprodukto.com/:splat 301!
+http://tryprodukto.com/*       https://getprodukto.com/:splat 301!
+http://useprodukto.com/*       https://getprodukto.com/:splat 301!
+http://produktohq.com/*        https://getprodukto.com/:splat 301!
