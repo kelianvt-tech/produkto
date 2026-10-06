@@ -1,0 +1,20 @@
+const {chromium}=require('/Users/kelianvantulder/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs');
+(async()=>{
+ const b=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+ const p=await b.newPage({viewport:{width:1440,height:1000}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
+ const url='http://localhost:8010/r/TAYK_RMJMoeOCvmU/citations?range=30&group=week';await p.goto(url,{waitUntil:'domcontentloaded'});
+ const data=await p.locator('#cite-config').evaluate(e=>JSON.parse(e.textContent));console.log('Saved evidence',data.rows.length,'citations',new Set(data.rows.map(r=>r.domain)).size,'domains');
+ if(await p.locator('#cite-rows tr').count()!==Math.min(25,data.rows.length))throw Error('Initial pagination');
+ await p.locator('#cite-next').click();if(!(await p.locator('#cite-count').innerText()).includes('26–50'))throw Error('Next page');
+ await p.locator('[data-cite-view=top]').click();if(await p.locator('#cite-chart [data-top]').count()!==7)throw Error('Top domains');
+ await p.locator('[data-cite-view=time]').click();await p.locator('#cite-chart [data-bucket]').first().focus();if(!await p.locator('#cite-chart-tip').isVisible())throw Error('Keyboard tooltip');
+ await p.locator('#cite-source').selectOption('Your site');const own=data.rows.filter(r=>r.source==='Your site');if(!(await p.locator('#cite-count').innerText()).includes('of '+own.length+' citations'))throw Error('Source filter');
+ const downloadPromise=p.waitForEvent('download');await p.locator('#cite-export').click();const download=await downloadPromise;await download.saveAs('/tmp/produkto-citations-check.csv');const csv=fs.readFileSync('/tmp/produkto-citations-check.csv','utf8');if(!csv.includes('\r\n')||!csv.includes('Source order'))throw Error('CSV');
+ await p.locator('#cite-clear').click();await p.locator('#cite-search').fill('not-a-real-citation-xyz');await p.waitForTimeout(180);if(await p.locator('#cite-count').innerText()!=='0 citations')throw Error('Empty search');if(!await p.locator('#cite-export').isDisabled())throw Error('Empty export');await p.locator('#cite-clear').click();
+ const evidence=await p.locator('.cite-answer').first().getAttribute('href');if(!evidence.includes('range=30')||!evidence.includes('answer='))throw Error('Evidence scope');
+ await p.locator('.cite-analysis').scrollIntoViewIfNeeded();await p.screenshot({path:'/tmp/produkto-citations-desktop.png'});
+ await p.setViewportSize({width:390,height:844});await p.locator('.cite-analysis').scrollIntoViewIfNeeded();if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow');await p.screenshot({path:'/tmp/produkto-citations-mobile.png'});
+ await p.goto(url+'&engines=perplexity',{waitUntil:'domcontentloaded'});if(!await p.locator('#cite-config').evaluate(e=>JSON.parse(e.textContent).rows.every(r=>r.engine==='perplexity')))throw Error('Engine scope');
+ if(errors.length)throw Error(errors.join('\n'));console.log('Passed pagination, chart switching, keyboard tooltip, source filter, CSV, empty search, scoped evidence links, mobile overflow and engine filtering.');await b.close();
+})().catch(e=>{console.error(e);process.exit(1)});

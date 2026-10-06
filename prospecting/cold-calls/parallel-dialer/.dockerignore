@@ -1,0 +1,13 @@
+.git
+.venv
+.env
+.env.*
+data
+config
+dialer.toml
+tests
+deploy
+licenses
+__pycache__
+*.egg-info
+.pytest_cache

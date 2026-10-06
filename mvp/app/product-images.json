@@ -1,0 +1,44 @@
+[
+  {
+    "brand": "CeraVe",
+    "name": "Hydrating Facial Cleanser",
+    "image": "https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/skincare/cleansers/hydrating-facial-cleanser/photos/2022/700x700/cerave_daily_hydrating-cleanser_12oz_front-700x700-v2.jpg?rev=8dcf681b75c042deaaa0c6ea1581d4df",
+    "source": "https://www.cerave.com/skincare/cleansers/hydrating-facial-cleanser",
+    "verified": "2026-09-17"
+  },
+  {
+    "brand": "Cetaphil",
+    "name": "Gentle Skin Cleanser",
+    "image": "https://www.cetaphil.com/dw/image/v2/bggn_prd/on/demandware.static/-/Sites-galderma-us-m-catalog/default/dw554054cc/302990100624/GSC-RESIZE-1.2X.png?sw=900&sh=900&sm=fit&q=85",
+    "source": "https://www.cetaphil.com/us/products/product-categories/all-cleansers/cetaphil-gentle-skin-cleanser/302990110227.html",
+    "verified": "2026-09-17"
+  },
+  {
+    "brand": "Aveeno",
+    "name": "Calm + Restore Nourishing Oat Cleanser",
+    "image": "https://images.ctfassets.net/j7jv1vcgqjb4/1MD4lW5K1eO0FPbvyAySxf/1cef9144a7ce2db813c1c6e6d30a2b95/8oz_00000-en-us?fm=jpg&w=98&q=80",
+    "source": "https://www.aveeno.com/products/calm-restore-gentle-nourishing-oat-face-cleanser",
+    "verified": "2026-09-17"
+  },
+  {
+    "brand": "La Roche-Posay",
+    "name": "Toleriane Hydrating Gentle Cleanser",
+    "image": "https://www.laroche-posay.us/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-acd-laroche-posay-master-catalog/default/dwb5f2733c/img/tolerianehydratinggentlefacialcleanser/TolerianeHydratingGentleCleanser-Allure25.webp?sw=320&sh=320&sm=cut&sfrm=jpg&q=70",
+    "source": "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-hydrating-gentle-facial-cleanser-tolerianehydratinggentlefacialcleanser.html",
+    "verified": "2026-09-17"
+  },
+  {
+    "brand": "Vanicream",
+    "name": "Gentle Facial Cleanser",
+    "image": "https://www.vanicream.com/dynamic-media/product/images/gentle-facial-cleanser-8-oz-front.jpg?gravity=center&v=productCard&k=%2BcG2bEcScxqCn4NSC%2BCynA",
+    "source": "https://www.vanicream.com/face-products",
+    "verified": "2026-09-17"
+  },
+  {
+    "brand": "Skin Rocks",
+    "name": "The Cream Cleanser — Fragrance Free",
+    "image": "https://skinrocks.com/cdn/shop/files/CreamCleanserFF_PDP1.jpg?v=1778773118&width=1946",
+    "source": "https://skinrocks.com/en-us/products/the-cream-cleanser-fragrance-free",
+    "verified": "2026-09-17"
+  }
+]

@@ -1,0 +1,42 @@
+# systemd unit for running the dialer on a Linux server without Docker.
+#
+#   sudo useradd --system --home-dir /var/lib/parallel-dialer --shell /usr/sbin/nologin dialer
+#   sudo git clone <this repo> /opt/parallel-dialer && cd /opt/parallel-dialer
+#   sudo python3 -m venv .venv && sudo .venv/bin/pip install .
+#   sudo cp .env.example .env && sudo cp dialer.example.toml dialer.toml     (then edit both)
+#   sudo chown root:dialer .env dialer.toml && sudo chmod 640 .env dialer.toml
+#   sudo cp deploy/parallel-dialer.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now parallel-dialer
+#
+# It listens on 127.0.0.1:8767 for a reverse proxy (see deploy/Caddyfile) to pass to.
+[Unit]
+Description=Parallel dialer
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dialer
+Group=dialer
+WorkingDirectory=/opt/parallel-dialer
+EnvironmentFile=/opt/parallel-dialer/.env
+Environment=PYTHONUNBUFFERED=1
+Environment=DIALER_ROOT=/var/lib/parallel-dialer
+Environment=DIALER_CONFIG=/opt/parallel-dialer/dialer.toml
+ExecStart=/opt/parallel-dialer/.venv/bin/python -m parallel_dialer
+Restart=on-failure
+RestartSec=3
+
+StateDirectory=parallel-dialer
+StateDirectoryMode=0700
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+
+[Install]
+WantedBy=multi-user.target

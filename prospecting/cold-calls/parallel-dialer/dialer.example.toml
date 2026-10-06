@@ -1,0 +1,45 @@
+# Copy this file to dialer.toml and make it yours. It is what the people you call hear and what
+# the operator reads on screen: your company name, the talk track, and the reply given to a call
+# screener. Restart the dialer after editing.
+#
+# Templates use {{Token}} markers:
+#
+#   {{Brand}}     your company name, from [brand] name
+#   {{Operator}}  the operator's name, from [operators] below (or their address made readable)
+#
+# A marker it does not know is left as written, so a typo shows up instead of vanishing. In
+# the talk track, [Name], [My Name] and [Company] are filled in by the page for the person on
+# the line. A setting this file does not know is refused when the dialer starts.
+
+[brand]
+# Spoken to the people you call, so the dialer stays locked until this is changed.
+name = "Your Company"
+
+[call]
+# Said aloud (text-to-speech) when a receptionist or a call screener asks who is calling,
+# unless the operator has recorded their own voice for it on the page. 15 to 240 characters
+# once the markers are filled in.
+screening_reply = "Hi, this is {{Operator}} calling from {{Brand}}. Could you point me to the right person to speak with? It will only take a minute."
+
+# The talk track on the operator's screen. Write it here, or keep it in a file beside this
+# one (script_file = "script.md"; use one or the other). Operators edit their own copy on the
+# page and "Reset" returns to this one.
+script = """# COLD CALL TALK TRACK
+
+## 1. THE OPENER (15 seconds)
+"Hey [Name], this is [My Name] with {{Brand}}. I know I'm catching you in the middle of your day. Do you have 30 seconds for me to tell you why I called? If it's not relevant, you can hang up on me."
+*Pause. Let them answer.*
+
+## 2. THE HOOK (30 seconds)
+"[One sentence on the problem your customers have.]
+[One sentence on what you do about it.]
+[One question that gets them talking about how they handle it today.]"
+
+## 3. THE CLOSE
+"Let's do this: I can show you in 15 minutes. Tuesday at 2 PM or Wednesday at 10 AM. Which works better for you?"
+"""
+
+# One table per operator, named by the address they sign in with. The name is how they are
+# introduced to the people they call; left out, it is the part of the address before the @.
+[operators."you@example.com"]
+name = "Your Name"

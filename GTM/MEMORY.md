@@ -1,0 +1,23 @@
+# GTM MEMORY
+
+Rules and changes for go-to-market: every channel (cold email, cold calling). Append-only, newest at the bottom. Read this, then the plan for the channel in question, before any GTM task.
+
+**How this file works:** when Kelian changes a GTM plan or corrects how it's run, add a dated line here stating the rule as an instruction for next time, then update that plan file to match. The plan file holds the current plan; this file holds the history of why it changed.
+
+---
+
+- **The cold email plan starts from payday, Tuesday 6 October 2026.** Free work (copy, comparison script) happens before; nothing paid gets bought before then. *(2026-10-02)*
+- **Cash is tight: state the cost of every paid step before recommending it,** and prefer the cheapest option that still reaches ~350 emails a day. *(2026-10-02)*
+- **Each cold email opens with one positive product comparison from a real AI answer captured that day.** One ChatGPT question per brand, never a full Produkto scan, and never a guessed rival. *(2026-10-02)*
+- **`GTM/` covers all of go-to-market, one plan file per channel** (`COLD-EMAIL-PLAN.md`, `COLD-CALLING-PLAN.md`). Add a new channel as its own plan file here rather than describing the folder as one channel's plan. *(2026-10-02)*
+- **Cold email is run as a weekly learning loop:** log every email's ingredients, judge on positive replies per 1,000 (never opens; open tracking off), test two variants with one change per week, and log one decision each Monday with its numbers. See `COLD-EMAIL-PLAN.md` §Learning loop. *(2026-10-02)*
+- **One ChatGPT question per lead BATCH, not per brand.** Kelian prepares each batch so every lead is in one niche; `cold-email/compare.py` asks one question at the batch's median price and uses the same competitor product in every email. Brands the AI names are dropped. Email 1 no longer claims their product is at the same price, so price never drops a brand. Supersedes "one ChatGPT question per brand" above. *(2026-10-02)*
+- **Cold email sends from three lookalike domains: tryprodukto.com, useprodukto.com, produktohq.com** (bought 2026-10-02 at Namecheap; payday came early). Three inboxes per domain. Never send cold email from getprodukto.com. *(2026-10-02)*
+- **REMINDER: upgrade Instantly to Hyper Growth ($97/mo, monthly, not annual) before the free trial ends on 16 Oct 2026, ideally 12–14 Oct before the second batch loads.** The trial caps at 250 contacts and 1,250 emails. Raise this unprompted in any GTM session from 12 Oct until Kelian confirms it's bought. *(2026-10-02)*
+- **Batch 1 niche: scented candles** (Kelian, 2026-10-02). Lead-pull input ready at `cold-email/batch1-candles-leads-input.json` (~480 asked to keep ~400 after dedupe/drops; ~$2–3). Not run yet. *(2026-10-02)*
+- **Instantly Growth was bought 2026-10-02** (free trial allows only 2 inboxes). The 12–16 Oct upgrade reminder above is superseded: check the 1,000-contact cap on 26 Oct and move to Hyper Growth if near it. *(2026-10-02)*
+- **Sending-domain redirect is pending** until the other session's website edits are finished; then deploy everything together with the _redirects rule. Steps in `COLD-EMAIL-PLAN.md` (2026-10-02 PENDING). *(2026-10-02)*
+- **2026-10-05: all 10 Instantly inboxes changed by Kelian:** warm-up +2/day (limit 10), last name "van Tulder". Saving through Claude in Chrome silently failed (no API call), so Instantly edits are done by hand. *(2026-10-05)*
+- **Cold email starts small on Wed 7 Oct: ~3 cold emails per inbox per day (~30/day across 10), warm-up stays ON.** Kelian wants a top health score kept above everything else. Pause cold sends if any inbox's health drops below ~95% or bounces go over 2%. Push volume from ~12 Oct once warm-up is complete. Supersedes "first real sends week of 12 Oct". *(2026-10-05)*
+- **Long-term vision (Kelian, 2026-10-05): a self-running cold-email agent at 5,000–10,000 emails/month** that buys lead batches, verifies email, founder name, e-commerce and ICP fit, sends personalised emails via Instantly, and keeps learning from replies. Not now: build it only once a manual email version gets positive replies, then automate step by step (lead pull + verification first). Copy changes stay human-approved. Est. ~$200–300/mo at full scale. Keep manual batches shaped so they can become this agent's steps. *(2026-10-05)*
+- **Every lead pull is one niche, B2C e-commerce only, with the owner's name and own phone number (+1 E.164).** No mixed-industry lists, no suppliers/wholesalers/private-label/B2B. Rules live at the top of `.claude/skills/pull-leads/SKILL.md`. Triggered by the first live calls (RK Pigments: "we do B2B"). *(2026-10-05)*

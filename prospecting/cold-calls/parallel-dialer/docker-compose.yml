@@ -1,0 +1,45 @@
+# Docker Compose: the dialer, and Caddy in front of it for https.
+#
+#   1. cp .env.example .env         and fill it in (set DIALER_PUBLIC_URL=https://<your domain>
+#                                   and DIALER_DOMAIN=<your domain>)
+#   2. cp dialer.example.toml config/dialer.toml     and set your company name
+#   3. point your domain's DNS at this machine, then:  docker compose up -d --build
+#   4. docker compose exec dialer python -m parallel_dialer access-key you@example.com
+#
+# Twilio must be able to reach https://<your domain>/twilio/dialer/... so ports 80 and 443
+# have to be open to the internet.
+services:
+  dialer:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DIALER_CONFIG: /config/dialer.toml
+      # Only Caddy can reach this container, and it is the one that sets the forwarded headers.
+      FORWARDED_ALLOW_IPS: "*"
+    volumes:
+      - dialer-data:/data
+      # dialer.toml, and any script, email or attachment files it names, sit together in ./config
+      - ./config:/config:ro
+    expose:
+      - "8767"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - dialer
+    environment:
+      DIALER_DOMAIN: ${DIALER_DOMAIN:?set DIALER_DOMAIN in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  dialer-data:
+  caddy-data:
+  caddy-config:

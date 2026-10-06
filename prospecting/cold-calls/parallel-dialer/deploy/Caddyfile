@@ -1,0 +1,8 @@
+# Caddy gets and renews the https certificate and passes everything to the dialer. The dialer
+# sets its own security headers, so this only proxies. DIALER_DOMAIN comes from .env.
+#
+# Without Docker, run Caddy on the same machine and change the upstream to 127.0.0.1:8767.
+{$DIALER_DOMAIN} {
+	encode zstd gzip
+	reverse_proxy dialer:8767
+}

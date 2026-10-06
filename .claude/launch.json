@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "produkto-site",
+      "url": "http://localhost:4173",
+      "port": 4173
+    },
+    {
+      "name": "produkto-mvp",
+      "url": "http://localhost:8010",
+      "port": 8010
+    }
+  ]
+}

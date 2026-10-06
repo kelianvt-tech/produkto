@@ -1,0 +1,430 @@
+{#- The dialer page. Rendered by parallel_dialer.api with dialer, user, initials_for, csrf and profile. -#}
+<script type="application/json" id="dialer-profile">{{ profile | tojson }}</script>
+{% set live_ready = dialer.live.get('ready', False) %}
+{% set checkpoint = dialer.checkpoint or {} %}
+{% set active_session = dialer.live.get('active_session') or {} %}
+{% set voicemail = dialer.live.get('voicemail') or {} %}
+{% set recordings = dialer.live.get('recordings') or {} %}
+{% set callback_routing = dialer.live.get('callback_routing') or {} %}
+<section class="intro-row dialer-intro">
+  <div><p class="eyebrow">Sales operations</p><h2>Parallel dialer.</h2><p>Work a Close CRM queue, connect real people to a waiting operator immediately, and leave your recording on voicemail.</p></div>
+  <div class="dialer-mode {{ 'live' if live_ready else '' }}"><i></i><span>{{ 'Live' if live_ready else 'Locked' }}<small>{{ 'Calling from ' + dialer.live.get('caller_number_masked', 'no caller ID') if live_ready else (dialer.live.get('blockers', []) | join(' ')) }}</small></span></div>
+</section>
+
+<section class="metric-grid dialer-metrics" id="dialer-metrics">
+  <article class="metric-card accent"><span class="metric-label">Ready in queue</span><strong id="dialer-ready-count">{{ checkpoint.get('remaining_count', dialer.contacts|length) }}</strong><small>Contacts not previously attempted</small><i class="trend neutral">Saved Smart View progress</i></article>
+  <article class="metric-card"><span class="metric-label">Active lines</span><strong><span id="dialer-active-count">0</span>/<span id="dialer-line-capacity">{{ dialer.live.get('max_concurrency', 3) }}</span></strong><small>Lines dialing at once</small><i class="trend neutral" id="dialer-session-state" role="status" aria-live="polite">Standing by</i></article>
+  <article class="metric-card"><span class="metric-label">Human connects</span><strong id="dialer-connect-rate">0%</strong><small id="dialer-connect-detail">No attempts yet</small><i class="trend neutral">This session</i></article>
+  <article class="metric-card" title="Abandonment rate: out of human connects, the percentage we were not able to answer"><span class="metric-label">Abandonment rate</span><strong id="dialer-abandon-rate">0%</strong><small id="dialer-abandon-detail">0 missed from 0 connects</small><i class="trend neutral" id="dialer-abandon-trend">This session</i></article>
+</section>
+
+<section class="dialer-workspace" id="dialer-app" data-live-ready="{{ 'true' if live_ready else 'false' }}" data-operator-email="{{ user.email }}" data-operator-name="{{ user.display_name }}" data-max-concurrency="{{ dialer.live.get('max_concurrency', 3) }}" data-smart-view-id="{{ dialer.selected_smart_view.get('id', '') if dialer.selected_smart_view else '' }}" data-smart-view-name="{{ dialer.selected_smart_view.get('name', '') if dialer.selected_smart_view else '' }}" data-active-session-id="{{ active_session.get('id', '') }}" data-active-smart-view-id="{{ active_session.get('smart_view_id', '') }}" data-progress-attempted="{{ checkpoint.get('attempted_count', 0) }}" data-progress-remaining="{{ checkpoint.get('remaining_count', dialer.contacts|length) }}">
+  <article class="panel dialer-queue-panel">
+    <header class="panel-head dialer-panel-head">
+      <div><p class="eyebrow">Call queue</p><h3>Close CRM contacts</h3></div>
+      <div class="dialer-head-badges">
+        <button type="button" class="dialer-numbers-btn" id="dialer-numbers-btn" title="View assigned phone numbers">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          My numbers <span class="numbers-pill" id="dialer-numbers-pill">{{ dialer.live.get('numbers_count', 1) }}</span>
+        </button>
+        <button type="button" class="dialer-settings-btn" id="dialer-settings-btn" title="Configure Close CRM API Key">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Settings
+        </button>
+        <span class="operator-badge" title="Close CRM user for {{ user.email }}"><span class="operator-dot"></span>{{ user.display_name.split()[0] if user.get('display_name') else user.email }}</span>
+        <span class="crm-state {{ 'connected' if dialer.connected else 'offline' }}"><i></i>{{ 'Connected' if dialer.connected else 'Unavailable' }}</span>
+      </div>
+    </header>
+<style>
+.dialer-summary-actions{display:inline-flex;align-items:center;gap:8px}
+.dialer-organize-btn{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border:1px solid #cfded9;border-radius:99px;background:#ffffff;color:#1a5647;font-family:inherit;font-size:8.5px;font-weight:750;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:all .15s ease;line-height:1.2}
+.dialer-organize-btn:hover:not(:disabled){background:#f0f7f4;border-color:#285c4e;color:#0b3429;box-shadow:0 2px 5px rgba(40,92,78,.12)}
+.dialer-organize-btn:active:not(:disabled){transform:scale(.97)}
+.dialer-organize-btn:disabled{opacity:.6;cursor:not-allowed}
+.dialer-organize-btn svg{width:11px;height:11px;flex-shrink:0;stroke:currentColor}
+.dialer-contact.dialer-blocked{opacity:.58;background:#fcfcfc}
+.dialer-blocked-badge{display:inline-block;margin-top:5px;padding:2px 6px;border-radius:4px;color:#9b2c2c;background:#fff5f5;border:1px solid #fed7d7;font-size:6px;font-weight:850;text-transform:uppercase;letter-spacing:.04em}
+.dialer-spin{animation:dialerSpin .9s linear infinite}
+@keyframes dialerSpin{100%{transform:rotate(360deg)}}
+</style>
+    <label class="dialer-smart-view"><span>Close Smart View</span><select id="dialer-smart-view" aria-label="Close Smart View">{% for view in dialer.smart_views %}<option value="{{ view.id }}" {{ 'selected' if dialer.selected_smart_view and view.id == dialer.selected_smart_view.id else '' }}>{{ view.name }}</option>{% else %}<option value="">No Smart Views available</option>{% endfor %}</select></label>
+    <div class="dialer-resume-summary">
+      <span><b id="dialer-progress-attempted">{{ checkpoint.get('attempted_count', 0) }}</b> attempted <i>&middot;</i> <b id="dialer-progress-remaining">{{ checkpoint.get('remaining_count', dialer.contacts|length) }}</b> remaining</span>
+      <div class="dialer-summary-actions">
+        <button type="button" class="dialer-organize-btn" id="dialer-organize-btn" title="Sync fresh contacts from Close, filter out calls >= 30s / active deals, and organize queue">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+          <span>Organize contacts</span>
+        </button>
+        <button id="dialer-reset-progress" type="button" {{ 'hidden' if not checkpoint.get('attempted_count', 0) else '' }}>Reset progress</button>
+      </div>
+    </div>
+    <label class="dialer-search"><span>Search within this view</span><input id="dialer-search" type="search" placeholder="Name, company, status, or number" autocomplete="off"></label>
+    <div class="dialer-wave-bar">
+      <div class="dialer-wave-toggle-group">
+        <label class="dialer-wave-checkbox" title="Automatically prioritize active prime-time windows (9am-12pm &amp; 1:30pm-5pm local) so contacts are called when answer rates peak">
+          <input type="checkbox" id="dialer-wave-sort-toggle" checked>
+          <span>🌊 Timezone Wave (Prime first)</span>
+        </label>
+        <label class="dialer-wave-checkbox" title="Prevent accidental calls before 8:30 AM or after 5:30 PM in the contact's local timezone">
+          <input type="checkbox" id="dialer-safe-hours-toggle" checked>
+          <span>🛡️ Safe hours (8:30a - 5:30p)</span>
+        </label>
+      </div>
+      <div class="dialer-wave-summary" id="dialer-wave-summary">
+        <span class="wave-pill prime" id="dialer-wave-prime-count">Prime Wave</span>
+      </div>
+    </div>
+    <div class="dialer-contact-head"><span>Contact</span><span>Status</span><span>Number &amp; Time</span><span></span></div>
+    <div class="dialer-contact-list" id="dialer-contact-list">
+      {% for contact in dialer.contacts %}
+      <div class="dialer-contact {{ 'dialer-attempted' if contact.dialer_attempted else '' }} {{ 'dialer-blocked' if not contact.live_allowed else '' }}" data-contact-id="{{ contact.contact_id }}" data-lead-id="{{ contact.lead_id }}" data-name="{{ contact.name }}" data-company="{{ contact.lead_name }}" data-script='{{ (contact.script_fields or {})|tojson }}' data-email="{{ contact.email }}" data-status="{{ contact.status }}" data-phone="{{ contact.phone }}" data-live-allowed="{{ 'true' if contact.live_allowed else 'false' }}" data-attempted="{{ 'true' if contact.dialer_attempted else 'false' }}" data-tz-code="{{ contact.timezone_info.tz_code if contact.timezone_info else '' }}" data-wave-status="{{ contact.timezone_info.wave_status if contact.timezone_info else 'prime' }}" data-can-call="{{ 'true' if not contact.timezone_info or contact.timezone_info.can_call else 'false' }}">
+        <span class="dialer-person"><i>{{ initials_for(contact.name) }}</i><span><b>{{ contact.name }}</b><small>{{ contact.lead_name }}{% if contact["title"] %} &middot; {{ contact["title"] }}{% endif %}</small></span></span>
+        <span><em>{{ contact.status }}</em>{% if contact.dialer_attempted %}<small class="dialer-attempted-badge">Attempted</small>{% elif not contact.live_allowed %}<small class="dialer-blocked-badge" title="{{ contact.blocked_reason or 'Blocked' }}">Blocked</small>{% endif %}</span>
+        <span class="dialer-phone">
+          <span>{{ contact.phone }}</span>
+          {% if contact.timezone_info %}
+          <span class="tz-badge {{ contact.timezone_info.wave_status }}" title="{{ contact.timezone_info.notice }}">{{ contact.timezone_info.tz_code }} &bull; {{ contact.timezone_info.local_time_str }}</span>
+          {% else %}
+          <small>{{ contact.phone_type }}</small>
+          {% endif %}
+        </span>
+        <a href="{{ contact.close_url }}" target="_blank" rel="noopener" aria-label="Open {{ contact.name }} in Close">&nearr;</a>
+      </div>
+      {% else %}
+      <div class="dialer-empty"><span>CRM</span><h4>No phone-ready contacts loaded.</h4><p>Connect your personal Close CRM key in <button type="button" class="text-button inline-settings-link" onclick="const b = document.getElementById('dialer-settings-btn'); if (b) b.click()">Settings</button> to load your lists.</p></div>
+      {% endfor %}
+    </div>
+    <footer class="dialer-queue-foot"><span><b id="dialer-visible-count">{{ dialer.contacts|length }}</b> contacts visible</span><span>Synced from Close</span></footer>
+  </article>
+
+  <article class="panel dialer-console-panel">
+    <header class="panel-head dialer-panel-head"><div><p class="eyebrow">Session control</p><h3>Live-answer routing</h3></div></header>
+    <div class="dialer-control-block dialer-softphone" id="dialer-softphone" data-browser-calling="{{ 'true' if dialer.live.get('browser_calling') else 'false' }}" data-operator-number="{{ 'true' if dialer.live.get('operator_configured') else 'false' }}">
+      <div class="dialer-control-label"><span><b>Where you take the call</b><small>The contact is joined to you the moment a human answers</small></span><span class="recording-state" id="dialer-phone-state">{{ 'Connecting' if dialer.live.get('browser_calling') else 'Not connected' }}</span></div>
+      <div class="dialer-target-switch" role="group" aria-label="Operator destination">
+        <button type="button" class="active" data-operator-target="browser" {{ '' if dialer.live.get('browser_calling') else 'disabled' }}>This computer</button>
+        <button type="button" data-operator-target="phone" {{ '' if dialer.live.get('operator_configured') else 'disabled title="No operator number is set."' }}>My phone</button>
+      </div>
+      <div class="dialer-mic-meter-wrap" id="dialer-mic-meter-wrap">
+        <div class="dialer-mic-meter-head">
+          <span class="dialer-mic-label">
+            <svg class="mic-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+            <span>Mic input</span>
+          </span>
+          <span class="dialer-mic-status" id="dialer-mic-status">Auto-gain on</span>
+          <button type="button" class="text-button dialer-mic-test-btn" id="dialer-mic-test-btn">Test mic</button>
+        </div>
+        <div class="dialer-mic-meter-track">
+          <div class="dialer-mic-meter-fill" id="dialer-mic-meter-fill" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="dialer-phone-controls" id="dialer-phone-controls" hidden>
+        <button type="button" id="dialer-mute">Mute</button>
+        <button type="button" class="text-button" id="dialer-hangup">Hang up</button>
+      </div>
+    </div>
+    <div class="dialer-control-block">
+      <div class="dialer-control-label"><span><b>Parallel lines</b><small>1 is power-dialer mode; higher values refill in parallel</small></span><output id="dialer-concurrency-output">1</output></div>
+      <input id="dialer-concurrency" type="range" min="1" max="{{ dialer.live.get('max_concurrency', 10) }}" value="1" step="1" aria-label="Parallel lines">
+      <div class="dialer-range-labels"><span>1</span><span>{{ dialer.live.get('max_concurrency', 10) }}</span></div>
+    </div>
+    <div class="dialer-control-block dialer-recording-block">
+      <div class="dialer-control-label"><span><b>What the contact hears</b><small>Record it here in your own voice, or upload MP3 or WAV</small></span></div>
+      <div class="dialer-studio" id="dialer-studio" data-max-greeting="{{ dialer.live.get('max_greeting_seconds', 2.5) }}">
+        {% for slot, title, hint in [
+            ('greeting', 'Hello', 'Plays the moment they answer, so the detection gap is not silence'),
+            ('screening', 'Reply to a gatekeeper', 'Plays when someone asks who is calling'),
+            ('dropped', 'Connection glitch (Parallel collision)', 'Plays if two lines answer at once: "Hello? Yeah, cannot hear you, let me call you right back!" before re-queuing'),
+            ('voicemail', 'Voicemail message', 'Plays to an answering machine. Leave it empty to hang up in silence')] %}
+        {% set meta = recordings.get(slot) or {} %}
+        <article class="dialer-slot" data-slot="{{ slot }}">
+          <header><span><b>{{ title }}</b><small>{{ hint }}</small></span><span class="recording-state {{ 'ready' if meta.get('configured') else '' }}" data-slot-state>{{ 'Ready' if meta.get('configured') else 'Not set' }}</span></header>
+          <p class="dialer-slot-file" data-slot-name>{% if meta.get('configured') %}{{ meta.get('filename') }}{% if meta.get('duration_seconds') %} &middot; {{ '%.1f'|format(meta.get('duration_seconds')) }}s{% endif %}{% else %}Nothing recorded{% endif %}</p>
+          <div class="dialer-slot-actions">
+            <button type="button" data-slot-record><i></i>Record</button>
+            <button type="button" data-slot-upload>Upload</button>
+            <button type="button" class="text-button" data-slot-remove {{ '' if meta.get('configured') else 'hidden' }}>Remove</button>
+          </div>
+          <div class="dialer-slot-playback" data-slot-saved-playback {{ '' if meta.get('configured') else 'hidden' }}>
+            <audio controls preload="none" data-slot-playback-audio src="{{ ('/dialer/api/recording/' ~ slot ~ '?v=' ~ (meta.get('sha256') or meta.get('updated_at') or '1')[:16]) if meta.get('configured') else '' }}"></audio>
+          </div>
+          <div class="dialer-slot-review" hidden>
+            <audio data-slot-audio controls preload="none"></audio>
+            <div class="dialer-slot-actions"><button type="button" data-slot-save>Save</button><button type="button" class="text-button" data-slot-discard>Discard</button></div>
+          </div>
+          <input type="file" accept="audio/mpeg,audio/wav,.mp3,.wav" hidden data-slot-file>
+        </article>
+        {% endfor %}
+      </div>
+      <button class="text-button dialer-callback-enable" id="dialer-callback-enable" type="button" {{ '' if dialer.live.get('operator_configured') else 'disabled data-unavailable="true"' }}>{{ 'Callback forwarding enabled' if callback_routing.get('configured') else 'Enable callbacks to my phone' }}</button>
+    </div>
+    <div class="dialer-rules">
+      <label><span><b>Leave your voicemail</b><small>{{ 'On; the machine hears your recording' if voicemail.get('configured') else 'Off; machines are hung up on in silence' }}</small></span><input type="checkbox" {{ 'checked' if voicemail.get('configured') else '' }} disabled><i></i></label>
+      <label><span><b>Skip immediate hang-ups</b><small>Always on; continue the queue automatically</small></span><input type="checkbox" checked disabled><i></i></label>
+      <label><span><b>Answer screening gates</b><small>Always on; play your recorded reply</small></span><input type="checkbox" checked disabled><i></i></label>
+    </div>
+    <button class="dialer-start" id="dialer-start" type="button"><span class="dialer-start-icon">&#9654;</span><span><b>Start power session</b><small id="dialer-start-detail">Run the queue one contact at a time</small></span></button>
+    <button class="dialer-stop" id="dialer-stop" type="button" hidden>Stop session</button>
+    <p class="dialer-safety {{ 'ready' if live_ready else '' }}"><i></i><span><b>{{ 'Safeguards are active.' if live_ready else 'Calling is locked.' }}</b> <span id="dialer-safety-copy">{% if live_ready %}Every contact in the chosen list is called except blocked numbers{% if dialer.live.get('blocked_count') %} ({{ dialer.live.get('blocked_count') }} blocked){% endif %}; lines dial in parallel across your dedicated numbers, and anyone already attempted is skipped.{% else %}{{ dialer.live.get('blockers', [])|join(' ') }}{% endif %}</span></span></p>
+  </article>
+</section>
+
+<section class="panel dialer-live-panel" aria-live="polite">
+  <header class="panel-head dialer-panel-head"><div><p class="eyebrow">Live lines</p><h3 id="dialer-live-title">Ready for a session</h3></div><span class="muted" id="dialer-batch-label">No batch running</span></header>
+  <div class="dialer-lines" id="dialer-lines">
+    <div class="dialer-lines-empty"><span>&phone;</span><p>Start a session to classify each answer as human, voicemail, hang-up or screening.</p></div>
+  </div>
+  <div class="dialer-bridge" id="dialer-bridge" hidden>
+    <span class="bridge-pulse"><i></i></span><span><small>Live human connected</small><b id="dialer-bridge-name">Contact</b><em id="dialer-bridge-company">Company</em><small id="dialer-bridge-details"></small></span><a id="dialer-bridge-open" href="#" target="_blank" rel="noopener" hidden>Open in Close</a><button id="dialer-bridge-drop-vm" class="dialer-bridge-drop-vm" type="button" title="Flag as voicemail &amp; next call (Hotkey: V or D)">⚡ Drop Voicemail</button><button id="dialer-bridge-dnc" class="dialer-bridge-dnc" type="button" title="Mark as Not Interested in Close &amp; next call (Hotkey: X or N)">⛔ Not Interested</button><button id="dialer-complete" type="button">Hang up &amp; next call</button>
+  </div>
+  <dialog id="dialer-profile-dialog" class="dialer-profile-dialog" aria-labelledby="dialer-modal-name">
+    <div class="dialer-modal-container">
+      <header class="dialer-modal-header">
+        <div class="dialer-modal-status">
+          <span class="bridge-pulse"><i></i></span>
+          <div>
+            <small>Live human connected</small>
+            <time id="dialer-modal-timer">00:00</time>
+          </div>
+        </div>
+        <button id="dialer-modal-close" class="dialer-modal-close-btn" type="button" title="Minimize pop-up (Esc)">&times;</button>
+      </header>
+      <div class="dialer-modal-body">
+        <div class="dialer-modal-main">
+        <div class="dialer-modal-profile">
+          <div class="dialer-modal-avatar" id="dialer-modal-avatar">CC</div>
+          <div class="dialer-modal-info">
+            <div class="dialer-modal-name-row">
+              <h2 id="dialer-modal-name">Contact Name</h2>
+              <div class="dialer-modal-contact-links">
+                <a id="dialer-modal-linkedin-btn" class="dialer-badge-link dialer-linkedin-link" href="#" target="_blank" rel="noopener" title="Open LinkedIn profile" aria-label="Open LinkedIn profile">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path d="M19 19H16.27V14.73C16.27 13.71 16.25 12.4 14.85 12.4C13.43 12.4 13.21 13.51 13.21 14.66V19H10.48V10.23H13.1V11.43H13.14C13.5 10.75 14.38 10.03 15.69 10.03C18.42 10.03 18.92 11.83 18.92 14.16V19H19ZM7.54 9.03C6.66 9.03 5.96 8.32 5.96 7.45C5.96 6.57 6.67 5.87 7.54 5.87C8.42 5.87 9.13 6.58 9.13 7.45C9.13 8.32 8.42 9.03 7.54 9.03ZM8.9 19H6.18V10.23H8.9V19Z" fill="white"/></svg>
+                </a>
+                <a id="dialer-modal-close-btn-link" class="dialer-badge-link dialer-close-link" href="#" target="_blank" rel="noopener" title="Open Close CRM contact" aria-label="Open Close CRM contact">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><rect width="24" height="24" rx="5" fill="#1C2638"/><path d="M15.2 8.8C14.2 7.7 12.8 7 11.2 7C8.1 7 5.6 9.5 5.6 12.6C5.6 15.7 8.1 18.2 11.2 18.2C12.8 18.2 14.2 17.5 15.2 16.4" stroke="#24D482" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </a>
+              </div>
+            </div>
+            <p class="dialer-modal-role"><span id="dialer-modal-title">Title</span> &bull; <strong id="dialer-modal-company">Company</strong></p>
+          </div>
+        </div>
+        <div class="dialer-modal-meta-grid">
+          <div class="dialer-modal-meta-item">
+            <label>Phone Number</label>
+            <span id="dialer-modal-phone">+1 000 000 0000</span>
+          </div>
+          <div class="dialer-modal-meta-item">
+            <label>Lead Status</label>
+            <span id="dialer-modal-status-pill" class="dialer-status-pill">Active</span>
+          </div>
+        </div>
+        <div class="dialer-modal-notes-box" id="dialer-modal-notes-box" hidden>
+          <div class="dialer-notes-head">
+            <div class="dialer-notes-title">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <line x1="10" y1="9" x2="8" y2="9"/>
+              </svg>
+              <span>Previous Call Notes</span>
+            </div>
+            <span class="dialer-notes-badge" id="dialer-notes-count-badge">Called before</span>
+          </div>
+          <div class="dialer-notes-list" id="dialer-notes-list"></div>
+        </div>
+        <div class="dialer-modal-mic-indicator" id="dialer-modal-mic-wrap">
+          <div class="dialer-modal-mic-head">
+            <span class="dialer-modal-mic-label">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+              <span>Microphone input</span>
+            </span>
+            <span id="dialer-modal-mic-level-label">Auto-gain active</span>
+          </div>
+          <div class="dialer-modal-mic-track">
+            <div class="dialer-modal-mic-fill" id="dialer-modal-mic-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <label class="dialer-modal-auto-open">
+          <input type="checkbox" id="dialer-auto-open-toggle" />
+          <span>Auto-open Close CRM lead in new tab on connect</span>
+        </label>
+        </div>
+        <section class="dialer-modal-script-drawer" id="dialer-modal-script-drawer" aria-label="Call script">
+          <div class="dialer-modal-script-head">
+            <button type="button" class="dialer-modal-script-toggle" id="dialer-modal-script-toggle" aria-expanded="true">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>Call script</span>
+              <span class="dialer-modal-script-chevron" id="dialer-modal-script-chevron">&#9662;</span>
+            </button>
+            <div class="dialer-modal-script-actions">
+              <span class="dialer-script-status-badge" id="dialer-modal-script-status">Saved</span>
+              <button class="text-button" id="dialer-modal-script-edit-btn" type="button" title="Edit the script">Edit</button>
+              <button class="text-button" id="dialer-modal-script-copy-btn" type="button" title="Copy script">Copy</button>
+            </div>
+          </div>
+          <div class="dialer-modal-script-view" id="dialer-modal-script-view"></div>
+          <div class="dialer-modal-script-body" id="dialer-modal-script-body" hidden>
+            <textarea id="dialer-modal-script-pad" class="dialer-modal-script-pad" spellcheck="false" placeholder="Write or edit your call script here..."></textarea>
+          </div>
+        </section>
+      </div>
+      <footer class="dialer-modal-footer">
+        <a id="dialer-modal-open-close" class="dialer-btn-primary" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none"><rect width="24" height="24" rx="5" fill="#1C2638"/><path d="M15.2 8.8C14.2 7.7 12.8 7 11.2 7C8.1 7 5.6 9.5 5.6 12.6C5.6 15.7 8.1 18.2 11.2 18.2C12.8 18.2 14.2 17.5 15.2 16.4" stroke="#24D482" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span>Open in Close</span> &nearr;
+        </a>
+        <a id="dialer-modal-open-linkedin" class="dialer-btn-linkedin" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none"><rect width="24" height="24" rx="5" fill="#0A66C2"/><path d="M19 19H16.27V14.73C16.27 13.71 16.25 12.4 14.85 12.4C13.43 12.4 13.21 13.51 13.21 14.66V19H10.48V10.23H13.1V11.43H13.14C13.5 10.75 14.38 10.03 15.69 10.03C18.42 10.03 18.92 11.83 18.92 14.16V19H19ZM7.54 9.03C6.66 9.03 5.96 8.32 5.96 7.45C5.96 6.57 6.67 5.87 7.54 5.87C8.42 5.87 9.13 6.58 9.13 7.45C9.13 8.32 8.42 9.03 7.54 9.03ZM8.9 19H6.18V10.23H8.9V19Z" fill="white"/></svg>
+          <span>LinkedIn</span> &nearr;
+        </a>
+        <button id="dialer-modal-mute" class="dialer-btn-secondary" type="button">Mute</button>
+        <button id="dialer-modal-drop-voicemail" class="dialer-btn-voicemail" type="button" title="Flag as voicemail &amp; next call (Hotkey: V or D)"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;vertical-align:-2px"><circle cx="5.5" cy="12" r="3.5"/><circle cx="18.5" cy="12" r="3.5"/><path d="M5.5 15.5h13"/></svg>This is a voicemail</button>
+        <button id="dialer-modal-dnc" class="dialer-btn-dnc" type="button" title="Mark as Not Interested in Close &amp; next call (Hotkey: X or N)"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:-2px"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>Not Interested</button>
+        <button id="dialer-modal-complete" class="dialer-btn-danger" type="button"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:-2px"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/></svg>Hang up &amp; next call</button>
+      </footer>
+    </div>
+  </dialog>
+  <dialog id="dialer-settings-dialog" class="dialer-settings-dialog" aria-labelledby="dialer-settings-title">
+    <div class="dialer-settings-box">
+      <header class="dialer-settings-header">
+        <div>
+          <p class="eyebrow">Close CRM Integration</p>
+          <h3 id="dialer-settings-title">API Key Settings</h3>
+        </div>
+        <button id="dialer-settings-close" class="dialer-modal-close-btn" type="button" title="Close dialog">&times;</button>
+      </header>
+      <div class="dialer-settings-body">
+        <p class="dialer-settings-desc">
+          Connect your personal Close account for <strong>{{ user.email }}</strong>. Your API key enables the dialer to load your private Smart Views and log call activities directly under your Close user.
+        </p>
+        <div class="dialer-key-status" id="dialer-key-status">
+          <span class="key-status-dot"></span>
+          <span id="dialer-key-status-text">Checking Close connection...</span>
+        </div>
+        <form id="dialer-settings-form" class="dialer-settings-form" onsubmit="return false;">
+          <label for="dialer-api-key-input">
+            <span>Close API Key</span>
+            <input type="password" id="dialer-api-key-input" placeholder="api_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+          </label>
+          <p class="dialer-key-hint">
+            Get your personal key in <a href="https://app.close.com/settings/developer/api-keys/" target="_blank" rel="noopener">Close &rarr; Settings &rarr; Developer &rarr; API Keys &nearr;</a>
+          </p>
+          <div class="dialer-settings-feedback" id="dialer-settings-feedback" hidden></div>
+          <div class="dialer-settings-actions">
+            <button type="button" class="btn-primary" id="dialer-save-key-btn">Save &amp; Connect</button>
+            <button type="button" class="text-button" id="dialer-remove-key-btn" hidden>Disconnect Key</button>
+          </div>
+        </form>
+        <hr class="dialer-settings-divider">
+        <h3 class="dialer-settings-section-title">Twilio Voice &amp; Phone Service</h3>
+        <p class="dialer-settings-desc">
+          Twilio powers your outbound parallel dialing lines, AMD machine screening, and dedicated phone pool.
+        </p>
+        <div class="dialer-key-status" id="dialer-twilio-status">
+          <span class="key-status-dot"></span>
+          <span id="dialer-twilio-status-text">Checking Twilio connection...</span>
+        </div>
+        <form id="dialer-twilio-form" class="dialer-settings-form" onsubmit="return false;">
+          <div class="dialer-settings-two-col">
+            <label for="dialer-twilio-account-input">
+              <span>Account SID</span>
+              <input type="text" id="dialer-twilio-account-input" placeholder="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+            </label>
+            <label for="dialer-twilio-api-key-input">
+              <span>API Key SID</span>
+              <input type="text" id="dialer-twilio-api-key-input" placeholder="SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+            </label>
+          </div>
+          <label for="dialer-twilio-secret-input">
+            <span>API Key Secret</span>
+            <input type="password" id="dialer-twilio-secret-input" placeholder="••••••••••••••••" autocomplete="off" spellcheck="false">
+          </label>
+          <div class="dialer-settings-feedback" id="dialer-twilio-feedback" hidden></div>
+          <div class="dialer-settings-actions">
+            <button type="button" class="btn-primary" id="dialer-save-twilio-btn">Update Twilio Credentials</button>
+            <button type="button" class="text-button" id="dialer-remove-twilio-btn" hidden>Use Organization Default</button>
+          </div>
+        </form>
+      </div>
+  </dialog>
+  <dialog id="dialer-numbers-dialog" class="dialer-settings-dialog" aria-labelledby="dialer-numbers-title">
+    <div class="dialer-settings-container">
+      <header class="dialer-settings-header">
+        <div>
+          <h2 id="dialer-numbers-title">My Outbound Numbers</h2>
+          <p class="dialer-settings-subtitle">Dedicated phone numbers assigned to your parallel dialer account</p>
+        </div>
+        <div class="dialer-numbers-header-actions">
+          <button id="dialer-buy-number-btn" class="btn-sm-primary" type="button">+ Buy Number</button>
+          <button id="dialer-numbers-close" class="dialer-modal-close-btn" type="button" title="Close (Esc)">&times;</button>
+        </div>
+      </header>
+      <div class="dialer-settings-body">
+        <div id="dialer-buy-panel" class="dialer-buy-panel" hidden>
+          <div class="dialer-buy-panel-inner">
+            <div class="dialer-buy-fields">
+              <label for="dialer-buy-area-code">
+                <span>US Area Code <em>(Optional)</em></span>
+                <input type="text" id="dialer-buy-area-code" placeholder="e.g. 816, 860, 701" maxlength="3">
+              </label>
+              <label for="dialer-buy-label">
+                <span>Nickname <em>(Optional)</em></span>
+                <input type="text" id="dialer-buy-label" placeholder="e.g. Number 7" maxlength="30">
+              </label>
+            </div>
+            <div class="dialer-buy-actions">
+              <button type="button" class="btn-sm-primary" id="dialer-confirm-buy-btn">Purchase Clean Number</button>
+              <button type="button" class="text-button" id="dialer-cancel-buy-btn">Cancel</button>
+            </div>
+            <div class="dialer-buy-feedback" id="dialer-buy-feedback" hidden></div>
+          </div>
+        </div>
+        <div class="dialer-numbers-info-box">
+          <p>Each parallel dialing line uses a distinct number from your pool. Check reputation badges below to monitor carrier spam risk. If a number becomes <strong>Cooked</strong>, release or replace it with a fresh number.</p>
+        </div>
+        <div class="dialer-numbers-list" id="dialer-numbers-list">
+          <div class="dialer-numbers-loading">Loading numbers...</div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<section class="dialer-script-section">
+  <article class="panel dialer-script-panel" id="dialer-script-panel">
+    <header class="panel-head">
+      <div>
+        <p class="eyebrow">Cold call talk track</p>
+        <h3>Call Script Notepad</h3>
+      </div>
+      <div class="dialer-script-header-actions">
+        <span class="dialer-script-status-badge" id="dialer-script-status">Saved</span>
+        <button class="dialer-script-action-btn" id="dialer-script-copy-btn" type="button" title="Copy script to clipboard">Copy Script</button>
+        <button class="dialer-script-action-btn dialer-script-reset-btn" id="dialer-script-reset-btn" type="button" title="Reset to the default script">Reset</button>
+      </div>
+    </header>
+    <div class="dialer-script-body">
+      <textarea id="dialer-script-pad" class="dialer-script-pad" spellcheck="false" placeholder="Write or edit your call script here..."></textarea>
+    </div>
+    <footer class="dialer-script-footer">
+      <span id="dialer-script-meta">0 words &bull; 0 characters</span>
+      <small class="dialer-script-hint">Auto-saves to this browser and to your account on the server as you type</small>
+    </footer>
+  </article>
+</section>
+
+<section class="dialer-lower-grid">
+  <article class="panel dialer-activity-panel">
+    <header class="panel-head"><div><p class="eyebrow">Session activity</p><h3>Recent outcomes</h3></div><button class="text-button" id="dialer-clear" type="button">Clear</button></header>
+    <div class="dialer-activity" id="dialer-activity" aria-live="polite"><div class="dialer-activity-empty">Outcomes will appear as a session runs.</div></div>
+  </article>
+  <article class="panel dialer-reputation-panel">
+    <header class="panel-head"><div><p class="eyebrow">Session signals</p><h3>Risk guardrails</h3></div><span class="health-chip" id="dialer-signal-basis">No attempts yet</span></header>
+    <div class="reputation-row"><span>Busy results</span><b id="dialer-block-rate">0.0%</b><em>Watch at 5%</em></div>
+    <div class="reputation-row"><span>Short calls</span><b id="dialer-short-rate">0.0%</b><em>Watch under 6s</em></div>
+    <div class="reputation-row"><span>Invalid numbers</span><b id="dialer-invalid-rate">0.0%</b><em>Pause at 0.5%</em></div>
+    <p>Measured from this session's own outcomes. Busy results, very short calls and invalid destinations are the three that cost a number its reputation, so they are worth watching as the queue runs.</p>
+  </article>
+</section>

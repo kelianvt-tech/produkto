@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+**/.env
+!**/.env.example
+
+# Databases and backups (real customer/scan data lives on the server)
+*.db
+*.db.*
+*.sqlite
+mvp/backups/
+
+# Caches
+mvp/app/icons/
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+.venv/
+venv/
+.claude/settings.local.json

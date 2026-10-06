@@ -1,0 +1,842 @@
+{
+ "bodyrest.com": {
+  "question": "What is the best Sleeping Beauty Pumpkin Cream to buy online for around $145? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Savor Beauty",
+  "product": "Sleeping Beauty Pumpkin Cream",
+  "raw": "*   Savor Beauty | Sleeping Beauty Pumpkin Cream"
+ },
+ "noobenergy.com": {
+  "question": "What is the best Big Apple Sweatpants to buy online for around $110? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Pro Era",
+  "product": "Big Apple Sweatpants",
+  "raw": "*   Pro Era | Big Apple Sweatpants"
+ },
+ "wolfandshepherd.com": {
+  "question": "What is the best Shoes to buy online for around $295? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "MALLET",
+  "product": "Boundary Sneakers",
+  "raw": "*   MALLET | Boundary Sneakers"
+ },
+ "xhibition.co": {
+  "question": "What is the best Apparel to buy online for around $120? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Lululemon",
+  "product": "Fast and Free 6-Pocket Tight 25\"",
+  "raw": "*   Lululemon | Fast and Free 6-Pocket Tight 25\""
+ },
+ "nemah.com": {
+  "question": "What is the best Kids to buy online for around $44? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nike",
+  "product": "Flex Runner 4 Little Kids' Shoes",
+  "raw": "*   Nike | Flex Runner 4 Little Kids' Shoes"
+ },
+ "thepuffcuff.com": {
+  "question": "What is the best Tools-More to buy online for around $16? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Apollo Tools",
+  "product": "39 Piece General Tool Set DT9706 PINK",
+  "raw": "*   Apollo Tools | 39 Piece General Tool Set DT9706 PINK"
+ },
+ "catertomom.com": {
+  "question": "What is the best Fall Postpartum Gift Box for Moms | Cater To Mom to buy online for around $46? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Cater To Mom",
+  "product": "Fall Postpartum Gift Box for Moms",
+  "raw": "*   Cater To Mom | Fall Postpartum Gift Box for Moms | Cater To Mom"
+ },
+ "shop-good.co": {
+  "question": "What is the best Bath + Body / Hand + Nail Care to buy online for around $15? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Burt's Bees",
+  "product": "Tips and Toes Kit",
+  "raw": "*   Burt's Bees | Tips and Toes Kit"
+ },
+ "rosewoman.com": {
+  "question": "What is the best Book to buy online for around $28? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "HarperCollins",
+  "product": "The Alchemist (Gift Edition)",
+  "raw": "*   HarperCollins | The Alchemist (Gift Edition)"
+ },
+ "joyspringvitamins.com": {
+  "question": "What is the best Brainy Belly (LP) 6 to buy online for around $33? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "JoySpring",
+  "product": "Brainy Belly (LP) 6",
+  "raw": "*   JoySpring | Brainy Belly (LP) 6"
+ },
+ "caddislife.com": {
+  "question": "What is the best Progressive Readers to buy online for around $135? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Peepers",
+  "product": "Mariner Progressives",
+  "raw": "*   Peepers | Mariner Progressives"
+ },
+ "mgemi.com": {
+  "question": "What is the best Pump to buy online for around $478? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "LOVMOR",
+  "product": "Gas Engine Powered Water Pump 3in Inlet and Outlet, 264 GPM, 7HP 212CC",
+  "raw": "*   LOVMOR | Gas Engine Powered Water Pump 3in Inlet and Outlet, 264 GPM, 7HP 212CC"
+ },
+ "humesupernatural.com": {
+  "question": "What is the best Set to buy online for around $32? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "BYOMA",
+  "product": "Best Sellers Collection Kit - 4 ct",
+  "raw": "*   BYOMA | Best Sellers Collection Kit - 4 ct"
+ },
+ "klassyshop.com": {
+  "question": "What is the best Coats & Jackets to buy online for around $69? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Columbia",
+  "product": "Men's Ascender Softshell Jacket",
+  "raw": "*   Columbia | Men's Ascender Softshell Jacket"
+ },
+ "floramirabilis.com": {
+  "question": "What is the best Flora Mirabilis Tube Key to buy online for around $12? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Flora Mirabilis",
+  "product": "Tube Key",
+  "raw": "*   Flora Mirabilis | Tube Key"
+ },
+ "toniiq.com": {
+  "question": "What is the best Spore Probiotic 100 to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Swanson",
+  "product": "Bacillus Coagulans - Spore Form, 6 Billion CFU \u00b7 60 Vegan Caps \\[1\\",
+  "raw": "*   Swanson | Bacillus Coagulans - Spore Form, 6 Billion CFU \u00b7 60 Vegan Caps \\[1\\]\n    \n    \\[2\\]"
+ },
+ "livefraiche.com": {
+  "question": "What is the best Rosemary Castor Scalp Detox & Growth Oil to buy online for around $40? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Live Fraiche",
+  "product": "Rosemary Castor Scalp Detox & Growth Oil",
+  "raw": "*   Live Fraiche | Rosemary Castor Scalp Detox & Growth Oil"
+ },
+ "singer22.com": {
+  "question": "What is the best Quartz to buy online for around $3250? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Grand Seiko",
+  "product": "SBGP",
+  "raw": "*   Grand Seiko | SBGP009"
+ },
+ "ideachic.net": {
+  "question": "What is the best candles to buy online for around $22? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "NEST New York",
+  "product": "Cucumber & White Sage Scented Candle",
+  "raw": "*   NEST New York | Cucumber & White Sage Scented Candle"
+ },
+ "aldernewyork.com": {
+  "question": "What is the best Tools & Accessories to buy online for around $18? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Milwaukee",
+  "product": "8-in-1 Compact Ratcheting Multi-Bit Screwdriver",
+  "raw": "*   Milwaukee | 8-in-1 Compact Ratcheting Multi-Bit Screwdriver"
+ },
+ "faithfitterstore.com": {
+  "question": "What is the best Bras to buy online for around $36? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Montelle Intimates",
+  "product": "Wire-Free T-Shirt Bra",
+  "raw": "*   Montelle Intimates | Wire-Free T-Shirt Bra"
+ },
+ "arianna-skincare.com": {
+  "question": "What is the best Men to buy online for around $169? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Dior",
+  "product": "Homme Parfum 1.7 oz",
+  "raw": "*   Dior | Homme Parfum 1.7 oz"
+ },
+ "sebastiancruzcouture.com": {
+  "question": "What is the best Dinner Jacket to buy online for around $1295? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Gieves & Hawkes",
+  "product": "Shelford Wool Mohair Shawl Dinner Jacket Black Barathea",
+  "raw": "*   Gieves & Hawkes | Shelford Wool Mohair Shawl Dinner Jacket Black Barathea"
+ },
+ "sealtheseasons.com": {
+  "question": "What is the best Organic Maine Wild Blueberries to buy online for around $18? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Shiloh Farms",
+  "product": "Organic Wild Blueberries, 6 oz",
+  "raw": "*   Shiloh Farms | Organic Wild Blueberries, 6 oz"
+ },
+ "moonvalleyorganics.com": {
+  "question": "What is the best Foaming Herbal Hand Soap to buy online for around $9? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Moon Valley Organics",
+  "product": "Lemon Rosemary Foaming Herbal Hand Soap",
+  "raw": "*   Moon Valley Organics | Lemon Rosemary Foaming Herbal Hand Soap"
+ },
+ "truehoneyteas.com": {
+  "question": "What is the best Herbal Tea to buy online for around $22? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Numi",
+  "product": "Organic Rooibos Tea",
+  "raw": "*   Numi | Organic Rooibos Tea"
+ },
+ "gemorie.com": {
+  "question": "What is the best Pandora B801639-45 Sparkling Statement Halo Jewelry Gift Set 45 cm Holiday21 Gift Sets to buy online for around $179? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Pandora",
+  "product": "B801639-45 Sparkling Statement Halo Jewelry Gift Set 45 cm Holiday21 Gift Sets",
+  "raw": "*   Pandora | B801639-45 Sparkling Statement Halo Jewelry Gift Set 45 cm Holiday21 Gift Sets"
+ },
+ "ora.organic": {
+  "question": "What is the best Powder to buy online for around $50? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Charlotte Tilbury",
+  "product": "Airbrush Flawless Finish Blurring & Setting Powder",
+  "raw": "*   Charlotte Tilbury | Airbrush Flawless Finish Blurring & Setting Powder"
+ },
+ "professionalsupplementcenter.com": {
+  "question": "What is the best Nuts & Seeds to buy online for around $9? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Great Value",
+  "product": "Deluxe Mixed Nuts, 15.25 oz",
+  "raw": "*   Great Value | Deluxe Mixed Nuts, 15.25 oz"
+ },
+ "mulco.com": {
+  "question": "What is the best Strap to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "BARTON",
+  "product": "Quick Release Top Grain Leather Watch Band Strap",
+  "raw": "*   BARTON | Quick Release Top Grain Leather Watch Band Strap"
+ },
+ "shany.com": {
+  "question": "What is the best NAIL POLISH to buy online for around $9? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Sally Hansen",
+  "product": "Miracle Gel Nail Polish, 386 Gel-ebrate",
+  "raw": "*   Sally Hansen | Miracle Gel Nail Polish, 386 Gel-ebrate"
+ },
+ "hanahanabeauty.com": {
+  "question": "What is the best Glow Butter Minis to buy online for around $35? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Hanahana Beauty",
+  "product": "Glow Butter Minis",
+  "raw": "*   Hanahana Beauty | Glow Butter Minis"
+ },
+ "welcometowondervalley.com": {
+  "question": "What is the best Bath House to buy online for around $52? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Lovery",
+  "product": "Home Spa Gift Basket \u2013 Wild Rose & Raspberry Leaf 7pc Bath Gift Set",
+  "raw": "*   Lovery | Home Spa Gift Basket \u2013 Wild Rose & Raspberry Leaf 7pc Bath Gift Set"
+ },
+ "energybits.com": {
+  "question": "What is the best General/Partner to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Glocusent",
+  "product": "LED Neck Book Light for Reading in Bed, Rechargeable Around Neck, 3 Amber Colors & 6 Brightness Levels",
+  "raw": "*   Glocusent | LED Neck Book Light for Reading in Bed, Rechargeable Around Neck, 3 Amber Colors & 6 Brightness Levels"
+ },
+ "themakeupshack.com": {
+  "question": "What is the best Moira Soft Focus Powder to buy online for around $14? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "MOIRA",
+  "product": "Soft Focus Waterproof Setting Powder",
+  "raw": "*   MOIRA | Soft Focus Waterproof Setting Powder"
+ },
+ "shopmamasol.com": {
+  "question": "What is the best The Glow & Go Duo to buy online for around $73? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "The Outset",
+  "product": "Glow & Go Duo",
+  "raw": "*   The Outset | Glow & Go Duo"
+ },
+ "viccieyewear.com": {
+  "question": "What is the best Sunglasses to buy online for around $320? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Persol",
+  "product": "PO3048S Rectangular",
+  "raw": "*   Persol | PO3048S Rectangular"
+ },
+ "sneakerpolitics.com": {
+  "question": "What is the best Sneakers to buy online for around $145? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nike",
+  "product": "Pegasus 42 Road Running Shoes",
+  "raw": "*   Nike | Pegasus 42 Road Running Shoes"
+ },
+ "aloisiabeauty.com": {
+  "question": "What is the best REVIVE Body Oil by Erin Oprea to buy online for around $76? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Erin Oprea",
+  "product": "REVIVE Body Oil",
+  "raw": "*   Erin Oprea | REVIVE Body Oil"
+ },
+ "mydailydefense.com": {
+  "question": "What is the best Dietary Supplement to buy online for around $65? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Momentous",
+  "product": "Creatine Monohydrate",
+  "raw": "*   Momentous | Creatine Monohydrate"
+ },
+ "lesseofficial.com": {
+  "question": "What is the best Health & Beauty to buy online for around $10? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Neutrogena",
+  "product": "Hydro Boost Hyaluronic Acid Gel Cream Fragrance Free",
+  "raw": "*   Neutrogena | Hydro Boost Hyaluronic Acid Gel Cream Fragrance Free"
+ },
+ "mastmarket.com": {
+  "question": "What is the best Nimbus - Triple Cream Brie - Chaseholm Farm to buy online for around $21? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Chaseholm Farm",
+  "product": "Nimbus Triple Cream Brie",
+  "raw": "*   Chaseholm Farm | Nimbus Triple Cream Brie"
+ },
+ "springandmulberry.com": {
+  "question": "What is the best Candy & Chocolate to buy online for around $34? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Chocolat Michel Cluizel",
+  "product": "Milk and Dark Chocolate Truffles 8",
+  "raw": "*   Chocolat Michel Cluizel | Milk and Dark Chocolate Truffles 8"
+ },
+ "rorra.com": {
+  "question": "What is the best Filtered Pitcher to buy online for around $249? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Clearly Filtered",
+  "product": "Filtered Water Pitcher + Filter 3-Pack",
+  "raw": "*   Clearly Filtered | Filtered Water Pitcher + Filter 3-Pack"
+ },
+ "lyricallycorrect.com": {
+  "question": "What is the best Card Game to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Exploding Kittens",
+  "product": "Original Edition",
+  "raw": "*   Exploding Kittens | Original Edition"
+ },
+ "chloeandolive.com": {
+  "question": "What is the best Indoor Pillows to buy online for around $680? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "The House of Scalamandre",
+  "product": "Porcelain Silk Reversible Throw Pillow",
+  "raw": "*   The House of Scalamandre | Porcelain Silk Reversible Throw Pillow"
+ },
+ "vitalplan.com": {
+  "question": "What is the best Vital Plan Diet (Printed) to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Vital Plan",
+  "product": "The Vital Plan Diet (Printed)",
+  "raw": "*   Vital Plan | The Vital Plan Diet (Printed)"
+ },
+ "levelsprotein.com": {
+  "question": "What is the best Protein Powder to buy online for around $58? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Transparent Labs",
+  "product": "Whey Protein Isolate",
+  "raw": "*   Transparent Labs | Whey Protein Isolate"
+ },
+ "dunesuncare.com": {
+  "question": "What is the best The Miracle Rescue Duo to buy online for around $42? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "LOOPS x DUNE",
+  "product": "The Lifeguard Miracle Duo",
+  "raw": "*   LOOPS x DUNE | The Lifeguard Miracle Duo"
+ },
+ "shottys.com": {
+  "question": "What is the best Lemon Drop Vodka Shots (8 shots) to buy online for around $10? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Shottys",
+  "product": "Lemon Drop Vodka Shots (8 shots)",
+  "raw": "*   Shottys | Lemon Drop Vodka Shots (8 shots)"
+ },
+ "bombigear.com": {
+  "question": "What is the best Stroller Seat Insert to buy online for around $50? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Valco Baby",
+  "product": "All Sorts Universal Seat Pad",
+  "raw": "*   Valco Baby | All Sorts Universal Seat Pad"
+ },
+ "kialanutrition.com": {
+  "question": "What is the best Birthday Cake 6 Pack Upsell to buy online for around $72? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "The Little Sugars",
+  "product": "Classic Vanilla Cake Jar (6-Pack)",
+  "raw": "*   The Little Sugars | Classic Vanilla Cake Jar (6-Pack)"
+ },
+ "zillabeau.com": {
+  "question": "What is the best Base Gel to buy online for around $16? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "KOKOIST",
+  "product": "Nail Thoughts Tinted Base Gel - Clear Builder Base - #NTB CLEAR",
+  "raw": "*   KOKOIST | Nail Thoughts Tinted Base Gel - Clear Builder Base - #NTB CLEAR"
+ },
+ "currentstateofbeauty.com": {
+  "question": "What is the best Strawberry + Probiotic to buy online for around $9? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Coconut Cult",
+  "product": "Organic Harvest Strawberry Probiotic Coconut Yogurt",
+  "raw": "*   Coconut Cult | Organic Harvest Strawberry Probiotic Coconut Yogurt"
+ },
+ "drinkopenwater.com": {
+  "question": "What is the best 12oz Cans\u2013Sparkling Water to buy online for around $17? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Waterloo",
+  "product": "Sparkling Water Variety Pack, 12 fl. oz., 24 pk",
+  "raw": "*   Waterloo | Sparkling Water Variety Pack, 12 fl. oz., 24 pk."
+ },
+ "knottytie.com": {
+  "question": "What is the best Hair Scarf to buy online for around $20? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "SILKSILKY",
+  "product": "100% Mulberry Silk Square Scarf 53x53cm/21\"",
+  "raw": "*   SILKSILKY | 100% Mulberry Silk Square Scarf 53x53cm/21\""
+ },
+ "elo.health": {
+  "question": "What is the best GLP-1 Protein to buy online for around $59? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Optimum Nutrition",
+  "product": "GOLD STANDARD 100% WHEY Protein Powder \u2013 Double Rich Chocolate",
+  "raw": "*   Optimum Nutrition | GOLD STANDARD 100% WHEY Protein Powder \u2013 Double Rich Chocolate"
+ },
+ "michebeauty.com": {
+  "question": "What is the best SUNSET PEACH Anti-Humidity Firm Hold Hair Gel (Limited Edition) to buy online for around $27? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Mielle",
+  "product": "SUNSET PEACH Anti-Humidity Firm Hold Hair Gel (Limited Edition)",
+  "raw": "*   Mielle | SUNSET PEACH Anti-Humidity Firm Hold Hair Gel (Limited Edition)"
+ },
+ "herbanessentials.com": {
+  "question": "What is the best Essential Oil Towelettes to buy online for around $24? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Herban Essentials",
+  "product": "Assorted Towelettes",
+  "raw": "*   Herban Essentials | Assorted Towelettes"
+ },
+ "janji.com": {
+  "question": "What is the best Jackets + Midlayers to buy online for around $130? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Rab",
+  "product": "Stavel Jacket",
+  "raw": "*   Rab | Stavel Jacket"
+ },
+ "ondaorigins.com": {
+  "question": "What is the best Coffee to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Stumptown",
+  "product": "Hair Bender Medium Roast Whole Bean Coffee - 12oz",
+  "raw": "*   Stumptown | Hair Bender Medium Roast Whole Bean Coffee - 12oz"
+ },
+ "purraperformance.com": {
+  "question": "What is the best Crew to buy online for around $40? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Champion",
+  "product": "Reverse Weave Crew $45",
+  "raw": "*   Champion | Reverse Weave Crew $45"
+ },
+ "getjustbetter.com": {
+  "question": "What is the best 5-count Stick Pack Pouch of just better.\u00ae allulose to buy online for around $8? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "just better.\u00ae",
+  "product": "5-count Stick Pack Pouch of just better.\u00ae allulose",
+  "raw": "*   just better.\u00ae | 5-count Stick Pack Pouch of just better.\u00ae allulose"
+ },
+ "bandolierstyle.com": {
+  "question": "What is the best pack to buy online for around $212? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Osprey",
+  "product": "Farpoint 40 Travel Pack",
+  "raw": "*   Osprey | Farpoint 40 Travel Pack"
+ },
+ "thegoldensecrets.com": {
+  "question": "What is the best Books to buy online for around $40? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Penguin",
+  "product": "The Shadow of the Wind",
+  "raw": "*   Penguin | The Shadow of the Wind"
+ },
+ "ingredientswellness.com": {
+  "question": "What is the best Body to buy online for around $44? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "N\u00e9cessaire",
+  "product": "The Body Wash Fragrance-Free",
+  "raw": "*   N\u00e9cessaire | The Body Wash Fragrance-Free"
+ },
+ "hellojupiter.com": {
+  "question": "What is the best Day 2 Dry Shampoo + Flake Free Duo to buy online for around $78? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Living Proof",
+  "product": "Perfect Hair Day (PhD) Clean Hair Duo",
+  "raw": "*   Living Proof | Perfect Hair Day (PhD) Clean Hair Duo"
+ },
+ "oyayo.co": {
+  "question": "What is the best Thong Liners to buy online for around $10? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Cora",
+  "product": "Organic Top Sheet Thong Regular Ultra Thin Panty Liners \u2013 Unscented, 40ct",
+  "raw": "*   Cora | Organic Top Sheet Thong Regular Ultra Thin Panty Liners \u2013 Unscented, 40ct"
+ },
+ "sacheu.com": {
+  "question": "What is the best De-Puffing Roller to buy online for around $38? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Dr. Idriss",
+  "product": "The Depuffer Arnica + Niacinamide Roll-On Serum \\[1\\",
+  "raw": "*   Dr. Idriss | The Depuffer Arnica + Niacinamide Roll-On Serum \\[1\\]\n    \n    \\[2\\]"
+ },
+ "inkedbydani.com": {
+  "question": "What is the best Cosmetic Sets to buy online for around $15? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Profusion",
+  "product": "Written in the Stars Prismatic Glam 15-pc Kit",
+  "raw": "*   Profusion | Written in the Stars Prismatic Glam 15-pc Kit"
+ },
+ "lavanila.com": {
+  "question": "What is the best The Healthy Deodorant to buy online for around $28? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "AKT",
+  "product": "The Deodorant Balm SC.01",
+  "raw": "*   AKT | The Deodorant Balm SC.01"
+ },
+ "move.one": {
+  "question": "What is the best Socks to buy online for around $15? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Bombas",
+  "product": "Men's Originals Calf Sock 4-Pack",
+  "raw": "*   Bombas | Men's Originals Calf Sock 4-Pack"
+ },
+ "canvastsupplyco.com": {
+  "question": "What is the best Premium Pre-Rolls to buy online for around $34? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "",
+  "product": "",
+  "raw": "*   I can\u2019t recommend or facilitate purchasing cannabis products."
+ },
+ "heydewy.com": {
+  "question": "What is the best Hey Dewy Wellness Humidifier - NEW to buy online for around $100? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "hey dewy",
+  "product": "Hey Dewy Wellness Humidifier - NEW",
+  "raw": "*   hey dewy | Hey Dewy Wellness Humidifier - NEW"
+ },
+ "sage-sound.com": {
+  "question": "What is the best Bath + Body to buy online for around $55? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Bath & Body Works",
+  "product": "Vanilla Romance Gift Set",
+  "raw": "*   Bath & Body Works | Vanilla Romance Gift Set"
+ },
+ "basksuncare.com": {
+  "question": "What is the best Sunscreen to buy online for around $18? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Bask",
+  "product": "Sheer Moisturizing Lotion Sunscreen SPF 5",
+  "raw": "*   Bask | Sheer Moisturizing Lotion Sunscreen SPF 50"
+ },
+ "lovemamabird.com": {
+  "question": "What is the best Postnatal Foundation Set to buy online for around $116? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Patrick Ta Beauty",
+  "product": "Major Skin Foundation Set",
+  "raw": "*   Patrick Ta Beauty | Major Skin Foundation Set"
+ },
+ "farmaesthetics.com": {
+  "question": "What is the best Eye &amp; Lip to buy online for around $25? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Danessa Myricks Beauty",
+  "product": "Colorfix Multi-Use Eye, Cheek & Lip Pigment",
+  "raw": "*   Danessa Myricks Beauty | Colorfix Multi-Use Eye, Cheek & Lip Pigment"
+ },
+ "comunitymade.com": {
+  "question": "What is the best Women's Footwear to buy online for around $399? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "FERRAGAMO",
+  "product": "Platform Pump",
+  "raw": "*   FERRAGAMO | Platform Pump"
+ },
+ "pachasoap.com": {
+  "question": "What is the best Bar Soap to buy online for around $8? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Dove",
+  "product": "Sensitive Skin Beauty Bar Soap",
+  "raw": "*   Dove | Sensitive Skin Beauty Bar Soap"
+ },
+ "beautyreleaf.com": {
+  "question": "What is the best The Dew & Glow Skincare Set to buy online for around $154? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Glow Recipe",
+  "product": "The Korean Glass Skincare Vault Kit",
+  "raw": "*   Glow Recipe | The Korean Glass Skincare Vault Kit"
+ },
+ "beautybyearth.com": {
+  "question": "What is the best Face to buy online for around $18? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "CeraVe",
+  "product": "Hydrating Facial Cleanser",
+  "raw": "*   CeraVe | Hydrating Facial Cleanser"
+ },
+ "moodeaux.com": {
+  "question": "What is the best IntenScenual Fine Fragrance to buy online for around $98? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "MOODEAUX",
+  "product": "Brand New IntenScenual Eau de Parfum",
+  "raw": "*   MOODEAUX | Brand New IntenScenual Eau de Parfum"
+ },
+ "crunchi.com": {
+  "question": "What is the best Shattered\u00ae Peptide Mascara to buy online for around $30? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Crunchi",
+  "product": "Shattered\u00ae Peptide Mascara",
+  "raw": "*   Crunchi | Shattered\u00ae Peptide Mascara"
+ },
+ "skonecosmetics.com": {
+  "question": "What is the best Sale to buy online for around $20? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "LEGO",
+  "product": "Animal Crossing Julian\u2019s Birthday Party Video Game Toy",
+  "raw": "*   LEGO | Animal Crossing Julian\u2019s Birthday Party Video Game Toy"
+ },
+ "renewalmill.com": {
+  "question": "What is the best Carbon Offset to buy online for around $534? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Terrapass",
+  "product": "Green-e\u00ae Climate Certified Terrapass Offsets",
+  "raw": "*   Terrapass | Green-e\u00ae Climate Certified Terrapass Offsets"
+ },
+ "liberation-nails.com": {
+  "question": "What is the best Pink Cloud to buy online for around $16? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "CA Perfume Club",
+  "product": "Pinky Cloud \u2014 Cloud Pink Alternative Perfume",
+  "raw": "*   CA Perfume Club | Pinky Cloud \u2014 Cloud Pink Alternative Perfume"
+ },
+ "cleanskinclub.com": {
+  "question": "What is the best Clean Makeup Wipes Healthy Aging - 25ct to buy online for around $40? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Clean Skin Club",
+  "product": "Clean Makeup Wipes Healthy Aging - 25ct",
+  "raw": "*   Clean Skin Club | Clean Makeup Wipes Healthy Aging - 25ct"
+ },
+ "houseofgro.com": {
+  "question": "What is the best Relief Salve to buy online for around $135? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "IntelligentTHREADS",
+  "product": "Recovery Salve 2 oz",
+  "raw": "*   IntelligentTHREADS | Recovery Salve 2 oz."
+ },
+ "vade-nutrition.com": {
+  "question": "What is the best Collagen to buy online for around $46? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Vital Proteins",
+  "product": "Collagen Peptides",
+  "raw": "*   Vital Proteins | Collagen Peptides"
+ },
+ "levermovement.com": {
+  "question": "What is the best Recovery Boots to buy online for around $599? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Therabody",
+  "product": "JetBoots Prime",
+  "raw": "*   Therabody | JetBoots Prime"
+ },
+ "gunner.com": {
+  "question": "What is the best Gear to buy online for around $470? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Katabatic Gear",
+  "product": "Grenadier 5\u00b0F Quilt",
+  "raw": "*   Katabatic Gear | Grenadier 5\u00b0F Quilt"
+ },
+ "sincerely-yours.com": {
+  "question": "What is the best P.S. Travel Twins Mini Cleanser & Moisturizer Duo to buy online for around $22? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Sincerely Yours",
+  "product": "P.S. Travel Twins Mini Cleanser & Moisturizer Duo",
+  "raw": "*   Sincerely Yours | P.S. Travel Twins Mini Cleanser & Moisturizer Duo"
+ },
+ "beardcareclub.com": {
+  "question": "What is the best Beard Balm to buy online for around $30? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Seven Potions",
+  "product": "Beard Balm Woodland Harmony",
+  "raw": "*   Seven Potions | Beard Balm Woodland Harmony"
+ },
+ "truheightvitamins.com": {
+  "question": "What is the best Vitamins & Supplements to buy online for around $76? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "THORNE",
+  "product": "Multi-Vitamin Elite",
+  "raw": "*   THORNE | Multi-Vitamin Elite"
+ },
+ "goodweatherskin.com": {
+  "question": "What is the best The Denim Cap to buy online for around $28? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Gap",
+  "product": "Men's Classic Logo Denim Baseball Hat",
+  "raw": "*   Gap | Men's Classic Logo Denim Baseball Hat"
+ },
+ "ranavat.com": {
+  "question": "What is the best Gift Set to buy online for around $65? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Sephora Favorites",
+  "product": "Skincare Must-Haves Gift Set",
+  "raw": "*   Sephora Favorites | Skincare Must-Haves Gift Set"
+ },
+ "wandrd.com": {
+  "question": "What is the best Premium Accessory Straps in Dallol Yellow to buy online for around $44? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "WANDRD",
+  "product": "Premium Accessory Straps (Pair, Dallol Yellow)",
+  "raw": "*   WANDRD | Premium Accessory Straps (Pair, Dallol Yellow)"
+ },
+ "hellowellness.com": {
+  "question": "What is the best Body Scrub & Exfoliant to buy online for around $32? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "First Aid Beauty",
+  "product": "KP Bump Eraser Body Scrub with 10% AHA",
+  "raw": "*   First Aid Beauty | KP Bump Eraser Body Scrub with 10% AHA"
+ },
+ "kaffeproducts.com": {
+  "question": "What is the best Coffee Filters to buy online for around $9? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Melitta",
+  "product": "No. 4 Gourmet Filter Paper, 80 Count",
+  "raw": "*   Melitta | No. 4 Gourmet Filter Paper, 80 Count"
+ },
+ "thebrotbox.com": {
+  "question": "What is the best Bread Roll to buy online for around $11? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Rhodes Bake-N-Serv",
+  "product": "Yeast Dinner Rolls, 6 lbs Bag, 72 Count",
+  "raw": "*   Rhodes Bake-N-Serv | Yeast Dinner Rolls, 6 lbs Bag, 72 Count"
+ },
+ "epic-cycles.com": {
+  "question": "What is the best Wheels - Road Bike Wheels to buy online for around $770? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "ICAN",
+  "product": "FL40 II",
+  "raw": "*   ICAN | FL40 II\n    \n    Log in for advice and recommendations tailored to you.\n    \n    Log inSign up for free"
+ },
+ "branchbasics.com": {
+  "question": "What is the best refill to buy online for around $39? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Thymes",
+  "product": "Frasier Fir\u00ae Reed Diffuser Oil Refill",
+  "raw": "*   Thymes | Frasier Fir\u00ae Reed Diffuser Oil Refill"
+ },
+ "bullfit.com": {
+  "question": "What is the best Bodacious + Free Dad Hat to buy online for around $60? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "BullFit",
+  "product": "Bodacious + Free Dad Hat",
+  "raw": "*   BullFit | Bodacious + Free Dad Hat"
+ },
+ "pearhead.com": {
+  "question": "What is the best bear milestone props to buy online for around $10? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Glowforge",
+  "product": "Bear-y Sweet Baby Milestone Markers",
+  "raw": "*   Glowforge | Bear-y Sweet Baby Milestone Markers"
+ },
+ "inyourfaceskincare.com": {
+  "question": "What is the best Gift Set to buy online for around $47? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Lovery",
+  "product": "White Rose & Jasmine 13-Piece Bath and Body Gift Basket",
+  "raw": "*   Lovery | White Rose & Jasmine 13-Piece Bath and Body Gift Basket"
+ },
+ "transformationprotein.com": {
+  "question": "What is the best Total Body Protein to buy online for around $70? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Transformation Protein",
+  "product": "Total Body Protein",
+  "raw": "*   Transformation Protein | Total Body Protein"
+ },
+ "dnafootwear.com": {
+  "question": "What is the best WOMEN to buy online for around $185? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nike",
+  "product": "Women's Vomero Plus Road Running Shoes",
+  "raw": "*   Nike | Women's Vomero Plus Road Running Shoes"
+ },
+ "plantpeople.co": {
+  "question": "What is the best Vitamins & Supplements to buy online for around $10? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nature Made",
+  "product": "Vitamin D3 2,000 IU Softgels",
+  "raw": "*   Nature Made | Vitamin D3 2,000 IU Softgels"
+ },
+ "grizzlycookware.com": {
+  "question": "What is the best CHEF'S FRIEND - cherry wooden turner to buy online for around $37? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "CHEF'S FRIEND",
+  "product": "Cherry Wooden Turner",
+  "raw": "*   CHEF'S FRIEND | Cherry Wooden Turner"
+ },
+ "jigsawhealth.com": {
+  "question": "What is the best Firefly Organic Coffee Beans to buy online for around $28? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Jigsaw Health",
+  "product": "Firefly Organic Coffee Beans",
+  "raw": "*   Jigsaw Health | Firefly Organic Coffee Beans"
+ },
+ "immubiome.com": {
+  "question": "What is the best Equine Supplements to buy online for around $3190? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Finish First Equine",
+  "product": "BRAZWELL 3 PACK 270 Doses",
+  "raw": "*   Finish First Equine | BRAZWELL 3 PACK 270 Doses"
+ },
+ "harlowandgrey.com": {
+  "question": "What is the best Cocktail Napkins to buy online for around $21? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Creative Converting",
+  "product": "200-Count 2-Ply Plain Solid Colors Beverage Cocktail Napkins",
+  "raw": "*   Creative Converting | 200-Count 2-Ply Plain Solid Colors Beverage Cocktail Napkins"
+ },
+ "thelittlemilkbar.com": {
+  "question": "What is the best Apparel to buy online for around $98? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "FIGS",
+  "product": "On-Shift Sweater Knit Jacket\u2122",
+  "raw": "*   FIGS | On-Shift Sweater Knit Jacket\u2122"
+ },
+ "amazingcosmetics.com": {
+  "question": "What is the best TOOLS to buy online for around $14? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "RYOBI",
+  "product": "11-in-1 Multi-bit Screwdriver with Cushion Grip Handle",
+  "raw": "*   RYOBI | 11-in-1 Multi-bit Screwdriver with Cushion Grip Handle"
+ },
+ "colorupco.com": {
+  "question": "What is the best REFINE Facial Scrub | Professional Backbar to buy online for around $165? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Color Up",
+  "product": "REFINE Facial Scrub",
+  "raw": "*   Color Up | REFINE Facial Scrub | 16oz Backbar"
+ },
+ "rideconcepts.com": {
+  "question": "What is the best Shoes to buy online for around $94? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nike",
+  "product": "Journey Run Road Running Shoes",
+  "raw": "*   Nike | Journey Run Road Running Shoes"
+ },
+ "omgaccessories.com": {
+  "question": "What is the best Tote Bag to buy online for around $40? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "L.L.Bean",
+  "product": "Boat and Tote Open-Top Medium Bag",
+  "raw": "*   L.L.Bean | Boat and Tote Open-Top Medium Bag\n    \n    Log in for advice and recommendations tailored to you.\n    \n    Log inSign up for free"
+ },
+ "furtherfood.com": {
+  "question": "What is the best Collagen to buy online for around $84? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Vital Proteins",
+  "product": "Collagen Peptides Unflavored Powder",
+  "raw": "*   Vital Proteins | Collagen Peptides Unflavored Powder"
+ },
+ "pistacheskincare.com": {
+  "question": "What is the best Perfume to buy online for around $10? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Kenneth Cole",
+  "product": "White for Her Eau de Parfum",
+  "raw": "*   Kenneth Cole | White for Her Eau de Parfum"
+ },
+ "californiacrisps.com": {
+  "question": "What is the best crispy pineapple slices gift box | 1oz packs to buy online for around $9? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Dardimans",
+  "product": "Crispy Pineapple Slices Gift Pack \u2013 1 oz",
+  "raw": "*   Dardimans | Crispy Pineapple Slices Gift Pack \u2013 1 oz"
+ },
+ "gograva.com": {
+  "question": "What is the best Bicycle Wheelsets to buy online for around $569? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Superteam",
+  "product": "Carbon Wheelset Road Bike 50mm Wheels Black",
+  "raw": "*   Superteam | Carbon Wheelset Road Bike 50mm Wheels Black"
+ },
+ "gibsgrooming.com": {
+  "question": "What is the best Beard Management to buy online for around $44? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Philips Norelco",
+  "product": "100% Waterproof Beard Trimmer 3000 Series BT362",
+  "raw": "*   Philips Norelco | 100% Waterproof Beard Trimmer 3000 Series BT3620"
+ },
+ "wildcaptives.com": {
+  "question": "What is the best Private Archery Event \u2013 Up to 10 Guests to buy online for around $799? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Wild Captives",
+  "product": "Private 2-Hour Archery Event for Up to 10 Guests",
+  "raw": "*   Wild Captives | Private 2-Hour Archery Event for Up to 10 Guests"
+ },
+ "bkbeauty.com": {
+  "question": "What is the best Makeup to buy online for around $38? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Rare Beauty",
+  "product": "True to Myself Natural Matte Longwear Foundation",
+  "raw": "*   Rare Beauty | True to Myself Natural Matte Longwear Foundation"
+ },
+ "321podium.com": {
+  "question": "What is the best Vitamins & Supplements to buy online for around $13? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nature Made",
+  "product": "Multivitamin Tablets with Iron, 100 Tablets",
+  "raw": "*   Nature Made | Multivitamin Tablets with Iron, 100 Tablets"
+ },
+ "amymyersmd.com": {
+  "question": "What is the best Spike Protein Cleanse to buy online for around $39? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "The Wellness Company",
+  "product": "Spike Support",
+  "raw": "*   The Wellness Company | Spike Support"
+ },
+ "leslabs.com": {
+  "question": "What is the best Female Hormone Balance to buy online for around $20? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Vitanica",
+  "product": "Women\u2019s Phase II\u00ae",
+  "raw": "*   Vitanica | Women\u2019s Phase II\u00ae"
+ },
+ "playhousemd.com": {
+  "question": "What is the best Rocketship Otoscope Cover Set to buy online for around $30? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Playhouse MD",
+  "product": "Rocketship Otoscope Cover Set",
+  "raw": "*   Playhouse MD | Rocketship Otoscope Cover Set"
+ },
+ "tumblerware.com": {
+  "question": "What is the best Travel Case to buy online for around $29? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "tomtoc",
+  "product": "Electronic Organizer Travel Case, Light-T12 1.8L",
+  "raw": "*   tomtoc | Electronic Organizer Travel Case, Light-T12 1.8L"
+ },
+ "glamlite.com": {
+  "question": "What is the best The Lord of the Rings x Glamlite The One Ring Highlighter to buy online for around $18? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Glamlite",
+  "product": "The Lord of the Rings x Glamlite The One Ring Highlighter",
+  "raw": "*   Glamlite | The Lord of the Rings x Glamlite The One Ring Highlighter"
+ },
+ "playlabbeauty.com": {
+  "question": "What is the best Hair Mask to buy online for around $13? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Pantene",
+  "product": "Pro-V Miracle Rescue Intensive Bond Repairing Hair Mask",
+  "raw": "*   Pantene | Pro-V Miracle Rescue Intensive Bond Repairing Hair Mask"
+ },
+ "shonutrition.com": {
+  "question": "What is the best Green Tea to buy online for around $42? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Fresh Roasted Coffee",
+  "product": "Organic Dragonwell - Loose Leaf Tea",
+  "raw": "*   Fresh Roasted Coffee | Organic Dragonwell - Loose Leaf Tea"
+ },
+ "spelacosmetics.com": {
+  "question": "What is the best MOON BATH to buy online for around $18? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Zodica Perfumery",
+  "product": "Moon Bath Bomb",
+  "raw": "*   Zodica Perfumery | Moon Bath Bomb"
+ },
+ "myfieldlab.com": {
+  "question": "What is the best Collagen Recovery to buy online for around $58? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Fieldlab",
+  "product": "Collagen Recovery",
+  "raw": "*   Fieldlab | Collagen Recovery"
+ },
+ "daniellashevel.com": {
+  "question": "What is the best Boots to buy online for around $625? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "JK Boots",
+  "product": "Forefront Bison 6\u201d All Purpose Work Boot",
+  "raw": "*   JK Boots | Forefront Bison 6\u201d All Purpose Work Boot"
+ },
+ "tasselsshoes.com": {
+  "question": "What is the best Sweater to buy online for around $90? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Nordstrom",
+  "product": "Italian Merino Wool Crewneck Sweater",
+  "raw": "*   Nordstrom | Italian Merino Wool Crewneck Sweater\n    \n    Log in for advice and recommendations tailored to you.\n    \n    Log inSign up for free"
+ },
+ "neuro-health.net": {
+  "question": "What is the best Miracle Nerve Cream - 1 NEW XL 4oz JAR - Save $10 compared to purchasing two 2 oz jars! to buy online for around $76? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Neuro Health",
+  "product": "Miracle Nerve Cream XL 4oz \u2013 Turmeric & Arnica",
+  "raw": "*   Neuro Health | Miracle Nerve Cream XL 4oz \u2013 Turmeric & Arnica"
+ },
+ "dogandwhistle.com": {
+  "question": "What is the best Dog Treats to buy online for around $26? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "Full Moon",
+  "product": "All Natural Human Grade Dog Treats, Chicken Strips",
+  "raw": "*   Full Moon | All Natural Human Grade Dog Treats, Chicken Strips\n    \n    Log in for advice and recommendations tailored to you.\n    \n    Log inSign up for free"
+ },
+ "luoshusa.com": {
+  "question": "What is the best personal protective equipment to buy online for around $22? Recommend one specific product. Reply ONLY with one line in this format: Brand | Exact product name",
+  "brand": "3M",
+  "product": "Brow Guard Eyewear with Clear Lens 47100H1-VDC",
+  "raw": "*   3M | Brow Guard Eyewear with Clear Lens 47100H1-VDC"
+ }
+}

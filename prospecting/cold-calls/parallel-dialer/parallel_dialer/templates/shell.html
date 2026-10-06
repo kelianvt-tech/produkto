@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>{{ title }} · {{ brand }}</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/dialer.css?v=10">
+</head>
+<body class="standalone">
+<main class="main">
+  <header class="topbar">
+    <div><p class="kicker">{{ brand }} dialer</p><h1>{{ title }}</h1></div>
+    <div class="top-actions">
+      <span class="live-pill"><i></i>Live</span>
+      <div class="identity"><span class="avatar">{{ initials }}</span><span><b>{{ user.display_name }}</b><small>{{ role_label }}</small></span></div>
+      <form method="post" action="/logout"><button class="icon-button" type="submit" title="Sign out" aria-label="Sign out">↗</button></form>
+    </div>
+  </header>
+  <div class="content">{{ content }}</div>
+</main>
+<script src="/assets/twilio-voice-2.18.5.js" defer></script>
+<script src="/assets/call-script.js?v=2" defer></script>
+<script src="/assets/dialer.js?v=9" defer></script>
+</body>
+</html>

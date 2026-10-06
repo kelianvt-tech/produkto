@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dialer voice engine</title>
+<!--
+  The softphone for a phone app. The app loads this page in a hidden web view so the
+  call audio runs through exactly the same Twilio softphone the web dialer uses on a
+  laptop: same SDK, same receive-only token, same client:<identity> leg the server
+  already places. It is served from this host so it gets a secure context
+  (getUserMedia refuses anything else) and the CSP the SDK is known to work under.
+  It holds no secret: the app hands it a voice token over postMessage after fetching
+  one with its access key.
+-->
+<script src="/assets/twilio-voice-2.18.5.js"></script>
+<script src="/assets/phone-engine.js?v=1"></script>
+</head>
+<body></body>
+</html>

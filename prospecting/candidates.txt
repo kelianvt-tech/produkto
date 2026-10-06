@@ -1,0 +1,61 @@
+# Candidate pool for the first 20.
+#
+# UNVERIFIED. These are names to feed the triage, not a vetted list. I could not
+# reach these sites to check SKU counts, platform or Yotpo -- triage.py does that.
+# Over-supplied on purpose: expect roughly half to fail the hard filters.
+#
+# Furniture only, because attributes.py currently has CATEGORIES = {"furniture": ...}.
+# Adding sleep/mattress brands anyway -- the furniture family patterns cover beds,
+# and if the report reads oddly for a mattress-only catalog, that is itself worth
+# knowing before you widen the tool.
+#
+# Run:  python3 prospecting/triage.py prospecting/candidates.txt
+
+# --- Spain / Barcelona (your network, warm-ish, easiest to get on a call) ---
+kavehome.com
+sklum.com
+lagrama.com
+mobles114.com
+santacole.com
+
+# --- UK independents, spec-heavy, plausibly in band ---
+sloweliving.com
+khoyfurniture.com
+willowandhall.co.uk
+naturalbedcompany.co.uk
+getlaidbeds.co.uk
+thefutoncompany.co.uk
+cultfurniture.com
+swooneditions.com
+loaf.com
+snugsofa.com
+
+# --- France / Nordics / wider EU ---
+tikamoon.com
+maisonsdumonde.com
+bolia.com
+sofacompany.com
+nordicnest.com
+
+# --- Sleep / mattress (adjacent: tests whether the furniture table travels) ---
+johnryanbydesign.co.uk
+naturalmat.co.uk
+otty.com
+soakandsleep.com
+
+# --- Kids / safety (adjacent: high spec sensitivity, anxious buyers) ---
+radchildrensfurniture.com
+kutikai.com
+
+# --- Workspace (adjacent: very spec-driven, different buyer) ---
+autonomous.ai
+grovemade.com
+
+# --- Wildcards: brands the ICP says are wrong. Include them anyway. ---
+# If interest clusters here, ICP.md is wrong and that is the most valuable
+# thing you could learn this month.
+burrow.com          # US, almost certainly >$10M
+article.com         # US, definitely >$10M
+floydhome.com       # US, aesthetic-led
+maisonpatina.com    # tiny, family-run -- likely fails the 150 floor
+polywood.com        # very large, outdoor

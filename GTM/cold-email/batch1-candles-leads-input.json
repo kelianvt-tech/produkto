@@ -1,0 +1,12 @@
+{
+  "max_result": 480,
+  "include_mobile": true,
+  "contact_job_titles": ["founder", "co-founder", "ceo", "owner"],
+  "company_num_employees_range": ["1-10", "11-20", "21-50"],
+  "company_locations": ["United States"],
+  "contact_location": ["United States"],
+  "company_industry": ["Consumer Goods", "Retail"],
+  "keywords": ["candle", "candles", "scented candles", "soy candles", "home fragrance"],
+  "not_keywords": ["wholesale supplies", "candle making supplies", "wax supplier", "agency", "software", "app", "consulting", "event", "wedding planner"],
+  "email_status": ["verified"]
+}
