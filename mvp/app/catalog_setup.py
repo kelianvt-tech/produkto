@@ -72,37 +72,42 @@ def question_page(domain):
     if not brand:
         return 303,'/new'
     ps=db.get_prompt_set(domain)
-    import topics
+    import topics, accounts
     if not ps and not topics.chosen(domain):
         return 303, '/topics?d=' + quote(domain)
     stale=bool((topics.saved(domain) or ([],[],False))[2])
     # New topics after the lock: this page writes a new version of the questions.
     frozen=bool(ps and ps['frozen_at']) and not stale
-    products=ps['catalog_snapshot'] if frozen else [dict(p) for p in db.all_('SELECT * FROM products WHERE store_domain=? ORDER BY title',(domain,))]
+    products=[dict(p) for p in db.all_('SELECT * FROM products WHERE store_domain=? ORDER BY title',(domain,))]
     included=set(db.scope(domain)['product_ids'])
     products=[dict(id=p['id'],title=p['title']) for p in products if p['id'] in included]
     items=items_out(ps) if ps and not stale else None
     history=''.join('<p class="small"><a href="/r/%s">Saved scan · %s</a></p>'%(E(s['token']),E(s['status'])) for s in db.all_('SELECT token,status FROM scans WHERE prompt_set_id=? ORDER BY run_at DESC',(ps['id'],))) if ps else ''
-    body='''<h1>Buyer questions</h1><p class="sub">Review the questions your buyers ask ChatGPT, grouped around your catalog.</p>
-<p class="small">%s</p><div id="qbox" aria-live="polite"></div><button class="btn ghost small-btn" id="regen" %s>Write new questions</button><p class="small" id="msg" role="status"></p>%s
+    body='''<h1>Buyer questions</h1><p class="sub">Review the questions your buyers ask ChatGPT, grouped around your catalog.</p><p class="small">Once scans start, Buyer questions &rsaquo; Suggestions proposes swaps for weak questions and new ones to track.</p>
+<p class="small">%s</p><p class="small" id="qcap" role="status"></p><div id="qbox" aria-live="polite"></div><button class="btn ghost small-btn" id="regen" %s>Write new questions</button><p class="small" id="msg" role="status"></p>%s
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-const domain=%s,frozen=%s,products=%s;let items=%s;
+const domain=%s,frozen=%s,products=%s;let items=%s;const editable=true;
 const box=document.getElementById('qbox'),run=document.getElementById('run'),regen=document.getElementById('regen'),msg=document.getElementById('msg');
 const endpoint='/api/questions?d='+encodeURIComponent(domain);let busy=false;
 function esc(s){let d=document.createElement('div');d.textContent=s;return d.innerHTML;}
-function sync(){run.disabled=busy||!items||!items.length||items.some(x=>!x.q.trim()||!x.products.length);}
+const cap=%s,capNote=document.getElementById('qcap');
+function sync(){const over=cap&&items&&items.length>cap;run.disabled=busy||!items||!items.length||over||items.some(x=>!x.q.trim()||!x.products.length);
+if(items&&!busy){const blank=items.filter(x=>!x.q.trim()).length,bare=items.filter(x=>x.q.trim()&&!x.products.length).length;
+const hint=blank?'Write the new question or remove its row to continue.':bare?'Open “Relevant products” under '+(bare>1?bare+' questions':'the new question')+' and tick the products it should find.':'';
+if(hint)msg.textContent=hint;else if(msg.dataset.hint)msg.textContent='';msg.dataset.hint=hint?'1':'';}
+if(cap&&items){capNote.textContent=items.length+' of '+cap+' questions on your plan'+(over?'. Remove '+(items.length-cap)+' to continue.':'');capNote.classList.toggle('err',!!over);const a=document.getElementById('qadd');if(a)a.disabled=items.length>=cap;}}
 function render(){box.replaceChildren();let last='';items.forEach((it,i)=>{if(it.cluster!==last){const h=document.createElement('h2');h.className='section-label';h.textContent=it.cluster||'Buyer questions';box.append(h);last=it.cluster;}
 const list=document.createElement('ol');list.className='qs';const li=document.createElement('li');list.append(li);
-if(frozen){const text=document.createElement('span');text.className='qtext';text.textContent=it.q;li.append(text);}else{const text=document.createElement('textarea');text.rows=2;text.value=it.q;text.setAttribute('aria-label','Buyer question');text.oninput=()=>{it.q=text.value;sync();};li.append(text);const del=document.createElement('button');del.className='qdel';del.textContent='×';del.setAttribute('aria-label','Remove question');del.onclick=()=>{items.splice(i,1);render();};li.append(del);}
-const tag=document.createElement('span');tag.className='tag';tag.textContent=it.tag;li.append(tag);const coverage=document.createElement('details');coverage.style.width='100%%';const summary=document.createElement('summary');summary.textContent='Relevant products';coverage.append(summary);
-products.forEach(p=>{if(frozen&&!it.products.includes(p.id))return;const label=document.createElement('label');label.style.display='block';label.style.padding='5px 0';const input=document.createElement('input');input.type='checkbox';input.style.width='auto';input.style.minHeight='auto';input.checked=it.products.includes(p.id);input.disabled=frozen;input.onchange=()=>{it.products=input.checked?[...it.products,p.id]:it.products.filter(id=>id!==p.id);sync();};label.append(input,document.createTextNode(' '+p.title));coverage.append(label);});li.append(coverage);box.append(list);});
-if(!frozen){const add=document.createElement('button');add.className='btn ghost small-btn';add.textContent='+ Add a question';add.onclick=()=>{items.push({q:'',tag:'',cluster:'Buyer questions',products:[]});render();};box.append(add);}sync();}
+if(!editable){}else{const text=document.createElement('textarea');text.rows=2;text.value=it.q;text.setAttribute('aria-label','Buyer question');text.oninput=()=>{it.q=text.value;sync();};li.append(text);const del=document.createElement('button');del.className='qdel';del.textContent='×';del.setAttribute('aria-label','Remove question');del.onclick=()=>{items.splice(i,1);render();};li.append(del);}
+if(it.tag){const tag=document.createElement('span');tag.className='tag';tag.textContent=it.tag;li.append(tag);}const coverage=document.createElement('details');coverage.style.width='100%%';if(!it.products.length)coverage.open=true;const summary=document.createElement('summary');summary.textContent='Relevant products';coverage.append(summary);
+products.forEach(p=>{const label=document.createElement('label');label.style.display='block';label.style.padding='5px 0';const input=document.createElement('input');input.type='checkbox';input.style.width='auto';input.style.minHeight='auto';input.checked=it.products.includes(p.id);input.onchange=()=>{it.products=input.checked?[...it.products,p.id]:it.products.filter(id=>id!==p.id);sync();};label.append(input,document.createTextNode(' '+p.title));coverage.append(label);});li.append(coverage);box.append(list);});
+{const add=document.createElement('button');add.id='qadd';add.className='btn ghost small-btn';add.textContent='+ Add a question';add.onclick=()=>{items.push({q:'',tag:'',cluster:'Buyer questions',products:[]});render();};box.append(add);}sync();}
 async function request(body,url=endpoint){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});const j=await r.json();if(j.error)throw Error(j.error);return j;}
 async function load(fresh){busy=true;regen.disabled=true;sync();box.innerHTML='<div class="loading"><span class="spin"></span>Preparing buyer questions from your catalog…</div>';try{const j=await request('',endpoint+(fresh?'&regen=1':''));items=j.questions;render();}catch(e){items=null;box.innerHTML='<div class="err">'+esc(e.message)+'</div>';}finally{busy=false;regen.disabled=false;sync();}}
-regen.onclick=()=>load(true);run.onclick=async()=>{busy=true;regen.disabled=true;sync();msg.textContent='Saving…';try{if(!frozen)await request('questions='+encodeURIComponent(JSON.stringify(items)));msg.textContent='Starting…';const j=await request('','/api/scan?d='+encodeURIComponent(domain));location.href='/r/'+j.token;}catch(e){msg.textContent=e.message;busy=false;regen.disabled=false;sync();}};
+regen.onclick=()=>load(true);run.onclick=async()=>{busy=true;regen.disabled=true;sync();msg.textContent='Saving…';try{await request('questions='+encodeURIComponent(JSON.stringify(items)));msg.textContent='Starting…';const j=await request('','/api/scan?d='+encodeURIComponent(domain));location.href='/r/'+j.token;}catch(e){msg.textContent=e.message;busy=false;regen.disabled=false;sync();}};
 if(items)render();else load(false);
-});</script>'''%('These are locked now, so every scan stays comparable.' if frozen else 'Edit the questions and check their relevant products. These questions stay fixed after your first scan so future results can be compared.', 'hidden' if frozen else '',history,js(domain),js(frozen),js(products),js(items))
+});</script>'''%('Edit, add or remove questions. Questions you keep keep their history; an edited question starts a new trend line, and a removed one stops being tracked.' if frozen else 'Edit the questions and check their relevant products.', 'hidden style="display:none"' if frozen else '',history,js(domain),js(frozen),js(products),js(items),js(accounts.question_limit(domain)))
     # Ghost preview of the Prompts screen. The question list is rendered by
     # the page's own closure, so mirror it with an observer rather than
     # reaching into that code.

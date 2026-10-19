@@ -26,6 +26,7 @@ html.dark .opp-count{background:var(--tint,#161b22);color:var(--text,#d7dde7)}
 html.dark .opp-filter label,html.dark .opp-search{border:1px solid var(--line,#1a1f28);background:#161616}
 html.dark .opp-filter svg,html.dark .opp-search svg{stroke:var(--muted,#a9b3c1)}
 html.dark .opp-filter select{color:var(--text,#d7dde7)}
+html.dark .opp-search:focus-within{border-color:var(--ink,#dbe0e9)}
 html.dark .opp-card{border:1px solid var(--line,#1a1f28);background:#161616}
 html.dark .opp-tag{background:var(--tint,#151a21);color:var(--text,#d7dde7)}
 html.dark .opp-impact{color:var(--muted,#a9b3c1)}
@@ -45,6 +46,169 @@ html.dark .opp-state{color:var(--muted,#a9b3c1)}
 html.dark .opp-empty{color:var(--muted,#a9b3c1);border:1px dashed var(--line,#1a1f28)}
 html.dark .rail-badge{background:#dbe0e9;color:#161616}
 @media (max-width:860px){html.dark .opp-panel{border-bottom:1px solid var(--line,#1a1f28)}}
+html.dark .ca-name{background-image:linear-gradient(90deg,#955ff0,#5295ff)}
+html.dark .ca-tabs{background:#161b22}
+html.dark .ca-tabs a{color:#a9b3c1}
+html.dark .ca-tabs a:hover{color:#dbe0e9}
+html.dark .ca-tabs a[aria-current]{background:#161616;color:#dbe0e9;box-shadow:0 1px 2px rgba(0,0,0,0.26)}
+html.dark .ca-empty{border:1px dashed #1f2631;color:#a9b3c1;background:#161616}
+html.dark .ca-list li{border:1px solid #1a1f28;background:#161616}
+html.dark .opp-btn.opp-agent{background:#dbe0e9;border-color:#dbe0e9;color:#161616}
+html.dark .ca-used{color:#a9b3c1}
+html.dark .ca-chips a{border:1px solid #1a1f28;background:#161616;color:#a9b3c1}
+html.dark .ca-chips a span{color:#798495}
+html.dark .ca-chips a[aria-current]{border-color:#dbe0e9;color:#dbe0e9}
+html.dark .ca-list li.ca-card:hover{border-color:#dbe0e9}
+html.dark .ca-thumb{background:#161b22}
+html.dark .ca-head strong,html.dark .ca-open{color:#dbe0e9}
+html.dark .ca-meta{color:#a9b3c1}
+html.dark .ca-gap{color:#e75f32}
+html.dark .ca-btn{border:1px solid #1f2631;background:#161616;color:#dbe0e9}
+html.dark .ca-btn:hover{border-color:#dbe0e9}
+html.dark .ca-btn.ca-primary{background:#dbe0e9;border-color:#dbe0e9;color:#161616}
+html.dark .ca-type{background:#161b22;color:#dbe0e9}
+html.dark .ca-nav{border:1px solid #1a1f28;background:#161616;color:#dbe0e9}
+html.dark .ca-note{color:#a9b3c1}
+html.dark .ca-cal{border:1px solid #1a1f28;background:#161616}
+html.dark .ca-dow{color:#a9b3c1;background:#141820;border-bottom:1px solid #1a1f28}
+html.dark .ca-day{border-right:1px solid #171c24;border-bottom:1px solid #171c24}
+html.dark .ca-out{background:#13181d}
+html.dark .ca-out .ca-num{color:#5d6879}
+html.dark .ca-num{color:#d7dde7}
+html.dark .ca-today .ca-num{background:#dbe0e9;color:#161616}
+html.dark .ca-pick a{border:1px solid #1a1f28;background:#161616;color:#dbe0e9}
+html.dark .ca-pick a:hover{border-color:#dbe0e9}
+html.dark .ca-item{background:#171b24;color:#dbe0e9}
+html.dark .cr-back{color:#a9b3c1}
+html.dark .cr-back:hover{color:#dbe0e9}
+html.dark .cr-title{color:#dbe0e9}
+html.dark .cr-status{background:#161b22;color:#a9b3c1}
+html.dark .cr-approved{background:#19271f;color:#21f8bb}
+html.dark .cr-rejected{background:#211515;color:#e44134}
+html.dark .cr-box{border:1px solid #1a1f28;background:#161616}
+html.dark .cr-box h2,html.dark .cr-col h2{color:#dbe0e9}
+html.dark .cr-muted{color:#a9b3c1}
+html.dark .cr-gaps{border-color:#eba366;background:#1f1a14}
+html.dark .cr-gap{border-top:1px solid #2e261d}
+html.dark .cr-gap label{color:#d7dde7}
+html.dark .cr-gap input:not([type]),html.dark .cr-field input,html.dark .cr-field textarea{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .cr-gap .cr-skip{color:#a9b3c1}
+html.dark .cr-col{border:1px solid #1a1f28;background:#161616;color:#d7dde7}
+html.dark .cr-after{border-color:#7c9ed4}
+html.dark .cr-ptitle{color:#dbe0e9}
+html.dark .cr-doc th,html.dark .cr-doc td{border:1px solid #1a1f28}
+html.dark .cr-doc th{background:#141820}
+html.dark .cr-check{border-top:1px solid #171c24;color:#a9b3c1}
+html.dark .cr-edit summary{color:#dbe0e9}
+html.dark .cr-field label{color:#a9b3c1}
+html.dark .cr-rich{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark a.ca-item:hover{outline:1px solid #dbe0e9}
+html.dark a.ca-item.cal-sel{background:#dbe0e9;color:#161616}
+html.dark a.ca-item.cal-pending{border:1px dashed #798495;color:#a9b3c1}
+html.dark a.ca-item.ca-product_fix,html.dark .cal-key .ca-product_fix{background:#171b24;border-left:3px solid #5287e1}
+html.dark a.ca-item.ca-faq,html.dark .cal-key .ca-faq{background:#19271e;border-left:3px solid #2fd073}
+html.dark a.ca-item.ca-comparison,html.dark .cal-key .ca-comparison{background:#1b1623;border-left:3px solid #9370de}
+html.dark a.ca-item.ca-guide,html.dark .cal-key .ca-guide{background:#262018;border-left:3px solid #e38c1f}
+html.dark a.ca-item.cal-sel{background:#dbe0e9;color:#161616}
+html.dark .ca-day.cal-drop{background:#151921;outline:2px dashed #5287e1}
+html.dark .cal-key{color:#a9b3c1}
+html.dark .cal-key .cal-k-pending{border:1px dashed #798495}
+html.dark .cal-connect summary{color:#dbe0e9}
+html.dark .cal-link{color:#a9b3c1}
+html.dark .cal-link input{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .ca-link-btn{color:#dbe0e9}
+html.dark .cal-panel{border:1px solid #1a1f28;background:#161616;color:#d7dde7}
+html.dark .cal-win{background:#16231a}
+html.dark .cal-win-mixed{background:#252018}
+html.dark .cal-win-hard{background:#221716}
+html.dark .cal-x{color:#a9b3c1}
+html.dark .cal-panel h2{color:#dbe0e9}
+html.dark .cal-move{color:#a9b3c1}
+html.dark .cal-move input{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .cal-sec{border-top:1px solid #171c24}
+html.dark .cal-sec h3{color:#798495}
+html.dark .cal-dl dt{color:#a9b3c1}
+html.dark .cal-target p{color:#a9b3c1}
+html.dark .cal-qs span{color:#a9b3c1}
+html.dark .cal-warn{color:#e75f32}
+html.dark .cal-doc{border:1px solid #171c24}
+html.dark .cal-doc th,html.dark .cal-doc td{border:1px solid #171c24}
+html.dark .cs-progress{color:#a9b3c1}
+html.dark .cs-progress b{color:#dbe0e9}
+html.dark .cs-meter{background:#171c24}
+html.dark .cs-meter i{background:#30cf77}
+html.dark .cs-step{background:#161616;border:1px solid #1a1f28}
+html.dark a.cs-step:hover{border-color:#dbe0e9}
+html.dark .cs-step[aria-current]{border-color:#dbe0e9;box-shadow:0 0 0 3px #000000}
+html.dark .cs-step i{background:#171c24;color:#a9b3c1}
+html.dark .cs-step.cs-done i{background:#19281f;color:#44d485}
+html.dark .cs-step b{color:#dbe0e9}
+html.dark .cs-step span{color:#a9b3c1}
+html.dark .cs-batch-text strong{color:#dbe0e9}
+html.dark .cs-batch-text span{color:#a9b3c1}
+html.dark .cs-bar{background:#191e27}
+html.dark .cs-bar i{background:#dbe0e9}
+html.dark .cs-head h2{color:#dbe0e9}
+html.dark .cs-from{color:#a9b3c1}
+html.dark .cs-label{color:#8892a2}
+html.dark .cs-trait{border:1px solid #1a1f28;background:#12161d}
+html.dark .cs-trait strong{color:#dbe0e9}
+html.dark .cs-trait span{color:#c6ccd6}
+html.dark .cs-quotes li{background:#161b22;color:#dbe0e9}
+html.dark .cs-sample-card{background:#151921;border:1px solid #1c212b}
+html.dark .cs-sample-card figcaption{color:#6393e4}
+html.dark .cs-sample-card blockquote{color:#d7dde7}
+html.dark .cs-asked{color:#a9b3c1}
+html.dark .cs-actions{border-top:1px solid #171c24}
+html.dark .cs-h3{color:#a9b3c1}
+html.dark .cs-sample{border-left:3px solid #dbe0e9;background:#14181f}
+html.dark .cs-adjust{border-top:1px solid #171c24}
+html.dark .cs-adjust label{color:#a9b3c1}
+html.dark .cs-adjust input{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .cs-label{color:#d7dde7}
+html.dark .cs-hint{color:#a9b3c1}
+html.dark .cs-fact{background:#19271f;color:#21f8bb}
+html.dark .cs-q textarea{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .cs-opt{border:1px solid #171c24}
+html.dark .cs-select{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .cs-in{border:1px solid #1f2631;background:#161616;color:#d7dde7}
+html.dark .cs-batch{background:#151920;color:#dbe0e9}
+html.dark .cs-check{border:1px solid #171c24}
+html.dark .ca-page{--cb-ink:#dbe0e9;--cb-accent:#6393e4;--cb-ok:#44d485;--cb-warn:#f47e24;--cb-line:#1a2129;--cb-soft:#161a22;--cb-card:#161616;--cb-muted:#a9b3c1}
+html.dark .cb-empty{border:1px dashed #202732}
+html.dark .cb-tile:hover{box-shadow:0 1px 2px rgba(0,0,0,0.13),0 8px 24px -12px rgba(0,0,0,0.31)}
+html.dark .cb-tile[aria-current]{box-shadow:0 0 0 3px #000000}
+html.dark .cb-on .cb-can{box-shadow:inset 0 0 0 1px rgba(0,0,0,0.60)}
+html.dark .cb-no{box-shadow:inset 0 0 0 2px rgba(0,0,0,0.60)}
+html.dark .cb-foot .rv-ok{color:#3edb8b}
+html.dark .cb-foot .rv-warn{color:#f88f21}
+html.dark.dark .cb-foot .rv-ok{color:#76dcaa}
+html.dark.dark .cb-foot .rv-warn{color:#efc080}
+html.dark .cb-gapbar i.cb-off{background:#202732}
+html.dark .cb-type{color:#d7dde7}
+html.dark .cb-type i{background:#5287e1}
+html.dark .cb-t-faq i{background:#2bd47e}
+html.dark .cb-t-comparison i{background:#9370de}
+html.dark .cb-t-guide i{background:#e38c1f}
+html.dark .cb-drop{background:#161b23;box-shadow:inset 0 0 0 2px #000000}
+html.dark .cb-mbar{background:#202732}
+html.dark .cb-filter .cb-f-on{background:#161616}
+html.dark .cb-toast{background:#dbe0e9;color:#161616;box-shadow:0 10px 30px -12px rgba(0,0,0,0.60)}
+html.dark .cb-toast.cb-bad{background:#e12c1e}
+html.dark .cb-connect{background:#272119;color:#e6dfd5}
+html.dark .cb-connect b{color:#eae4db}
+html.dark .cb-toast button{color:#70a4ff}
+html.dark .cb-sheet{box-shadow:0 1px 2px rgba(0,0,0,0.13),0 12px 32px -16px rgba(0,0,0,0.44)}
+html.dark .cb-stage .cb-on{color:#161616}
+html.dark .cb-stage .cb-past{background:#19281f}
+html.dark .cb-feed::before{background:#202732}
+html.dark .cb-ico{background:#19281f}
+html.dark .cb-line{color:#d7dde7}
+html.dark .cb-line time{color:#798495}
+html.dark .pl-wrap{background:var(--bg,#14181f)}
+html.dark .pl-title{color:#dbe0e9}
+html.dark .pl-meta{color:#a9b3c1}
+html.dark .ex-bar{border:1px solid #1a1f28;background:#161616;color:#d7dde7}
 html.dark .wl-open{color:#161616}
 html.dark .wl-open:hover{background:#d3d9e4}
 html.dark .wl-open:focus-visible{outline:2px solid #7398dd}
@@ -661,6 +825,21 @@ html.dark .rail-add:hover{color:var(--ink,#dbe0e9)}
 html.dark .product-head img.product-hero{background:#161616;box-shadow:0 6px 20px #00000012}
 html.dark .pv-label .rank-thumb{box-shadow:0 1px 3px #00000014}
 html.dark .pv-label.own .rank-thumb{border-color:#db7575;box-shadow:0 0 0 2px #000000}
+html.dark .set-card{background:#161616}
+html.dark .pill-warn{background:#252018;color:#ffa11a}
+html.dark .btn.btn-danger{background:#d54a41}
+html.dark .btn.btn-danger:hover{background:#d3362c}
+html.dark .btn.btn-danger-ghost{color:#d95a52;border:1px solid #da7f76}
+html.dark .btn.btn-danger-ghost:hover{background:#201515}
+html.dark .set-danger{border-color:#2f201e}
+html.dark .set-danger>header h2{color:#d34c46}
+html.dark .set-pw input{background:#161616}
+html.dark .set-error{color:#d34c46}
+html.dark .set-notice-err{background:#252018;color:#ffa51a}
+html.dark .set-dialog{background:#161616;box-shadow:0 24px 80px #00000033}
+html.dark .set-dialog::backdrop{background:#dbe0e966}
+html.dark .set-note textarea{background:#161616}
+html.dark .set-key{background:var(--tint,#141920);border:1px solid var(--line,#1a2029)}
 
 /* ---- both modes: Onest type, big product photos (from variation D) ---- */
 :root{--font:'Onest',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif}
@@ -712,3 +891,13 @@ html.dark .product-head img.product-hero,html.dark img[style*=multiply]{backgrou
 /* Product photos everywhere sit on a light tile, as in white mode. */
 html.dark .rank-thumb,html.dark img.product-photo,html.dark .tip-mark{background:#fff!important}
 html.dark .chart-tooltip{background:#161b22!important;border-color:#2a313c!important;box-shadow:0 12px 32px rgba(0,0,0,.55)!important}
+/* ---- agent board: selection and drop rings stay visible in dark mode ---- */
+html.dark .cb-tile[aria-current]{box-shadow:0 0 0 3px #1d3156}
+html.dark .cb-drop{background:#15213a;box-shadow:inset 0 0 0 2px #6393e4}
+html.dark .cb-on .cb-can{box-shadow:inset 0 0 0 1px rgba(99,147,228,.45)}
+html.dark .cb-no{box-shadow:inset 0 0 0 2px rgba(240,113,96,.6)}
+html.dark .cal-win{background:#17281d}html.dark .cal-win-mixed{background:#2a2216}html.dark .cal-win-hard{background:#2c1a18}
+html.dark .cs-step[aria-current]{box-shadow:0 0 0 3px #232b38}
+/* ---- agent voice sample: keep it a clearly blue, highlighted card in dark mode ---- */
+html.dark .cs-sample-card{background:#14233b;border:1px solid #23406b}
+html.dark .cs-sample-card figcaption{color:#8fb4f0}

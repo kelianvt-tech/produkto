@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monthly articles</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#111318;--panel:#171a20;--card:#1c2027;--line:#2a2f38;--ink:#f1f3f6;--ink2:#c6ccd6;--muted:#8a93a3;--blue:#6393e4;--green:#22c55e;--orange:#f08a3c;--purple:#9b7bf0;--red:#f07160}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Onest,system-ui,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:6px}.top h1{font-size:24px;margin:0;background:linear-gradient(90deg,#7c6cf0,#6393e4);-webkit-background-clip:text;color:transparent}
+.lede{color:var(--muted);margin:0 0 18px}
+.vt{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.vt button{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink2);cursor:pointer}
+.vt button.on{background:var(--ink);color:#111;border-color:var(--ink)}
+.v{display:none}.v.on{display:block}
+.why{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--blue);padding:10px 14px;border-radius:10px;color:var(--ink2);font-size:14px;margin-bottom:18px}
+.tabs{display:inline-flex;gap:2px;background:var(--panel);border:1px solid var(--line);padding:4px;border-radius:12px;margin-bottom:18px}
+.tabs span{padding:6px 14px;border-radius:8px;font-size:14px;color:var(--ink2)}.tabs .on{background:var(--card);color:var(--ink);font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.row{display:flex;align-items:center;gap:12px}.sp{margin-left:auto}
+.btn{font:inherit;font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.p{background:var(--ink);color:#111;border-color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;background:var(--card);color:var(--ink2);white-space:nowrap}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--orange)}.pill.c i{background:var(--purple)}
+.m{color:var(--muted);font-size:13px}
+.bar{height:8px;border-radius:5px;background:var(--card);overflow:hidden;display:flex}.bar b{display:block;height:100%}
+.thumb{width:36px;height:36px;border-radius:8px;background:#e9e4dc;flex:none;display:grid;place-items:center;font-size:16px}
+.lost{font-size:12.5px;color:var(--red);font-weight:600}
+.item{display:flex;gap:12px;align-items:center;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+.item strong{font-size:14px;display:block}
+.item>div{flex:1 1 220px;min-width:0}.item{flex-wrap:wrap}
+h3{margin:0 0 4px;font-size:16px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal .d{min-height:92px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px;font-size:12px;color:var(--muted)}
+.cal .h{font-size:12px;color:var(--muted);text-align:center;padding-bottom:2px}
+.ev{margin-top:4px;padding:5px 6px;border-radius:7px;background:var(--card);border-left:3px solid var(--orange);color:var(--ink);font-size:11.5px;line-height:1.3}
+.ev.c{border-left-color:var(--purple)}.ev.g{opacity:.55;border-left-style:dashed}.ev.ok{border-left-color:var(--green)}
+.tog{width:38px;height:22px;border-radius:99px;background:var(--green);position:relative;flex:none}.tog:after{content:"";position:absolute;right:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff}
+.set{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--line)}.set:first-child{border-top:0}
+.set .k{width:200px;flex:none;font-weight:600;font-size:14px}
+.seg{display:inline-flex;background:var(--card);border-radius:9px;padding:3px}.seg span{padding:4px 11px;border-radius:7px;font-size:13px;color:var(--ink2)}.seg .on{background:var(--ink);color:#111;font-weight:600}
+.drag{cursor:grab;color:var(--muted);font-size:16px;padding:0 4px}
+.chk{width:18px;height:18px;border-radius:5px;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:12px;flex:none}.chk.off{background:var(--card);border:1px solid var(--line)}
+.digest{max-width:720px}
+.big{font-size:30px;font-weight:700}
+.k3{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.k3 div{background:var(--card);border-radius:10px;padding:10px 12px}.k3 b{display:block;font-size:20px}
+.board{display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:10px;overflow-x:auto}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:300px}
+.col h4{margin:2px 4px 10px;font-size:14px;display:flex;gap:8px}.col h4 span{margin-left:auto;color:var(--muted)}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:10px;margin-bottom:8px;font-size:13.5px}
+.tile .pill{margin-top:8px}.pill.f i{background:var(--blue)}
+.lane{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:10px 4px 6px}
+</style></head><body><main>
+<div class="top"><span style="color:#7c6cf0">✦</span><h1>Monthly articles: five ways to show it</h1></div>
+<p class="lede">Clubhouse Skin, November, a 10-article pack. In all five: the agent writes on the 1st from lost buyer questions, spreads them over the month, and nothing goes live without approval. Illustrative data.</p>
+<div class="vt" id="vt"></div>
+
+<!-- V1 -->
+<section class="v" data-n="1 · Month plan on Calendar">
+<div class="why">A plan card sits above the Calendar: how much of the month's pack is written, approved and live, with the articles in order underneath.</div>
+<div class="tabs"><span>Drafts</span><span class="on">Calendar</span><span>Live</span><span>Settings</span></div>
+<div class="card" style="margin-bottom:14px">
+ <div class="row"><div><h3>November articles</h3><span class="m">10 in your plan · written 1 Nov from the questions you're losing</span></div><span class="sp"></span><button class="btn">Add 10 more</button></div>
+ <div class="bar" style="margin:14px 0 8px"><b style="width:20%;background:var(--green)"></b><b style="width:30%;background:var(--blue)"></b><b style="width:30%;background:var(--orange)"></b><b style="width:20%;background:#3a404b"></b></div>
+ <div class="row m" style="gap:18px"><span>● <b style="color:var(--green)">2</b> live</span><span>● <b style="color:var(--blue)">3</b> approved</span><span>● <b style="color:var(--orange)">3</b> to review</span><span>● 2 need facts</span></div>
+</div>
+<div id="v1list"></div>
+</section>
+
+<!-- V2 -->
+<section class="v" data-n="2 · Filled month calendar">
+<div class="why">The Calendar switches to a month view. Every slot is already filled; dashed cards still need review, green ones are approved. Drag a card to another day.</div>
+<div class="tabs"><span>Drafts</span><span class="on">Calendar</span><span>Live</span><span>Settings</span></div>
+<div class="row" style="margin-bottom:10px"><h3 style="margin:0">November 2026</h3><span class="m" style="margin-left:10px">10 of 10 articles placed · Mon, Wed, Fri at 09:00</span><span class="sp"></span><span class="pill"><i style="background:var(--green)"></i>Approved</span><span class="pill"><i style="background:#666"></i>To review</span></div>
+<div class="cal" id="cal"></div>
+</section>
+
+<!-- V3 -->
+<section class="v" data-n="3 · Autopilot in Settings">
+<div class="why">One "Monthly articles" step in Settings: switch it on, choose the mix and pace, and see next month's queue before it's written.</div>
+<div class="tabs"><span>Drafts</span><span>Calendar</span><span>Live</span><span class="on">Settings</span></div>
+<div class="grid2">
+<div class="card">
+ <h3>Monthly articles</h3><p class="m" style="margin:0 0 6px">The agent writes your articles on the 1st of each month. You approve each one before it goes live.</p>
+ <div class="set"><span class="k">Write them for me</span><span class="tog"></span><span class="m">On</span></div>
+ <div class="set"><span class="k">Articles a month</span><span class="seg"><span class="on">10</span><span>20</span><span>30</span><span>40</span><span>50</span></span><span class="m">$10 each</span></div>
+ <div class="set"><span class="k">Mix</span><span class="seg"><span>Guides</span><span class="on">Both</span><span>Comparisons</span></span></div>
+ <div class="set"><span class="k">Pick topics from</span><span class="seg"><span class="on">Questions I'm losing</span><span>All my questions</span></span></div>
+ <div class="set"><span class="k">Publish</span><span class="m" style="color:var(--ink)">Mon, Wed, Fri at 09:00 (Eastern)</span><button class="btn sp">Change</button></div>
+ <div class="set"><span class="k">If I haven't approved</span><span class="m" style="color:var(--ink)">Hold it and remind me. Never post unapproved.</span></div>
+</div>
+<div class="card"><h3>Next up · written 1 Dec</h3><p class="m" style="margin:0 0 12px">Topics can change until then as scans come in.</p><div id="v3q"></div></div>
+</div>
+</section>
+
+<!-- V4 -->
+<section class="v" data-n="4 · Monthly digest to review">
+<div class="why">On the 1st the merchant gets one review screen (and email): this month's articles, each with the question it targets and how often a rival wins it. Review one by one.</div>
+<div class="tabs"><span class="on">Drafts</span><span>Calendar</span><span>Live</span><span>Settings</span></div>
+<div class="card digest">
+ <span class="pill" style="margin-bottom:10px"><i style="background:var(--blue)"></i>New · 1 Nov</span>
+ <div class="big">Your 10 November articles are ready</div>
+ <p class="m" style="margin:4px 0 0">Written from the 10 buyer questions where AI recommends someone else most often.</p>
+ <div class="k3"><div><b>10</b><span class="m">written</span></div><div><b>7</b><span class="m">ready to review</span></div><div><b>3</b><span class="m">need a fact</span></div><div><b>Nov 3</b><span class="m">first goes live</span></div></div>
+ <div id="v4list"></div>
+ <div class="row" style="margin-top:12px"><button class="btn p">Start reviewing</button><span class="m">Takes about 2 minutes an article</span></div>
+</div>
+</section>
+
+<!-- V5 -->
+<section class="v" data-n="5 · Pick topics, then write">
+<div class="why">On the 25th the agent proposes next month's topics, ranked by how much each question is being lost. The merchant ticks, reorders or swaps, then the agent writes on the 1st. Untouched by the 1st? It writes the top 10.</div>
+<div class="tabs"><span class="on">Drafts</span><span>Calendar</span><span>Live</span><span>Settings</span></div>
+<div class="card">
+ <div class="row"><div><h3>Plan December's articles</h3><span class="m">10 of 10 picked · writing starts 1 Dec · drag to set the order</span></div><span class="sp"></span><button class="btn">Suggest others</button><button class="btn p">Confirm topics</button></div>
+ <div style="margin-top:14px" id="v5list"></div>
+</div>
+</section>
+
+<!-- V6 -->
+<section class="v" data-n="6 · One board, both kinds">
+<div class="why">Today's Drafts board, unchanged, with two additions: a meter per allowance at the top, and a filter to show product pages, articles or both. Product fixes skip Scheduled (Ready to Live); articles go through it.</div>
+<div class="tabs"><span class="on">Drafts</span><span>Calendar</span><span>Live</span><span>Settings</span></div>
+<div class="row" style="gap:12px;flex-wrap:wrap;margin-bottom:14px">
+ <div class="card" style="flex:1 1 260px;padding:14px"><div class="row"><strong>Product page fixes</strong><span class="sp m">November</span></div><div class="bar" style="margin:10px 0 6px"><b style="width:36%;background:var(--blue)"></b></div><span class="m"><b style="color:var(--ink)">18</b> of 50 approved · 32 left</span></div>
+ <div class="card" style="flex:1 1 260px;padding:14px"><div class="row"><strong>Articles</strong><span class="sp m">written 1 Nov</span></div><div class="bar" style="margin:10px 0 6px"><b style="width:50%;background:var(--purple)"></b></div><span class="m"><b style="color:var(--ink)">5</b> of 10 approved · 2 live</span></div>
+</div>
+<div class="row" style="margin-bottom:12px"><span class="seg" id="f6" style="cursor:pointer"><span class="on">All</span><span>Product pages</span><span>Articles</span></span></div>
+<div class="board" id="b6"></div>
+</section>
+<script>
+const A=[
+ ["g","Best fragrance-free moisturisers for sensitive skin","best fragrance-free moisturiser for sensitive skin under £40","CeraVe named in 78%","🧴","Nov 3","live"],
+ ["c","Helsinki Moisturiser vs CeraVe Moisturising Cream","best moisturiser for dry skin","CeraVe named in 71%","🧴","Nov 5","live"],
+ ["g","A simple 3-step routine for men","simple skincare routine for men","The Ordinary named in 64%","🧼","Nov 7","ok"],
+ ["c","Amalfi Vitamin-C Face Oil vs The Ordinary 23% Vitamin C","best vitamin C for dull skin","The Ordinary named in 60%","💧","Nov 10","ok"],
+ ["g","How to pick a cleanser that doesn't strip your skin","gentle cleanser for combination skin","La Roche-Posay named in 58%","🧴","Nov 12","ok"],
+ ["c","Frontier Cleanser vs La Roche-Posay Toleriane","best gentle face wash","La Roche-Posay named in 55%","🧴","Nov 14","rev"],
+ ["g","Do you need a face oil? A short guide","is face oil good for oily skin","Drunk Elephant named in 49%","💧","Nov 17","rev"],
+ ["g","Skincare gifts under £50 that people actually use","skincare gift set for him","Kiehl's named in 47%","🎁","Nov 19","rev"],
+ ["c","Clubhouse Set vs Kiehl's Men's Starter Kit","best men's skincare set","Kiehl's named in 45%","🎁","Nov 21","facts"],
+ ["g","Hydrating routine for winter","hydrating routine for dry winter skin","Neutrogena named in 41%","🧴","Nov 24","facts"]];
+const st={live:["Live","var(--green)"],ok:["Approved","var(--blue)"],rev:["To review","var(--orange)"],facts:["Needs 1 fact","#9aa3b2"]};
+const pill=a=>`<span class="pill ${a[0]}"><i></i>${a[0]=="g"?"Buying guide":"Comparison"}</span>`;
+v1list.innerHTML=A.map(a=>`<div class="item"><span class="thumb">${a[4]}</span><div><strong>${a[1]}</strong><span class="m">${a[5]} · answers “${a[2]}”</span></div><span class="sp"></span>${pill(a)}<span class="pill"><i style="background:${st[a[6]][1]}"></i>${st[a[6]][0]}</span></div>`).join("");
+let c=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=>`<div class="h">${d}</div>`).join("");
+const byDay={};A.forEach(a=>byDay[+a[5].split(" ")[1]]=a);
+for(let d=1;d<=30;d++){const a=byDay[d];c+=`<div class="d">${d}${a?`<div class="ev ${a[0]=="c"?"c":""} ${a[6]=="live"||a[6]=="ok"?"ok":"g"}">${a[1]}</div>`:""}</div>`}
+cal.innerHTML=c;
+v3q.innerHTML=A.slice(0,6).map((a,i)=>`<div class="item" style="padding:9px"><span class="m" style="width:16px">${i+1}</span><div><strong style="font-size:13.5px">${a[1]}</strong><span class="lost">${a[3]}</span></div></div>`).join("")+`<p class="m">+ 4 more</p>`;
+v4list.innerHTML=A.slice(0,5).map(a=>`<div class="item"><span class="thumb">${a[4]}</span><div><strong>${a[1]}</strong><span class="m">“${a[2]}” · </span><span class="lost">${a[3]}</span></div><span class="sp"></span>${pill(a)}</div>`).join("")+`<p class="m">+ 5 more</p>`;
+v5list.innerHTML=A.concat([["g","Retinol alternatives for beginners","gentle retinol alternative","The Inkey List named in 38%","💧"],["c","Amalfi Face Oil vs Drunk Elephant Virgin Marula","best face oil","Drunk Elephant named in 35%","💧"]]).map((a,i)=>`<div class="item"><span class="drag">⋮⋮</span><span class="chk ${i>9?"off":""}">${i>9?"":"✓"}</span><div><strong>${a[1]}</strong><span class="m">“${a[2]}” · </span><span class="lost">${a[3]}</span></div><span class="sp"></span>${pill(a)}<button class="btn">Swap</button></div>`).join("");
+const T=(t,k,w)=>`<div class="tile"><strong>${t}</strong><div class="row"><span class="pill ${k}"><i></i>${k=="f"?"Product page fix":k=="c"?"Comparison":"Buying guide"}</span><span class="sp m">${w||""}</span></div></div>`;
+const cols=[["Needs your facts",[T("Clubhouse Set: page fix","f"),T("Clubhouse Set vs Kiehl's Men's Starter Kit","c","Nov 21")]],
+["Ready to review",[T("Frontier Cleanser: page fix","f"),T("Amalfi Vitamin-C Face Oil: page fix","f"),T("Do you need a face oil? A short guide","g","Nov 17"),T("Frontier Cleanser vs La Roche-Posay Toleriane","c","Nov 14")]],
+["Scheduled",[`<div class="lane">Articles only</div>`,T("A simple 3-step routine for men","g","Nov 7"),T("Amalfi Face Oil vs The Ordinary 23% Vitamin C","c","Nov 10")]],
+["Live",[T("Helsinki Moisturiser: page fix","f","Live"),T("Peau De Clubhouse Hat: page fix","f","Live"),T("Best fragrance-free moisturisers for sensitive skin","g","Live")]]];
+b6.innerHTML=cols.map(c=>`<div class="col"><h4>${c[0]}<span>${c[1].filter(x=>x.includes("tile")).length}</span></h4>${c[1].join("")}</div>`).join("");
+f6.onclick=e=>{const o=e.target.closest("span span");if(!o)return;f6.querySelectorAll("span").forEach(x=>x.classList.remove("on"));o.classList.add("on");const k=o.textContent;
+b6.querySelectorAll(".col").forEach(c=>{let n=0;c.querySelectorAll(".tile").forEach(t=>{const f=t.querySelector(".pill.f");const show=k=="All"||(k=="Product pages")==!!f;t.style.display=show?"":"none";if(show)n++});c.querySelector("h4 span").textContent=n})};
+const vs=[...document.querySelectorAll(".v")];
+vs.forEach((v,i)=>{const b=document.createElement("button");b.textContent=v.dataset.n;b.onclick=()=>{vs.forEach(x=>x.classList.remove("on"));document.querySelectorAll("#vt button").forEach(x=>x.classList.remove("on"));v.classList.add("on");b.classList.add("on")};vt.appendChild(b);if(i==vs.length-1)b.click()});
+</script></main></body></html>

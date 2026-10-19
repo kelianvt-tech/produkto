@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggestions: five layouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#111316;--rail:#0e1013;--surface:#16181c;--raised:#1b1e23;--hover:#1f2329;--line:#24282e;--line-2:#2e333a;
+  --text:#e4e8ee;--muted:#a1aab7;--faint:#7d8696;
+  --ink:#e9edf3;--on-ink:#0f1114;
+  --add:#3fcf86;--add-bg:rgba(63,207,134,.08);--add-line:rgba(63,207,134,.28);
+  --cut:#f0715a;--cut-bg:rgba(240,113,90,.08);--cut-line:rgba(240,113,90,.26);
+  --warn:#e8b04a;--focus:#7aa7ff;
+  --r:10px;--r-lg:14px;
+  --font:"Geist",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 var(--font);-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv11"}
+::selection{background:rgba(122,167,255,.32);color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#2a2f36;border-radius:10px;border:2px solid var(--bg)}::-webkit-scrollbar-track{background:transparent}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+.num{font-variant-numeric:tabular-nums}
+svg.i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* switcher (outside the product) */
+.switch{position:sticky;top:0;z-index:20;display:flex;gap:4px;align-items:center;padding:10px 16px;background:#0b0c0e;border-bottom:1px solid var(--line);overflow-x:auto}
+.switch b{font-size:12px;color:var(--faint);font-weight:500;margin-right:8px;white-space:nowrap}
+.switch button{border:0;background:none;padding:6px 12px;border-radius:7px;font-size:13px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.switch button[aria-pressed=true]{background:var(--raised);color:var(--text)}
+
+/* app shell, matching the live app */
+.app{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:calc(100vh - 49px)}
+.rail{background:var(--rail);border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:2px}
+.store{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:var(--r);margin-bottom:14px}
+.store i{width:30px;height:30px;border-radius:7px;background:#f4f1ea;display:block}
+.store strong{display:block;font-size:13.5px}.store span{font-size:12px;color:var(--faint)}
+.ri{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;color:var(--muted);font-size:14px}
+.ri.on{color:var(--text);background:var(--raised)}
+.sub{display:flex;flex-direction:column;margin:2px 0 6px 36px}
+.sub a{display:flex;justify-content:space-between;padding:6px 10px;border-radius:7px;color:var(--muted);font-size:13.5px;text-decoration:none}
+.sub a.on{color:var(--text);background:var(--raised);font-weight:500}
+.cnt{font-size:11.5px;font-weight:600;color:var(--on-ink);background:var(--ink);border-radius:99px;padding:0 6px;min-width:18px;text-align:center;line-height:18px}
+.main{padding:28px 40px 120px;min-width:0}
+.v{display:none}.v.on{display:block}
+
+/* shared page head */
+.head{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.head h1{font-size:22px;letter-spacing:-.02em;font-weight:600;margin:0 0 4px}
+.head p{margin:0;color:var(--muted);max-width:68ch}
+.head .sp{margin-left:auto}
+.cap{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+.cap .track{width:120px;height:4px;border-radius:4px;background:var(--line-2);overflow:hidden}.cap .track b{display:block;height:100%;background:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--line-2);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:background .12s,border-color .12s}
+.btn:hover{background:var(--hover);border-color:#3a4049}
+.btn.p{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}.btn.p:hover{background:#fff}
+.btn.q{border-color:transparent;background:none;color:var(--muted)}.btn.q:hover{color:var(--text);background:var(--hover)}
+.btn:disabled{opacity:.45;cursor:default}
+kbd{font:500 11px var(--mono);color:var(--muted);border:1px solid var(--line-2);border-bottom-width:2px;border-radius:5px;padding:0 5px;line-height:17px;background:var(--surface)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.thumbs{display:flex}.thumbs img{width:26px;height:26px;border-radius:6px;object-fit:cover;border:2px solid var(--surface);margin-left:-6px;background:#f4f1ea}.thumbs img:first-child{margin-left:0}
+.done{opacity:.38;pointer-events:none;transition:opacity .25s}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);opacity:0;transition:all .25s cubic-bezier(.2,.8,.2,1);background:var(--ink);color:var(--on-ink);padding:9px 14px;border-radius:9px;font-size:13px;font-weight:500;pointer-events:none;z-index:50}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ===== V1 Review: diff rows ===== */
+.rv{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.rv-sec{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--raised);border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.rv-sec strong{color:var(--text);font-weight:600}
+.rv-row{display:grid;grid-template-columns:minmax(0,1fr) 190px 176px;gap:20px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);cursor:default;transition:background .12s}
+.rv-row:last-child{border-bottom:0}
+.rv-row:hover{background:#181b20}
+.rv-row.sel{background:#1a1e24;box-shadow:inset 2px 0 0 var(--focus)}
+.ln{display:flex;gap:10px;align-items:baseline;padding:3px 8px;border-radius:6px;font-size:14px;line-height:1.45}
+.ln .g{font:500 13px var(--mono);width:10px;flex:none}
+.ln.cut{background:var(--cut-bg);color:#c9b4ae}.ln.cut .g{color:var(--cut)}.ln.cut span:last-child{text-decoration:line-through;text-decoration-color:rgba(240,113,90,.5)}
+.ln.add{background:var(--add-bg);color:var(--text)}.ln.add .g{color:var(--add)}
+.ln+.ln{margin-top:4px}
+.rv-why{font-size:12.5px;color:var(--muted);margin:6px 8px 0}
+.meter{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--muted)}
+.meter .bar{position:relative;height:6px;border-radius:3px;background:var(--line-2)}
+.meter .bar b{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--cut)}
+.meter .bar i{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--faint)}
+.meter strong{color:var(--text);font-weight:600}
+.rv-act{display:flex;gap:6px;justify-content:flex-end}
+.legend{display:flex;gap:16px;align-items:center;color:var(--faint);font-size:12px;margin-top:14px}
+
+/* ===== V2 Table ===== */
+.tb{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.tb th{position:sticky;top:49px;background:var(--raised);text-align:left;font-size:12px;font-weight:500;color:var(--muted);padding:9px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tb td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tb tr:last-child td{border-bottom:0}
+.tb tbody tr{transition:background .12s}.tb tbody tr:hover{background:#181b20}
+.tb tbody tr.sel{background:#1a1e24}
+.tb .q{font-weight:500;color:var(--text)}
+.tb .was{display:block;font-size:12.5px;color:var(--faint);margin-top:3px}
+.tb .was s{text-decoration-color:rgba(240,113,90,.55)}
+.ck{width:16px;height:16px;border-radius:4px;border:1.5px solid #4a515b;display:inline-grid;place-items:center;cursor:pointer;background:none;padding:0}
+.ck[aria-checked=true]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.ck svg{width:11px;height:11px;stroke-width:2.4;opacity:0}.ck[aria-checked=true] svg{opacity:1}
+.kind{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500}
+.kind.swap{color:var(--cut)}.kind.add{color:var(--add)}
+.mini{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted)}
+.mini .bar{position:relative;width:84px;height:5px;border-radius:3px;background:var(--line-2)}
+.mini .bar b{position:absolute;inset:0 auto 0 0;border-radius:3px;background:var(--cut)}
+.mini .bar i{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--faint)}
+.bulk{position:sticky;bottom:20px;margin:18px auto 0;width:max-content;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 16px;border-radius:12px;background:#22262c;border:1px solid var(--line-2);box-shadow:0 12px 32px -12px rgba(0,0,0,.7);transform:translateY(8px);opacity:0;transition:all .2s cubic-bezier(.2,.8,.2,1)}
+.bulk.on{transform:none;opacity:1}
+.bulk span{font-size:13px;color:var(--muted)}.bulk span b{color:var(--text)}
+
+/* ===== V3 Inbox detail ===== */
+.ib{display:grid;grid-template-columns:340px minmax(0,1fr);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface);min-height:640px}
+.ib-list{border-right:1px solid var(--line);overflow:auto;max-height:760px}
+.ib-g{padding:12px 16px 6px;font-size:12px;color:var(--faint);font-weight:500}
+.ib-it{display:block;width:100%;text-align:left;border:0;background:none;padding:11px 16px;border-top:1px solid transparent;cursor:pointer;transition:background .12s}
+.ib-it:hover{background:#181b20}
+.ib-it[aria-selected=true]{background:var(--raised);box-shadow:inset 2px 0 0 var(--focus)}
+.ib-it .t{display:block;font-size:13.5px;color:var(--text);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ib-it .s{display:flex;gap:8px;align-items:center;margin-top:5px;font-size:12px;color:var(--faint)}
+.dot{width:6px;height:6px;border-radius:50%;flex:none}.dot.swap{background:var(--cut)}.dot.add{background:var(--add)}
+.ib-d{padding:28px 32px 0;display:flex;flex-direction:column;min-width:0}
+.ib-d h2{font-size:12px;font-weight:500;color:var(--faint);margin:0 0 8px}
+.cmp{display:grid;gap:8px;margin-bottom:26px}
+.cmp .box{border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;font-size:15px;line-height:1.45}
+.cmp .box small{display:block;font-size:12px;color:var(--faint);margin-bottom:4px}
+.cmp .box.now{color:var(--muted)}.cmp .box.new{border-color:var(--add-line);background:var(--add-bg);font-weight:500}
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:20px 0;border-top:1px solid var(--line)}
+.ev h3{font-size:13px;font-weight:600;margin:0 0 4px}.ev p{margin:0 0 12px;color:var(--muted);font-size:13px}
+.waffle{display:grid;grid-template-columns:repeat(20,10px);gap:3px}
+.waffle i{width:10px;height:10px;border-radius:2px;background:var(--line-2)}
+.waffle i.on{background:var(--cut)}
+.split{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line-2);margin:4px 0 8px}
+.split b{display:block;height:100%}
+.sites{font-size:12.5px;color:var(--muted);line-height:1.7}
+.fits{display:flex;gap:10px;flex-wrap:wrap}
+.fit{display:flex;align-items:center;gap:8px;padding:6px 10px 6px 6px;border:1px solid var(--line);border-radius:9px;font-size:13px}
+.fit img{width:28px;height:28px;border-radius:6px;object-fit:cover;background:#f4f1ea}
+.ib-bar{margin-top:auto;position:sticky;bottom:0;display:flex;gap:8px;align-items:center;padding:14px 0 18px;border-top:1px solid var(--line);background:var(--surface)}
+.ib-bar .note{font-size:12.5px;color:var(--faint);margin-right:auto}
+
+/* ===== V4 Grouped by reason ===== */
+.memo{max-width:860px}
+.memo .lead{font-size:16px;line-height:1.55;color:var(--text);margin:0 0 28px;max-width:66ch}
+.memo .lead em{font-style:normal;color:var(--cut)}.memo .lead b{font-weight:600}
+.grp{margin-bottom:34px}
+.grp-h{display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line-2)}
+.grp-h h2{font-size:15px;font-weight:600;margin:0;letter-spacing:-.01em}
+.grp-h span{color:var(--faint);font-size:13px}
+.grp-h .sp{margin-left:auto}
+.grp > p{color:var(--muted);font-size:13px;margin:10px 0 4px;max-width:70ch}
+.it{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.it .q{font-size:14.5px;font-weight:500}
+.it .was{font-size:12.5px;color:var(--faint);margin-top:4px}
+.it .was s{text-decoration-color:rgba(240,113,90,.55)}
+.it .meta{display:flex;gap:14px;margin-top:7px;font-size:12.5px;color:var(--muted);flex-wrap:wrap;align-items:center}
+.it .acts{display:flex;gap:4px}
+
+/* ===== V5 Before / after ===== */
+.ba{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.ba-h,.ba-r{display:grid;grid-template-columns:44px minmax(0,1fr) 36px minmax(0,1fr) 150px;align-items:center}
+.ba-h{background:var(--raised);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);font-weight:500}
+.ba-h > div{padding:10px 14px}
+.ba-r{border-bottom:1px solid var(--line);transition:background .12s,opacity .2s}
+.ba-r:last-child{border-bottom:0}.ba-r:hover{background:#181b20}
+.ba-r > div{padding:14px}
+.ba-r .l{color:var(--muted);font-size:13.5px}
+.ba-r .l.empty{color:var(--faint);font-style:normal}
+.ba-r .r{font-size:14px;font-weight:500}
+.ba-r .a{color:var(--faint);display:grid;place-items:center;padding:0}
+.ba-r.off .r{color:var(--faint);text-decoration:line-through;text-decoration-color:var(--faint)}
+.ba-r.off .l{text-decoration:none;color:var(--muted)}
+.ba-r:not(.off) .l.has{color:#c9b4ae;text-decoration:line-through;text-decoration-color:rgba(240,113,90,.5)}
+.ba-r .why{font-size:12px;color:var(--faint);margin-top:4px;font-weight:400}
+.ba-r .src{font-size:12.5px;color:var(--muted)}
+.commit{display:flex;align-items:center;gap:16px;margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface)}
+.commit .sum{font-size:13px;color:var(--muted)}.commit .sum b{color:var(--text);font-weight:600}
+.commit .sp{margin-left:auto}
+
+@media (max-width:1100px){.app{grid-template-columns:1fr}.rail{display:none}.main{padding:22px 18px 100px}
+ .rv-row{grid-template-columns:1fr}.rv-act{justify-content:flex-start}
+ .ib{grid-template-columns:1fr}.ib-list{max-height:280px;border-right:0;border-bottom:1px solid var(--line)}.ev{grid-template-columns:1fr}
+ .ba-h{display:none}.ba-r{grid-template-columns:44px 1fr}.ba-r .a{display:none}.ba-r > div:nth-child(4),.ba-r > div:nth-child(5){grid-column:2}
+ .tb thead{display:none}.tb tr{display:grid;grid-template-columns:32px 1fr}.tb td{border:0;padding:6px 10px}.tb tr{border-bottom:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="switch" role="toolbar" aria-label="Layouts"><b>Suggestions · layouts</b></div>
+<div class="app">
+ <aside class="rail" aria-hidden="true">
+  <div class="store"><i></i><div><strong>Clubhouse Skin</strong><span>clubhouseskin.com</span></div></div>
+  <div class="ri"><svg class="i" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg>Dashboard</div>
+  <div class="ri on"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9l-5 4z"/></svg>Buyer questions</div>
+  <div class="sub"><a>Your questions</a><a class="on">Suggestions <span class="cnt num" id="rc">10</span></a></div>
+  <div class="ri"><svg class="i" viewBox="0 0 24 24"><path d="M12 3.5 14.6 9l5.9.6-4.4 4 1.3 5.9L12 16.5l-5.4 3 1.3-5.9-4.4-4 5.9-.6z"/></svg>Opportunities</div>
+  <div class="ri"><svg class="i" viewBox="0 0 24 24"><rect x="4.2" y="6.4" width="15.6" height="12" rx="3.4"/><path d="M12 3.4v3"/></svg>Catalog Optimization Agent</div>
+ </aside>
+ <main class="main" id="main"></main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>window.DATA={"rows": [{"id": 1, "kind": "swap", "old_q": "What’s the best simple three-step skincare routine for cleansing, brightening and hydrating?", "new_q": "What three-product skincare set suits a beginner wanting cleansing, brightening and hydration?", "reason": "AI answers it with general advice: it named products in only 8 of 80 answers, so no product can win it.", "evidence": "Products named in 10% of answers", "source": "", "products": [3], "stats": {"answers": 80, "own": 0, "named": 8}, "win": {"level": "mixed", "big_share": 42, "big": ["aad.org", "vogue.com", "health.clevelandclinic.org", "today.com"], "small": ["fresh.com", "skincare.com", "health.com", "clinique.com"]}}, {"id": 2, "kind": "swap", "old_q": "Should I choose a face oil or a lightweight moisturiser for daily hydration and a comfortable finish?", "new_q": "For dry skin, which is better for daily hydration: a face oil or moisturiser under £50?", "reason": "AI answers it with general advice: it named products in only 10 of 81 answers, so no product can win it.", "evidence": "Products named in 12% of answers", "source": "", "products": [4, 6], "stats": {"answers": 81, "own": 0, "named": 10}, "win": {"level": "winnable", "big_share": 20, "big": ["aad.org", "health.clevelandclinic.org", "nytimes.com", "consumerreports.org"], "small": ["elfcosmetics.com", "augustinusbader.com", "meadowandbark.com", "justdial.com"]}}, {"id": 3, "kind": "swap", "old_q": "Is it better to buy a complete three-product skincare set or choose a cleanser, face oil and moisturiser separately?", "new_q": "For a beginner, is a three-product skincare set under £120 better value than buying products separately?", "reason": "AI answers it with general advice: it named products in only 9 of 81 answers, so no product can win it.", "evidence": "Products named in 11% of answers", "source": "", "products": [3, 4, 5, 6], "stats": {"answers": 81, "own": 0, "named": 9}, "win": {"level": "winnable", "big_share": 27, "big": ["aad.org", "health.clevelandclinic.org", "pubmed.ncbi.nlm.nih.gov", "youtube.com"], "small": ["bestluxurybeauty.com", "cesqua.in", "thedeconstruct.in", "smartbuy.alibaba.com"]}}, {"id": 4, "kind": "swap", "old_q": "Which lightweight moisturiser contains snow mushroom, squalane and niacinamide for deep hydration?", "new_q": "Which moisturiser with squalane would suit dry skin and feel light?", "reason": "6 of 9 of its key words appear on your Helsinki Moisturiser page (lightweight, moisturiser, snow, mushroom, squalane, niacinamide), so it reads like your product description rather than a buyer's question.", "evidence": "", "source": "", "products": [4], "stats": {"answers": 80, "own": 25, "named": 77}, "win": {"level": "winnable", "big_share": 25, "big": ["target.com", "allure.com", "amazon.com", "vogue.com"], "small": ["dermapproved.com", "ipsy.com", "editorialist.com", "tlc.com"]}}, {"id": 5, "kind": "swap", "old_q": "Which vitamin C face oil can brighten skin, support environmental protection and absorb without feeling greasy?", "new_q": "Which vitamin C face oil would suit someone wanting a natural glow without heaviness?", "reason": "It stacks 4 requirements into one question. Few buyers ask that narrowly, so results here may not reflect what most buyers see.", "evidence": "", "source": "", "products": [6], "stats": {"answers": 77, "own": 0, "named": 73}, "win": {"level": "winnable", "big_share": 37, "big": ["ulta.com", "amazon.com", "sephora.com", "allure.com"], "small": ["mychelle.com", "straight.com", "dermae.com", "starkskincare.com"]}}, {"id": 6, "kind": "add", "old_q": null, "new_q": "Which skincare options in the UK suit dry skin without a complicated routine?", "reason": "This tests whether shoppers in the store’s home market can discover a simple routine for dry skin.", "evidence": "", "source": "location", "products": [1], "stats": {}, "win": null}, {"id": 7, "kind": "add", "old_q": null, "new_q": "What is a gentler alternative to CeraVe for cleansing without a tight feeling?", "reason": "This measures whether the cleanser appears when shoppers compare it with a major recognised competitor.", "evidence": "", "source": "competitor", "products": [5], "stats": {}, "win": null}, {"id": 8, "kind": "add", "old_q": null, "new_q": "My face feels tight after washing; which cleanser should I buy?", "reason": "This captures shoppers who recognise a cleansing problem before choosing a suitable product.", "evidence": "", "source": "journey", "products": [5], "stats": {}, "win": null}, {"id": 9, "kind": "add", "old_q": null, "new_q": "What skincare gift set under £100 would suit a beginner this Christmas?", "reason": "This tests timely gifting demand for an accessible starter set before Christmas.", "evidence": "", "source": "season", "products": [1], "stats": {}, "win": null}, {"id": 10, "kind": "add", "old_q": null, "new_q": "What two-product skincare set under £70 suits dry, oily or combination skin?", "reason": "This gives the two-product set a distinct catalog-led discovery opportunity beyond broader routine questions.", "evidence": "", "source": "catalog", "products": [1], "stats": {}, "win": null}], "products": {"6": {"title": "Amalfi Vitamin-C Face Oil", "price": "49", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304"}, "5": {"title": "Frontier Cleanser", "price": "39", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370"}, "4": {"title": "Helsinki Moisturiser", "price": "34", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451"}, "3": {"title": "Full Clubhouse Set", "price": "115", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416"}, "2": {"title": "Peau De Clubhouse Hat", "price": "25", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710"}, "1": {"title": "Essentials Set", "price": "69", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CHS_Essentials-Set_PDP_1.jpg?v=1739727326"}}, "tracked": 11, "cap": 75};</script>
+<script>
+const D = window.DATA, P = D.products;
+const ROWS = D.rows.map(r => ({...r, state: 'open'}));
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ICON = {
+  swap:'<svg class="i" viewBox="0 0 24 24"><path d="M7 4 3 8l4 4"/><path d="M3 8h13a4 4 0 0 1 4 4"/><path d="m17 20 4-4-4-4"/><path d="M21 16H8a4 4 0 0 1-4-4"/></svg>',
+  add:'<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
+  check:'<svg class="i" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  x:'<svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  arrow:'<svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  ingredient:'<svg class="i" viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-4.5 8.5A2.5 2.5 0 0 0 7.7 20h8.6a2.5 2.5 0 0 0 2.2-3.5L14 8V3"/><path d="M7.5 14h9"/></svg>',
+  material:'<svg class="i" viewBox="0 0 24 24"><path d="M4 7c4-3 12-3 16 0v10c-4-3-12-3-16 0z"/></svg>',
+  location:'<svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+  competitor:'<svg class="i" viewBox="0 0 24 24"><circle cx="8" cy="9" r="3.2"/><circle cx="16.5" cy="9" r="3.2"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0M11 19a5.5 5.5 0 0 1 11 0"/></svg>',
+  cited:'<svg class="i" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>',
+  journey:'<svg class="i" viewBox="0 0 24 24"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M7 18h6a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h6"/></svg>',
+  season:'<svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
+  catalog:'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M16.5 13.5v6M13.5 16.5h6"/></svg>',
+  advice:'<svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>',
+  page:'<svg class="i" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg>',
+};
+const SRC = {ingredient:'Ingredient', material:'Material', location:'Location', competitor:'Competitor', cited:'Cited page', journey:'Buyer journey', season:'Season', catalog:'Catalog gap'};
+const isAdvice = r => r.kind === 'swap' && r.stats && r.stats.answers && r.stats.named / r.stats.answers < .15;
+const why = r => r.kind === 'swap'
+  ? (isAdvice(r) ? 'AI answers with general advice' : 'Reads like your product page')
+  : SRC[r.source] || 'New angle';
+const reasonIcon = r => r.kind === 'swap' ? (why(r) === 'AI answers with general advice' ? ICON.advice : ICON.page) : (ICON[r.source] || ICON.add);
+const pct = r => isAdvice(r) ? Math.round(100 * r.stats.named / r.stats.answers) : null;
+const thumbs = r => '<span class="thumbs">' + r.products.map(id => P[id] ? `<img src="${esc(P[id].image)}" alt="${esc(P[id].title)}" title="${esc(P[id].title)}" loading="lazy">` : '').join('') + '</span>';
+const fitNames = r => r.products.map(id => P[id] && P[id].title).filter(Boolean).join(', ');
+const swaps = () => ROWS.filter(r => r.kind === 'swap'), adds = () => ROWS.filter(r => r.kind === 'add');
+const openN = () => ROWS.filter(r => r.state === 'open').length;
+const capBar = () => `<div class="cap"><span class="num">${D.tracked} of ${D.cap} questions</span><span class="track"><b style="width:${100*D.tracked/D.cap}%"></b></span></div>`;
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1800)}
+function decide(id, action){const r=ROWS.find(x=>x.id==id); if(!r||r.state!=='open')return; r.state=action;
+  document.querySelectorAll(`[data-id="${id}"]`).forEach(e=>e.classList.add('done'));
+  document.getElementById('rc').textContent=openN();
+  toast(action==='dismiss'?'Dismissed. It won’t be suggested again.':r.kind==='swap'?'Swapped. The new question starts its own trend.':'Added to your questions.');}
+
+/* ---------- V1 Review ---------- */
+function v1(){
+  const meter = r => { const p = pct(r); return p === null
+    ? `<div class="meter"><span class="tag">${ICON.page}Reads like its page</span><span><strong class="num">${esc(r.reason.match(/\d+ of \d+/)?.[0] || 'Most')}</strong> key words are on your page</span></div>`
+    : `<div class="meter"><span>Products named in <strong class="num">${p}%</strong> of answers</span><div class="bar" title="Below 15% means AI answers with advice"><b style="width:${Math.max(p,2)}%"></b><i style="left:15%"></i></div></div>`; };
+  const row = r => `<div class="rv-row" data-id="${r.id}" tabindex="-1">
+    <div>${r.kind==='swap'?`<div class="ln cut"><span class="g">−</span><span>${esc(r.old_q)}</span></div>`:''}
+      <div class="ln add"><span class="g">+</span><span>${esc(r.new_q)}</span></div>
+      <div class="rv-why">${esc(r.kind==='swap'?r.reason:r.reason)}</div></div>
+    ${r.kind==='swap'?meter(r):`<div class="meter"><span class="tag">${reasonIcon(r)}${esc(SRC[r.source]||'')}</span><span>Fits ${esc(fitNames(r))}</span></div>`}
+    <div class="rv-act"><button class="btn q" data-do="dismiss">Dismiss</button><button class="btn p" data-do="apply">${r.kind==='swap'?'Swap':'Add'}</button></div></div>`;
+  return `<div class="head"><div><h1>Suggestions</h1><p>Changes to the questions you track. Review each one; nothing changes until you apply it.</p></div><div class="sp">${capBar()}</div></div>
+  <div class="rv"><div class="rv-sec"><svg class="i" viewBox="0 0 24 24"><path d="M7 4 3 8l4 4"/><path d="M3 8h13a4 4 0 0 1 4 4"/></svg><strong>Swaps</strong><span class="num">${swaps().length}</span><span>Questions that can’t show you much</span></div>${swaps().map(row).join('')}
+  <div class="rv-sec">${ICON.add}<strong>New questions</strong><span class="num">${adds().length}</span><span>Worth tracking, from your catalog, market and the answers AI gives</span></div>${adds().map(row).join('')}</div>
+  <div class="legend"><span><kbd>J</kbd> <kbd>K</kbd> move</span><span><kbd>A</kbd> apply</span><span><kbd>X</kbd> dismiss</span></div>`;
+}
+
+/* ---------- V2 Table ---------- */
+function v2(){
+  const ev = r => { const p = pct(r); return r.kind==='add' ? `<span class="tag">${reasonIcon(r)}${esc(SRC[r.source]||'')}</span>`
+    : p===null ? `<span class="tag">${ICON.page}Copies its page</span>`
+    : `<div class="mini"><span class="bar"><b style="width:${Math.max(p,3)}%"></b><i style="left:15%"></i></span><span class="num">${p}% named</span></div>`; };
+  const row = r => `<tr data-id="${r.id}"><td><button class="ck" role="checkbox" aria-checked="false" aria-label="Select">${ICON.check}</button></td>
+    <td><span class="kind ${r.kind}">${r.kind==='swap'?ICON.swap+'Swap':ICON.add+'Add'}</span></td>
+    <td><span class="q">${esc(r.new_q)}</span>${r.kind==='swap'?`<span class="was">Replaces <s>${esc(r.old_q)}</s></span>`:''}</td>
+    <td>${ev(r)}</td><td>${thumbs(r)}</td>
+    <td style="text-align:right;white-space:nowrap"><button class="btn q" data-do="dismiss" aria-label="Dismiss">${ICON.x}</button><button class="btn" data-do="apply">${r.kind==='swap'?'Swap':'Add'}</button></td></tr>`;
+  return `<div class="head"><div><h1>Suggestions</h1><p>Select several to apply at once. Evidence is from the last 30 days of answers.</p></div><div class="sp">${capBar()}</div></div>
+  <table class="tb"><thead><tr><th style="width:44px"><button class="ck" role="checkbox" aria-checked="false" aria-label="Select all" data-all>${ICON.check}</button></th><th>Change</th><th>Question</th><th>Evidence</th><th>Products</th><th></th></tr></thead>
+  <tbody>${ROWS.map(row).join('')}</tbody></table>
+  <div class="bulk" id="bulk"><span><b class="num" id="nsel">0</b> selected</span><button class="btn q" data-bulk="dismiss">Dismiss</button><button class="btn p" data-bulk="apply">Apply</button></div>`;
+}
+
+/* ---------- V3 Inbox ---------- */
+let cur = ROWS[0].id;
+function v3detail(r){
+  const p = pct(r), w = r.win;
+  const waffle = isAdvice(r) ? `<div class="waffle" role="img" aria-label="${r.stats.named} of ${r.stats.answers} answers named a product">${Array.from({length:r.stats.answers},(_,i)=>`<i class="${i<r.stats.named?'on':''}"></i>`).join('')}</div>` : '';
+  return `<h2>${r.kind==='swap'?'Swap a question':'Add a question'}</h2>
+  <div class="cmp">${r.kind==='swap'?`<div class="box now"><small>Tracked now</small>${esc(r.old_q)}</div>`:''}<div class="box new"><small>${r.kind==='swap'?'Suggested instead':'Suggested'}</small>${esc(r.new_q)}</div></div>
+  <div class="ev">
+    <div><h3>${r.kind==='swap'?why(r):(SRC[r.source]||'Why')}</h3><p>${esc(r.reason)}</p>${waffle}${p!==null?`<p class="num" style="margin-top:10px">${r.stats.named} of ${r.stats.answers} answers named a product</p>`:''}</div>
+    <div>${w&&w.level?`<h3>Who AI cites now</h3><p>${w.big_share}% of citations come from big, established sites.</p><div class="split"><b style="width:${w.big_share}%;background:#5b6573"></b><b style="width:${100-w.big_share}%;background:var(--add)"></b></div><div class="sites">Big: ${esc(w.big.slice(0,3).join(', '))}<br>Smaller: ${esc(w.small.slice(0,3).join(', '))}</div>`:`<h3>Products it tests</h3><p>Answers to this question can recommend these.</p>`}
+    <div class="fits" style="margin-top:14px">${r.products.map(id=>P[id]?`<span class="fit"><img src="${esc(P[id].image)}" alt="">${esc(P[id].title)}</span>`:'').join('')}</div></div>
+  </div>
+  <div class="ib-bar" data-id="${r.id}"><span class="note">${r.kind==='swap'?'The new question starts its own trend line. The old one’s history stays.':'Counts toward your plan’s questions.'}</span><button class="btn q" data-do="dismiss">Not for us</button><button class="btn" data-do="edit">Edit first</button><button class="btn p" data-do="apply">${r.kind==='swap'?'Swap question':'Add question'}</button></div>`;
+}
+function v3(){
+  const it = r => `<button class="ib-it" role="option" aria-selected="${r.id===cur}" data-pick="${r.id}" data-id="${r.id}"><span class="t">${esc(r.new_q)}</span><span class="s"><span class="dot ${r.kind}"></span>${r.kind==='swap'?esc(why(r)):esc(SRC[r.source]||'')}</span></button>`;
+  return `<div class="head"><div><h1>Suggestions</h1><p>Each suggestion with the evidence behind it.</p></div><div class="sp">${capBar()}</div></div>
+  <div class="ib"><div class="ib-list" role="listbox" aria-label="Suggestions"><div class="ib-g">Swaps · ${swaps().length}</div>${swaps().map(it).join('')}<div class="ib-g">New questions · ${adds().length}</div>${adds().map(it).join('')}</div>
+  <div class="ib-d" id="ibd">${v3detail(ROWS.find(r=>r.id===cur))}</div></div>`;
+}
+
+/* ---------- V4 Grouped by reason ---------- */
+function v4(){
+  const adv = swaps().filter(r=>why(r)==='AI answers with general advice'), pg = swaps().filter(r=>why(r)!=='AI answers with general advice');
+  const item = (r, meta) => `<div class="it" data-id="${r.id}"><div><div class="q">${esc(r.new_q)}</div>${r.kind==='swap'?`<div class="was">Replaces <s>${esc(r.old_q)}</s></div>`:''}<div class="meta">${meta}</div></div>
+    <div class="acts"><button class="btn q" data-do="dismiss">Dismiss</button><button class="btn" data-do="apply">${r.kind==='swap'?'Swap':'Add'}</button></div></div>`;
+  const grp = (title, n, text, body, all) => `<section class="grp"><div class="grp-h"><h2>${title}</h2><span class="num">${n}</span>${all?`<button class="btn q sp" data-group="${all}">Apply all ${n}</button>`:''}</div><p>${text}</p>${body}</section>`;
+  return `<div class="head"><div><h1>Suggestions</h1></div><div class="sp">${capBar()}</div></div>
+  <div class="memo"><p class="lead">Of your ${D.tracked} questions, <b>${adv.length}</b> get <em>general advice</em> from AI instead of product recommendations, and <b>${pg.length}</b> read too much like your own product pages. There’s also room for <b>${adds().length}</b> new angles your catalog can answer.</p>
+  ${grp('AI answers with advice, not products', adv.length, 'AI named products in about 1 in 10 answers to these. Narrower questions get product answers.', adv.map(r=>item(r, `<span class="num">${r.stats.named} of ${r.stats.answers} answers named a product</span>${thumbs(r)}`)).join(''), 'adv')}
+  ${grp('Too close to your product pages', pg.length, 'These use your page’s own words, so they test the page describing itself rather than what buyers ask.', pg.map(r=>item(r, `<span>${esc(r.reason.split(',')[0].replace(/\(.*$/,''))}</span>${thumbs(r)}`)).join(''), 'pg')}
+  ${grp('New angles worth tracking', adds().length, 'From your ingredients, where you sell, the brands AI names, the buying journey and the season ahead.', adds().map(r=>item(r, `<span class="tag">${reasonIcon(r)}${esc(SRC[r.source]||'')}</span><span>${esc(r.reason)}</span>${thumbs(r)}`)).join(''), '')}
+  </div>`;
+}
+
+/* ---------- V5 Before / after ---------- */
+const keep = new Set(ROWS.map(r=>r.id));
+function v5(){
+  const row = r => `<div class="ba-r ${keep.has(r.id)?'':'off'}" data-id="${r.id}">
+    <div><button class="ck" role="checkbox" aria-checked="${keep.has(r.id)}" data-toggle="${r.id}" aria-label="Include this change">${ICON.check}</button></div>
+    <div class="l ${r.kind==='swap'?'has':'empty'}">${r.kind==='swap'?esc(r.old_q):'Not tracked'}</div>
+    <div class="a">${ICON.arrow}</div>
+    <div class="r">${esc(r.new_q)}<div class="why">${esc(r.kind==='swap'?why(r)+(pct(r)!==null?` · products named in ${pct(r)}% of answers`:''):r.reason)}</div></div>
+    <div class="src"><span class="tag">${reasonIcon(r)}${r.kind==='swap'?'Swap':esc(SRC[r.source]||'')}</span></div></div>`;
+  const n = keep.size, s = ROWS.filter(r=>keep.has(r.id)&&r.kind==='swap').length, a = n - s;
+  return `<div class="head"><div><h1>Suggestions</h1><p>Your questions now, and what they’d become. Untick anything you don’t want, then apply.</p></div></div>
+  <div class="ba"><div class="ba-h"><div></div><div>Tracked now</div><div></div><div>After</div><div>Why</div></div>${ROWS.map(row).join('')}</div>
+  <div class="commit"><span class="sum"><b class="num">${s}</b> swaps and <b class="num">${a}</b> new questions · you’d track <b class="num">${D.tracked + a} of ${D.cap}</b></span><span class="sp"></span><button class="btn q" id="none">Clear</button><button class="btn p" id="go" ${n?'':'disabled'}>Apply ${n} change${n===1?'':'s'}</button></div>`;
+}
+
+/* ---------- wiring ---------- */
+const VIEWS = [['Review', v1], ['Table', v2], ['Inbox', v3], ['By reason', v4], ['Before / after', v5]];
+const sw = document.querySelector('.switch'), main = document.getElementById('main');
+let view = 0, sel = 0;
+function render(){ main.innerHTML = `<div class="v on">${VIEWS[view][1]()}</div>`;
+  ROWS.filter(r=>r.state!=='open').forEach(r=>document.querySelectorAll(`[data-id="${r.id}"]`).forEach(e=>e.classList.add('done')));
+  if(view===0) mark(); }
+VIEWS.forEach(([n],i)=>{const b=document.createElement('button');b.textContent=(i+1)+' · '+n;b.setAttribute('aria-pressed',i===0);b.onclick=()=>{view=i;window.scrollTo(0,0);sw.querySelectorAll('button').forEach((x,j)=>x.setAttribute('aria-pressed',j===i));render()};sw.appendChild(b)});
+function mark(){ const rows=[...main.querySelectorAll('.rv-row')]; rows.forEach((r,i)=>r.classList.toggle('sel',i===sel)); }
+document.addEventListener('keydown', e => { if(view!==0||e.target.closest('input,textarea'))return; const rows=[...main.querySelectorAll('.rv-row')];
+  if(e.key==='j'){sel=Math.min(rows.length-1,sel+1);mark();rows[sel].scrollIntoView({block:'nearest'})}
+  if(e.key==='k'){sel=Math.max(0,sel-1);mark();rows[sel].scrollIntoView({block:'nearest'})}
+  if(e.key==='a'||e.key==='x'){decide(rows[sel].dataset.id,e.key==='a'?'apply':'dismiss');sel=Math.min(rows.length-1,sel+1);mark()} });
+main.addEventListener('click', e => {
+  const d=e.target.closest('[data-do]'); if(d){const host=d.closest('[data-id]'); if(d.dataset.do==='edit'){toast('Opens the question for editing before it’s saved.');return} decide(host.dataset.id,d.dataset.do==='dismiss'?'dismiss':'apply'); if(view===2){const nx=ROWS.find(r=>r.state==='open');if(nx){cur=nx.id;render()}} return}
+  const p=e.target.closest('[data-pick]'); if(p){cur=+p.dataset.pick;main.querySelectorAll('.ib-it').forEach(x=>x.setAttribute('aria-selected',x===p));document.getElementById('ibd').innerHTML=v3detail(ROWS.find(r=>r.id===cur));return}
+  const g=e.target.closest('[data-group]'); if(g){const sec=g.closest('.grp');sec.querySelectorAll('.it').forEach(it=>decide(it.dataset.id,'apply'));return}
+  const c=e.target.closest('.ck'); if(c&&view===1){ if(c.hasAttribute('data-all')){const on=c.getAttribute('aria-checked')!=='true';main.querySelectorAll('.ck').forEach(x=>x.setAttribute('aria-checked',on))} else c.setAttribute('aria-checked',c.getAttribute('aria-checked')!=='true');
+    main.querySelectorAll('tbody tr').forEach(tr=>tr.classList.toggle('sel',tr.querySelector('.ck').getAttribute('aria-checked')==='true'));
+    const n=main.querySelectorAll('tbody .ck[aria-checked=true]').length;document.getElementById('nsel').textContent=n;document.getElementById('bulk').classList.toggle('on',n>0);return}
+  const b=e.target.closest('[data-bulk]'); if(b){main.querySelectorAll('tbody tr').forEach(tr=>{if(tr.querySelector('.ck').getAttribute('aria-checked')==='true')decide(tr.dataset.id,b.dataset.bulk)});document.getElementById('bulk').classList.remove('on');return}
+  const t=e.target.closest('[data-toggle]'); if(t){const id=+t.dataset.toggle;keep.has(id)?keep.delete(id):keep.add(id);render();return}
+  if(e.target.id==='none'){keep.clear();render();return}
+  if(e.target.id==='go'){[...keep].forEach(id=>decide(id,'apply'));toast(`Applied ${keep.size} changes.`);return}
+});
+render();
+</script></body></html>

@@ -78,8 +78,10 @@ def scheduled():
 
     Every store that finished onboarding is in, because the point of the daily
     scan is that a dashboard already holds today's reading when it is opened.
-    config.DAILY_SCAN_EXCLUDE holds the few stores kept out of it."""
-    held = set(config.DAILY_SCAN_EXCLUDE)
+    config.DAILY_SCAN_EXCLUDE holds the few stores kept out of it, and a store
+    whose customer has been disabled (cancelled subscription) is out too."""
+    import accounts
+    held = set(config.DAILY_SCAN_EXCLUDE) | accounts.paused_stores()
     return [domain for domain in scannable() if domain not in held]
 
 
@@ -128,6 +130,34 @@ def _loop():
                 print("scheduler: started today's scan for %s" % domain)
         except Exception as e:
             print("scheduler: tick failed (%s)" % e)
+        try:
+            import billing
+            for email in billing.end_due():
+                print("scheduler: %s's plan ended, account switched off" % email)
+        except Exception as e:
+            print("scheduler: plan end check failed (%s)" % e)
+        if config.SHOW_CONTENT_AGENT or config.CONTENT_AGENT_ADMIN_ONLY:
+            try:
+                import shopify_connect
+                done, failed = shopify_connect.publish_due()
+                for did in done:
+                    print("scheduler: published content draft %d on its calendar date" % did)
+                for did, why in failed:
+                    print("scheduler: content draft %d could not be published (%s)" % (did, why))
+            except Exception as e:
+                print("scheduler: calendar publishing failed (%s)" % e)
+            try:
+                import agent_review
+                for domain in agent_review.run_due():
+                    print("scheduler: monthly self-review for %s" % domain)
+            except Exception as e:
+                print("scheduler: monthly self-review failed (%s)" % e)
+            try:
+                import monthly_articles
+                for domain in monthly_articles.run_due():
+                    print("scheduler: writing this month's articles for %s" % domain)
+            except Exception as e:
+                print("scheduler: monthly articles failed (%s)" % e)
         _stop.wait(config.SCHEDULER_TICK_SECONDS)
 
 

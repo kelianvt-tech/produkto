@@ -127,6 +127,43 @@ def catalog_brief(products, currency=None):
     return '\n'.join(out)
 
 
+def trim_to(items, cap):
+    """Keep `cap` questions, taking them in turn from each topic so no topic
+    is dropped whole. Original order is kept."""
+    groups = {}
+    for i, it in enumerate(items):
+        groups.setdefault(it.get('cluster'), []).append(i)
+    keep, queues = [], list(groups.values())
+    while len(keep) < cap and any(queues):
+        for q in queues:
+            if q and len(keep) < cap:
+                keep.append(q.pop(0))
+    return [items[i] for i in sorted(keep)]
+
+
+def _words(t):
+    import opportunities
+    return set(opportunities._content(t or ''))
+
+
+def _drop_page_copies(items, products, floor):
+    """Remove narrow questions most of whose words are on one product's own page (title + description): they
+    test the page describing itself, not what buyers ask (18 Oct 2026, the snow-mushroom question). Only
+    while the set stays at or above `floor`, so the coverage check still passes."""
+    pages = []
+    for p in products:
+        raw = json.loads(p['raw_json'] or '{}')
+        pages.append(_words(p['title'] + ' ' + _plain(raw.get('body_html'))))
+    out = list(items)
+    for it in items:
+        w = _words(it['q'])
+        # Only narrow ones: a broad question shares buyer words with any page ("deep hydration", "heavy").
+        if (it['tag'] == 'specific' and len(out) > floor and len(w) >= 4
+                and any(len(w & pg) / len(w) >= 0.85 for pg in pages)):
+            out.remove(it)
+    return out
+
+
 def generate_clusters(products, currency=None, target=None, location='', topics=None, per_topic=4):
     import copy
     if not products:
@@ -149,10 +186,23 @@ Do not invent product features, brands or question templates. If a feature is on
 one sample, do not assume it applies to every other product in the category.
 
 Most questions should be broad, the common questions most shoppers ask. But ALSO write exactly
-%d narrow questions tagged "specific": each one combines two or three concrete facts stated for ONE
-product in the samples (a material, a dimension, a finish, a feature, a style) so that this
-product is one of very few good answers. %s Still never name the brand or the product. Attach
-only the product(s) that genuinely fit.''' % (config.QUESTION_CLUSTERS_MIN,config.QUESTION_CLUSTERS_MAX,target,
+%d narrow questions tagged "specific": each one takes ONE concrete fact stated for a product in the
+samples (a key ingredient, a material, a size, a finish) and joins it to a buyer's need (who it's
+for, skin or hair type, use, price with currency), e.g. "best moisturiser with squalane for dry skin
+under £40". Narrow questions are where a small brand can win, but they must sound like a shopper,
+never like the product page: do not string together the page's own words or list its ingredients,
+or the question only tests the page describing itself. %s Still never name the brand or the product.
+Attach only the product(s) that genuinely fit.
+
+Cover the buyer journey, not only "best X": include at least one question that starts from the
+shopper's problem and asks what to buy ("my skin feels tight after washing, which cleanser should I
+use?"). Every category in the catalog gets at least one question.
+
+Every question must be one AI answers by naming specific products. Avoid questions AI answers with
+general advice: choosing between two TYPES of product ("should I use a face oil or a moisturiser?"),
+"is it better to buy a set or separately", pure how-to questions. In real scans AI named products in
+only about 1 in 10 answers to questions like those. Ask for a product instead ("which face oil works
+under a moisturiser for combination skin?").''' % (config.QUESTION_CLUSTERS_MIN,config.QUESTION_CLUSTERS_MAX,target,
         SPECIFIC_QUESTIONS,
         ('You may add where the shopper is (%s) to at most one of them, when buying locally is natural.' % location)
         if location else '')
@@ -184,6 +234,7 @@ Write every question in the same language as the topics, the way shoppers in tha
         if q and q.casefold() not in seen and ids and set(ids)<=allowed and cluster:
             result.append(dict(q=q,tag=it['tag'],cluster=cluster,products=ids))
             seen.add(q.casefold())
+    result=_drop_page_copies(result,products,lo)
     # Broad questions are the ones most shoppers ask, but a small brand can
     # be absent from all of them - a 0% first scan (M&O Living, 2026-09-25)
     # tells the merchant nothing. The specific ones are where it has a real

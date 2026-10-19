@@ -168,6 +168,22 @@ details summary{cursor:pointer;color:var(--muted);font-size:13px}
  .hero form{flex-direction:column}.big{font-size:52px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 """
+import opportunities as _opportunities
+CSS += _opportunities.CSS
+import content_agent as _content_agent
+CSS += _content_agent.CSS
+import content_review as _content_review
+CSS += _content_review.CSS
+import content_calendar as _content_calendar
+CSS += _content_calendar.CSS
+import content_setup as _content_setup
+CSS += _content_setup.CSS
+import content_board as _content_board  # noqa: E402
+CSS += _content_board.CSS
+import p_loader as _p_loader  # noqa: E402
+CSS += _p_loader.CSS
+import content_export as _content_export
+CSS += _content_export.CSS
 
 
 def _dock_filters(body):
@@ -183,21 +199,27 @@ def _dock_filters(body):
 
 def page(title, body, extra_head="", here="/"):
     body = _dock_filters(body)
+    if "pLoad(" in body:
+        body = _p_loader.markup() + body     # first, so a form that submits itself on load can use it
     with open(os.path.join(config.HERE, "dashboard.css")) as css_file:
         extra_head += "<style>" + css_file.read() + "</style>"
     with open(os.path.join(config.HERE, "workspace.css")) as css_file:
         extra_head += "<style>" + css_file.read() + "</style>"
+    theme = os.path.join(config.HERE, "theme-graphite.css")
+    if os.path.exists(theme):  # dark Graphite look; delete the file to go back
+        with open(theme) as css_file:
+            extra_head += "<style>" + css_file.read() + "</style>"
     return """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s</title>
 <link rel="icon" type="image/png" href="/favicon.png?v=1"><link rel="apple-touch-icon" href="/favicon.png?v=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>%s</style>%s
-<script>try{if(localStorage.getItem('produkto-rail')==='shut')document.documentElement.classList.add('rail-shut')}catch(e){}</script>
+%s<script>try{if(localStorage.getItem('produkto-rail')==='shut')document.documentElement.classList.add('rail-shut')}catch(e){}</script>
 </head><body>
 %s
-<main>%s</main>""" % (E(title), CSS, extra_head, rail(here, body), body) + INFO_SCRIPT + "</body></html>"
+<main>%s</main>""" % (E(title), CSS, extra_head, THEME_HEAD, rail(here, body), body) + INFO_SCRIPT + "</body></html>"
 
 
 # The left rail: Dashboard, Buyer questions and Content agents; Support and Settings sit at the foot of it. The catalog
@@ -226,6 +248,17 @@ _SETTINGS_PATH = ('<circle cx="12" cy="12" r="3.1"/><path d="M19.4 14.2a1.6 1.6 
                   'l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v.1a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1'
                   'a1.6 1.6 0 0 0-1.5 1z"/>')
 
+
+# Light / dark mode. The choice is remembered per browser; dark is the default.
+THEME_HEAD = ("<script>try{if(localStorage.getItem('produkto-theme')!=='light')"
+              "document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}</script>")
+THEME_CLICK = ("var d=document.documentElement.classList.toggle('dark');"
+               "try{localStorage.setItem('produkto-theme',d?'dark':'light')}catch(e){}")
+_MOON = '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>'
+_SUN = ('<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4'
+        'M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>')
+THEME_BUTTON = '<div class="theme-switch-row">'+'<button type="button" class="theme-switch" onclick="%s" aria-label="Switch light or dark mode" title="Switch light or dark mode"><span class="ts-opt ts-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg></span><span class="ts-opt ts-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></span></button>' % THEME_CLICK+'</div>'
+
 def rail(here="/", body=""):
     """The rail, with the item you are on marked. A dashboard counts as Dashboard.
 
@@ -233,12 +266,96 @@ def rail(here="/", body=""):
     dashboard header leaves in the body), or the only store there is."""
     if here not in ("/support", "/settings", "/agents"):
         # A dashboard's Buyer questions tab is its own rail item, not Dashboard.
-        here = "/buyer-questions" if 'data-rail-page="questions"' in body else "/"
+        here = ("/buyer-questions" if 'data-rail-page="questions"' in body else
+                "/opportunities" if 'data-rail-page="opportunities"' in body else
+                "/content" if 'data-rail-page="content"' in body else "/")
     return _RAIL % (_store_switch(body), _rail_item("/", "Dashboard", _HOME_PATH, here)
-                    + _rail_item("/buyer-questions", "Buyer questions", _QUESTIONS_PATH, here)
-                    + _rail_item("/agents", "Content agents", _AGENTS_PATH, here),
-                    _rail_item("/support", "Support", _SUPPORT_PATH, here),
+                    + _questions_item(here, body)
+                    + _opportunities_item(here)
+                    + (_agent_item(here, body)
+                       if _content_agent.enabled()
+                       else _rail_item("/agents", "Content agents", _AGENTS_PATH, here)),
+                    THEME_BUTTON + _rail_item("/support", "Support", _SUPPORT_PATH, here),
                     _rail_item("/settings", "Settings", _SETTINGS_PATH, here))
+
+
+
+# Sub-item icons (18 Oct 2026), same 1.6 stroke as the rail's own icons.
+_SUB_ICONS = {
+    "questions": '<path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r=".9"/><circle cx="4" cy="12" r=".9"/><circle cx="4" cy="18" r=".9"/>',
+    "suggestions": '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2V16h5v-.2c.1-.8.5-1.5 1.1-2A6 6 0 0 0 12 3z"/>',
+    "fixes": '<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/>',
+    "articles": '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7M9 8h3"/>',
+}
+
+
+def _sub_label(key, label):
+    return ('<span class="rail-sub-l"><svg viewBox="0 0 24 24" aria-hidden="true">%s</svg>%s</span>'
+            % (_SUB_ICONS[key], E(label)))
+
+
+def _questions_item(here, body):
+    """Buyer questions, with its two sub-tabs (Your questions, Suggestions) open while you are in it."""
+    item = _rail_item("/buyer-questions", "Buyer questions", _QUESTIONS_PATH, here)
+    import question_suggestions
+    import accounts
+    user = accounts.current()
+    domain = _LAST_STORES.get(user["id"] if user else 0, {}).get("domain", "")
+    n = question_suggestions.count(domain) if domain else 0
+    if here != "/buyer-questions":
+        return item.replace("</span></a>", '</span><span class="rail-badge">%d</span></a>' % n) if n else item
+    sub = 'data-rail-sub="suggestions"' in body
+    d = "?d=" + E(urllib.parse.quote(domain)) if domain else ""
+    return item + ('<div class="rail-sub"><a href="/buyer-questions%s"%s>%s</a>'
+                   '<a href="/question-suggestions%s"%s>%s%s</a></div>') % (
+        d, "" if sub else ' aria-current="page"', _sub_label("questions", "Your questions"),
+        d, ' aria-current="page"' if sub else "", _sub_label("suggestions", "Suggestions"),
+        '<span class="rail-badge">%d</span>' % n if n else "")
+
+
+def _agent_item(here, body):
+    """Catalog Optimization Agent, with its two agents as sub-tabs (18 Oct 2026): Product page fixes and
+    AEO articles. Open while you are in it, like Buyer questions."""
+    item = _with_store(_rail_item("/content", _content_agent.NAME, _AGENTS_PATH, here), "/content")
+    if here != "/content":
+        return item
+    import accounts
+    user = accounts.current()
+    domain = _LAST_STORES.get(user["id"] if user else 0, {}).get("domain", "")
+    m = re.search(r'data-rail-lane="(\w+)"', body)
+    cur = m.group(1) if m else ""
+    d = ("&d=" + E(urllib.parse.quote(domain))) if domain else ""
+    return item + '<div class="rail-sub">%s</div>' % "".join(
+        '<a href="/content?lane=%s%s"%s>%s</a>' % (k, d, ' aria-current="page"' if k == cur else "", _sub_label(k, label))
+        for k, label in _content_agent.LANES)
+
+
+def _with_store(item, path):
+    """Name the last-opened store in a rail link, so the page opens on it (see _opportunities_item)."""
+    import accounts
+    user = accounts.current()
+    domain = _LAST_STORES.get(user["id"] if user else 0, {}).get("domain", "")
+    return item.replace('href="%s"' % path, 'href="%s?d=%s"' % (path, E(urllib.parse.quote(domain))), 1) if domain else item
+
+
+_OPPS_PATH = '<path d="M12 3.5 14.6 9l5.9.6-4.4 4 1.3 5.9L12 16.5l-5.4 3 1.3-5.9-4.4-4 5.9-.6z"/>'
+
+
+def _opportunities_item(here):
+    """Hidden until config.SHOW_OPPORTUNITIES is switched on."""
+    if not config.SHOW_OPPORTUNITIES:
+        return ""
+    import accounts
+    import opportunities
+    user = accounts.current()
+    domain = _LAST_STORES.get(user["id"] if user else 0, {}).get("domain", "")
+    n = opportunities.counts(domain) if domain else 0
+    # Name the store in the link: opportunities._store() reads _LAST_STORES via
+    # `import app`, which is a second, empty copy when app.py runs as __main__.
+    item = _rail_item("/opportunities", "Opportunities", _OPPS_PATH, here)
+    if domain:
+        item = item.replace('href="/opportunities"', 'href="/opportunities?d=%s"' % E(domain), 1)
+    return item.replace("</span></a>", '</span><span class="rail-badge">%d</span></a>' % n) if n else item
 
 
 _SWITCH_ICON = ('<svg class="rail-switch-icon" viewBox="0 0 24 24" aria-hidden="true">'
@@ -285,11 +402,11 @@ def _store_switch(body):
 
 _RAIL = """<a class="skip" href="#main">Skip to content</a>
 <aside class="rail" aria-label="Produkto">
-<div class="rail-top"><div class="rail-brand"><a class="rail-logo" href="/"><img src="/logo.png" alt="Produkto"></a>
+<div class="rail-top"><div class="rail-brand">%s
 <button type="button" class="rail-collapse" id="rail-collapse" aria-expanded="true" title="Collapse sidebar">
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 7.5 9 12l4.5 4.5"/><path d="M18.5 7.5 14 12l4.5 4.5"/></svg>
 <span class="sr-only">Collapse sidebar</span></button></div>
-%s</div>
+</div>
 <nav class="rail-nav" aria-label="Sections">%s</nav>
 <div class="rail-foot">%s%s</div></aside>
 <script>
@@ -614,7 +731,8 @@ def api_questions(q, form):
         return json_out({'error':'Unknown store.'})
     ps=db.get_prompt_set(domain)
     stale=(topics.saved(domain) or ([],[],False))[2]
-    if ps and ps['frozen_at'] and not stale:
+    # A scanned set can still be edited; the edit saves as a new version.
+    if ps and ps['frozen_at'] and not stale and 'questions' not in form:
         return _questions_out(ps)
     try:
         selected=db.scope(domain)
@@ -631,6 +749,8 @@ def api_questions(q, form):
                     raise ValueError('Enter a question or remove its row.')
                 cleaned.append(dict(q=question,tag=str(it.get('tag','')),cluster=str(it.get('cluster','Buyer questions')),products=it['products']))
             items=cleaned
+            if ps and [(x['q'],x['products']) for x in items]==[(x['q'],x['products']) for x in catalog_setup.items_out(ps)]:
+                return _questions_out(ps)
         elif ps and not q.get('regen') and not (topics.saved(domain) or ([],[],False))[2]:
             return _questions_out(ps)
         else:
@@ -638,8 +758,16 @@ def api_questions(q, form):
             money=dict(currency=store['currency'],symbol=catalog.SYMBOLS.get(store['currency'],''))
             products=[p for p in db.all_('SELECT * FROM products WHERE store_domain=?',(domain,)) if p['id'] in selected['product_ids']]
             place=', '.join(x for x in ((store.get('markets') or [])[:1] or [brand_profile.COUNTRY_NAMES.get(store.get('country') or '', store.get('country') or '')]) if x)
-            items=questions.generate_clusters(products,money,location=place,topics=topics.chosen(domain),
-                                              per_topic=topics.PROMPTS_PER_TOPIC)
+            # Write only as many questions as the plan allows: fewer per topic
+            # when many topics are chosen, so every topic still gets some.
+            chosen=topics.chosen(domain)
+            cap=accounts.question_limit(domain)
+            per_topic=topics.PROMPTS_PER_TOPIC
+            if cap and chosen:
+                per_topic=max(1,min(per_topic,(cap-questions.SPECIFIC_QUESTIONS)//len(chosen)))
+            items=questions.generate_clusters(products,money,location=place,topics=chosen,per_topic=per_topic)
+            if cap and len(items)>cap:
+                items=questions.trim_to(items,cap)
             topics.clear_stale(domain)
         saved=db.save_prompts(domain,[x['q'] for x in items],[x['tag'] for x in items],
                               [x['cluster'] for x in items],[x['products'] for x in items],expected_ids=selected['product_ids'],
@@ -656,6 +784,8 @@ def api_scan_start(q, form):
     # saved six-vs-six panel is an extra view, so a missing selection leaves
     # that one panel empty rather than blocking the measurement itself.
     # Kelian, 2026-09-21; supersedes the pre-scan gate added 2026-09-18.
+    if not config.SCANS_ALLOWED:
+        return json_out({'error':'Scans are switched off on this test copy.'})
     if not config.api_key():
         return json_out({'error':'Add your OpenAI key to mvp/app/.env first.'})
     try:
@@ -821,22 +951,33 @@ import accounts
 import agents
 import linkcheck
 import docs
+import billing
 import settings_page
 import support
 
+import opportunities
+
 ROUTES_GET = {"/topics": topics.page,
+              "/opportunities": lambda q: (lambda r: (r[0], page("Opportunities", r[1])))(opportunities.page(q)), "/question-suggestions": lambda q: (lambda r: (r[0], page("Buyer question suggestions", r[1])))(__import__("question_suggestions").page(q)),
+              "/content": lambda q: (lambda r: (r[0], page(_content_agent.NAME, r[1])))(_content_agent.page(q)),
               "/agents": lambda q: (lambda r: (r[0], page("Content agents", r[1], here="/agents")))(agents.page(q)),
+              "/oauth/authorize": lambda q: (lambda r: (r[0], page("Connect", r[1], here="/settings")))(__import__("mcp_oauth").authorize_page(q)),
               "/settings": lambda q: (lambda r: (r[0], page("Settings", r[1], here="/settings")))(settings_page.settings(q)),
               "/support": lambda q: (lambda r: (r[0], page("Support", r[1], here="/support")))(support.page(q)),
               "/docs": lambda q: (lambda r: (r[0], page("How Produkto measures", r[1], here="/support")))(docs.page(q)), "/api/brand-profile": lambda q: json_out(brand_profile.status(q.get("d", ""))), "/competitors": lambda q: (303, "/topics?d=" + urllib.parse.quote(q.get("d", ""))), "/costs": view_costs, "/": view_latest, "/buyer-questions": view_latest_questions, "/new": view_home, "/brand": view_brand, "/store": view_store, "/product": view_product, "/questions": view_product,
               "/api/scan": api_scan_status}
 import prompt_creation
 
-ROUTES_POST = {"/api/topics": topics.api, "/api/prompts": prompt_creation.api, "/api/competitors": competitor_setup.api, "/api/catalog": api_catalog, "/store": act_store, "/brand": act_brand, "/api/questions": api_questions,
+ROUTES_POST = {"/question-suggestions": lambda q, form: (lambda r: r if r[0] == 303 or isinstance(r[1], tuple) else (r[0], page("Buyer question suggestions", r[1])))(__import__("question_suggestions").act(q, form)), "/content": lambda q, form: (lambda r: r if r[0] == 303 or isinstance(r[1], tuple) else (r[0], page(_content_agent.NAME, r[1])))(_content_agent.act(q, form)), "/opportunities": lambda q, form: (lambda r: r if r[0] == 303 else (r[0], page("Opportunities", r[1])))(opportunities.act(q, form)), "/api/topics": topics.api, "/api/prompts": prompt_creation.api, "/api/competitors": competitor_setup.api, "/api/catalog": api_catalog, "/store": act_store, "/brand": act_brand, "/api/questions": api_questions,
                "/api/brand": api_brand,
                "/api/scan": api_scan_start,
                "/api/waitlist": waitlist.api,
                "/api/support": support.api,
+               "/settings/password": settings_page.act_password,
+               "/settings/cancel": settings_page.act_cancel,
+               "/settings/mcp-key": settings_page.act_mcp_key,
+               "/oauth/authorize": lambda q, form: (lambda r: r if r[0] == 303 else (r[0], page("Connect", r[1])))(__import__("mcp_oauth").authorize_act(q, form)),
+               "/settings/keep": settings_page.act_keep,
                "/api/linkcheck": linkcheck.api}
 LOGO = os.path.join(config.HERE, "logo.png")
 
@@ -852,8 +993,7 @@ class Handler(BaseHTTPRequestHandler):
         if code == 303:
             self.send_response(303)
             self.send_header("Location", payload)
-            if self._set_cookie:
-                self.send_header("Set-Cookie", self._set_cookie)
+            self._send_cookies()
             self.end_headers()
             return
         ctype = "text/html; charset=utf-8"
@@ -863,8 +1003,21 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(code)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(data)))
+        self._send_cookies()
         self.end_headers()
         self.wfile.write(data)
+
+    def _send_cookies(self):
+        if self._set_cookie:
+            self.send_header("Set-Cookie", self._set_cookie)
+        # Keep the website's "signed in" marker in step with the real session.
+        marker = None
+        if self._set_cookie:
+            marker = accounts.site_cookie_header(clear="Max-Age=0" in self._set_cookie)
+        elif getattr(self, "_fix_marker", None):
+            marker = accounts.site_cookie_header(clear=self._fix_marker == "clear")
+        if marker:
+            self.send_header("Set-Cookie", marker)
 
     def _session_token(self):
         from http.cookies import SimpleCookie
@@ -873,12 +1026,18 @@ class Handler(BaseHTTPRequestHandler):
             jar.load(self.headers.get("Cookie") or "")
         except Exception:                                       # noqa: BLE001
             return ""
+        self._has_marker = accounts.SITE_COOKIE in jar
         return jar[accounts.COOKIE].value if accounts.COOKIE in jar else ""
 
     def _accounts(self, method, u, q):
         """Sign-in and store access. Returns a response to send, or None to carry on."""
+        self._has_marker = False
         user = accounts.user_for(self._session_token())
         accounts.set_current(user)
+        # Marker out of step with the session (signed in before it existed, or
+        # the session expired): correct it on this visit.
+        self._fix_marker = ("set" if user and not self._has_marker else
+                            "clear" if not user and self._has_marker else None)
         path = u.path
         form = {}
         if method == "POST":
@@ -905,6 +1064,8 @@ class Handler(BaseHTTPRequestHandler):
             if session:
                 self._set_cookie = accounts.cookie_header(session)
             return code, payload
+        if path == "/welcome":
+            return accounts.welcome_page(q)
         if path.startswith("/invite/"):
             token = path[len("/invite/"):]
             if method == "GET":
@@ -920,7 +1081,7 @@ class Handler(BaseHTTPRequestHandler):
                 nxt = self.path if self.path != "/" else ""
                 return 303, "/login" + ("?next=" + urllib.parse.quote(nxt) if nxt else "")
             return 401, ("json", json.dumps({"error": "Your session ended. Sign in again."}))
-        if path in ("/admin", "/admin/invite", "/admin/reset", "/costs") and not user["is_admin"]:
+        if path in ("/admin", "/admin/invite", "/admin/reset", "/admin/disable", "/costs") and not user["is_admin"]:
             return 404, page("Not found", "<h1>Not found</h1>")
         if path == "/admin":
             return accounts.admin_page(q)
@@ -928,6 +1089,8 @@ class Handler(BaseHTTPRequestHandler):
             return accounts.create_invite(form)
         if path == "/admin/reset" and method == "POST":
             return accounts.create_reset(form)
+        if path == "/admin/disable" and method == "POST":
+            return accounts.set_disabled(form)
         # Store access: every store named in the request must be one this user owns.
         # A new store being added (POST /store) is claimed inside act_store instead.
         domains = [v for v in (q.get("d"), form.get("d"), q.get("domain") if path != "/new" else None) if v]
@@ -954,10 +1117,46 @@ class Handler(BaseHTTPRequestHandler):
         q = dict(urllib.parse.parse_qsl(u.query))
         self._body = None
         try:
+            if u.path == "/mcp":
+                return self._mcp(method)
+            if u.path.startswith(("/.well-known/oauth", "/.well-known/openid", "/oauth/register", "/oauth/token")):
+                import mcp_oauth
+                body = self.rfile.read(int(self.headers.get("Content-Length") or 0)).decode() if method == "POST" else ""
+                out = mcp_oauth.handle(method, u.path, body)
+                if out is None:
+                    return self._raw(404, "", {})
+                return self._raw(*out)
             gate = self._accounts(method, u, q)
             if gate is not None:
                 return self._send(gate)
             if method == "GET":
+                if u.path == "/shopify/callback":
+                    return self._send(_content_agent.shopify_callback(q))
+                if u.path.startswith("/content/cal/") and u.path.endswith(".ics"):
+                    import content_calendar
+                    code, text = content_calendar.ical(u.path[len("/content/cal/"):-len(".ics")]) \
+                        if config.SHOW_CONTENT_AGENT or config.CONTENT_AGENT_ADMIN_ONLY else (404, "")
+                    data = text.encode("utf-8")
+                    self.send_response(code)
+                    self.send_header("Content-Type", "text/calendar; charset=utf-8")
+                    self.send_header("Cache-Control", "no-store")
+                    self.send_header("Content-Length", str(len(data)))
+                    self.end_headers()
+                    self.wfile.write(data)
+                    return
+                if u.path == "/content/export":
+                    code, data, name = _content_agent.export(q)
+                    if code != 200:
+                        return self._send((code, data))
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/zip")
+                    self.send_header("Content-Disposition", 'attachment; filename="%s"' % name)
+                    self.send_header("Cache-Control", "no-store")
+                    self.send_header("Content-Length", str(len(data)))
+                    self._send_cookies()
+                    self.end_headers()
+                    self.wfile.write(data)
+                    return
                 if u.path == "/icon":
                     import icons
                     path, ctype = icons.fetch(q.get("d", ""), cached_only=True)
@@ -1051,6 +1250,35 @@ class Handler(BaseHTTPRequestHandler):
             self._send((500, page("Error", "<h1>Something broke</h1>"
                                   "<pre>%s</pre>" % E(traceback.format_exc()))))
 
+    def _raw(self, code, text, headers):
+        """A reply for AI assistants: no cookies, readable from other sites."""
+        data = (text or "").encode()
+        self.send_response(code)
+        for k, v in dict({"Access-Control-Allow-Origin": "*",
+                          "Access-Control-Allow-Headers": "Authorization, Content-Type, Mcp-Session-Id, Mcp-Protocol-Version",
+                          "Access-Control-Expose-Headers": "WWW-Authenticate, Mcp-Session-Id",
+                          "Access-Control-Allow-Methods": "GET, POST, OPTIONS"}, **headers).items():
+            self.send_header(k, v)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def do_OPTIONS(self):
+        self._raw(204, "", {})
+
+    def _mcp(self, method):
+        """The hosted MCP endpoint: a merchant's AI assistant, signed in with a key, not a cookie."""
+        import mcp_oauth
+        import mcp_server
+        if method != "POST":
+            return self._raw(405, "", {"Allow": "POST"})
+        body = self.rfile.read(int(self.headers.get("Content-Length") or 0)).decode()
+        code, text = mcp_server.http(body, self.headers.get("Authorization"))
+        headers = {"Content-Type": "application/json"} if text else {}
+        if code == 401:
+            headers["WWW-Authenticate"] = mcp_oauth.challenge_header()
+        return self._raw(code, text, headers)
+
     def do_GET(self):
         self._handle("GET")
 
@@ -1080,6 +1308,7 @@ def main():
     waitlist.init()
     support.init()
     accounts.init()
+    billing.init()
     if "--create-admin" in sys.argv:
         return create_admin()
     if "--check" in sys.argv:

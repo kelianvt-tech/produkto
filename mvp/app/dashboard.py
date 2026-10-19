@@ -233,9 +233,7 @@ def header(s, p, active):
     picture='<span class="product-placeholder"><span aria-hidden="true">%s</span>%s</span>'%(E(initials),mark)
     back='<p class="small"><a href="/r/%s?product=">← Back to catalog</a></p>'%token if p['id'] is not None and not p['_ps']['legacy_product_id'] else ''
     # No manual scan button: the scheduler scans every store daily.
-    action=('<a class="btn" href="/store?d=%s">Set up catalog scan</a>'%E(p['store_domain']) if p['_ps']['legacy_product_id'] else
-            '' if config.DAILY_SCANS else
-            '<button class="btn" id="rescan" data-store="%s">Run catalog scan</button>'%E(p['store_domain']))
+    action=('<a class="btn" href="/store?d=%s">Set up catalog scan</a>'%E(p['store_domain']) if p['_ps']['legacy_product_id'] else '')
     titles = {'overview': 'Catalog overview', 'questions': 'Buyer questions',
               'answers': 'AI answers', 'citations': 'Mentions & citations'}
     descriptions = {'overview': 'See where your products stand in AI recommendations.',
@@ -656,6 +654,9 @@ def questions(token, query):
     import insight_panels
     pctx = insight_panels.period_context(ps, p, query)
     body = header(s,p,'questions')
+    import question_suggestions
+    body += ('<div class="qs-page" style="max-width:none">%s</div><style>%s</style>'
+             % (question_suggestions.tabs(p['store_domain'], 'questions'), question_suggestions.CSS))
     body += insight_panels.filter_bar(pctx, 'buyer questions')
     import prompt_creation
     body += prompt_creation.render(token, p)

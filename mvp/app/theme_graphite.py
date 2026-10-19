@@ -193,6 +193,16 @@ html.dark .product-head img.product-hero,html.dark img[style*=multiply]{backgrou
 /* Product photos everywhere sit on a light tile, as in white mode. */
 html.dark .rank-thumb,html.dark img.product-photo,html.dark .tip-mark{background:#fff!important}
 html.dark .chart-tooltip{background:#161b22!important;border-color:#2a313c!important;box-shadow:0 12px 32px rgba(0,0,0,.55)!important}
+/* ---- agent board: selection and drop rings stay visible in dark mode ---- */
+html.dark .cb-tile[aria-current]{box-shadow:0 0 0 3px #1d3156}
+html.dark .cb-drop{background:#15213a;box-shadow:inset 0 0 0 2px #6393e4}
+html.dark .cb-on .cb-can{box-shadow:inset 0 0 0 1px rgba(99,147,228,.45)}
+html.dark .cb-no{box-shadow:inset 0 0 0 2px rgba(240,113,96,.6)}
+html.dark .cal-win{background:#17281d}html.dark .cal-win-mixed{background:#2a2216}html.dark .cal-win-hard{background:#2c1a18}
+html.dark .cs-step[aria-current]{box-shadow:0 0 0 3px #232b38}
+/* ---- agent voice sample: keep it a clearly blue, highlighted card in dark mode ---- */
+html.dark .cs-sample-card{background:#14233b;border:1px solid #23406b}
+html.dark .cs-sample-card figcaption{color:#8fb4f0}
 """
 
 # Onboarding keeps its own dark "sky" side panel and animated P as they are.

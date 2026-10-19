@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Question suggestions</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#111318;--panel:#171a20;--card:#1c2027;--line:#2a2f38;--ink:#f1f3f6;--ink2:#c6ccd6;--muted:#8a93a3;--blue:#6393e4;--green:#22c55e;--orange:#f08a3c;--purple:#9b7bf0;--red:#f07160;--amber:#e3b341}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Onest,system-ui,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:24px;margin:0 0 6px}.lede{color:var(--muted);margin:0 0 18px;max-width:80ch}
+.vt{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.vt button{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink2);cursor:pointer}
+.vt button.on{background:var(--ink);color:#111;border-color:var(--ink)}
+.v{display:none}.v.on{display:block}
+.why{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--blue);padding:10px 14px;border-radius:10px;color:var(--ink2);font-size:14px;margin-bottom:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.sp{margin-left:auto}
+.m{color:var(--muted);font-size:13px}
+.btn{font:inherit;font-size:13px;font-weight:600;padding:6px 12px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.p{background:var(--ink);color:#111;border-color:var(--ink)}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;background:var(--card);color:var(--ink2);white-space:nowrap}
+.chip i{width:7px;height:7px;border-radius:50%}
+.dead i{background:var(--red)}.hard i{background:var(--orange)}.win i{background:var(--green)}.ok i{background:var(--blue)}.new i{background:var(--purple)}
+.src{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.q{font-weight:600}.old{color:var(--muted);text-decoration:line-through;text-decoration-color:#555}
+.sug{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.sug .ev{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:var(--muted)}.ev b{color:var(--ink)}
+.arrow{color:var(--muted);margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:8px;border-bottom:1px solid var(--line)}
+td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.inl{margin-top:8px;padding:10px;border-radius:10px;background:#1e2330;border:1px dashed #3b4660}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.bar{height:6px;border-radius:4px;background:var(--card);overflow:hidden}.bar b{display:block;height:100%;background:var(--blue)}
+.stages{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:10px;overflow-x:auto}
+.st{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;min-height:260px}
+.st h4{margin:0 0 2px;font-size:14px}.st .m{display:block;margin-bottom:10px}
+.tq{background:var(--card);border-radius:10px;padding:8px 10px;font-size:13px;margin-bottom:6px}
+.tq.gap{background:none;border:1px dashed #3b4660;color:var(--ink2)}
+.tabs{display:inline-flex;gap:2px;background:var(--panel);border:1px solid var(--line);padding:4px;border-radius:12px;margin-bottom:16px}
+.tabs span{padding:6px 14px;border-radius:8px;font-size:14px;color:var(--ink2)}.tabs .on{background:var(--card);color:var(--ink);font-weight:600}
+</style></head><body><main>
+<h1>Buyer question suggestions</h1>
+<p class="lede">Clubhouse Skin, Buyer questions page. Tracked questions and their numbers are real (last 30 days). Suggested questions are examples of what the agent would propose; they have no numbers yet because nothing has been scanned for them.</p>
+<div class="vt" id="vt"></div>
+
+<!-- V1 -->
+<section class="v" data-n="1 · Suggestions panel on top">
+<div class="why">A "Suggested changes" panel above the list. Swaps first (strongest evidence), then adds. Each card says why in one line, shows the evidence, and where the idea came from.</div>
+<div class="tabs"><span class="on">Buyer questions</span><span>Topics</span></div>
+<div class="card" style="margin-bottom:14px">
+ <div class="row"><strong>Suggested changes</strong><span class="m">11 of 75 questions used · 64 free</span><span class="sp"></span><button class="btn">Dismiss all</button></div>
+ <div style="margin-top:12px" id="v1"></div>
+</div>
+<div class="card"><div class="row" style="margin-bottom:6px"><strong>Tracked questions</strong><span class="m">11</span></div><table id="t1"></table></div>
+</section>
+
+<!-- V2 -->
+<section class="v" data-n="2 · Health on every question">
+<div class="why">No separate panel. Each tracked question gets a health label (No products named · Hard to win · Winning · Healthy). Where a swap is suggested it opens right under that question. New ideas sit in a side column.</div>
+<div class="tabs"><span class="on">Buyer questions</span><span>Topics</span></div>
+<div class="grid2">
+<div class="card"><table id="t2"></table></div>
+<div>
+ <div class="card" style="margin-bottom:12px"><strong>Room to add</strong><p class="m" style="margin:4px 0 8px">11 of 75 questions used on Growth.</p><div class="bar"><b style="width:15%"></b></div></div>
+ <div class="card"><strong>Ideas to add</strong><p class="m" style="margin:4px 0 10px">From your ingredients, materials, where you ship, and what AI already says.</p><div id="v2add"></div></div>
+</div></div>
+</section>
+
+<!-- V3 -->
+<section class="v" data-n="3 · Buyer journey map">
+<div class="why">Questions laid out by stage of buying. Tracked ones are solid; dashed boxes are gaps the agent suggests filling. Shows at a glance that Clubhouse only tracks the middle of the journey.</div>
+<div class="tabs"><span class="on">Buyer questions</span><span>Topics</span></div>
+<div class="row" style="margin-bottom:12px"><span class="chip ok"><i></i>Tracked</span><span class="chip new"><i></i>Suggested</span><span class="sp m">11 of 75 used</span></div>
+<div class="stages" id="v3"></div>
+</section>
+
+<script>
+// Real tracked questions: [question, answers, own, competitorsNamed, winnable level, bigShare]
+const T=[
+["What’s the best simple three-step skincare routine for cleansing, brightening and hydrating?",77,0,7,"mixed",42],
+["What skincare products can I get for under £40 that cleanse gently or hydrate without feeling heavy?",74,0,64,"mixed",41],
+["Which daily cleanser uses gentle exfoliation while helping maintain my skin’s natural balance?",75,0,72,"winnable",31],
+["Which lightweight moisturiser contains snow mushroom, squalane and niacinamide for deep hydration?",77,24,69,"winnable",24],
+["Which vitamin C face oil can brighten skin, support environmental protection and absorb without feeling greasy?",75,0,71,"winnable",38],
+["What should I use if I want a simple routine that cleans without stripping my skin and keeps it hydrated all day?",78,0,26,"winnable",36],
+["What’s good for adding a natural glow while wearing a lightweight face oil every day?",77,0,25,"winnable",32],
+["Should I choose a face oil or a lightweight moisturiser for daily hydration and a comfortable finish?",78,0,9,"winnable",20],
+["Is it better to buy a complete three-product skincare set or choose a cleanser, face oil and moisturiser separately?",78,0,8,"winnable",27],
+["What are the best structured unisex cotton caps inspired by 1990s golf style?",75,0,62,"winnable",23],
+["What’s a 100% cotton structured cap I can get for under £30?",76,0,73,"winnable",4]];
+const health=t=>t[3]/t[1]<.15?["dead","No products named"]:t[2]/t[1]>.25?["win","Winning"]:t[5]>=40?["hard","Mixed"]:["ok","Healthy"];
+const pct=(a,b)=>Math.round(100*a/b)+"%";
+// Swaps (real evidence) and adds (examples)
+const S=[
+ [7,"Which face oil works under a moisturiser for dry skin in winter?","AI named products in only 9 of 78 answers; it answers with general advice, so no product can win it.","Swap · no products named","dead"],
+ [8,"Is a 3-step men's skincare set worth it, or should I buy CeraVe products separately?","Named products in only 8 of 78 answers. A matchup with a brand AI already names gets product answers.","Swap · competitor matchup","dead"],
+ [0,"What's a simple 3-step skincare routine for men with oily skin under £60?","Products named in only 7 of 77 answers. Narrower (who, skin type, price) usually gets product answers.","Swap · make it narrower","dead"]];
+const A=[
+ ["Best moisturiser with squalane for dry skin","Ingredient from your catalog (Helsinki, Frontier)","Ingredient"],
+ ["Vitamin C face oil that's safe to use every day","Ingredient + use, from Amalfi's product facts","Ingredient"],
+ ["Best men's skincare brand in the UK","Your store is in London; AI answers often name UK brands","Location"],
+ ["Skincare set that ships to Australia","You ship to 50+ countries, including Australia","Location"],
+ ["Cotton cap that keeps its shape after washing","Material (100% cotton, structured) phrased the way buyers ask","Material"],
+ ["Alternatives to The Ordinary for men","AI named The Ordinary in many of your answers","Competitor"],
+ ["Is face oil good for oily skin?","Heading on Healthline, cited 21 times for your questions","Cited page"],
+ ["Skincare gift for him under £50","Gifting season starts in 4 weeks: added now, it has data by then","Season"]];
+const swapCard=s=>`<div class="sug"><div class="row"><span class="chip ${s[4]}"><i></i>${s[3]}</span></div>
+ <div class="old" style="margin-top:8px">${T[s[0]][0]}</div><div class="arrow">↓</div><div class="q">${s[1]}</div>
+ <div class="ev"><span>${s[2]}</span></div>
+ <div class="row" style="margin-top:10px"><button class="btn p">Swap</button><button class="btn">Edit first</button><button class="btn">Keep mine</button><span class="m sp">Starts a new trend line; the old one's history stays.</span></div></div>`;
+const addCard=a=>`<div class="sug"><div class="row"><span class="src">${a[2]}</span></div><div class="q" style="margin-top:4px">${a[0]}</div><div class="ev"><span>${a[1]}</span></div><div class="row" style="margin-top:8px"><button class="btn p">Add</button><button class="btn">Edit</button><button class="btn">Not for us</button></div></div>`;
+v1.innerHTML=S.map(swapCard).join("")+A.slice(0,4).map(addCard).join("")+`<p class="m">+ 4 more ideas</p>`;
+const head=`<tr><th>Question</th><th>You named</th><th>Products named</th><th>Big sites cited</th><th>Health</th></tr>`;
+const rowh=(t,extra="")=>{const h=health(t);return `<tr><td>${t[0]}${extra}</td><td>${pct(t[2],t[1])}</td><td>${pct(t[3],t[1])}</td><td>${t[5]}%</td><td><span class="chip ${h[0]}"><i></i>${h[1]}</span></td></tr>`};
+t1.innerHTML=head+T.map(t=>rowh(t)).join("");
+t2.innerHTML=head+T.map((t,i)=>{const s=S.find(x=>x[0]==i);return rowh(t,s?`<div class="inl"><span class="m">Suggest swapping for</span><div class="q">${s[1]}</div><div class="m">${s[2]}</div><div class="row" style="margin-top:8px"><button class="btn p">Swap</button><button class="btn">Keep</button></div></div>`:"")}).join("");
+v2add.innerHTML=A.map(addCard).join("");
+const ST=[["Problem","“Why does my skin feel tight after washing?”",[],["Why does my skin feel tight after cleansing?","Is my skin dry or dehydrated?"]],
+["What helps","“What helps dry skin?”",[5,6],["What helps dull skin look brighter in winter?"]],
+["Products","“Best X for Y”",[2,3,4,9,10,1],["Best moisturiser with squalane for dry skin","Cotton cap that keeps its shape after washing"]],
+["Compare","“X vs Y”, alternatives",[7,8,0],["Alternatives to The Ordinary for men","Face oil vs serum for vitamin C"]],
+["Decide & use","“Is it worth it?”, “how to use”",[],["Is a 3-step men's skincare set worth it?","How do I use face oil with moisturiser?"]]];
+v3.innerHTML=ST.map(s=>`<div class="st"><h4>${s[0]}</h4><span class="m">${s[1]} · ${s[2].length} tracked</span>${s[2].map(i=>`<div class="tq">${T[i][0]}</div>`).join("")}${s[3].map(q=>`<div class="tq gap">+ ${q}<div class="row" style="margin-top:6px"><button class="btn">Add</button></div></div>`).join("")}</div>`).join("");
+const vs=[...document.querySelectorAll(".v")];
+vs.forEach((v,i)=>{const b=document.createElement("button");b.textContent=v.dataset.n;b.onclick=()=>{vs.forEach(x=>x.classList.remove("on"));document.querySelectorAll("#vt button").forEach(x=>x.classList.remove("on"));v.classList.add("on");b.classList.add("on")};vt.appendChild(b);if(!i)b.click()});
+</script></main></body></html>

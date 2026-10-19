@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent pages: five layouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#111316;--rail:#0e1013;--surface:#16181c;--raised:#1b1e23;--hover:#1f2329;--line:#24282e;--line-2:#2e333a;
+ --text:#e4e8ee;--muted:#a1aab7;--faint:#7d8696;--ink:#e9edf3;--on-ink:#0f1114;
+ --ok:#3fcf86;--ok-bg:rgba(63,207,134,.09);--warn:#e8a54a;--warn-bg:rgba(232,165,74,.09);--blue:#7aa7ff;--blue-bg:rgba(122,167,255,.09);
+ --violet:#a58cf5;--cut:#f0846f;--focus:#7aa7ff;--r:10px;--r-lg:14px;--font:"Geist",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,monospace}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 var(--font);-webkit-font-smoothing:antialiased}
+::selection{background:rgba(122,167,255,.32)}::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#2a2f36;border-radius:10px;border:2px solid var(--bg)}
+button{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+.num{font-variant-numeric:tabular-nums}
+svg.i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.switch{position:sticky;top:0;z-index:20;display:flex;gap:4px;align-items:center;padding:10px 16px;background:#0b0c0e;border-bottom:1px solid var(--line);overflow-x:auto}
+.switch b{font-size:12px;color:var(--faint);font-weight:500;margin-right:8px;white-space:nowrap}
+.switch button{border:0;background:none;padding:6px 12px;border-radius:7px;font-size:13px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.switch button[aria-pressed=true]{background:var(--raised);color:var(--text)}
+.app{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:calc(100vh - 49px)}
+.rail{background:var(--rail);border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:2px}
+.store{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:var(--r);margin-bottom:14px}
+.store i{width:30px;height:30px;border-radius:7px;background:#f4f1ea;display:block}.store strong{display:block;font-size:13.5px}.store span{font-size:12px;color:var(--faint)}
+.ri{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;color:var(--muted);font-size:14px}.ri.on{color:var(--text);background:var(--raised)}
+.sub{display:flex;flex-direction:column;margin:2px 0 6px 36px}
+.sub button{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border-radius:7px;color:var(--muted);font-size:13.5px;border:0;background:none;cursor:pointer;text-align:left}
+.sub button[aria-current=page]{color:var(--text);background:var(--raised);font-weight:500}
+.sub .c{font-size:11.5px;color:var(--faint)}
+.main{padding:26px 40px 100px;min-width:0}
+.ph{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:18px}
+.ph h1{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.ph h1 .sp{width:20px;height:20px}
+.ph p{margin:0;color:var(--muted);max-width:66ch}
+.ph .right{margin-left:auto;display:flex;align-items:center;gap:16px}
+.tabs{display:inline-flex;gap:2px;border-bottom:1px solid var(--line);margin:0 0 18px;width:100%}
+.tabs span{padding:8px 12px;font-size:13.5px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs span.on{color:var(--text);border-color:var(--ink);font-weight:500}
+.quota{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted)}
+.quota .t{width:110px;height:4px;border-radius:4px;background:var(--line-2);overflow:hidden}.quota .t b{display:block;height:100%;background:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--line-2);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:background .12s,border-color .12s;white-space:nowrap}
+.btn:hover{background:var(--hover)}.btn.p{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}.btn.p:hover{background:#fff}
+.btn.q{border-color:transparent;background:none;color:var(--muted)}.btn.q:hover{color:var(--text);background:var(--hover)}
+.btn.sm{height:28px;padding:0 10px;font-size:12.5px}
+.ph-img{width:40px;height:40px;border-radius:8px;object-fit:cover;background:#f4f1ea;flex:none}
+.ph-img.s{width:32px;height:32px;border-radius:7px}.ph-img.l{width:56px;height:56px;border-radius:10px}
+.type{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.type i{width:6px;height:6px;border-radius:50%;background:var(--blue)}.type.comparison i{background:var(--violet)}.type.guide i{background:var(--warn)}
+.flag{display:inline-flex;align-items:center;gap:5px;font-size:12px}
+.flag.ok{color:var(--ok)}.flag.look{color:var(--warn)}.flag.facts{color:var(--warn)}
+.stage{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted)}
+.stage i{width:7px;height:7px;border-radius:50%}
+.s-facts i{background:var(--warn)}.s-ready i{background:var(--blue)}.s-scheduled i{background:var(--ok)}.s-live i{background:var(--ink)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);opacity:0;transition:all .25s cubic-bezier(.2,.8,.2,1);background:var(--ink);color:var(--on-ink);padding:9px 14px;border-radius:9px;font-size:13px;font-weight:500;pointer-events:none;z-index:50}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.empty{padding:14px;border:1px dashed var(--line-2);border-radius:10px;color:var(--faint);font-size:13px;text-align:center}
+
+/* V1 refined board */
+.bd{display:grid;gap:14px;align-items:start}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:6px}
+.col-h{display:flex;align-items:center;gap:8px;padding:10px 10px 12px;font-size:13px;font-weight:600}
+.col-h .n{color:var(--faint);font-weight:500}.col-h .hint{margin-left:auto;font-weight:400;font-size:12px;color:var(--faint)}
+.kc{display:block;width:100%;text-align:left;background:var(--raised);border:1px solid var(--line);border-radius:11px;padding:12px;margin-bottom:6px;cursor:grab;transition:border-color .12s,transform .12s,box-shadow .12s}
+.kc:hover{border-color:#3a4049;box-shadow:0 8px 20px -14px rgba(0,0,0,.8)}
+.kc .top{display:flex;gap:10px}.kc strong{font-size:13.5px;font-weight:600;line-height:1.35}
+.kc .chg{font-size:12.5px;color:var(--muted);margin-top:3px}
+.kc .ft{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
+.gaps{display:flex;gap:3px;margin-top:10px}.gaps i{flex:1;height:3px;border-radius:2px;background:var(--warn)}
+
+/* V2 triage */
+.tg{display:grid;grid-template-columns:360px minmax(0,1fr);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);overflow:hidden;min-height:620px}
+.tg-l{border-right:1px solid var(--line);overflow:auto}
+.tg-g{padding:12px 16px 6px;font-size:12px;color:var(--faint);display:flex;justify-content:space-between}
+.tg-it{display:flex;gap:10px;width:100%;text-align:left;border:0;background:none;padding:10px 16px;cursor:pointer;align-items:center}
+.tg-it:hover{background:var(--hover)}.tg-it[aria-selected=true]{background:var(--raised);box-shadow:inset 2px 0 0 var(--focus)}
+.tg-it .t{font-size:13.5px;line-height:1.35;display:block}.tg-it .m{display:flex;gap:10px;margin-top:3px}
+.tg-d{padding:26px 30px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.tg-d .hd{display:flex;gap:14px;align-items:center}.tg-d h2{font-size:18px;margin:0;letter-spacing:-.01em}
+.dl{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px 16px;font-size:14px}
+.dl dt{color:var(--faint);font-size:12.5px;padding-top:2px}.dl dd{margin:0}
+.dl .old{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(240,132,111,.5)}
+.dl .new{font-weight:500}
+.prev{border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;color:var(--muted);font-size:13.5px;line-height:1.6;background:var(--bg)}
+.qual{display:flex;gap:18px;font-size:12.5px;color:var(--muted)}.qual b{color:var(--text);font-weight:600}
+.ask{border:1px solid rgba(232,165,74,.3);background:var(--warn-bg);border-radius:var(--r);padding:12px 14px}
+.ask p{margin:0 0 8px;font-size:13.5px}.ask input{width:100%;height:34px;border-radius:8px;border:1px solid var(--line-2);background:var(--surface);color:var(--text);padding:0 10px;font:inherit}
+.bar{display:flex;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+
+/* V3 ledger */
+.lg{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.lg th{text-align:left;font-size:12px;font-weight:500;color:var(--muted);padding:9px 14px;background:var(--raised);border-bottom:1px solid var(--line)}
+.lg td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+.lg tr.grp td{background:var(--bg);font-size:12px;color:var(--faint);padding:8px 14px;font-weight:500}
+.lg tbody tr:not(.grp):hover{background:#181b20}
+.lg .pc{display:flex;gap:12px;align-items:center}.lg .pc strong{font-weight:500;display:block}.lg .pc span{font-size:12.5px;color:var(--faint)}
+
+/* V4 stage tabs */
+.st{display:grid;gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;margin-bottom:16px;background:var(--surface)}
+.st button{border:0;background:none;text-align:left;padding:14px 18px;cursor:pointer;border-right:1px solid var(--line);position:relative}
+.st button:last-child{border-right:0}
+.st button[aria-pressed=true]{background:var(--raised)}
+.st button[aria-pressed=true]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ink)}
+.st .k{display:block;font-size:24px;font-weight:600;letter-spacing:-.02em}.st .l{font-size:12.5px;color:var(--muted)}
+.wl{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);overflow:hidden}
+.wr{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.wr:last-child{border-bottom:0}.wr strong{font-size:14.5px;font-weight:600}
+.wr .ch{font-size:13px;color:var(--muted);margin-top:3px}.wr .ch s{color:var(--faint);text-decoration-color:rgba(240,132,111,.5)}
+.wr .mt{display:flex;gap:14px;margin-top:6px}
+
+/* V5 focus / agenda */
+.fc{max-width:760px;margin:0 auto}
+.fc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:13px;color:var(--muted)}
+.fc-top .pr{flex:1;height:4px;border-radius:4px;background:var(--line-2);overflow:hidden}.fc-top .pr b{display:block;height:100%;background:var(--ok);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.fc-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:26px 28px;box-shadow:0 24px 48px -32px rgba(0,0,0,.9)}
+.fc-card .hd{display:flex;gap:16px;align-items:center;margin-bottom:20px}.fc-card h2{margin:0 0 4px;font-size:19px;letter-spacing:-.01em}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.cmp div{border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;font-size:13.5px}
+.cmp small{display:block;font-size:11.5px;color:var(--faint);margin-bottom:4px;font-weight:500}
+.cmp .a{border-color:rgba(63,207,134,.3);background:var(--ok-bg);font-weight:500}
+.fc-act{display:flex;gap:8px;margin-top:20px;align-items:center}.fc-act .sp{margin-left:auto}
+.ag{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);overflow:hidden}
+.ag-d{display:grid;grid-template-columns:120px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.ag-d:last-child{border-bottom:0}
+.ag-date{padding:16px 18px;border-right:1px solid var(--line)}
+.ag-date b{display:block;font-size:22px;font-weight:600;letter-spacing:-.02em}.ag-date span{font-size:12px;color:var(--faint)}
+.ag-it{display:flex;gap:14px;align-items:center;padding:16px 18px}
+.ag-it strong{display:block;font-weight:600;font-size:14.5px}
+@media (max-width:1100px){.app{grid-template-columns:1fr}.rail{display:none}.main{padding:20px 16px 90px}.bd{grid-template-columns:1fr!important}
+ .tg{grid-template-columns:1fr}.tg-l{max-height:300px;border-right:0;border-bottom:1px solid var(--line)}.st{grid-template-columns:repeat(2,1fr)!important}
+ .wr{grid-template-columns:44px 1fr}.wr>div:last-child{grid-column:2}.cmp{grid-template-columns:1fr}.lg thead{display:none}.lg td{display:block;border:0;padding:4px 14px}.lg tr{display:block;border-bottom:1px solid var(--line);padding:8px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="switch" role="toolbar" aria-label="Layouts"><b>Agent pages · layouts</b></div>
+<div class="app">
+ <aside class="rail">
+  <div class="store"><i></i><div><strong>Clubhouse Skin</strong><span>clubhouseskin.com</span></div></div>
+  <div class="ri"><svg class="i" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg>Dashboard</div>
+  <div class="ri"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9l-5 4z"/></svg>Buyer questions</div>
+  <div class="ri"><svg class="i" viewBox="0 0 24 24"><path d="M12 3.5 14.6 9l5.9.6-4.4 4 1.3 5.9L12 16.5l-5.4 3 1.3-5.9-4.4-4 5.9-.6z"/></svg>Opportunities</div>
+  <div class="ri on"><svg class="i" viewBox="0 0 24 24"><rect x="4.2" y="6.4" width="15.6" height="12" rx="3.4"/><path d="M12 3.4v3"/><circle cx="9.2" cy="12" r="1.15"/><circle cx="14.8" cy="12" r="1.15"/></svg>Catalog Optimization Agent</div>
+  <div class="sub" id="lanes"><button data-lane="fixes" aria-current="page">Product page fixes <span class="c num" id="c-fixes"></span></button><button data-lane="articles">AEO articles <span class="c num" id="c-articles"></span></button></div>
+ </aside>
+ <main class="main" id="main"></main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>window.DRAFTS=[{"id": 1, "type": "product_fix", "title": "Peau De Clubhouse Hat: page fix", "status": "draft", "col": "ready", "gaps": 0, "planned": null, "product": "Peau De Clubhouse Hat", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710", "why": "AI recommends products whose pages state what the buyer asks; this makes Peau De Clubhouse Hat state it too, using only facts your catalog already has.", "scores": {"answers": 4, "readable": 4, "voice": 3}, "passed": false, "newtitle": "Clubhouse Skin Peau De Clubhouse Hat - 100% Cotton Structured Cap", "excerpt": " Peau De Clubhouse Hat is a 100% cotton cap inspired by 1990s golf culture. Structured and unisex. Designed to look better with every wear. ", "questions": [], "before": "Peau De Clubhouse Hat", "before_desc": "A 100% cotton cap inspired by 1990s golf culture. Structured, unisex, and designed to look better with every wear.", "after": "Clubhouse Skin Peau De Clubhouse Hat - 100% Cotton Structured Cap", "images": ["https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710"], "gapqs": [], "spec": 3, "faqs": 0}, {"id": 2, "type": "product_fix", "title": "Frontier Cleanser: page fix", "status": "approved", "col": "ready", "gaps": 0, "planned": null, "product": "Frontier Cleanser", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370", "why": "AI recommends products whose pages state what the buyer asks; this makes Frontier Cleanser state it too, using only facts your catalog already has.", "scores": {"answers": 4, "readable": 3, "voice": 4}, "passed": false, "newtitle": "Clubhouse Skin Frontier Cleanser Daily Cleanser - Sea Salt", "excerpt": " A daily cleanser that respects your skin’s natural balance. It removes what does not belong without stripping. Inspired by the Spanish coast, Frontier Cleanser brings together considered ingredients for a balanced clean", "questions": [], "before": "Frontier Cleanser", "before_desc": "A daily cleanser that respects your skin's natural balance. Built around ingredients that clean without stripping — because healthy skin starts with not getting in the way. Inspired by the Spanish coa", "after": "Clubhouse Skin Frontier Cleanser Daily Cleanser - Sea Salt", "images": ["https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370"], "gapqs": [], "spec": 4, "faqs": 0}, {"id": 4, "type": "product_fix", "title": "Helsinki Moisturiser: page fix", "status": "approved", "col": "ready", "gaps": 0, "planned": null, "product": "Helsinki Moisturiser", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451", "why": "AI recommends products whose pages state what the buyer asks; this makes Helsinki Moisturiser state it too, using only facts your catalog already has.", "scores": {"answers": 2, "readable": 3, "voice": 2}, "passed": false, "newtitle": "Clubhouse Skin Helsinki Moisturiser - Snow Mushroom Lightweight", "excerpt": " A lightweight, mushroom-powered moisturiser that hydrates deeply without heaviness. Formulated around Snow Mushroom, sourced from tropical forests, with water-retention properties. It works alongside Squalane and Niacin", "questions": [], "before": "Helsinki Moisturiser", "before_desc": "A lightweight mushroom-powered moisturiser that hydrates deeply without heaviness. The kind of product that quietly becomes non-negotiable. Formulated around Snow Mushroom , sourced from tropical fore", "after": "Clubhouse Skin Helsinki Moisturiser - Snow Mushroom Lightweight", "images": ["https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451"], "gapqs": [], "spec": 5, "faqs": 0}, {"id": 3, "type": "product_fix", "title": "Amalfi Vitamin-C Face Oil: page fix", "status": "draft", "col": "ready", "gaps": 0, "planned": "2026-10-21", "product": "Amalfi Vitamin-C Face Oil", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304", "why": "AI recommends products whose pages state what the buyer asks; this makes Amalfi Vitamin-C Face Oil state it too, using only facts your catalog already has.", "scores": {"answers": 5, "readable": 3, "voice": 4}, "passed": false, "newtitle": "Clubhouse Skin Amalfi Vitamin-C Face Oil - Lightweight", "excerpt": " Amalfi Vitamin-C Face Oil brightens, protects and balances. Lightweight enough to wear daily. Grapefruit Peel Oil and Vitamin C defend against environmental damage while bringing a natural glow. Jojoba mimics your skin'", "questions": [], "before": "Amalfi Vitamin-C Face Oil", "before_desc": "A vitamin-C face oil that brightens , protects , and balances . Lightweight enough to wear daily. Considered enough to earn its place on your shelf. Inspired by eating grapefruit on the Amalfi coast —", "after": "Clubhouse Skin Amalfi Vitamin-C Face Oil - Lightweight", "images": ["https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304"], "gapqs": [], "spec": 4, "faqs": 0}, {"id": 6, "type": "comparison", "title": "Helsinki Moisturiser vs Amalfi Vitamin-C Face Oil", "status": "draft", "col": "facts", "gaps": 3, "planned": "2026-10-27", "product": "Helsinki Moisturiser", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451", "why": "The buyer is choosing between options, so a side-by-side page answers it directly.", "scores": {"answers": 3, "readable": 2, "voice": 3}, "passed": false, "newtitle": "Helsinki Moisturiser vs Amalfi Vitamin-C Face Oil", "excerpt": " [ask merchant: Can you confirm that Helsinki Moisturiser provides daily hydration and a comfortable feel?] Compare our finish, daily use and formula details at a glance. Helsinki Moisturiser Amalfi Vitamin-C Face Oil Li", "questions": [], "before": null, "before_desc": "", "after": "Helsinki Moisturiser vs Amalfi Vitamin-C Face Oil", "images": ["https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451", "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304"], "gapqs": ["Can you confirm that Helsinki Moisturiser provides daily hydration and a comfortable feel?", "Can you confirm that Helsinki Moisturiser provides daily hydration and a comfortable feel?", "..."], "spec": 0, "faqs": 0}, {"id": 5, "type": "guide", "title": "What should I use for a simple, non-stripping, hydrating routine?", "status": "draft", "col": "facts", "gaps": 10, "planned": "2026-10-28", "product": "Full Clubhouse Set", "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416", "why": "The question spans several products, so one guide can cover them and link to each.", "scores": {"answers": 4, "readable": 2, "voice": 3}, "passed": false, "newtitle": "What should I use for a simple, non-stripping, hydrating routine?", "excerpt": " Keep the routine considered. Start by cleansing without disrupting your skin&#x27;s natural balance, then moisturise without heaviness. Add only what earns its place on the shelf. Start with gentle cleansing Choose a cl", "questions": [], "before": null, "before_desc": "", "after": "What should I use for a simple, non-stripping, hydrating routine?", "images": ["https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416", "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451", "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370"], "gapqs": ["Can you confirm that Frontier Cleanser and Helsinki Moisturiser are intended as an essential two-step routine?", "Can you confirm that this routine is intended to focus on cleansing and hydration?", "Can you confirm the intended order of Frontier Cleanser, Amalfi Vitamin-C Face Oil and Helsinki Moisturiser?"], "spec": 0, "faqs": 0}];</script>
+<script>
+const ALL = window.DRAFTS.map(d => ({...d}));
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FIX = ['product_fix','faq'], ART = ['comparison','guide'];
+const TYPE = {product_fix:'Product page fix', faq:'FAQ', comparison:'Comparison page', guide:'Buying guide'};
+const STAGES = {fixes:[['facts','Needs your facts'],['ready','Ready to review'],['live','Live']],
+                articles:[['facts','Needs your facts'],['ready','Ready to review'],['scheduled','Scheduled'],['live','Live']]};
+const QUOTA = {fixes:{used:2,of:50,label:'product page fixes'}, articles:{used:0,of:10,label:'articles this month'}};
+let lane = 'fixes', view = 0;
+const mine = () => ALL.filter(d => (lane==='fixes'?FIX:ART).includes(d.type));
+const date = s => s ? new Date(s+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '';
+const img = (d,c='') => `<img class="ph-img ${c}" src="${esc(d.images[0]||'')}" alt="">`;
+const good = d => d.passed || (d.scores && Math.min(...Object.values(d.scores)) >= 4);
+const flag = d => d.col==='facts' ? `<span class="flag facts"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 16h.01"/></svg>${d.gaps} fact${d.gaps===1?'':'s'} needed</span>`
+  : good(d) ? `<span class="flag ok"><svg class="i" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Ready</span>`
+  : `<span class="flag look"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 16h.01"/></svg>Worth a closer look</span>`;
+const typeTag = d => `<span class="type ${d.type}"><i></i>${TYPE[d.type]}</span>`;
+const name = d => d.type==='product_fix' ? (d.product || d.title.replace(/: page fix$/,'')) : d.title;
+const change = d => d.type==='product_fix' ? 'New title and description' : d.type==='faq' ? 'FAQ block' : d.type==='comparison' ? 'New store page' : 'New blog post';
+const stageTag = d => { const s=STAGES[lane].find(x=>x[0]===d.col)||['',d.col]; return `<span class="stage s-${d.col}"><i></i>${s[1]}</span>`; };
+const primary = d => d.col==='facts' ? 'Answer facts' : d.col==='ready' ? (lane==='fixes'?'Put live':'Schedule') : d.col==='scheduled' ? 'Open' : 'View live';
+const spark = '<svg class="sp" viewBox="0 0 20 20"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b6cf6"/><stop offset="1" stop-color="#5b8dff"/></linearGradient></defs><path d="M8 2.5l1.5 4.2 4.2 1.5-4.2 1.5L8 13.9 6.5 9.7 2.3 8.2l4.2-1.5z" fill="url(#g)"/><path d="M15 11.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="url(#g)"/></svg>';
+const head = (sub) => { const q=QUOTA[lane]; return `<div class="ph"><div><h1>${spark}${lane==='fixes'?'Product page fixes':'AEO articles'}</h1><p>${sub}</p></div>
+  <div class="right"><span class="quota"><span class="num">${q.used} of ${q.of}</span> ${q.label}<span class="t"><b style="width:${100*q.used/q.of}%"></b></span></span></div></div>
+  <div class="tabs"><span class="on">Drafts</span>${lane==='articles'?'<span>Calendar</span>':''}<span>Live</span><span>Settings</span></div>`; };
+const SUB = {fixes:'Rewrites of your product pages. Review each one, then put it live on your store. Every change can be undone.',
+             articles:'Buying guides and comparison pages, written each month from the buyer questions you’re losing. Each goes live on its date once you approve it.'};
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1800)}
+
+/* 1 Board */
+function v1(){ const st=STAGES[lane];
+  const card = d => `<div class="kc" draggable="true"><div class="top">${img(d)}<div><strong>${esc(name(d))}</strong><div class="chg">${change(d)}</div></div></div>
+    ${d.col==='facts'?`<div class="gaps">${Array.from({length:Math.min(d.gaps,10)},()=>'<i></i>').join('')}</div>`:''}
+    <div class="ft">${flag(d)}<span class="num">${d.planned&&lane==='articles'?date(d.planned):''}</span></div></div>`;
+  return head(SUB[lane]) + `<div class="bd" style="grid-template-columns:repeat(${st.length},minmax(0,1fr))">${st.map(([k,l])=>{const ds=mine().filter(d=>d.col===k);
+    return `<section class="col"><div class="col-h">${stageTag({col:k}).replace(/<\/i>.*<\/span>/,'</i></span>')}${l} <span class="n num">${ds.length}</span></div>${ds.map(card).join('')||'<div class="empty">Nothing here</div>'}</section>`}).join('')}</div>`; }
+
+/* 2 Triage */
+let cur=null;
+function detail(d){ if(!d) return '<div class="empty">Nothing to review.</div>';
+  const fix = d.type==='product_fix';
+  return `<div class="hd">${img(d,'l')}<div><h2>${esc(name(d))}</h2><div style="display:flex;gap:14px;margin-top:4px">${typeTag(d)}${stageTag(d)}${d.planned&&lane==='articles'?`<span class="type">${date(d.planned)}</span>`:''}</div></div></div>
+  ${fix?`<dl class="dl"><dt>Title now</dt><dd class="old">${esc(d.before)}</dd><dt>New title</dt><dd class="new">${esc(d.after)}</dd></dl>`:''}
+  <div><div style="font-size:12.5px;color:var(--faint);margin-bottom:6px">${fix?'New description':'Opening'}</div><div class="prev">${esc(d.excerpt.replace(/\[ask merchant:[^\]]+\]/g,'…'))}…</div></div>
+  ${d.col==='facts'?`<div class="ask"><p><b>${d.gaps} fact${d.gaps===1?'':'s'} needed.</b> ${esc(d.gapqs[0]||'')}</p><input placeholder="Your answer"></div>`:''}
+  ${d.scores?`<div class="qual"><span>Answers the question <b class="num">${d.scores.answers}/5</b></span><span>Reads well <b class="num">${d.scores.readable}/5</b></span><span>Sounds like you <b class="num">${d.scores.voice}/5</b></span></div>`:''}
+  <div class="bar"><button class="btn q">Reject</button><button class="btn">Edit</button><span style="flex:1"></span><button class="btn p" data-go>${primary(d)}</button></div>`; }
+function v2(){ const ds=mine(); if(!cur||!ds.find(d=>d.id===cur)) cur=(ds[0]||{}).id;
+  return head(SUB[lane]) + `<div class="tg"><div class="tg-l" role="listbox">${STAGES[lane].map(([k,l])=>{const g=ds.filter(d=>d.col===k);return g.length?`<div class="tg-g"><span>${l}</span><span class="num">${g.length}</span></div>`+g.map(d=>`<button class="tg-it" role="option" aria-selected="${d.id===cur}" data-pick="${d.id}">${img(d,'s')}<span><span class="t">${esc(name(d))}</span><span class="m">${flag(d)}</span></span></button>`).join(''):''}).join('')}</div>
+  <div class="tg-d" id="det">${detail(ds.find(d=>d.id===cur))}</div></div>`; }
+
+/* 3 Ledger */
+function v3(){ const ds=mine();
+  return head(SUB[lane]) + `<table class="lg"><thead><tr><th>${lane==='fixes'?'Product':'Article'}</th><th>Change</th><th>Status</th>${lane==='articles'?'<th>Goes live</th>':''}<th></th></tr></thead><tbody>
+  ${STAGES[lane].map(([k,l])=>{const g=ds.filter(d=>d.col===k);return g.length?`<tr class="grp"><td colspan="5">${l} · <span class="num">${g.length}</span></td></tr>`+g.map(d=>`<tr><td><div class="pc">${img(d,'s')}<div><strong>${esc(name(d))}</strong><span>${typeTag(d)}</span></div></div></td><td style="color:var(--muted);font-size:13px">${change(d)}</td><td>${flag(d)}</td>${lane==='articles'?`<td class="num" style="color:var(--muted)">${date(d.planned)}</td>`:''}<td style="text-align:right"><button class="btn sm" data-go>${primary(d)}</button></td></tr>`).join(''):''}).join('')}</tbody></table>`; }
+
+/* 4 Stage tabs */
+let stage=null;
+function v4(){ const ds=mine(), st=STAGES[lane]; if(!stage||!st.find(s=>s[0]===stage)) stage=(st.find(([k])=>ds.some(d=>d.col===k))||st[0])[0];
+  const list=ds.filter(d=>d.col===stage);
+  return head(SUB[lane]) + `<div class="st" style="grid-template-columns:repeat(${st.length},1fr)">${st.map(([k,l])=>`<button aria-pressed="${k===stage}" data-stage="${k}"><span class="k num">${ds.filter(d=>d.col===k).length}</span><span class="l">${l}</span></button>`).join('')}</div>
+  <div class="wl">${list.map(d=>`<div class="wr">${img(d,'l')}<div><strong>${esc(name(d))}</strong>
+    <div class="ch">${d.type==='product_fix'?`Title <s>${esc(d.before)}</s> → ${esc(d.after)}`:esc(change(d))}</div><div class="mt">${typeTag(d)}${flag(d)}${d.planned&&lane==='articles'?`<span class="type">${date(d.planned)}</span>`:''}</div></div>
+    <div style="display:flex;gap:6px"><button class="btn q sm">Open</button><button class="btn p sm" data-go>${primary(d)}</button></div></div>`).join('')||'<div class="empty" style="margin:14px">Nothing in this stage.</div>'}</div>`; }
+
+/* 5 Focus review (fixes) / Agenda (articles) */
+let fi=0;
+function v5(){ const ds=mine();
+  if(lane==='articles'){ const sorted=[...ds].sort((a,b)=>(a.planned||'9').localeCompare(b.planned||'9'));
+    return head(SUB[lane]) + `<div class="ag">${sorted.map(d=>{const dt=d.planned?new Date(d.planned+'T12:00'):null;return `<div class="ag-d"><div class="ag-date"><b class="num">${dt?dt.getDate():'—'}</b><span>${dt?dt.toLocaleDateString('en-US',{weekday:'short',month:'short'}):'No date'}</span></div>
+      <div class="ag-it">${img(d,'l')}<div style="flex:1"><strong>${esc(d.title)}</strong><div style="display:flex;gap:14px;margin-top:5px">${typeTag(d)}${flag(d)}</div></div><button class="btn p sm" data-go>${primary(d)}</button></div></div>`}).join('')}</div>`; }
+  const todo=ds.filter(d=>d.col!=='live'); const d=todo[fi%Math.max(1,todo.length)];
+  if(!d) return head(SUB[lane])+'<div class="empty">All reviewed.</div>';
+  return head(SUB[lane]) + `<div class="fc"><div class="fc-top"><span class="num">${fi%todo.length+1} of ${todo.length}</span><span class="pr"><b style="width:${100*(fi%todo.length+1)/todo.length}%"></b></span><button class="btn q sm" data-nav="-1">Previous</button><button class="btn q sm" data-nav="1">Next</button></div>
+  <div class="fc-card"><div class="hd">${img(d,'l')}<div><h2>${esc(name(d))}</h2><div style="display:flex;gap:14px">${typeTag(d)}${flag(d)}</div></div></div>
+   <div class="cmp"><div><small>Title now</small>${esc(d.before)}</div><div class="a"><small>New title</small>${esc(d.after)}</div></div>
+   <div class="prev">${esc(d.excerpt)}…</div>
+   ${d.scores?`<div class="qual" style="margin-top:14px"><span>Answers the question <b>${d.scores.answers}/5</b></span><span>Reads well <b>${d.scores.readable}/5</b></span><span>Sounds like you <b>${d.scores.voice}/5</b></span></div>`:''}
+   <div class="fc-act"><button class="btn q">Reject</button><button class="btn">Edit</button><span class="sp"></span><button class="btn" data-nav="1">Later</button><button class="btn p" data-go>Put live</button></div></div></div>`; }
+
+const VIEWS=[['Board',v1],['Review',v2],['Table',v3],['By stage',v4],['Focus / agenda',v5]];
+const sw=document.querySelector('.switch'), main=document.getElementById('main');
+function render(){ main.innerHTML=VIEWS[view][1](); ['fixes','articles'].forEach(l=>document.getElementById('c-'+l).textContent=ALL.filter(d=>(l==='fixes'?FIX:ART).includes(d.type)&&d.col!=='live').length); }
+VIEWS.forEach(([n],i)=>{const b=document.createElement('button');b.textContent=(i+1)+' · '+n;b.setAttribute('aria-pressed',i===0);b.onclick=()=>{view=i;window.scrollTo(0,0);sw.querySelectorAll('button').forEach((x,j)=>x.setAttribute('aria-pressed',j===i));render()};sw.appendChild(b)});
+document.getElementById('lanes').addEventListener('click',e=>{const b=e.target.closest('[data-lane]');if(!b)return;lane=b.dataset.lane;document.querySelectorAll('[data-lane]').forEach(x=>x.toggleAttribute('aria-current',x===b));if(b===document.querySelector('[data-lane="'+lane+'"]'))b.setAttribute('aria-current','page');fi=0;render()});
+main.addEventListener('click',e=>{const p=e.target.closest('[data-pick]');if(p){cur=+p.dataset.pick;main.querySelectorAll('.tg-it').forEach(x=>x.setAttribute('aria-selected',x===p));document.getElementById('det').innerHTML=detail(mine().find(d=>d.id===cur));return}
+ const s=e.target.closest('[data-stage]');if(s){stage=s.dataset.stage;render();return}
+ const n=e.target.closest('[data-nav]');if(n){fi=Math.max(0,fi+ +n.dataset.nav);render();return}
+ const g=e.target.closest('[data-go]');if(g){toast(g.textContent.trim()==='Put live'?'Would go live on your store (mockup).':g.textContent.trim()+' (mockup)');}});
+render();
+</script></body></html>
