@@ -1,0 +1,124 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Geist;font-weight:400;src:url(fonts/geist-400.woff2)}
+@font-face{font-family:Geist;font-weight:500;src:url(fonts/geist-500.woff2)}
+@font-face{font-family:Geist;font-weight:600;src:url(fonts/geist-600.woff2)}
+@font-face{font-family:Geist;font-weight:700;src:url(fonts/geist-700.woff2)}
+html,body{margin:0;background:#0b1b35;overflow:hidden}canvas{display:block}
+</style></head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// Test 2: "Your catalog. AI reads it. Produkto writes it. And takes care of it."
+// Navy, Geist, real product photos, green = rising, red = falling. Drawn from t, so seek(t) is exact.
+const W=1920,H=1080,FPS=30,DUR=5.0;
+const c=document.getElementById('c'),x=c.getContext('2d');
+const NAVY='#0b1b35',NAVY2='#132a4f',INK='#0b1b35',WHITE='#ffffff',MUTED='#8a9bb8',GREEN='#2fbf71',RED='#e5484d',LINE='#e4e9f2';
+const SCENES=[0.10,1.05,2.15,3.65,4.45];   // hard cuts; the sound hits on these
+const IMG={},NAMES=['t28-sos','t28-face','t28-wash','mo-mag','mo-sleep','mo-hyd','mo-cre','rw-crag','rw-front','rw-knot','ns-bungee','halti','cerave','lrp','avene','vani'];
+const ease=k=>k<=0?0:k>=1?1:1-Math.pow(2,-10*k);
+const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+function rnd(a,b=0){let h=Math.sin(a*127.1+b*311.7)*43758.5453;return h-Math.floor(h);}
+function font(sz,w=500){x.font=`${w} ${sz}px Geist`;}
+function txt(s,X,Y,col,sz,w=500,al='left',ls=0){font(sz,w);x.fillStyle=col;x.textAlign=al;x.textBaseline='alphabetic';x.letterSpacing=ls+'px';x.fillText(s,X,Y);x.letterSpacing='0px';}
+function rr(X,Y,w,h,r,fill,stroke){x.beginPath();x.roundRect(X,Y,w,h,r);if(fill){x.fillStyle=fill;x.fill();}if(stroke){x.strokeStyle=stroke;x.lineWidth=2;x.stroke();}}
+function photo(k,X,Y,s,r=18){x.save();x.beginPath();x.roundRect(X,Y,s,s,r);x.clip();x.drawImage(IMG[k],X,Y,s,s);x.restore();}
+function bg(){const g=x.createRadialGradient(W*.5,H*.42,100,W*.5,H*.5,W*.75);g.addColorStop(0,NAVY2);g.addColorStop(1,NAVY);x.fillStyle=g;x.fillRect(0,0,W,H);}
+function camera(t,t0){const k=ease((t-t0)/.35);const s=1.07-.07*k+.025*cl((t-t0-.35)/1.2);x.setTransform(s,0,0,s,W/2*(1-s),H/2*(1-s));}
+function headline(s,t,t0,Y=150){const k=ease((t-t0)/.25);x.globalAlpha=k;txt(s,140,Y+(1-k)*24,WHITE,86,700,'left',-2.5);x.globalAlpha=1;}
+function chip(label,X,Y,col,bgc){font(26,600);const w=x.measureText(label).width+44;rr(X,Y,w,50,25,bgc);txt(label,X+22,Y+34,col,26,600);return w;}
+function spark(X,Y,w,h,pts,k,col,dashed){ // pts in 0..1, drawn up to fraction k
+  x.save();x.strokeStyle=col;x.lineWidth=5;x.lineCap='round';x.lineJoin='round';if(dashed)x.setLineDash([2,14]);
+  x.beginPath();const n=pts.length-1,end=k*n;
+  for(let i=0;i<=Math.ceil(end);i++){const j=Math.min(i,end),a=Math.floor(j),f=j-a,v=pts[a]+(pts[Math.min(a+1,n)]-pts[a])*f;
+    const px=X+w*j/n,py=Y+h*(1-v);i?x.lineTo(px,py):x.moveTo(px,py);}
+  x.stroke();x.restore();
+}
+
+// ---------- scenes ----------
+function sceneCatalog(t){ // 0.10-1.05
+  bg();camera(t,.10);
+  const cols=6,rows=2,cw=270,gap=34,X0=(W-(cols*cw+(cols-1)*gap))/2,Y0=(H-(rows*cw+(rows-1)*gap))/2;
+  const order=[...Array(12).keys()].sort((a,b)=>rnd(a,4)-rnd(b,4));
+  order.forEach((i,n)=>{const k=ease((t-.12-n*.018)/.18);if(k<=0)return;
+    const cx=X0+(i%cols)*(cw+gap),cy=Y0+Math.floor(i/cols)*(cw+gap),s=cw*(.85+.15*k);
+    x.globalAlpha=k*(t>.55?1-.65*ease((t-.55)/.2):1);
+    photo(NAMES[i],cx+(cw-s)/2,cy+(cw-s)/2,s,22);});
+  x.globalAlpha=1;
+  if(t>.55){x.setTransform(1,0,0,1,0,0);const k=ease((t-.55)/.22);x.globalAlpha=k;
+    txt('Your catalog.',W/2,H/2+44+(1-k)*30,WHITE,150,700,'center',-5);x.globalAlpha=1;}
+}
+function sceneReads(t){ // 1.05-2.15
+  bg();camera(t,1.05);headline('AI reads it.',t,1.08);
+  // the AI answer: the real ChatGPT capture of 2026-10-20
+  const AX=140,AY=230,AW=980;rr(AX,AY,AW,690,28,WHITE);
+  txt('What is the best moisturizer for dry, sensitive skin?',AX+48,AY+76,INK,32,600);
+  x.fillStyle=LINE;x.fillRect(AX+48,AY+108,AW-96,2);
+  [['cerave','CeraVe','Moisturizing Cream'],['lrp','La Roche-Posay','Toleriane Dermallergo Cream'],['avene','Avène','Tolérance Control Recovery Cream'],['vani','Vanicream','Moisturizing Cream']]
+  .forEach(([k,b,p],i)=>{const kk=ease((t-1.22-i*.09)/.16);if(kk<=0)return;x.globalAlpha=kk;const Y=AY+140+i*132+(1-kk)*20;
+    txt(String(i+1),AX+60,Y+70,MUTED,30,600);photo(k,AX+104,Y+8,104,14);
+    txt(b,AX+240,Y+50,MUTED,24,500);txt(p,AX+240,Y+88,INK,32,600);x.globalAlpha=1;});
+  // your product, not in the answer, visibility falling (red)
+  const k=ease((t-1.55)/.2);if(k<=0)return;x.globalAlpha=k;
+  const PX=1200,PY=230+(1-k)*30;rr(PX,PY,580,690,28,WHITE);
+  txt('Your product',PX+44,PY+70,MUTED,26,500);photo('t28-sos',PX+44,PY+96,220,18);
+  txt('Tower 28',PX+290,PY+150,MUTED,26,500);txt('SOS Recovery',PX+290,PY+194,INK,36,700);txt('Cream',PX+290,PY+236,INK,36,700);
+  chip('Not in the answer',PX+44,PY+356,RED,'#fde8e9');
+  txt('Visibility',PX+44,PY+478,MUTED,26,500);txt('↘ 4%',PX+536,PY+478,RED,30,700,'right');
+  spark(PX+44,PY+510,492,130,[.85,.8,.82,.66,.6,.48,.42,.3,.22],ease((t-1.7)/.35),RED);
+  x.globalAlpha=1;
+}
+const FIX=['Good for: dry, sensitive skin','Texture: rich cream that absorbs fast','How to use: morning and night, after cleansing'];
+function sceneWrites(t){ // 2.15-3.65
+  bg();camera(t,2.15);headline('Produkto writes it.',t,2.18);
+  const X=140,Y=230;rr(X,Y,W-280,690,28,WHITE);photo('t28-sos',X+48,Y+48,520,22);
+  const R=X+640;txt('Tower 28',R,Y+100,MUTED,28,500);txt('SOS Recovery Cream',R,Y+160,INK,56,700,'left',-1.5);
+  txt('A soothing cream for your skin.',R,Y+236,'#9aa6b8',30,400);
+  let tt=2.35;const cps=130;
+  FIX.forEach((s,i)=>{const t0=tt;tt+=s.length/cps+.08;if(t<t0)return;
+    const n=Math.min(s.length,Math.floor((t-t0)*cps)),LY=Y+312+i*96;
+    rr(R-20,LY-50,980,76,12,'#e9f8f0');x.fillStyle=GREEN;x.fillRect(R-20,LY-50,6,76);
+    const [a,b]=[s.slice(0,s.indexOf(':')+1),s.slice(s.indexOf(':')+1)],shown=s.slice(0,n);
+    txt(shown.slice(0,a.length),R+10,LY,INK,32,700);font(32,700);const aw=x.measureText(a).width;
+    if(n>a.length)txt(shown.slice(a.length),R+10+aw,LY,INK,32,400);
+    if(n<s.length||(i===FIX.length-1&&Math.floor(t*3)%2===0)){font(32,700);const w1=x.measureText(shown.slice(0,Math.min(n,a.length))).width;font(32,400);const w2=x.measureText(shown.slice(a.length)).width;
+      x.fillStyle=INK;x.fillRect(R+14+w1+(n>a.length?w2:0),LY-30,3,38);}
+  });
+  if(t>3.42){const k=ease((t-3.42)/.15);x.globalAlpha=k;chip('Added from your store\'s own pages',R,Y+620,GREEN,'#e9f8f0');x.globalAlpha=1;}
+}
+function sceneCare(t){ // 3.65-4.45
+  bg();camera(t,3.65);headline('And takes care of it.',t,3.68);
+  const X=560,Y=260,Wd=800;rr(X,Y,Wd,600,28,WHITE);photo('t28-sos',X+44,Y+44,200,18);
+  txt('Tower 28',X+280,Y+100,MUTED,26,500);txt('SOS Recovery Cream',X+280,Y+150,INK,40,700);
+  const st=t<3.86?['Ready to review',INK,'#eef2f8']:t<4.06?['Approved',INK,'#e3ebfb']:['✓  Live on your store',GREEN,'#e9f8f0'];
+  const pk=[3.86,4.06].map(a=>cl(1-(t-a)/.12)).reduce((a,b)=>Math.max(a,b),0);
+  x.save();const cx=X+280,cy=Y+190;x.translate(cx,cy);x.scale(1+.08*pk*(t>3.86?1:0),1+.08*pk*(t>3.86?1:0));chip(st[0],0,0,st[1],st[2]);x.restore();
+  txt('Visibility',X+44,Y+360,MUTED,26,500);txt('measured every day',X+Wd-44,Y+360,MUTED,26,500,'right');
+  const LW=(Wd-88)*.68;spark(X+44,Y+390,LW,150,[.85,.8,.82,.66,.6,.48,.42,.3,.22],1,RED);
+  // after go-live the line keeps going, dashed: measured every day, nothing promised
+  const k=ease((t-4.1)/.3);if(k>0){x.save();x.strokeStyle=MUTED;x.lineWidth=5;x.setLineDash([2,14]);x.lineCap='round';
+    const y0=Y+390+150*(1-.22);x.beginPath();x.moveTo(X+44+LW,y0);x.lineTo(X+44+LW+(Wd-88-LW)*k,y0);x.stroke();x.restore();
+    x.fillStyle=GREEN;x.beginPath();x.arc(X+44+LW,y0,9,0,7);x.fill();txt('live',X+44+LW,y0+44,GREEN,22,600,'center');}
+}
+function sceneEnd(t){ // 4.45-5.00
+  bg();x.setTransform(1,0,0,1,0,0);const k=ease((t-4.47)/.3);x.globalAlpha=k;
+  const lw=640,lh=lw*IMG.logo.height/IMG.logo.width;x.drawImage(IMG.logo,(W-lw)/2,(H-lh)/2-30+(1-k)*16,lw,lh);
+  txt('getprodukto.com',W/2,H/2+lh/2+40,MUTED,32,500,'center');x.globalAlpha=1;
+}
+function flash(t){const s=SCENES.slice(1).find(a=>t>=a&&t<a+1/FPS);if(s===undefined)return;
+  x.setTransform(1,0,0,1,0,0);x.fillStyle='rgba(255,255,255,.85)';x.fillRect(0,0,W,H);}
+
+function draw(t){
+  x.setTransform(1,0,0,1,0,0);x.globalAlpha=1;
+  if(t<.10){x.fillStyle=NAVY;x.fillRect(0,0,W,H);return;}
+  if(t<1.05)sceneCatalog(t);else if(t<2.15)sceneReads(t);else if(t<3.65)sceneWrites(t);else if(t<4.45)sceneCare(t);else sceneEnd(t);
+  flash(t);
+}
+window.seek=t=>draw(t);
+window.ready=(async()=>{
+  await Promise.all([400,500,600,700].map(w=>document.fonts.load(`${w} 30px Geist`)));
+  await Promise.all([...NAMES.map(n=>[n,`img/${n}.jpg`]),['logo','produkto-wordmark-light.png']].map(async([n,src])=>{const i=new Image();i.src=src;await i.decode();IMG[n]=i;}));
+  draw(0);return true;
+})();
+if(!navigator.webdriver){let s=performance.now();(function loop(){window.ready.then(()=>{draw(((performance.now()-s)/1000)%DUR);requestAnimationFrame(loop);});})();}
+</script></body></html>

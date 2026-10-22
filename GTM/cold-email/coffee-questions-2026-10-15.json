@@ -1,0 +1,4622 @@
+{
+ "1951coffee.com": {
+  "company": "1951 Coffee Company",
+  "product": {
+   "title": "Limited Edition 75th Anniversary Blend",
+   "type": "Coffee Beans",
+   "price": 24.0,
+   "url": "https://1951coffee.com/products/75thanniversaryblend"
+  }
+ },
+ "27clubcoffee.com": {
+  "company": "27 Club Coffee",
+  "product": {
+   "title": "Blonde Don Whole Coffee Beans",
+   "type": "Coffee",
+   "price": 19.99,
+   "url": "https://27clubcoffee.com/products/blonde-don-whole-coffee-beans"
+  }
+ },
+ "321coffee.com": {
+  "company": "321 Coffee | Specialty Coffee Roasters",
+  "product": {
+   "title": "Elevate | Medium Roast Coffee",
+   "type": "",
+   "price": 17.0,
+   "url": "https://321coffee.com/products/elevate-medium-roast-coffee"
+  }
+ },
+ "ahmadteausa.com": {
+  "company": "Ahmad Tea USA",
+  "product": {
+   "title": "Evening DeCaf",
+   "type": "Tea",
+   "price": 5.0,
+   "url": "https://ahmadteausa.com/products/decaf-evening"
+  }
+ },
+ "myalmacoffee.com": {
+  "company": "Alma Coffee \u2122",
+  "product": {
+   "title": "Soulmate",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://myalmacoffee.com/products/soulmate"
+  }
+ },
+ "alpha.coffee": {
+  "company": "Alpha Coffee",
+  "product": {
+   "title": "Warrior Select - Adventure Blend Coffee - 16 oz",
+   "type": "Blends",
+   "price": 21.95,
+   "url": "https://alpha.coffee/products/warrior-select-adventure-blend"
+  }
+ },
+ "anchorheadcoffee.com": {
+  "company": "Anchorhead Coffee",
+  "product": {
+   "title": "Leviathan Espresso Blend",
+   "type": "Bean",
+   "price": 19.0,
+   "url": "https://anchorheadcoffee.com/products/leviathan-espresso-blend"
+  }
+ },
+ "arcadecoffeeroasters.com": {
+  "company": "Arcade Coffee Roasters",
+  "product": {
+   "title": "Third St.",
+   "type": "Coffee",
+   "price": 23.75,
+   "url": "https://arcadecoffeeroasters.com/products/third-st"
+  }
+ },
+ "artemistea.com": {
+  "company": "Artemis Tea & Botanical",
+  "product": {
+   "title": "Oracle",
+   "type": "Packaged Tea",
+   "price": 24.0,
+   "url": "https://artemistea.com/products/oracle-lucid-dream-tonic"
+  }
+ },
+ "ascension.coffee": {
+  "company": "Ascension Coffee Company",
+  "product": {
+   "title": "Roast of the Week",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://ascension.coffee/products/roast-of-the-month"
+  }
+ },
+ "ashevilleteacompany.com": {
+  "company": "Asheville Tea Company",
+  "product": {
+   "title": "Fall Tea Trio Box",
+   "type": "",
+   "price": 45.95,
+   "url": "https://ashevilleteacompany.com/products/fall-tea-box-grla6"
+  }
+ },
+ "atomocoffee.com": {
+  "company": "Atomo Coffee",
+  "product": {
+   "title": "50:50 Grounds - Bluestone Lane Flagstaff Drip",
+   "type": "Coffee Grounds",
+   "price": 15.99,
+   "url": "https://atomocoffee.com/products/remix-grounds-bluestone-lane-flagstaff-drip"
+  }
+ },
+ "august.la": {
+  "company": "August Uncommon Tea",
+  "product": {
+   "title": "Precision Scale - Get The Same Tea Flavor Every Time",
+   "type": "Teaware",
+   "price": 19.99,
+   "url": "https://august.la/products/precision-scale"
+  }
+ },
+ "avatarcoffeeroasters.com": {
+  "company": "Avatar Coffee Roasters",
+  "product": {
+   "title": "Jeevan",
+   "type": "Roasted Coffee",
+   "price": 20.0,
+   "url": "https://avatarcoffeeroasters.com/products/jeevan-blend"
+  }
+ },
+ "backoftheyardscoffee.com": {
+  "company": "Back of the Yards Coffee Co.",
+  "product": {
+   "title": "E-Card",
+   "type": "",
+   "price": 25.0,
+   "url": "https://backoftheyardscoffee.com/products/e-card"
+  }
+ },
+ "backroomcoffeeroasters.com": {
+  "company": "Backroom Coffee Roasters",
+  "product": {
+   "title": "Decaf",
+   "type": "Coffee",
+   "price": 16.5,
+   "url": "https://backroomcoffeeroasters.com/products/decaf"
+  }
+ },
+ "bardcoffee.com": {
+  "company": "Bard Coffee",
+  "product": {
+   "title": "HIGH TIDE",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://bardcoffee.com/products/high-tide"
+  }
+ },
+ "barniescoffee.com": {
+  "company": "Barnie's Coffee & Tea Co.",
+  "product": {
+   "title": "Gingerbread Cookie Coffee",
+   "type": "Packaged Coffee",
+   "price": 14.99,
+   "url": "https://barniescoffee.com/products/gingerbread-cookie-coffee"
+  }
+ },
+ "beannbeancoffee.com": {
+  "company": "Bean & Bean Coffee",
+  "product": {
+   "title": "Melodrip Pour Over Coffee Tool",
+   "type": "Equipment",
+   "price": 27.5,
+   "url": "https://beannbeancoffee.com/products/melodrip-pour-over-coffee-tool"
+  }
+ },
+ "bedrockcoffee.com": {
+  "company": "Bedrock Coffee Roasters",
+  "product": {
+   "title": "Camp Mug",
+   "type": "Merchandise",
+   "price": 6.0,
+   "url": "https://bedrockcoffee.com/products/11oz-bedrock-ceramic-camp-mug"
+  }
+ },
+ "beekeepercoffee.com": {
+  "company": "Beekeeper Coffee",
+  "product": {
+   "title": "Black",
+   "type": "",
+   "price": 44.99,
+   "url": "https://beekeepercoffee.com/products/black"
+  }
+ },
+ "bellwoodcoffee.com": {
+  "company": "Bellwood Coffee",
+  "product": {
+   "title": "Reservoir",
+   "type": "",
+   "price": 18.5,
+   "url": "https://bellwoodcoffee.com/products/reservoir"
+  }
+ },
+ "bigislandcoffeeroasters.com": {
+  "company": "Big Island Coffee Roasters",
+  "product": {
+   "title": "Ka\u02bb\u016b Red Bourbon",
+   "type": "Hawaiian Coffee",
+   "price": 45.0,
+   "url": "https://bigislandcoffeeroasters.com/products/red-bourbon-coffee"
+  }
+ },
+ "bigshoulderscoffee.com": {
+  "company": "Big Shoulders Coffee",
+  "product": {
+   "title": "Colombia",
+   "type": "Coffee",
+   "price": 26.0,
+   "url": "https://bigshoulderscoffee.com/products/colombia-popayan-reserve"
+  }
+ },
+ "bigstepcoffee.com": {
+  "company": "Big Step Coffee",
+  "product": {
+   "title": "Arley Vargas",
+   "type": "Coffee",
+   "price": 15.0,
+   "url": "https://bigstepcoffee.com/products/arley-vargas-natural-pink-bourbon"
+  }
+ },
+ "birdsandbeanscoffee.com": {
+  "company": "Birds & Beans Coffee",
+  "product": {
+   "title": "Medium Roast",
+   "type": "Coffee",
+   "price": 17.94,
+   "url": "https://birdsandbeanscoffee.com/products/organic-medium-dark-roast"
+  }
+ },
+ "blackfoxcoffee.com": {
+  "company": "Black Fox Coffee",
+  "product": {
+   "title": "All Day",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://blackfoxcoffee.com/products/all-day-blend"
+  }
+ },
+ "loveblueisland.com": {
+  "company": "Blue Island Coffee",
+  "product": {
+   "title": "The Holy Grail Blend",
+   "type": "Coffee Beans & Ground Coffee",
+   "price": 18.99,
+   "url": "https://loveblueisland.com/products/the-holy-grail-blend"
+  }
+ },
+ "bodhileafcoffee.com": {
+  "company": "Bodhi Leaf Coffee Traders",
+  "product": {
+   "title": "Roasted - Tiger's Tooth Espresso Blend",
+   "type": "Roasted Coffee",
+   "price": 21.95,
+   "url": "https://bodhileafcoffee.com/products/roasted-bodhi-house-espresso"
+  }
+ },
+ "bonefrogcoffee.com": {
+  "company": "Bonefrog Coffee Company",
+  "product": {
+   "title": "Lil' Frog Premium Coffee (12 oz)",
+   "type": "Coffee",
+   "price": 24.97,
+   "url": "https://bonefrogcoffee.com/products/lil-frog-12-oz"
+  }
+ },
+ "bonescoffee.com": {
+  "company": "Bones Coffee Company",
+  "product": {
+   "title": "Highland Grog | 12oz",
+   "type": "Coffee",
+   "price": 17.99,
+   "url": "https://bonescoffee.com/products/highland-grog-by-bones-coffee-company"
+  }
+ },
+ "boontoncoffee.com": {
+  "company": "Boonton Coffee Co.",
+  "product": {
+   "title": "Nick's RUFF MORNING",
+   "type": "",
+   "price": 20.75,
+   "url": "https://boontoncoffee.com/products/nick-s-ruff-morning"
+  }
+ },
+ "bumpcoffee.co": {
+  "company": "Bump Coffee",
+  "product": {
+   "title": "Basilio Reserva",
+   "type": "Single Origin",
+   "price": 21.0,
+   "url": "https://bumpcoffee.co/products/basilio-reserva-nayarit-mx"
+  }
+ },
+ "bgcoffee.net": {
+  "company": "Buon Giorno Coffee",
+  "product": {
+   "title": "Espresso Autunno",
+   "type": "Blend",
+   "price": 20.0,
+   "url": "https://bgcoffee.net/products/espresso-autunno-12-oz"
+  }
+ },
+ "caffeibis.com": {
+  "company": "Caffe Ibis Coffee Roasting Company",
+  "product": {
+   "title": "Organic Colombia ANEI (formerly Huila)",
+   "type": "Coffee",
+   "price": 21.69,
+   "url": "https://caffeibis.com/products/organic-colombia-anei"
+  }
+ },
+ "caljavacoffeeroasters.com": {
+  "company": "Cal Java Coffee Roasters",
+  "product": {
+   "title": "Burlap Coffee Bags",
+   "type": "",
+   "price": 5.0,
+   "url": "https://caljavacoffeeroasters.com/products/burlap-bags"
+  }
+ },
+ "ca-coffee-collective.myshopify.com": {
+  "company": "California Coffee Collective",
+  "product": {
+   "title": "Cascara Jelly - Naturally Caffeinated",
+   "type": "Caturra",
+   "price": 25.0,
+   "url": "https://ca-coffee-collective.myshopify.com/products/cascara-jelly-naturally-caffeinated"
+  }
+ },
+ "caliohcoffee.com": {
+  "company": "Calioh Coffee",
+  "product": {
+   "title": "Foreman",
+   "type": "Coffee",
+   "price": 23.98,
+   "url": "https://caliohcoffee.com/products/foreman-espresso"
+  }
+ },
+ "capecodcoffee.com": {
+  "company": "Cape Cod Coffee",
+  "product": {
+   "title": "JMC",
+   "type": "Flavor",
+   "price": 18.25,
+   "url": "https://capecodcoffee.com/products/jmc"
+  }
+ },
+ "carabellocoffee.com": {
+  "company": "Carabello Coffee",
+  "product": {
+   "title": "Addicting Liquid Dark Roast Blend",
+   "type": "Roasted Coffee",
+   "price": 7.0,
+   "url": "https://carabellocoffee.com/products/addicting-liquid"
+  }
+ },
+ "caravancoffee.com": {
+  "company": "Caravan Coffee",
+  "product": null
+ },
+ "ceremonycoffee.com": {
+  "company": "Ceremony Coffee Roasters",
+  "product": {
+   "title": "Mass Appeal",
+   "type": "Blend",
+   "price": 22.5,
+   "url": "https://ceremonycoffee.com/products/mass-appeal"
+  }
+ },
+ "cerinicoffee.com": {
+  "company": "Cerini Coffee & Gifts",
+  "product": {
+   "title": "Essse Caffe - INFINITO Espresso Capsules - 50 Capsules",
+   "type": "Espresso Coffee",
+   "price": 28.88,
+   "url": "https://cerinicoffee.com/products/essse-caffe-infinito-espresso-capsules-50-capsules"
+  }
+ },
+ "ceruleanblue.com": {
+  "company": "Cerulean Blue Coffee House",
+  "product": {
+   "title": "House Blend Honduras",
+   "type": "",
+   "price": 19.0,
+   "url": "https://ceruleanblue.com/products/house-blend-honduras-12oz"
+  }
+ },
+ "chesapeake.coffee": {
+  "company": "Chesapeake Coffee Roasters",
+  "product": {
+   "title": "Organic River's Edge",
+   "type": "",
+   "price": 19.0,
+   "url": "https://chesapeake.coffee/products/organic-rivers-edge"
+  }
+ },
+ "coffeebeanery.com": {
+  "company": "Coffee Beanery",
+  "product": null
+ },
+ "coffeebydesign.com": {
+  "company": "Coffee By Design",
+  "product": {
+   "title": "Alanzo\u2019s Double Dark",
+   "type": "Coffee",
+   "price": 23.0,
+   "url": "https://coffeebydesign.com/products/alanzos-double-dark"
+  }
+ },
+ "coffeeconfessionals.com": {
+  "company": "Coffee Confessionals",
+  "product": {
+   "title": "Camping in COSTA RICA - Medium Roast",
+   "type": "",
+   "price": 20.5,
+   "url": "https://coffeeconfessionals.com/products/camping-in-costa-rica"
+  }
+ },
+ "coffeedose.cafe": {
+  "company": "Coffee Dose",
+  "product": {
+   "title": "Choose Your Party Pack of Cups (Iced)",
+   "type": "Disposable Tableware",
+   "price": 12.0,
+   "url": "https://coffeedose.cafe/products/iced-party-pack"
+  }
+ },
+ "thecoffeefactory.co.uk": {
+  "company": "Coffee Factory",
+  "product": {
+   "title": "Black Bear Coffee Blend",
+   "type": "Coffee Blend",
+   "price": 10.95,
+   "url": "https://thecoffeefactory.co.uk/products/black-bear"
+  }
+ },
+ "drinkcoffeeman.com": {
+  "company": "Coffee Man",
+  "product": {
+   "title": "Conquer The Day | Ethiopia Light Roast",
+   "type": "",
+   "price": 21.99,
+   "url": "https://drinkcoffeeman.com/products/conquer-the-day-coffee"
+  }
+ },
+ "confidentcoffeeroasters.com": {
+  "company": "Confident Coffee Roasters Inc.",
+  "product": {
+   "title": "Colombia - Nari\u00f1o",
+   "type": "",
+   "price": 18.0,
+   "url": "https://confidentcoffeeroasters.com/products/colombia-narino"
+  }
+ },
+ "consciouscup.com": {
+  "company": "Conscious Cup Coffee Roasters",
+  "product": {
+   "title": "Brothers Espresso",
+   "type": "Fresh Roasted Coffee",
+   "price": 19.75,
+   "url": "https://consciouscup.com/products/brothers-espresso"
+  }
+ },
+ "convictcoffeeco.com": {
+  "company": "Convict Coffee Company",
+  "product": {
+   "title": "Guatemala",
+   "type": "",
+   "price": 20.0,
+   "url": "https://convictcoffeeco.com/products/guatemala-washed-medium-roast"
+  }
+ },
+ "corvuscoffee.com": {
+  "company": "Corvus Coffee Roasters",
+  "product": {
+   "title": "Dead Reckoning",
+   "type": "Whole Bean",
+   "price": 15.0,
+   "url": "https://corvuscoffee.com/products/dead-reckoning-blend"
+  }
+ },
+ "cottonwoodcoffee.com": {
+  "company": "Cottonwood Coffee",
+  "product": {
+   "title": "Bluestem Blend \u2014 Light Roast",
+   "type": "Coffee Beans",
+   "price": 16.0,
+   "url": "https://cottonwoodcoffee.com/products/bluestem-blend-light-roast"
+  }
+ },
+ "couleecoffee.com": {
+  "company": "Coul\u00e9e Coffee",
+  "product": {
+   "title": "Empty All-Paper EcoPour - 50 Pack",
+   "type": "",
+   "price": 19.99,
+   "url": "https://couleecoffee.com/products/empty-paper-ecopour-50-pack"
+  }
+ },
+ "counterculturecoffee.com": {
+  "company": "Counter Culture Coffee",
+  "product": {
+   "title": "Idido",
+   "type": "Coffee",
+   "price": 26.0,
+   "url": "https://counterculturecoffee.com/products/idido"
+  }
+ },
+ "creaturecoffee.co": {
+  "company": "Creature Coffee",
+  "product": {
+   "title": "FRIEND BLEND",
+   "type": "coffee beans",
+   "price": 10.0,
+   "url": "https://creaturecoffee.co/products/friend-blend"
+  }
+ },
+ "curedleavestea.com": {
+  "company": "Cured Leaves Tea",
+  "product": {
+   "title": "White Peach Passion",
+   "type": "Loose-leaf tea",
+   "price": 19.8,
+   "url": "https://curedleavestea.com/products/white-peach-passion"
+  }
+ },
+ "dancinggoats.com": {
+  "company": "Dancing Goats\u00ae Coffee",
+  "product": {
+   "title": "Dancing Goats\u00ae Blend",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://dancinggoats.com/products/dancing-goats-blend"
+  }
+ },
+ "darkhorsecoffeecompany.com": {
+  "company": "Dark Horse Coffee Company",
+  "product": {
+   "title": "K9 ACE - Other Guy Long Sleeve Tshirt",
+   "type": "Long Sleeve Shirt",
+   "price": 34.99,
+   "url": "https://darkhorsecoffeecompany.com/products/k9-ace-other-guy-long-sleeve"
+  }
+ },
+ "davescoffee.com": {
+  "company": "Dave's Coffee Roasters",
+  "product": {
+   "title": "Dave's Original Rhode Island Coffee Milk Syrup (16oz)",
+   "type": "Coffee Syrup",
+   "price": 18.0,
+   "url": "https://davescoffee.com/products/original-coffee-syrup"
+  }
+ },
+ "dawsontaylor.com": {
+  "company": "Dawson Taylor Coffee Roasters",
+  "product": {
+   "title": "Colombia Juicy Passionfruit",
+   "type": "Venture Series",
+   "price": 22.0,
+   "url": "https://dawsontaylor.com/products/colombia-juicy-passionfruit"
+  }
+ },
+ "deansbeans.com": {
+  "company": "Dean's Beans Organic Coffee Company",
+  "product": {
+   "title": "Custom Blend - from $21.99",
+   "type": "Our Products",
+   "price": 21.99,
+   "url": "https://deansbeans.com/products/custom-blend"
+  }
+ },
+ "definedcoffee.com": {
+  "company": "Defined Coffee",
+  "product": {
+   "title": "Guatemala Todos Santos",
+   "type": "Coffee",
+   "price": 23.0,
+   "url": "https://definedcoffee.com/products/guatemala-todos-santos"
+  }
+ },
+ "dekaf.com": {
+  "company": "Dek\u00e1f Coffee Roasters",
+  "product": {
+   "title": "Fall Edit: A Sundown Affair - Light Expression",
+   "type": "Decaf Coffee",
+   "price": 23.95,
+   "url": "https://dekaf.com/products/fall-edit-a-sundown-affair-light-expression"
+  }
+ },
+ "dessertoasiscoffee.com": {
+  "company": "Dessert Oasis Coffee Roasters",
+  "product": {
+   "title": "Roaster's Choice",
+   "type": "Coffee",
+   "price": 2900.0,
+   "url": "https://dessertoasiscoffee.com/products/coffee-subscription-roasters-choice"
+  }
+ },
+ "dillanos.com": {
+  "company": "Dillanos Coffee Roasters",
+  "product": {
+   "title": "DCR Limited - Whiskey Rio",
+   "type": "",
+   "price": 11.5,
+   "url": "https://dillanos.com/products/dcr-limited-whiskey-rio"
+  }
+ },
+ "domacoffee.com": {
+  "company": "DOMA Coffee Roasting Company",
+  "product": {
+   "title": "CARMELA'S",
+   "type": "Coffee Bean",
+   "price": 20.35,
+   "url": "https://domacoffee.com/products/carmelas"
+  }
+ },
+ "downeastcoffee.com": {
+  "company": "Downeast Coffee Roasters",
+  "product": {
+   "title": "Morning Blend",
+   "type": "",
+   "price": 9.99,
+   "url": "https://downeastcoffee.com/products/morning-blend"
+  }
+ },
+ "drivencoffee.com": {
+  "company": "Driven Coffee Roasters",
+  "product": {
+   "title": "Colombia Pink Honey",
+   "type": "",
+   "price": 22.75,
+   "url": "https://drivencoffee.com/products/colombia-pink-honey"
+  }
+ },
+ "eastviewcoffee.com": {
+  "company": "East View Coffee",
+  "product": {
+   "title": "East View Discovery Box",
+   "type": "",
+   "price": 42.0,
+   "url": "https://eastviewcoffee.com/products/east-view-discovery-box"
+  }
+ },
+ "elixrcoffee.com": {
+  "company": "Elixr Coffee",
+  "product": {
+   "title": "3 Bags of Coffee for $50",
+   "type": "",
+   "price": 50.0,
+   "url": "https://elixrcoffee.com/products/3-bags-of-coffee-for-45"
+  }
+ },
+ "ferriscoffee.com": {
+  "company": "Ferris Coffee & Nut Co.",
+  "product": {
+   "title": "Almond Butter 14 oz.",
+   "type": "Nuts",
+   "price": 8.95,
+   "url": "https://ferriscoffee.com/products/almond-butter-14-oz"
+  }
+ },
+ "firesidecoffee.com": {
+  "company": "Fireside Coffee Co",
+  "product": {
+   "title": "5lb Bag Cafe Mocha",
+   "type": "",
+   "price": 75.99,
+   "url": "https://firesidecoffee.com/products/5lb-bag-cafe-mocha"
+  }
+ },
+ "fivelakes.com": {
+  "company": "Five Lakes Coffee",
+  "product": {
+   "title": "Espresso Blend",
+   "type": "",
+   "price": 15.99,
+   "url": "https://fivelakes.com/products/expresso-blend"
+  }
+ },
+ "flatwhite.qa": {
+  "company": "Flat White Specialty Coffee",
+  "product": {
+   "title": "Abaca Paper Filter",
+   "type": "Coffee Filter",
+   "price": 30.0,
+   "url": "https://flatwhite.qa/products/abaca-cone-shaped-paper-filter"
+  }
+ },
+ "fostercoffee.co": {
+  "company": "Foster Coffee Company",
+  "product": {
+   "title": "Sugar Shack Market Coffee - White Label",
+   "type": "Wholesale",
+   "price": 12.5,
+   "url": "https://fostercoffee.co/products/sugar-shack-market-coffee-white-label"
+  }
+ },
+ "foxencoffee.co": {
+  "company": "Foxen Coffee",
+  "product": {
+   "title": "Guatemala Huehuetenango, Medium Roast Coffee",
+   "type": "Single Origin",
+   "price": 75.0,
+   "url": "https://foxencoffee.co/products/guatemala-medium-roast-coffee"
+  }
+ },
+ "freereincoffee.com": {
+  "company": "Free Rein Coffee Company",
+  "product": {
+   "title": "American Dirt\u2122",
+   "type": "Coffee",
+   "price": 15.99,
+   "url": "https://freereincoffee.com/products/american-dirt"
+  }
+ },
+ "freedomhillcoffee.com": {
+  "company": "Freedom Hill Coffee Roasters",
+  "product": {
+   "title": "BREAKFAST BLEND",
+   "type": "COFFEE",
+   "price": 17.99,
+   "url": "https://freedomhillcoffee.com/products/breakfast-blend"
+  }
+ },
+ "frenchtruckcoffee.com": {
+  "company": "French Truck Coffee",
+  "product": {
+   "title": "Bella Coola",
+   "type": "tea",
+   "price": 11.0,
+   "url": "https://frenchtruckcoffee.com/products/bella-coola"
+  }
+ },
+ "freshroastedcoffee.com": {
+  "company": "Fresh Roasted Coffee LLC.",
+  "product": {
+   "title": "Capit'l Tea Orange Pekoe & Pekoe Cut Black Tea, 96 Count - Gallon Size Bags",
+   "type": "ALLIED | TEA",
+   "price": 37.99,
+   "url": "https://freshroastedcoffee.com/products/orange-pekoe-black-tea-bags"
+  }
+ },
+ "fullleaftc.com": {
+  "company": "Full Leaf Tea Company",
+  "product": {
+   "title": "Organic Anti-Inflammatory Tea",
+   "type": "Loose Leaf Tea",
+   "price": 6.95,
+   "url": "https://fullleaftc.com/products/organic-anti-inflammatory-tea"
+  }
+ },
+ "gearheadcoffee.com": {
+  "company": "Gearhead Coffee",
+  "product": {
+   "title": "Pistons (12 K-Cups)",
+   "type": "Single Purchase Coffee",
+   "price": 19.99,
+   "url": "https://gearheadcoffee.com/products/pistons-k-cups"
+  }
+ },
+ "generouscoffee.com": {
+  "company": "Generous Coffee Co.",
+  "product": {
+   "title": "The Higgins - A Signature Blend",
+   "type": "Coffee beans",
+   "price": 19.99,
+   "url": "https://generouscoffee.com/products/thehiggins"
+  }
+ },
+ "georgehowellcoffee.com": {
+  "company": "George Howell Coffee Company",
+  "product": {
+   "title": "Alchemy Espresso",
+   "type": "Coffee - Alchemy",
+   "price": 20.0,
+   "url": "https://georgehowellcoffee.com/products/alchemy-espresso-alc-001"
+  }
+ },
+ "goodasgold.com": {
+  "company": "Good As Gold Coffee",
+  "product": {
+   "title": "Green Tea Tropical Tea Bags",
+   "type": "Mighty Leaf - 100ct",
+   "price": 47.99,
+   "url": "https://goodasgold.com/products/green-tea-tropical-tea-bags"
+  }
+ },
+ "goshencoffee.com": {
+  "company": "Goshen Coffee Roasters",
+  "product": {
+   "title": "BLACK DOG ESPRESSO",
+   "type": "Food & Beverage \u2192 Pantry \u2192 Coffee \u2192 Coffee Beans / Ground Coffee",
+   "price": 19.0,
+   "url": "https://goshencoffee.com/products/black-dog-espresso"
+  }
+ },
+ "gracefarmsfoods.com": {
+  "company": "Grace Farms Tea & Coffee",
+  "product": {
+   "title": "Single Origin Colombia Coffee",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://gracefarmsfoods.com/products/single-origin-colombia"
+  }
+ },
+ "gravitycoffee.com": {
+  "company": "Gravity Coffee Company",
+  "product": {
+   "title": "Signature Drip Blend (Medium Roast)",
+   "type": "",
+   "price": 14.99,
+   "url": "https://gravitycoffee.com/products/signature-blend"
+  }
+ },
+ "groundworkcoffee.com": {
+  "company": "Groundwork Coffee LLC",
+  "product": {
+   "title": "Regenerative Organic Certified\u00ae Nicaragua PROCAFE",
+   "type": "Organic Single Origin",
+   "price": 18.0,
+   "url": "https://groundworkcoffee.com/products/regenerative-organic-certified-nicaragua"
+  }
+ },
+ "happymondaycoffee.com": {
+  "company": "Happy Monday Coffee Roasters",
+  "product": {
+   "title": "Happy Monday Colombia",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://happymondaycoffee.com/products/happy-monday-wholesale-to-the-public"
+  }
+ },
+ "happynesstea.co": {
+  "company": "Happyness Tea Company",
+  "product": {
+   "title": "Otteane - Nourishing Spearmint Tea",
+   "type": "Herbal (caffeine free)",
+   "price": 8.0,
+   "url": "https://happynesstea.co/products/otteane-nourishing-mint-tea"
+  }
+ },
+ "havencoffeeroaster.com": {
+  "company": "Haven Coffee Roasters",
+  "product": {
+   "title": "Haven Blend",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://havencoffeeroaster.com/products/haven-blend"
+  }
+ },
+ "heinebroscoffee.com": {
+  "company": "Heine Bros\u200b Coffee",
+  "product": {
+   "title": "Guatemala San Marcos",
+   "type": "",
+   "price": 18.0,
+   "url": "https://heinebroscoffee.com/products/guatemala-san-marcos"
+  }
+ },
+ "heirloomcoffeeroasters.com": {
+  "company": "Heirloom Coffee Roasters",
+  "product": {
+   "title": "Fire Poppy Espresso",
+   "type": "",
+   "price": 24.99,
+   "url": "https://heirloomcoffeeroasters.com/products/fire-poppy-espresso"
+  }
+ },
+ "herbshousecoffee.com": {
+  "company": "Herb's House Coffee + Company",
+  "product": {
+   "title": "Wholesale Bulk - Decaf",
+   "type": "Wholesale Coffee",
+   "price": 42.0,
+   "url": "https://herbshousecoffee.com/products/wholesale-bulk-decaf"
+  }
+ },
+ "highbrewcoffee.com": {
+  "company": "High Brew Coffee",
+  "product": {
+   "title": "Double Espresso",
+   "type": "",
+   "price": 28.0,
+   "url": "https://highbrewcoffee.com/products/double-espresso"
+  }
+ },
+ "highpoint.coffee": {
+  "company": "High Point Coffee",
+  "product": {
+   "title": "Woodies Southern Blend",
+   "type": "Medium Roast",
+   "price": 20.0,
+   "url": "https://highpoint.coffee/products/woodies-southern-blend"
+  }
+ },
+ "highwirecoffee.com": {
+  "company": "Highwire Coffee Roasters",
+  "product": {
+   "title": "After Hours Decaf Whole Bean Coffee",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://highwirecoffee.com/products/after-hours-decaf-310g-bag"
+  }
+ },
+ "holdfastcoffeeco.com": {
+  "company": "Hold Fast Coffee Co",
+  "product": {
+   "title": "Guatemala, Acodihue",
+   "type": "",
+   "price": 9.0,
+   "url": "https://holdfastcoffeeco.com/products/guatemala-oriente"
+  }
+ },
+ "holsemcoffee.com": {
+  "company": "Holsem Coffee",
+  "product": {
+   "title": "Nordic Blueberry Maple",
+   "type": "Coffee",
+   "price": 9.99,
+   "url": "https://holsemcoffee.com/products/blueberry-maple"
+  }
+ },
+ "hugotea.com": {
+  "company": "Hugo Tea Company",
+  "product": {
+   "title": "MASALA CHAI CONCENTRATE",
+   "type": "Tea",
+   "price": 37.0,
+   "url": "https://hugotea.com/products/masterful-chai-concentrate-original-96-oz"
+  }
+ },
+ "ilsecoffee.com": {
+  "company": "ILSE Coffee",
+  "product": {
+   "title": "Primary Espresso | Honduras",
+   "type": "",
+   "price": 20.0,
+   "url": "https://ilsecoffee.com/products/primary-espresso"
+  }
+ },
+ "in-tea.net": {
+  "company": "In-Tea",
+  "product": {
+   "title": "Earl Grey: Lady Leslie's - Fine Tea",
+   "type": "Flavored Black Tea",
+   "price": 10.0,
+   "url": "https://in-tea.net/products/earl-grey-lady-leslies-209-fine-tea"
+  }
+ },
+ "indianrivercoffee.com": {
+  "company": "Indian River Coffee Co., Inc.",
+  "product": {
+   "title": "Italian Espresso",
+   "type": "",
+   "price": 22.0,
+   "url": "https://indianrivercoffee.com/products/italian-espresso"
+  }
+ },
+ "ictcoffee.com": {
+  "company": "InterContinental Coffee Trading",
+  "product": null
+ },
+ "islandvintagecoffee.com": {
+  "company": "Island Vintage Coffee Co",
+  "product": {
+   "title": "Peaberry",
+   "type": "Coffee",
+   "price": 42.0,
+   "url": "https://islandvintagecoffee.com/products/peaberry"
+  }
+ },
+ "jporganiccoffee.com": {
+  "company": "Java Planet Organic Coffee Roasters",
+  "product": {
+   "title": "Colombia Organic",
+   "type": "Low Acid",
+   "price": 26.99,
+   "url": "https://jporganiccoffee.com/products/colombia-organic"
+  }
+ },
+ "javapura.com": {
+  "company": "Java Pura Coffee Roasters",
+  "product": {
+   "title": "Maestro Espresso Blend",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://javapura.com/products/espresso-blend"
+  }
+ },
+ "jumpymonkey.com": {
+  "company": "Jumpy Monkey Coffee Roasting Company",
+  "product": {
+   "title": "Highlander Grog",
+   "type": "Silver",
+   "price": 13.69,
+   "url": "https://jumpymonkey.com/products/highlander"
+  }
+ },
+ "eatthechange.com": {
+  "company": "Just Ice Tea",
+  "product": null
+ },
+ "drinkkace.com": {
+  "company": "KACE Tea",
+  "product": {
+   "title": "Apple Jasmine Green Tea (12 Pack)",
+   "type": "Canned beverage",
+   "price": 35.99,
+   "url": "https://drinkkace.com/products/juicebox"
+  }
+ },
+ "kahwacoffee.com": {
+  "company": "Kahwa Coffee Roasters",
+  "product": {
+   "title": "Signature Blend \u2013 Sirocco",
+   "type": "Coffee",
+   "price": 15.99,
+   "url": "https://kahwacoffee.com/products/sirocco"
+  }
+ },
+ "kaladi.com": {
+  "company": "Kaladi Brothers Coffee",
+  "product": {
+   "title": "Adventure Packs",
+   "type": "",
+   "price": 15.0,
+   "url": "https://kaladi.com/products/adventure-packs"
+  }
+ },
+ "kaldiscoffee.com": {
+  "company": "Kaldis Coffee Roasting Company",
+  "product": {
+   "title": "Cold Brew Concentrate - Classic Black",
+   "type": "Cold Coffee",
+   "price": 15.0,
+   "url": "https://kaldiscoffee.com/products/cold-brew-concentrate-classic-black"
+  }
+ },
+ "kauaicoffee.com": {
+  "company": "Kauai Coffee Company",
+  "product": {
+   "title": "Ready to Roast Green (unroasted whole bean) 100% Kauai Prime - 5 lb Bag",
+   "type": "Coffee",
+   "price": 140.0,
+   "url": "https://kauaicoffee.com/products/ready-to-roast-100-kauai-prime-whole-bean-coffee-green-unroasted-5-lb-bag"
+  }
+ },
+ "kavericoffee.com": {
+  "company": "Kaveri Coffee Works",
+  "product": {
+   "title": "BOLD | Kondadkan | Medium-Dark Roast",
+   "type": "Coffee",
+   "price": 20.95,
+   "url": "https://kavericoffee.com/products/signature-bold"
+  }
+ },
+ "keweenawcoffeeworks.com": {
+  "company": "Keweenaw Coffee Works",
+  "product": {
+   "title": "Yooper Blend",
+   "type": "Roasts",
+   "price": 20.0,
+   "url": "https://keweenawcoffeeworks.com/products/yooper-blend-1"
+  }
+ },
+ "kiidcoffee.com": {
+  "company": "Kiid Coffee",
+  "product": {
+   "title": "Kiid Superfood Latte",
+   "type": "",
+   "price": 15.0,
+   "url": "https://kiidcoffee.com/products/kiid-coffee-worlds-first-coffee-for-kids"
+  }
+ },
+ "klatchcoffee.com": {
+  "company": "Klatch Coffee, Inc.",
+  "product": {
+   "title": "Original Christmas",
+   "type": "Single Origin",
+   "price": 25.95,
+   "url": "https://klatchcoffee.com/products/original-christmas"
+  }
+ },
+ "koffeekult.com": {
+  "company": "Koffee Kult Coffee Roasters",
+  "product": {
+   "title": "Dark Roast Single Serve Cups",
+   "type": "Single Serve Cups",
+   "price": 17.99,
+   "url": "https://koffeekult.com/products/original-koffee-kult-dark-roast-coffee-in-single-serve"
+  }
+ },
+ "konacoffeepurveyors.com": {
+  "company": "Kona Coffee Purveyors",
+  "product": {
+   "title": "Konawaena Estate",
+   "type": "",
+   "price": 28.0,
+   "url": "https://konacoffeepurveyors.com/products/konawaena"
+  }
+ },
+ "lacabra.com": {
+  "company": "La Cabra",
+  "product": {
+   "title": "K.H. W\u00fcrtz Cup - Dark",
+   "type": "W\u00fcrtz",
+   "price": 259.0,
+   "url": "https://lacabra.com/products/kh-wurtz-cup-dark"
+  }
+ },
+ "landofathousandhills.com": {
+  "company": "Land of a Thousand Hills Coffee",
+  "product": {
+   "title": "Kira Ikawa",
+   "type": "Coffee",
+   "price": 19.25,
+   "url": "https://landofathousandhills.com/products/kira-ikawa-dark-roast"
+  }
+ },
+ "larryscoffee.com": {
+  "company": "Larry's Coffee",
+  "product": {
+   "title": "Cowboy Blend",
+   "type": "Coffee",
+   "price": 8.95,
+   "url": "https://larryscoffee.com/products/cowboy-blend-medium-roast"
+  }
+ },
+ "drinklococoffee.com": {
+  "company": "Loco Coffee Co.",
+  "product": {
+   "title": "Black Cold Brew",
+   "type": "",
+   "price": 37.99,
+   "url": "https://drinklococoffee.com/products/black-cold-brew"
+  }
+ },
+ "loftycoffee.com": {
+  "company": "Lofty Coffee Co",
+  "product": {
+   "title": "KEEPING IT CLASSY ESPRESSO",
+   "type": "COFFEE",
+   "price": 21.95,
+   "url": "https://loftycoffee.com/products/keeping-it-classy-espresso"
+  }
+ },
+ "longbottomcoffee.com": {
+  "company": "Longbottom Coffee & Tea, Inc.",
+  "product": {
+   "title": "Black Gold Coffee Blend",
+   "type": "Specialty Coffee",
+   "price": 14.25,
+   "url": "https://longbottomcoffee.com/products/black-gold-coffee-blend"
+  }
+ },
+ "looseleafteamarket.com": {
+  "company": "Loose Leaf Tea Market",
+  "product": {
+   "title": "Inflammation Relief Herbal Tea",
+   "type": "Tea > Loose Leaf Herbal Tea > Inflammation Support",
+   "price": 23.99,
+   "url": "https://looseleafteamarket.com/products/inflammation-relief"
+  }
+ },
+ "loyalcoffee.co": {
+  "company": "Loyal Coffee",
+  "product": {
+   "title": "The Double Zero Blend",
+   "type": "Heavy",
+   "price": 11.0,
+   "url": "https://loyalcoffee.co/products/coffee-00"
+  }
+ },
+ "luckygoatcoffee.com": {
+  "company": "Lucky Goat Coffee Co.",
+  "product": {
+   "title": "Southern Pecan",
+   "type": "Coffee",
+   "price": 16.5,
+   "url": "https://luckygoatcoffee.com/products/southern-pecan"
+  }
+ },
+ "madgoatcoffee.com": {
+  "company": "Mad Goat Coffee",
+  "product": {
+   "title": "Mexican Chiapas, FTO Triunfo Verde",
+   "type": "Bagged Coffee",
+   "price": 17.0,
+   "url": "https://madgoatcoffee.com/products/mexican-chiapas-finca-el-retiro-jaltenango"
+  }
+ },
+ "clubmagichour.com": {
+  "company": "Magic Hour Tea",
+  "product": {
+   "title": "The Moon - Tea for Nurturing Graceful Phases",
+   "type": "Tea & Infusions",
+   "price": 11.0,
+   "url": "https://clubmagichour.com/products/the-moon"
+  }
+ },
+ "mammothcoffee.co": {
+  "company": "Mammoth Coffee Company",
+  "product": {
+   "title": "Roaster's Choice Big Ass Coffee",
+   "type": "Coffee",
+   "price": 45.0,
+   "url": "https://mammothcoffee.co/products/coffee-forever-subscription"
+  }
+ },
+ "marktwendell.com": {
+  "company": "Mark T. Wendell Tea Company",
+  "product": {
+   "title": "HU-KWA Tea - 1 lb. Resealable Bag",
+   "type": "Shop By Tea Type",
+   "price": 47.0,
+   "url": "https://marktwendell.com/products/hu-kwa-tea-1-lb-resealable-bag"
+  }
+ },
+ "marucoffee.com": {
+  "company": "Maru Coffee",
+  "product": {
+   "title": "Seasonal Release | Colombia Yeison Tovar",
+   "type": "Coffee",
+   "price": 26.5,
+   "url": "https://marucoffee.com/products/seasonal-release-colombia-yeison-tovar"
+  }
+ },
+ "maticoffee.com": {
+  "company": "Mati Coffee Inc",
+  "product": {
+   "title": "Infinito Espresso Capsules 100 ct/box",
+   "type": "COFFEE & TEA",
+   "price": 55.5,
+   "url": "https://maticoffee.com/products/infinito-espresso-capsules-100-ct-box"
+  }
+ },
+ "mayorgaorganics.com": {
+  "company": "Mayorga Coffee",
+  "product": {
+   "title": "Cubano Roast",
+   "type": "Coffee",
+   "price": 17.99,
+   "url": "https://mayorgaorganics.com/products/cubanoroast"
+  }
+ },
+ "mazevocoffee.com": {
+  "company": "Mazevo Coffee",
+  "product": {
+   "title": "Love One Another \u2014 Heavyweight Tee",
+   "type": "Tees",
+   "price": 34.99,
+   "url": "https://mazevocoffee.com/products/love-one-another-heavyweight-tee"
+  }
+ },
+ "memteaimports.com": {
+  "company": "Mem Tea",
+  "product": {
+   "title": "Matcha: Premium (Marukyu Koyamaen)",
+   "type": "Loose Leaf Tea",
+   "price": 24.0,
+   "url": "https://memteaimports.com/products/matcha-premium"
+  }
+ },
+ "millcreekcoffeeco.com": {
+  "company": "Mill Creek Coffee Company",
+  "product": {
+   "title": "DECAF MASQUERADE 20/2.0 OZ",
+   "type": "",
+   "price": 38.95,
+   "url": "https://millcreekcoffeeco.com/products/decaf-masquerade-20-2-0-oz"
+  }
+ },
+ "millcreekcoffee.com": {
+  "company": "Millcreek Coffee Roasters",
+  "product": {
+   "title": "Espresso Blend",
+   "type": "Coffee",
+   "price": 18.95,
+   "url": "https://millcreekcoffee.com/products/espresso-blend"
+  }
+ },
+ "monticellocoffeecompany.com": {
+  "company": "Monticello Coffee Company",
+  "product": {
+   "title": "\"Be The Good\" Blend",
+   "type": "coffee beans",
+   "price": 16.0,
+   "url": "https://monticellocoffeecompany.com/products/be-the-good-blend"
+  }
+ },
+ "moongoat.com": {
+  "company": "MoonGoat Coffee",
+  "product": {
+   "title": "DarkSide of the MoonGoat",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://moongoat.com/products/dark-side-of-the-moongoat"
+  }
+ },
+ "mostracoffee.com": {
+  "company": "Mostra Coffee",
+  "product": {
+   "title": "Ghost Bear Espresso Blend",
+   "type": "Simply Medium",
+   "price": 25.0,
+   "url": "https://mostracoffee.com/products/ghost-bear-espresso-blend"
+  }
+ },
+ "motivatcoffee.com": {
+  "company": "Motiv\u0101t Coffee Roasters",
+  "product": {
+   "title": "Ahuachapan, El Salvador || Medium Roast",
+   "type": "",
+   "price": 19.0,
+   "url": "https://motivatcoffee.com/products/ahuachapan-el-salvador"
+  }
+ },
+ "mtcomfortcoffee.com": {
+  "company": "Mt. Comfort Coffee",
+  "product": {
+   "title": "Colombia Decaf, Medium Roast, 12oz.",
+   "type": "Coffee",
+   "price": 16.0,
+   "url": "https://mtcomfortcoffee.com/products/colombia-decaf-coffee"
+  }
+ },
+ "mutombocoffee.com": {
+  "company": "Mutombo Coffee",
+  "product": {
+   "title": "Mutombo Coffee House Blend 12 oz.",
+   "type": "House Blends",
+   "price": 19.99,
+   "url": "https://mutombocoffee.com/products/mutombo-coffee-house-blend-12oz"
+  }
+ },
+ "shopmycupoftea.com": {
+  "company": "My Cup of Tea",
+  "product": {
+   "title": "901 of a Kind Coconut Almond",
+   "type": "",
+   "price": 13.0,
+   "url": "https://shopmycupoftea.com/products/901-of-a-kind-coconut-almond"
+  }
+ },
+ "myteaconnection.com": {
+  "company": "My Tea Connection",
+  "product": {
+   "title": "Fall Tea Club (OPEN through 10/15)",
+   "type": "",
+   "price": 150.0,
+   "url": "https://myteaconnection.com/products/teaclub"
+  }
+ },
+ "nepalteacollective.com": {
+  "company": "Nepal Tea Collective, PBC.",
+  "product": {
+   "title": "The WALL\u00ae Tea Infuser",
+   "type": "Infuser",
+   "price": 40.0,
+   "url": "https://nepalteacollective.com/products/the-wall-tea-infuser"
+  }
+ },
+ "nmpinoncoffee.com": {
+  "company": "New Mexico Pi\u00f1on Coffee",
+  "product": {
+   "title": "Traditional Pi\u00f1on",
+   "type": "Bagged Coffee",
+   "price": 15.0,
+   "url": "https://nmpinoncoffee.com/products/traditional-pinon"
+  }
+ },
+ "ninetypluscoffee.com": {
+  "company": "Ninety Plus Coffee",
+  "product": {
+   "title": "Juliette",
+   "type": "Coffee",
+   "price": 60.0,
+   "url": "https://ninetypluscoffee.com/products/juliette"
+  }
+ },
+ "ohmcoffee.com": {
+  "company": "Ohm Coffee Roasters",
+  "product": {
+   "title": "Black Magick Blend",
+   "type": "Coffee Blends",
+   "price": 20.0,
+   "url": "https://ohmcoffee.com/products/black-magick-blend"
+  }
+ },
+ "oldjudgecoffee.com": {
+  "company": "Old Judge Coffee Company",
+  "product": {
+   "title": "Old Judge Coffee: Heritage Roast (Medium Roast, Ground)",
+   "type": "Beverages",
+   "price": 17.99,
+   "url": "https://oldjudgecoffee.com/products/old-judge-coffee"
+  }
+ },
+ "onelinecoffee.com": {
+  "company": "One Line Coffee - Downtown",
+  "product": {
+   "title": "Method Blend Espresso",
+   "type": "",
+   "price": 6.85,
+   "url": "https://onelinecoffee.com/products/method-blend-espresso"
+  }
+ },
+ "oslocoffee.com": {
+  "company": "Oslo Coffee Roasters",
+  "product": {
+   "title": "Thor House Blend",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://oslocoffee.com/products/thor-house-blend"
+  }
+ },
+ "owlvericks.com": {
+  "company": "Owlverick's Coffee",
+  "product": {
+   "title": "SAIGON NIGHTS",
+   "type": "Coffee Beans",
+   "price": 20.5,
+   "url": "https://owlvericks.com/products/saigon-nights"
+  }
+ },
+ "paramountcoffee.com": {
+  "company": "Paramount Coffee Company",
+  "product": {
+   "title": "Aliado Farm-Direct Finca LaFortaleza 12oz Whole Bean Coffee",
+   "type": "Coffee",
+   "price": 15.49,
+   "url": "https://paramountcoffee.com/products/aliado-farm-direct-finca-lafortaleza-12oz-whole-bean-coffee"
+  }
+ },
+ "parlorcoffee.com": {
+  "company": "Parlor Coffee",
+  "product": {
+   "title": "Cold Brew on Tap",
+   "type": "Coffee",
+   "price": 48.0,
+   "url": "https://parlorcoffee.com/products/cold-brew-on-tap"
+  }
+ },
+ "peacecoffee.com": {
+  "company": "Peace Coffee",
+  "product": {
+   "title": "Birchwood",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://peacecoffee.com/products/birchwood-breakfast-blend"
+  }
+ },
+ "drinkperla.com": {
+  "company": "Per'La Coffee",
+  "product": {
+   "title": "Espresso Fino Blend",
+   "type": "",
+   "price": 18.0,
+   "url": "https://drinkperla.com/products/espresso-fino"
+  }
+ },
+ "pinkcloudcoffee.com": {
+  "company": "Pink Cloud Coffee",
+  "product": {
+   "title": "Espresso - Medium Roast",
+   "type": "",
+   "price": 25.0,
+   "url": "https://pinkcloudcoffee.com/products/espresso-medium-roast"
+  }
+ },
+ "piperandleaf.com": {
+  "company": "Piper & Leaf Tea Co.",
+  "product": {
+   "title": "Front Porch Special 9ct Tea Bags in Muslin",
+   "type": "Tea Bags",
+   "price": 12.0,
+   "url": "https://piperandleaf.com/products/front-porch-special-9ct-tea-bags-muslin"
+  }
+ },
+ "pirateislandcoffee.com": {
+  "company": "Pirate Island Coffee",
+  "product": {
+   "title": "Honduras Roast",
+   "type": "Medium Roast",
+   "price": 6.99,
+   "url": "https://pirateislandcoffee.com/products/honduras-roast-single-origin"
+  }
+ },
+ "politecoffee.com": {
+  "company": "Polite Coffee",
+  "product": {
+   "title": "Limited Run K Cups - Friends and Family",
+   "type": "",
+   "price": 10.2,
+   "url": "https://politecoffee.com/products/limited-run-k-cups-friends-and-family"
+  }
+ },
+ "portlandcoffeeroasters.com": {
+  "company": "Portland Coffee Roasters",
+  "product": {
+   "title": "Goose Hollow",
+   "type": "Coffee",
+   "price": 17.0,
+   "url": "https://portlandcoffeeroasters.com/products/goose-hollow"
+  }
+ },
+ "portrait.coffee": {
+  "company": "Portrait Coffee",
+  "product": {
+   "title": "TONI",
+   "type": "Retail Coffee",
+   "price": 16.75,
+   "url": "https://portrait.coffee/products/toni"
+  }
+ },
+ "postcoffeecompany.com": {
+  "company": "Post Coffee Company",
+  "product": {
+   "title": "The Daily",
+   "type": "Wholesale",
+   "price": 12.0,
+   "url": "https://postcoffeecompany.com/products/house-blend"
+  }
+ },
+ "prettytasty.com": {
+  "company": "Pretty Tasty Tea",
+  "product": {
+   "title": "Peach Tea (12 cans)",
+   "type": "RTD Tea",
+   "price": 41.99,
+   "url": "https://prettytasty.com/products/peach-tea"
+  }
+ },
+ "progresscoffeeroasting.com": {
+  "company": "Progress Coffee Co",
+  "product": {
+   "title": "Progress Patch Dri Fit Hat White",
+   "type": "",
+   "price": 35.0,
+   "url": "https://progresscoffeeroasting.com/products/progress-patch-dri-fit-hat-white"
+  }
+ },
+ "proudhoundcoffee.com": {
+  "company": "Proud Hound Coffee",
+  "product": {
+   "title": "Bitsa Blend",
+   "type": "",
+   "price": 14.5,
+   "url": "https://proudhoundcoffee.com/products/bitsablend"
+  }
+ },
+ "proudmarycoffee.com.au": {
+  "company": "Proud Mary Coffee",
+  "product": {
+   "title": "Humbler",
+   "type": "coffee",
+   "price": 22.0,
+   "url": "https://proudmarycoffee.com.au/products/blend-humbler"
+  }
+ },
+ "pureintentionscoffee.com": {
+  "company": "Pure Intentions Coffee",
+  "product": {
+   "title": "Peru Finca Churupampa -Organic",
+   "type": "Retail Coffee",
+   "price": 15.75,
+   "url": "https://pureintentionscoffee.com/products/organic-peru-single-origin"
+  }
+ },
+ "puroast.com": {
+  "company": "Puroast Coffee",
+  "product": {
+   "title": "House Blend",
+   "type": "All Products",
+   "price": 47.5,
+   "url": "https://puroast.com/products/low-acid-house-blend-coffee"
+  }
+ },
+ "raazi.co": {
+  "company": "Raazi Tea",
+  "product": {
+   "title": "Ginger Turmeric",
+   "type": "",
+   "price": 16.0,
+   "url": "https://raazi.co/products/ginger-turmeric-tea"
+  }
+ },
+ "rakkasantea.com": {
+  "company": "Rakkasan Tea Company",
+  "product": {
+   "title": "Rakkasan Black (Tea Sachets)",
+   "type": "Bangladeshi Tea",
+   "price": 8.99,
+   "url": "https://rakkasantea.com/products/rakkasan-black"
+  }
+ },
+ "ravensbrewcoffee.com": {
+  "company": "Raven's Brew Coffee",
+  "product": {
+   "title": "12oz Deadman's Reach\u00ae Coffee",
+   "type": "Dark Roast Coffee",
+   "price": 18.95,
+   "url": "https://ravensbrewcoffee.com/products/12oz-deadmans-reach-coffee"
+  }
+ },
+ "revcoffee.com": {
+  "company": "Rev Coffee Roasters",
+  "product": {
+   "title": "Espresso Nine",
+   "type": "",
+   "price": 20.0,
+   "url": "https://revcoffee.com/products/espresso-nine"
+  }
+ },
+ "rhinocoffee.com": {
+  "company": "Rhino Coffee",
+  "product": {
+   "title": "Crash",
+   "type": "Coffee",
+   "price": 15.99,
+   "url": "https://rhinocoffee.com/products/crash"
+  }
+ },
+ "rishi-tea.com": {
+  "company": "Rishi Tea & Botanicals",
+  "product": {
+   "title": "Simple Brew Loose Leaf Teapot",
+   "type": "ACCESSORIES",
+   "price": 29.0,
+   "url": "https://rishi-tea.com/products/simple-brew-glass-teapot"
+  }
+ },
+ "rivalbros.com": {
+  "company": "Rival Bros Coffee",
+  "product": {
+   "title": "Box of Joe",
+   "type": "",
+   "price": 30.0,
+   "url": "https://rivalbros.com/products/box-of-joe"
+  }
+ },
+ "roastingplant.com": {
+  "company": "Roasting Plant Coffee",
+  "product": {
+   "title": "Sumatra Dua Hati",
+   "type": "Coffee",
+   "price": 24.0,
+   "url": "https://roastingplant.com/products/sumatra-dua-hati"
+  }
+ },
+ "roastybuds.com": {
+  "company": "Roasty Buds Coffee",
+  "product": {
+   "title": "Mexican Chocolate",
+   "type": "Coffee",
+   "price": 17.99,
+   "url": "https://roastybuds.com/products/gourmet-mexican-chocolate-coffee"
+  }
+ },
+ "rookcoffee.com": {
+  "company": "Rook Coffee",
+  "product": {
+   "title": "Peanut Butter Mocha Style",
+   "type": "Cold Brew Concentrate",
+   "price": 48.6,
+   "url": "https://rookcoffee.com/products/peanut-butter-mocha-style"
+  }
+ },
+ "roosroast.com": {
+  "company": "ROOSROAST COFFEE",
+  "product": {
+   "title": "Lobster Butter Love",
+   "type": "Coffee Beans",
+   "price": 10.0,
+   "url": "https://roosroast.com/products/lobster-butter-love"
+  }
+ },
+ "royalmilecoffee.com": {
+  "company": "Royal Mile Coffee Roasters",
+  "product": {
+   "title": "Espresso Jawn",
+   "type": "Coffee",
+   "price": 16.5,
+   "url": "https://royalmilecoffee.com/products/espresso-jawn"
+  }
+ },
+ "rustydogcoffee.com": {
+  "company": "Rusty Dog Coffee",
+  "product": {
+   "title": "CB Coffee",
+   "type": "Coffee",
+   "price": 9.75,
+   "url": "https://rustydogcoffee.com/products/canvasback-coffee"
+  }
+ },
+ "sailawaycoffee.com": {
+  "company": "Sail Away Coffee Co.",
+  "product": {
+   "title": "Oat Milk Latte [Classic Latte]",
+   "type": "Cold Brew, Oat Milk Latte",
+   "price": 48.0,
+   "url": "https://sailawaycoffee.com/products/oat-milk-latte-classic-latte"
+  }
+ },
+ "sailorsbrewcoffee.com": {
+  "company": "Sailor's Brew Coffee LLC",
+  "product": {
+   "title": "CROW'S NEST | ETHIOPIAN GUJI",
+   "type": "Coffee",
+   "price": 38.0,
+   "url": "https://sailorsbrewcoffee.com/products/crows-nest"
+  }
+ },
+ "saintjamesicedtea.com": {
+  "company": "Saint James Iced Tea",
+  "product": {
+   "title": "Mango Passion Fruit Yerba Mate",
+   "type": "Yerba Mate",
+   "price": 39.99,
+   "url": "https://saintjamesicedtea.com/products/passion-fruit-mango"
+  }
+ },
+ "santaluciacoffee.com": {
+  "company": "Santa Lucia Coffee",
+  "product": {
+   "title": "Classic Roast Coffee - 3 Pounds",
+   "type": "",
+   "price": 49.95,
+   "url": "https://santaluciacoffee.com/products/classic-roast-3-pound"
+  }
+ },
+ "saratogateaandhoney.com": {
+  "company": "Saratoga Tea & Honey Company",
+  "product": {
+   "title": "Saratoga Springs Wildflower Honey",
+   "type": "Honey",
+   "price": 9.0,
+   "url": "https://saratogateaandhoney.com/products/saratoga-wildflower-honey"
+  }
+ },
+ "seattlecoffeegear.com": {
+  "company": "Seattle Coffee Gear",
+  "product": {
+   "title": "Lavazza Super Crema Espresso - Whole Bean - 2.2 lb",
+   "type": "Coffee",
+   "price": 36.29,
+   "url": "https://seattlecoffeegear.com/products/lavazza-super-crema-espresso-whole-bean-2-2-lb"
+  }
+ },
+ "secondstatecoffee.com": {
+  "company": "Second State Coffee",
+  "product": {
+   "title": "Caturra Floral - Andr\u00e9s Martinez (LAST CHANCE!)",
+   "type": "Coffee",
+   "price": 27.0,
+   "url": "https://secondstatecoffee.com/products/caturra-floral-andres-martinez"
+  }
+ },
+ "seedscoffee.com": {
+  "company": "Seeds Coffee",
+  "product": {
+   "title": "Iron Fist",
+   "type": "",
+   "price": 21.0,
+   "url": "https://seedscoffee.com/products/iron-fist"
+  }
+ },
+ "senchateabar.com": {
+  "company": "Sencha Tea Bar",
+  "product": {
+   "title": "Sencha",
+   "type": "",
+   "price": 5.99,
+   "url": "https://senchateabar.com/products/sencha"
+  }
+ },
+ "senscoffee.com": {
+  "company": "SENS - SPECIALTY COFFEE & ROBO CAF\u00c9",
+  "product": {
+   "title": "SENS CHOICE",
+   "type": "",
+   "price": 21.0,
+   "url": "https://senscoffee.com/products/snsc-roasters-choice"
+  }
+ },
+ "servecoffee.com": {
+  "company": "Serve Coffee",
+  "product": {
+   "title": "Around The Table Celebration Blend",
+   "type": "Coffee",
+   "price": 17.95,
+   "url": "https://servecoffee.com/products/around-the-table-celebration-blend"
+  }
+ },
+ "sextantcoffee.com": {
+  "company": "SEXTANT COFFEE ROASTERS",
+  "product": {
+   "title": "Black Lion - Best Seller Organic Yirgacheffe Heirloom - Ethiopian Coffee",
+   "type": "Roasted Coffee Bean",
+   "price": 25.0,
+   "url": "https://sextantcoffee.com/products/yirgacheffe-heirloom-12oz-bag"
+  }
+ },
+ "shadrachscoffee.com": {
+  "company": "SHADRACHS COFFEE",
+  "product": {
+   "title": "Colombian Supremo",
+   "type": "",
+   "price": 12.5,
+   "url": "https://shadrachscoffee.com/products/colombian-supremo"
+  }
+ },
+ "signalcoffee.com": {
+  "company": "SIGNAL Coffee Roasters, LLC",
+  "product": {
+   "title": "OHM Medium Roast",
+   "type": "",
+   "price": 19.0,
+   "url": "https://signalcoffee.com/products/ohm"
+  }
+ },
+ "silverbackcoffee.com": {
+  "company": "Silverback Coffee of Rwanda",
+  "product": {
+   "title": "Rwanda's Distinctive Dark",
+   "type": "Coffee",
+   "price": 19.5,
+   "url": "https://silverbackcoffee.com/products/rwandas-distinctive-dark"
+  }
+ },
+ "sippingstreams.com": {
+  "company": "Sipping Streams Tea Company",
+  "product": {
+   "title": "Lip Balm",
+   "type": "Other",
+   "price": 5.0,
+   "url": "https://sippingstreams.com/products/lip-balm"
+  }
+ },
+ "sleepymonkcoffee.com": {
+  "company": "Sleepy Monk Coffee Roasters",
+  "product": {
+   "title": "Espresso Blend",
+   "type": "Espresso",
+   "price": 21.0,
+   "url": "https://sleepymonkcoffee.com/products/espresso-blend"
+  }
+ },
+ "snarkytea.com": {
+  "company": "Snarky Tea",
+  "product": {
+   "title": "Raspberry Lemonade - Fruit Herbal Blend",
+   "type": "Tea",
+   "price": 5.0,
+   "url": "https://snarkytea.com/products/raspberry-lemonade-limited-batch-herbal-tea"
+  }
+ },
+ "socoffee.co": {
+  "company": "Snowy Owl Coffee Roasters",
+  "product": {
+   "title": "Jaws Blend",
+   "type": "Coffee Bag",
+   "price": 16.0,
+   "url": "https://socoffee.co/products/jaws-blend"
+  }
+ },
+ "sparrowcoffee.com": {
+  "company": "Sparrow Coffee Company",
+  "product": {
+   "title": "Espresso Marbella",
+   "type": "Beans",
+   "price": 22.5,
+   "url": "https://sparrowcoffee.com/products/espresso-marbella"
+  }
+ },
+ "spirittea.co": {
+  "company": "Spirit Tea",
+  "product": {
+   "title": "Tea Club",
+   "type": "Tea Club",
+   "price": 50.0,
+   "url": "https://spirittea.co/products/tea-club"
+  }
+ },
+ "splitrockcoffee.com": {
+  "company": "Split Rock Coffee",
+  "product": {
+   "title": "Breakfast Blend Medium Roast Coffee \u2013 2lbs",
+   "type": "",
+   "price": 24.99,
+   "url": "https://splitrockcoffee.com/products/breakfast-blend-medium-roast-coffee-2lbs"
+  }
+ },
+ "stashtea.com": {
+  "company": "Stash Tea Company",
+  "product": {
+   "title": "Stash Tea Advent Calendar",
+   "type": "Gift Item",
+   "price": 20.0,
+   "url": "https://stashtea.com/products/stash-tea-advent-calendar"
+  }
+ },
+ "stereoscopecoffee.com": {
+  "company": "STEREOSCOPE COFFEE",
+  "product": {
+   "title": "Hyungi X Stereoscope Incense Sticks",
+   "type": "",
+   "price": 39.5,
+   "url": "https://stereoscopecoffee.com/products/hyungi-x-stereoscope-incense-sticks"
+  }
+ },
+ "storyville.com": {
+  "company": "Storyville Coffee Company",
+  "product": {
+   "title": "Storyville Prologue",
+   "type": "",
+   "price": 18.0,
+   "url": "https://storyville.com/products/storyville-prologue"
+  }
+ },
+ "strongcoffeecompany.com": {
+  "company": "Strong Coffee Company",
+  "product": {
+   "title": "Coffee Gummies with Nootropics & Adaptogens",
+   "type": "",
+   "price": 13.0,
+   "url": "https://strongcoffeecompany.com/products/gummy-drops"
+  }
+ },
+ "swingscoffee.com": {
+  "company": "Swing's Coffee Roasters",
+  "product": {
+   "title": "Diplomat Blend",
+   "type": "Coffee",
+   "price": 15.0,
+   "url": "https://swingscoffee.com/products/diplomat-blend"
+  }
+ },
+ "talitha.com": {
+  "company": "Talitha Coffee",
+  "product": {
+   "title": "Arise",
+   "type": "Signature Blend",
+   "price": 22.95,
+   "url": "https://talitha.com/products/arise-signature-blend"
+  }
+ },
+ "tatsutea.com": {
+  "company": "Tatsu Tea",
+  "product": {
+   "title": "Matcha Performance Tea - Lychee",
+   "type": "Performance Tea",
+   "price": 35.0,
+   "url": "https://tatsutea.com/products/tatsu-tea-energy"
+  }
+ },
+ "tealadybk.com": {
+  "company": "Tea Lady Brooklyn",
+  "product": {
+   "title": "Sweet Spot Powder",
+   "type": "Adaptogen Herb Powder",
+   "price": 29.0,
+   "url": "https://tealadybk.com/products/sweet-spot-powder"
+  }
+ },
+ "teamountain.co.uk": {
+  "company": "Tea Mountain",
+  "product": {
+   "title": "Portsmouth Tea 50 tea bags",
+   "type": "Tea & Infusions",
+   "price": 8.75,
+   "url": "https://teamountain.co.uk/products/portsmouth-tea-bag"
+  }
+ },
+ "teanme.co": {
+  "company": "Tea N Me",
+  "product": {
+   "title": "My Moringa Miracle",
+   "type": "tea",
+   "price": 16.99,
+   "url": "https://teanme.co/products/my-moringa-miracle"
+  }
+ },
+ "teashop.com": {
+  "company": "Tea Shop",
+  "product": {
+   "title": "Tea Advent Calendar | Limited Edition",
+   "type": "Packs y regalos",
+   "price": 34.95,
+   "url": "https://teashop.com/products/tea-advent-calendar-limited-edition"
+  }
+ },
+ "teawithtae.com": {
+  "company": "Tea with Tae",
+  "product": {
+   "title": "Holiday Tea Bento Box",
+   "type": "Tea Bento Box",
+   "price": 45.0,
+   "url": "https://teawithtae.com/products/holiday-tea-bento-box-1"
+  }
+ },
+ "tenfoldcoffee.com": {
+  "company": "Tenfold Coffee Company",
+  "product": {
+   "title": "Full Stop Espresso Blend",
+   "type": "coffee",
+   "price": 19.5,
+   "url": "https://tenfoldcoffee.com/products/full-stop-espresso-blend"
+  }
+ },
+ "thebeanyard.com": {
+  "company": "The Bean Yard Coffee House",
+  "product": {
+   "title": "Trinity Blend Espresso - 12oz / 5lb",
+   "type": "",
+   "price": 24.0,
+   "url": "https://thebeanyard.com/products/trinity-blend-espresso-12oz-5lb"
+  }
+ },
+ "blindtigercafe.com": {
+  "company": "The Blind Tiger Coffee Roasters",
+  "product": null
+ },
+ "theboyandthebear.com": {
+  "company": "The Boy & The Bear - Coffee",
+  "product": {
+   "title": "Dynamic Espresso 1 kg",
+   "type": "Coffee",
+   "price": 60.0,
+   "url": "https://theboyandthebear.com/products/dynamic-espresso-1-kilo"
+  }
+ },
+ "greatlakescoffee.com": {
+  "company": "The Great Lakes Coffee Roasting Co.",
+  "product": {
+   "title": "Motor City",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://greatlakescoffee.com/products/motor-city-blend"
+  }
+ },
+ "millcoffee.com": {
+  "company": "The Mill Coffee & Tea",
+  "product": {
+   "title": "Nebraska Blend",
+   "type": "coffee",
+   "price": 20.0,
+   "url": "https://millcoffee.com/products/nebraska-blend"
+  }
+ },
+ "republicoftea.com": {
+  "company": "The Republic of Tea",
+  "product": {
+   "title": "Sips of the Season Tea Advent Calendar",
+   "type": "",
+   "price": 75.0,
+   "url": "https://republicoftea.com/products/sips-of-the-season-tea-advent-calendar"
+  }
+ },
+ "theroasterie.com": {
+  "company": "The Roasterie Coffee Company",
+  "product": {
+   "title": "Jetsetters Stainless Steel Cold Cup 16oz",
+   "type": "apparel + gifts",
+   "price": 32.0,
+   "url": "https://theroasterie.com/products/jetsetters-stainless-steel-cold-cup-16oz"
+  }
+ },
+ "wellcoffeeroasters.com": {
+  "company": "The Well Coffee Roasters",
+  "product": {
+   "title": "8oz Coffee Gift Pack",
+   "type": "Bagged Coffee",
+   "price": 75.0,
+   "url": "https://wellcoffeeroasters.com/products/coffee-gift-pack"
+  }
+ },
+ "thinkcoffee.com": {
+  "company": "Think Coffee",
+  "product": {
+   "title": "Devoe.",
+   "type": "coffee",
+   "price": 17.0,
+   "url": "https://thinkcoffee.com/products/think-blend"
+  }
+ },
+ "hammercoffee.com": {
+  "company": "Thomas Hammer Coffee Roasters",
+  "product": {
+   "title": "Signature Blend",
+   "type": "",
+   "price": 16.75,
+   "url": "https://hammercoffee.com/products/signature-blend"
+  }
+ },
+ "tiestatea.com": {
+  "company": "Tiesta Tea Company",
+  "product": {
+   "title": "2026 Tea Advent Calendar",
+   "type": "Gift Box",
+   "price": 29.95,
+   "url": "https://tiestatea.com/products/2026-tea-advent-calendar"
+  }
+ },
+ "timelesscoffee.com": {
+  "company": "Timeless Coffee & Bakery",
+  "product": {
+   "title": "THANKSGIVING PRE-ORDERS - 9\" PUMPKIN PIE",
+   "type": "",
+   "price": 33.0,
+   "url": "https://timelesscoffee.com/products/thanksgiving-pre-orders-9-pumpkin-pie"
+  }
+ },
+ "tinkercoffee.com": {
+  "company": "Tinker Coffee Co.",
+  "product": {
+   "title": "Zing",
+   "type": "Coffee",
+   "price": 6.0,
+   "url": "https://tinkercoffee.com/products/zing-blend"
+  }
+ },
+ "tinyhousecoffeeroasters.com": {
+  "company": "Tiny House Coffee Roasters, Inc.",
+  "product": {
+   "title": "Casita Cold Brew Keg (WSKEG)",
+   "type": "",
+   "price": 115.0,
+   "url": "https://tinyhousecoffeeroasters.com/products/15-5-gallon-cold-brew-keg"
+  }
+ },
+ "totaltea.com": {
+  "company": "Total Tea",
+  "product": {
+   "title": "Detox Teas",
+   "type": "Herbal Tea",
+   "price": 20.99,
+   "url": "https://totaltea.com/products/detox-tea"
+  }
+ },
+ "drinktrade.com": {
+  "company": "Trade Coffee",
+  "product": null
+ },
+ "tridentcoffee.com": {
+  "company": "Trident Coffee Roasters",
+  "product": {
+   "title": "Functional Coffee (30 Stick Packs)",
+   "type": "Functional Coffee",
+   "price": 49.95,
+   "url": "https://tridentcoffee.com/products/functional-coffee-30-stick-packs"
+  }
+ },
+ "trubrucoffee.com": {
+  "company": "Tru Bru Organic Coffee",
+  "product": {
+   "title": "Freedom Blend",
+   "type": "",
+   "price": 17.76,
+   "url": "https://trubrucoffee.com/products/freedom-blend-whole-espresso-beans"
+  }
+ },
+ "truecoffeeroasters.com": {
+  "company": "True Coffee Roasters",
+  "product": {
+   "title": "FTO Dark Roast Sumatra",
+   "type": "Dark Roast",
+   "price": 16.49,
+   "url": "https://truecoffeeroasters.com/products/fto-dark-roasted-sumatra"
+  }
+ },
+ "twinvalleycoffee.com": {
+  "company": "Twin Valley Coffee",
+  "product": {
+   "title": "The Gazebo Blend W/ Tin",
+   "type": "Beans",
+   "price": 18.99,
+   "url": "https://twinvalleycoffee.com/products/the-gazebo-blend-12-oz-whole"
+  }
+ },
+ "tworiversdirect.com": {
+  "company": "Two Rivers Coffee",
+  "product": {
+   "title": "Cella's Chocolate Cherry Coffee Pods",
+   "type": "coffee",
+   "price": 25.95,
+   "url": "https://tworiversdirect.com/products/cellas-chocolate-cherry-single-serve-coffee"
+  }
+ },
+ "uendure.com": {
+  "company": "UEndure Tea Co. - Premium Organic Loose Leaf Tea Blends, and BPA-Free Sustainable Accessories",
+  "product": {
+   "title": "Original Tea Infuser Bottle - 14 oz Capacity",
+   "type": "Tea Infuser Bottle",
+   "price": 35.0,
+   "url": "https://uendure.com/products/tea-infuser-bottle"
+  }
+ },
+ "uncommoncoffeeroasters.com": {
+  "company": "Uncommon Coffee Roasters",
+  "product": {
+   "title": "Pink Bourbon (Limited Roast)",
+   "type": "",
+   "price": 26.0,
+   "url": "https://uncommoncoffeeroasters.com/products/pink-bourbon-limited-edition"
+  }
+ },
+ "usroast.com": {
+  "company": "US Roast Specialty Coffee",
+  "product": {
+   "title": "1776 Dark Roast Coffee",
+   "type": "Single Origin Blend",
+   "price": 16.0,
+   "url": "https://usroast.com/products/1776-dark-roast-coffee"
+  }
+ },
+ "utopiancoffee.com": {
+  "company": "UTOPIAN Coffee Co.",
+  "product": {
+   "title": "Obsidian - Regenerative Organic Certified\u00ae",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://utopiancoffee.com/products/newobsidian"
+  }
+ },
+ "victuscoffee.com": {
+  "company": "Victus Coffee",
+  "product": {
+   "title": "Victoria - Medium Roast Blend",
+   "type": "Coffee",
+   "price": 19.99,
+   "url": "https://victuscoffee.com/products/victoria-blend"
+  }
+ },
+ "voltagecoffeesupply.com": {
+  "company": "Voltage Coffee Supply",
+  "product": {
+   "title": "La Marzocco Advanced Portafilter Basket Insert Filter Cup All Sizes",
+   "type": "Portafilters",
+   "price": 19.5,
+   "url": "https://voltagecoffeesupply.com/products/la-marzocco-advanced-precision-portafilter-filter-basket"
+  }
+ },
+ "wakacoffee.com": {
+  "company": "Waka Coffee and Tea",
+  "product": {
+   "title": "Unsweetened Peach Flavored Black Instant Tea - 4.5 oz Pouch",
+   "type": "Instant Tea",
+   "price": 18.99,
+   "url": "https://wakacoffee.com/products/unsweetened-peach-flavored-black-instant-tea"
+  }
+ },
+ "wanderingbearcoffee.com": {
+  "company": "Wandering Bear Coffee",
+  "product": {
+   "title": "Cold Brew On Tap (96 oz) - Peppermint Mocha",
+   "type": "",
+   "price": 34.99,
+   "url": "https://wanderingbearcoffee.com/products/cold-brew-on-tap-96-oz-peppermint-mocha"
+  }
+ },
+ "weaverscoffee.com": {
+  "company": "Weaver's Coffee & Tea",
+  "product": {
+   "title": "French Roast Coffee",
+   "type": "Packaged Coffee",
+   "price": 36.95,
+   "url": "https://weaverscoffee.com/products/french-roast-coffee"
+  }
+ },
+ "whidbeycoffee.com": {
+  "company": "Whidbey Coffee Co",
+  "product": {
+   "title": "Whidbey Blend",
+   "type": "Coffee",
+   "price": 16.25,
+   "url": "https://whidbeycoffee.com/products/whidbey-blend"
+  }
+ },
+ "whiskeymorningcoffee.com": {
+  "company": "Whiskey Morning Coffee",
+  "product": {
+   "title": "Gringos Cafe De Olla (brown sugar & cinnamon)",
+   "type": "Coffee",
+   "price": 21.99,
+   "url": "https://whiskeymorningcoffee.com/products/gringos-cafe-de-olla-brown-sugar-cinnamon"
+  }
+ },
+ "wrcoffee.com": {
+  "company": "White Rock Coffee",
+  "product": {
+   "title": "Northern Italian Espresso",
+   "type": "Roasted Coffee",
+   "price": 16.5,
+   "url": "https://wrcoffee.com/products/coffee-dark-roast-northern-italian-espresso"
+  }
+ },
+ "wighttea.com": {
+  "company": "Wight Tea Company",
+  "product": {
+   "title": "Lavender Earl Grey",
+   "type": "Tea & Infusions",
+   "price": 7.0,
+   "url": "https://wighttea.com/products/lavender-earl-grey"
+  }
+ },
+ "winanschocolate.com": {
+  "company": "Winans Coffee & Chocolate",
+  "product": {
+   "title": "Highlander Grogg",
+   "type": "Coffee",
+   "price": 17.95,
+   "url": "https://winanschocolate.com/products/highlander-grogg"
+  }
+ },
+ "windanseacoffee.com": {
+  "company": "Windansea Coffee",
+  "product": {
+   "title": "Scorpion Bay Specialty Coffee: Medium-Dark Roast",
+   "type": "Coffee",
+   "price": 30.49,
+   "url": "https://windanseacoffee.com/products/scorpion-bay-specialty-coffee-medium-dark-roast"
+  }
+ },
+ "wpcoffee.com": {
+  "company": "Wolfgang Puck Coffee",
+  "product": {
+   "title": "WP Chef's Reserve",
+   "type": "Coffee",
+   "price": 14.7,
+   "url": "https://wpcoffee.com/products/chefs-reserve"
+  }
+ },
+ "wonderstate.com": {
+  "company": "Wonderstate Coffee",
+  "product": {
+   "title": "Single Origin Flight",
+   "type": "Coffee",
+   "price": 35.0,
+   "url": "https://wonderstate.com/products/single-origin-flight"
+  }
+ },
+ "woodscoffee.com": {
+  "company": "Woods Coffee",
+  "product": {
+   "title": "Espresso Blend",
+   "type": "Coffee",
+   "price": 19.99,
+   "url": "https://woodscoffee.com/products/espresso-blend"
+  }
+ },
+ "yellowbrickcoffee.com": {
+  "company": "Yellow Brick Coffee",
+  "product": {
+   "title": "DESTINO: Espresso Blend [Notes: Cacao nib, orange zest, balanced]",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://yellowbrickcoffee.com/products/destino-espresso-blend-notes-cacao-nib-orange-zest-balanced"
+  }
+ },
+ "zbeanscoffee.com": {
+  "company": "Z Beans Coffee",
+  "product": {
+   "title": "Medium Roast",
+   "type": "Coffee",
+   "price": 16.99,
+   "url": "https://zbeanscoffee.com/products/medium-roast"
+  }
+ },
+ "22sierracoffee.com": {
+  "company": "22 Sierra Coffee Co.\u2122",
+  "product": {
+   "title": "Gun Run - Medium Roast",
+   "type": "Coffee",
+   "price": 15.99,
+   "url": "https://22sierracoffee.com/products/gun-run"
+  }
+ },
+ "abbotsfordroad.com": {
+  "company": "Abbotsford Road Coffee Specialists",
+  "product": {
+   "title": "Japan-Inspired Coffee Tasting & Palette Calibration",
+   "type": "Experience",
+   "price": 85.0,
+   "url": "https://abbotsfordroad.com/products/japan-inspired-coffee-tasting-palette-calibration"
+  }
+ },
+ "achillescoffeeroasters.com": {
+  "company": "Achilles Coffee Roasters",
+  "product": {
+   "title": "Achilles Blend of Medium and Dark Roast Coffee",
+   "type": "Whole Bean Coffee",
+   "price": 23.0,
+   "url": "https://achillescoffeeroasters.com/products/buy-achilles-blend-of-medium-and-dark-roast-coffee"
+  }
+ },
+ "addictivecoffee.com": {
+  "company": "Addictive Coffee Roasters",
+  "product": {
+   "title": "MORNING FIX",
+   "type": "Whole Bean/Ground",
+   "price": 19.8,
+   "url": "https://addictivecoffee.com/products/morning-fix"
+  }
+ },
+ "aerialresupplycoffee.com": {
+  "company": "Aerial Resupply Coffee\u00ae",
+  "product": {
+   "title": "Fire Watch - Colombian Medium Roast Coffee",
+   "type": "Coffee",
+   "price": 16.99,
+   "url": "https://aerialresupplycoffee.com/products/firewatch-colombian-medium-roast-coffee"
+  }
+ },
+ "afficionadocoffee.com": {
+  "company": "Afficionado Coffee Roasters",
+  "product": {
+   "title": "Afficionado Aileron - Peanut, Caramel, Citrus Jam - 12oz",
+   "type": "blend coffee",
+   "price": 20.0,
+   "url": "https://afficionadocoffee.com/products/aileron"
+  }
+ },
+ "airtea.co": {
+  "company": "Air Tea Company, Inc.",
+  "product": {
+   "title": "Air Tea Kettle",
+   "type": "Air Tea Kettle",
+   "price": 249.0,
+   "url": "https://airtea.co/products/air-tea-kettle"
+  }
+ },
+ "ancoracoffee.com": {
+  "company": "Ancora Coffee",
+  "product": {
+   "title": "Black Thunder",
+   "type": "Coffee",
+   "price": 17.95,
+   "url": "https://ancoracoffee.com/products/black-thunder"
+  }
+ },
+ "andeanmountain.com": {
+  "company": "Andean Mountain Coffee",
+  "product": {
+   "title": "ARABICA GOURMET PREMIUM BLEND",
+   "type": "",
+   "price": 10.99,
+   "url": "https://andeanmountain.com/products/arabica-gourmet-premium-blend"
+  }
+ },
+ "andytownsf.com": {
+  "company": "Andytown Coffee Roasters",
+  "product": {
+   "title": "WIND & SEA BLEND",
+   "type": "coffee",
+   "price": 15.25,
+   "url": "https://andytownsf.com/products/wind-sea-blend-2"
+  }
+ },
+ "artifexcoffees.com": {
+  "company": "Artifex Coffee LLC",
+  "product": {
+   "title": "Foundation",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://artifexcoffees.com/products/foundation"
+  }
+ },
+ "atlascoffeeclub.com": {
+  "company": "Atlas Coffee Club",
+  "product": null
+ },
+ "atomicroastery.com": {
+  "company": "Atomic Coffee Roasters",
+  "product": {
+   "title": "POTENTIAL Cold Brew",
+   "type": "Coffee",
+   "price": 48.0,
+   "url": "https://atomicroastery.com/products/potential"
+  }
+ },
+ "avocadotea.com": {
+  "company": "Avocado Tea Co.",
+  "product": {
+   "title": "Avocado Leaf Tea Peach Blend",
+   "type": "",
+   "price": 16.95,
+   "url": "https://avocadotea.com/products/peach-blend"
+  }
+ },
+ "backyardbeans.com": {
+  "company": "Backyard Beans Coffee Co.",
+  "product": {
+   "title": "Punch in The Face | Cold Brew 4 pack",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://backyardbeans.com/products/punch-in-the-face-cold-brew-4-pack"
+  }
+ },
+ "bicyclecoffeeco.com": {
+  "company": "Bicycle Coffee Co.",
+  "product": {
+   "title": "2.5 lb Medium Roast Coffee",
+   "type": "Coffee Beans",
+   "price": 38.0,
+   "url": "https://bicyclecoffeeco.com/products/2-5-lb-medium-roast-coffee"
+  }
+ },
+ "bighearttea.com": {
+  "company": "Big Heart Tea Co.",
+  "product": {
+   "title": "Matcha",
+   "type": "Gift Product",
+   "price": 46.55,
+   "url": "https://bighearttea.com/products/organic-matcha"
+  }
+ },
+ "birchcoffee.com": {
+  "company": "Birch Coffee",
+  "product": {
+   "title": "Birch Blend",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://birchcoffee.com/products/birch-blend"
+  }
+ },
+ "birdandbearcoffee.com": {
+  "company": "Bird and Bear Coffee",
+  "product": {
+   "title": "Dealer's Choice Roasted Coffee",
+   "type": "",
+   "price": 20.0,
+   "url": "https://birdandbearcoffee.com/products/dealers-choice-roasted-coffee"
+  }
+ },
+ "bizarrecoffee.com": {
+  "company": "Bizarre Coffee",
+  "product": {
+   "title": "Nicaragua Honey Misericordia - Medium Roast",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://bizarrecoffee.com/products/nicaragua-honey-misericordia-medium-roast"
+  }
+ },
+ "blackoakcoffee.com": {
+  "company": "Black Oak Coffee Roasters",
+  "product": {
+   "title": "Duomo Espresso or Drip",
+   "type": "Bagged Coffee",
+   "price": 16.75,
+   "url": "https://blackoakcoffee.com/products/duomo-espresso"
+  }
+ },
+ "blackoutcoffee.com": {
+  "company": "Blackout Coffee Co.",
+  "product": {
+   "title": "Instant Coffee 32 Count",
+   "type": "Instant Coffee",
+   "price": 29.95,
+   "url": "https://blackoutcoffee.com/products/instant-coffee-32-count"
+  }
+ },
+ "bluorecoffee.com": {
+  "company": "Blu Ore Coffee & Tea",
+  "product": {
+   "title": "Black Obsidian Robusta Whole beans",
+   "type": "Whole Beans",
+   "price": 14.0,
+   "url": "https://bluorecoffee.com/products/black-obsidian"
+  }
+ },
+ "bluecopperslc.com": {
+  "company": "Blue Copper Coffee",
+  "product": {
+   "title": "Roaster's Choice",
+   "type": "",
+   "price": 18.0,
+   "url": "https://bluecopperslc.com/products/roasters-choice"
+  }
+ },
+ "bluebeardcoffee.com": {
+  "company": "Bluebeard Coffee Roasters",
+  "product": {
+   "title": "The Narrows Espresso Blend",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://bluebeardcoffee.com/products/the-narrows-espresso-blend"
+  }
+ },
+ "bobateaprotein.com": {
+  "company": "Boba Tea Protein",
+  "product": {
+   "title": "Classic Milk Tea Whey Protein",
+   "type": "",
+   "price": 39.99,
+   "url": "https://bobateaprotein.com/products/classic-milk-tea"
+  }
+ },
+ "bold3.org": {
+  "company": "BOLD3 Coffee",
+  "product": {
+   "title": "Eagle's Wings, Medium Roast, 1 LB (16oz)",
+   "type": "Card",
+   "price": 26.77,
+   "url": "https://bold3.org/products/bold3-coffee-eagles-wings-medium-roast"
+  }
+ },
+ "bonfirecoffee.com": {
+  "company": "Bonfire Coffee",
+  "product": {
+   "title": "Blend X",
+   "type": "",
+   "price": 20.0,
+   "url": "https://bonfirecoffee.com/products/blend-x"
+  }
+ },
+ "booskerdoo.com": {
+  "company": "Booskerdoo Coffee & Baking Co.",
+  "product": {
+   "title": "Eastern Standard Organic (a sweet & stubborn optimist, medium roast)",
+   "type": "COFFEE",
+   "price": 21.0,
+   "url": "https://booskerdoo.com/products/eastern-standard-organic-espresso"
+  }
+ },
+ "bostoncommoncoffee.com": {
+  "company": "Boston Common Coffee Company",
+  "product": {
+   "title": "Burundi Incuti",
+   "type": "",
+   "price": 18.99,
+   "url": "https://bostoncommoncoffee.com/products/burundi-limited-small-batch-single-origin"
+  }
+ },
+ "brashcoffee.com": {
+  "company": "BRASH Coffee Roasters",
+  "product": {
+   "title": "Roaster's Choice",
+   "type": "Coffee",
+   "price": 21.0,
+   "url": "https://brashcoffee.com/products/roasters-choice"
+  }
+ },
+ "bravebeancoffee.com": {
+  "company": "Brave Bean Coffee Company",
+  "product": {
+   "title": "First Responder",
+   "type": "",
+   "price": 8.7,
+   "url": "https://bravebeancoffee.com/products/first-responder-medium-roast"
+  }
+ },
+ "brewandbondcoffeeco.com": {
+  "company": "Brew & Bond Coffee Co.",
+  "product": {
+   "title": "brewclub coffee | october | kenya",
+   "type": "",
+   "price": 24.0,
+   "url": "https://brewandbondcoffeeco.com/products/tanzania-single-origin-coffee-medium-light-roast-copy"
+  }
+ },
+ "brewpointcoffee.com": {
+  "company": "Brewpoint Coffee",
+  "product": {
+   "title": "The Arborist: Fall Blend",
+   "type": "Retail Coffee",
+   "price": 18.0,
+   "url": "https://brewpointcoffee.com/products/the-arborist-fall-blend-brewpoint"
+  }
+ },
+ "brickhouseroasters.com": {
+  "company": "Brickhouse Coffee Co.",
+  "product": {
+   "title": "Coffee Pods - K Cup/Keurig Compatible Coffee Pods",
+   "type": "Coffee",
+   "price": 11.0,
+   "url": "https://brickhouseroasters.com/products/k-cup-coffee-pods"
+  }
+ },
+ "buddybrew.com": {
+  "company": "Buddy Brew Coffee",
+  "product": {
+   "title": "Double Dog Espresso",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://buddybrew.com/products/double-dog-espresso"
+  }
+ },
+ "buunnicoffee.com": {
+  "company": "Buunni Coffee",
+  "product": {
+   "title": "Organic Sheka",
+   "type": "Coffee",
+   "price": 8.0,
+   "url": "https://buunnicoffee.com/products/sheka-organic"
+  }
+ },
+ "bwblacksmith.com": {
+  "company": "BW Blacksmith Coffee Co",
+  "product": {
+   "title": "Forge Fuel - Medium Roast",
+   "type": "Coffee",
+   "price": 18.95,
+   "url": "https://bwblacksmith.com/products/forge-fuel-medium-roast"
+  }
+ },
+ "calabashtea.com": {
+  "company": "Calabash Tea & Tonic",
+  "product": {
+   "title": "Sunyatta\u2019s Monthly Surprise Tea Club",
+   "type": "Herbal Teas",
+   "price": 22.22,
+   "url": "https://calabashtea.com/products/sunyatta-s-monthly-surprise-tea-club"
+  }
+ },
+ "cameronscoffee.com": {
+  "company": "Cameron's Coffee",
+  "product": {
+   "title": "Toasted Southern Pecan EcoPods",
+   "type": "Flavored",
+   "price": 10.99,
+   "url": "https://cameronscoffee.com/products/toasted-southern-pecan-ecopods"
+  }
+ },
+ "capitocoffee.com": {
+  "company": "Capito Coffee",
+  "product": {
+   "title": "Superhero Blend",
+   "type": "",
+   "price": 18.0,
+   "url": "https://capitocoffee.com/products/super-hero-blend"
+  }
+ },
+ "catandcloud.com": {
+  "company": "Cat & Cloud Coffee",
+  "product": {
+   "title": "The Answer",
+   "type": "Coffee",
+   "price": 16.4,
+   "url": "https://catandcloud.com/products/answer"
+  }
+ },
+ "chadotea.com": {
+  "company": "Chado Tea Room",
+  "product": {
+   "title": "White Champagne Raspberry Pyramid Tea Bags",
+   "type": "Tea Bags",
+   "price": 18.74,
+   "url": "https://chadotea.com/products/white-champagne-raspberry-ptb"
+  }
+ },
+ "chromaticcoffee.com": {
+  "company": "Chromatic Coffee Inc.",
+  "product": {
+   "title": "Cascara Coffee Berry Tea",
+   "type": "",
+   "price": 12.99,
+   "url": "https://chromaticcoffee.com/products/cascara-coffee-berry-tea"
+  }
+ },
+ "cipotacoffee.com": {
+  "company": "Cipota Coffee",
+  "product": {
+   "title": "Laurina-Honey- Los Pirineos",
+   "type": "",
+   "price": 25.0,
+   "url": "https://cipotacoffee.com/products/whole-bean-coffee-10oz"
+  }
+ },
+ "cloudsplittercoffee.com": {
+  "company": "CloudSplitter Coffee",
+  "product": {
+   "title": "Ridgeline Roast \u2013 Single-Origin Colombia Medium Roast Coffee, 12 oz",
+   "type": "Coffee",
+   "price": 15.99,
+   "url": "https://cloudsplittercoffee.com/products/alpine-grind-copy"
+  }
+ },
+ "coba.coffee": {
+  "company": "COBA COFFEE",
+  "product": {
+   "title": "COBA, The Espresso Bar",
+   "type": "",
+   "price": 27.0,
+   "url": "https://coba.coffee/products/coba-the-espresso-bar"
+  }
+ },
+ "coffeeandchill.com": {
+  "company": "Coffee & Chill",
+  "product": {
+   "title": "Coffee & Chill Miami",
+   "type": "Event",
+   "price": 32.0,
+   "url": "https://coffeeandchill.com/products/miami"
+  }
+ },
+ "coffeeandcream.app": {
+  "company": "Coffee & Cream",
+  "product": {
+   "title": "Nespresso Arpeggio Original Espresso Capsules - Intensity 9 - 10 Capsules",
+   "type": "Coffee",
+   "price": 399.0,
+   "url": "https://coffeeandcream.app/products/nespresso-arpeggio-10-caps"
+  }
+ },
+ "coffeemanufactory.com": {
+  "company": "Coffee Manufactory",
+  "product": {
+   "title": "01 ESPRESSO",
+   "type": "",
+   "price": 19.5,
+   "url": "https://coffeemanufactory.com/products/01-espresso-honduras-colombia-ethiopia"
+  }
+ },
+ "commoditeas.com": {
+  "company": "CommodiTeas Tea Company",
+  "product": {
+   "title": "SereniTea Calming Blend",
+   "type": "tea",
+   "price": 5.0,
+   "url": "https://commoditeas.com/products/serenitea-calming-blend"
+  }
+ },
+ "communalcoffee.com": {
+  "company": "COMMUNAL COFFEE",
+  "product": {
+   "title": "Communal Blend - Espresso (12 oz)",
+   "type": "",
+   "price": 22.0,
+   "url": "https://communalcoffee.com/products/cm-espresso-blend"
+  }
+ },
+ "contemporoast.com": {
+  "company": "ContempoRoast Coffee & Roastery",
+  "product": {
+   "title": "Coffee Pods",
+   "type": "",
+   "price": 21.0,
+   "url": "https://contemporoast.com/products/coffee-pods"
+  }
+ },
+ "coperacocoffee.com": {
+  "company": "Coperaco Coffee",
+  "product": {
+   "title": "Maestrale Espresso Blend",
+   "type": "",
+   "price": 15.4,
+   "url": "https://coperacocoffee.com/products/maestrale-espresso-blend-2"
+  }
+ },
+ "copperdoorcoffee.com": {
+  "company": "Copper Door Coffee LLC",
+  "product": {
+   "title": "Four Sisters Espresso Beans",
+   "type": "",
+   "price": 19.95,
+   "url": "https://copperdoorcoffee.com/products/four-sisters-espresso-beans"
+  }
+ },
+ "corococoffee.com": {
+  "company": "Coroco Coffee",
+  "product": {
+   "title": "\u201cBest Coffee in Town\u201d-Medium Roast 12oz.",
+   "type": "Coffee",
+   "price": 16.95,
+   "url": "https://corococoffee.com/products/best-coffee-in-town"
+  }
+ },
+ "crema-coffee.com": {
+  "company": "Crema Coffee Roasters",
+  "product": {
+   "title": "Tres Banderas",
+   "type": "Blend",
+   "price": 24.0,
+   "url": "https://crema-coffee.com/products/tres-banderas"
+  }
+ },
+ "crockettcoffee.com": {
+  "company": "Crockett Coffee",
+  "product": {
+   "title": "Mushroom Coffee Organic Functional Blend",
+   "type": "Coffee",
+   "price": 39.99,
+   "url": "https://crockettcoffee.com/products/mushroom-coffee-organic-functional-blend"
+  }
+ },
+ "cuplesteahouse.com": {
+  "company": "Cuples Tea House",
+  "product": {
+   "title": "Earl Grey Moonlight",
+   "type": "Loose Leaf Tea",
+   "price": 17.0,
+   "url": "https://cuplesteahouse.com/products/earl-grey-moonlight"
+  }
+ },
+ "darkmattercoffee.com": {
+  "company": "Dark Matter Coffee",
+  "product": {
+   "title": "Unicorn Blood 5 LB (Espresso Blend)",
+   "type": "Coffee",
+   "price": 120.0,
+   "url": "https://darkmattercoffee.com/products/unicorn-blood-5lb-bulk-bag"
+  }
+ },
+ "deathwishcoffee.com": {
+  "company": "Death Wish Coffee Company",
+  "product": {
+   "title": "Dark Roast Instant Coffee",
+   "type": "Coffee",
+   "price": 11.99,
+   "url": "https://deathwishcoffee.com/products/death-wish-instant-coffee-1"
+  }
+ },
+ "cafedemitasse.com": {
+  "company": "Demitasse Coffee",
+  "product": {
+   "title": "Milky Way Espresso Blend",
+   "type": "Coffee",
+   "price": 13.5,
+   "url": "https://cafedemitasse.com/products/milky-way-espresso-blend"
+  }
+ },
+ "denimcoffeecompany.com": {
+  "company": "Denim Coffee",
+  "product": {
+   "title": "Espresso",
+   "type": "Coffee",
+   "price": 16.5,
+   "url": "https://denimcoffeecompany.com/products/espresso-blend"
+  }
+ },
+ "devocion.com": {
+  "company": "Devoci\u00f3n Coffee",
+  "product": {
+   "title": "DORADO",
+   "type": "RT Sold Coffee",
+   "price": 25.25,
+   "url": "https://devocion.com/products/dorado"
+  }
+ },
+ "dobrateapgh.com": {
+  "company": "Dobra Tea (Pittsburgh, PA)",
+  "product": {
+   "title": "Masala Tea",
+   "type": "Specialties",
+   "price": 15.0,
+   "url": "https://dobrateapgh.com/products/masala-tea"
+  }
+ },
+ "dogwoodcoffee.com": {
+  "company": "Dogwood Coffee Company",
+  "product": {
+   "title": "BEAR HUG ESPRESSO",
+   "type": "ESPRESSO",
+   "price": 19.5,
+   "url": "https://dogwoodcoffee.com/products/bear-hug-espresso"
+  }
+ },
+ "dragupcoffee.com": {
+  "company": "Drag Up Coffee",
+  "product": {
+   "title": "Bourbon Pecan Praline 12oz",
+   "type": "Coffee",
+   "price": 15.99,
+   "url": "https://dragupcoffee.com/products/bourbon-pecan-praline"
+  }
+ },
+ "drinkcoffeedostuff.com": {
+  "company": "DRINK COFFEE DO STUFF",
+  "product": {
+   "title": "Hell Yeah! Blend",
+   "type": "Hell Yeah",
+   "price": 19.0,
+   "url": "https://drinkcoffeedostuff.com/products/hell-yeah"
+  }
+ },
+ "dunecoffee.com": {
+  "company": "Dune Coffee Roasters",
+  "product": null
+ },
+ "elevatecoffee.com": {
+  "company": "Elevate Coffee Company",
+  "product": {
+   "title": "Colombian Coffee",
+   "type": "Coffee",
+   "price": 19.99,
+   "url": "https://elevatecoffee.com/products/colombian-coffee"
+  }
+ },
+ "embercoffee.co": {
+  "company": "Ember Coffee Company",
+  "product": {
+   "title": "Dark Prairie",
+   "type": "Coffee > Blends",
+   "price": 8.0,
+   "url": "https://embercoffee.co/products/dark-prarie-blend"
+  }
+ },
+ "empirecoffeetea.com": {
+  "company": "Empire Coffee & Tea Company",
+  "product": {
+   "title": "Breakfast Blend",
+   "type": "Coffee Beans",
+   "price": 7.5,
+   "url": "https://empirecoffeetea.com/products/breakfast-blend"
+  }
+ },
+ "empireteaandcoffee.com": {
+  "company": "Empire Tea & Coffee",
+  "product": {
+   "title": "Eagle",
+   "type": "coffeebeans",
+   "price": 17.0,
+   "url": "https://empireteaandcoffee.com/products/eagle-whole-bean-coffee"
+  }
+ },
+ "enigmacoffee.com": {
+  "company": "Enigma Coffee",
+  "product": {
+   "title": "Satsang Cards",
+   "type": "",
+   "price": 68.0,
+   "url": "https://enigmacoffee.com/products/satsang-cards"
+  }
+ },
+ "equatorcoffees.com": {
+  "company": "Equator Coffees",
+  "product": {
+   "title": "Perfectly Sweet Organic Cold Brew - 42oz",
+   "type": "Coffee",
+   "price": 9.99,
+   "url": "https://equatorcoffees.com/products/perfectly-sweet-organic-cold-brew-42oz"
+  }
+ },
+ "evansbrotherscoffee.com": {
+  "company": "Evans Brothers Coffee Roasters",
+  "product": {
+   "title": "Black Diamond Blend",
+   "type": "",
+   "price": 19.5,
+   "url": "https://evansbrotherscoffee.com/products/black-diamond-blend"
+  }
+ },
+ "evermorecoffee.com": {
+  "company": "Evermore Coffee Roasters",
+  "product": {
+   "title": "Kickstart Vanilla Oat Milk Latte",
+   "type": "",
+   "price": 18.0,
+   "url": "https://evermorecoffee.com/products/kickstart-vanilla-oat-milk-latte-12-pk"
+  }
+ },
+ "excelsacoffee.com": {
+  "company": "Excelsa Coffee Company",
+  "product": {
+   "title": "Roasted Vietnam Excelsa",
+   "type": "",
+   "price": 9.0,
+   "url": "https://excelsacoffee.com/products/house-roasted-vietnam-excelsa"
+  }
+ },
+ "ezracoffeeco.com": {
+  "company": "Ezra Coffee Company",
+  "product": {
+   "title": "Toasted Southern Pecan",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://ezracoffeeco.com/products/signature"
+  }
+ },
+ "firedeptcoffee.com": {
+  "company": "Fire Department Coffee",
+  "product": {
+   "title": "Coffee Of The Month Club",
+   "type": "",
+   "price": 19.99,
+   "url": "https://firedeptcoffee.com/products/coffee-of-the-month-club"
+  }
+ },
+ "firehousecoffee.com": {
+  "company": "Firehouse Coffee",
+  "product": {
+   "title": "Sumatra Medium Roast Coffee",
+   "type": "Coffee",
+   "price": 17.95,
+   "url": "https://firehousecoffee.com/products/911-coffee-sumatra-medium-roast"
+  }
+ },
+ "flattrackcoffee.com": {
+  "company": "Flat Track Coffee",
+  "product": {
+   "title": "DOGSPEED :: BLEND",
+   "type": "Coffee",
+   "price": 21.0,
+   "url": "https://flattrackcoffee.com/products/dogspeed-blend-default"
+  }
+ },
+ "frasertea.com": {
+  "company": "Fraser Tea",
+  "product": {
+   "title": "Hot Spicy Cinnamon Organic Black Tea",
+   "type": "tea",
+   "price": 8.78,
+   "url": "https://frasertea.com/products/hot-spicy-cinnamon-organic-black-tea"
+  }
+ },
+ "frinjcoffee.com": {
+  "company": "Frinj Coffee, Inc.",
+  "product": {
+   "title": "CALIFORNIA COFFEE TREE",
+   "type": "",
+   "price": 40.0,
+   "url": "https://frinjcoffee.com/products/coffee-plants"
+  }
+ },
+ "fulcrumcoffee.com": {
+  "company": "Fulcrum Coffee Roasters",
+  "product": {
+   "title": "Thailand Mae Suai Natural",
+   "type": "Retail Coffee",
+   "price": 24.0,
+   "url": "https://fulcrumcoffee.com/products/thailand-mae-suai-natural"
+  }
+ },
+ "goldenlanterncoffee.com": {
+  "company": "Golden Lantern Coffee Roasters",
+  "product": {
+   "title": "Northern Lights - Espresso Blend",
+   "type": "coffee",
+   "price": 18.0,
+   "url": "https://goldenlanterncoffee.com/products/northern-lights-espresso-blend-12oz"
+  }
+ },
+ "goldenvalleyfarms.com": {
+  "company": "Golden Valley Farms Coffee Roasters",
+  "product": {
+   "title": "Rainforest Reserve",
+   "type": "Organic Coffee",
+   "price": 17.99,
+   "url": "https://goldenvalleyfarms.com/products/rainforest-reserve"
+  }
+ },
+ "graffeo.com": {
+  "company": "Graffeo Coffee Roasting Company, Inc",
+  "product": {
+   "title": "Graffeo Dark Roast",
+   "type": "",
+   "price": 25.99,
+   "url": "https://graffeo.com/products/graffeo-dark-roast"
+  }
+ },
+ "greyhousecoffee.com": {
+  "company": "Greyhouse Coffee and Supply Co.",
+  "product": {
+   "title": "Boiler Up\u00ae",
+   "type": "Bulk Coffee",
+   "price": 20.0,
+   "url": "https://greyhousecoffee.com/products/b-ville-blend"
+  }
+ },
+ "groovycoffee.com": {
+  "company": "Groovy Coffee",
+  "product": {
+   "title": "The Duo",
+   "type": "",
+   "price": 42.0,
+   "url": "https://groovycoffee.com/products/the-duo"
+  }
+ },
+ "groundswellcoffeeroasters.com": {
+  "company": "Groundswell Coffee Roasters",
+  "product": {
+   "title": "Fortitude Seasonal Blend",
+   "type": "",
+   "price": 19.25,
+   "url": "https://groundswellcoffeeroasters.com/products/stratus-seasonal-blend"
+  }
+ },
+ "gumptioncoffee.com": {
+  "company": "Gumption Coffee",
+  "product": {
+   "title": "Goodness Galileo",
+   "type": "Bold",
+   "price": 22.0,
+   "url": "https://gumptioncoffee.com/products/goodness-galileo"
+  }
+ },
+ "drinkhalfday.com": {
+  "company": "Halfday Iced Tea",
+  "product": {
+   "title": "Crisp Apple",
+   "type": "12pk",
+   "price": 35.99,
+   "url": "https://drinkhalfday.com/products/crisp-apple"
+  }
+ },
+ "happyearthtea.com": {
+  "company": "Happy Earth Tea",
+  "product": {
+   "title": "Earl Grey Supreme",
+   "type": "Black Tea",
+   "price": 8.0,
+   "url": "https://happyearthtea.com/products/earl-grey-organic-ingredients-only"
+  }
+ },
+ "hardycoffee.com": {
+  "company": "Hardy Coffee Co",
+  "product": {
+   "title": "House-Made Syrup",
+   "type": "",
+   "price": 7.0,
+   "url": "https://hardycoffee.com/products/house-made-syrup"
+  }
+ },
+ "heavenlytealeaves.com": {
+  "company": "Heavenly Tea Leaves",
+  "product": {
+   "title": "Organic Blueberry Delight - Loose Leaf Herbal Tea",
+   "type": "Loose Leaf Tea",
+   "price": 5.0,
+   "url": "https://heavenlytealeaves.com/products/blueberry-delight"
+  }
+ },
+ "hicohawaiiancoffee.com": {
+  "company": "HiCO Hawaiian Coffee",
+  "product": {
+   "title": "100% Hawaiian Espresso",
+   "type": "Coffee",
+   "price": 35.0,
+   "url": "https://hicohawaiiancoffee.com/products/hico-hawaiian-coffee-espresso-medium-roast"
+  }
+ },
+ "honeyandrosescoffee.com": {
+  "company": "Honey & Roses Coffee Co",
+  "product": {
+   "title": "Spill Proof Reusable Coffee Cup",
+   "type": "Coffee & Tea Cups",
+   "price": 34.0,
+   "url": "https://honeyandrosescoffee.com/products/reusable-coffee-cup"
+  }
+ },
+ "honolulucoffee.com": {
+  "company": "Honolulu Coffee Company",
+  "product": {
+   "title": "Lokahi",
+   "type": "Coffee",
+   "price": 13.55,
+   "url": "https://honolulucoffee.com/products/lokahi"
+  }
+ },
+ "honorguardcoffee.com": {
+  "company": "Honorguard Coffee",
+  "product": {
+   "title": "Worldwide Cowboy Blend, Boston Cowboy",
+   "type": "Coffee Beans",
+   "price": 18.0,
+   "url": "https://honorguardcoffee.com/products/stubbys-cowboy-blend"
+  }
+ },
+ "housecupcoffee.com": {
+  "company": "House Cup Coffee Roasters",
+  "product": {
+   "title": "Somewhere Blend",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://housecupcoffee.com/products/somewhere-blend"
+  }
+ },
+ "humboldtcoffee.com": {
+  "company": "Humboldt Bay Coffee Co",
+  "product": {
+   "title": "Organic Shipbuilder's Dark Roast Coffee 2lbs",
+   "type": "Coffee",
+   "price": 36.0,
+   "url": "https://humboldtcoffee.com/products/organic-shipbuilders-dark-roast"
+  }
+ },
+ "identitycoffee.com": {
+  "company": "Identity Coffee Co.",
+  "product": {
+   "title": "FreeBird Organic Medium Roast",
+   "type": "Single",
+   "price": 17.0,
+   "url": "https://identitycoffee.com/products/free-bird-organic-medium-roast-12oz"
+  }
+ },
+ "independencecoffee.com": {
+  "company": "Independence Coffee Company",
+  "product": {
+   "title": "Madalyn's Backyard Pecan-The Original!",
+   "type": "12 oz",
+   "price": 11.95,
+   "url": "https://independencecoffee.com/products/madalyn-s-backyard-pecan"
+  }
+ },
+ "irvingfarmcoffee.com": {
+  "company": "Irving Farm Coffee",
+  "product": {
+   "title": "71 House Medium Roast",
+   "type": "Coffee",
+   "price": 18.5,
+   "url": "https://irvingfarmcoffee.com/products/71-irving-house-blend"
+  }
+ },
+ "javesca.com": {
+  "company": "Javesca Coffee",
+  "product": {
+   "title": "Finca Los Chorros, Huehuetenango -  Micro Lot",
+   "type": "Coffee",
+   "price": 25.0,
+   "url": "https://javesca.com/products/finca-los-chorros"
+  }
+ },
+ "javita.com": {
+  "company": "Javita International (dba Dollar Coffee Club)",
+  "product": null
+ },
+ "jitteryjoes.com": {
+  "company": "Jittery Joe's Coffee",
+  "product": {
+   "title": "Terrapin Wake-n-Bake",
+   "type": "Coffee",
+   "price": 19.99,
+   "url": "https://jitteryjoes.com/products/terrapin-wake-n-bake-coffee"
+  }
+ },
+ "joebeanroasters.com": {
+  "company": "Joe Bean Coffee, LLC",
+  "product": {
+   "title": "Cold Brew Coffee 12-Pack",
+   "type": "Coffee",
+   "price": 42.5,
+   "url": "https://joebeanroasters.com/products/nitro-cold-brew"
+  }
+ },
+ "josephstea.com": {
+  "company": "Joseph's Tea",
+  "product": {
+   "title": "English Breakfast",
+   "type": "black tea",
+   "price": 15.0,
+   "url": "https://josephstea.com/products/english-breakfast-1"
+  }
+ },
+ "joymilktea.com": {
+  "company": "Joy Milk Tea",
+  "product": null
+ },
+ "justcoffee.coop": {
+  "company": "Just Coffee Cooperative",
+  "product": {
+   "title": "Hot Cocoa",
+   "type": "Chocolate",
+   "price": 10.0,
+   "url": "https://justcoffee.coop/products/hot-cocoa-mix"
+  }
+ },
+ "kamiakcoffeeco.com": {
+  "company": "Kamiak Coffee Company",
+  "product": {
+   "title": "The Cascade",
+   "type": "Coffee",
+   "price": 18.95,
+   "url": "https://kamiakcoffeeco.com/products/the-cascade"
+  }
+ },
+ "kikwetu.coffee": {
+  "company": "Kikwetu Coffee Company",
+  "product": {
+   "title": "Boma AB",
+   "type": "Coffee Beans",
+   "price": 23.95,
+   "url": "https://kikwetu.coffee/products/new-roast-boma-ab-coffee-1-bag"
+  }
+ },
+ "kingbean.com": {
+  "company": "King Bean Coffee Roasters",
+  "product": {
+   "title": "SOUTHERN PECAN",
+   "type": "Coffee",
+   "price": 17.5,
+   "url": "https://kingbean.com/products/southern-pecan"
+  }
+ },
+ "kirralife.com": {
+  "company": "Kirra Iced Tea",
+  "product": {
+   "title": "Mixed Case",
+   "type": "",
+   "price": 34.99,
+   "url": "https://kirralife.com/products/mixed-case"
+  }
+ },
+ "kllrcoffee.com": {
+  "company": "KLLR Coffee",
+  "product": {
+   "title": "KLLR Espresso Blend",
+   "type": "Whole Bean Coffee",
+   "price": 20.0,
+   "url": "https://kllrcoffee.com/products/espresso-blend"
+  }
+ },
+ "knowledgeperk.com": {
+  "company": "Knowledge Perk Coffee Company",
+  "product": {
+   "title": "IPO",
+   "type": "Signature Blend",
+   "price": 19.95,
+   "url": "https://knowledgeperk.com/products/ipo"
+  }
+ },
+ "konacoffee.nyc": {
+  "company": "Kona Coffee Roasters",
+  "product": {
+   "title": "L\u016b\u2018au",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://konacoffee.nyc/products/lu-au"
+  }
+ },
+ "konamountaincoffee.com": {
+  "company": "Kona Mountain Coffee",
+  "product": {
+   "title": "100% Kona Coffee Private Reserve Medium Roast",
+   "type": "Coffee",
+   "price": 31.95,
+   "url": "https://konamountaincoffee.com/products/100-kona-coffee-private-reserve-medium-roast"
+  }
+ },
+ "kribicoffee.com": {
+  "company": "Kribi Coffee Air Roastery",
+  "product": {
+   "title": "Mount Oku",
+   "type": "",
+   "price": 20.0,
+   "url": "https://kribicoffee.com/products/mount-oku"
+  }
+ },
+ "lacosechacoffee.com": {
+  "company": "La Cosecha Coffee Roasters",
+  "product": {
+   "title": "Papua New Guinea",
+   "type": "",
+   "price": 21.0,
+   "url": "https://lacosechacoffee.com/products/papua-new-guinea"
+  }
+ },
+ "laterzacoffee.com": {
+  "company": "La Terza Artisan Coffee Roasterie",
+  "product": {
+   "title": "Espresso Monte Cristo",
+   "type": "Coffee",
+   "price": 18.95,
+   "url": "https://laterzacoffee.com/products/espresso-monte-cristo"
+  }
+ },
+ "lakemissoulateacompany.com": {
+  "company": "Lake Missoula Tea Company",
+  "product": {
+   "title": "Baked Apple Pie",
+   "type": "Tea",
+   "price": 11.85,
+   "url": "https://lakemissoulateacompany.com/products/baked-apple-pie"
+  }
+ },
+ "laughingmancoffee.com": {
+  "company": "Laughing Man Coffee",
+  "product": {
+   "title": "Hugh's House Blend",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://laughingmancoffee.com/products/hughs-house-blend-coffee"
+  }
+ },
+ "drinklaurels.com": {
+  "company": "Laurel's Coffee",
+  "product": {
+   "title": "Classic Latte",
+   "type": "RTD",
+   "price": 30.0,
+   "url": "https://drinklaurels.com/products/classic-latte"
+  }
+ },
+ "limacoffeeroasters.com": {
+  "company": "Lima Coffee Roasters",
+  "product": {
+   "title": "Wilder Garcia Geisha - Microlot",
+   "type": "",
+   "price": 26.0,
+   "url": "https://limacoffeeroasters.com/products/wilder-garcia-geisha-microlot"
+  }
+ },
+ "littleampscoffee.com": {
+  "company": "Little Amps Coffee Roasters",
+  "product": {
+   "title": "Dark Star",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://littleampscoffee.com/products/dark-star"
+  }
+ },
+ "littlewaves.coffee": {
+  "company": "Little Waves Coffee Roasters",
+  "product": {
+   "title": "Positive Pressure",
+   "type": "Bag of Coffee",
+   "price": 20.0,
+   "url": "https://littlewaves.coffee/products/positive-pressure-blend"
+  }
+ },
+ "littlewolf.coffee": {
+  "company": "Little Wolf Coffee",
+  "product": {
+   "title": "Companion Blend",
+   "type": "",
+   "price": 17.0,
+   "url": "https://littlewolf.coffee/products/companion-blend-subscription"
+  }
+ },
+ "mabitea.com": {
+  "company": "Mabi Artisanal Tea",
+  "product": {
+   "title": "Apricot Passion Cold Brewed Spice Tea (12 pk)",
+   "type": "Ready-To-Drink Tea",
+   "price": 48.25,
+   "url": "https://mabitea.com/products/apricot-passion"
+  }
+ },
+ "madcapcoffee.com": {
+  "company": "Madcap Coffee Company",
+  "product": {
+   "title": "Eureka",
+   "type": "Blend",
+   "price": 42.0,
+   "url": "https://madcapcoffee.com/products/eureka"
+  }
+ },
+ "mapscoffee.com": {
+  "company": "Maps Coffee & Chocolate",
+  "product": {
+   "title": "Boxed Cold Brew",
+   "type": "Coffee",
+   "price": 32.0,
+   "url": "https://mapscoffee.com/products/boxed-cold-brew"
+  }
+ },
+ "matriarchcoffee.com": {
+  "company": "Matriarch Coffee Company",
+  "product": {
+   "title": "Sagamore Rye Whiskey Barrel-Aged Gasharu Natural",
+   "type": "",
+   "price": 29.99,
+   "url": "https://matriarchcoffee.com/products/sagamore-rye-whiskey-barrel-aged-gasharu-natural"
+  }
+ },
+ "medinarivercoffee.com": {
+  "company": "Medina River Coffee",
+  "product": {
+   "title": "Let There Be Light  Ethiopian",
+   "type": "",
+   "price": 20.0,
+   "url": "https://medinarivercoffee.com/products/ethiopia-yirgacheffe"
+  }
+ },
+ "menottis.com": {
+  "company": "Menotti's Coffee Stop",
+  "product": {
+   "title": "V.S.E.B. - Menotti's Blend",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://menottis.com/products/v-s-e-b-menottis-coffee-blend"
+  }
+ },
+ "meritcoffee.com": {
+  "company": "Merit Coffee Co.",
+  "product": {
+   "title": "Andino Leal",
+   "type": "Coffee",
+   "price": 23.0,
+   "url": "https://meritcoffee.com/products/andino"
+  }
+ },
+ "methodicalcoffee.com": {
+  "company": "Methodical Coffee",
+  "product": {
+   "title": "Watercolor",
+   "type": "Coffee",
+   "price": 24.0,
+   "url": "https://methodicalcoffee.com/products/watercolor"
+  }
+ },
+ "mirotea.com": {
+  "company": "Miro Tea",
+  "product": {
+   "title": "Earl Grey de la Creme",
+   "type": "Black Tea",
+   "price": 14.0,
+   "url": "https://mirotea.com/products/earl-grey-de-la-creme"
+  }
+ },
+ "modelcitizencoffee.com": {
+  "company": "Model Citizen Coffee Company",
+  "product": {
+   "title": "Coffee Club: 2 Bags of Coffee/Month",
+   "type": "",
+   "price": 38.95,
+   "url": "https://modelcitizencoffee.com/products/coffee-club-2-bags-of-coffee-month"
+  }
+ },
+ "mothershipcoffee.com": {
+  "company": "Mothership Coffee Roasters",
+  "product": {
+   "title": "Ballast Espresso",
+   "type": "Coffee",
+   "price": 21.0,
+   "url": "https://mothershipcoffee.com/products/ballast-espresso"
+  }
+ },
+ "nam.coffee": {
+  "company": "Nam Coffee",
+  "product": {
+   "title": "Da Lat (100% Robusta)",
+   "type": "Vietnamese Coffee Beans",
+   "price": 22.0,
+   "url": "https://nam.coffee/products/da-lat-robusta"
+  }
+ },
+ "nativegroundcoffee.com": {
+  "company": "Native Ground Coffee",
+  "product": {
+   "title": "Thunderbird (Dark Roast)",
+   "type": "",
+   "price": 18.95,
+   "url": "https://nativegroundcoffee.com/products/thunderbird-dark-roast-ground"
+  }
+ },
+ "naturesteacompany.com": {
+  "company": "NATURE'S TEA COMPANY",
+  "product": {
+   "title": "3 Tin TEA gift set",
+   "type": "Loose Leaf Tea",
+   "price": 24.95,
+   "url": "https://naturesteacompany.com/products/holiday-special-3-tin-stocking-stuffer-pack"
+  }
+ },
+ "nguyencoffeesupply.com": {
+  "company": "Nguyen Coffee Supply",
+  "product": {
+   "title": "Loyalty (Robusta & Arabica)",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://nguyencoffeesupply.com/products/local-brooklyn-roasted-vietnamese-robusta-arabica-coffee"
+  }
+ },
+ "nicecoffeeroasters.com": {
+  "company": "NIce coffee",
+  "product": {
+   "title": "Nice Espresso Blend",
+   "type": "Roasted Coffee",
+   "price": 25.0,
+   "url": "https://nicecoffeeroasters.com/products/nice-espresso-blend"
+  }
+ },
+ "notyouraverage.coffee": {
+  "company": "Not Your Average Coffee",
+  "product": {
+   "title": "Limitless Superfood Coffee",
+   "type": "",
+   "price": 29.0,
+   "url": "https://notyouraverage.coffee/products/limitless"
+  }
+ },
+ "numitea.com": {
+  "company": "Numi Organic Tea",
+  "product": {
+   "title": "High Mountain Black\u2122",
+   "type": "Iced Tea",
+   "price": 8.99,
+   "url": "https://numitea.com/products/high-mountain-black-iced-tea"
+  }
+ },
+ "oceanacoffee.com": {
+  "company": "Oceana Coffee",
+  "product": {
+   "title": "Costa Rica - Medium Roast",
+   "type": "Coffee",
+   "price": 21.5,
+   "url": "https://oceanacoffee.com/products/costa-rica-naranjo-medium-roast"
+  }
+ },
+ "oldbarreltea.com": {
+  "company": "Old Barrel Tea Company",
+  "product": {
+   "title": "Seasonal Tea Club Box",
+   "type": "Tea Club",
+   "price": 48.0,
+   "url": "https://oldbarreltea.com/products/seasonal-tea-club-box"
+  }
+ },
+ "oldworldcoffeeroasters.com": {
+  "company": "Old World Coffee",
+  "product": {
+   "title": "Pacamara CM Natural",
+   "type": "Coffee",
+   "price": 32.0,
+   "url": "https://oldworldcoffeeroasters.com/products/natural-honey-so-1"
+  }
+ },
+ "drinkooso.com": {
+  "company": "OOSO Iced Tea",
+  "product": {
+   "title": "PARTY PACK. (8-Pack)",
+   "type": "",
+   "price": 34.99,
+   "url": "https://drinkooso.com/products/party-pack-8-pack"
+  }
+ },
+ "opendoortea.com": {
+  "company": "Open Door Tea",
+  "product": {
+   "title": "Yunnan Yellow",
+   "type": "Yellow Tea",
+   "price": 5.5,
+   "url": "https://opendoortea.com/products/yunnan-yellow"
+  }
+ },
+ "oregonteatraders.com": {
+  "company": "Oregon Tea Traders",
+  "product": {
+   "title": "Crater Lake Blue Herbal Tea",
+   "type": "Herbal Tea",
+   "price": 11.0,
+   "url": "https://oregonteatraders.com/products/crater-lake-blue"
+  }
+ },
+ "origincoffee.bar": {
+  "company": "Origin Coffee Bar",
+  "product": {
+   "title": "Honduras La Unica",
+   "type": "Physical",
+   "price": 25.0,
+   "url": "https://origincoffee.bar/products/honduras-la-unica"
+  }
+ },
+ "outofthegreycoffee.com": {
+  "company": "Out Of The Grey Coffee\u00ae",
+  "product": {
+   "title": "King James Java\u2122 - Flavored Coffee",
+   "type": "Flavored Coffee",
+   "price": 20.99,
+   "url": "https://outofthegreycoffee.com/products/king-james-java-flavored-coffee"
+  }
+ },
+ "oval.nyc": {
+  "company": "Oval Coffee Roasters",
+  "product": {
+   "title": "Bowling Green Women-Grown Whole Bean Coffee",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://oval.nyc/products/women-grown-coffee-whole-bean"
+  }
+ },
+ "ozocoffee.com": {
+  "company": "OZO Coffee Roasters",
+  "product": {
+   "title": "Organic Espresso Isabelle",
+   "type": "Coffee",
+   "price": 17.5,
+   "url": "https://ozocoffee.com/products/organic-espresso-isabelle"
+  }
+ },
+ "pachamamacoffee.com": {
+  "company": "Pachamama Coffee",
+  "product": {
+   "title": "Per\u00fa - Organic Coffee",
+   "type": "",
+   "price": 20.0,
+   "url": "https://pachamamacoffee.com/products/peru-regenerative-organic-coffee-beans"
+  }
+ },
+ "palmcoffeeroasters.com": {
+  "company": "Palm Coffee Roasters",
+  "product": {
+   "title": "Ghost Cat Espresso",
+   "type": "",
+   "price": 11.0,
+   "url": "https://palmcoffeeroasters.com/products/palm-ghost-espresso"
+  }
+ },
+ "panamecoffee.com": {
+  "company": "Paname Coffee & Tea Importers",
+  "product": {
+   "title": "Organic Digestive Herbal Tea",
+   "type": "",
+   "price": 24.0,
+   "url": "https://panamecoffee.com/products/organic-digestive-herbal-tea-x-24"
+  }
+ },
+ "parallax.coffee": {
+  "company": "Parallax Coffee Lab",
+  "product": {
+   "title": "Kaleidoscope Blend",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://parallax.coffee/products/annual-coffee-subscription"
+  }
+ },
+ "partnerscoffee.com": {
+  "company": "Partners Coffee",
+  "product": {
+   "title": "Brooklyn",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://partnerscoffee.com/products/brooklyn"
+  }
+ },
+ "pegasuscoffee.com": {
+  "company": "Pegasus Coffee Company",
+  "product": {
+   "title": "Espresso Blend",
+   "type": "",
+   "price": 17.5,
+   "url": "https://pegasuscoffee.com/products/espresso-blend"
+  }
+ },
+ "perccoffee.com": {
+  "company": "PERC COFFEE",
+  "product": {
+   "title": "Creature Feature",
+   "type": "Coffee",
+   "price": 31.0,
+   "url": "https://perccoffee.com/products/creature-feature"
+  }
+ },
+ "pinupcoffeeco.com": {
+  "company": "Pinup Coffee Co",
+  "product": {
+   "title": "Tail Wind Medium/Dark Blend",
+   "type": "Coffee Blends",
+   "price": 19.5,
+   "url": "https://pinupcoffeeco.com/products/tail-wind-medium-dark-blend"
+  }
+ },
+ "plumdeluxe.com": {
+  "company": "Plum Deluxe Tea",
+  "product": {
+   "title": "Creme Brulee Earl Grey Black Tea",
+   "type": "",
+   "price": 8.0,
+   "url": "https://plumdeluxe.com/products/creme-brulee-earl-grey-black-tea"
+  }
+ },
+ "pointlomatea.com": {
+  "company": "Point Loma Tea",
+  "product": {
+   "title": "Tea Towel - Just For Fun",
+   "type": "Tea Towel",
+   "price": 15.95,
+   "url": "https://pointlomatea.com/products/highland-cow-my-happy-place-flour-sack-tea-towel"
+  }
+ },
+ "presscoffee.com": {
+  "company": "PRESS Coffee",
+  "product": {
+   "title": "Moon Gesha",
+   "type": "Coffee",
+   "price": 60.0,
+   "url": "https://presscoffee.com/products/spring-allocation-2022-moon-gesha"
+  }
+ },
+ "presshousecoffee.com": {
+  "company": "Press House Coffee Roasters",
+  "product": {
+   "title": "Iron City Bean",
+   "type": "House Blend",
+   "price": 19.99,
+   "url": "https://presshousecoffee.com/products/iron-city-bean"
+  }
+ },
+ "prevailcoffee.com": {
+  "company": "Prevail Coffee",
+  "product": {
+   "title": "Farmer's Daughter Blend",
+   "type": "Coffee",
+   "price": 19.5,
+   "url": "https://prevailcoffee.com/products/farmers-daughter-blend"
+  }
+ },
+ "provisioncoffee.com": {
+  "company": "Provision Coffee",
+  "product": {
+   "title": "Prickly Pear l Blend",
+   "type": "",
+   "price": 22.0,
+   "url": "https://provisioncoffee.com/products/prickly-pear-blend"
+  }
+ },
+ "quillscoffee.com": {
+  "company": "Quills Coffee",
+  "product": {
+   "title": "Inkwell | Signature Blend",
+   "type": "FreshRoastedCoffee",
+   "price": 20.0,
+   "url": "https://quillscoffee.com/products/inkwell-house-blend"
+  }
+ },
+ "raptiscoffee.com": {
+  "company": "Raptis Coffee Inc",
+  "product": {
+   "title": "Bourbon Pecan Flavored Coffee",
+   "type": "Flavored Coffee",
+   "price": 9.61,
+   "url": "https://raptiscoffee.com/products/bourbon-pecan-flavored-coffee"
+  }
+ },
+ "ratiocoffee.com": {
+  "company": "Ratio Coffee Machines",
+  "product": {
+   "title": "Ratio Eight Coffee Machine",
+   "type": "Ratio Eight",
+   "price": 594.15,
+   "url": "https://ratiocoffee.com/products/ratio-eight-series-2-coffee-maker"
+  }
+ },
+ "redbaycoffee.com": {
+  "company": "Red Bay Coffee",
+  "product": {
+   "title": "East Fourteenth | Tanzanian Dark Roast",
+   "type": "Coffee",
+   "price": 19.88,
+   "url": "https://redbaycoffee.com/products/east-fourteenth"
+  }
+ },
+ "reverieroasters.com": {
+  "company": "Reverie Coffee Roasters",
+  "product": {
+   "title": "24K Goat",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://reverieroasters.com/products/24k-goat"
+  }
+ },
+ "revolutiontea.com": {
+  "company": "Revolution Tea",
+  "product": {
+   "title": "Cold brew iced tea set",
+   "type": "Cold brew iced tea",
+   "price": 19.99,
+   "url": "https://revolutiontea.com/products/cold-brew-iced-teas"
+  }
+ },
+ "rivetcoffee.com": {
+  "company": "Rivet Coffee Bar and Roatery",
+  "product": {
+   "title": "Caravel House Blend",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://rivetcoffee.com/products/caravel-blend"
+  }
+ },
+ "rothrockcoffee.com": {
+  "company": "Rothrock Coffee",
+  "product": {
+   "title": "Holiday: Advent Calendar",
+   "type": "Website Retail Bags Of Coffee",
+   "price": 150.0,
+   "url": "https://rothrockcoffee.com/products/coffeeadvent"
+  }
+ },
+ "rubycoffeeroasters.com": {
+  "company": "Ruby Coffee Roasters",
+  "product": {
+   "title": "Creamery Seasonal Blend",
+   "type": "Whole Bean Coffee",
+   "price": 15.8,
+   "url": "https://rubycoffeeroasters.com/products/creamery-seasonal-blend"
+  }
+ },
+ "runyoncoffee.com": {
+  "company": "Runyon Coffee",
+  "product": {
+   "title": "Coffee Cart Rental",
+   "type": "Coffee cart",
+   "price": 500.0,
+   "url": "https://runyoncoffee.com/products/coffee-cart-rental"
+  }
+ },
+ "sabbathcoffeeroasters.com": {
+  "company": "Sabbath Coffee Roasters",
+  "product": {
+   "title": "Ritual House Blend",
+   "type": "Coffee",
+   "price": 17.0,
+   "url": "https://sabbathcoffeeroasters.com/products/ritual-house-blend"
+  }
+ },
+ "saintfrankcoffee.com": {
+  "company": "Saint Frank Coffee",
+  "product": {
+   "title": "Subscribe",
+   "type": "Coffees",
+   "price": 16.0,
+   "url": "https://saintfrankcoffee.com/products/retail-subscriptions"
+  }
+ },
+ "sakridcoffee.com": {
+  "company": "Sakrid Coffee Roasters",
+  "product": {
+   "title": "Relativity Espresso Blend",
+   "type": "",
+   "price": 18.0,
+   "url": "https://sakridcoffee.com/products/relativity-espresso-blend"
+  }
+ },
+ "scoutcoffeeco.com": {
+  "company": "Scout Coffee",
+  "product": {
+   "title": "Classic Espresso",
+   "type": "Coffee",
+   "price": 21.0,
+   "url": "https://scoutcoffeeco.com/products/honeyco-classic-espresso"
+  }
+ },
+ "secretsoftea.com": {
+  "company": "Secrets Of Tea",
+  "product": {
+   "title": "Babies Magic Tea: Organic Baby Tummy Comfort, 80 Servings",
+   "type": "Baby Herbal Tea",
+   "price": 15.97,
+   "url": "https://secretsoftea.com/products/babies-magic-tea-colic-gas-digestive-troubles-relief"
+  }
+ },
+ "seekers.coffee": {
+  "company": "Seekers Coffee",
+  "product": {
+   "title": "Danche Yellow Honey",
+   "type": "coffee beans",
+   "price": 32.0,
+   "url": "https://seekers.coffee/products/danche-yellow-honey"
+  }
+ },
+ "senbirdtea.com": {
+  "company": "Senbird Tea",
+  "product": {
+   "title": "Sobacha Aiji",
+   "type": "Buckwheat Tea",
+   "price": 17.49,
+   "url": "https://senbirdtea.com/products/sobacha-aiji-buckwheat-herbal-tea"
+  }
+ },
+ "shavi.coffee": {
+  "company": "Shavi Coffee Roasters",
+  "product": {
+   "title": "Fika Roast Brazil",
+   "type": "Coffee Bag",
+   "price": 98.0,
+   "url": "https://shavi.coffee/products/fika-roast-brazil"
+  }
+ },
+ "sightglasscoffee.com": {
+  "company": "Sightglass Coffee",
+  "product": {
+   "title": "Summer Solstice",
+   "type": "Blends",
+   "price": 25.0,
+   "url": "https://sightglasscoffee.com/products/summer-solstice-seasonal-coffee-blend"
+  }
+ },
+ "sisterscoffee.com": {
+  "company": "Sisters Coffee Company",
+  "product": {
+   "title": "Black Butte Gold",
+   "type": "Coffee",
+   "price": 18.0,
+   "url": "https://sisterscoffee.com/products/black-butte-gold"
+  }
+ },
+ "skcoffee.org": {
+  "company": "SK Coffee",
+  "product": {
+   "title": "Peru - Cajamarca",
+   "type": "Single Origin",
+   "price": 22.0,
+   "url": "https://skcoffee.org/products/peru-lima"
+  }
+ },
+ "snakeriverroastingco.com": {
+  "company": "Snake River Roasting Co.",
+  "product": {
+   "title": "WHITE SPIDER",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://snakeriverroastingco.com/products/collections-premium-blends-white-spider-coffee"
+  }
+ },
+ "snowyelk.com": {
+  "company": "Snowy Elk Coffee Co.",
+  "product": {
+   "title": "Morning Bugle",
+   "type": "",
+   "price": 19.5,
+   "url": "https://snowyelk.com/products/morning-bugle"
+  }
+ },
+ "speedwellcoffee.com": {
+  "company": "Speedwell Coffee",
+  "product": {
+   "title": "Nor'Easter",
+   "type": "Coffee",
+   "price": 16.0,
+   "url": "https://speedwellcoffee.com/products/noreaster"
+  }
+ },
+ "sputnikcoffeecompany.com": {
+  "company": "Sputnik Coffee Company",
+  "product": {
+   "title": "8oz Sputnik Coffee",
+   "type": "Coffee",
+   "price": 9.0,
+   "url": "https://sputnikcoffeecompany.com/products/sputnik-medium-roast-8oz"
+  }
+ },
+ "steepedcoffee.com": {
+  "company": "Steeped Coffee",
+  "product": {
+   "title": "Mastercase",
+   "type": "Steeped Coffee",
+   "price": 14.95,
+   "url": "https://steepedcoffee.com/products/the-lineup-a-variety-of-each-blend"
+  }
+ },
+ "getsjcoffee.com": {
+  "company": "Stephen James Curated Coffee Collection",
+  "product": {
+   "title": "Medium Roast Bulk K-Cups (50PK)",
+   "type": "Coffee",
+   "price": 45.0,
+   "url": "https://getsjcoffee.com/products/medium-roast-bulk-k-cups-50pk"
+  }
+ },
+ "stonefruitcoffee.com": {
+  "company": "StoneFruit Coffee Co.",
+  "product": {
+   "title": "Frankenstein",
+   "type": "Coffee Roasts",
+   "price": 16.0,
+   "url": "https://stonefruitcoffee.com/products/frankenstein"
+  }
+ },
+ "strangelywarmed.com": {
+  "company": "Strangely Warmed Coffee Roasters \u2022 Private Label Coffee",
+  "product": {
+   "title": "Honduras \u2013 Marcala Region Light Roast",
+   "type": "Whole Bean",
+   "price": 17.5,
+   "url": "https://strangelywarmed.com/products/light-roast-honduras"
+  }
+ },
+ "sumpcoffee.com": {
+  "company": "Sump Coffee",
+  "product": {
+   "title": "True Level // Medium Roast",
+   "type": "Whole Beans",
+   "price": 20.0,
+   "url": "https://sumpcoffee.com/products/tru-level"
+  }
+ },
+ "superlost.com": {
+  "company": "Superlost Coffee",
+  "product": {
+   "title": "Supernova Espresso",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://superlost.com/products/supernova-espresso"
+  }
+ },
+ "surcoffee.com": {
+  "company": "Sur Coffee",
+  "product": {
+   "title": "Sur Coffee x Tenore Hoodie",
+   "type": "Apparel",
+   "price": 128.0,
+   "url": "https://surcoffee.com/products/sur-coffee-x-tenore-hoodie"
+  }
+ },
+ "sweetmarias.com": {
+  "company": "Sweet Maria's Coffee",
+  "product": {
+   "title": "Ethiopia Dry Process Kercha Haruse",
+   "type": "Green Coffee",
+   "price": 9.65,
+   "url": "https://sweetmarias.com/products/ethiopia-dry-process-kercha-haruse-8647"
+  }
+ },
+ "": {
+  "company": "SweetLeaf",
+  "product": null
+ },
+ "switchbackroasters.com": {
+  "company": "Switchback Coffee Roasters",
+  "product": {
+   "title": "Golden Age Espresso",
+   "type": "Retail Coffee",
+   "price": 21.5,
+   "url": "https://switchbackroasters.com/products/golden-age-espresso"
+  }
+ },
+ "tamatea.com": {
+  "company": "Tama Tea",
+  "product": {
+   "title": "GINGER MATE",
+   "type": "",
+   "price": 31.99,
+   "url": "https://tamatea.com/products/ginger-mate-yerba-mate"
+  }
+ },
+ "tandemcoffee.com": {
+  "company": "Tandem Coffee Roasters",
+  "product": {
+   "title": "West End Blues",
+   "type": "Coffee",
+   "price": 20.0,
+   "url": "https://tandemcoffee.com/products/west-end-blues"
+  }
+ },
+ "tapestrycoffeemn.com": {
+  "company": "Tapestry Coffee",
+  "product": {
+   "title": "Abstract Blend",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://tapestrycoffeemn.com/products/abstract-blend-espresso-blend"
+  }
+ },
+ "tayst.com": {
+  "company": "Tayst Coffee",
+  "product": {
+   "title": "Tayst Coffee Mug - 13oz",
+   "type": "",
+   "price": 18.0,
+   "url": "https://tayst.com/products/tayst-coffee-mug"
+  }
+ },
+ "drinkteabar.com": {
+  "company": "Tea Bar",
+  "product": {
+   "title": "Daily Matcha",
+   "type": "Matcha",
+   "price": 15.0,
+   "url": "https://drinkteabar.com/products/premium-matcha"
+  }
+ },
+ "myteadrop.com": {
+  "company": "Tea Drops",
+  "product": null
+ },
+ "teadrunk.com": {
+  "company": "Tea Drunk",
+  "product": {
+   "title": "Eighty Degrees Magazine",
+   "type": "Publications",
+   "price": 32.0,
+   "url": "https://teadrunk.com/products/eighty-degrees-magazine"
+  }
+ },
+ "tendcoffee.com": {
+  "company": "Tend Coffee",
+  "product": {
+   "title": "Organic Rhino Chaser",
+   "type": "Coffee",
+   "price": 18.97,
+   "url": "https://tendcoffee.com/products/rhino-chaser"
+  }
+ },
+ "thanksgivingcoffee.com": {
+  "company": "Thanksgiving Coffee Company",
+  "product": {
+   "title": "SongBird French",
+   "type": "Very Dark Roast",
+   "price": 21.0,
+   "url": "https://thanksgivingcoffee.com/products/songbird-french-roast"
+  }
+ },
+ "theorycoffee.com": {
+  "company": "Theory Coffee Roasters",
+  "product": {
+   "title": "Tres Fuertes Espresso Blend",
+   "type": "Whole Bean Coffee",
+   "price": 21.5,
+   "url": "https://theorycoffee.com/products/tres-fuertes-espresso-blend"
+  }
+ },
+ "threeriverscoffeecompany.com": {
+  "company": "Three Rivers Coffee Company",
+  "product": {
+   "title": "Mike Romeo Coffee Roast",
+   "type": "Coffee",
+   "price": 14.99,
+   "url": "https://threeriverscoffeecompany.com/products/trcc-medium-coffee-roast"
+  }
+ },
+ "threetreecoffee.com": {
+  "company": "Three Tree Coffee Roasters",
+  "product": {
+   "title": "Local Bulk Coffee Pick-Up",
+   "type": "Coffee - Pickup",
+   "price": 58.0,
+   "url": "https://threetreecoffee.com/products/bulk-coffee-pick-up"
+  }
+ },
+ "sportcoffee.com": {
+  "company": "Throne SPORT COFFEE",
+  "product": {
+   "title": "Mocha Java Latte",
+   "type": "Finished Goods",
+   "price": 35.99,
+   "url": "https://sportcoffee.com/products/mocha-java-latte"
+  }
+ },
+ "ticoroasters.com": {
+  "company": "Tico Coffee Roasters",
+  "product": {
+   "title": "Sangre de Toro Espresso",
+   "type": "Coffee",
+   "price": 10.0,
+   "url": "https://ticoroasters.com/products/sangre-de-toro-espresso"
+  }
+ },
+ "bendixcoffee.com": {
+  "company": "Toccoa Coffee",
+  "product": {
+   "title": "Single-Serve Coffee Pods - Choose the Roast!",
+   "type": "",
+   "price": 10.25,
+   "url": "https://bendixcoffee.com/products/pods"
+  }
+ },
+ "traditioncoffeeroasters.com": {
+  "company": "Tradition Coffee Roasters",
+  "product": {
+   "title": "ESPRESSO - National Award Winner",
+   "type": "Coffee",
+   "price": 23.99,
+   "url": "https://traditioncoffeeroasters.com/products/espresso-national-award-winner"
+  }
+ },
+ "transcendencecoffee.com": {
+  "company": "Transcendence Coffee",
+  "product": {
+   "title": "Madagascar Vanilla Bean Syrup",
+   "type": "",
+   "price": 19.0,
+   "url": "https://transcendencecoffee.com/products/madagascar-vanilla-bean-syrup"
+  }
+ },
+ "transcendingtea.com": {
+  "company": "Transcending Tea",
+  "product": {
+   "title": "Tranquil Peach",
+   "type": "",
+   "price": 6.0,
+   "url": "https://transcendingtea.com/products/bellinisunset-24sxf-egnxg-ha3jw"
+  }
+ },
+ "transittea.com": {
+  "company": "Transit Tea",
+  "product": {
+   "title": "Tea Bases",
+   "type": "",
+   "price": 29.47,
+   "url": "https://transittea.com/products/tea-bases"
+  }
+ },
+ "treelinecoffee.com": {
+  "company": "Treeline Coffee Roasters",
+  "product": {
+   "title": "IPA Chugga-Chuggable",
+   "type": "Single Origin",
+   "price": 16.5,
+   "url": "https://treelinecoffee.com/products/ipa-chugga-chuggable"
+  }
+ },
+ "trekforvetscoffee.com": {
+  "company": "Trek For Vets Coffee",
+  "product": {
+   "title": "PREMIUM Coffee, Whole Bean, Medium Roast",
+   "type": "Coffee",
+   "price": 24.0,
+   "url": "https://trekforvetscoffee.com/products/coffee-whole-bean-medium-roast-1-lb"
+  }
+ },
+ "unapologeticcoffee.us": {
+  "company": "Unapologetic Coffee",
+  "product": {
+   "title": "I Said What I Said",
+   "type": "Specialty Coffee",
+   "price": 13.0,
+   "url": "https://unapologeticcoffee.us/products/iswis"
+  }
+ },
+ "drinkuncharted.com": {
+  "company": "Uncharted Coffee",
+  "product": {
+   "title": "Explorer Box Gift Set",
+   "type": "Gift Box",
+   "price": 70.0,
+   "url": "https://drinkuncharted.com/products/holiday-explorer-box"
+  }
+ },
+ "unleashedcoffee.com": {
+  "company": "Unleashed Coffee Co., LLC",
+  "product": {
+   "title": "Pay it Pourward - Cup of Coffee",
+   "type": "",
+   "price": 6.0,
+   "url": "https://unleashedcoffee.com/products/pay-it-pourward-coffee"
+  }
+ },
+ "unlockedcoffee.com": {
+  "company": "Unlocked Coffee Roasters",
+  "product": {
+   "title": "Roaster\u00b4s Choice - 2 Bags of 12 oz",
+   "type": "Roasted Coffee",
+   "price": 37.0,
+   "url": "https://unlockedcoffee.com/products/roaster-s-choice"
+  }
+ },
+ "urbansailorcoffee.com": {
+  "company": "URBAN SAILOR COFFEE",
+  "product": {
+   "title": "Void Blend",
+   "type": "Roasted Coffee",
+   "price": 18.0,
+   "url": "https://urbansailorcoffee.com/products/void-blend"
+  }
+ },
+ "uticacoffeeroasting.com": {
+  "company": "Utica Coffee Roasting Co.",
+  "product": {
+   "title": "Cannoli",
+   "type": "Flavor",
+   "price": 12.95,
+   "url": "https://uticacoffeeroasting.com/products/cannoli"
+  }
+ },
+ "vaidaicoffee.com": {
+  "company": "Vai Dai Coffee",
+  "product": {
+   "title": "Vai Dai\u00ae Coffee \u2013 Black",
+   "type": "",
+   "price": 23.96,
+   "url": "https://vaidaicoffee.com/products/black-single-bottle"
+  }
+ },
+ "valentinecoffeeco.com": {
+  "company": "Valentine Coffee Roasters",
+  "product": {
+   "title": "Bering Sea Blend",
+   "type": "Coffee",
+   "price": 6.0,
+   "url": "https://valentinecoffeeco.com/products/bering-sea-blend"
+  }
+ },
+ "vanelis.com": {
+  "company": "Vaneli's Handcrafted Coffee",
+  "product": {
+   "title": "Monster Italian",
+   "type": "Coffee",
+   "price": 20.2,
+   "url": "https://vanelis.com/products/monster-italian"
+  }
+ },
+ "vestacoffee.com": {
+  "company": "Vesta Coffee Roasters",
+  "product": {
+   "title": "Goose Bumps Espresso Blend",
+   "type": "Whole Beans",
+   "price": 23.0,
+   "url": "https://vestacoffee.com/products/goose-bumps-espresso-blend"
+  }
+ },
+ "vinculocoffee.com": {
+  "company": "Vinculo Coffee",
+  "product": {
+   "title": "Single Serve K Cups",
+   "type": "Coffee",
+   "price": 16.99,
+   "url": "https://vinculocoffee.com/products/single-serve-cups"
+  }
+ },
+ "vistaclaracoffee.com": {
+  "company": "Vista Clara Coffee",
+  "product": {
+   "title": "Synesso S300 Low-Profile 3-Group Espresso Machine",
+   "type": "",
+   "price": 12500.0,
+   "url": "https://vistaclaracoffee.com/products/synesso-s300-low-profile-3-group-espresso-machine"
+  }
+ },
+ "weirdbrothers.com": {
+  "company": "Weird Brothers Coffee",
+  "product": {
+   "title": "Embrace the Dark Side",
+   "type": "Flagship Roast",
+   "price": 19.95,
+   "url": "https://weirdbrothers.com/products/embrace-the-dark-side"
+  }
+ },
+ "whammycoffee.com": {
+  "company": "Whammy Coffee",
+  "product": {
+   "title": "Ethiopia Guji",
+   "type": "",
+   "price": 19.0,
+   "url": "https://whammycoffee.com/products/ethiopia-guji-16oz-whole-bean"
+  }
+ },
+ "whirlwindcoffee.com": {
+  "company": "Whirlwind Coffee Company",
+  "product": {
+   "title": "1-gallon Coffee Carafe (Call after ordering)",
+   "type": "",
+   "price": 36.0,
+   "url": "https://whirlwindcoffee.com/products/coffee-carafe"
+  }
+ },
+ "whitecloudcoffee.com": {
+  "company": "White Cloud Coffee",
+  "product": {
+   "title": "Pumpkin Spice",
+   "type": "Holiday Flavors",
+   "price": 13.95,
+   "url": "https://whitecloudcoffee.com/products/pumpkin-spice"
+  }
+ },
+ "whitehorsecoffee.com.au": {
+  "company": "White Horse Coffee",
+  "product": {
+   "title": "White Knight Espresso Blend",
+   "type": "Coffee",
+   "price": 19.0,
+   "url": "https://whitehorsecoffee.com.au/products/white-knight-espresso-blend"
+  }
+ },
+ "wholelattelove.com": {
+  "company": "Whole Latte Love",
+  "product": {
+   "title": "Lelit Steve 64mm Espresso Grinder",
+   "type": "Grinder",
+   "price": 599.95,
+   "url": "https://wholelattelove.com/products/lelit-steve-64mm-espresso-grinder"
+  }
+ },
+ "wolfcoffee.com": {
+  "company": "Wolf Coffee Company",
+  "product": {
+   "title": "Organic House Blend",
+   "type": "Coffee",
+   "price": 22.0,
+   "url": "https://wolfcoffee.com/products/org-house-blend"
+  }
+ },
+ "yauponbrothers.com": {
+  "company": "Yaupon Brothers American Tea",
+  "product": {
+   "title": "Yaupon Tea - American Green - box 16",
+   "type": "FG.YB.eco-16.each",
+   "price": 11.99,
+   "url": "https://yauponbrothers.com/products/yaupon-tea-american-green-box-16"
+  }
+ },
+ "yellowbike.coffee": {
+  "company": "Yellow Bike Coffee",
+  "product": {
+   "title": "ESPRESSO:  DARK ROAST COFFEE (Whole Beans)",
+   "type": "",
+   "price": 18.0,
+   "url": "https://yellowbike.coffee/products/espresso-dark-roast-coffee-whole-beans"
+  }
+ },
+ "youngmountaintea.com": {
+  "company": "Young Mountain Tea",
+  "product": {
+   "title": "Organic Nepali Golden Black",
+   "type": "Tea",
+   "price": 15.99,
+   "url": "https://youngmountaintea.com/products/nepali-golden-black"
+  }
+ },
+ "zacacoffee.com": {
+  "company": "Zaca Coffee",
+  "product": {
+   "title": "Llama Blend (dark)",
+   "type": "",
+   "price": 17.5,
+   "url": "https://zacacoffee.com/products/llama-blend"
+  }
+ },
+ "zokacoffee.com": {
+  "company": "Zoka Coffee Roasters",
+  "product": {
+   "title": "Espresso Paladino",
+   "type": "Coffee",
+   "price": 20.25,
+   "url": "https://zokacoffee.com/products/esp"
+  }
+ },
+ "diosmiocoffee.com": {
+  "company": "\u00a1Dios M\u00edo! Coffee",
+  "product": {
+   "title": "Medium Roast, Ground, 12 Oz bag",
+   "type": "Ground",
+   "price": 14.49,
+   "url": "https://diosmiocoffee.com/products/medium-roast-ground-12-oz-bag-copia-4"
+  }
+ }
+}

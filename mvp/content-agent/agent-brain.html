@@ -1,0 +1,256 @@
+<title>Produkto Agent Brain</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one live stage (sources → brain → agent) beside a feed of what just went in; the plan reads below. */
+:root{
+  --bg:#f2f5fa; --panel:#ffffff; --ink:#0b1b35; --muted:#55627a; --line:#d8dfeb;
+  --brain:#e7eefb; --brain-edge:#9fb4dd; --node:#0b1b35;
+  --official:#0f8a8a; --measured:#1f9d55; --opinion:#c27a12; --vendor:#3a5bd9;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08101f; --panel:#0f1a2e; --ink:#e6ecf7; --muted:#97a3ba; --line:#22314d;
+  --brain:#122241; --brain-edge:#3d5a92; --node:#cfdcf5;
+  --official:#3cc4c4; --measured:#4cc982; --opinion:#e6a548; --vendor:#7d97ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#08101f; --panel:#0f1a2e; --ink:#e6ecf7; --muted:#97a3ba; --line:#22314d;
+  --brain:#122241; --brain-edge:#3d5a92; --node:#cfdcf5;
+  --official:#3cc4c4; --measured:#4cc982; --opinion:#e6a548; --vendor:#7d97ff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:28px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.05}
+h2{font-size:22px}
+.lede{max-width:68ch;color:var(--muted);margin:8px 0 0}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stage{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.stage{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.svgbox{padding:10px;min-width:0}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--body);fill:var(--ink)}
+.s-box{fill:var(--panel);stroke:var(--line)}
+.s-title{font-weight:600;font-size:14px}
+.s-sub{font-size:11px;fill:var(--muted);font-family:var(--mono)}
+.wire{fill:none;stroke:var(--line);stroke-width:1.5}
+.brain-body{fill:var(--brain);stroke:var(--brain-edge);stroke-width:1.5}
+.edge{stroke:var(--brain-edge);stroke-width:.8;opacity:.6}
+.nodept{fill:var(--node)}
+.big{font-family:var(--display);font-weight:700;font-size:26px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:4px 10px 10px}
+.chip{font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted);transition:all .25s}
+.chip.on{color:var(--panel);background:var(--ink);border-color:var(--ink)}
+.feed{padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0;max-height:640px;overflow:auto}
+.feed h3{margin:0;font-family:var(--display);font-size:17px}
+.item{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:4px;animation:in .5s ease}
+@keyframes in{from{opacity:.2;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--muted)}
+.ev{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;color:#fff}
+.ev.official{background:var(--official)} .ev.measured{background:var(--measured)} .ev.opinion{background:var(--opinion)} .ev.vendor{background:var(--vendor)}
+.go{font-size:12px;font-weight:600}
+.item p{margin:0;font-size:13.5px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);padding:0 4px}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.block{padding:18px 20px;display:grid;gap:10px;align-content:start}
+.block h2{font-size:19px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12px;border-top:0}
+td.num{font-family:var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.note{font-size:12.5px;color:var(--muted);max-width:90ch}
+.tw{overflow-x:auto}
+@media (prefers-reduced-motion: reduce){.item{animation:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="tag">Catalog Optimization Agent · being built, not live</div>
+    <h1>The agent's brain, feeding itself</h1>
+    <p class="lede">Every night, five collectors on the server read what the companies measuring AI search have published: competitor blogs and studies, research papers, expert posts, talks, and the engines' own documentation. The brain grades each finding by how strong its evidence is, then updates the agent's playbook or turns the finding into a test. Nobody has to feed it, and it learns from other companies' data, not only ours.</p>
+  </header>
+
+  <section class="stage" aria-label="Live view of the brain">
+    <div class="card svgbox">
+      <svg id="stage" viewBox="0 0 960 560" role="img" aria-label="Five sources send findings into the brain; strong findings update the agent's playbook, opinions become tests.">
+        <g id="wires"></g>
+        <g id="sources"></g>
+        <circle class="brain-body" cx="555" cy="280" r="178"></circle>
+        <g id="edges"></g><g id="nodes"></g><g id="pulses"></g>
+        <text x="555" y="248" text-anchor="middle" class="tag" style="fill:var(--muted)">BRAIN</text>
+        <text x="555" y="284" text-anchor="middle" class="big" id="count">0</text>
+        <text x="555" y="306" text-anchor="middle" class="s-sub">findings</text>
+        <g id="outs"></g>
+        <g id="particles"></g>
+        <g id="measure" style="visibility:hidden"></g>
+      </svg>
+      <div class="chips" aria-hidden="true">
+        <span class="chip" data-k="0">1 Collect</span><span class="chip" data-k="1">2 Pull out the claim</span>
+        <span class="chip" data-k="2">3 Grade the evidence</span><span class="chip" data-k="3">4 Compare with what it knows</span>
+        <span class="chip" data-k="4">5 Update playbook or queue a test</span>
+      </div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--official)"></i>Official (the engine says so)</span>
+        <span><i class="dot" style="background:var(--measured)"></i>Measured, independent</span>
+        <span><i class="dot" style="background:var(--vendor)"></i>Measured by a vendor</span>
+        <span><i class="dot" style="background:var(--opinion)"></i>Opinion (no data behind it)</span>
+      </div>
+    </div>
+    <aside class="card feed" aria-live="polite">
+      <h3>Just went in</h3>
+      <div class="note">Research and engine items are real findings from our 21–22 Oct research. Items marked "Example" show what the other collectors would bring in.</div>
+      <div id="feed"></div>
+    </aside>
+  </section>
+
+  <section class="grid3">
+    <div class="card block">
+      <div class="tag">How a finding is handled</div>
+      <h2>What happens to each thing that comes in</h2>
+      <ol>
+        <li><b>Collect.</b> Each collector runs on its own schedule and keeps only what is new since the last run.</li>
+        <li><b>Pull out the claim.</b> A cheap model turns each item into one checkable sentence, with its source and date.</li>
+        <li><b>Grade the evidence.</b> Official, Measured (with who ran it and how big), Opinion. A vendor study is marked as one.</li>
+        <li><b>Compare.</b> Agrees with what the brain knows, contradicts it, or is new.</li>
+        <li><b>Act on its own.</b> Official findings, and measured ones a second source confirms, update the playbook. Opinions become tests to run later. Competitor product launches go to a separate list.</li>
+      </ol>
+    </div>
+    <div class="card block">
+      <div class="tag">Guardrails</div>
+      <h2>What stops it learning the wrong thing</h2>
+      <ol>
+        <li>One vendor study never changes the playbook alone. It needs a second, independent source. Bigger samples count for more.</li>
+        <li>Opinions never change the playbook. They can only become tests.</li>
+        <li>When two sources disagree, both stay on record and the disagreement goes in the Monday email.</li>
+        <li>The copy rules and the "facts only from the store" rule are fixed. The brain changes what the agent works on, never what it is allowed to claim.</li>
+        <li>Every playbook change is logged with the finding that caused it, so it can be undone.</li>
+      </ol>
+    </div>
+    <div class="card block">
+      <div class="tag">Your part</div>
+      <h2>What you have to do</h2>
+      <p style="margin:0">Nothing for it to run. Optional: a short Monday email with what changed in the playbook, any disagreements between sources, and what competitors shipped that week.</p>
+      <p class="note" style="margin:0">Our own scans stay out of the brain: they cover too few stores and days to prove anything general. They still drive each store's own fixes.</p>
+    </div>
+  </section>
+
+  <section class="card block">
+    <div class="tag">The collectors</div>
+    <h2>Where the brain gets its input</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Collector</th><th>What it reads</th><th>How often</th><th>Est. cost / month</th></tr></thead>
+        <tbody id="srcTable"></tbody>
+        <tfoot><tr><td colspan="3"><b>Total</b> (estimates, not quotes; model costs included roughly)</td><td class="num"><b>~$8–12</b></td></tr></tfoot>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+const SOURCES=[
+ {n:"Competitor blogs",s:"nightly · 14 company feeds",read:"Articles, studies and launch posts from Sixthshop, Azoma, AndromedAI, Searchable, Catalogwise, CommercePepper, Pepper, Promptwatch, Peec AI, Profound, Goodie, Glara, ReFiBuy and Alhena. Read free from their feeds; adding a company is one line.",freq:"Nightly",cost:"~$1 (reading)"},
+ {n:"Research & studies",s:"nightly · Google, arXiv",read:"New AEO/GEO and AI-shopping studies and papers (Ahrefs, SparkToro, academic work). Keeps the method and sample size.",freq:"Nightly",cost:"~$3"},
+ {n:"Expert posts",s:"nightly · LinkedIn",read:"Posts from ~40 people we track in AI search and e-commerce.",freq:"Nightly",cost:"~$3"},
+ {n:"Videos & podcasts",s:"nightly · YouTube",read:"Transcripts of new talks and podcasts on AI search, filtered to ones with data or tests.",freq:"Nightly",cost:"~$2"},
+ {n:"Engine docs",s:"nightly · change watch",read:"OpenAI, Google, Perplexity, Microsoft and Shopify help pages about shopping, feeds and crawlers. Flags any change.",freq:"Nightly",cost:"free"}
+];
+const FINDINGS=[
+ {src:1,ev:"vendor",t:"The same prompt almost never returns the same brand list twice (under 1 in 100). Judge visibility on rates, never one answer.",who:"SparkToro & Gumshoe, ~3,000 runs, vendor-partnered",go:"playbook"},
+ {src:0,ev:"vendor",t:"Example: a competitor's study of millions of AI citations finds review sites and Reddit cited most for product questions.",who:"competitor blog (example)",go:"playbook"},
+ {src:1,ev:"measured",t:"Adding schema markup showed no lift in AI citations in a large real-world test.",who:"Ahrefs",go:"playbook"},
+ {src:2,ev:"opinion",t:"Example: \u201cReddit threads drive most Perplexity product picks.\u201d",who:"expert post (example)",go:"test"},
+ {src:4,ev:"official",t:"ChatGPT shopping results draw on merchant product data and feeds, not only web pages.",who:"OpenAI help pages",go:"playbook"},
+ {src:0,ev:"vendor",t:"83% of products in ChatGPT's shopping carousel also rank in Google Shopping.",who:"Peec AI, vendor study",go:"test"},
+ {src:0,ev:"vendor",t:"Example: \u201cAdd FAQ schema to every product page to get cited more.\u201d Disagrees with the Ahrefs test.",who:"competitor blog (example)",go:"contradicts"},
+ {src:1,ev:"measured",t:"\u201cCompare with alternatives\u201d was the strongest single rewrite style (+0.71 positions), in a simulated engine.",who:"E-GEO paper, lab only",go:"test"},
+ {src:0,ev:"vendor",t:"Example: a competitor launches automatic product-feed fixes for Google Merchant Center.",who:"competitor launch post (example)",go:"shipped"},
+ {src:3,ev:"opinion",t:"Example: \u201cllms.txt gets your store read first by AI crawlers.\u201d",who:"YouTube talk (example)",go:"test"},
+ {src:4,ev:"official",t:"Example: a crawler guide renames its user agent; robots.txt checks need updating.",who:"engine docs watch (example)",go:"playbook"}
+];
+const GO={playbook:"→ playbook updated",test:"→ needs a second source; queued as a test",contradicts:"→ flagged: sources disagree",shipped:"→ added to what competitors shipped"};
+const EV={official:"Official",measured:"Measured",opinion:"Opinion",vendor:"Vendor study"};
+const NS="http://www.w3.org/2000/svg", BX=555, BY=280, BR=178;
+const $=id=>document.getElementById(id);
+const mk=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
+const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// sources + wires
+const SY=i=>50+i*96;
+SOURCES.forEach((s,i)=>{
+  const g=mk("g",{},$("sources"));
+  mk("rect",{x:14,y:SY(i),width:224,height:62,rx:10,class:"s-box"},g);
+  mk("text",{x:30,y:SY(i)+27,class:"s-title"},g).textContent=s.n;
+  mk("text",{x:30,y:SY(i)+46,class:"s-sub"},g).textContent=s.s;
+  const ang=Math.PI-( (i-2)*0.26 ), ex=BX+BR*Math.cos(ang), ey=BY-BR*Math.sin(ang)*-1;
+  s.path=`M238 ${SY(i)+31} C 320 ${SY(i)+31}, ${ex-70} ${ey}, ${ex} ${ey}`;
+  mk("path",{d:s.path,class:"wire"},$("wires"));
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td><b>${s.n}</b></td><td>${s.read}</td><td>${s.freq}</td><td class="num">${s.cost}</td>`;
+  $("srcTable").appendChild(tr);
+});
+// outputs
+const OUT={playbook:{y:190,label:"Agent playbook",sub:"what to fix, how, in what order"},test:{y:350,label:"Tests to run",sub:"agent runs these itself"}};
+Object.entries(OUT).forEach(([k,o])=>{
+  const g=mk("g",{},$("outs"));
+  mk("rect",{x:770,y:o.y-34,width:178,height:68,rx:10,class:"s-box"},g);
+  mk("text",{x:786,y:o.y-8,class:"s-title"},g).textContent=o.label;
+  mk("text",{x:786,y:o.y+12,class:"s-sub"},g).textContent=o.sub;
+  o.num=mk("text",{x:932,y:o.y-8,"text-anchor":"end",class:"s-title"},g); o.num.textContent="0"; o.n=0;
+  const sx=BX+BR*Math.cos(k==="playbook"?-.45:.45), sy=BY+BR*Math.sin(k==="playbook"?-.45:.45);
+  o.path=`M${sx} ${sy} C ${sx+40} ${sy}, 730 ${o.y}, 770 ${o.y}`;
+  mk("path",{d:o.path,class:"wire"},$("wires"));
+});
+
+// brain nodes
+const nodes=[];
+function addNode(color,pulse){
+  let x,y; do{x=BX+(Math.random()*2-1)*(BR-22);y=BY+(Math.random()*2-1)*(BR-22)}while(Math.hypot(x-BX,y-BY)>BR-22||(Math.abs(x-BX)<62&&Math.abs(y-BY+8)<44));
+  const near=nodes.map(n=>[Math.hypot(n.x-x,n.y-y),n]).sort((a,b)=>a[0]-b[0]).slice(0,2);
+  near.forEach(([,n])=>mk("line",{x1:x,y1:y,x2:n.x,y2:n.y,class:"edge"},$("edges")));
+  const c=mk("circle",{cx:x,cy:y,r:pulse?5:3.2,class:"nodept"},$("nodes"));
+  if(color){c.style.fill=color}
+  nodes.push({x,y,c});
+  if(pulse&&!reduced){const p=mk("circle",{cx:x,cy:y,r:4,fill:"none",stroke:color,"stroke-width":2},$("pulses"));
+    p.animate([{r:4,opacity:1},{r:26,opacity:0}],{duration:900,easing:"ease-out"}).onfinish=()=>p.remove();
+    c.animate([{r:6},{r:3.2}],{duration:1400,fill:"forwards"});}
+  if(nodes.length>140){const o=nodes.shift();o.c.remove();$("edges").firstChild&&$("edges").firstChild.remove()}
+}
+let total=0; const setCount=()=>{$("count").textContent=String(total)};
+for(let i=0;i<34;i++){addNode(null,false);total++} setCount();
+
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+function travel(d,color,ms){return new Promise(res=>{
+  if(reduced)return res();
+  const path=mk("path",{d,fill:"none"},$("measure")), len=path.getTotalLength();
+  const dot=mk("circle",{r:6,fill:color},$("particles")), glow=mk("circle",{r:12,fill:color,opacity:.25},$("particles"));
+  const t0=performance.now();
+  (function step(t){const k=Math.min(1,(t-t0)/ms), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2, p=path.getPointAtLength(e*len);
+    dot.setAttribute("cx",p.x);dot.setAttribute("cy",p.y);glow.setAttribute("cx",p.x);glow.setAttribute("cy",p.y);
+    if(k<1)requestAnimationFrame(step);else{dot.remove();glow.remove();path.remove();res()}})(t0);
+});}
+const chips=[...document.querySelectorAll(".chip")];
+async function stepChips(){for(let i=0;i<chips.length;i++){chips.forEach(c=>c.classList.remove("on"));chips[i].classList.add("on");await new Promise(r=>setTimeout(r,reduced?0:260))} setTimeout(()=>chips.forEach(c=>c.classList.remove("on")),400)}
+function feed(f){
+  const s=SOURCES[f.src], d=document.createElement("div"); d.className="item";
+  d.innerHTML=`<div class="meta"><span class="ev ${f.ev}">${EV[f.ev]}</span><span>${s.n}</span></div><p>${f.t}</p><div class="meta"><span>${f.who}</span><span class="go" style="color:${css("--"+(f.go==="test"?"opinion":f.go==="contradicts"?"official":f.go==="shipped"?"vendor":"measured"))}">${GO[f.go]}</span></div>`;
+  $("feed").prepend(d); while($("feed").children.length>9)$("feed").lastChild.remove();
+}
+async function ingest(f){
+  const color=css("--"+f.ev);
+  await travel(SOURCES[f.src].path,color,1700);
+  addNode(color,true); total++; setCount(); feed(f); await stepChips();
+  const out=f.go==="test"?"test":f.go==="playbook"?"playbook":null;
+  if(out){await travel(OUT[out].path,color,1100); OUT[out].n++; OUT[out].num.textContent=String(OUT[out].n);}
+}
+if(reduced){FINDINGS.forEach(f=>{addNode(css("--"+f.ev),false);total++;feed(f);if(f.go==="playbook"||f.go==="test"){const o=OUT[f.go==="test"?"test":"playbook"];o.n++;o.num.textContent=String(o.n)}});setCount()}
+else{let i=0;(async function loop(){while(true){ingest(FINDINGS[i%FINDINGS.length]);i++;await new Promise(r=>setTimeout(r,2400))}})()}
+</script>

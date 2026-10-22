@@ -37,12 +37,15 @@ def page(title, body, active, actions):
         'aria-current="step"' if i == active else '', '✓' if i < active else i, E(name))
         for i, name in enumerate(names, 1))
     css = Path(__file__).with_name('onboarding.css').read_text()
+    theme = Path(__file__).with_name('theme-graphite-onboarding.css')
+    if theme.exists():  # dark Graphite look; delete the file to go back
+        css += theme.read_text()
     glyphs = Path(__file__).with_name('sky-glyphs.svg').read_text()
     return (('''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>%s · Produkto</title><link rel="icon" type="image/png" href="/favicon.png?v=1"><link rel="apple-touch-icon" href="/favicon.png?v=1">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>%s</style></head><body class="step-%d"><div class="onboarding">
-<section class="workspace"><header class="workspace-header"><a href="/new" aria-label="Produkto home"><img src="/logo.png" alt="Produkto"></a></header><div class="form-column">
+<section class="workspace"><header class="workspace-header"></header><div class="form-column">
 <div class="setup-header"><nav aria-label="Setup progress: step %d of 5">%s</nav></div>
 <main id="main">%s</main><footer><div class="actions">%s</div></footer>
 </div></section>

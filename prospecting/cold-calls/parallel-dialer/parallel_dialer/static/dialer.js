@@ -715,7 +715,16 @@
   // --- Call Script Notepad Engine ---
   const SCRIPT_STORAGE_KEY = "parallel_dialer_script_notepad";
   const SCRIPT_COLLAPSED_KEY = "parallel_dialer_script_collapsed";
-  const DEFAULT_COLD_CALL_SCRIPT = profile.script || "";
+  // dialer.toml can hold several named scripts; the first is the default and is what the page
+  // opens on. Each one keeps its own edits, here and on the server.
+  const NAMED_SCRIPTS = Array.isArray(profile.scripts) ? profile.scripts : [];
+  let currentScriptName = NAMED_SCRIPTS.length ? NAMED_SCRIPTS[0].name : "";
+  const defaultScriptText = () => {
+    const named = NAMED_SCRIPTS.find((item) => item.name === currentScriptName);
+    return named ? named.script : profile.script || "";
+  };
+  const scriptStorageKey = () =>
+    currentScriptName ? `${SCRIPT_STORAGE_KEY}::${currentScriptName}` : SCRIPT_STORAGE_KEY;
 
   let scriptAutoSaveTimer = 0;
 
@@ -773,7 +782,7 @@
     try {
       await apiRequest("/dialer/api/talk-track", {
         method: "PUT",
-        body: JSON.stringify({ script: text }),
+        body: JSON.stringify({ script: text, name: currentScriptName }),
       });
       setScriptStatus("Saved ✓", false);
     } catch (_err) {
@@ -785,10 +794,11 @@
   // yet, take the server's.
   const fetchTalkTrack = async () => {
     try {
-      const res = await apiRequest("/dialer/api/talk-track");
-      if (!res || !res.script) return;
-      if (localStorage.getItem(SCRIPT_STORAGE_KEY)) return;
-      try { localStorage.setItem(SCRIPT_STORAGE_KEY, res.script); } catch (_e) {}
+      const asked = currentScriptName;
+      const res = await apiRequest(`/dialer/api/talk-track?name=${encodeURIComponent(asked)}`);
+      if (!res || !res.script || asked !== currentScriptName) return;
+      if (localStorage.getItem(scriptStorageKey())) return;
+      try { localStorage.setItem(scriptStorageKey(), res.script); } catch (_e) {}
       const padMain = byId("dialer-script-pad");
       const padModal = byId("dialer-modal-script-pad");
       if (padMain) padMain.value = res.script;
@@ -814,7 +824,7 @@
     setScriptStatus("Saving...", true);
 
     try {
-      localStorage.setItem(SCRIPT_STORAGE_KEY, newText);
+      localStorage.setItem(scriptStorageKey(), newText);
     } catch (_e) {}
 
     clearTimeout(scriptAutoSaveTimer);
@@ -828,23 +838,46 @@
     const padModal = byId("dialer-modal-script-pad");
     if (!padMain && !padModal) return;
 
-    let initialScript = "";
-    try {
-      initialScript = localStorage.getItem(SCRIPT_STORAGE_KEY) || "";
-    } catch (_e) {}
-
-    if (!initialScript) {
-      initialScript = DEFAULT_COLD_CALL_SCRIPT;
+    const loadCurrentScript = () => {
+      let text = "";
       try {
-        localStorage.setItem(SCRIPT_STORAGE_KEY, initialScript);
+        text = localStorage.getItem(scriptStorageKey()) || "";
       } catch (_e) {}
-    }
+      if (!text) {
+        text = defaultScriptText();
+        try {
+          localStorage.setItem(scriptStorageKey(), text);
+        } catch (_e) {}
+      }
+      if (padMain) padMain.value = text;
+      if (padModal) padModal.value = text;
+      updateScriptMeta(text);
+      renderModalScript();
+      setScriptStatus("Saved", false);
+    };
+    loadCurrentScript();
 
-    if (padMain) padMain.value = initialScript;
-    if (padModal) padModal.value = initialScript;
-    updateScriptMeta(initialScript);
-    renderModalScript();
-    setScriptStatus("Saved", false);
+    const choices = Array.from(document.querySelectorAll(".dialer-script-choice"));
+    if (NAMED_SCRIPTS.length > 1) {
+      choices.forEach((select) => {
+        NAMED_SCRIPTS.forEach((item, index) => {
+          const option = document.createElement("option");
+          option.value = item.name;
+          option.textContent = index === 0 ? `${item.name} (default)` : item.name;
+          select.appendChild(option);
+        });
+        select.value = currentScriptName;
+        select.hidden = false;
+        select.addEventListener("click", (e) => e.stopPropagation());
+        select.addEventListener("change", () => {
+          clearTimeout(scriptAutoSaveTimer);
+          currentScriptName = select.value;
+          choices.forEach((other) => { other.value = currentScriptName; });
+          loadCurrentScript();
+          fetchTalkTrack();
+        });
+      });
+    }
 
     const onInputHandler = (e) => handleScriptInput(e.target);
     if (padMain) padMain.addEventListener("input", onInputHandler);
@@ -877,9 +910,9 @@
     const resetBtn = byId("dialer-script-reset-btn");
     if (resetBtn) {
       resetBtn.addEventListener("click", () => {
-        if (window.confirm("Reset the call script to the default talk track?")) {
-          if (padMain) padMain.value = DEFAULT_COLD_CALL_SCRIPT;
-          if (padModal) padModal.value = DEFAULT_COLD_CALL_SCRIPT;
+        if (window.confirm("Reset this call script to the version in dialer.toml?")) {
+          if (padMain) padMain.value = defaultScriptText();
+          if (padModal) padModal.value = defaultScriptText();
           handleScriptInput(padMain || padModal);
         }
       });

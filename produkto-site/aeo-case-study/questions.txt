@@ -1,0 +1,13 @@
+# Questions a Produkto buyer (Shopify DTC founder or marketer) asks AI.
+# One per line, keep them short. Keep the list stable so weeks compare;
+# add new ones at the bottom rather than rewording old ones.
+What is the best tool to see if ChatGPT recommends my Shopify products?
+How can I check whether AI assistants recommend my ecommerce products?
+Best AI search visibility tools for ecommerce brands in 2026
+How do I get my products recommended in ChatGPT Shopping?
+AI visibility tracker for Shopify stores
+Alternatives to Profound for ecommerce brands
+How do I optimize my Shopify product pages for AI search?
+Best GEO tools for ecommerce product catalogs
+Software that monitors product mentions in ChatGPT, Perplexity and Google AI Overviews
+Best AEO tool for DTC brands

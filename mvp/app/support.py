@@ -44,7 +44,7 @@ SCHEMA = """CREATE TABLE IF NOT EXISTS support_requests (
 
 EMAIL = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
 
-CONTACT_EMAIL = "kelianvtla@gmail.com"
+CONTACT_EMAIL = "kelian@getprodukto.com"
 # Stated in the merchant's terms as well as ours. Most Produkto merchants are
 # in the US, where 9-18 CET is the small hours to midday Eastern - so a message
 # sent in their afternoon is answered the next morning, and saying that plainly

@@ -78,10 +78,11 @@ def scheduled():
 
     Every store that finished onboarding is in, because the point of the daily
     scan is that a dashboard already holds today's reading when it is opened.
-    config.DAILY_SCAN_EXCLUDE holds the few stores kept out of it, and a store
+    config.DAILY_SCAN_EXCLUDE holds the few stores kept out of it (demo and non-client stores;
+    a paying customer's store always scans, even if listed), and a store
     whose customer has been disabled (cancelled subscription) is out too."""
     import accounts
-    held = set(config.DAILY_SCAN_EXCLUDE) | accounts.paused_stores()
+    held = (set(config.DAILY_SCAN_EXCLUDE) - accounts.customer_stores()) | accounts.paused_stores()
     return [domain for domain in scannable() if domain not in held]
 
 
@@ -158,6 +159,12 @@ def _loop():
                     print("scheduler: writing this month's articles for %s" % domain)
             except Exception as e:
                 print("scheduler: monthly articles failed (%s)" % e)
+        try:
+            import brain
+            if brain.run_due():
+                print("scheduler: the agent's brain started its night run")
+        except Exception as e:
+            print("scheduler: brain failed (%s)" % e)
         _stop.wait(config.SCHEDULER_TICK_SECONDS)
 
 

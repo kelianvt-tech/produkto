@@ -1496,3 +1496,17 @@ body.standalone .main{margin-left:0}
 
 /* Produkto: larger, readable UI (Kelian 2026-10-02) */
 body{zoom:1.15}.content{max-width:1760px}
+
+.dialer-script-choice {
+  font: inherit;
+  font-size: 12px;
+  padding: 3px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  max-width: 220px;
+}
+/* The page is dark: keep the script picker readable on it. */
+.dialer-script-choice { background: #1b2626; color: #e6efec; border-color: rgba(255, 255, 255, 0.2); }
+.dialer-script-choice option { background: #1b2626; color: #e6efec; }

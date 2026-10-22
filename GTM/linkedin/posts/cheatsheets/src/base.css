@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0b1b35;--blue:#2f6bff;--tint:#eef3fb;--line:#d7e0ee;--muted:#55627a;--green:#12a150;--red:#d6453d;--yellow:#ffd84d}
+html,body{width:1080px;height:1350px}
+body{font-family:Inter,-apple-system,sans-serif;color:var(--ink);background:#fff;padding:56px 56px 0;display:flex;flex-direction:column}
+.title{font-size:70px;font-weight:900;letter-spacing:-2px;line-height:1.02}
+.hl{background:var(--ink);color:#fff;padding:0 14px;border-radius:10px;display:inline-block}
+.hlb{background:var(--yellow);padding:0 12px;border-radius:8px;display:inline-block}
+.sub{font-size:27px;color:var(--muted);margin-top:14px;font-weight:500}
+.main{flex:1;display:flex;flex-direction:column;padding-bottom:40px}
+.footer{margin-top:auto;height:104px;display:flex;align-items:center;gap:18px;border-top:2px solid var(--line);margin-left:-56px;margin-right:-56px;padding:0 56px;background:var(--tint)}
+.footer img{width:56px;height:56px;border-radius:14px}
+.footer .who{font-size:22px;font-weight:800}
+.footer .role{font-size:18px;color:var(--muted);font-weight:500}
+.footer .cta{margin-left:auto;font-size:20px;font-weight:800;background:var(--ink);color:#fff;padding:14px 22px;border-radius:12px}
+.do{background:var(--tint);border-left:5px solid var(--blue);padding:14px 16px;border-radius:8px;font-size:20px;line-height:1.35;font-weight:500}
+.do b{color:var(--blue);font-weight:800}

@@ -121,6 +121,7 @@ class DialerBuyNumberRequest(BaseModel):
 
 class TalkTrackRequest(BaseModel):
     script: str = Field(max_length=50_000)
+    name: str = Field(default="", max_length=200)
 
 
 # --- Helpers ---
@@ -703,13 +704,15 @@ def create_app(
     # Talk track
 
     @app.get("/dialer/api/talk-track")
-    def api_talk_track_get(operator: Operator = Depends(api_operator)) -> dict:
-        return {"ok": True, "script": load_talk_track(operator.email, settings.state_dir, profile)}
+    def api_talk_track_get(name: str = "", operator: Operator = Depends(api_operator)) -> dict:
+        name = name if name in profile.script_names() else ""
+        return {"ok": True, "name": name, "script": load_talk_track(operator.email, settings.state_dir, profile, name)}
 
     @app.put("/dialer/api/talk-track")
     def api_talk_track_put(body: TalkTrackRequest, operator: Operator = Depends(api_operator)) -> dict:
-        save_talk_track(operator.email, body.script, settings.state_dir)
-        return {"ok": True, "script": body.script}
+        name = body.name if body.name in profile.script_names() else ""
+        save_talk_track(operator.email, body.script, settings.state_dir, name)
+        return {"ok": True, "name": name, "script": body.script}
 
     @app.get("/dialer/api/contacts/{contact_id}/call-notes")
     async def api_call_notes(

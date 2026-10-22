@@ -1,0 +1,14 @@
+<link rel=stylesheet href=base.css><link rel=stylesheet href=common.css><style>
+.b{background:#06102a}
+.grid{position:absolute;left:540px;top:-14px;display:grid;grid-template-columns:repeat(11,48px);gap:8px;transform:perspective(700px) rotateX(18deg) rotateZ(-6deg)}
+.t{width:48px;height:48px;border-radius:9px;position:relative;opacity:.28}
+.t.on{opacity:1;box-shadow:0 0 0 2px #4ade80,0 0 18px rgba(74,222,128,.6)}
+.t.on::after{content:"✓";position:absolute;right:-5px;top:-5px;width:14px;height:14px;border-radius:50%;background:#4ade80;color:#052e16;font-size:9px;font-weight:900;display:grid;place-items:center}
+.beam{position:absolute;left:700px;top:0;width:90px;height:191px;background:linear-gradient(90deg,transparent,rgba(56,189,248,.35),transparent);border-right:2px solid #38bdf8}
+.fade{position:absolute;inset:0;background:linear-gradient(90deg,#06102a 40%,transparent 62%)}
+h1{left:230px;top:38px;font-size:34px}h1 span{color:#4ade80}
+.stats{position:absolute;left:232px;top:124px;display:flex;gap:22px;color:#9fb0cf;font-size:11px}.stats b{display:block;color:#fff;font-size:18px}
+</style><div class=b><div class=grid id=g></div><div class=beam></div><div class=fade></div>
+<h1>Your whole catalog,<br><span>scanned by AI.</span></h1>
+<div class=stats><div><b>2,140</b>products</div><div><b>312</b>recommended</div><div><b>1,828</b>invisible</div></div></div>
+<script>const g=document.getElementById('g'),c=['g1','g2','g3','g4','g5','g6'];for(let i=0;i<44;i++){const d=document.createElement('div');d.className='t '+c[(i*7)%6]+([3,9,14,20,25,31,37,40].includes(i)?' on':'');g.appendChild(d)}</script>

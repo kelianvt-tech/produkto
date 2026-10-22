@@ -36,6 +36,8 @@ Best days: Tue–Thu. Avoid Monday morning and Friday afternoon US time.
 
 ## 2. Who to call
 
+**Rule (2026-10-06): one niche per session.** Every number in a calling session is from the same niche, with a talk track written for that niche. See `GTM/MEMORY.md`.
+
 Use the existing ICP (`context/ICP.md`): US Shopify DTC brands, 150+ SKUs (count variants), $1–10M, in a spec-driven category (skincare with actives, supplements, outdoor, tools, pet, baby, sleep).
 
 **Skip:** anyone in `Research/sent-log-*.csv` who already got 2+ emails with no reply (fine to call people who got one email: say "I emailed you in August"), Yotpo customers, marketplace-only sellers.

@@ -1,4 +1,4 @@
-# Opportunities list — next product step (planned 2026-10-05, not started)
+# Opportunities list — next product step (planned 2026-10-05; steps 1-2 built 2026-10-06, step 3 built 2026-10-09; all behind SHOW_OPPORTUNITIES, not live)
 
 Modelled on Searchable's Actions → Opportunities (walkthrough video, 5 Oct 2026). Kelian approved the plan and parked it: this is the next thing to build when product development resumes.
 
@@ -27,3 +27,12 @@ One plain sentence, the evidence (answers + winners, click to read), the product
 3. Missing product details (needs fetching competitor pages, plus the `build/` checker).
 
 Cost: steps 1–2 are free per scan (reuse saved answers). Step 3 fetches pages: free via plain fetch, a few cents with Firecrawl for blocked stores.
+
+## Step 3 as built (2026-10-09)
+`app/page_gap.py`, "Content Gap" cards under On Page (renamed from Missing Details to match Searchable, 9 Oct). For each buyer question you lost outright, the competitor product pages AI named (its link, or found through the brand's Shopify `/search/suggest.json` when ChatGPT gave none) are compared with your page for that question: the question's own words, and the product data the page publishes (review rating, brand, barcode, price). A gap needs two or more winning pages. A set question covering several of your products is one card. Plain-request fetch only (free); pages that block it (Boots, Next, John Lewis) are skipped, never guessed. Cached 14 days in `page_facts`, refreshed in the background at most hourly when the page opens. `build/attributes.py` was not used: its attributes are furniture-only.
+
+## Also built 2026-10-09
+- **Before and after on Done cards** (`opportunities.before_after`): how often your products were named in answers to the card's question(s) in the 14 days before Done vs since, same engines. Says "too early" under 5 answers, and always says it shows what changed, not why. A Done card whose problem has gone away stays in the Done tab. Free.
+- **Reading the most-cited page** behind each Retailer/Citation Gap card: its title, which competitor brands it names, and whether it names you. Plain fetch, free.
+- **AI sentence per cited page** (`page_gap.explain`): built, OFF (`PRODUKTO_PAGE_EXPLAIN=1`). Roughly $0.05-0.10/store/month.
+- **Paid browser for blocked pages** (Apify RAG Web Browser, $0.0019/page): built, OFF (`PRODUKTO_PAGE_BROWSER=1`). Tested 9 Oct: Boots still returns its bot wall, John Lewis returns a title and no product data. Not worth switching on yet.

@@ -16,6 +16,7 @@ filter only means something because the engine is stored per answer.
 """
 
 import json
+import os
 import sqlite3
 import threading
 import time
@@ -138,6 +139,32 @@ CREATE TABLE IF NOT EXISTS scores (
     brand_rate      REAL,
     detail          TEXT
 );
+-- Third-party context (third_party.py, 22 Oct 2026): Google Shopping, Google web
+-- results and Trustpilot for one store, pulled by hand by an admin. Each pull
+-- is a run; rows keep their run_id so older pulls stay readable.
+CREATE TABLE IF NOT EXISTS third_party_runs (
+    id INTEGER PRIMARY KEY, store_domain TEXT NOT NULL, status TEXT NOT NULL,
+    estimate_usd REAL, cost_usd REAL, detail TEXT, started_at REAL, finished_at REAL
+);
+CREATE TABLE IF NOT EXISTS third_party_shopping (
+    id INTEGER PRIMARY KEY, run_id INTEGER NOT NULL, store_domain TEXT NOT NULL,
+    question TEXT, position INTEGER, title TEXT, merchant TEXT, price TEXT,
+    rating REAL, reviews INTEGER, is_brand INTEGER DEFAULT 0, is_own_store INTEGER DEFAULT 0,
+    product_id INTEGER, fetched_at REAL
+);
+CREATE TABLE IF NOT EXISTS third_party_web (
+    id INTEGER PRIMARY KEY, run_id INTEGER NOT NULL, store_domain TEXT NOT NULL,
+    query TEXT, position INTEGER, url TEXT, title TEXT, snippet TEXT, kind TEXT,
+    collision INTEGER DEFAULT 0, fetched_at REAL
+);
+CREATE TABLE IF NOT EXISTS third_party_reviews (
+    id INTEGER PRIMARY KEY, run_id INTEGER NOT NULL, store_domain TEXT NOT NULL,
+    review_id TEXT, rating INTEGER, title TEXT, text TEXT, published TEXT,
+    company_score REAL, company_total INTEGER, fetched_at REAL
+);
+CREATE INDEX IF NOT EXISTS idx_tp_shopping ON third_party_shopping(store_domain, run_id);
+CREATE INDEX IF NOT EXISTS idx_tp_web ON third_party_web(store_domain, run_id);
+CREATE INDEX IF NOT EXISTS idx_tp_reviews ON third_party_reviews(store_domain, run_id);
 """
 
 _lock = threading.Lock()
@@ -247,6 +274,45 @@ def init():
             WHERE status='done' AND total>0 AND (SELECT COUNT(*) FROM answers WHERE scan_id=scans.id)<total""")
         import accounts
         c.executescript(accounts.SCHEMA)
+        # The agent's brain (brain.py, 22 Oct 2026): what it learned from outside sources.
+        import brain
+        c.executescript(brain.SCHEMA)
+
+
+_memo = {}
+_memo_lock = threading.Lock()
+
+
+def data_stamp():
+    """Changes whenever scan results do: a new scan, a scan finishing, new
+    answers or mentions, new questions or products. Cheap (primary keys)."""
+    return tuple(one("SELECT (SELECT MAX(id) FROM scans), (SELECT COUNT(*) FROM scans WHERE status IN ('done','partial')),"
+                     " (SELECT MAX(id) FROM answers), (SELECT MAX(id) FROM mentions), (SELECT MAX(id) FROM prompt_sets),"
+                     " (SELECT COUNT(*) FROM products), (SELECT COUNT(*) FROM stores)"))
+
+
+def memo(key, fn, stamp=None):
+    """Reuse a slow, read-only result until the database changes.
+
+    Keyed on the caller's key plus this process's write counter and the
+    database file's timestamp, so any write (here or from another process)
+    makes the next call recompute. Callers put anything else the result
+    depends on - the signed-in user, today's date - into the key."""
+    if stamp is None:
+        try:
+            stamp = (_revision, os.path.getmtime(config.DB_PATH))
+        except OSError:
+            return fn()
+    full = (key, stamp)
+    with _memo_lock:
+        if full in _memo:
+            return _memo[full]
+    value = fn()
+    with _memo_lock:
+        if len(_memo) > 200:
+            _memo.clear()
+        _memo[full] = value
+    return value
 
 
 def write(sql, args=()):

@@ -182,3 +182,25 @@ All plans: unlimited products, daily scans, all three engines (ChatGPT, Perplexi
 **Update, same day (2026-09-28): prices shown in dollars — Starter $99/mo, Growth $299/mo** (rounded from ~$104 / ~$291), because customers are mostly American. Scan cost share barely moves (~16% / ~16%). Published on its own page, `produkto-site/dist/pricing.html`.
 
 **Update, same day (2026-09-28): Growth set to $297/mo** (Kelian), making the per-question price identical to Starter ($3.96). No volume discount between Starter and Growth.
+
+---
+
+## 2026-10-13 — Paying on Stripe creates the account automatically
+
+**Decision:** after paying through the Starter or Growth payment link, the buyer is redirected to `app.getprodukto.com/welcome`, which confirms the payment with Stripe, creates their account with the plan's question cap, and sends them into onboarding. Cancellations are handled by hand with a Disable button in `/admin` (stops sign-in and daily scans). When a demoed brand claims its store, the simulated demo days are deleted; real demo scans stay.
+
+**Why:** the first minutes after paying are when a customer judges the product; making a US buyer wait overnight for a hand-made invite is a bad start. It costs nothing and is small. This is a deliberate exception to the earlier "no code integration until 5–10 paying customers" note.
+
+**What would reverse it:** Stripe's redirect proving unreliable, or a need for webhooks (automatic cancellations, failed payments), which is the planned next step at ~5–10 customers.
+
+---
+
+## 2026-10-15 — Build Shopify publishing now, before a brand pays
+
+**Decision:** the content agent (Agentic AI Search Optimization) gets a Shopify connection now: the merchant connects their store once (Shopify OAuth, private app, no App Store listing), then approved drafts publish to the store in one click or automatically on their calendar date, with undo and a publish log. This reverses the 2026-09-28 line in `CLAUDE.md` ("No write access to anyone's store... until someone pays") for this feature.
+
+**Why (Kelian):** it makes the product much easier to use and to demo, and he'd rather the first paying brand has it on day one than wait ~2 weeks. It costs nothing extra: the Shopify Partner account and private apps are free, and it runs on the existing server.
+
+**Guardrails kept:** nothing publishes without the merchant's approval; every publish keeps the old version for one-click undo; tested on the free dev store `produkto-test` first, never on M&O Living.
+
+**Would reverse it:** a merchant or Shopify objecting to write access, or publishing errors on a real store.

@@ -1,0 +1,76 @@
+email,first_name,last_name,company_name,website,chatgpt_line,wave,verify
+cstapleton@jefferspet.com,Cody,Stapleton,Jeffers,https://jefferspet.com,,1,ok
+laurenb@tahoepetstation.com,Lauren,Brown,Pet Station,https://tahoepetstation.com,,1,ok
+howard@redbarn.com,Howard,Bloxam,Redbarn Pet Products,https://redbarn.com,,1,ok
+dlambert@lambertvetsupply.com,Douglas,Lambert,Lambert Vet Supply,https://lambertvetsupply.com,,1,ok
+jeb@wooftown.com,Jonathan,Bogo,Wooftown,https://wooftown.ca,,1,ok
+jon@myperfectpetfood.com,Jon,Shulin,My Perfect Pet,https://myperfectpetfood.com,,1,ok
+britt@agrifeedpetsupply.com,Britt,Sturm,Agri Feed Pet Supply,https://agrifeedpetsupply.com,,1,ok
+kimberly@swiftpaws.com,Kimberly,Appelmann,Swift Paws,https://swiftpaws.com,,1,ok
+karen@outdoordogsupply.com,Karen,Godby,Outdoor Dog Supply,https://outdoordogsupply.com,,1,ok
+andrew@healthydogma.com,Andrew,May,Healthy Dogma,https://healthydogma.com,,1,ok
+natalie@doggielawn.com,Natalie,Youn,DoggieLawn,https://doggielawn.com,,1,catch_all
+angstead.bob@petsense.com,Bob,Angstead,Petsense,https://petsense.com,,1,catch_all
+sheryl.scolnick@petsonbroadway.com,Sheryl,Scolnick,Pets on Broadway,https://petsonbroadway.com,,1,catch_all
+admin@thehungrypuppy.com,Thp,Admin,The Hungry Puppy,https://thehungrypuppy.com,,1,catch_all
+mwilloughby@tomlinsons.com,Mica,Willoughby,Tomlinson's Feed,https://tomlinsons.com,,1,catch_all
+aestrada@imperialreptiles.com,Alejandro,Estrada,Imperial Reptiles & Exotics,https://imperialreptiles.com,,1,catch_all
+jhensley@bowwowlabs.com,John,Hensley,Bow Wow Labs,https://bowwowlabs.com,,1,catch_all
+sstiner@lcsupply.com,Steven,Stiner,Lion Country Supply,https://lcsupply.com,,1,catch_all
+kwalters@redbarninc.com,Kelly,Walters,Redbarn Pet Products,https://redbarn.com,,2,ok
+shawn.blankenship@petsensellc.com,Shawn,Blankenship,Petsense,https://petsense.com,,2,catch_all
+rsmith@jefferspet.com,Robert,Smith,Jeffers,https://jefferspet.com,,2,ok
+mike.koehn@lambertvetsupply.com,Michael,Koehn,Lambert Vet Supply,https://lambertvetsupply.com,,2,ok
+tom@healthydogma.com,Tom,Peters,Healthy Dogma,https://healthydogma.com,,2,ok
+andrea@doggielawn.com,Andrea,Albarran,DoggieLawn,https://doggielawn.com,,2,catch_all
+tperry@petsonbroadway.com,Thomas,Perry,Pets on Broadway,https://petsonbroadway.com,,2,catch_all
+joanie@thehungrypuppy.com,Joanie,Hausleiter,The Hungry Puppy,https://thehungrypuppy.com,,2,catch_all
+hshepard@tomlinsons.com,Hannah,Larsen,Tomlinson's Feed,https://tomlinsons.com,,2,catch_all
+neehar@wooftown.com,Neehar,Mishra,Wooftown,https://wooftown.ca,,2,unknown
+msantos@imperialreptiles.com,Melissa,Santos,Imperial Reptiles & Exotics,https://imperialreptiles.com,,2,catch_all
+dennis.c@petsenseonline.com,Dennis,C,Petsense,https://petsense.com,,3,catch_all
+dspindler@redbarn.com,Daniel,Spindler,Redbarn Pet Products,https://redbarn.com,,3,ok
+mmack@jefferspet.com,Mary,Mack,Jeffers,https://jefferspet.com,,3,ok
+tammy@lambertvetsupply.com,Tammy,Schmidt,Lambert Vet Supply,https://lambertvetsupply.com,,3,ok
+gabriela.aguilar@doggielawn.com,Gabriela,Aguilar,DoggieLawn,https://doggielawn.com,,3,catch_all
+joe@petsonbroadway.com,Joe,Morton,Pets on Broadway,https://petsonbroadway.com,,3,catch_all
+nick@thehungrypuppy.com,Nicholas,Schwarz,The Hungry Puppy,https://thehungrypuppy.com,,3,catch_all
+atodd@tomlinsons.com,Amy,Todd,Tomlinson's Feed,https://tomlinsons.com,,3,catch_all
+wim.hoenderdaal@petsense.com,Wim,Hoenderdaal,Petsense,https://petsense.com,,4,catch_all
+mrobles@redbarn.com,Megan,Robles,Redbarn Pet Products,https://redbarn.com,,4,ok
+kdennis@jefferspet.com,Katie,Dennis,Jeffers,https://jefferspet.com,,4,ok
+jgabel@lambertvetsupply.com,John,Gabel,Lambert Vet Supply,https://lambertvetsupply.com,,4,ok
+paula@doggielawn.com,Ana,Paula Calvo,DoggieLawn,https://doggielawn.com,,4,catch_all
+melanie.miller@petsensellc.com,Melanie,Miller,Petsense,https://petsense.com,,5,catch_all
+etiller@redbarn.com,Eric,Tiller,Redbarn Pet Products,https://redbarn.com,,5,ok
+maan@jefferspet.com,Ma-An,Macatangay,Jeffers,https://jefferspet.com,,5,ok
+cameron.brasher@lambertvetsupply.com,Cameron,Brasher,Lambert Vet Supply,https://lambertvetsupply.com,,5,ok
+brittany@doggielawn.com,Brittany,King-Elmes,DoggieLawn,https://doggielawn.com,,5,catch_all
+mtabers@petsense.com,Matt,Tabers,Petsense,https://petsense.com,,6,catch_all
+astrong@redbarn.com,Alex,Strong,Redbarn Pet Products,https://redbarn.com,,6,ok
+spencer.brown@lambertvetsupply.com,Spencer,Brown,Lambert Vet Supply,https://lambertvetsupply.com,,6,ok
+heidi.hicks@petsensellc.com,Heidi,Hicks,Petsense,https://petsense.com,,7,catch_all
+lindsay@redbarn.com,Lindsay,Tracy,Redbarn Pet Products,https://redbarn.com,,7,ok
+madalina.lambert@lambertvetsupply.com,Madalina,Lambert,Lambert Vet Supply,https://lambertvetsupply.com,,7,ok
+ntenzer@petsense.com,Neil,Tenzer,Petsense,https://petsense.com,,8,catch_all
+tim@redbarn.com,Timothy,Fabits,Redbarn Pet Products,https://redbarn.com,,8,ok
+jaime@lambertvetsupply.com,Jaime,Lambert-McDaniel,Lambert Vet Supply,https://lambertvetsupply.com,,8,ok
+bob.vine@petsense.com,Bob,Vine,Petsense,https://petsense.com,,9,catch_all
+kweddle@redbarn.com,Karla,Farrington-Weddle,Redbarn Pet Products,https://redbarn.com,,9,ok
+jillian@lambertvetsupply.com,Jillian,Couture,Lambert Vet Supply,https://lambertvetsupply.com,,9,ok
+nick.brannen@petsense.com,Nick,Brannen,Petsense,https://petsense.com,,10,catch_all
+jpaulus@redbarn.com,Justin,Paulus,Redbarn Pet Products,https://redbarn.com,,10,ok
+ted.daniel@petsense.com,Ted,Daniel,Petsense,https://petsense.com,,11,catch_all
+clowe@redbarn.com,Colton,Lowe,Redbarn Pet Products,https://redbarn.com,,11,ok
+ron.huisinga@petsense.com,Ron,Huisinga,Petsense,https://petsense.com,,12,catch_all
+lcramer@redbarn.com,Lesley,Cramer,Redbarn Pet Products,https://redbarn.com,,12,ok
+cody.vanryn@petsense.com,Cody,Van Ryn,Petsense,https://petsense.com,,13,catch_all
+jramirez@redbarn.com,Jenny,Ramirez,Redbarn Pet Products,https://redbarn.com,,13,ok
+kim.beardsley@petsense.com,Kim,Beardsley,Petsense,https://petsense.com,,14,catch_all
+ktran@redbarn.com,Kimberly,Tran,Redbarn Pet Products,https://redbarn.com,,14,ok
+kevan.ritner@petsense.com,Kevan,Ritner,Petsense,https://petsense.com,,15,catch_all
+mdo@redbarn.com,Mimosa,D,Redbarn Pet Products,https://redbarn.com,,15,ok
+tiffany.prulhiere@petsense.com,Tiffany,Prulhiere,Petsense,https://petsense.com,,16,catch_all
+kschissel@redbarn.com,Kenzie,Schissel,Redbarn Pet Products,https://redbarn.com,,16,ok
+mspinks@petsense.com,Madaline,Spinks,Petsense,https://petsense.com,,17,catch_all
+clux@redbarn.com,Chloe,Lux,Redbarn Pet Products,https://redbarn.com,,17,ok

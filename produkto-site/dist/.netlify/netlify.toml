@@ -1,14 +1,14 @@
 plugins = []
 headers = []
-redirects = []
 
 [functions]
 
 [functions."*"]
 
 [build]
-publish = "/Users/kelianvantulder/Desktop/Kelian OS/AEO-for-eccomerce-brands/produkto-site"
+publish = "/Users/kelianvantulder/Desktop/Kelian OS/AEO-for-eccomerce-brands/produkto-site/dist"
 publishOrigin = "default"
+base = "/Users/kelianvantulder/Desktop/Kelian OS/AEO-for-eccomerce-brands/produkto-site/dist"
 
 [build.environment]
 
@@ -23,3 +23,111 @@ publishOrigin = "default"
 [build.processing.js]
 
 [build.services]
+
+[[redirects]]
+from = "https://tryprodukto.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "https://www.tryprodukto.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "https://useprodukto.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "https://www.useprodukto.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "https://produktohq.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "https://www.produktohq.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "http://tryprodukto.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "http://useprodukto.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "http://produktohq.com/*"
+to = "https://getprodukto.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

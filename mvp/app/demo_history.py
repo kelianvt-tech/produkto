@@ -97,6 +97,45 @@ def add(domain, days):
     return days
 
 
+# Everything a store accumulates, by table. Used by fresh_start().
+_BY_STORE = ('agent_reviews', 'feed_checks', 'question_suggestions', 'catalog_facts', 'catalog_scope',
+             'competitor_comparisons', 'competitor_suggestions', 'offsite_searches', 'opportunity_status', 'topics',
+             'content_media', 'content_settings', 'shopify_connections', 'content_publish_log')
+
+
+def fresh_start(domain):
+    """A paying customer adds a store we set up for a demo: delete everything from the demo - scans, answers,
+    buyer questions, topics, brand profile, agent drafts and settings - so onboarding and the Catalog
+    Optimization Agent start exactly as for a new store (Kelian, 2026-10-21). The product list stays; onboarding
+    re-reads it straight away. Returns how many scans were deleted."""
+    with db._lock, db.conn() as c:
+        tables = {r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        sets = [r[0] for r in c.execute('SELECT id FROM prompt_sets WHERE store_domain=?', (domain,))]
+        scans = [r[0] for s in sets for r in c.execute('SELECT id FROM scans WHERE prompt_set_id=?', (s,))]
+        for sid in scans:
+            answers = [r[0] for r in c.execute('SELECT id FROM answers WHERE scan_id=?', (sid,))]
+            for a in answers:
+                c.execute('DELETE FROM mentions WHERE answer_id=?', (a,))
+                c.execute('DELETE FROM answer_processing WHERE answer_id=?', (a,))
+            for t in ('answers', 'scores', 'product_scores', 'scan_batches'):
+                if t in tables:
+                    c.execute('DELETE FROM %s WHERE scan_id=?' % t, (sid,))
+            c.execute('DELETE FROM scans WHERE id=?', (sid,))
+        for s in sets:
+            if 'prompt_types' in tables:
+                c.execute('DELETE FROM prompt_types WHERE prompt_set_id=?', (s,))
+            c.execute('DELETE FROM prompt_sets WHERE id=?', (s,))
+        drafts = [r[0] for r in c.execute('SELECT id FROM content_drafts WHERE store_domain=?', (domain,))] \
+            if 'content_drafts' in tables else []
+        for d in drafts:
+            c.execute('DELETE FROM content_draft_versions WHERE draft_id=?', (d,))
+        for t in ('content_drafts', 'content_briefs') + _BY_STORE:
+            if t in tables:
+                c.execute('DELETE FROM %s WHERE store_domain=?' % t, (domain,))
+        c.execute('DELETE FROM stores WHERE domain=?', (domain,))
+    return len(scans)
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     p.add_argument('domain')

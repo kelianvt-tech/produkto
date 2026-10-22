@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent · 3 Agent feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* 3 · Agent feed: what the agent did, in order, with the things that need you inline. */
+.head{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--ink)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 50%,transparent);animation:pulse 2s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.sub{margin:0 0 22px;color:var(--muted)}
+.seg{display:flex;gap:4px;margin:0 0 24px;flex-wrap:wrap}
+.seg a{padding:7px 14px;border-radius:999px;border:1px solid var(--line-2);text-decoration:none;color:var(--ink-2);font-weight:600;font-size:14px}
+.seg a[aria-current]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:start}
+.feed{position:relative;padding-left:34px}
+.feed::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:1px;background:var(--line-2)}
+.day{font-size:13px;font-weight:700;color:var(--muted);margin:22px 0 12px;position:relative}
+.day:first-child{margin-top:0}
+.ev{position:relative;margin-bottom:14px}
+.ev .ico{position:absolute;left:-34px;top:2px;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line-2);color:var(--muted)}
+.ev .ico svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ev.need .ico{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+.ev.done .ico{background:var(--ok-soft);border-color:transparent;color:var(--ok)}
+.ev .line{font-size:14.5px;color:var(--ink-2)}
+.ev .line b{color:var(--ink)}
+.ev time{font-size:12.5px;color:var(--faint);margin-left:6px}
+.card{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:14px;align-items:center;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
+a.card:hover{border-color:var(--ink);box-shadow:var(--shadow)}
+.card .thumb{width:48px;height:48px}
+.card strong{display:block;color:var(--ink);font-size:15px}
+.card p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.ask{margin-top:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--warn) 35%,var(--line));border-radius:12px;padding:16px}
+.ask .q{display:grid;grid-template-columns:1fr 260px;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.ask .q:first-of-type{border-top:0}
+.ask .q span{font-size:14px;font-weight:600;color:var(--ink)}
+.ask .row{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.aside{position:sticky;top:64px;display:grid;gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.box h2{font-size:14.5px;margin:0 0 12px;color:var(--ink)}
+.meter{height:8px;border-radius:999px;background:var(--surface-2);overflow:hidden;margin:8px 0 6px}
+.meter i{display:block;height:100%;background:var(--ink);border-radius:inherit}
+.next{display:grid;gap:8px}
+.next a{display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:center;text-decoration:none;color:inherit;font-size:13.5px}
+.next time{font-weight:700;color:var(--ink);font-size:12.5px;text-align:center;padding:5px 0;border-radius:8px;background:var(--surface-2);line-height:1.2}
+.next time b{display:block;font-size:16px}
+/* focused draft */
+.focus{max-width:860px}
+.say{display:grid;grid-template-columns:34px 1fr;gap:12px;margin:18px 0 22px}
+.say .av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink)}
+.say .av svg{width:16px;height:16px;fill:currentColor;stroke:none}
+.say .bubble{background:var(--surface);border:1px solid var(--line);border-radius:4px 14px 14px 14px;padding:14px 16px;font-size:14.5px}
+.page{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px 36px}
+.page h1{font-size:24px;margin:0 0 6px;color:var(--ink)}
+.page .was{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+.page .was s{color:var(--bad)}
+.actions{display:flex;gap:10px;margin-top:18px;align-items:center}
+.actions .grow{flex:1}
+/* calendar lanes */
+.lanes{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:auto}
+.lanes table{border-collapse:collapse;width:100%;min-width:900px}
+.lanes th,.lanes td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+.lanes thead th{font-size:12.5px;color:var(--muted);font-weight:600;background:var(--surface-2)}
+.lanes thead th b{display:block;font-size:15px;color:var(--ink)}
+.lanes thead th.today b{color:var(--accent-ink)}
+.lanes tbody th{width:160px;font-size:13.5px;color:var(--ink);white-space:nowrap}
+.lanes td{border-left:1px solid var(--line);min-width:96px;height:70px}
+.lanes td.wkend{background:var(--bg)}
+.pill{display:block;padding:6px 8px;border-radius:8px;font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;background:color-mix(in srgb,var(--t) 14%,var(--surface));line-height:1.3}
+.pill.pend{background:transparent;outline:1px dashed color-mix(in srgb,var(--t) 60%,transparent);outline-offset:-1px}
+.pill[aria-current]{outline:2px solid var(--t);outline-offset:-2px}
+.drawer{margin-top:18px}
+/* setup as a conversation */
+.chat{max-width:780px}
+.done-q{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);margin-bottom:8px;text-decoration:none;color:inherit}
+.done-q .ok{width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center}
+.done-q .ok svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.4}
+.done-q b{color:var(--ink)}.done-q span{margin-left:auto;font-size:13px;color:var(--muted)}
+.current{margin:18px 0}
+.current .bubble{font-size:15.5px}
+.answer{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-left:46px}
+.later{color:var(--faint);font-size:13.5px;padding:10px 16px}
+@media (max-width:1050px){.layout{grid-template-columns:1fr}.aside{position:static}.ask .q{grid-template-columns:1fr}.answer{margin-left:0}.page{padding:22px}}
+</style></head>
+<body>
+<script src="data.js"></script>
+<script src="shared.js"></script>
+<script>
+(function(){
+var A=AGENT,e=H.esc;
+function head(on){
+  return '<div class="head">'+H.title()+'<span class="status"><i class="pulse"></i>Working · next page Tue 9:00</span></div><p class="sub">The agent drafts fixes from your Opportunities. You answer what only you know and approve; nothing reaches your store before that.</p>'+
+  '<nav class="seg" aria-label="Agent views">'+[['drafts','Activity'],['calendar','Calendar'],['live','Live'],['setup/voice','Setup']].map(function(t){return '<a href="#'+t[0]+'"'+(on===t[0].split('/')[0]?' aria-current="page"':'')+'>'+t[1]+'</a>'}).join('')+'</nav>';
+}
+function card(d,extra){return '<a class="card" href="#draft/'+d.id+'">'+H.img(d)+'<div><strong>'+e(d.title)+'</strong><p>'+H.TYPES[d.type]+' · '+e(d.product)+'</p></div>'+(extra||H.status(d))+'</a>'}
+function aside(){
+  var nx=A.drafts.filter(function(d){return d.planned&&d.planned>=H.today&&d.status!=='published'}).sort(function(a,b){return a.planned<b.planned?-1:1}).slice(0,4);
+  return '<aside class="aside"><div class="box"><h2>This month</h2><span class="num" style="font-size:26px;font-weight:700;color:var(--ink)">2</span><span class="muted"> of 50 page fixes used</span><div class="meter"><i style="width:4%"></i></div><span class="muted" style="font-size:13px">A page counts when you approve it.</span></div>'+
+  '<div class="box"><h2>Up next</h2><div class="next">'+nx.map(function(d){var dt=new Date(d.planned+'T12:00:00');return '<a href="#calendar/'+d.id+'"><time>'+dt.toLocaleDateString('en-US',{month:'short'})+'<b>'+dt.getDate()+'</b></time><span>'+e(d.title)+'</span></a>'}).join('')+'</div></div></aside>';
+}
+function feed(){
+  var need=A.drafts.filter(H.needsFacts);
+  var d6=H.draft(6),d8=H.draft(8),d7=H.draft(7),d5=H.draft(5);
+  function ev(cls,ico,line,t,body){return '<div class="ev '+cls+'"><span class="ico">'+H.icon(ico)+'</span><div class="line">'+line+'<time>'+t+'</time></div>'+(body||'')+'</div>'}
+  var ask='<div class="ask"><div class="line" style="margin-bottom:6px"><b>'+e(d6.product)+'</b> page fix is waiting on '+d6.gaps+' answers</div>'+d6.open_questions.slice(0,d6.gaps).map(function(q,i){return '<div class="q"><span>'+e(q)+'</span><input class="input" aria-label="'+e(q)+'" placeholder="Your answer"></div>'}).join('')+'<div class="row"><a class="btn ghost" href="#draft/6">Open the page</a><button class="btn primary">Save answers</button></div></div>';
+  return head('drafts')+'<div class="layout"><div class="feed">'+
+   '<p class="day">Today, Friday</p>'+
+   ev('need','bolt','<b>'+need.length+' pages need a fact from you</b> before you can approve them.','11:49',ask)+
+   ev('','doc','Drafted a <b>comparison page</b> from the question “Complete skincare set or separate products?”','11:49',card(d8))+
+   ev('','doc','Drafted a <b>buying guide</b> for a simple, non-stripping routine.','11:48',card(d7))+
+   ev('done','check','You approved <b>Frontier Cleanser: page fix</b>. It goes live today at 9:00 '+A.store.tz+'.','10:12',card(d5,'<span class="tag info">Scheduled</span>'))+
+   '<p class="day">Yesterday</p>'+
+   ev('','spark','Read your 3 longest product pages and your homepage, and wrote down <b>how you write</b>.','16:40','<a class="card" href="#setup/voice" style="grid-template-columns:1fr auto"><div><strong>'+e(A.voice.traits.map(function(t){return t.name}).join(' · '))+'</strong><p>Your voice, confirmed</p></div><span class="tag ok">Done</span></a>')+
+   ev('','grid','Checked 6 products for facts buyers ask about and found <b>'+H.missingTotal+' missing</b>.','16:38')+
+   '</div>'+aside()+'</div>';
+}
+function draft(id){
+  var d=H.draft(id);
+  var body=d.type==='faq'?d.faqs.map(function(f){return '<h2>'+e(f.q)+'</h2><p>'+e(f.a)+'</p>'}).join(''):d.html+(d.specs.length?'<table><tbody>'+d.specs.map(function(s){return '<tr><th>'+e(s.label)+'</th><td>'+e(s.value)+'</td></tr>'}).join('')+'</tbody></table>':'');
+  var qs=d.open_questions.slice(0,d.gaps);
+  return head('drafts')+'<div class="focus"><a class="btn ghost" href="#drafts">'+H.icon('back')+'Activity</a>'+
+   '<div class="say"><span class="av">'+H.icon('spark')+'</span><div class="bubble">'+e(d.why||'')+(qs.length?' I need <b>'+qs.length+' answers</b> from you first; they\'re below the page.':'')+'</div></div>'+
+   '<article class="page"><p class="muted" style="margin:0 0 6px;font-size:13.5px">'+H.TYPES[d.type]+' · '+e(d.product)+'</p><h1>'+e(d.new_title||d.title)+'</h1>'+(d.type==='product_fix'&&d.new_title!==d.cur_title?'<p class="was">Was <s>'+e(d.cur_title)+'</s></p>':'')+'<div class="doc">'+body+'</div></article>'+
+   (qs.length?'<div class="ask" style="margin-top:16px">'+qs.map(function(q){return '<div class="q"><span>'+e(q)+'</span><input class="input" aria-label="'+e(q)+'"></div>'}).join('')+'</div>':'')+
+   '<div class="actions"><span class="muted" style="font-size:13.5px">Goes live '+H.date(d.planned)+' at 9:00 '+A.store.tz+'</span><span class="grow"></span><button class="btn ghost">Edit text</button><button class="btn">Reject</button><button class="btn primary"'+(qs.length?' disabled':'')+'>Approve</button></div></div>';
+}
+function calendar(sel){
+  var days=[];for(var i=0;i<14;i++){var dt=new Date(2026,9,15+i);days.push(dt)}
+  var rows=[['product_fix','Product page fixes'],['faq','FAQs'],['comparison','Comparison pages'],['guide','Buying guides']];
+  var t='<div class="lanes"><table><thead><tr><th></th>'+days.map(function(dt){var iso=H.iso(dt);return '<th class="'+(iso===H.today?'today':'')+'">'+dt.toLocaleDateString('en-US',{weekday:'short'})+'<b>'+dt.getDate()+'</b></th>'}).join('')+'</tr></thead><tbody>'+
+   rows.map(function(r){return '<tr><th scope="row"><span class="t-'+r[0]+'"><i class="type-dot"></i></span> '+r[1]+'</th>'+days.map(function(dt){var iso=H.iso(dt),evs=H.onDay(iso).filter(function(d){return d.type===r[0]});var we=dt.getDay()===0||dt.getDay()===6;
+     return '<td class="'+(we?'wkend':'')+'">'+evs.map(function(d){return '<a class="pill t-'+d.type+(d.status==='draft'?' pend':'')+'" href="#calendar/'+d.id+'"'+(String(d.id)===sel?' aria-current="true"':'')+'>'+e(d.product)+'</a>'}).join('')+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>';
+  var d=sel&&H.draft(sel);
+  return head('calendar')+'<p class="muted" style="margin:-8px 0 14px;font-size:13.5px">Two weeks, one row per kind of page. Dashed pages still need your approval. Times in '+A.store.tz+'.</p>'+t+(d?'<div class="drawer">'+card(d)+'</div>':'');
+}
+function live(){
+  var l=H.byStatus(['published']);
+  return head('live')+'<div class="feed">'+l.map(function(d){return '<div class="ev done"><span class="ico">'+H.icon('live')+'</span><div class="line">Published <b>'+e(d.title)+'</b> <span class="example">Example</span><time>'+H.date(d.planned)+'</time></div><div class="card" style="grid-template-columns:48px 1fr auto">'+H.img(d)+'<div><strong>'+e(d.product)+'</strong><p>Mentions before and after: too early to read</p></div><div style="display:flex;gap:8px"><a class="btn" href="'+e(d.live_url)+'">View</a><button class="btn ghost">'+H.icon('undo')+'Undo</button></div></div></div>'}).join('')+'</div>';
+}
+function setup(step){
+  step=step||'voice';
+  var ids=H.STEPS.map(function(s){return s[0]}),i0=ids.indexOf(step);
+  var ask={voice:'I read your longest product pages and your homepage. Here\'s how I think you write. Does this sound like you?',brand:'Next, your brand. I filled this in from your pages; correct anything I got wrong.',scope:'What am I allowed to change? Nothing goes live until you approve it.',schedule:'When should pages go live, and how many a week?',facts:'Buyers check these before they buy, and your pages don\'t say. What do you know?',shopify:'Last one: connect Shopify so approved pages publish on their date, with undo.'};
+  return head('setup')+'<div class="chat">'+H.STEPS.slice(0,i0).map(function(s){return '<a class="done-q" href="#setup/'+s[0]+'"><span class="ok">'+H.icon('check')+'</span><b>'+s[1]+'</b><span>Change</span></a>'}).join('')+
+   '<div class="say current"><span class="av">'+H.icon('spark')+'</span><div class="bubble">'+e(ask[step])+'</div></div><div class="answer">'+H.setupBody(step)+'</div>'+
+   H.STEPS.slice(i0+1).map(function(s){return '<p class="later">Then: '+s[1]+'</p>'}).join('')+'</div>';
+}
+window.V={name:'Agent feed',render:function(r){
+  if(r[0]==='draft')return draft(r[1]);
+  if(r[0]==='calendar')return calendar(r[1]);
+  if(r[0]==='live')return live();
+  if(r[0]==='setup')return setup(r[1]);
+  return feed();
+}};
+})();
+</script>
+</body></html>

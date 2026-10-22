@@ -1,0 +1,5 @@
+# Every crawler is welcome, AI assistants included.
+User-agent: *
+Allow: /
+
+Sitemap: https://getprodukto.com/sitemap.xml

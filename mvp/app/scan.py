@@ -367,6 +367,7 @@ def _run(scan_id, store_domain, prompts):
     db.write('UPDATE scans SET status=?,error=?,finished_at=?,model_versions=?,cost_cents=? WHERE id=?',
              (status,error,time.time(),json.dumps(dict(usage.as_dict(),engine_coverage=coverage)),
               usage.cost_cents(),scan_id))
+    _notify(store_domain,status)
 
 
 _resume_locks={}
@@ -446,7 +447,21 @@ def _resume(scan_id, store_domain=None):
     db.write('UPDATE scans SET status=?,error=?,finished_at=?,done=? WHERE id=?',
              (status,None if status=='done' else 'Recovered after the app stopped mid-scan. '
               'Answers already bought were kept.',time.time(),stored,scan_id))
+    _notify(row['store_domain'],status)
     return status
+
+
+def _notify(store_domain,status):
+    """Email the store's owner when their first scan has results. Never lets
+    an email problem touch the scan."""
+    if status not in ('done','partial'):
+        return
+    try:
+        import mailer
+        b=db.brand(store_domain)
+        mailer.first_results(store_domain,(b or {}).get('brand_name',''))
+    except Exception:                                       # noqa: BLE001
+        pass
 
 
 def recover_interrupted():

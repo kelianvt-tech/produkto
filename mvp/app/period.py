@@ -110,12 +110,16 @@ def describe(a, b):
 
 
 def done_scans(prompt_set_id, start=None, end=None):
-    """Finished, scored scans for one question set, oldest first.
+    """Finished, scored scans for every question-set version of this store,
+    oldest first. Editing questions after a scan saves a new version; pooling
+    the versions keeps each unchanged question's history, while
+    evidence.load() counts only questions in the set being viewed.
 
     Skips anything before the store's config.HISTORY_START date."""
     sql = ("SELECT s.* FROM scans s JOIN scores sc ON sc.scan_id = s.id "
            "JOIN prompt_sets ps ON ps.id = s.prompt_set_id "
-           "WHERE s.prompt_set_id = ? AND s.status IN ('done','partial')")
+           "WHERE s.prompt_set_id IN (SELECT id FROM prompt_sets WHERE store_domain = "
+           "(SELECT store_domain FROM prompt_sets WHERE id = ?)) AND s.status IN ('done','partial')")
     args = [prompt_set_id]
     if start is not None:
         sql += " AND s.run_at BETWEEN ? AND ?"

@@ -1,0 +1,6 @@
+Handle,Title,Body (HTML),Option1 Name,Option1 Value
+harbor-cap,Harbor Cap | Washed Cotton Curved-Brim Cap,"<p>The Harbor Cap is a washed cotton cap with a curved brim, made in Portugal.</p><table class=""cr-spec""><tr><th>Material</th><td>Cotton</td></tr><tr><th>Made in</th><td>Portugal</td></tr><tr><th>Sizes</th><td>S/M, L/XL</td></tr></table>",Size,S/M
+harbor-cap,,,,L/XL
+calm-face-oil,Calm Face Oil,"<p>A light face oil with <em>jojoba</em> and squalane.</p><ul><li>30 ml glass bottle</li></ul>
+<h2>Questions and answers</h2>
+<h3>How big is the bottle?</h3><p>30 ml, in glass.</p><h3>What is in it?</h3><p>Jojoba and squalane.</p><script type=""application/ld+json"">{""@context"": ""https://schema.org"", ""@type"": ""FAQPage"", ""mainEntity"": [{""@type"": ""Question"", ""name"": ""How big is the bottle?"", ""acceptedAnswer"": {""@type"": ""Answer"", ""text"": ""30 ml, in glass.""}}, {""@type"": ""Question"", ""name"": ""What is in it?"", ""acceptedAnswer"": {""@type"": ""Answer"", ""text"": ""Jojoba and squalane.""}}]}</script>",Title,Default Title

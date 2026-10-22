@@ -1,0 +1,140 @@
+<style>
+@font-face{font-family:"CH Times";src:url(https://clubhouseskin.com/cdn/shop/files/PSTimes-Regular.woff2?v=1724746454) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"CH Helvetica";src:url(https://clubhouseskin.com/cdn/shop/files/HelveticaNeue-Roman.woff2?v=1709189495) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"CH Helvetica";src:url(https://clubhouseskin.com/cdn/shop/files/HelveticaNeue-Medium.woff2?v=1709189495) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"CH Mono";src:url(https://clubhouseskin.com/cdn/shop/files/GT_America_Mono_Regular.woff2?v=1709622231) format("woff2");font-weight:400;font-display:swap}
+main h1{font-family:"CH Times",Times,serif!important;font-weight:400!important;text-transform:uppercase;letter-spacing:.01em;color:#1A281E}
+main time{font-family:"CH Mono",monospace!important;text-transform:uppercase;font-size:11px!important;letter-spacing:.08em}
+.chs{--ink:#191919;--green:#1A281E;--cream:#F5F4F0;--line:#dcd9d1;--muted:#6f6d66;--serif:"CH Times",Times,serif;--sans:"CH Helvetica","Helvetica Neue",Helvetica,Arial,sans-serif;--mono:"CH Mono",ui-monospace,monospace;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7}
+.chs *{box-sizing:border-box}
+.chs p{margin:0 0 1.1em}
+.chs a{color:var(--green)}
+.chs .crumbs,.chs .meta,.chs .tag,.chs .step,.chs .glance h2,.chs .glance dt,.chs .pills,.chs .btn,.chs thead th,.chs figcaption,.chs .note{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;font-weight:400}
+.chs .crumbs{font-size:11px;color:var(--muted);margin:0 0 18px}
+.chs .crumbs a{color:var(--muted);text-decoration:none}
+.chs .meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:11px;color:var(--muted);margin:0 0 26px}
+.chs .tag{border:1px solid var(--ink);padding:4px 10px;font-size:10.5px;color:var(--ink)}
+.chs .dek{font-family:var(--serif);font-size:24px;line-height:1.35;color:var(--green);margin:0 0 36px}
+.chs .glance{background:var(--cream);padding:26px 28px;margin:0 0 44px}
+.chs .glance h2{font-family:var(--mono)!important;font-size:11px!important;margin:0 0 16px!important;color:var(--ink)!important;letter-spacing:.08em}
+.chs .glance dl{display:grid;grid-template-columns:130px 1fr;gap:12px 18px;margin:0;border-top:1px solid var(--line);padding-top:16px}
+.chs .glance dt{font-size:11px;color:var(--muted);padding-top:3px}
+.chs .glance dd{margin:0;font-size:15px;line-height:1.55}
+.chs h2{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.01em;font-size:28px;line-height:1.15;color:var(--green);margin:60px 0 18px}
+.chs .step{display:block;font-size:11px;color:var(--muted);margin:60px 0 8px}
+.chs .step + h2{margin-top:0}
+.chs .bleed{width:min(1100px,100vw);margin:40px 0 40px 50%;transform:translateX(-50%)}
+.chs .bleed img{width:100%;height:auto;max-height:660px;object-fit:cover;display:block}
+.chs figcaption{font-size:10.5px;color:var(--muted);margin-top:10px;padding:0 16px}
+.chs .card{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0;margin:30px 0 10px}
+.chs .card img{width:150px;height:150px;object-fit:cover;background:var(--cream)}
+.chs .card .name{font-family:var(--serif);text-transform:uppercase;font-size:20px;letter-spacing:.01em;color:var(--green);margin:0 0 6px}
+.chs .card .why{font-size:14.5px;line-height:1.55;margin:0 0 14px}
+.chs .btn{display:inline-block;background:#191919;color:#fff!important;text-decoration:none;font-size:11px;padding:12px 22px}
+.chs .pills{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 10px;font-size:10.5px;color:var(--muted)}
+.chs table{width:100%;border-collapse:collapse;font-size:14.5px;margin:22px 0 10px}
+.chs table,.chs th,.chs td,.chs tr{background:transparent!important}
+.chs th,.chs td{text-align:left;padding:13px 10px 13px 0;border-bottom:1px solid var(--line);vertical-align:top;font-weight:400}
+.chs thead th{font-size:10.5px;color:var(--muted);border-bottom:1px solid var(--ink)}
+.chs tbody th{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.chs .note{font-size:10.5px;color:var(--muted);line-height:1.6}
+.chs .faq{border-top:1px solid var(--ink)}
+.chs .faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.chs .faq summary{cursor:pointer;font-family:var(--serif);text-transform:uppercase;font-size:17px;color:var(--green);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.chs .faq summary::-webkit-details-marker{display:none}
+.chs .faq summary:after{content:"+";font-family:var(--mono)}
+.chs .faq details[open] summary:after{content:"–"}
+.chs .faq p{margin:12px 0 0;font-size:15px}
+.chs .shop{background:var(--green);color:#fff;padding:34px;margin:60px 0 10px;display:grid;grid-template-columns:1fr 190px;gap:26px;align-items:center}
+.chs .shop h2{color:#fff;margin:0 0 10px;font-size:24px}
+.chs .shop p{margin:0 0 18px;opacity:.85;font-size:15px}
+.chs .shop .btn{background:#fff;color:#191919!important}
+.chs .shop img{width:190px;height:190px;object-fit:cover}
+@media (max-width:640px){.chs h2{font-size:23px}.chs .dek{font-size:20px}.chs .glance dl{grid-template-columns:1fr}.chs .card{grid-template-columns:96px 1fr}.chs .card img{width:96px;height:96px}.chs .shop{grid-template-columns:1fr}.chs .shop img{display:none}}
+</style>
+
+<div class="chs">
+
+<p class="crumbs"><a href="/blogs/news">Journal</a> &nbsp;›&nbsp; Routines &nbsp;›&nbsp; The three-step routine</p>
+<div class="meta"><span class="tag">Routines</span><span>By Clubhouse Skin</span><span>6 min read</span></div>
+<p class="dek">A good routine doesn't need ten steps. It needs a few products that each do one job well, in the right order, every day. Here's how to build one that cleans without stripping and hydrates without feeling heavy.</p>
+
+<div class="glance">
+<h2>At a glance</h2>
+<dl>
+<dt>The routine</dt><dd>Cleanse, then a vitamin-C face oil, then moisturiser.</dd>
+<dt>Who it's for</dt><dd>Anyone who wants a short routine they'll actually keep up, without layering products that compete with each other.</dd>
+<dt>Time</dt><dd>About two minutes.</dd>
+<dt>Start with</dt><dd>Two steps (cleanse and moisturise) if you're new to a routine. Add the oil once that's a habit.</dd>
+</dl>
+</div>
+
+<h2>Why fewer steps work better</h2>
+<p>Most skin doesn't need a long list of products. It needs to be cleaned without being stripped, kept hydrated, and protected from the day. Every extra step adds another formula to your face and another thing to remember, and long routines are the ones that get abandoned after a fortnight.</p>
+<p>A short routine also makes it easier to tell what's working. If your skin changes, you only have three products to think about, not ten. Our routine is built on that idea: three products formulated to work in sequence, rather than competing with each other.</p>
+
+<figure class="bleed"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_02.jpg?v=1762038934&width=1600" alt="Frontier Cleanser resting on white linen" loading="lazy"><figcaption>Three products, one job each.</figcaption></figure>
+
+<span class="step">Step 1</span>
+<h2>Cleanse without stripping</h2>
+<p>Cleansing comes first because everything after it works better on clean skin. The aim is to remove what doesn't belong (the day's grime, sunscreen, excess oil) without stripping away the oils your skin produces to protect itself. Skin that feels tight and squeaky after washing has usually lost more than it needed to.</p>
+<p>Look for a cleanser that leaves your face feeling comfortable, not tight. Use lukewarm rather than hot water, massage it in for around thirty seconds, rinse and pat dry.</p>
+
+<div class="card"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370&width=400" alt="Frontier Cleanser"><div><p class="name">Frontier Cleanser</p><div class="pills"><span>Clear</span><span>Balance</span><span>Protect</span></div><p class="why">A daily cleanser that respects your skin's natural balance. Sea Salt gently exfoliates, while Squalane and Jojoba replenish what your skin naturally produces.</p><a class="btn" href="https://clubhouseskin.com/products/frontier-cleanser">Shop · £39</a></div></div>
+
+<span class="step">Step 2</span>
+<h2>Protect and brighten with vitamin C</h2>
+<p>Vitamin C is one of the most widely used skincare ingredients for a reason: it's an antioxidant, which means it helps defend skin against environmental damage from things like pollution and sun exposure. Used regularly, it's also associated with a brighter, more even-looking complexion.</p>
+<p>A face oil is a comfortable way to use it every day, as long as it's light enough to sink in. A few drops warmed between your fingertips and pressed onto clean skin is enough. Many people prefer vitamin C in the morning, since that's when skin meets the most pollution and daylight.</p>
+
+<figure class="bleed"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_04.jpg?v=1792254863&width=1600" alt="Hands holding a bottle of Amalfi Vitamin-C Face Oil" loading="lazy"></figure>
+
+<div class="card"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304&width=400" alt="Amalfi Vitamin-C Face Oil"><div><p class="name">Amalfi Vitamin-C Face Oil</p><div class="pills"><span>Brighten</span><span>Protect</span><span>Balance</span></div><p class="why">Brightens, protects and balances. Lightweight enough to wear daily, and Jojoba mimics your skin's own oils so it absorbs the way it should.</p><a class="btn" href="https://clubhouseskin.com/products/almafi-vit-c">Shop · £49</a></div></div>
+
+<span class="step">Step 3</span>
+<h2>Lock it in with a lightweight moisturiser</h2>
+<p>Moisturiser goes last. It holds water in the skin and supports the barrier that keeps irritants out, so it seals in everything underneath. If you've avoided moisturiser because it feels greasy or heavy, the answer is usually a lighter texture, not skipping the step.</p>
+<p>Ingredients to look for: humectants that attract and hold water, and barrier-supporting ingredients such as niacinamide and squalane. Apply a small amount to your face and neck while your skin is still slightly damp from the steps before.</p>
+
+<figure class="bleed"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_02.jpg?v=1762038885&width=1600" alt="Helsinki Moisturiser resting on a blue striped shirt" loading="lazy"></figure>
+
+<div class="card"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451&width=400" alt="Helsinki Moisturiser"><div><p class="name">Helsinki Moisturiser</p><div class="pills"><span>Hydrate</span><span>Nourish</span><span>Restore</span></div><p class="why">A lightweight, mushroom-powered moisturiser that hydrates deeply without heaviness. Snow Mushroom has remarkable water-retention properties.</p><a class="btn" href="https://clubhouseskin.com/products/helsinki-face-moisturiser">Shop · £34</a></div></div>
+
+<h2>Morning and evening</h2>
+<p>The same three steps work twice a day. The only real difference is what your skin faces next.</p>
+<table>
+<thead><tr><th></th><th>Morning</th><th>Evening</th></tr></thead>
+<tbody>
+<tr><th>1</th><td>Frontier Cleanser</td><td>Frontier Cleanser, to remove the day</td></tr>
+<tr><th>2</th><td>Amalfi Vitamin-C Face Oil</td><td>Optional</td></tr>
+<tr><th>3</th><td>Helsinki Moisturiser</td><td>Helsinki Moisturiser</td></tr>
+<tr><th>+</th><td>Your sunscreen, as the final step</td><td>—</td></tr>
+</tbody>
+</table>
+<p class="note">Sunscreen is a separate product and not part of our range, but it's the one step every daytime routine should end with.</p>
+
+<h2>A set or products one by one?</h2>
+<p>If you already know you want the whole routine, a set costs less than buying each product separately. If you only want to start with one step, buy that product on its own and add the others later.</p>
+<table>
+<thead><tr><th>Option</th><th>What's in it</th><th>Price</th><th>Bought separately</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clubhouseskin.com/products/essentials-set"><strong>Essentials Set</strong></a></td><td>Frontier Cleanser, Helsinki Moisturiser</td><td>£69</td><td>£73</td></tr>
+<tr><td><a href="https://clubhouseskin.com/products/full-clubhouse-routine"><strong>Full Clubhouse Set</strong></a></td><td>Frontier Cleanser, Amalfi Vitamin-C Face Oil, Helsinki Moisturiser, plus free limited edition merch</td><td>£115</td><td>£122</td></tr>
+</tbody>
+</table>
+<p class="note">Prices as listed on clubhouseskin.com.</p>
+
+<figure class="bleed"><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_02.jpg?v=1762038839&width=1600" alt="The Clubhouse Skin range on a bathroom shelf" loading="lazy"><figcaption>Designed to sit on your shelf and actually get used.</figcaption></figure>
+
+<h2>Questions people ask</h2>
+<div class="faq">
+<details open><summary>What order should skincare go in?</summary><p>For this routine: cleanser first, then the vitamin-C oil on clean skin, then moisturiser to lock everything in. In the morning, sunscreen goes on last.</p></details>
+<details><summary>Do I need a face oil and a moisturiser?</summary><p>They do different jobs. The oil here delivers vitamin C and a natural glow; the moisturiser holds hydration in and supports your skin's barrier. If you only want two steps, keep the cleanser and moisturiser and add the oil later.</p></details>
+<details><summary>Is a three-step routine enough?</summary><p>For most people, yes. Cleansing, protecting and moisturising cover the fundamentals. If you have a specific skin condition, a dermatologist can tell you whether you need anything more.</p></details>
+<details><summary>How long until I see a difference?</summary><p>Skin renews itself over several weeks, so give any new routine about a month of daily use before judging it. Consistency matters more than the number of products.</p></details>
+<details><summary>Can I use a cleanser with exfoliating ingredients every day?</summary><p>Frontier Cleanser is designed as a daily cleanser, with Sea Salt for gentle exfoliation. As with any new product, try it on a small area first if your skin is sensitive.</p></details>
+</div>
+
+<div class="shop"><div><h2>The whole routine, in one set</h2><p>Frontier Cleanser, Amalfi Vitamin-C Face Oil and Helsinki Moisturiser, formulated to work in sequence.</p><a class="btn" href="https://clubhouseskin.com/products/full-clubhouse-routine">Shop the Full Clubhouse Set · £115</a></div><img src="https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416&width=400" alt="The Full Clubhouse Set"></div>
+
+</div>

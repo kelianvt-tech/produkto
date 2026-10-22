@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Answer anatomy | What is AI shopping visibility?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus,#2f5bd3);outline-offset:3px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+:root{--bg:#ffffff;--ink:#0b1b35;--text:#222a38;--muted:#5d6676;--line:#e6e8ec;--wash:#f4f6fa;--teal:#0f766e;--tealbg:#e6f4f2;--amber:#b45309;--amberbg:#fdf3e6;--focus:#0f766e}
+::selection{background:var(--tealbg)}
+body{background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 'Geist',system-ui,sans-serif}
+.top{max-width:1160px;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center}
+.top img{height:24px;width:auto}
+.top a{font-weight:500;font-size:.92rem;color:var(--ink)}
+.intro{max-width:1160px;margin:0 auto;padding:56px 24px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+h1{font:400 clamp(2.6rem,5.4vw,4.2rem)/1.02 'Instrument Serif',serif;color:var(--ink);letter-spacing:-.01em}
+h1 i{color:var(--teal)}
+.intro .dek{margin-top:20px;font-size:1.15rem;color:var(--muted);max-width:44ch}
+.intro .by{margin-top:24px;font-size:.88rem;color:var(--muted)}
+.intro .by b{color:var(--ink);font-weight:500}
+/* the anatomy diagram */
+.anat{position:relative;background:var(--wash);border-radius:16px;padding:28px}
+.anat .card{background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(11,27,53,.06),0 12px 32px -14px rgba(11,27,53,.22);padding:18px 18px 8px}
+.anat .q{font-size:.92rem;background:var(--wash);border-radius:10px;padding:10px 12px;color:var(--ink)}
+.anat .a{font-size:.9rem;color:var(--muted);margin:12px 2px}
+.anat li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:8px;padding:9px 2px;border-top:1px solid var(--line);font-size:.9rem}
+.anat li b{color:var(--ink);font-weight:600}
+.anat li small{display:block;color:var(--muted)}
+.anat li.yours{background:var(--tealbg);border-radius:8px;border-top-color:transparent;padding-left:8px;margin:0 -6px}
+.anat li.missing{color:var(--muted)}
+.anat .lbl{position:absolute;font-size:.8rem;line-height:1.35;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px;max-width:170px;box-shadow:0 4px 14px -6px rgba(11,27,53,.25)}
+.anat .lbl b{color:var(--teal)}
+.anat .l1{top:6px;right:-24px}.anat .l2{bottom:96px;right:-36px}.anat .l3{bottom:-14px;left:24px}
+.def{max-width:1160px;margin:72px auto 0;padding:0 24px}
+.def p{font:400 clamp(1.5rem,2.8vw,2.1rem)/1.35 'Instrument Serif',serif;color:var(--ink);max-width:40ch}
+.def p mark{background:linear-gradient(transparent 62%,var(--tealbg) 62%);color:inherit}
+.qa{max-width:1160px;margin:0 auto;padding:0 24px}
+.qblock{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px;padding:64px 0;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.qblock h2{font:400 clamp(1.8rem,3vw,2.5rem)/1.1 'Instrument Serif',serif;color:var(--ink)}
+.qblock .short{font:500 1.2rem/1.5 'Geist';color:var(--ink);margin-bottom:16px}
+.qblock .more p+p{margin-top:.9em}
+.qblock .more ol{margin:.8em 0 0 1.2em}.qblock .more li{margin:.4em 0}
+.qblock .more b{color:var(--ink)}
+.facts{margin-top:18px;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:6.5em 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.facts a{color:var(--muted);font-size:.85rem}
+.tw{overflow-x:auto;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:600px}
+th,td{text-align:left;vertical-align:top;padding:11px 12px;border-bottom:1px solid var(--line)}
+thead th{font-weight:600;color:var(--muted);font-size:.82rem}
+thead th.us{color:var(--teal)}
+td.us{background:var(--tealbg);color:var(--ink)}
+tbody th{color:var(--ink);font-weight:600}
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;margin-top:8px}
+.pairs h3{font:600 1rem 'Geist';color:var(--ink)}
+.pairs p{color:var(--muted);font-size:.95rem;margin-top:2px}
+.aside{margin-top:20px;font-size:.95rem;color:var(--amber);background:var(--amberbg);padding:12px 14px;border-radius:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--ink);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq p{margin-top:8px;color:var(--text)}
+.end{max-width:1160px;margin:0 auto;padding:80px 24px 96px;text-align:center}
+.end p{font:400 clamp(2rem,4vw,3rem)/1.1 'Instrument Serif',serif;color:var(--ink)}
+.end a{display:inline-block;margin-top:24px;background:var(--ink);color:#fff;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:500}
+.end a:hover{background:var(--teal)}
+.refs{margin:40px auto 0;max-width:560px;text-align:left;font-size:.8rem;color:var(--muted)}.refs li{margin:.25em 0 0 1.2em}
+@media(max-width:900px){.intro,.qblock{grid-template-columns:minmax(0,1fr);gap:24px}.pairs{grid-template-columns:1fr}.anat .lbl{position:static;display:block;max-width:none;margin-top:10px;box-shadow:none}}
+
+</style></head><body>
+
+<header class="top"><img src="logo-dark.png" alt="Produkto" style="height:24px;width:auto"><a href="#">Book a demo</a></header>
+<div class="intro"><div><h1>What is AI shopping <i>visibility?</i></h1><p class="dek">Shoppers now ask AI what to buy and get a few named products back. What AI shopping visibility is, how it differs from SEO, how to measure it, and what you can work on.</p><p class="by">By <b>Kelian Van Tulder</b> · October 20, 2026</p></div>
+  <figure class="anat" aria-label="Anatomy of an AI shopping answer"><div class="card"><p class="q">What’s a good waterproof jacket for hiking in heavy rain, under $250?</p><p class="a">For steady heavy rain, look for a 3-layer shell with fully taped seams. Good options:</p><ol><li class='named'><span>1</span><span><b>Ridgeline Storm Shell</b><small>3-layer, 20K waterproof rating, pit zips</small></span></li><li class='named'><span>2</span><span><b>Northpass Rain Jacket</b><small>Light, packs into its pocket</small></span></li><li class='yours'><span>3</span><span><b>Your jacket</b><small>Named third: its page states the rating and seam taping</small></span></li><li class='missing'><span>—</span><span><b>Your other jacket</b><small>Not named: its page doesn’t say how waterproof it is</small></span></li></ol></div>
+    <figcaption><span class="lbl l1"><b>Named.</b> The shortlist is all a shopper sees.</span><span class="lbl l2"><b>Yours, third.</b> The page states the rating and seam taping.</span><span class="lbl l3"><b>Missing.</b> No waterproof rating on the page.</span></figcaption></figure></div>
+<div class="def"><p><mark>AI shopping visibility is how often AI assistants like ChatGPT, Google AI Overviews and Perplexity name your products when a shopper asks what to buy.</mark> It is measured per product, on the questions your buyers actually ask, and compared against the competing products AI recommends instead.</p></div>
+<div class="qa">
+<section class="qblock" id="why-now"><h2>Why does it matter now?</h2><div><p class="short">Shoppers already ask AI what to buy, and the click to a search result is shrinking.</p><div class="more"><div class='facts'><div><b>42%</b><span>of consumers have used AI assistants for online shopping, up 4 points since March 2026. <a href="https://business.adobe.com/assets/pdfs/resources/sdk/ai-traffic-trends-report-august-2026/ai-traffic-trends-report-2026-08-19.pdf">Adobe Consumer Survey, July 2026</a></span></div><div><b>+127%</b><span>year-over-year growth in AI-driven traffic to US retail sites in August 2026. <a href="https://business.adobe.com/resources/holiday-shopping-report.html">Adobe Digital Insights</a></span></div><div><b>60%</b><span>higher conversion rate for AI-referred retail visitors than for non-AI traffic, July 2026. <a href="https://business.adobe.com/assets/pdfs/resources/sdk/ai-traffic-trends-report-august-2026/ai-traffic-trends-report-2026-08-19.pdf">Adobe Digital Insights</a></span></div><div><b>~50%</b><span>of consumers already use AI-powered search. <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search">McKinsey</a></span></div><div><b>$750B</b><span>in US revenue projected to flow through AI-powered search by 2028. <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search">McKinsey projection</a></span></div><div><b>8% vs 15%</b><span>of Google visits led to a click on a search result when an AI summary appeared, versus without one. <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center, 2025</a></span></div></div></div></div></section>
+<section class="qblock" id="vs-seo"><h2>Isn't this just SEO?</h2><div><p class="short">SEO asks whether a page is relevant to a search. AI shopping visibility asks whether a product gets named when a shopper describes what they need.</p><div class="more"><div class='tw'><table><thead><tr><th></th><th>SEO</th><th>AEO / GEO</th><th class='us'>AI shopping visibility</th></tr></thead><tbody><tr><th>Goal</th><td>Rank pages in search results</td><td>Be quoted or cited in AI answers</td><td class='us'>Be one of the products AI recommends</td></tr><tr><th>Where</th><td>Google, Bing</td><td>ChatGPT, Perplexity, Google AI Overviews, Gemini</td><td class='us'>The same assistants, on shopping questions</td></tr><tr><th>Unit</th><td>A web page</td><td>A piece of content or a brand</td><td class='us'>A single product</td></tr><tr><th>Metric</th><td>Rankings, clicks</td><td>Mentions, citations</td><td class='us'>Share of answers naming the product, position, share of voice</td></tr><tr><th>Stability</th><td>Rankings move slowly</td><td>Answers vary by run</td><td class='us'>Answers vary by run, so it’s measured repeatedly</td></tr></tbody></table></div><p style='margin-top:16px'>Strong SEO still helps. Assistants with web search read the same pages search engines rank. But a page can rank well and still leave out the details an assistant needs to match the product to a specific need, like who it suits, what it’s made of or what it can’t do.</p></div></div></section>
+<section class="qblock" id="how-ai-chooses"><h2>How does AI pick products?</h2><div><p class="short">It reads a handful of pages and names the few products it can justify for the shopper's need.</p><div class="more"><ol><li><b>The shopper asks with a need.</b> “A waterproof jacket for hiking in heavy rain, under $250.” One question carries a category, a use, a condition and a budget.</li><li><b>The assistant searches.</b> It runs one or more web searches built from the question. Google describes running several related searches at once for AI Mode.</li><li><b>It reads sources.</b> Product pages, editorial roundups, retailer listings, reviews and forum threads.</li><li><b>It matches products to the need.</b> Products whose pages confirm the conditions (waterproof rating, use, price) are easy to recommend. Vague pages give it nothing to work with.</li><li><b>It names the few it can justify.</b> Usually three to five products, often with links to the sources it used.</li></ol><p class='aside'>The answer at the top of this page is an illustration. The products are invented.</p></div></div></section>
+<section class="qblock" id="measure"><h2>How do you measure it?</h2><div><p class="short">Ask your buyer questions several times, on more than one assistant, and track four numbers per product over time.</p><div class="more"><div class='pairs'><div><h3>Visibility</h3><p>The share of answers that name your product.</p></div><div><h3>Average position</h3><p>Where your product appears when it’s named. First beats fourth.</p></div><div><h3>Share of voice</h3><p>Your mentions as a share of all product mentions in those answers.</p></div><div><h3>Citations</h3><p>The sites AI cites, and whether they mention you.</p></div></div><p style='margin-top:16px'>An assistant can recommend one of your products for one need and never mention the rest of your catalog. A brand-level number hides that.</p></div></div></section>
+<section class="qblock" id="work-on"><h2>What can a store work on?</h2><div><p class="short">Mostly product data: state the facts a shopper's question depends on, and get mentioned where AI reads.</p><div class="more"><div class='pairs'><div><h3>Who it’s for and what it’s for</h3><p>“For hiking in heavy rain” can be matched to a question. “For any adventure” can’t.</p></div><div><h3>The specs buyers filter on</h3><p>Materials or ingredients, sizes, weight, ratings, compatibility. Written in text, not only in images.</p></div><div><h3>Stated limits</h3><p>What it isn’t suited for. It helps AI recommend the product for the right question.</p></div><div><h3>Answers on the page</h3><p>The questions customers ask support, answered in a sentence or two on the product page.</p></div><div><h3>Complete structured data</h3><p>Product markup with price, availability and reviews, matching what the page says.</p></div><div><h3>Mentions where AI looks</h3><p>The roundups, retailers and forums that keep showing up in the citations for your questions.</p></div></div><p class='aside'>Which of these moves visibility most is still an open question, for us and for everyone working on it. Measure first, change one thing, and measure again on the same questions.</p></div></div></section>
+<section class="qblock" id="faq"><h2>Other questions</h2><div><p class="short">Short answers to what brands ask most.</p><div class="more"><div class='faq'><details><summary>Is AI shopping visibility the same as AEO or GEO?</summary><p>Close. AEO and GEO cover any content an AI might quote or cite. AI shopping visibility is the part that matters to an online store: whether your products get recommended.</p></details><details><summary>Does ranking on Google mean AI will recommend my products?</summary><p>Not necessarily. Assistants read pages that rank well, but they recommend specific products for specific needs. A product page that doesn’t state what the product is for can rank and still be left out of the answer.</p></details><details><summary>Why does my product show up in one answer but not the next?</summary><p>AI answers are generated fresh each time, so they vary. That is why visibility is measured as a share of many answers, not from a single check.</p></details><details><summary>Can I measure it for my whole catalog?</summary><p>Checking by hand works for a few products. Produkto measures every product in a Shopify catalog on your buyer questions, daily, across ChatGPT, Google AI Overviews and Perplexity, and shows the competing products AI picks instead.</p></details></div></div></div></section>
+</div>
+<div class="end"><p>See which of your products AI recommends.</p><a href="#">Book a demo</a><ol class="refs"><li><a href="https://business.adobe.com/assets/pdfs/resources/sdk/ai-traffic-trends-report-august-2026/ai-traffic-trends-report-2026-08-19.pdf">Adobe Consumer Survey, July 2026</a></li><li><a href="https://business.adobe.com/resources/holiday-shopping-report.html">Adobe Digital Insights</a></li><li><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search">McKinsey</a></li><li><a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center, 2025</a></li></ol></div>
+</body></html>

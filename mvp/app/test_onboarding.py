@@ -47,10 +47,14 @@ class OnboardingTests(unittest.TestCase):
         b=db.brand('test.invalid')
         self.assertEqual((b['aliases'],b['country'],b['currency']),(['Alias'],'ES','EUR'))
 
-    def test_existing_frozen_questions_stay_locked(self):
+    def test_scanned_questions_edit_as_new_version(self):
         ps=db.save_prompts('test.invalid',['Original question'],['best'],['Cleanser'],[[1]])
         db.freeze(ps['id'])
-        app.api_questions({'d':'test.invalid'}, {'questions':'[{"q":"Changed","tag":"best"}]'})
-        self.assertEqual(db.get_prompt_set('test.invalid')['prompts'],['Original question'])
-        with patch('competitor_setup.ready', return_value=True):
-            self.assertIn('These are locked now',app.view_product({'d':'test.invalid'})[1])
+        # Unchanged questions do not create a version.
+        app.api_questions({'d':'test.invalid'}, {'questions':'[{"q":"Original question","tag":"best","products":[1]}]'})
+        self.assertEqual(db.get_prompt_set('test.invalid')['id'],ps['id'])
+        app.api_questions({'d':'test.invalid'}, {'questions':'[{"q":"Changed","tag":"best","products":[1]}]'})
+        new=db.get_prompt_set('test.invalid')
+        self.assertEqual(new['prompts'],['Changed'])
+        self.assertNotEqual(new['id'],ps['id'])
+        self.assertIsNotNone(db.one('SELECT frozen_at FROM prompt_sets WHERE id=?',(ps['id'],))['frozen_at'])

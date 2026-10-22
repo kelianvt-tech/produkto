@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent · 5 By product</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* 5 · By product: the agent's work organised around the catalog, like the rest of Produkto. */
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap}
+.sub{margin:0 0 20px;color:var(--muted)}
+.tabs{display:flex;gap:24px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.tabs a{padding:0 0 11px;text-decoration:none;color:var(--muted);font-weight:600;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs a[aria-current]{color:var(--ink);border-color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:14px;background:var(--surface);margin-bottom:20px}
+.kpis div{padding:16px 20px}
+.kpis div+div{border-left:1px solid var(--line)}
+.kpis span{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.kpis b{font-size:26px;color:var(--ink);letter-spacing:-.01em}
+.kpis small{font-size:13px;color:var(--muted);margin-left:6px}
+main{min-width:0}
+.scroll{overflow-x:auto;border-radius:14px}
+.scroll table.cat{min-width:720px}
+table.cat{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cat th{font-size:12.5px;font-weight:600;color:var(--muted);text-align:left;padding:12px 16px;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.cat td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:middle;font-size:14px}
+.cat tr:last-child td{border-bottom:0}
+.cat tbody tr{cursor:pointer;transition:background .15s}
+.cat tbody tr:hover{background:var(--surface-2)}
+.cat .p{display:flex;align-items:center;gap:12px}
+.cat .p b{color:var(--ink);font-size:15px}
+.cat .chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;font-size:12.5px;font-weight:600;border:1px solid var(--line-2);color:var(--ink-2);text-decoration:none;background:var(--surface)}
+.chip.need{border-color:transparent;background:var(--warn-soft);color:var(--warn)}
+.chip.live{border-color:transparent;background:var(--ok-soft);color:var(--ok)}
+.chip.sch{border-color:transparent;background:var(--accent-soft);color:var(--accent-ink)}
+.facts-n{display:flex;align-items:center;gap:8px}
+.facts-n .bar{width:70px;height:6px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.facts-n .bar i{display:block;height:100%;background:var(--warn)}
+/* product workspace */
+.ws{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;align-items:start}
+.prodcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:sticky;top:60px}
+.prodcard img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--surface-2)}
+.prodcard .in{padding:16px 18px}
+.prodcard h2{font-size:18px;margin:0 0 4px;color:var(--ink)}
+.prodcard h3{font-size:13px;color:var(--muted);margin:16px 0 8px}
+.prodcard ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13.5px}
+.prodcard li{display:flex;justify-content:space-between;gap:10px}
+.prodcard li span:first-child{color:var(--muted)}
+.prodcard li.miss span:last-child{color:var(--warn);font-weight:600}
+.work{display:grid;gap:16px}
+.wtabs{display:flex;gap:6px;flex-wrap:wrap}
+.wtabs a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink-2);font-weight:600;font-size:14px}
+.wtabs a[aria-current]{border-color:var(--ink);color:var(--ink);box-shadow:0 0 0 3px var(--surface-2)}
+.pane{background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.pane header{display:flex;align-items:center;gap:10px;padding:16px 22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.pane header .grow{flex:1}
+.cols{display:grid;grid-template-columns:1fr 1fr}
+.cols section{padding:22px}
+.cols section+section{border-left:1px solid var(--line)}
+.cols h4{font-size:12.5px;color:var(--muted);margin:0 0 12px;font-weight:700}
+.cols .old{color:var(--muted)}
+.need-box{margin:0 22px 22px;padding:16px;border-radius:12px;background:var(--warn-soft)}
+.need-box b{color:var(--warn)}
+.need-box .g{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.need-box label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px}
+/* calendar as product timeline */
+.tl{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:auto}
+.tl-grid{display:grid;grid-template-columns:220px repeat(14,minmax(56px,1fr));min-width:1000px}
+.tl-grid>div{border-bottom:1px solid var(--line);padding:10px 8px;min-height:58px;position:relative}
+.tl-grid .hd{min-height:auto;font-size:12px;color:var(--muted);font-weight:600;text-align:center;background:var(--surface-2)}
+.tl-grid .hd b{display:block;font-size:14px;color:var(--ink)}
+.tl-grid .hd.today b{color:var(--accent-ink)}
+.tl-grid .pn{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink);font-size:14px;border-right:1px solid var(--line)}
+.tl-grid .pn .thumb{width:34px;height:34px}
+.tl-grid .c{border-left:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.tl-grid .c.we{background:var(--bg)}
+.mark{display:grid;place-items:center;width:34px;height:34px;margin:auto;border-radius:10px;background:color-mix(in srgb,var(--t) 16%,var(--surface));color:var(--t);text-decoration:none}
+.mark svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+.mark.pend{background:transparent;outline:1.5px dashed var(--t);outline-offset:-2px}
+.mark[aria-current]{outline:2px solid var(--t);outline-offset:2px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:12px 0 18px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.peek{margin-top:16px}
+/* setup split: form + preview */
+.split{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start}
+.stepper{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.stepper a{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--muted);font-weight:600;font-size:13.5px;background:var(--surface)}
+.stepper a.done{color:var(--ok)}
+.stepper a.done svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.4}
+.stepper a[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.formcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 30px}
+.formcard h2{font-size:21px;margin:0 0 4px;color:var(--ink)}
+.formcard .lede{margin:0 0 22px;color:var(--muted)}
+.preview{position:sticky;top:60px;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.preview header{padding:12px 16px;font-size:13px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.preview header i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.preview .shot{padding:18px}
+.preview .shot img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin-bottom:14px}
+.preview h3{margin:0 0 6px;font-size:17px;color:var(--ink)}
+.preview p{margin:0;font-size:14px;line-height:1.6}
+@media (max-width:1100px){.ws,.split{grid-template-columns:1fr}.prodcard,.preview{position:static}.prodcard img{aspect-ratio:3/1}.cols{grid-template-columns:1fr}.cols section+section{border-left:0;border-top:1px solid var(--line)}.kpis{grid-template-columns:1fr 1fr}.ws>*,.split>*{min-width:0}.need-box .g{grid-template-columns:1fr}}
+</style></head>
+<body>
+<script src="data.js"></script>
+<script src="shared.js"></script>
+<script>
+(function(){
+var A=AGENT,e=H.esc;
+function head(on){
+  return '<div class="head">'+H.title()+'<a class="btn" href="#setup/voice">'+H.icon('gear')+'Settings</a></div><p class="sub">What the agent is doing for each product in your catalog.</p><nav class="tabs" aria-label="Agent views">'+[['drafts','Products'],['calendar','Calendar'],['live','Live']].map(function(t){return '<a href="#'+t[0]+'"'+(on===t[0]?' aria-current="page"':'')+'>'+t[1]+'</a>'}).join('')+'</nav>';
+}
+function forProduct(title){return A.drafts.filter(function(d){return d.product===title})}
+function chip(d){
+  var cls=H.needsFacts(d)?'need':d.status==='published'?'live':(d.status==='approved'||d.status==='scheduled')?'sch':'';
+  var lab={product_fix:'Page fix',faq:'FAQ',comparison:'Comparison',guide:'Guide'}[d.type];
+  return '<a class="chip '+cls+' t-'+d.type+'" href="#draft/'+d.id+'"><i class="type-dot"></i>'+lab+(cls==='need'?' · '+d.gaps+' facts':cls==='live'?' · live':cls==='sch'?' · '+H.date(d.planned,{month:'short',day:'numeric'}):'')+'</a>';
+}
+function products(){
+  var missing={};A.missing.forEach(function(m){missing[m.title]=m.items.length});
+  var waiting=A.drafts.filter(function(d){return d.status==='draft'}).length;
+  var rows=A.products.map(function(p){var ds=forProduct(p.title);var next=ds.filter(function(d){return d.planned&&d.status!=='published'}).map(function(d){return d.planned}).sort()[0];var m=missing[p.title]||0;
+    return '<tr onclick="location.hash=\'product/'+p.handle+'\'"><td><div class="p"><img class="thumb" src="'+e(p.image)+'" alt=""><b>'+e(p.title)+'</b></div></td><td><div class="chips">'+(ds.map(chip).join('')||'<span class="muted">Nothing yet</span>')+'</div></td><td><div class="facts-n"><span class="bar"><i style="width:'+Math.min(100,m*16)+'%"></i></span><span class="num">'+m+' missing</span></div></td><td class="num">'+(next?H.date(next):'<span class="muted">—</span>')+'</td></tr>'}).join('');
+  return head('drafts')+'<div class="kpis"><div><span>Waiting on you</span><b class="num">'+waiting+'</b><small>drafts</small></div><div><span>Facts buyers ask that your pages leave out</span><b class="num">'+H.missingTotal+'</b></div><div><span>Scheduled</span><b class="num">1</b><small>next today</small></div><div><span>Page fixes this month</span><b class="num">2</b><small>of 50</small></div></div>'+
+   '<div class="scroll"><table class="cat"><thead><tr><th scope="col">Product</th><th scope="col">What the agent wrote</th><th scope="col">Facts</th><th scope="col">Next goes live</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+}
+function workspace(handle,draftId){
+  var p=A.products.filter(function(x){return x.handle===handle})[0];
+  var ds=forProduct(p.title);var d=draftId?H.draft(draftId):ds[0];
+  var miss=(A.missing.filter(function(m){return m.handle===handle})[0]||{items:[]}).items;
+  var card='<aside class="prodcard"><img src="'+e(p.image)+'" alt=""><div class="in"><h2>'+e(p.title)+'</h2><span class="muted" style="font-size:13.5px">'+ds.length+' page'+(ds.length===1?'':'s')+' from the agent</span><h3>Facts buyers check</h3><ul>'+miss.slice(0,6).map(function(m){return '<li class="miss"><span>'+e(m.label)+'</span><span>Missing</span></li>'}).join('')+'</ul></div></aside>';
+  if(!d)return head('drafts')+'<div class="ws">'+card+'<div class="pane" style="padding:22px"><p class="muted">The agent hasn\'t written anything for this product yet.</p></div></div>';
+  var qs=d.open_questions.slice(0,d.gaps);
+  var after=d.type==='faq'?d.faqs.map(function(f){return '<h2>'+e(f.q)+'</h2><p>'+e(f.a)+'</p>'}).join(''):'<h2 style="margin-top:0">'+e(d.new_title||d.title)+'</h2>'+d.html+(d.specs.length?'<table><tbody>'+d.specs.map(function(s){return '<tr><th>'+e(s.label)+'</th><td>'+e(s.value)+'</td></tr>'}).join('')+'</tbody></table>':'');
+  var before=d.type==='product_fix'?'<h2 style="margin-top:0">'+e(d.cur_title)+'</h2><p>'+e(d.cur_desc)+'</p>':'<p>Not on your store yet.</p>';
+  return head('drafts')+'<p style="margin:-8px 0 16px"><a href="#drafts" class="btn ghost">'+H.icon('back')+'All products</a></p><div class="ws">'+card+'<div class="work"><nav class="wtabs" aria-label="Pages for this product">'+ds.map(function(x){return '<a href="#draft/'+x.id+'"'+(x.id===d.id?' aria-current="page"':'')+'><span class="t-'+x.type+'"><i class="type-dot"></i></span>'+H.TYPES[x.type]+'</a>'}).join('')+'</nav>'+
+   '<div class="pane"><header>'+H.status(d)+'<span class="muted" style="font-size:13.5px">'+(d.planned?'Goes live '+H.date(d.planned)+', 9:00 '+A.store.tz:'Not on the calendar yet')+'</span><span class="grow"></span><button class="btn ghost">Edit</button><button class="btn">Reject</button><button class="btn primary"'+(qs.length?' disabled':'')+'>Approve</button></header>'+
+   (qs.length?'<div class="need-box" style="margin-top:22px"><b>'+qs.length+' facts before you can approve</b><div class="g">'+qs.map(function(q,i){return '<div><label for="n'+i+'">'+e(q)+'</label><input class="input" id="n'+i+'"></div>'}).join('')+'</div></div>':'')+
+   '<div class="cols"><section class="old"><h4>Now on your store</h4><div class="doc">'+before+'</div></section><section><h4>With this draft</h4><div class="doc">'+after+'</div></section></div></div></div></div>';
+}
+function calendar(sel){
+  var days=[];for(var i=0;i<14;i++)days.push(new Date(2026,9,15+i));
+  var ico={product_fix:'doc',faq:'spark',comparison:'grid',guide:'cal'};
+  var html='<div class="tl"><div class="tl-grid"><div class="hd" style="text-align:left">Product</div>'+days.map(function(dt){return '<div class="hd'+(H.iso(dt)===H.today?' today':'')+'">'+dt.toLocaleDateString('en-US',{weekday:'short'})+'<b>'+dt.getDate()+'</b></div>'}).join('')+
+   A.products.map(function(p){return '<div class="pn"><img class="thumb" src="'+e(p.image)+'" alt="">'+e(p.title)+'</div>'+days.map(function(dt){var iso=H.iso(dt),evs=H.onDay(iso).filter(function(d){return d.product===p.title});return '<div class="c'+(dt.getDay()%6===0?' we':'')+'">'+evs.map(function(d){return '<a class="mark t-'+d.type+(d.status==='draft'?' pend':'')+'" href="#calendar/'+d.id+'" title="'+e(d.title)+'"'+(String(d.id)===sel?' aria-current="true"':'')+'>'+H.icon(ico[d.type])+'</a>'}).join('')+'</div>'}).join('')}).join('')+'</div></div>';
+  var d=sel&&H.draft(sel);
+  return head('calendar')+'<div class="legend">'+Object.keys(H.TYPES).map(function(k){return '<span class="t-'+k+'"><i class="type-dot"></i>'+H.TYPES[k]+'</span>'}).join('')+'<span>Dashed: needs your approval</span><span style="margin-left:auto">'+A.store.tz+'</span></div>'+html+(d?'<div class="peek pane"><header>'+H.img(d)+'<div><b style="color:var(--ink)">'+e(d.title)+'</b><div class="muted" style="font-size:13.5px">'+H.date(d.planned,{weekday:'long',month:'long',day:'numeric'})+', 9:00 '+A.store.tz+' · '+e(d.why||'')+'</div></div><span class="grow"></span>'+H.status(d)+'<a class="btn primary" href="#draft/'+d.id+'">Open</a></header></div>':'');
+}
+function live(){
+  var l=H.byStatus(['published']);
+  return head('live')+'<div class="scroll"><table class="cat"><thead><tr><th scope="col">Product</th><th scope="col">Live page</th><th scope="col">Since</th><th scope="col">Mentions before → after</th><th></th></tr></thead><tbody>'+l.map(function(d){return '<tr><td><div class="p">'+H.img(d)+'<b>'+e(d.product)+'</b></div></td><td>'+e(d.title)+' <span class="example">Example</span></td><td>'+H.date(d.planned)+'</td><td class="muted">Too early to read</td><td><a class="btn" href="'+e(d.live_url)+'">View</a></td></tr>'}).join('')+'</tbody></table></div>';
+}
+function setup(step){
+  step=step||'voice';
+  var hel=A.products.filter(function(p){return p.handle==='full-clubhouse-routine'})[0];
+  var prev={voice:'<h3>'+e(A.voice.sample_product)+'</h3><p>'+e(A.voice.sample)+'</p>',brand:'<h3>What the agent will say about you</h3><p>'+e((A.brief||{}).story||'')+'</p>',scope:'<h3>On every product page</h3><p>Title, description, spec table and an FAQ section. Comparison pages and guides go on your blog.</p>',schedule:'<h3>Next two weeks</h3><p>3 pages a week, Monday to Friday at 9:00 '+A.store.tz+'.</p>',facts:'<h3>Helsinki Moisturiser</h3><p>Size: <b>75 ml</b> (from goodhoodstore.com, once you use it). Every answer becomes a fact the agent can state on your page.</p>',shopify:'<h3>Publishing</h3><p>Approved pages go live on their date. Every change keeps the old version for one-click undo.</p>'}[step];
+  return head('setup').replace(/<nav class="tabs"[\s\S]*<\/nav>/,'')+'<nav class="stepper" aria-label="Setup steps">'+H.STEPS.map(function(s,i){return '<a href="#setup/'+s[0]+'" class="'+(i<4&&s[0]!==step?'done':'')+'"'+(s[0]===step?' aria-current="step"':'')+'>'+(i<4&&s[0]!==step?H.icon('check'):'')+s[1]+'</a>'}).join('')+'</nav><div class="split"><section class="formcard"><h2>'+H.setupIntro[step][0]+'</h2><p class="lede">'+e(H.setupIntro[step][1])+'</p>'+H.setupBody(step)+'</section><aside class="preview"><header><i></i>How it will read</header><div class="shot"><img src="'+e(hel.image)+'" alt="">'+prev+'</div></aside></div>';
+}
+window.V={name:'By product',render:function(r){
+  if(r[0]==='product')return workspace(r[1]);
+  if(r[0]==='draft'){var d=H.draft(r[1]);var p=A.products.filter(function(x){return x.title===d.product})[0];return workspace(p.handle,d.id)}
+  if(r[0]==='calendar')return calendar(r[1]);
+  if(r[0]==='live')return live();
+  if(r[0]==='setup')return setup(r[1]);
+  return products();
+}};
+})();
+</script>
+</body></html>

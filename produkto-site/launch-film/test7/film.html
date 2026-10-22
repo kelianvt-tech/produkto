@@ -1,0 +1,93 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Plex;font-weight:400;src:url(fonts/plexmono-400.woff2)}
+@font-face{font-family:Plex;font-weight:500;src:url(fonts/plexmono-500.woff2)}
+@font-face{font-family:Plex;font-weight:700;src:url(fonts/plexmono-700.woff2)}
+html,body{margin:0;background:#0b1b35;overflow:hidden}canvas{display:block}
+</style></head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// Test 3: logo on navy -> typing scan -> the product's filling P loader -> "Your AI visibility" -> "Taken care of." -> url.
+// Drawn from t (seconds), so seek(t) gives the same frame every time.
+const W=1920,H=1080,FPS=30,DUR=5.0;
+const c=document.getElementById('c'),x=c.getContext('2d');
+const NAVY='#0b1b35',LIGHT='#f2f1ee',FG='#eef2f8',DIM='#7f8fab';
+const CUTS=[0.08,0.95,1.75,2.75,3.70,4.45];   // hard cuts; the sound hits on these
+let logo,P=[];
+function rnd(a,b=0){let h=Math.sin(a*127.1+b*311.7)*43758.5453;return h-Math.floor(h);}
+const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),ease=k=>k<=0?0:k>=1?1:1-Math.pow(2,-10*k);
+function font(sz,w=400){x.font=`${w} ${sz}px Plex`;}
+function txt(s,X,Y,col,sz,w=400,al='left'){font(sz,w);x.fillStyle=col;x.textAlign=al;x.textBaseline='alphabetic';x.fillText(s,X,Y);}
+function cursor(t){return Math.floor(t*2.6)%2===0;}
+function fill(col){x.fillStyle=col;x.fillRect(0,0,W,H);}
+
+function asciiField(t,col,alpha){ // moving character field behind the logo
+  font(16,400);x.fillStyle=col;x.globalAlpha=alpha;const ch=' .:-=+';x.textAlign='left';
+  for(let gy=0;gy<H/22;gy++)for(let gx=0;gx<W/12;gx++){
+    const d=Math.hypot(gx*12-W/2,(gy*22-H/2)*1.6)/700;
+    const v=Math.sin(gx*.21+t*1.7)*Math.cos(gy*.33-t*1.1)*.5+.5-d*.55;
+    const k=Math.floor(Math.max(0,v)*ch.length);if(k>0)x.fillText(ch[Math.min(k,ch.length-1)],gx*12,gy*22);
+  }x.globalAlpha=1;
+}
+
+// The results loader from the product (mvp/app/p_loader.py): the P's dots fill bottom to top.
+function loaderP(t){
+  const u=640,dot=u/120*1.15,N=P.length,f=(k=>1-(1-k)*(1-k))(cl((t-1.78)/.85));
+  const front=f*N;
+  for(let i=0;i<N;i++){const p=P[i],a=cl((front-i)/40);
+    x.fillStyle=`rgba(238,242,248,${(0.09+0.91*a).toFixed(3)})`;
+    x.fillRect(W/2+p.x*u-dot/2,H/2+p.y*u-dot/2,dot,dot);}
+}
+
+const LOG=[['> reading catalog',1.22],['> writing buyer questions',1.32],['> asking AI',1.42],['> reading answers',1.52]];
+function scan(t){
+  const L=140,T=150,pre='kelian@produkto ~ % ';
+  txt(pre,L,T,FG,34,400);font(34,400);const pw=x.measureText(pre).width;
+  const cmd='produkto scan'.slice(0,Math.max(0,Math.floor((t-.98)*42)));txt(cmd,L+pw,T,FG,34,700);
+  font(34,700);const cw=x.measureText(cmd).width;
+  if(t>1.14)txt('scanning catalog...',L,T+50,DIM,30);
+  LOG.forEach(([s,t0],i)=>{if(t>=t0)txt(s,L,T+130+i*44,DIM,28);});
+  const shown=LOG.filter(([,t0])=>t>=t0);
+  if(cursor(t)||t<1.22){x.fillStyle=FG;
+    if(!shown.length)x.fillRect(L+pw+cw+6,T-28,16,36);
+    else{font(28,400);x.fillRect(L+x.measureText(shown[shown.length-1][0]).width+8,T+130+(shown.length-1)*44-26,14,32);}}
+}
+
+function glitch(t){ // two-frame slice offset right after each cut
+  const near=CUTS.find(k=>t>=k&&t<k+2/FPS);if(near===undefined)return;
+  for(let i=0;i<9;i++){const y0=Math.floor(rnd(i,near)*H),hh=8+Math.floor(rnd(i,near+1)*60),dx=(rnd(i,near+2)-.5)*90;
+    x.drawImage(c,0,y0,W,hh,dx,y0,W,hh);}
+}
+
+function draw(t){
+  x.setTransform(1,0,0,1,0,0);x.globalAlpha=1;
+  if(t<.08){fill(NAVY);return;}
+  if(t<.95){ // 1. logo on navy, texture moving behind
+    fill(NAVY);asciiField(t,'#9fb3d6',.2);
+    const lw=600,lh=lw*logo.height/logo.width;x.drawImage(logo,(W-lw)/2,(H-lh)/2-10,lw,lh);
+    txt('is AI recommending your products?',W/2,H/2+lh/2+52,DIM,22,400,'center');
+  } else if(t<1.75){fill(NAVY);scan(t);}                 // 2. typing scan only
+  else if(t<2.75){fill(NAVY);loaderP(t);}                // 3. the P loading, no text
+  else if(t<3.70){fill(NAVY);                            // 4. Your AI visibility
+    const s=1+.035*ease((t-2.75)/.9);x.setTransform(s,0,0,s,W/2*(1-s),H/2*(1-s));
+    txt('Your AI visibility',W/2,H/2+46,'#ffffff',136,700,'center');}
+  else if(t<4.45){fill(LIGHT);                           // 5. different colour: Taken care of.
+    const s=1+.035*ease((t-3.70)/.75);x.setTransform(s,0,0,s,W/2*(1-s),H/2*(1-s));
+    txt('Taken care of.',W/2,H/2+46,NAVY,136,700,'center');}
+  else{fill(NAVY);                                       // 6. url
+    font(46,500);const s='getprodukto.com',w=x.measureText(s).width;
+    txt(s,W/2-w/2-14,H/2+16,'#ffffff',46,500);
+    if(cursor(t-4.45+.01)){x.fillStyle='#ffffff';x.fillRect(W/2+w/2-8,H/2-22,24,46);}}
+  x.setTransform(1,0,0,1,0,0);glitch(t);
+}
+window.seek=t=>draw(t);
+window.ready=(async()=>{
+  await Promise.all([400,500,700].map(w=>document.fonts.load(`${w} 30px Plex`)));
+  logo=new Image();logo.src='produkto-wordmark-light.png';await logo.decode();
+  P=(await (await fetch('p-points.txt')).text()).trim().split(';').map((r,i)=>{const p=r.split(',');return{x:+p[0],y:+p[1],k:+p[1]+((i*0.618)%1)*0.04};});
+  P.sort((a,b)=>b.k-a.k);   // bottom first, same order as p_loader.py
+  draw(0);return true;
+})();
+if(!navigator.webdriver){let s=performance.now();(function loop(){window.ready.then(()=>{draw(((performance.now()-s)/1000)%DUR);requestAnimationFrame(loop);});})();}
+</script></body></html>

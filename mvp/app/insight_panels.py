@@ -1040,7 +1040,18 @@ function later(fn){clearTimeout(hideTimer);hideTimer=setTimeout(()=>{if(!overTip
 tip.addEventListener('pointerenter',()=>{overTip=true;clearTimeout(hideTimer);});
 tip.addEventListener('pointerleave',()=>{overTip=false;
   later(activeClear||(()=>tip.classList.remove('shown')));});
-const hideTip=()=>later(()=>tip.classList.remove('shown'));
+// The trend chart's guide line and markers. Other charts on the page set
+// activeClear to a tooltip-only hide, so the trend registers its own clear
+// here and every hide path also runs it.
+let trendClear=null;
+const hideAll=()=>{tip.classList.remove('shown');if(trendClear)trendClear();};
+const hideTip=()=>later(hideAll);
+// Backstop: a fast exit (out of the window, or straight onto another panel)
+// can skip the chart's pointerleave, leaving the guide line and markers
+// stuck on the chart. Any pointer movement outside the chart and tooltip,
+// or the pointer leaving the page, clears them.
+document.addEventListener('pointermove',e=>{if(!svg.contains(e.target)&&!tip.contains(e.target)){overSvg=false;later(()=>{(activeClear||hideAll)();hideAll();});}},{passive:true});
+document.documentElement.addEventListener('pointerleave',()=>{overSvg=false;overTip=false;(activeClear||hideAll)();hideAll();});
 // The tooltip lets the pointer pass through (CSS), so dragging across the
 // dates never gets stuck on it. A long list is scrolled with the wheel over
 // the chart instead; once the list reaches its end, the page scrolls as usual.
@@ -1231,7 +1242,7 @@ function drawTrend(){
     hit.addEventListener('pointerenter',show);hit.addEventListener('focus',show);hit.addEventListener('blur',clear);hit.addEventListener('click',show);
     svg.append(hit);
   });
-  activeClear=clear;
+  activeClear=clear;trendClear=()=>{marks.replaceChildren();guide.setAttribute('visibility','hidden');};
   svg.onpointerleave=()=>later(clear);
   // No colour key under the chart: each product in the rankings carries its
   // brand's dot, so the list is the key.
@@ -1446,7 +1457,9 @@ function drawPositionTrend(){
         const t=document.createElement('span');t.textContent=s.name;
         if(s.brand){const br=document.createElement('small');br.textContent=s.brand;t.append(br);}
         title.append(tipMark(s.logo,s.initials||s.brand||s.name),t);
-        const date=document.createElement('div');date.textContent=longLabel(B[i].start);const value=document.createElement('div');value.textContent='Average position · #'+v.toFixed(1);tip.append(title,date,value);tip.classList.add('shown');placeTip(x(i));};
+        const date=document.createElement('div');date.textContent=longLabel(B[i].start);const value=document.createElement('div');value.textContent='Average position · #'+v.toFixed(1);tip.append(title,date,value);tip.classList.add('shown');placeTip(x(i));
+        // Bring the hovered marker in front of overlapping ones so its ring shows.
+        if(g.nextSibling)svg.append(g);};
       g.addEventListener('pointerenter',show);g.addEventListener('focus',show);g.addEventListener('click',show);g.addEventListener('blur',()=>tip.classList.remove('shown'));svg.append(g);
     });
   });

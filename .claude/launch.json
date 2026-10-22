@@ -10,6 +10,84 @@
       "name": "produkto-mvp",
       "url": "http://localhost:8010",
       "port": 8010
+    },
+    {
+      "name": "produkto-mvp-dev",
+      "url": "http://localhost:8011",
+      "port": 8011
+    },
+    {
+      "name": "produkto-demo-site",
+      "url": "http://localhost:8013",
+      "port": 8013
+    },
+    {
+      "name": "produkto-press-shots",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/bd32d9c5-60d4-4dcc-a949-b3ea030bcee2/scratchpad/app && PRODUKTO_DB=/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/bd32d9c5-60d4-4dcc-a949-b3ea030bcee2/scratchpad/demo-site.db PRODUKTO_SCANS=0 PRODUKTO_DAILY_SCANS=0 PRODUKTO_OPPORTUNITIES=1 PORT=8015 exec python3 app.py"
+      ],
+      "port": 8015
+    },
+    {
+      "name": "produkto-site-static",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/bd32d9c5-60d4-4dcc-a949-b3ea030bcee2/scratchpad/site && exec python3 -m http.server 4176"
+      ],
+      "port": 4176
+    },
+    {
+      "name": "produkto-site-local",
+      "url": "http://localhost:4175",
+      "port": 4175
+    },
+    {
+      "name": "produkto-agent-dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd mvp/app && PRODUKTO_DB=/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/19454244-71df-4f2c-9571-f7eee11bd34c/scratchpad/dev16.db PRODUKTO_DAILY_SCANS=0 PRODUKTO_SCANS=0 PRODUKTO_CONTENT_AGENT=1 PRODUKTO_OPPORTUNITIES=1 PORT=8012 exec python3 app.py"
+      ],
+      "port": 8012
+    },
+    {
+      "name": "produkto-fix-preview",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd \"/Users/kelianvantulder/Desktop/Kelian OS/AEO-for-eccomerce-brands/mvp/app\" && PRODUKTO_DB=/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/130da19a-cea8-4aef-90de-e9dea0c6d5c0/scratchpad/preview.db PRODUKTO_DAILY_SCANS=0 PRODUKTO_SCANS=0 PRODUKTO_CONTENT_AGENT=1 PRODUKTO_OPPORTUNITIES=1 PRODUKTO_ARTICLES_V2=1 PORT=8014 exec python3 app.py"
+      ],
+      "port": 8014
+    },
+    {
+      "name": "produkto-e2e",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/abc36074-5093-4299-ba42-e127bbad3611/scratchpad/app && PRODUKTO_DB=/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/abc36074-5093-4299-ba42-e127bbad3611/scratchpad/e2e.db PRODUKTO_DAILY_SCANS=0 PRODUKTO_SCANS=0 PRODUKTO_BASE_URL=http://localhost:8016 PORT=8016 exec python3 app.py"
+      ],
+      "port": 8016
+    },
+    {
+      "name": "preview-csp",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/abc36074-5093-4299-ba42-e127bbad3611/scratchpad/csp_server.py",
+        "/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/abc36074-5093-4299-ba42-e127bbad3611/scratchpad/prevsrv"
+      ],
+      "port": 8019
+    },
+    {
+      "name": "produkto-hub",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/6c00a594-9784-4f02-bcbe-f0c5bc9f2e38/scratchpad/app && PRODUKTO_DB=/private/tmp/claude-501/-Users-kelianvantulder-Desktop-Kelian-OS-AEO-for-eccomerce-brands/6c00a594-9784-4f02-bcbe-f0c5bc9f2e38/scratchpad/produkto.db.hub-copy PRODUKTO_DAILY_SCANS=0 PRODUKTO_SCANS=0 PRODUKTO_OPPORTUNITIES=1 PORT=8021 exec python3 app.py"
+      ],
+      "port": 8021
     }
   ]
 }

@@ -76,7 +76,7 @@ The method lives in `mvp/PLAN.md`, never in user-facing copy.
 
 **Banned: "Talk to Kelian"** (and "Talk to sales", "Contact Kelian") on any button or call to action. Every demo CTA says **"Book a demo"**, including the Custom pricing plan. Kelian's words, 2026-09-28: "stop saying 'talk to Kelian.' Just say 'book a demo'." Leave existing uses of his name elsewhere (e.g. the booking section heading) alone unless asked.
 
-**On the pricing page and in plan features, don't name the AI engines** (ChatGPT, Perplexity, Google AI Overviews) or count them ("3 AI engines"). Say **"AI"**: *"Every plan measures how AI recommends your whole catalog."* The engine list stays in the FAQ and the rotating hero logos.
+**On the pricing page and in plan features, don't name the AI engines** (ChatGPT, Perplexity, Google AI Overviews) or count them ("3 AI engines"). Say **"AI"**: *"Every plan measures how AI recommends your whole catalog."* The engine list stays in the FAQ and the rotating hero logos. **Exception (Kelian, 2026-10-14), supersedes the line above for engines on plans:** the pricing page names the engines as logo + name pills (logos alone were unreadable; Gemini and the AI Overview sparkle looked alike, so Google engines use the Google "G"). Starter card: ChatGPT, AI Overviews, Perplexity. Growth card: "+3" Gemini, AI Mode, Copilot. The comparison table lists all of them per plan. The hero line "Every plan measures how AI recommends…" still says "AI".
 
 ---
 

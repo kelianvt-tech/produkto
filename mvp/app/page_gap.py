@@ -130,6 +130,13 @@ def _product(objects):
     return None
 
 
+# Markers of the review apps Shopify stores use, in the page's HTML.
+REVIEW_APPS = ('jdgm', 'judge.me', 'yotpo', 'okendo', 'stamped.io', 'stamped-', 'loox', 'reviews.io', 'junip',
+               'spr-review', 'shopify-product-reviews', 'trustpilot', 'rivyo', 'alireviews', 'ali-reviews', 'reviewsio',
+               'fera.ai', 'kudobuzz', 'opinew', 'growave', 'air-reviews', 'klaviyo-reviews', 'kl-reviews')
+QA_HEADING = re.compile(r'\b(faqs?|q\s*&(amp;)?\s*a|questions|frequently asked)\b', re.I)
+
+
 def parse(html_text):
     """Visible text plus the facts a page publishes in its Product JSON-LD."""
     p = _Parser()
@@ -159,9 +166,16 @@ def parse(html_text):
     text = re.sub(r'\s+', ' ', ' '.join(p.text)).strip()
     m = re.search(r'<title[^>]*>(.*?)</title>', html_text, re.S | re.I)
     title = re.sub(r'\s+', ' ', __import__('html').unescape(m.group(1))).strip()[:200] if m else ''
+    types = {t for o in objects if isinstance(o, dict) for t in ([o.get('@type')] if isinstance(o.get('@type'), str) else (o.get('@type') or []))}
+    low = html_text.lower()
     return dict(
         title=title,
         text=text[:60000],
+        # Customer reviews shown on the page: a review app's widget, or review data (19 Oct 2026, Opportunities).
+        review_app=any(k in low for k in REVIEW_APPS),
+        # A questions section: FAQPage data, or a heading like "FAQ" / "Q&A" with questions under it (a footer
+        # "FAQ" link alone doesn't count).
+        qa='FAQPage' in types or 'QAPage' in types or (any(QA_HEADING.search(h) for h in p.heads) and text.count('?') >= 3),
         product=bool(prod),
         rating=bool(isinstance(rating, dict) and (rating.get('ratingValue') or rating.get('reviewCount'))),
         reviews=_int(rating.get('reviewCount') or rating.get('ratingCount')) if isinstance(rating, dict) else 0,
@@ -180,9 +194,13 @@ def _int(v):
         return 0
 
 
-def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'text/html,*/*;q=0.8',
-                                               'Accept-Encoding': 'gzip', 'Accept-Language': 'en'})
+def fetch(url, country=''):
+    """country: a two-letter code. Shopify stores then show that market's prices; without it they guess from
+    our server's location (Germany), so a US store showed euros (5strands.com, 21 Oct 2026)."""
+    headers = {'User-Agent': UA, 'Accept': 'text/html,*/*;q=0.8', 'Accept-Encoding': 'gzip', 'Accept-Language': 'en'}
+    if re.fullmatch(r'[A-Z]{2}', country or ''):
+        headers['Cookie'] = 'localization=%s' % country
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         raw = resp.read(3_000_000)
         if resp.headers.get('Content-Encoding') == 'gzip':

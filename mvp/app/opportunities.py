@@ -77,9 +77,11 @@ IMPACT_RULES = {
     'details': 'A buyer question you are losing where most of the product pages AI recommended instead state '
                'something yours does not (the question\'s own words, or review rating / brand / barcode / price in '
                'the page data). High: 3+ missing words, or a review rating. Medium: anything less.',
-    'feed': 'feed_check.py. Critical: robots.txt blocks a crawler AI answers rely on. High: product pages with '
-            'no product data, or without price/stock in it. Medium: no barcode (GTIN), no review rating on any page, '
-            'no refund or shipping policy page.',
+    'feed': 'feed_check.py. Critical: robots.txt blocks a crawler AI answers rely on; a US store missing a policy '
+            'Shopify needs before it shares products with ChatGPT; a non-US store absent from Google Shopping (ChatGPT '
+            'picks products from Google Shopping outside the US). High: product pages with no product data, or without '
+            'price/stock in it; the one-time ChatGPT channel check for US stores. Medium: no barcode (GTIN), no review '
+            'rating on any page, no refund or shipping policy page.',
     'topic': 'A topic (2+ buyer questions) where your products are in under 20% of answers. '
              'High: in none. Medium: 1-19%.',
     'retailer': 'A shop cited in at least 5% (and 3+) of the answers where competitors were named and none of your products. '
@@ -122,7 +124,8 @@ def find(domain, questions=False):
     """Every opportunity for this store, open or not, most important first. Question-quality items
     ("Improve buyer question") moved to Buyer questions > Suggestions on 18 Oct 2026, so they are left out
     unless questions=True (question_suggestions.py asks for them)."""
-    out = _find(domain)
+    import copy
+    out = copy.deepcopy(db.memo(("opportunities", domain, time.strftime("%Y-%m-%d %H")), lambda: _find(domain)))
     return out if questions else [r for r in out if r['type'] != 'prompt']
 
 

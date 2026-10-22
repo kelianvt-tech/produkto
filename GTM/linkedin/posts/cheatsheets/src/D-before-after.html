@@ -1,0 +1,38 @@
+<html><head><link rel="stylesheet" href="base.css"><style>
+.wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+.pane{border-radius:18px;padding:24px;border:2px solid var(--line)}
+.tag{display:inline-block;font-weight:900;font-size:16px;letter-spacing:1px;padding:6px 12px;border-radius:8px;color:#fff;margin-bottom:16px}
+.bad .tag{background:var(--red)}.good .tag{background:var(--green)}
+.pt{font-size:32px;font-weight:900;letter-spacing:-.5px;margin-bottom:6px}
+.price{font-size:22px;font-weight:700;color:var(--muted);margin-bottom:14px}
+.copy{font-size:22px;line-height:1.45;color:#2b3950}
+.bad .copy{font-style:italic}
+.facts{margin-top:8px;display:flex;flex-direction:column;gap:9px}
+.f{font-size:20px;line-height:1.3;display:flex;gap:10px}
+.f b{flex:0 0 112px;font-size:14px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding-top:3px}
+.ask{margin-top:28px;background:var(--ink);color:#fff;border-radius:18px;padding:22px 26px}
+.ask .q{font-size:15px;font-weight:800;letter-spacing:1px;opacity:.7}
+.ask .t{font-size:30px;font-weight:800;margin-top:6px;letter-spacing:-.5px}
+.add{margin-top:26px;border:2px dashed var(--blue);border-radius:18px;padding:22px 24px}.ah{font-size:24px;font-weight:900;margin-bottom:14px}.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:19px;font-weight:600}
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px;font-size:19px;font-weight:700}
+.verdict div{border-radius:12px;padding:14px 18px}
+</style></head><body>
+<div class="title">Same product. <span class="hl">Two pages.</span></div>
+<div class="sub">Which one can AI match to a buyer's question?</div>
+<div class="ask"><div class="q">THE BUYER ASKS CHATGPT</div><div class="t">"Best running shoe for flat feet under $150?"</div></div>
+<div class="wrap">
+<div class="pane bad"><div class="tag">MOST PAGES</div><div class="pt">The Glide 2</div><div class="price">$139</div>
+<div class="copy">"Engineered for performance. Premium materials meet bold design. Elevate every run with next-level comfort."</div></div>
+<div class="pane good"><div class="tag">ANSWERS THE QUESTION</div><div class="pt">The Glide 2</div><div class="price">$139</div>
+<div class="facts">
+<div class="f"><b>For</b>Flat feet and overpronation</div>
+<div class="f"><b>Support</b>Firm medial post, wide base</div>
+<div class="f"><b>Use</b>Road running, 5k to half marathon</div>
+<div class="f"><b>Fit</b>Regular and wide widths</div>
+<div class="f"><b>Weight</b>9.4 oz (men's 9)</div>
+<div class="f"><b>Not for</b>Trail or racing</div></div></div>
+</div>
+<div class="verdict"><div style="background:#fde8e6">Nothing for AI to match: no foot type, no use, no fit</div><div style="background:#e1f5e9">Every part of the question has an answer on the page</div></div>
+<div class="add"><div class="ah">Do this today: check your best seller's page for these</div><div class="chips"><span>Who it's for</span><span>What it's for</span><span>Size / fit</span><span>Material</span><span>Key spec buyers compare</span><span>Who it's not for</span><span>Price in text</span><span>Answers to the top 3 questions</span></div></div>
+<div style="font-size:15px;color:var(--muted);margin:16px 0 40px">Illustrative example. "The Glide 2" is a made-up product.</div>
+<div class="footer"><img src="../logo.png"><div><div class="who">Kelian van Tulder</div><div class="role">Founder, Produkto · AI visibility for e-commerce</div></div><div class="cta">Comment "CHECK" for a free check</div></div></body></html>

@@ -1,0 +1,306 @@
+diff --git a/prospecting/cold-calls/parallel-dialer/parallel_dialer/api.py b/prospecting/cold-calls/parallel-dialer/parallel_dialer/api.py
+index 17b2117..f500026 100644
+--- a/prospecting/cold-calls/parallel-dialer/parallel_dialer/api.py
++++ b/prospecting/cold-calls/parallel-dialer/parallel_dialer/api.py
+@@ -121,6 +121,7 @@ class DialerBuyNumberRequest(BaseModel):
+ 
+ class TalkTrackRequest(BaseModel):
+     script: str = Field(max_length=50_000)
++    name: str = Field(default="", max_length=200)
+ 
+ 
+ # --- Helpers ---
+@@ -703,13 +704,15 @@ def create_app(
+     # Talk track
+ 
+     @app.get("/dialer/api/talk-track")
+-    def api_talk_track_get(operator: Operator = Depends(api_operator)) -> dict:
+-        return {"ok": True, "script": load_talk_track(operator.email, settings.state_dir, profile)}
++    def api_talk_track_get(name: str = "", operator: Operator = Depends(api_operator)) -> dict:
++        name = name if name in profile.script_names() else ""
++        return {"ok": True, "name": name, "script": load_talk_track(operator.email, settings.state_dir, profile, name)}
+ 
+     @app.put("/dialer/api/talk-track")
+     def api_talk_track_put(body: TalkTrackRequest, operator: Operator = Depends(api_operator)) -> dict:
+-        save_talk_track(operator.email, body.script, settings.state_dir)
+-        return {"ok": True, "script": body.script}
++        name = body.name if body.name in profile.script_names() else ""
++        save_talk_track(operator.email, body.script, settings.state_dir, name)
++        return {"ok": True, "name": name, "script": body.script}
+ 
+     @app.get("/dialer/api/contacts/{contact_id}/call-notes")
+     async def api_call_notes(
+diff --git a/prospecting/cold-calls/parallel-dialer/parallel_dialer/profile.py b/prospecting/cold-calls/parallel-dialer/parallel_dialer/profile.py
+index 48e6f42..d954080 100644
+--- a/prospecting/cold-calls/parallel-dialer/parallel_dialer/profile.py
++++ b/prospecting/cold-calls/parallel-dialer/parallel_dialer/profile.py
+@@ -78,7 +78,7 @@ DEFAULT_SCREENING_REPLY = (
+ # one per operator, named by their address.
+ SETTINGS: dict[str, tuple[str, ...]] = {
+     "brand": ("name",),
+-    "call": ("screening_reply", "script", "script_file"),
++    "call": ("screening_reply", "script", "script_file", "scripts"),
+ }
+ OPERATOR_SETTINGS = ("name",)
+ 
+@@ -109,6 +109,9 @@ class Profile:
+     brand_is_set: bool = False
+     screening_reply: str = DEFAULT_SCREENING_REPLY
+     script: str = DEFAULT_SCRIPT
++    # Named talk tracks from [call.scripts], in file order; the first is the default. Empty when
++    # the file only has a single script.
++    scripts: tuple[tuple[str, str], ...] = ()
+     # Display names by address, for those whose name is not just their address made readable.
+     operators: dict[str, str] = field(default_factory=dict)
+ 
+@@ -128,11 +131,24 @@ class Profile:
+         """The talk track for one operator. [Name] and [Company] are left for the page."""
+         return self.render(self.script, operator_email)
+ 
++    def script_names(self) -> list[str]:
++        return [name for name, _ in self.scripts]
++
++    def named_script_for(self, name: str, operator_email: str = "") -> str | None:
++        """One named talk track for one operator, or None when there is no script by that name."""
++        for script_name, text in self.scripts:
++            if script_name == name:
++                return self.render(text, operator_email)
++        return None
++
+     def page_values(self, operator_email: str) -> dict[str, Any]:
+         """What the dialer page needs to know, as plain data for its script."""
+         return {
+             "brand": self.brand,
+             "script": self.script_for(operator_email),
++            "scripts": [
++                {"name": name, "script": self.render(text, operator_email)} for name, text in self.scripts
++            ],
+             "screening_reply": self.render(self.screening_reply, operator_email),
+         }
+ 
+@@ -195,6 +211,17 @@ def parse_profile(data: dict[str, Any], base: Path) -> Profile:
+         fields["script"] = _read_text_file(base, _text(call, "script_file"), "script_file")
+     elif "script" in call:
+         fields["script"] = _text(call, "script")
++    if "scripts" in call:
++        if "script" in call or "script_file" in call:
++            raise ProfileError("[call] has both script and [call.scripts]: use one.")
++        named = call["scripts"]
++        if not isinstance(named, dict) or not named:
++            raise ProfileError("[call.scripts] must be a table of named scripts, the default first.")
++        scripts = tuple((str(name).strip(), _text(named, name)) for name in named)
++        if any(not name or not text for name, text in scripts):
++            raise ProfileError("[call.scripts] needs a name and some text for every script.")
++        fields["scripts"] = scripts
++        fields["script"] = scripts[0][1]
+ 
+     operators: dict[str, str] = {}
+     for raw_email, table in raw_operators.items():
+diff --git a/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.css b/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.css
+index 34b06dd..683cdc7 100644
+--- a/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.css
++++ b/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.css
+@@ -1496,3 +1496,14 @@ body.standalone .main{margin-left:0}
+ 
+ /* Produkto: larger, readable UI (Kelian 2026-10-02) */
+ body{zoom:1.15}.content{max-width:1760px}
++
++.dialer-script-choice {
++  font: inherit;
++  font-size: 12px;
++  padding: 3px 6px;
++  border: 1px solid rgba(0, 0, 0, 0.15);
++  border-radius: 6px;
++  background: #fff;
++  color: inherit;
++  max-width: 220px;
++}
+diff --git a/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.js b/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.js
+index f09c788..5542717 100644
+--- a/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.js
++++ b/prospecting/cold-calls/parallel-dialer/parallel_dialer/static/dialer.js
+@@ -715,7 +715,16 @@
+   // --- Call Script Notepad Engine ---
+   const SCRIPT_STORAGE_KEY = "parallel_dialer_script_notepad";
+   const SCRIPT_COLLAPSED_KEY = "parallel_dialer_script_collapsed";
+-  const DEFAULT_COLD_CALL_SCRIPT = profile.script || "";
++  // dialer.toml can hold several named scripts; the first is the default and is what the page
++  // opens on. Each one keeps its own edits, here and on the server.
++  const NAMED_SCRIPTS = Array.isArray(profile.scripts) ? profile.scripts : [];
++  let currentScriptName = NAMED_SCRIPTS.length ? NAMED_SCRIPTS[0].name : "";
++  const defaultScriptText = () => {
++    const named = NAMED_SCRIPTS.find((item) => item.name === currentScriptName);
++    return named ? named.script : profile.script || "";
++  };
++  const scriptStorageKey = () =>
++    currentScriptName ? `${SCRIPT_STORAGE_KEY}::${currentScriptName}` : SCRIPT_STORAGE_KEY;
+ 
+   let scriptAutoSaveTimer = 0;
+ 
+@@ -773,7 +782,7 @@
+     try {
+       await apiRequest("/dialer/api/talk-track", {
+         method: "PUT",
+-        body: JSON.stringify({ script: text }),
++        body: JSON.stringify({ script: text, name: currentScriptName }),
+       });
+       setScriptStatus("Saved ✓", false);
+     } catch (_err) {
+@@ -785,10 +794,11 @@
+   // yet, take the server's.
+   const fetchTalkTrack = async () => {
+     try {
+-      const res = await apiRequest("/dialer/api/talk-track");
+-      if (!res || !res.script) return;
+-      if (localStorage.getItem(SCRIPT_STORAGE_KEY)) return;
+-      try { localStorage.setItem(SCRIPT_STORAGE_KEY, res.script); } catch (_e) {}
++      const asked = currentScriptName;
++      const res = await apiRequest(`/dialer/api/talk-track?name=${encodeURIComponent(asked)}`);
++      if (!res || !res.script || asked !== currentScriptName) return;
++      if (localStorage.getItem(scriptStorageKey())) return;
++      try { localStorage.setItem(scriptStorageKey(), res.script); } catch (_e) {}
+       const padMain = byId("dialer-script-pad");
+       const padModal = byId("dialer-modal-script-pad");
+       if (padMain) padMain.value = res.script;
+@@ -814,7 +824,7 @@
+     setScriptStatus("Saving...", true);
+ 
+     try {
+-      localStorage.setItem(SCRIPT_STORAGE_KEY, newText);
++      localStorage.setItem(scriptStorageKey(), newText);
+     } catch (_e) {}
+ 
+     clearTimeout(scriptAutoSaveTimer);
+@@ -828,24 +838,47 @@
+     const padModal = byId("dialer-modal-script-pad");
+     if (!padMain && !padModal) return;
+ 
+-    let initialScript = "";
+-    try {
+-      initialScript = localStorage.getItem(SCRIPT_STORAGE_KEY) || "";
+-    } catch (_e) {}
+-
+-    if (!initialScript) {
+-      initialScript = DEFAULT_COLD_CALL_SCRIPT;
++    const loadCurrentScript = () => {
++      let text = "";
+       try {
+-        localStorage.setItem(SCRIPT_STORAGE_KEY, initialScript);
++        text = localStorage.getItem(scriptStorageKey()) || "";
+       } catch (_e) {}
++      if (!text) {
++        text = defaultScriptText();
++        try {
++          localStorage.setItem(scriptStorageKey(), text);
++        } catch (_e) {}
++      }
++      if (padMain) padMain.value = text;
++      if (padModal) padModal.value = text;
++      updateScriptMeta(text);
++      renderModalScript();
++      setScriptStatus("Saved", false);
++    };
++    loadCurrentScript();
++
++    const choices = Array.from(document.querySelectorAll(".dialer-script-choice"));
++    if (NAMED_SCRIPTS.length > 1) {
++      choices.forEach((select) => {
++        NAMED_SCRIPTS.forEach((item, index) => {
++          const option = document.createElement("option");
++          option.value = item.name;
++          option.textContent = index === 0 ? `${item.name} (default)` : item.name;
++          select.appendChild(option);
++        });
++        select.value = currentScriptName;
++        select.hidden = false;
++        select.addEventListener("click", (e) => e.stopPropagation());
++        select.addEventListener("change", () => {
++          clearTimeout(scriptAutoSaveTimer);
++          currentScriptName = select.value;
++          choices.forEach((other) => { other.value = currentScriptName; });
++          loadCurrentScript();
++          fetchTalkTrack();
++        });
++      });
+     }
+ 
+-    if (padMain) padMain.value = initialScript;
+-    if (padModal) padModal.value = initialScript;
+-    updateScriptMeta(initialScript);
+-    renderModalScript();
+-    setScriptStatus("Saved", false);
+-
+     const onInputHandler = (e) => handleScriptInput(e.target);
+     if (padMain) padMain.addEventListener("input", onInputHandler);
+     if (padModal) padModal.addEventListener("input", onInputHandler);
+@@ -877,9 +910,9 @@
+     const resetBtn = byId("dialer-script-reset-btn");
+     if (resetBtn) {
+       resetBtn.addEventListener("click", () => {
+-        if (window.confirm("Reset the call script to the default talk track?")) {
+-          if (padMain) padMain.value = DEFAULT_COLD_CALL_SCRIPT;
+-          if (padModal) padModal.value = DEFAULT_COLD_CALL_SCRIPT;
++        if (window.confirm("Reset this call script to the version in dialer.toml?")) {
++          if (padMain) padMain.value = defaultScriptText();
++          if (padModal) padModal.value = defaultScriptText();
+           handleScriptInput(padMain || padModal);
+         }
+       });
+diff --git a/prospecting/cold-calls/parallel-dialer/parallel_dialer/talk_track.py b/prospecting/cold-calls/parallel-dialer/parallel_dialer/talk_track.py
+index 2ab22bc..74933ae 100644
+--- a/prospecting/cold-calls/parallel-dialer/parallel_dialer/talk_track.py
++++ b/prospecting/cold-calls/parallel-dialer/parallel_dialer/talk_track.py
+@@ -33,16 +33,28 @@ def _read_all(state_dir: str | Path) -> dict[str, str]:
+     return {str(key): value for key, value in data.items() if isinstance(value, str)} if isinstance(data, dict) else {}
+ 
+ 
+-def load_talk_track(operator_email: str, state_dir: str | Path, profile: Profile) -> str:
++def _key(operator_email: str, name: str = "") -> str:
++    """One entry per operator, or per operator and named script when dialer.toml has several."""
++    clean = operator_email.strip().lower()
++    return f"{clean}::{name}" if name else clean
++
++
++def load_talk_track(operator_email: str, state_dir: str | Path, profile: Profile, name: str = "") -> str:
+     """The operator's saved talk track, or the deployment's own when they have not saved one."""
+-    saved = _read_all(state_dir).get(operator_email.strip().lower())
+-    return saved if saved is not None else profile.script_for(operator_email)
++    saved = _read_all(state_dir).get(_key(operator_email, name))
++    if saved is not None:
++        return saved
++    if name:
++        named = profile.named_script_for(name, operator_email)
++        if named is not None:
++            return named
++    return profile.script_for(operator_email)
+ 
+ 
+-def save_talk_track(operator_email: str, script: str, state_dir: str | Path) -> None:
++def save_talk_track(operator_email: str, script: str, state_dir: str | Path, name: str = "") -> None:
+     """Keep the operator's talk track. Written whole and moved into place, so a crash cannot leave half of it."""
+     everything = _read_all(state_dir)
+-    everything[operator_email.strip().lower()] = script
++    everything[_key(operator_email, name)] = script
+     path = _path(state_dir)
+     path.parent.mkdir(parents=True, exist_ok=True)
+     with NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as temporary:
+diff --git a/prospecting/cold-calls/parallel-dialer/parallel_dialer/templates/dialer.html b/prospecting/cold-calls/parallel-dialer/parallel_dialer/templates/dialer.html
+index daf143d..9984db0 100644
+--- a/prospecting/cold-calls/parallel-dialer/parallel_dialer/templates/dialer.html
++++ b/prospecting/cold-calls/parallel-dialer/parallel_dialer/templates/dialer.html
+@@ -258,6 +258,7 @@
+               <span>Call script</span>
+               <span class="dialer-modal-script-chevron" id="dialer-modal-script-chevron">&#9662;</span>
+             </button>
++            <select class="dialer-script-choice" aria-label="Choose call script" hidden></select>
+             <div class="dialer-modal-script-actions">
+               <span class="dialer-script-status-badge" id="dialer-modal-script-status">Saved</span>
+               <button class="text-button" id="dialer-modal-script-edit-btn" type="button" title="Edit the script">Edit</button>
+@@ -400,6 +401,7 @@
+         <h3>Call Script Notepad</h3>
+       </div>
+       <div class="dialer-script-header-actions">
++        <select class="dialer-script-choice" aria-label="Choose call script" hidden></select>
+         <span class="dialer-script-status-badge" id="dialer-script-status">Saved</span>
+         <button class="dialer-script-action-btn" id="dialer-script-copy-btn" type="button" title="Copy script to clipboard">Copy Script</button>
+         <button class="dialer-script-action-btn dialer-script-reset-btn" id="dialer-script-reset-btn" type="button" title="Reset to the default script">Reset</button>

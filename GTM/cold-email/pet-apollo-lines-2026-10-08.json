@@ -1,0 +1,2072 @@
+{
+ "openfarmpet.com": {
+  "company": "Open Farm Pet",
+  "question": "What's the best salmon dry dog food to buy online for around $30?",
+  "own_named": false,
+  "competitor_brand": "Purina Pro Plan",
+  "competitor_product": "Adult Sensitive Skin & Stomach Salmon & Rice",
+  "flag": "ok",
+  "raw": "*   1.  Purina Pro Plan: Adult Sensitive Skin & Stomach Salmon & Rice; 2) Diamond Naturals: Skin & Coat Salmon & Potato; 3) Blue Buffalo: Wilderness High-Protein Salmon Recipe"
+ },
+ "petmate.com": {
+  "company": "Petmate",
+  "question": "What's the best plastic travel dog kennel to buy online for around $40?",
+  "own_named": true,
+  "competitor_brand": "Vibrant Life",
+  "competitor_product": "26\" Plastic Portable Kennel",
+  "flag": "ok",
+  "raw": "*   1.  Petmate: All Purpose Vari Kennel; 2) Vibrant Life: 26\" Plastic Portable Kennel; 3) Oodles: 24\" Plastic Travel Pet Kennel"
+ },
+ "bullymax.com": {
+  "company": "Bully Max",
+  "question": "What's the best high protein dog food to buy online for around $26?",
+  "own_named": false,
+  "competitor_brand": "Blue Buffalo",
+  "competitor_product": "Wilderness Salmon Recipe High-Protein Adult Dry Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Blue Buffalo: Wilderness Salmon Recipe High-Protein Adult Dry Dog Food; 2) Purina Pro Plan: Complete Essentials Shredded Blend Lamb & Rice High Protein Dry Dog Food; 3) Pedigree: High Protein Beef & Lamb Flavor Adult Dry Dog Food"
+ },
+ "americanstalls.com": {
+  "company": "American Stalls",
+  "question": "What's the best horse stall bedding system to buy online for around $120?",
+  "own_named": false,
+  "competitor_brand": "Barn World",
+  "competitor_product": "Interlocking Stall Mat 3/4\" 4'\u00d78'",
+  "flag": "ok",
+  "raw": "*   1.  Barn World: Interlocking Stall Mat 3/4\" 4'\u00d78'; 2) RubberFlooring4U: Horse Stall Mat 4'\u00d78'; 3) StateLineTack: FlexGard Honeycomb Interlocking Stall Mat"
+ },
+ "antelopepets.com": {
+  "company": "Antelope",
+  "question": "What's the best soft dog treats to buy online for around $10?",
+  "own_named": false,
+  "competitor_brand": "Zuke's",
+  "competitor_product": "Mini Naturals Chicken Recipe Training Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Zuke's: Mini Naturals Chicken Recipe Training Dog Treats; 2) Blue Buffalo: BLUE Bits Soft Dog Treats; 3) Bocce's Bakery: Berry Smoothie Soft & Chewy Dog Treats"
+ },
+ "wet-noses.com": {
+  "company": "Wet Noses",
+  "question": "What's the best natural dog treats to buy online for around $50?",
+  "own_named": false,
+  "competitor_brand": "Stewart",
+  "competitor_product": "Beef Liver Single Ingredient Freeze-Dried Raw Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Stewart: Beef Liver Single Ingredient Freeze-Dried Raw Dog Treats; 2) PureBites: Freeze-Dried Beef Liver Dog Treats; 3) Whole Life: Just One Ingredient Pure Chicken Breast Freeze-Dried Dog Treats"
+ },
+ "majestichomegoods.com": {
+  "company": "Majestic Pet Products, Inc. | Majestic Home Goods, Inc.",
+  "question": "What's the best pet bed to buy online?",
+  "own_named": false,
+  "competitor_brand": "Big Barker",
+  "competitor_product": "Original Orthopedic Dog Bed",
+  "flag": "ok",
+  "raw": "*   1.  Big Barker: Original Orthopedic Dog Bed; 2) FurHaven: Ultra Plush Luxe Lounger Orthopedic Cat & Dog Bed; 3) Best Friends by Sheri: Original Calming Donut Dog & Cat Bed"
+ },
+ "oxyfresh.com": {
+  "company": "Oxyfresh",
+  "question": "What's the best pet dental water additive to buy online for around $13?",
+  "own_named": true,
+  "competitor_brand": "ARM & HAMMER",
+  "competitor_product": "Complete Care Dog Dental Rinse",
+  "flag": "ok",
+  "raw": "*   1.  Dental Fresh: Original 17 fl oz; 2) Oxyfresh: Premium Pet Dental Water Additive; 3) ARM & HAMMER: Complete Care Dog Dental Rinse"
+ },
+ "catcaveco.com": {
+  "company": "Cat Cave Co",
+  "question": "What's the best felt cat cave bed to buy online for around $50?",
+  "own_named": false,
+  "competitor_brand": "Meowfia",
+  "competitor_product": "Premium Felt Cat Cave Bed",
+  "flag": "ok",
+  "raw": "*   1.  Meowfia: Premium Felt Cat Cave Bed; 2) Durkha: Premium Felt Cave Cat Bed; 3) HAUSSIMPLE: Wool Cat Cave Felt Bed"
+ },
+ "nupafeedusa.com": {
+  "company": "Nupafeed USA",
+  "question": "What's the best magnesium calming supplement for horses to buy online for around $148?",
+  "own_named": true,
+  "competitor_brand": "HorseTech",
+  "competitor_product": "MMX",
+  "flag": "ok",
+  "raw": "*   1.  Nupafeed: Magnesium For Horses Daily Liquid; 2) HorseTech: MMX; 3) Getty Equine Nutrition: Quiessence nupafeedusa.com+2\n    \n    Sources"
+ },
+ "mightypaw.com": {
+  "company": "Mighty Paw",
+  "question": "What's the best yak cheese dog chew to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "Pupford",
+  "competitor_product": "Himalayan Yak Cheese Large Dog Chew",
+  "flag": "ok",
+  "raw": "*   1.  Pupford: Himalayan Yak Cheese Large Dog Chew; 2) Bark&Spark: Yak Cheese Himalayan Dog Chew Large; 3) Yak9 Chews: Yak & Cow Milk Chew Dog Treat Large"
+ },
+ "smallpetselect.com": {
+  "company": "Small Pet Select",
+  "question": "What's the best timothy hay for rabbits to buy online?",
+  "own_named": true,
+  "competitor_brand": "Oxbow",
+  "competitor_product": "Western Timothy Hay",
+  "flag": "ok",
+  "raw": "*   1.  Oxbow: Western Timothy Hay; 2) Small Pet Select: 2nd Cutting Timothy Hay; 3) Kaytee: All Natural Timothy Hay"
+ },
+ "madebynacho.com": {
+  "company": "Made by Nacho",
+  "question": "What's the best dry cat food to buy online for around $15?",
+  "own_named": false,
+  "competitor_brand": "Purina ONE",
+  "competitor_product": "Tender Selects Blend with Real Chicken",
+  "flag": "ok",
+  "raw": "*   1.  Purina ONE: Tender Selects Blend with Real Chicken; 2) IAMS: ProActive Health Adult Original Chicken Recipe; 3) Rachael Ray Nutrish: Natural Chicken & Brown Rice Recipe"
+ },
+ "earthbath.com": {
+  "company": "earthbath\u00ae",
+  "question": "What's the best oatmeal dog shampoo to buy online for around $20?",
+  "own_named": true,
+  "competitor_brand": "Vetoquinol",
+  "competitor_product": "Itchy Dry Skin Aloe & Oatmeal Shampoo",
+  "flag": "ok",
+  "raw": "*   1.  Earthbath: Oatmeal & Aloe Pet Shampoo; 2) Vetoquinol: Itchy Dry Skin Aloe & Oatmeal Shampoo; 3) DermAllay: Oatmeal Shampoo for Dogs, Cats & Horses"
+ },
+ "petroverusa.com": {
+  "company": "HPZ Pet Rover",
+  "question": "What's the best dog jogging stroller to buy online for around $329?",
+  "own_named": false,
+  "competitor_brand": "Pet Gear",
+  "competitor_product": "Jogger NO-ZIP Pet Stroller",
+  "flag": "ok",
+  "raw": "*   1.  Pet Gear: Jogger NO-ZIP Pet Stroller; 2) Furvelo: Jogger Pet Stroller; 3) Richell: Easy Collapsible Jogging Pet Stroller"
+ },
+ "earthanimal.com": {
+  "company": "Earth Animal | B Corp",
+  "question": "What's the best natural dog jerky treats to buy online for around $10?",
+  "own_named": true,
+  "competitor_brand": "Full Moon",
+  "competitor_product": "Essentials Grain-Free Chicken Jerky Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Earth Animal: Wisdom Air-Dried Chicken Recipe Natural Jerky Strips; 2) Full Moon: Essentials Grain-Free Chicken Jerky Dog Treats; 3) Evanger\u2019s: Nothing But Natural Organic Chicken Jerky Dog Treats"
+ },
+ "theblissfuldog.com": {
+  "company": "The Blissful Dog\u00ae Inc.",
+  "question": "What's the best dog elbow callus balm to buy online for around $8?",
+  "own_named": true,
+  "competitor_brand": "Palmer\u2019s for Pets",
+  "competitor_product": "All Over Relief Dog Balm",
+  "flag": "ok",
+  "raw": "*   1.  The Blissful Dog: Elbow Butter; 2) Palmer\u2019s for Pets: All Over Relief Dog Balm; 3) Bag Balm Pet: Nose, Paw & Hot Spot Moisturizer"
+ },
+ "metropaws.com": {
+  "company": "Metro Paws",
+  "question": "What's the best compostable dog poop bags to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "beyondGREEN",
+  "competitor_product": "Compostable Dog Waste Bag Refill Rolls",
+  "flag": "ok",
+  "raw": "*   1.  beyondGREEN: Compostable Dog Waste Bag Refill Rolls; 2) Gotta Go Grass: Waste Bags; 3) BioBag: Large Pet Waste Bags"
+ },
+ "spotonfence.com": {
+  "company": "SpotOn Fence",
+  "question": "What's the best GPS dog fence collar to buy online for around $999?",
+  "own_named": true,
+  "competitor_brand": "Halo",
+  "competitor_product": "Collar 5",
+  "flag": "ok",
+  "raw": "*   1.  SpotOn: Nova Edition GPS Dog Fence; 2) Halo: Collar 5; 3) SkyShepherd: GPS Dog Containment System worthyva.com+1\n    \n    Sources"
+ },
+ "thefoggydog.com": {
+  "company": "The Foggy Dog",
+  "question": "What's the best slide-on pet ID tag to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "GoTags",
+  "competitor_product": "Silent Slide-On Pet ID Tag in Stainless Steel",
+  "flag": "ok",
+  "raw": "*   1.  GoTags: Silent Slide-On Pet ID Tag in Stainless Steel; 2) QALO: Slide-On Dog ID Tags; 3) Leash King: Rugged & Refined Immovable Slide-On Deep Laser Engraved Steel Dog ID Tag"
+ },
+ "petreleaf.com": {
+  "company": "Pet Releaf",
+  "question": "What's the best calming supplement for dogs to buy online for around $58?",
+  "own_named": false,
+  "competitor_brand": "Charlotte\u2019s Web",
+  "competitor_product": "Full Spectrum Hemp Extract Calming Supplement for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  Charlotte\u2019s Web: Full Spectrum Hemp Extract Calming Supplement for Dogs; 2) Zesty Paws: Turkey Advanced Calming for Dogs; 3) Zesty Paws: Vet Strength Turkey Calming Bites for Dogs"
+ },
+ "westminsterpet.com": {
+  "company": "Westminster Pet Products",
+  "question": "What's the best plush dog toy to buy online?",
+  "own_named": false,
+  "competitor_brand": "KONG",
+  "competitor_product": "Cozie Marvin the Moose",
+  "flag": "ok",
+  "raw": "*   1.  KONG: Cozie Marvin the Moose; 2) goDog: Checkers Chew Guard Rooster; 3) Outward Hound: Durablez Large Gecko"
+ },
+ "thehonestkitchen.com": {
+  "company": "The Honest Kitchen",
+  "question": "What's the best whole food dry dog food to buy online for around $35?",
+  "own_named": true,
+  "competitor_brand": "Open Farm",
+  "competitor_product": "Grain-Free Wild Salmon Dry Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  The Honest Kitchen: Whole Food Clusters Whole Grain Lamb; 2) Open Farm: Grain-Free Wild Salmon Dry Dog Food; 3) ORIJEN: Original Recipe Grain Free High Protein Dry Dog Food"
+ },
+ "kingkanine.com": {
+  "company": "King Kanine",
+  "question": "What's the best raw dog food to buy online for around $136?",
+  "own_named": false,
+  "competitor_brand": "Sojos",
+  "competitor_product": "Complete Beef Recipe Adult Freeze-Dried Raw Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Sojos: Complete Beef Recipe Adult Freeze-Dried Raw Dog Food; 2) Primal: Raw Pronto Beef Recipe Freeze-Dried Dog Food; 3) Simple Food Project: Beef & Salmon Recipe Freeze-Dried Dog Food"
+ },
+ "playpetbrands.com": {
+  "company": "Play Pet Brands",
+  "question": "What's the best calming dog bed to buy online for around $48?",
+  "own_named": false,
+  "competitor_brand": "Best Friends by Sheri",
+  "competitor_product": "Ultra Calming Orthopedic Pouf Luxury Dog Bed",
+  "flag": "ok",
+  "raw": "*   1.  Best Friends by Sheri: Ultra Calming Orthopedic Pouf Luxury Dog Bed; 2) FurHaven: Calming Cuddler Long Faux Fur Donut Dog Bed; 3) Bedsure: Calming Fluffy Plush Faux Fur Orthopedic Donut Dog Bed"
+ },
+ "stuntpuppy.com": {
+  "company": "Stunt Puppy, Inc.",
+  "question": "What's the best hands-free dog leash to buy online for around $49?",
+  "own_named": false,
+  "competitor_brand": "Ruffwear",
+  "competitor_product": "Roamer Bungee Dog Leash",
+  "flag": "ok",
+  "raw": "*   1.  Ruffwear: Roamer Bungee Dog Leash; 2) EzyDog: Road Runner Leash; 3) Wild One: Hands-Free Adjustable Rope Dog Leash"
+ },
+ "canophera.com": {
+  "company": "CANOPHERA LLC",
+  "question": "What's the best natural wood dog chew to buy online for around $36?",
+  "own_named": false,
+  "competitor_brand": "Petstages",
+  "competitor_product": "Dogwood Stick Tough Dog Chew Toy",
+  "flag": "ok",
+  "raw": "*   1.  Petstages: Dogwood Stick Tough Dog Chew Toy; 2) Petstages: Super Dogwood Stick Tough Dog Chew Toy; 3) Benebone: Multipack Durable Dog Chew Toy petstages.net+1\n    \n    Sources"
+ },
+ "mypetchicken.com": {
+  "company": "My Pet Chicken",
+  "question": "What's the best backyard chicken supplies to buy online?",
+  "own_named": false,
+  "competitor_brand": "RentACoop",
+  "competitor_product": "25lb Hanging Chicken Feeder",
+  "flag": "ok",
+  "raw": "*   1.  RentACoop: 25lb Hanging Chicken Feeder; 2) RentACoop: DIY Nipple Waterer Kit; 3) Grandpa's Feeders: Automatic Chicken Feedomatic Treadle Feeder"
+ },
+ "undertheweatherpet.com": {
+  "company": "Under the Weather Pet",
+  "question": "What's the best kidney support supplement for cats to buy online for around $35?",
+  "own_named": false,
+  "competitor_brand": "Vetoquinol",
+  "competitor_product": "Renal K+ Gel Kidney Supplement",
+  "flag": "ok",
+  "raw": "*   1.  Vetoquinol: Renal K+ Gel Kidney Supplement; 2) AminAvast: Kidney Support Cats & Small Dogs Supplement; 3) Animal Nutritional Products: UroMAXX Urinary, Kidney & Bladder Supplement"
+ },
+ "mclovinspet.com": {
+  "company": "McLovin's Pet",
+  "question": "What's the best freeze dried beef liver dog treats to buy online for around $13?",
+  "own_named": false,
+  "competitor_brand": "PureBites",
+  "competitor_product": "Beef Liver Freeze-Dried Raw Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  PureBites: Beef Liver Freeze-Dried Raw Dog Treats; 2) Bocce\u2019s Bakery: Beef Liver Freeze-Dried Treats; 3) West Paw: Single Ingredient Beef Liver Freeze-Dried Dog Treats"
+ },
+ "himalayan.pet": {
+  "company": "Himalayan Pet Supply",
+  "question": "What's the best long-lasting dog chew to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "Nylabone",
+  "competitor_product": "Strong Chew Original Bone",
+  "flag": "ok",
+  "raw": "*   1.  Nylabone: Strong Chew Original Bone; 2) Nylabone: DuraChew Chicken Flavored Bone; 3) Chewy Made: 6\" Braided Bully Stick"
+ },
+ "incrediwearequine.com": {
+  "company": "Incrediwear Equine",
+  "question": "What's the best horse hoof socks to buy online for around $80?",
+  "own_named": true,
+  "competitor_brand": "Intrepid International",
+  "competitor_product": "The Hoof Sock Horse Boot",
+  "flag": "ok",
+  "raw": "*   1.  Incrediwear Equine: Circulation Hoof Socks; 2) Intrepid International: The Hoof Sock Horse Boot; 3) Penn Equine Gear: Hoof Sock"
+ },
+ "greengruff.com": {
+  "company": "Green Gruff",
+  "question": "What's the best functional dog supplement treats to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "Get Naked",
+  "competitor_product": "Biteables Joint Health Chicken Flavor Soft Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Get Naked: Biteables Joint Health Chicken Flavor Soft Dog Treats; 2) Get Naked: Biteables Digestive Health Soft Dog Treats; 3) Fromm: Nutritionals Mobility Functional Dog Treats frommfamily.com+1\n    \n    Sources"
+ },
+ "nextritionpet.com": {
+  "company": "Nextrition",
+  "question": "What's the best chicken dry dog food to buy online for around $55?",
+  "own_named": false,
+  "competitor_brand": "Purina Pro Plan",
+  "competitor_product": "Complete Essentials Adult Shredded Blend Chicken & Rice",
+  "flag": "ok",
+  "raw": "*   1.  Purina Pro Plan: Complete Essentials Adult Shredded Blend Chicken & Rice; 2) Hill\u2019s Science Diet: Adult Chicken & Barley Recipe; 3) Nutro: Natural Choice Adult Chicken & Brown Rice Recipe"
+ },
+ "redbarn.com": {
+  "company": "Redbarn Pet Products",
+  "question": "What's the best bully stick holder to buy online for around $25?",
+  "own_named": false,
+  "competitor_brand": "",
+  "competitor_product": "",
+  "flag": "no usable competitor",
+  "raw": "*   1.  Bully Grip: BullyLok Chew Holder; 2) Bully Bunches: Bully Stick Safety Holder; 3) GoSports: Chew Champ Bully Stick Holder whole-dog-journal.com\n    \n    Sources"
+ },
+ "friendsheepwool.com": {
+  "company": "Friendsheep",
+  "question": "What's the best wool cat toy to buy online?",
+  "own_named": false,
+  "competitor_brand": "Earthtone Solutions",
+  "competitor_product": "Felted Wool Cat Ball Toy, 6 count",
+  "flag": "ok",
+  "raw": "*   1.  Earthtone Solutions: Felted Wool Cat Ball Toy, 6 count; 2) Free the Ocean: Wool Cat Toy; 3) Mimis Daughters: Three Blind Mice Handmade Felted Wool Chaser Cat Toy"
+ },
+ "lucyand.co": {
+  "company": "Lucy & Co.",
+  "question": "What's the best dog poop bag holder to buy online for around $10?",
+  "own_named": false,
+  "competitor_brand": "Earth Rated",
+  "competitor_product": "Dog Poop Bag Holder with Dog Poop Bags",
+  "flag": "ok",
+  "raw": "*   1.  Earth Rated: Dog Poop Bag Holder with Dog Poop Bags; 2) Wild One: Dog Poop Bag Carrier; 3) EzyDog: Essential Poop Bag Holder chewy.com+1\n    \n    Sources"
+ },
+ "prideandgroom.com": {
+  "company": "PRIDE+GROOM",
+  "question": "What's the best flea and tick dog shampoo to buy online for around $32?",
+  "own_named": true,
+  "competitor_brand": "ADAMS",
+  "competitor_product": "Plus Flea & Tick Shampoo with Precor",
+  "flag": "ok",
+  "raw": "*   1.  ADAMS: Plus Flea & Tick Shampoo with Precor; 2) Pride+Groom: The FLEA+TICK Natural Plant Based Dog Shampoo; 3) TropiClean: Maximum Strength Natural Flea & Tick Dog Shampoo"
+ },
+ "campfiretreats.com": {
+  "company": "Campfire Treats",
+  "question": "What's the best chicken feet dog treats to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "American Paws",
+  "competitor_product": "Dehydrated Chicken Feet Dog Treats, 1-lb bag",
+  "flag": "ok",
+  "raw": "*   1.  American Paws: Dehydrated Chicken Feet Dog Treats, 1-lb bag; 2) Palz&Co: Birddog Chicken Feet Dog Natural Chew Treats, 10 count; 3) HDP: Roasted Poultry Feet Dog Chew Treats, 25 count"
+ },
+ "oreoriginals.com": {
+  "company": "Ore' Originals",
+  "question": "What's the best ceramic pet bowl to buy online for around $12?",
+  "own_named": false,
+  "competitor_brand": "Ethical Pet",
+  "competitor_product": "Stoneware Crock Ceramic Dog & Cat Dish",
+  "flag": "ok",
+  "raw": "*   1.  Ethical Pet: Stoneware Crock Ceramic Dog & Cat Dish; 2) Frisco: Marble Design Non-skid Ceramic Dog & Cat Bowl; 3) Frisco: Bones Non-skid Ceramic Dog & Cat Bowl"
+ },
+ "stablefeed.com": {
+  "company": "StableFeed",
+  "question": "What's the best horse immune supplement to buy online for around $29?",
+  "own_named": false,
+  "competitor_brand": "AniMed",
+  "competitor_product": "Immuaid with Echinacea & Garlic",
+  "flag": "ok",
+  "raw": "*   1.  AniMed: Immuaid with Echinacea & Garlic; 2) Farnam: Vita-Min E & Selenium Antioxidant Soft Chew; 3) UltraCruz: Vitamin C Immune Support Powder chewy.com+1\n    \n    Sources"
+ },
+ "iandloveandyou.com": {
+  "company": "\"I and love and you\"\u200b pet",
+  "question": "What's the best grain-free dry dog food to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Taste of the Wild",
+  "competitor_product": "Pacific Stream Grain-Free with Smoke-Flavored Salmon",
+  "flag": "ok",
+  "raw": "*   1.  Taste of the Wild: Pacific Stream Grain-Free with Smoke-Flavored Salmon; 2) Taste of the Wild: Sierra Mountain Grain-Free Roasted Lamb; 3) Blue Buffalo: Freedom Grain-Free Natural Adult Dry Dog Food. petco.com\n    \n    Sources"
+ },
+ "mysquarepet.com": {
+  "company": "SquarePet Nutrition LLC",
+  "question": "What's the best dog food for sensitive skin and digestion to buy online for around $33?",
+  "own_named": false,
+  "competitor_brand": "Purina Pro Plan",
+  "competitor_product": "Sensitive Skin & Stomach Salmon & Rice",
+  "flag": "ok",
+  "raw": "*   1.  Purina Pro Plan: Sensitive Skin & Stomach Salmon & Rice; 2) Hill\u2019s Science Diet: Adult Sensitive Stomach & Skin Chicken Recipe; 3) Purina ONE: +Plus Skin & Coat Sensitive Stomach Salmon Formula"
+ },
+ "brutusbroth.com": {
+  "company": "Brutus Broth",
+  "question": "What's the best goat milk for dogs to buy online for around $18?",
+  "own_named": false,
+  "competitor_brand": "Native Pet",
+  "competitor_product": "Whole Goat Milk Powder",
+  "flag": "ok",
+  "raw": "*   1.  Native Pet: Whole Goat Milk Powder; 2) Pawfect: Nature Sip Goat Milk Powder; 3) Dr. Marty: Better Life Boosters Goat Milk Powder Supplement petco.com+2\n    \n    Sources"
+ },
+ "jiminys.com": {
+  "company": "Jiminy's",
+  "question": "What's the best insect protein dog treats to buy online for around $24?",
+  "own_named": true,
+  "competitor_brand": "Chippin",
+  "competitor_product": "Superfood Cricket & Pumpkin Crunchy Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Chippin: Superfood Cricket & Pumpkin Crunchy Dog Treats; 2) Jiminy\u2019s: Cricket Cookie Original Recipe Dog Treats; 3) Earth Animal: Wisdom From the Soil Air-Dried Insect Jerky Strips chippinpet.com+2\n    \n    Sources"
+ },
+ "primalpetfoods.com": {
+  "company": "Primal Pet Foods",
+  "question": "What's the best freeze-dried raw dog food to buy online for around $17?",
+  "own_named": true,
+  "competitor_brand": "Stella & Chewy's",
+  "competitor_product": "Stella\u2019s Super Beef Freeze-Dried Raw Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Stella & Chewy's: Stella\u2019s Super Beef Freeze-Dried Raw Dog Food; 2) Primal: Beef Formula Nuggets Freeze-Dried Dog Food; 3) Vital Essentials: Crunchy Mini Nibs Raw Beef Entree Freeze-Dried Dog Food"
+ },
+ "caitec.com": {
+  "company": "CAITEC INC",
+  "question": "What's the best parrot treats to buy online for around $7?",
+  "own_named": true,
+  "competitor_brand": "Higgins",
+  "competitor_product": "Sunburst True Fruits Dried Exotic Fruits Bird Treats",
+  "flag": "ok",
+  "raw": "*   1.  Higgins: Sunburst True Fruits Dried Exotic Fruits Bird Treats; 2) Kaytee: Forti-Diet Pro Health Healthy Bits Parrot Treats; 3) Caitec: Oven Fresh Bites Peanut Butter Cookies Parrot Treats"
+ },
+ "platopettreats.com": {
+  "company": "Plato Pet Treats",
+  "question": "What's the best single-ingredient fish dog treats to buy online for around $12?",
+  "own_named": false,
+  "competitor_brand": "Stewart",
+  "competitor_product": "Wild Salmon Single Ingredient Freeze-Dried Raw Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Stewart: Wild Salmon Single Ingredient Freeze-Dried Raw Dog Treats; 2) PureBites: Cod Skin Air Dried Jerky Dog Treats; 3) Whole Life: Just One Ingredient Pure Salmon Fillet Freeze-Dried Dog Treats"
+ },
+ "apupabove.com": {
+  "company": "\ud83d\udc36 A Pup Above",
+  "question": "What's the best fresh cooked dog food to buy online for around $14?",
+  "own_named": false,
+  "competitor_brand": "JustFoodForDogs",
+  "competitor_product": "Chicken & Rice Recipe",
+  "flag": "ok",
+  "raw": "*   1.  JustFoodForDogs: Chicken & Rice Recipe; 2) Open Farm: Harvest Chicken Gently Cooked Dog Food; 3) Stella & Chewy\u2019s: FreshMade Beefy-Licious Recipe"
+ },
+ "rawrycat.com": {
+  "company": "Rawry Pet Products",
+  "question": "What's the best outdoor cat house to buy online for around $129?",
+  "own_named": false,
+  "competitor_brand": "FunXplore",
+  "competitor_product": "Wooden Insulated Outdoor Cat House with Escape Door",
+  "flag": "ok",
+  "raw": "*   1.  FunXplore: Wooden Insulated Outdoor Cat House with Escape Door; 2) GDLF: Outdoor Cat House Feral Cat Enclosure Insulated All-Round Foam; 3) Aivituvin: Heated Cat House with Anti-Chewing Cable, Insulated Liner cats.com+1\n    \n    Sources"
+ },
+ "jacksongalaxy.com": {
+  "company": "Jackson Galaxy Enterprises Inc",
+  "question": "What's the best cat scratcher to buy online for around $48?",
+  "own_named": false,
+  "competitor_brand": "SmartCat",
+  "competitor_product": "Ultimate Scratching Post",
+  "flag": "ok",
+  "raw": "*   1.  SmartCat: Ultimate Scratching Post; 2) PetFusion: Ultimate Cat Scratcher Lounge; 3) Frisco: Lucky Bamboo 35.5\" Cat Scratching Posts with Toys"
+ },
+ "doglinegroup.com": {
+  "company": "Dogline",
+  "question": "What's the best leather dog collar to buy online for around $15?",
+  "own_named": false,
+  "competitor_brand": "Mighty Paw",
+  "competitor_product": "Distressed Leather Dog Collar",
+  "flag": "ok",
+  "raw": "*   1.  Mighty Paw: Distressed Leather Dog Collar; 2) CollarDirect: Rolled Leather Dog Collar; 3) OmniPet: Signature Leather Dog Collar"
+ },
+ "vivarawpets.com": {
+  "company": "Viva",
+  "question": "What's the best raw dog food to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "Stella & Chewy's",
+  "competitor_product": "Chewy's Chicken Dinner Patties",
+  "flag": "ok",
+  "raw": "*   1.  Stella & Chewy's: Chewy's Chicken Dinner Patties; 2) Vital Essentials: Freeze-Dried Raw Beef Crunchy Mini Nibs; 3) Primal: Beef Formula Nuggets"
+ },
+ "approvedbyfritz.com": {
+  "company": "Approved by Fritz",
+  "question": "What's the best dog bowl mat to buy online for around $23?",
+  "own_named": false,
+  "competitor_brand": "DogBuddy",
+  "competitor_product": "Dog Food Mat, Large",
+  "flag": "ok",
+  "raw": "*   1.  DogBuddy: Dog Food Mat, Large; 2) Frisco: Silicone Dog & Cat Food Mat, Large; 3) Neater Pet Brands: Neater Mat Silicone Pet Bowl Mat"
+ },
+ "feedartie.com": {
+  "company": "Artie",
+  "question": "What's the best automatic pet feeder to buy online for around $200?",
+  "own_named": false,
+  "competitor_brand": "PETLIBRO",
+  "competitor_product": "Granary Smart Camera Feeder",
+  "flag": "ok",
+  "raw": "*   1.  PETLIBRO: Granary Smart Camera Feeder; 2) PETKIT: Yumshare Dual-Hopper with Camera; 3) PetSafe: Smart Feed Automatic Dog and Cat Feeder"
+ },
+ "frommfamily.com": {
+  "company": "Fromm Family Foods",
+  "question": "What's the best dry dog food to buy online?",
+  "own_named": false,
+  "competitor_brand": "Purina Pro Plan",
+  "competitor_product": "Complete Essentials Adult Shredded Blend Chicken & Rice",
+  "flag": "ok",
+  "raw": "*   1.  Purina Pro Plan: Complete Essentials Adult Shredded Blend Chicken & Rice; 2) Hill\u2019s Science Diet: Adult Chicken & Barley Recipe; 3) Royal Canin: Size Health Nutrition Medium Adult PetMD+1\n    \n    Sources"
+ },
+ "smarterpaw.com": {
+  "company": "SmarterPaw, Meowijuana\u00ae & Doggijuana\u00ae",
+  "question": "What's the best catnip toy to buy online for around $13?",
+  "own_named": false,
+  "competitor_brand": "Yeowww!",
+  "competitor_product": "Pineapple Cat Toy",
+  "flag": "ok",
+  "raw": "*   1.  Yeowww!: Pineapple Cat Toy; 2) Frisco: Mice Plush Cat Toy with Catnip, 10 count; 3) KONG: Wubba Butterfly Plush Cat Toy with Catnip"
+ },
+ "comfurtcollar.com": {
+  "company": "COMFURT COLLAR",
+  "question": "What's the best soft dog recovery cone to buy online for around $35?",
+  "own_named": false,
+  "competitor_brand": "All Four Paws",
+  "competitor_product": "Comfy Cone",
+  "flag": "ok",
+  "raw": "*   1.  All Four Paws: Comfy Cone; 2) ZenPet: ZenCone Soft Recovery Collar; 3) KONG: Cloud Collar"
+ },
+ "iconicpet.com": {
+  "company": "Iconic Pet",
+  "question": "What's the best stainless steel pet bowl to buy online for around $15?",
+  "own_named": false,
+  "competitor_brand": "Amazon Basics",
+  "competitor_product": "Stainless Steel Non-Skid Dog Bowls, 38 oz (2-Pack)",
+  "flag": "ok",
+  "raw": "*   1.  Amazon Basics: Stainless Steel Non-Skid Dog Bowls, 38 oz (2-Pack); 2) Loving Pets: Bella Non-Skid Stainless Steel Dog & Cat Bowl; 3) OurPets: Durapet Premium Rubber-Bonded Stainless Steel Bowl"
+ },
+ "rebelraw.com": {
+  "company": "Rebel Raw",
+  "question": "What's the best raw dog food to buy online for around $6?",
+  "own_named": false,
+  "competitor_brand": "Instinct",
+  "competitor_product": "FreshRaw Meals Cage-Free Chicken Recipe",
+  "flag": "ok",
+  "raw": "*   1.  Instinct: FreshRaw Meals Cage-Free Chicken Recipe; 2) Instinct: FreshRaw Meals Grass-Fed Beef Recipe; 3) Albright\u2019s: Chicken Complete Raw Recipe"
+ },
+ "stellarbiotics.com": {
+  "company": "Stellar Biotics LLC",
+  "question": "What's the best dog immune supplement to buy online for around $45?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Imuquin Immune Support Supplement for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Imuquin Immune Support Supplement for Dogs; 2) Zesty Paws: Vet Strength Allergy & Immune Bites for Dogs; 3) VetriScience: Immune Support for Medium & Large Dogs"
+ },
+ "wellbredonline.com": {
+  "company": "Well Bred",
+  "question": "What's the best odor-free bully sticks to buy online for around $9?",
+  "own_named": false,
+  "competitor_brand": "Redbarn",
+  "competitor_product": "Odor-Free Bully Stick",
+  "flag": "ok",
+  "raw": "*   1.  Redbarn: Odor-Free Bully Stick; 2) Barkworthies: Odor-Free Double Cut 6\" Bully Stick; 3) Natural Farm: Odor-Free Bully Stick 12\" redbarn.com\n    \n    Sources"
+ },
+ "wolfgangusa.com": {
+  "company": "Wolfgang",
+  "question": "What's the best dog collar to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Ruffwear",
+  "competitor_product": "Flat Out Dog Collar",
+  "flag": "ok",
+  "raw": "*   1.  Ruffwear: Flat Out Dog Collar; 2) LupinePet: Standard Dog Collar; 3) GoTags: Reflective Adjustable Personalized Nameplate Dog Collar"
+ },
+ "petppi.com": {
+  "company": "Pet Product Innovations LLC",
+  "question": "What's the best dog bowl to buy online?",
+  "own_named": false,
+  "competitor_brand": "Frisco",
+  "competitor_product": "Non-Skid Stainless Steel Bowl",
+  "flag": "ok",
+  "raw": "*   1.  Frisco: Non-Skid Stainless Steel Bowl; 2) OurPets: DuraPet Premium Non-Skid Stainless Steel Dog Bowl; 3) YETI: Boomer 8 Dog Bowl petful.com+1\n    \n    Sources"
+ },
+ "kingloupets.com": {
+  "company": "King Lou Pets",
+  "question": "What's the best duck feet dog treats to buy online for around $25?",
+  "own_named": true,
+  "competitor_brand": "Gaines Family Farmstead",
+  "competitor_product": "Duck Feet Grain-Free Dehydrated Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Gaines Family Farmstead: Duck Feet Grain-Free Dehydrated Dog Treats; 2) King Lou: Whole Duck Feet Dehydrated Dog Treats; 3) Best Bully Sticks: Duck Feet Dog Treats chewy.com\n    \n    Sources"
+ },
+ "poshpuppyboutique.com": {
+  "company": "Posh Puppy Boutique",
+  "question": "What's the best designer dog toy to buy online for around $15?",
+  "own_named": false,
+  "competitor_brand": "Fringe Studio",
+  "competitor_product": "Hair Today, Cuddle Tomorrow Plush Dog Toy",
+  "flag": "ok",
+  "raw": "*   1.  Wild One: Triangle Tug; 2) Fringe Studio: Hair Today, Cuddle Tomorrow Plush Dog Toy; 3) Huxley & Kent: Margarita Loco Dog Toy"
+ },
+ "shophiddin.com": {
+  "company": "Hiddin",
+  "question": "What's the best metal pet bowl set to buy online for around $28?",
+  "own_named": false,
+  "competitor_brand": "Iconic Pet",
+  "competitor_product": "Stainless Steel Non-Skid Dog & Cat Bowls",
+  "flag": "ok",
+  "raw": "*   1.  Iconic Pet: Stainless Steel Non-Skid Dog & Cat Bowls; 2) PetRageous Designs: Aruba 3-Piece Stainless-Steel Elevated Bowl; 3) UPSKY: 304 Metal Dual Food & Water Stainless Steel Bowl Set"
+ },
+ "visionarypet.com": {
+  "company": "Visionary Pet Foods",
+  "question": "What's the best freeze-dried keto dog food to buy online for around $64?",
+  "own_named": true,
+  "competitor_brand": "Bones & Co.",
+  "competitor_product": "Freeze-Dried Temptin Turkey Recipe Keto Formula \u2013 25oz",
+  "flag": "ok",
+  "raw": "*   1.  Visionary Pet Foods: Freeze-Dried Beef Dog Food \u2013 25oz; 2) Visionary Pet Foods: Freeze-Dried Chicken Dog Food \u2013 25oz; 3) Bones & Co.: Freeze-Dried Temptin Turkey Recipe Keto Formula \u2013 25oz"
+ },
+ "dogisgood.com": {
+  "company": "Dog is Good",
+  "question": "What's the best dog lover t-shirt to buy online?",
+  "own_named": false,
+  "competitor_brand": "Pawsionate",
+  "competitor_product": "\u201cA Dog Mom Photo\u201d Personalized T-Shirt",
+  "flag": "ok",
+  "raw": "*   1.  Pawsionate: \u201cA Dog Mom Photo\u201d Personalized T-Shirt; 2) Middle Class Fancy: Dog Dad T-Shirt; 3) Lucky Paw Shoppe: Dog Lover T-Shirt \ud83d\udc3e dognotebook.com\n    \n    Sources"
+ },
+ "madebycleo.com": {
+  "company": "Made By Cleo LLC",
+  "question": "What's the best AirTag holder for dog collars to buy online for around $10?",
+  "own_named": false,
+  "competitor_brand": "Case-Mate",
+  "competitor_product": "AirTag Case for Dog Collars",
+  "flag": "ok",
+  "raw": "*   1.  Case-Mate: AirTag Case for Dog Collars; 2) GOCII: AirTag Dog Collar Holder 2-Pack; 3) ELUCKEKE: Waterproof AirTag Dog Collar Holder 2-Pack"
+ },
+ "gotags.com": {
+  "company": "GoTags.com",
+  "question": "What's the best pet ID tag to buy online for around $8?",
+  "own_named": true,
+  "competitor_brand": "Frisco",
+  "competitor_product": "Stainless Steel Personalized Dog & Cat ID Tag",
+  "flag": "ok",
+  "raw": "*   1.  GoTags: Stainless Steel Pet ID Tag; 2) Frisco: Stainless Steel Personalized Dog & Cat ID Tag; 3) Providence Engraving: Personalized Stainless Steel Pet ID Tag"
+ },
+ "myperfectpetfood.com": {
+  "company": "My Perfect Pet Inc.",
+  "question": "What's the best fresh cooked dog food to buy online for around $194?",
+  "own_named": false,
+  "competitor_brand": "",
+  "competitor_product": "",
+  "flag": "no usable competitor",
+  "raw": "*   *   ![](https://images.openai.com/static-rsc-1/8SZjtFDmKzdBmZ2zLL5l9-hBfsYXM1BONa4Lrims25JIUttTFHQKHSiFMBZZLfD6JaNxrKAwynzzn1E6u6esSotlEte9ZZVz2Mrm3y0K6-GgRVCZYBhNo2O9tLPZtfjGGmwJn4YVHIsl35reM1BC3EActhlUA5J7bQpmzYPu_rQ) **JustFoodForDogs Chicken & Rice Recipe Frozen Human-Grade Fresh Dog Food**$"
+ },
+ "k9power.com": {
+  "company": "K9-Power\u00ae",
+  "question": "What's the best dog weight gain supplement to buy online for around $30?",
+  "own_named": false,
+  "competitor_brand": "Tomlyn",
+  "competitor_product": "Nutri-Cal Malt-Flavored High-Calorie Nutritional Gel",
+  "flag": "ok",
+  "raw": "*   1.  Tomlyn: Nutri-Cal Malt-Flavored High-Calorie Nutritional Gel; 2) PetAg: Dyne High Calorie Liquid Nutritional Supplement; 3) Vetoquinol: Nutri-Cal High-Calorie Gel chewy.com+2\n    \n    Sources"
+ },
+ "bullybunches.ca": {
+  "company": "Bully Bunches",
+  "question": "What's the best bully stick holder to buy online for around $30?",
+  "own_named": true,
+  "competitor_brand": "Bow Wow Labs",
+  "competitor_product": "Bow Wow Buddy",
+  "flag": "ok",
+  "raw": "*   1.  Bow Wow Labs: Bow Wow Buddy; 2) Bully Grip: Bully Stick Holder; 3) Bully Bunches: Dog Bully Stick Safety Holder"
+ },
+ "k9wear.com": {
+  "company": "K9 Wear",
+  "question": "What's the best dog collar and leash set to buy online for around $21?",
+  "own_named": false,
+  "competitor_brand": "Max & Marlow",
+  "competitor_product": "Waterproof TPU Coated Dog Collar and 5 ft Leash Set",
+  "flag": "ok",
+  "raw": "*   1.  Max & Marlow: Waterproof TPU Coated Dog Collar and 5 ft Leash Set; 2) IZOD Pet: Nylon Dog Collar & Leash Set; 3) Luvable Friends: Unisex Pet Collar and Leash Set, Floral"
+ },
+ "horseguard.com": {
+  "company": "Horse Guard Inc.",
+  "question": "What's the best horse fence to buy online?",
+  "own_named": false,
+  "competitor_brand": "Field Guardian",
+  "competitor_product": "1.5 in. White Polytape",
+  "flag": "ok",
+  "raw": "*   1.  Field Guardian: 1.5 in. White Polytape; 2) Zareba: Sure Shock 656 ft. Heavy-Duty 0.5 in. Polytape; 3) Fencer Wire: 5 ft. x 100 ft. 12.5/10 Gauge Graduated Mesh Horse Fencing"
+ },
+ "miraclevet.com": {
+  "company": "Miracle Vet",
+  "question": "What's the best slow feeder dog bowl to buy online for around $8?",
+  "own_named": false,
+  "competitor_brand": "Outward Hound",
+  "competitor_product": "Fun Feeder Slo Bowl",
+  "flag": "ok",
+  "raw": "*   1.  Outward Hound: Fun Feeder Slo Bowl; 2) JW Pet: Skid Stop Slow Feed Dog Bowl; 3) Aspen Pet: Skid Stop Slow Feeder Dog Bowl"
+ },
+ "naturesanimals.com": {
+  "company": "Nature's Animals, Inc.",
+  "question": "What's the best baked dog biscuits to buy online for around $35?",
+  "own_named": false,
+  "competitor_brand": "Newman's Own",
+  "competitor_product": "Peanut Butter Dog Biscuits",
+  "flag": "ok",
+  "raw": "*   1.  Newman's Own: Peanut Butter Dog Biscuits; 2) Buddy Biscuits: Original Oven Baked with Peanut Butter Dog Treats; 3) Old Mother Hubbard: Classic Baked Dog Treats, Small"
+ },
+ "lovenala.com": {
+  "company": "Love, Nala",
+  "question": "What's the best air-dried cat food to buy online for around $29?",
+  "own_named": false,
+  "competitor_brand": "Cafe Nara",
+  "competitor_product": "Chicken Recipe Air Dried Cat Food",
+  "flag": "ok",
+  "raw": "*   1.  Cafe Nara: Chicken Recipe Air Dried Cat Food; 2) ZEAL: Chicken Recipe Gently Air Dried Cat Food; 3) The New Zealand Natural Pet Food Co.: Meow Chicken & Salmon Air Dried Cat Food"
+ },
+ "k9ballistics.com": {
+  "company": "K9 Ballistics",
+  "question": "What's the best dog crate cover to buy online for around $55?",
+  "own_named": false,
+  "competitor_brand": "MidWest Homes for Pets",
+  "competitor_product": "QuietTime Defender Crate Cover",
+  "flag": "ok",
+  "raw": "*   1.  MidWest Homes for Pets: QuietTime Defender Crate Cover; 2) Frisco: Crate Cover, 54-inch White Leaves; 3) PETSFIT: Double Doors Dog Crate Cover"
+ },
+ "swiftpaws.com": {
+  "company": "Swift Paws, Inc",
+  "question": "What's the best lure coursing machine for dogs to buy online?",
+  "own_named": true,
+  "competitor_brand": "",
+  "competitor_product": "",
+  "flag": "no usable competitor",
+  "raw": "*   1.  SwiftPaws: Home Plus Kit; 2) SwiftPaws: Home Original Kit; 3) SwiftPaws: CHASE! Kit swiftpaws.com+1\n    \n    Sources"
+ },
+ "maupets.com": {
+  "company": "Mau Pets",
+  "question": "What's the best modern cat litter box furniture to buy online for around $299?",
+  "own_named": false,
+  "competitor_brand": "The Refined Feline",
+  "competitor_product": "Refined Litter Box Deluxe",
+  "flag": "ok",
+  "raw": "*   1.  The Refined Feline: Refined Litter Box Deluxe; 2) ATJafurn: Furniture Style Cat Litter Box Enclosure with Storage & Glass Door; 3) Palace Imports: Ziva 2-Door Cat Litter Box Enclosure"
+ },
+ "lordjameson.com": {
+  "company": "Lord Jameson",
+  "question": "What's the best organic dog treats to buy online for around $14?",
+  "own_named": true,
+  "competitor_brand": "Grandma Lucy's",
+  "competitor_product": "Organic Apple Oven Baked Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Grandma Lucy's: Organic Apple Oven Baked Dog Treats; 2) Plato: Small Bites Organic Chicken Grain-Free Dog Treats; 3) Lord Jameson: Savory Sweet Organic Soft & Chewy Dog Treats"
+ },
+ "roccoandroxie.com": {
+  "company": "Rocco & Roxie Supply Co.",
+  "question": "What's the best pet stain and odor remover to buy online for around $28?",
+  "own_named": true,
+  "competitor_brand": "Nature's Miracle",
+  "competitor_product": "Advanced Pet Stain & Odor Eliminator",
+  "flag": "ok",
+  "raw": "*   1.  Rocco & Roxie: Extreme Stain & Odor Eliminator; 2) Nature's Miracle: Advanced Pet Stain & Odor Eliminator; 3) BISSELL: Pet Stain & Odor + Antibacterial Carpet Cleaning Formula"
+ },
+ "mendotapet.com": {
+  "company": "Mendota Pet",
+  "question": "What's the best slip leash for dogs to buy online for around $21?",
+  "own_named": true,
+  "competitor_brand": "FIDA",
+  "competitor_product": "Rope Slip Training Dog Leash",
+  "flag": "ok",
+  "raw": "*   1.  Mendota Products: Small Slip Solid Rope Dog Leash; 2) FIDA: Rope Slip Training Dog Leash; 3) Water & Woods: Braided Rope Slip Dog Leash chewy.com\n    \n    Sources"
+ },
+ "oscarnewman.com": {
+  "company": "Oscar Newman LLC",
+  "question": "What's the best small squeaky dog toy to buy online for around $9?",
+  "own_named": false,
+  "competitor_brand": "KONG",
+  "competitor_product": "Snuzzles Mini Duck Squeaky Dog Plush Toy",
+  "flag": "ok",
+  "raw": "*   1.  KONG: Snuzzles Mini Duck Squeaky Dog Plush Toy; 2) Outward Hound: HedgehogZ Squeaky Plush Dog Toy, Small; 3) Multipet: Loofa Dog The Original Plush Dog Toy, Mini, 6-inch"
+ },
+ "earthbuddypet.com": {
+  "company": "Earth Buddy Pet",
+  "question": "What's the best CBD oil for dogs to buy online for around $65?",
+  "own_named": false,
+  "competitor_brand": "ElleVet",
+  "competitor_product": "Hemp Oil for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  ElleVet: Hemp Oil for Dogs; 2) Austin and Kat: Brady\u2019s Senior Formula Oil; 3) Charlotte\u2019s Web: 17MG CBD Oil for Dogs leafly.com+2\n    \n    Sources"
+ },
+ "thebetterbone.com": {
+  "company": "BetterBone - Natural Plant-Based Dog Chew Toys & Essentials",
+  "question": "What's the best natural dog chew toy to buy online for around $10?",
+  "own_named": false,
+  "competitor_brand": "Brutus & Barnaby",
+  "competitor_product": "3.5-in Gold Himalayan Yak Cheese Natural Dog Chew",
+  "flag": "ok",
+  "raw": "*   1.  Brutus & Barnaby: 3.5-in Gold Himalayan Yak Cheese Natural Dog Chew; 2) Pupstages: Super Dogwood Dog Chew Toy; 3) Himalayan Pet Supply: Himalayan Dog Chew allcutedogs.com\n    \n    Sources"
+ },
+ "miamorepets.com": {
+  "company": "MiAmore Pets",
+  "question": "What's the best easy dog harness to buy online for around $32?",
+  "own_named": false,
+  "competitor_brand": "2 Hounds Design",
+  "competitor_product": "Freedom No-Pull Harness",
+  "flag": "ok",
+  "raw": "*   1.  2 Hounds Design: Freedom No-Pull Harness; 2) Kurgo: Enhanced Strength Tru-Fit Harness; 3) rabbitgoo: No-Pull Dog Harness leashloam.com+1\n    \n    Sources"
+ },
+ "farmtopettreats.com": {
+  "company": "Farm to Pet",
+  "question": "What's the best single-ingredient chicken dog treats to buy online for around $14?",
+  "own_named": true,
+  "competitor_brand": "Bocce\u2019s Bakery",
+  "competitor_product": "Popcorn Chicken Freeze-Dried",
+  "flag": "ok",
+  "raw": "*   1.  Bocce\u2019s Bakery: Popcorn Chicken Freeze-Dried; 2) Stella & Chewy\u2019s: Freeze-Dried Raw Single Ingredient Chicken Breast Dog Treats; 3) Farm to Pet: Chicken Chips for Dogs"
+ },
+ "yak9chews.com": {
+  "company": "Yak9 Chews",
+  "question": "What's the best yak milk dog chews to buy online for around $13?",
+  "own_named": false,
+  "competitor_brand": "Project Paws",
+  "competitor_product": "All-Natural Golden Yak Dog Chews",
+  "flag": "ok",
+  "raw": "*   1.  Project Paws: All-Natural Golden Yak Dog Chews; 2) Bully Bunches: Himalayan Yak Chew Dog Treats; 3) Yak9: 100% Yak Milk Chews for Dogs"
+ },
+ "barfworld.com": {
+  "company": "Barf World Inc",
+  "question": "What's the best freeze-dried raw dog food to buy online for around $39?",
+  "own_named": false,
+  "competitor_brand": "Primal",
+  "competitor_product": "Chicken Formula Nuggets Freeze-Dried Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Primal: Chicken Formula Nuggets Freeze-Dried Dog Food; 2) Stella & Chewy's: Dandy Lamb Dinner Freeze-Dried Dog Food; 3) Ultimate Pet Nutrition: Nutra Complete Premium Beef Freeze-Dried Raw Dog Food"
+ },
+ "soykitty.com": {
+  "company": "SoyKitty, LLC",
+  "question": "What's the best plant-based cat litter to buy online for around $36?",
+  "own_named": false,
+  "competitor_brand": "Dofu Cat",
+  "competitor_product": "Unscented Clumping Tofu Multi-Cat Litter",
+  "flag": "ok",
+  "raw": "*   1.  Dofu Cat: Unscented Clumping Tofu Multi-Cat Litter; 2) Michu: Premium Pro Gen 2 Value Box Unscented Clumping Mixed Tofu Cat Litter; 3) SOYSAND: Tofu Cat Litter"
+ },
+ "countrypet.com": {
+  "company": "CountryPet Naturals",
+  "question": "What's the best frozen raw dog food to buy online for around $74?",
+  "own_named": false,
+  "competitor_brand": "Stella & Chewy's",
+  "competitor_product": "Absolutely Rabbit Patties Frozen Raw Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Stella & Chewy's: Absolutely Rabbit Patties Frozen Raw Dog Food; 2) Instinct: FreshRaw Meals Grass-Fed Beef Recipe; 3) Stella & Chewy's: Stella's Super Beef Patties Frozen Raw Dog Food"
+ },
+ "thegreenpetshop.com": {
+  "company": "Green Pet",
+  "question": "What's the best dog cooling mat to buy online for around $25?",
+  "own_named": true,
+  "competitor_brand": "Elegear",
+  "competitor_product": "Cooling Dog Mat 2.0",
+  "flag": "ok",
+  "raw": "*   1.  The Green Pet Shop: Cool Pet Pad; 2) Elegear: Cooling Dog Mat 2.0; 3) allforpaws: Chill Out Cooling Mat petscored.com+1\n    \n    Sources"
+ },
+ "petfriendlybox.com": {
+  "company": "PetFriendly",
+  "question": "What's the best pet subscription box to buy online?",
+  "own_named": false,
+  "competitor_brand": "BarkBox",
+  "competitor_product": "BarkBox",
+  "flag": "ok",
+  "raw": "*   1.  BarkBox: BarkBox; 2) BARK: Super Chewer; 3) PupBox: Puppy Subscription Box"
+ },
+ "ropehounds.com": {
+  "company": "Rope Hounds",
+  "question": "What's the best dog leash to buy online for around $8?",
+  "own_named": false,
+  "competitor_brand": "PetSafe",
+  "competitor_product": "Nylon Dog Leash",
+  "flag": "ok",
+  "raw": "*   1.  PetSafe: Nylon Dog Leash; 2) BAAPET: Padded-Handle Dog Leash; 3) Taglory: Reflective Rope Leash"
+ },
+ "kradlemypet.com": {
+  "company": "Kradle",
+  "question": "What's the best calming chews for dogs to buy online for around $14?",
+  "own_named": false,
+  "competitor_brand": "VetIQ",
+  "competitor_product": "Calming Soft Chews",
+  "flag": "ok",
+  "raw": "*   1.  VetIQ: Calming Soft Chews; 2) Pet Naturals: Calming Chews for Dogs; 3) Veterinary Formula: Pet Calm Supplement for Dogs"
+ },
+ "neuroganpets.com": {
+  "company": "Neurogan Pets",
+  "question": "What's the best CBD dog treats to buy online for around $30?",
+  "own_named": false,
+  "competitor_brand": "Medterra",
+  "competitor_product": "Pet Hemp Calming Chews",
+  "flag": "ok",
+  "raw": "*   1.  Medterra: Pet Hemp Calming Chews; 2) Honest Paws: Calm CBD Bites for Dogs; 3) HolistaPet: CBD Dog Treats caninebible.com+1\n    \n    Sources"
+ },
+ "rockyandmaggies.com": {
+  "company": "Rocky and Maggie's, Inc.",
+  "question": "What's the best dog pee pad to buy online for around $19?",
+  "own_named": false,
+  "competitor_brand": "Amazon Basics",
+  "competitor_product": "Leak-Proof Dog and Puppy Potty Training Pee Pads",
+  "flag": "ok",
+  "raw": "*   1.  Amazon Basics: Leak-Proof Dog and Puppy Potty Training Pee Pads; 2) Glad for Pets: Black Charcoal Puppy Pads; 3) COCOYO: All-Absorb Basic Training Pads"
+ },
+ "pawfy.com": {
+  "company": "Pawfy",
+  "question": "What's the best allergy chews for dogs to buy online for around $35?",
+  "own_named": false,
+  "competitor_brand": "Zesty Paws",
+  "competitor_product": "Allergy & Immune Bites for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  Zesty Paws: Allergy & Immune Bites for Dogs; 2) Pet Honesty: Allergy Support Chews; 3) Wuffes: Allergy & Itch Chews for Dogs"
+ },
+ "cleoandhooman.com": {
+  "company": "Cleo&Hooman",
+  "question": "What's the best dog grooming wipes to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Pogi's",
+  "competitor_product": "Dog Grooming Wipes",
+  "flag": "ok",
+  "raw": "*   1.  Pogi's: Dog Grooming Wipes; 2) earthbath: Hypoallergenic Grooming Wipes; 3) Burt's Bees: Manuka Honey Multipurpose Wipes for Dogs pogis.com+2\n    \n    Sources"
+ },
+ "moshiqa.com": {
+  "company": "MOSHIQA",
+  "question": "What's the best dog sweater to buy online for around $95?",
+  "own_named": false,
+  "competitor_brand": "Pet Passion",
+  "competitor_product": "Gable Cable Knit Sweater Cashmere Wool",
+  "flag": "ok",
+  "raw": "*   1.  Pet Passion: Gable Cable Knit Sweater Cashmere Wool; 2) BONDIR: Cloudnine Wool Sweater; 3) Pet Passion: Rugby The Bold Stripe Dog Sweater"
+ },
+ "5elementfoodtherapy.com": {
+  "company": "5 Element Food Therapy",
+  "question": "What's the best natural beef dog treats to buy online for around $19?",
+  "own_named": false,
+  "competitor_brand": "Mighty Paw",
+  "competitor_product": "Naturals Beef Gullet Jerky",
+  "flag": "ok",
+  "raw": "*   1.  Mighty Paw: Naturals Beef Gullet Jerky; 2) Four Leaf Rover: Beef Heart Treats; 3) 4 Legged Butcher: Freeze Dried 100% Raw Beef Dog Treats mightypaw.com+2\n    \n    Sources"
+ },
+ "thecatthrone.com": {
+  "company": "The Cat Throne",
+  "question": "What's the best flushable cat litter to buy online for around $28?",
+  "own_named": false,
+  "competitor_brand": "Sustainably Yours",
+  "competitor_product": "Small-Grain Formula Unscented Clumping Cat Litter",
+  "flag": "ok",
+  "raw": "*   1.  Sustainably Yours: Small-Grain Formula Unscented Clumping Cat Litter; 2) Tuft & Paw: Really Great Cat Litter Unscented Low-Tracking Flushable Tofu Cat Litter; 3) World's Best Cat Litter: Original Unscented Clumping Corn Cat Litter chewy.com+1\n    \n    Sources"
+ },
+ "pezzypets.com": {
+  "company": "Pezzy Pets",
+  "question": "What's the best fish skin dog treats to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "Polkadog",
+  "competitor_product": "Cod Skins",
+  "flag": "ok",
+  "raw": "*   1.  Polkadog: Cod Skins; 2) Hungry Paws: Premium Salmon Skin Dog Chew Treats; 3) Savory Prime: Cod Skin Fish Strips"
+ },
+ "healthydogma.com": {
+  "company": "Healthy Dogma",
+  "question": "What's the best homemade dog food mix to buy online for around $34?",
+  "own_named": true,
+  "competitor_brand": "",
+  "competitor_product": "",
+  "flag": "no usable competitor",
+  "raw": "*   1.  Healthy Dogma: Homestyle PetMix with Beef; 2) Healthy Dogma: Homestyle PetMix Original Grain-Free; 3) Healthy Dogma: Homestyle PetMix with Chicken"
+ },
+ "basicanimalhealth.com": {
+  "company": "Basic Animal Health",
+  "question": "What's the best horse gut health supplement to buy online for around $110?",
+  "own_named": false,
+  "competitor_brand": "SmartPak",
+  "competitor_product": "SmartGI\u00ae Ultra Pellets",
+  "flag": "ok",
+  "raw": "*   1.  SmartPak: SmartGI\u00ae Ultra Pellets; 2) Mad Barn: Visceral+ Pellets; 3) SUCCEED: Digestive Conditioning Program"
+ },
+ "blue-9.com": {
+  "company": "Blue-9 Pet Products",
+  "question": "What's the best multi-function dog leash to buy online for around $20?",
+  "own_named": true,
+  "competitor_brand": "FIDA",
+  "competitor_product": "6-IN-1 Feature Dog Leash",
+  "flag": "ok",
+  "raw": "*   1.  FIDA: 6-IN-1 Feature Dog Leash; 2) Blue-9: Multi-Function Double Attachment Hands-Free Dog Leash; 3) Pet Life: Echelon Hands-Free & Convertible 2-in-1 Training Dog Leash"
+ },
+ "vetcs.com": {
+  "company": "VetCS",
+  "question": "What's the best CBD for horses to buy online for around $70?",
+  "own_named": true,
+  "competitor_brand": "VetCBD",
+  "competitor_product": "CBD Tincture for Equines",
+  "flag": "ok",
+  "raw": "*   1.  VetCS: CBD Powder for Horses; 2) VetCBD: CBD Tincture for Equines; 3) Mikko\u2019s Choice: CBD Pellets 1 LB"
+ },
+ "carolinapetcompany.com": {
+  "company": "Carolina Pet Company",
+  "question": "What's the best dog bed to buy online for around $44?",
+  "own_named": false,
+  "competitor_brand": "Bedsure",
+  "competitor_product": "Orthopedic Dog Bed",
+  "flag": "ok",
+  "raw": "*   1.  Bedsure: Orthopedic Dog Bed; 2) FurHaven: Ultra Plush Luxe Lounger Orthopedic Dog Bed; 3) BARK: Orthopedic Dog Bed"
+ },
+ "thepetglider.com": {
+  "company": "The Pet Glider",
+  "question": "What's the best sugar glider vitamins to buy online for around $50?",
+  "own_named": true,
+  "competitor_brand": "Exotic Nutrition",
+  "competitor_product": "Glider Booster Multivitamin",
+  "flag": "ok",
+  "raw": "*   1.  The Pet Glider: TPG Complete Multi-Vitamins with Calcium (360-Day Supply); 2) Exotic Nutrition: Glider Booster Multivitamin; 3) Exotic Nutrition: Glider-Cal Calcium Supplement thepetglider.com+2\n    \n    Sources"
+ },
+ "chidog.com": {
+  "company": "Chi Dog",
+  "question": "What's the best custom dog meal plan to buy online for around $99?",
+  "own_named": false,
+  "competitor_brand": "Ollie",
+  "competitor_product": "Personalized Full Fresh Meal Plan",
+  "flag": "ok",
+  "raw": "*   1.  Ollie: Personalized Full Fresh Meal Plan; 2) Nom Nom: Personalized Fresh Dog Food Meal Plan; 3) JustFoodForDogs: Healthy Weight Variety Pack"
+ },
+ "basepaws.com": {
+  "company": "Basepaws",
+  "question": "What's the best cat DNA test to buy online?",
+  "own_named": true,
+  "competitor_brand": "Wisdom Panel",
+  "competitor_product": "Complete for Cats DNA Test",
+  "flag": "ok",
+  "raw": "*   1.  Wisdom Panel: Complete for Cats DNA Test; 2) Basepaws: Breed + Health Cat DNA Test; 3) Orivet: HomeDNA Cat Health Screen wired.com+1\n    \n    Sources"
+ },
+ "doggielawn.com": {
+  "company": "DoggieLawn",
+  "question": "What's the best real grass dog potty patch to buy online for around $35?",
+  "own_named": true,
+  "competitor_brand": "",
+  "competitor_product": "",
+  "flag": "no usable competitor",
+  "raw": "*   1.  Fresh Patch: Standard Real Grass Dog Potty Patch; 2) DoggieLawn: Standard Real Grass Dog Potty; 3) Gotta Go Grass: 16\" x 24\" Natural Dog Potty Grass Refill"
+ },
+ "abettertreat.com": {
+  "company": "A Better Treat",
+  "question": "What's the best freeze-dried salmon dog treats to buy online for around $10?",
+  "own_named": false,
+  "competitor_brand": "Kindfull",
+  "competitor_product": "Freeze-Dried Salmon Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Kindfull: Freeze-Dried Salmon Dog Treats; 2) Muenster: Freeze-Dried Wild Salmon Dog Treats; 3) Stewart: Wild Salmon Single Ingredient Freeze-Dried Dog Treats target.com+1\n    \n    Sources"
+ },
+ "5strands.com": {
+  "company": "5Strands Affordable Testing",
+  "question": "What's the best pet food intolerance test to buy online for around $123?",
+  "own_named": true,
+  "competitor_brand": "TotalVet",
+  "competitor_product": "Pet Intolerance Test",
+  "flag": "ok",
+  "raw": "*   1.  5Strands: Pet Food Intolerance & Environmental Sensitivity Test; 2) TotalVet: Pet Intolerance Test; 3) Glacier Peak Holistics: Pet Intolerance Test Kit 5strands.com+2\n    \n    Sources"
+ },
+ "saintroccostreats.shop": {
+  "company": "Saint Rocco's Treats",
+  "question": "What's the best natural dog treats to buy online for around $13?",
+  "own_named": false,
+  "competitor_brand": "PureBites",
+  "competitor_product": "Chicken Breast Freeze-Dried Raw Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  PureBites: Chicken Breast Freeze-Dried Raw Dog Treats; 2) Stewart: Beef Liver Single Ingredient Freeze-Dried Raw Dog Treats; 3) Pupford: Train Chicken Natural Freeze-Dried Dog Treats"
+ },
+ "mightypetz.com": {
+  "company": "Mighty Petz\u00ae",
+  "question": "What's the best allergy and immune chews for cats to buy online for around $41?",
+  "own_named": false,
+  "competitor_brand": "Pet Honesty",
+  "competitor_product": "Dual Texture Immune Support Lysine for Cats 3-Pack",
+  "flag": "ok",
+  "raw": "*   1.  Pet Honesty: Dual Texture Immune Support Lysine for Cats 3-Pack; 2) VetriScience: Veterinary Strength Allergy & Itch Support Derma Strength Pro Soft Chews; 3) Real Mushrooms: Mushroom Immune Chews Supplement for Dogs & Cats chewy.com+2\n    \n    Sources"
+ },
+ "healthextension.com": {
+  "company": "Health Extension Pet Care",
+  "question": "What's the best small breed dry dog food to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "Purina Beneful",
+  "competitor_product": "IncrediBites Small Breed Farm-Raised Beef",
+  "flag": "ok",
+  "raw": "*   1.  Purina Beneful: IncrediBites Small Breed Farm-Raised Beef; 2) Pedigree: Small Dog Roasted Chicken, Rice & Vegetable; 3) Kibbles \u2019n Bits: Mini Bits Small Breed Savory Beef & Chicken"
+ },
+ "dogishuman.com": {
+  "company": "Dog is Human",
+  "question": "What's the best dog multivitamin to buy online for around $46?",
+  "own_named": true,
+  "competitor_brand": "VetPro Complete",
+  "competitor_product": "Advanced 5 in 1 Multivitamin",
+  "flag": "ok",
+  "raw": "*   1.  VetPro Complete: Advanced 5 in 1 Multivitamin; 2) Dog Is Human: Daily Multivitamin; 3) Nutramax: Cosequin Senior with Multivitamin"
+ },
+ "tuftandpaw.com": {
+  "company": "Tuft & Paw",
+  "question": "What's the best cat litter to buy online for around $29?",
+  "own_named": false,
+  "competitor_brand": "SmartCat",
+  "competitor_product": "Unscented Clumping Grass Cat Litter",
+  "flag": "ok",
+  "raw": "*   1.  SmartCat: Unscented Clumping Grass Cat Litter; 2) Dr. Elsey's: Precious Cat Unscented Ultra+ Cat Litter; 3) Tidy Cats: Lightweight Free & Clean Unscented Clumping Clay Cat Litter"
+ },
+ "2houndsdesign.com": {
+  "company": "2 Hounds Design",
+  "question": "What's the best no-pull dog harness to buy online for around $13?",
+  "own_named": false,
+  "competitor_brand": "rabbitgoo",
+  "competitor_product": "No-Pull Dog Harness",
+  "flag": "ok",
+  "raw": "*   1.  rabbitgoo: No-Pull Dog Harness; 2) Vila: Adjustable Reflective No Pull Dog Harness; 3) Didog: No Pull Dog Harness with Soft Padded Handle"
+ },
+ "v-dog.com": {
+  "company": "V-dog, Inc",
+  "question": "What's the best vegan dog food to buy online for around $17?",
+  "own_named": false,
+  "competitor_brand": "Halo",
+  "competitor_product": "Holistic Garden of Vegan Recipe Wet Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Halo: Holistic Garden of Vegan Recipe Wet Dog Food; 2) Natural Balance: Limited Ingredient Plant Powered Vegan-Friendly Dry Dog Food; 3) Health Extension: Gently Cooked Vegetarian Recipe Dog Food"
+ },
+ "pupford.com": {
+  "company": "Pupford",
+  "question": "What's the best dog training treats to buy online for around $10?",
+  "own_named": false,
+  "competitor_brand": "Zuke's",
+  "competitor_product": "Mini Naturals Soft and Chewy Chicken Recipe Training Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Zuke's: Mini Naturals Soft and Chewy Chicken Recipe Training Dog Treats; 2) Blue Buffalo: Blue Bits Tasty Chicken Recipe Soft-Moist Training Dog Treats; 3) Wellness: Soft Puppy Bites Lamb & Salmon Grain-Free Dog Treats"
+ },
+ "boxiecat.com": {
+  "company": "BOXIE",
+  "question": "What's the best clumping cat litter to buy online for around $26?",
+  "own_named": false,
+  "competitor_brand": "Dr. Elsey's",
+  "competitor_product": "Ultra Unscented Clumping Clay Cat Litter",
+  "flag": "ok",
+  "raw": "*   1.  Dr. Elsey's: Ultra Unscented Clumping Clay Cat Litter; 2) Arm & Hammer: Clump & Seal Complete Odor Sealing Clumping Cat Litter; 3) Purina Tidy Cats: Free & Clean Unscented Clumping Clay Cat Litter"
+ },
+ "suziespettreats.com": {
+  "company": "Suzie's CBD Treats",
+  "question": "What's the best CBD dog treats to buy online for around $21?",
+  "own_named": false,
+  "competitor_brand": "Canna River",
+  "competitor_product": "Broad Spectrum Pet Treats CBD + CBG",
+  "flag": "ok",
+  "raw": "*   1.  Canna River: Broad Spectrum Pet Treats CBD + CBG; 2) Lazarus Naturals: Calming Support CBD Dog Chews; 3) CBDfx: Hip & Joint Support CBD Dog Chews"
+ },
+ "carlsonpetproducts.com": {
+  "company": "Carlson Pet Products, Inc.",
+  "question": "What's the best dog gate to buy online for around $15?",
+  "own_named": false,
+  "competitor_brand": "xiepangOK",
+  "competitor_product": "Retractable Pet Gate 17.7\" x 49.2\"",
+  "flag": "ok",
+  "raw": "*   1.  xiepangOK: Retractable Pet Gate 17.7\" x 49.2\"; 2) Hovilon: Mesh Magic Pet Gate 28.35\" x 70.87\"; 3) XIBUFE: 2026 New Wide Gate Magic Gate walmart.com+1\n    \n    Sources"
+ },
+ "pranapets.com": {
+  "company": "Prana Pets",
+  "question": "What's the best CBD oil for dogs to buy online for around $60?",
+  "own_named": false,
+  "competitor_brand": "Cornbread Hemp",
+  "competitor_product": "Full Spectrum CBD Oil for Pets",
+  "flag": "ok",
+  "raw": "*   1.  Cornbread Hemp: Full Spectrum CBD Oil for Pets; 2) ElleVet: Hemp Oil for Dogs; 3) cbdMD: Broad Spectrum CBD Dog Oil Tincture"
+ },
+ "freshpatch.com": {
+  "company": "Fresh Patch",
+  "question": "What's the best real grass dog potty patch to buy online for around $70?",
+  "own_named": false,
+  "competitor_brand": "BETHEL",
+  "competitor_product": "Gotta Go Grass with Tray 2pk",
+  "flag": "ok",
+  "raw": "*   1.  BETHEL: Gotta Go Grass with Tray 2pk; 2) Gotta Go Grass: Natural Relief with Interlocking Tray; 3) DoggieLawn: XXL DoggieLawn"
+ },
+ "meowingtons.com": {
+  "company": "Meowingtons",
+  "question": "What's the best gift for a cat lover to buy online?",
+  "own_named": false,
+  "competitor_brand": "Pawsionate",
+  "competitor_product": "Owned By Cats Personalized Custom Coffee Mug",
+  "flag": "ok",
+  "raw": "*   1.  Pawsionate: Owned By Cats Personalized Custom Coffee Mug; 2) Verve Culture: Quilted Feline Tote; 3) HarborIslandDecor: Personalized Cat Blanket."
+ },
+ "animalplantsciences.com": {
+  "company": "Rooted Owl\u00ae Natural Pet Health",
+  "question": "What's the best herbal pet supplement to buy online?",
+  "own_named": false,
+  "competitor_brand": "Herbsmith",
+  "competitor_product": "Calm Shen",
+  "flag": "ok",
+  "raw": "*   1.  Herbsmith: Calm Shen; 2) Pet Wellbeing: Digestive Support; 3) Herbsmith: Clear AllerQi"
+ },
+ "pridebites.com": {
+  "company": "PrideBites, LLC",
+  "question": "What's the best personalized dog toy to buy online?",
+  "own_named": false,
+  "competitor_brand": "ThreadandPawCo",
+  "competitor_product": "Personalized Dog Bone Toy",
+  "flag": "ok",
+  "raw": "*   1.  ThreadandPawCo: Personalized Dog Bone Toy; 2) FuzzyFurPaws: Personalized Heart Dog Toy; 3) American Dog: Customizable Dog Toys"
+ },
+ "kindtail.com": {
+  "company": "KindTail",
+  "question": "What's the best collapsible dog crate to buy online for around $140?",
+  "own_named": false,
+  "competitor_brand": "EliteField",
+  "competitor_product": "4-Door Foldable Soft-Sided Dog Crate",
+  "flag": "ok",
+  "raw": "*   1.  EliteField: 4-Door Foldable Soft-Sided Dog Crate; 2) MidWest: LifeStages Double Door Collapsible Wire Dog Crate; 3) Richell: Foldable Travel 3-Way Collapsible Soft-Sided Dog & Cat Crate"
+ },
+ "theestespawco.com": {
+  "company": "The Estes Paw Company",
+  "question": "What's the best bully sticks to buy online for around $9?",
+  "own_named": false,
+  "competitor_brand": "Redbarn",
+  "competitor_product": "12\" Bully Stick",
+  "flag": "ok",
+  "raw": "*   1.  Redbarn: 12\" Bully Stick; 2) Natural Farm: 12\" Odor-Free Bully Stick; 3) Cadet: Large Bully Stick"
+ },
+ "toegrips.com": {
+  "company": "Dr. Buzby's Senior Dog Co.\u2122",
+  "question": "What's the best dog toe grips for senior dogs to buy online?",
+  "own_named": true,
+  "competitor_brand": "Dr. McHenry's",
+  "competitor_product": "Dog Toe Treads",
+  "flag": "ok",
+  "raw": "*   1.  Dr. Buzby's: ToeGrips for Dogs; 2) Dr. McHenry's: Dog Toe Treads; 3) DOK: TigerToes Anti-Slip Senior Dog Socks todaysveterinarypractice.com+1\n    \n    Sources"
+ },
+ "shamelesspets.com": {
+  "company": "Shameless Pets",
+  "question": "What's the best soft baked dog treats to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "Bocce's Bakery",
+  "competitor_product": "Sunday Roast Chicken & Pumpkin Recipe Soft & Chewy Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Bocce's Bakery: Sunday Roast Chicken & Pumpkin Recipe Soft & Chewy Dog Treats; 2) Blue Dog Bakery: Softies Peanut Butter Dog Treats; 3) Wellness: Rewarding Life Chicken & Venison Soft & Chewy Dog Treats"
+ },
+ "lifekey.co": {
+  "company": "Lifekey",
+  "question": "What's the best lost pet QR tag to buy online?",
+  "own_named": false,
+  "competitor_brand": "PetHub",
+  "competitor_product": "Digital ID Tag + QR Code",
+  "flag": "ok",
+  "raw": "*   1.  PetHub: Digital ID Tag + QR Code; 2) Ring: Pet Tag with QR Code; 3) Shiloh\u2019s House: QR Pet Tag"
+ },
+ "googipet.com": {
+  "company": "Googipet",
+  "question": "What's the best calming chews for dogs to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Zesty Paws",
+  "competitor_product": "Advanced Behavior Calming Soft Chews",
+  "flag": "ok",
+  "raw": "*   1.  Zesty Paws: Advanced Behavior Calming Soft Chews; 2) Pet Honesty: Hemp Calming Soft Chews; 3) VetIQ: Calming Chew Dog Supplements target.com+2\n    \n    Sources"
+ },
+ "roguepetscience.com": {
+  "company": "Rogue Pet Science, LLC",
+  "question": "What's the best dog food topper to buy online for around $40?",
+  "own_named": false,
+  "competitor_brand": "Stella & Chewy's",
+  "competitor_product": "Chewy's Chicken Meal Mixers Freeze-Dried Raw Dog Food Topper",
+  "flag": "ok",
+  "raw": "*   1.  Stella & Chewy's: Chewy's Chicken Meal Mixers Freeze-Dried Raw Dog Food Topper; 2) ACANA: Topper Free-Run Chicken Recipe Patties; 3) Cesar: Simply Crafted Cuisine Complement Soft Wet Adult Dog Food Topper Variety Pack"
+ },
+ "thinkjinx.com": {
+  "company": "Jinx",
+  "question": "What's the best small breed dog food to buy online for around $18?",
+  "own_named": false,
+  "competitor_brand": "Purina ONE",
+  "competitor_product": "Small Bites Beef & Rice Formula",
+  "flag": "ok",
+  "raw": "*   1.  Purina ONE: Small Bites Beef & Rice Formula; 2) IAMS: Proactive Health Small Breed Adult with Real Chicken; 3) Diamond Naturals: Small Breed Adult Chicken & Rice Formula"
+ },
+ "crateawayco.com": {
+  "company": "Crate Away",
+  "question": "What's the best dog travel crate to buy online for around $495?",
+  "own_named": false,
+  "competitor_brand": "GUNNER",
+  "competitor_product": "G1 Kennel",
+  "flag": "ok",
+  "raw": "*   1.  GUNNER: G1 Kennel; 2) RuffLand Performance Kennels: Large Kennel Gen II; 3) Dakota 283: G3 Framed Door Dog Kennel"
+ },
+ "portlandpetfoodcompany.com": {
+  "company": "Portland Pet Food Company",
+  "question": "What's the best human-grade dog food to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "The Honest Kitchen",
+  "competitor_product": "Human Grade Whole Food Clusters Chicken",
+  "flag": "ok",
+  "raw": "*   1.  The Honest Kitchen: Human Grade Whole Food Clusters Chicken; 2) JustFoodForDogs: JustFresh Home-Cooked Chicken Recipe; 3) Freshpet: Complete Nutrition Chicken Recipe"
+ },
+ "fabdog.com": {
+  "company": "fabdog, Inc.",
+  "question": "What's the best plush dog toy to buy online for around $13?",
+  "own_named": false,
+  "competitor_brand": "KONG",
+  "competitor_product": "Cozie Baily the Blue Dog Toy",
+  "flag": "ok",
+  "raw": "*   1.  KONG: Cozie Baily the Blue Dog Toy; 2) Multipet: Lamb Chop Plush Dog Toy; 3) Frisco: Sloth Bungee Plush Squeaky Dog Toy"
+ },
+ "gussysgut.com": {
+  "company": "Gussys Gut",
+  "question": "What's the best dog gut health supplement to buy online for around $47?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Proviable Probiotics & Prebiotics",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Proviable Probiotics & Prebiotics; 2) VetriScience: Extra Strength Healthy Gut & Digestion; 3) Bernie's: Perfect Poop Digestion Support chewy.com+1\n    \n    Sources"
+ },
+ "woofcreek.com": {
+  "company": "Woof Creek Pet Wellness",
+  "question": "What's the best natural flea and tick supplement for dogs to buy online for around $34?",
+  "own_named": true,
+  "competitor_brand": "PetHonesty",
+  "competitor_product": "Flea + Tick Support for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  Woof Creek: Flea + Tick Defense Support; 2) PetHonesty: Flea + Tick Support for Dogs; 3) Earth Animal: Apothecary Natural Flea & Tick Daily Internal Herbal Powder Woof Creek Pet Wellness+2\n    \n    Sources"
+ },
+ "wasatchpup.com": {
+  "company": "Wasatch Pup",
+  "question": "What's the best orthopedic dog bed to buy online for around $102?",
+  "own_named": false,
+  "competitor_brand": "Serta",
+  "competitor_product": "Orthopedic Cuddler Bolster Dog & Cat Bed",
+  "flag": "ok",
+  "raw": "*   1.  Serta: Orthopedic Cuddler Bolster Dog & Cat Bed; 2) FurHaven: Velvet Waves Perfect Comfort Orthopedic Sofa Dog Bed; 3) Bedsure: Orthopedic Bolster Dog Sofa Bed with Removable Cover"
+ },
+ "fluffandboots.com": {
+  "company": "Fluff & Boots",
+  "question": "What's the best cat kneading pad to buy online for around $65?",
+  "own_named": true,
+  "competitor_brand": "Pawsome Couture",
+  "competitor_product": "Counting Sheep Pet Mat",
+  "flag": "ok",
+  "raw": "*   1.  Fluff & Boots: Knead-it Pad\u2122; 2) Pawsome Couture: Counting Sheep Pet Mat; 3) Leos Paw: Fluffy Cat Bed"
+ },
+ "impactdogcrates.com": {
+  "company": "Impact Dog Crates",
+  "question": "What's the best heavy-duty dog crate to buy online for around $760?",
+  "own_named": true,
+  "competitor_brand": "K9 Kennel Boss",
+  "competitor_product": "Heavy Duty Collapsible Dog Crate",
+  "flag": "ok",
+  "raw": "*   1.  Impact Dog Crates: Collapsible Dog Crate; 2) K9 Kennel Boss: Heavy Duty Collapsible Dog Crate; 3) Zinger: Professional Aluminum Dog Crate"
+ },
+ "kohapet.com": {
+  "company": "KOHA Pet",
+  "question": "What's the best bland diet wet dog food to buy online for around $26?",
+  "own_named": false,
+  "competitor_brand": "Dave's Pet Food",
+  "competitor_product": "Restricted Bland Diet Chicken & Rice",
+  "flag": "ok",
+  "raw": "*   1.  Dave's Pet Food: Restricted Bland Diet Chicken & Rice; 2) Hill's Science Diet: Adult Sensitive Stomach & Sensitive Skin Tender Turkey & Rice Stew; 3) Rachael Ray Nutrish: Gentle Digestion Chicken, Pumpkin & Salmon"
+ },
+ "biomane.com": {
+  "company": "BioMane Products",
+  "question": "What's the best horse tail bag to buy online for around $14?",
+  "own_named": true,
+  "competitor_brand": "Weaver Equine",
+  "competitor_product": "Horse Tail Bag \u2013 Weather Resistant, 420D Polyester",
+  "flag": "ok",
+  "raw": "*   1.  BioMane: Tailbag; 2) Weaver Equine: Horse Tail Bag \u2013 Weather Resistant, 420D Polyester; 3) Classic Equine: Tail Bag biomane.com+2\n    \n    Sources"
+ },
+ "polkadog.com": {
+  "company": "Polkadog",
+  "question": "What's the best cod skin dog treats to buy online for around $13?",
+  "own_named": true,
+  "competitor_brand": "The Honest Kitchen",
+  "competitor_product": "Beams Ocean Chews Cod Fish Skins",
+  "flag": "ok",
+  "raw": "*   1.  Polkadog: Cod Skins; 2) The Honest Kitchen: Beams Ocean Chews Cod Fish Skins; 3) Savory Prime: Cod Skin Fish Strips polkadog.com+1\n    \n    Sources"
+ },
+ "kittypooclub.com": {
+  "company": "Kitty Poo Club",
+  "question": "What's the best cat litter box to buy online?",
+  "own_named": false,
+  "competitor_brand": "Whisker",
+  "competitor_product": "Litter-Robot 4",
+  "flag": "ok",
+  "raw": "*   1.  Whisker: Litter-Robot 4; 2) PetSafe: ScoopFree SmartSpin Litter Box; 3) PETKIT: PuraMax 2 Automatic Litter Box"
+ },
+ "winpropet.com": {
+  "company": "WINPRO Pet",
+  "question": "What's the best allergy supplement for dogs to buy online for around $36?",
+  "own_named": false,
+  "competitor_brand": "Zesty Paws",
+  "competitor_product": "Allergy & Immune Bites",
+  "flag": "ok",
+  "raw": "*   1.  Zesty Paws: Allergy & Immune Bites; 2) Pet Honesty: Allergy Support Chews; 3) Native Pet: Itchy Skin & Allergy Supplement chewy.com+1\n    \n    Sources"
+ },
+ "holistapet.com": {
+  "company": "Cheef Holdings",
+  "question": "What's the best CBD oil for dogs to buy online for around $30?",
+  "own_named": true,
+  "competitor_brand": "cbdMD",
+  "competitor_product": "Broad Spectrum CBD Dog Oil Tincture",
+  "flag": "ok",
+  "raw": "*   1.  cbdMD: Broad Spectrum CBD Dog Oil Tincture; 2) Honest Paws: Well CBD Oil; 3) HolistaPet: Broad-Spectrum CBD Oil for Dogs leafly.com+2\n    \n    Sources"
+ },
+ "therapetmd.com": {
+  "company": "Therapet",
+  "question": "What's the best dog calming spray to buy online for around $19?",
+  "own_named": false,
+  "competitor_brand": "ThunderEase",
+  "competitor_product": "Calming Pheromone Spray for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  ThunderEase: Calming Pheromone Spray for Dogs; 2) Sentry: Stop That! Noise & Pheromone Dog Spray; 3) NaturVet: Quiet Moments Simulated Canine Pheromones Calming Spray chewy.com+1\n    \n    Sources"
+ },
+ "yumwoof.com": {
+  "company": "Yumwoof",
+  "question": "What's the best air-dried dog food to buy online for around $28?",
+  "own_named": false,
+  "competitor_brand": "Pawstruck",
+  "competitor_product": "Premium Air Dried Dog Food Beef",
+  "flag": "ok",
+  "raw": "*   1.  Pawstruck: Premium Air Dried Dog Food Beef; 2) Full Moon: Pure Protein Chicken Recipe Air Dried Dog Food; 3) Badlands Ranch: Superfood Complete Lamb & Venison Air Dried Dog Food dogfoodadvisor.com+1\n    \n    Sources"
+ },
+ "weratedogs.com": {
+  "company": "WeRateDogs",
+  "question": "What's the best gift for a dog lover to buy online?",
+  "own_named": false,
+  "competitor_brand": "West & Willow",
+  "competitor_product": "Custom One Pet Portrait",
+  "flag": "ok",
+  "raw": "*   1.  West & Willow: Custom One Pet Portrait; 2) Nylabone: The Box Chew Toy & Treat Gift Box; 3) Ruffwear: Climate Changer Dog Fleece"
+ },
+ "societyhounds.com": {
+  "company": "Society Hounds",
+  "question": "What's the best dog polo shirt to buy online for around $60?",
+  "own_named": false,
+  "competitor_brand": "BOSS",
+  "competitor_product": "Dog Polo Shirt",
+  "flag": "ok",
+  "raw": "*   1.  Polo Ralph Lauren: Cotton-Mesh Dog Polo Shirt; 2) BOSS: Dog Polo Shirt; 3) Ralph Lauren: Classic Polo"
+ },
+ "petsmont.com": {
+  "company": "Petsmont",
+  "question": "What's the best dog immune supplement to buy online for around $43?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Imuquin Immune Support Supplement for Dogs",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Imuquin Immune Support Supplement for Dogs; 2) Zesty Paws: Vet Strength Allergy & Immune Bites; 3) Wholistic Pet Organics: Pure Colostrum Immune Balance Dog & Cat petmd.com+1\n    \n    Sources"
+ },
+ "laylopets.com": {
+  "company": "LAY LO\u00ae",
+  "question": "What's the best designer dog bed to buy online for around $76?",
+  "own_named": false,
+  "competitor_brand": "Nandog",
+  "competitor_product": "Super Cloud Bed",
+  "flag": "ok",
+  "raw": "*   1.  Nandog: Super Cloud Bed; 2) Wunderpets&Co: Brigette Romanek Taupe Dog Bed; 3) MODERN THREADS: Luxury Tufted Velvet Cuddler Dog Bed"
+ },
+ "ruffgreens.com": {
+  "company": "RUFF GREENS, INC.",
+  "question": "What's the best greens supplement for dogs to buy online for around $80?",
+  "own_named": true,
+  "competitor_brand": "WuffWell",
+  "competitor_product": "Super Greens",
+  "flag": "ok",
+  "raw": "*   1.  Ruff Greens: VitaSmart; 2) WuffWell: Super Greens; 3) Nutra Thrive: Ultimate Dog Supplement"
+ },
+ "maymaw.com": {
+  "company": "MayMaw",
+  "question": "What's the best pet backpack carrier to buy online for around $100?",
+  "own_named": false,
+  "competitor_brand": "K9 Sport Sack",
+  "competitor_product": "Air 2",
+  "flag": "ok",
+  "raw": "*   1.  K9 Sport Sack: Air 2; 2) Ruffwear: Hitch Hiker Backpack Dog Carrier; 3) PETSFIT: WILDPATH Pet Carrier Backpack for Hiking."
+ },
+ "chippinpet.com": {
+  "company": "Chippin",
+  "question": "What's the best sustainable wet dog food to buy online for around $145?",
+  "own_named": false,
+  "competitor_brand": "Open Farm",
+  "competitor_product": "Harvest Chicken Rustic Stew",
+  "flag": "ok",
+  "raw": "*   1.  Open Farm: Harvest Chicken Rustic Stew; 2) JustFoodForDogs: JustFresh Home-Cooked Chicken; 3) Weruva: Bed & Breakfast Chicken, Egg, Pumpkin & Ham openfarmpet.com+1\n    \n    Sources"
+ },
+ "ferapets.com": {
+  "company": "Fera Pets",
+  "question": "What's the best longevity supplement for dogs to buy online for around $50?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Dasuquin Hip & Joint Soft Chews",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Dasuquin Hip & Joint Soft Chews; 2) Antinol: Antinol Plus Softgels; 3) Nutramax: Cosequin Joint Health with Omega-3s chewy.com+2\n    \n    Sources"
+ },
+ "kittyupcats.com": {
+  "company": "Kitty Up",
+  "question": "What's the best immune supplement for cats to buy online for around $14?",
+  "own_named": false,
+  "competitor_brand": "VetriScience",
+  "competitor_product": "Vetri Lysine Plus Bite-Sized Chews",
+  "flag": "ok",
+  "raw": "*   1.  VetriScience: Vetri Lysine Plus Bite-Sized Chews; 2) Pet Naturals: L-Lysine Soft Chews for Cats; 3) NOW Pets: L-Lysine for Cats Powder chewy.com+2\n    \n    Sources"
+ },
+ "welovedoodles.com": {
+  "company": "We Love Doodles",
+  "question": "What's the best doodle dog brush to buy online?",
+  "own_named": true,
+  "competitor_brand": "Chris Christensen",
+  "competitor_product": "Big G Slicker Brush",
+  "flag": "ok",
+  "raw": "*   1.  Chris Christensen: Big G Slicker Brush; 2) We Love Doodles: Slicker Brush for Dogs; 3) Hertzko: Self-Cleaning Slicker Brush"
+ },
+ "weareplufl.com": {
+  "company": "Plufl",
+  "question": "What's the best human-size dog bed to buy online?",
+  "own_named": true,
+  "competitor_brand": "Big Barker",
+  "competitor_product": "7\" Orthopedic Pillow Dog Bed",
+  "flag": "ok",
+  "raw": "*   1.  Big Barker: 7\" Orthopedic Pillow Dog Bed; 2) Plufl: Human Dog Bed; 3) Bedsure: Foldable Human Size Giant Dog Bed for Adults"
+ },
+ "alphadognutrition.com": {
+  "company": "Alpha Dog Nutrition",
+  "question": "What's the best joint supplement for dogs to buy online for around $35?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Cosequin DS Plus MSM",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Cosequin DS Plus MSM; 2) Zesty Paws: Hip & Joint Mobility Bites; 3) Pet Honesty: Hip + Joint Health Soft Chews chewy.com+1\n    \n    Sources"
+ },
+ "pawsonify.com": {
+  "company": "Pawsonify",
+  "question": "What's the best dog collar to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Ruffwear",
+  "competitor_product": "Flat Out Dog Collar",
+  "flag": "ok",
+  "raw": "*   1.  Ruffwear: Flat Out Dog Collar; 2) LupinePet: Standard Dog Collar; 3) GoTags: Reflective Adjustable Personalized Nameplate Dog Collar"
+ },
+ "fidobiotics.com": {
+  "company": "Fidobiotics",
+  "question": "What's the best probiotic for cats to buy online for around $22?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Proviable Digestive Health Supplement",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Proviable Digestive Health Supplement; 2) VetriScience: Gut Health for Cats; 3) Purina Pro Plan: FortiFlora Probiotic Supplement for Cats"
+ },
+ "fuzzycreekpetsupplies.com": {
+  "company": "Fuzzy Creek Pet Supplies",
+  "question": "What's the best chicken dog treats to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "Zuke's",
+  "competitor_product": "Acadia Chicken Training Treats",
+  "flag": "ok",
+  "raw": "*   1.  Zuke's: Acadia Chicken Training Treats; 2) Golden Rewards: Freeze Dried Chicken Dog Treats; 3) Savory Prime: Natural Chicken Jerky Breast Dog Treats"
+ },
+ "furzapper.com": {
+  "company": "FurZapper",
+  "question": "What's the best pet hair remover for laundry to buy online for around $15?",
+  "own_named": true,
+  "competitor_brand": "Pet Parents",
+  "competitor_product": "FurBall 2.0 (2-Pack)",
+  "flag": "ok",
+  "raw": "*   1.  FurZapper: Pet Hair Remover for Laundry; 2) Pet Parents: FurBall 2.0 (2-Pack); 3) Bounce: Pet Hair & Lint Guard Mega Dryer Sheets"
+ },
+ "dirtydogbeautyclub.com": {
+  "company": "Dirty Dog Beauty Club",
+  "question": "What's the best dog paw balm to buy online for around $18?",
+  "own_named": false,
+  "competitor_brand": "Musher's Secret",
+  "competitor_product": "Paw Protection Natural Dog Wax",
+  "flag": "ok",
+  "raw": "*   1.  Musher's Secret: Paw Protection Natural Dog Wax; 2) Natural Dog Company: Paw Soother Dog Paw Balm; 3) Pet MD: Paw Balm 3-in-1 Nose/Snout & Elbow Moisturizer & Paw Protectors Wax"
+ },
+ "petyupp.com": {
+  "company": "PetYupp",
+  "question": "What's the best dog supplement to buy online?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Cosequin DS Plus MSM",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Cosequin DS Plus MSM; 2) Nordic Naturals: Omega-3 Pet; 3) Purina: FortiFlora Canine Probiotic Supplement petmd.com+2\n    \n    Sources"
+ },
+ "wayzn.com": {
+  "company": "Wayzn",
+  "question": "What's the best smart pet door to buy online for around $549?",
+  "own_named": true,
+  "competitor_brand": "High Tech Pet",
+  "competitor_product": "Power Pet WiFi Smart Automatic Dog Door",
+  "flag": "ok",
+  "raw": "*   1.  High Tech Pet: Power Pet WiFi Smart Automatic Dog Door; 2) PetSafe: SmartDoor Connected Pet Door; 3) Wayzn: Smart Pet Door"
+ },
+ "innovetpet.com": {
+  "company": "Innovet Pet Products",
+  "question": "What's the best CBD oil for dogs to buy online for around $28?",
+  "own_named": true,
+  "competitor_brand": "Honest Paws",
+  "competitor_product": "Well CBD Oil",
+  "flag": "ok",
+  "raw": "*   1.  Innovet Pet: CBD Oil for Dogs; 2) Honest Paws: Well CBD Oil; 3) HolistaPet: Broad-Spectrum CBD Oil for Dogs"
+ },
+ "houndsy.com": {
+  "company": "Houndsy",
+  "question": "What's the best kibble dispenser to buy online for around $179?",
+  "own_named": false,
+  "competitor_brand": "PETKIT",
+  "competitor_product": "YumShare Dual-Hopper 2 Automatic Feeder with Camera",
+  "flag": "ok",
+  "raw": "*   1.  PETKIT: YumShare Dual-Hopper 2 Automatic Feeder with Camera; 2) PETLIBRO: Granary Smart Camera Feeder; 3) PetSafe: Smart Feed 2.0 Wi-Fi Automatic Pet Feeder"
+ },
+ "2dogstreats.com": {
+  "company": "2 Dogs Treats",
+  "question": "What's the best single-ingredient chicken dog treats to buy online for around $21?",
+  "own_named": false,
+  "competitor_brand": "Badlands Ranch",
+  "competitor_product": "Chicken Breast Freeze-Dried Raw Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  Badlands Ranch: Chicken Breast Freeze-Dried Raw Dog Treats; 2) JustFoodForDogs: Chicken Breast Dehydrated Dog Treats; 3) Jungle Calling: Single Ingredient Chicken Freeze-Dried Dog & Cat Treats"
+ },
+ "nonaste.com": {
+  "company": "Nonast\u0113",
+  "question": "What's the best pet odor eliminating spray to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "Nature's Miracle",
+  "competitor_product": "Advanced Stain & Odor Eliminator",
+  "flag": "ok",
+  "raw": "*   1.  Nature's Miracle: Advanced Stain & Odor Eliminator; 2) Simple Solution: Pet Stain & Odor Remover; 3) Skout's Honor: Odor Eliminator"
+ },
+ "goodboygravies.com": {
+  "company": "Goodboy Gravies",
+  "question": "What's the best dog food topper to buy online for around $49?",
+  "own_named": false,
+  "competitor_brand": "Stella & Chewy's",
+  "competitor_product": "Stella's Super Beef Meal Mixers",
+  "flag": "ok",
+  "raw": "*   1.  Stella & Chewy's: Stella's Super Beef Meal Mixers; 2) ORIJEN: Tundra Freeze-Dried Medallions; 3) Primal: Cupboard Cuts Chicken Freeze-Dried Raw Topper"
+ },
+ "lolahemp.com": {
+  "company": "Lolahemp",
+  "question": "What's the best CBD oil for dogs to buy online?",
+  "own_named": false,
+  "competitor_brand": "Hemp Heros",
+  "competitor_product": "CBD Oil for Pets 1000mg",
+  "flag": "ok",
+  "raw": "*   1.  Hemp Heros: CBD Oil for Pets 1000mg; 2) Bailey\u2019s: Best Friends CBD Oil for Dogs; 3) ElleVet Sciences: Hemp Oil for Dogs"
+ },
+ "frenchiebulldog.com": {
+  "company": "Frenchie Bulldog LLC",
+  "question": "What's the best reversible dog harness to buy online for around $33?",
+  "own_named": false,
+  "competitor_brand": "Lucy & Co.",
+  "competitor_product": "Dolce Vita Reversible Harness",
+  "flag": "ok",
+  "raw": "*   1.  Lucy & Co.: Dolce Vita Reversible Harness; 2) Sassy Woof: Comfort Dual-Clip Reversible Dog Harness; 3) Beast & Buckle: Puppy Love Reversible Dog Harness"
+ },
+ "4-legger.com": {
+  "company": "4-Legger",
+  "question": "What's the best organic dog shampoo to buy online for around $18?",
+  "own_named": true,
+  "competitor_brand": "Pure and Natural Pet",
+  "competitor_product": "Fragrance Free Hypoallergenic Organic Dog Shampoo",
+  "flag": "ok",
+  "raw": "*   1.  4-Legger: Organic Oatmeal, Aloe & Lavender Dog Shampoo; 2) 4-Legger: Organic Hypo-Allergenic Unscented Aloe Dog Shampoo; 3) Pure and Natural Pet: Fragrance Free Hypoallergenic Organic Dog Shampoo"
+ },
+ "catastrophicreations.com": {
+  "company": "Catastrophic Creations",
+  "question": "What's the best wall-mounted cat climbing pole to buy online for around $137?",
+  "own_named": false,
+  "competitor_brand": "Coziwow",
+  "competitor_product": "Wall-Mounted 55.2-in Climbing Cat Tree Tower",
+  "flag": "ok",
+  "raw": "*   1.  Coziwow: Wall-Mounted 55.2-in Climbing Cat Tree Tower; 2) SUGIFT: 71-in 5-Level Wall-Mounted Cat Tree Tower; 3) PawHut: 10-Level Wall-Mounted Cat Tree w/ Climbing Shelves & Hammock"
+ },
+ "pupring.com": {
+  "company": "PupRing",
+  "question": "What's the best custom pet portrait necklace to buy online?",
+  "own_named": false,
+  "competitor_brand": "Cuddle Clones",
+  "competitor_product": "Custom Engraved Pet Portrait Necklace",
+  "flag": "ok",
+  "raw": "*   1.  Cuddle Clones: Custom Engraved Pet Portrait Necklace; 2) Wear Felicity: Personalized Pet Photo Necklace; 3) Paw&KeepSakes: Personalized Pet Portrait Necklace"
+ },
+ "identitypet.com": {
+  "company": "identity Pet Nutrition",
+  "question": "What's the best wet cat food to buy online for around $85?",
+  "own_named": false,
+  "competitor_brand": "Fancy Feast",
+  "competitor_product": "Adult Grilled Seafood Feast Variety Pack",
+  "flag": "ok",
+  "raw": "*   1.  Fancy Feast: Adult Grilled Seafood Feast Variety Pack; 2) Wellness: Complete Health Poultry Variety Pack; 3) Purina Pro Plan: Complete Essentials Chicken & Turkey Variety Pack"
+ },
+ "huxleyandkent.com": {
+  "company": "Huxley & Kent",
+  "question": "What's the best dog harness to buy online for around $22?",
+  "own_named": false,
+  "competitor_brand": "rabbitgoo",
+  "competitor_product": "Classic Fit No Pull Dog Harness",
+  "flag": "ok",
+  "raw": "*   1.  rabbitgoo: Classic Fit No Pull Dog Harness; 2) PetSafe: Easy Walk Harness; 3) Sporn: No Pull Dog Harness"
+ },
+ "huggibles.com": {
+  "company": "Huggibles Pet Nutrition",
+  "question": "What's the best liquid dog multivitamin to buy online for around $29?",
+  "own_named": false,
+  "competitor_brand": "RestoraPet",
+  "competitor_product": "Daily Antioxidant Unflavored Dog & Cat Supplement",
+  "flag": "ok",
+  "raw": "*   1.  RestoraPet: Daily Antioxidant Unflavored Dog & Cat Supplement; 2) Liquid-Vet: K9 Total & Complete Liquid Multi-Supplement for Dogs; 3) Pet-Tinic: Liquid Vitamin-Mineral Dog & Cat Supplement"
+ },
+ "catsessentials.com": {
+  "company": "CatsEssentials",
+  "question": "What's the best cat blanket to buy online for around $29?",
+  "own_named": false,
+  "competitor_brand": "PetFusion",
+  "competitor_product": "Premium Reversible Dog & Cat Blanket",
+  "flag": "ok",
+  "raw": "*   1.  PetFusion: Premium Reversible Dog & Cat Blanket; 2) Bedsure: Waterproof Cozy Plush Reversible Throw Furniture Protector Dog & Cat Blanket; 3) Pet Parents: Pawtect Blanket, Premium Waterproof Dog & Cat Blanket"
+ },
+ "feedpetaluma.com": {
+  "company": "Petaluma",
+  "question": "What's the best organic dog treats to buy online for around $19?",
+  "own_named": true,
+  "competitor_brand": "A Better Treat",
+  "competitor_product": "Organic Freeze-Dried Chicken Breast Dog & Cat Treats",
+  "flag": "ok",
+  "raw": "*   1.  A Better Treat: Organic Freeze-Dried Chicken Breast Dog & Cat Treats; 2) Full Moon: Organic Chicken Jerky Human-Grade Dog Treats; 3) Petaluma: Organic Sweet Potato Jerky Dog Treats"
+ },
+ "montanadogfoodco.com": {
+  "company": "MONTANA DOG FOOD CO",
+  "question": "What's the best freeze-dried raw dog food to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Stella & Chewy's",
+  "competitor_product": "Stella's Super Beef Freeze-Dried Raw Dinner Patties",
+  "flag": "ok",
+  "raw": "*   1.  Stella & Chewy's: Stella's Super Beef Freeze-Dried Raw Dinner Patties; 2) Primal: Chicken Formula Nuggets Freeze-Dried Dog Food; 3) Primal: Beef Formula Nuggets Freeze-Dried Dog Food"
+ },
+ "vitalpetlife.com": {
+  "company": "Vital Pet Life",
+  "question": "What's the best salmon oil for dogs to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "Zesty Paws",
+  "competitor_product": "Wild Alaskan Omega-3 Blend Pollock + Salmon Oil",
+  "flag": "ok",
+  "raw": "*   1.  Zesty Paws: Wild Alaskan Omega-3 Blend Pollock + Salmon Oil; 2) Wholistic Pet Organics: Wild Salmon Oil; 3) Native Pet: Omega Oil for Dogs"
+ },
+ "zoosnoods.com": {
+  "company": "Zoo Snoods",
+  "question": "What's the best dog snood to buy online for around $27?",
+  "own_named": true,
+  "competitor_brand": "Goldpaw",
+  "competitor_product": "Snood",
+  "flag": "ok",
+  "raw": "*   1.  Goldpaw: Snood; 2) Zoo Snoods: Blue Ox Zoo Snood; 3) Zoo Snoods: Giraffe Zoo Snood"
+ },
+ "thebodhidog.com": {
+  "company": "Bodhi Dog",
+  "question": "What's the best dog cologne to buy online for around $18?",
+  "own_named": false,
+  "competitor_brand": "Bio-Groom",
+  "competitor_product": "So-Easy Dog Cologne",
+  "flag": "ok",
+  "raw": "*   1.  Bio-Groom: So-Easy Dog Cologne; 2) Hempz Petz: Creamy Citrus Orange Red Raspberry Deodorizing Cologne Dog Spray; 3) PetAg: Fresh 'n Clean Dog Cologne Spray, Fresh Floral Scent"
+ },
+ "wagtantrum.com": {
+  "company": "Wag Tantrum",
+  "question": "What's the best fresh dog food to buy online for around $120?",
+  "own_named": false,
+  "competitor_brand": "Freshpet",
+  "competitor_product": "Vital Chicken, Beef, Salmon & Egg Recipe",
+  "flag": "ok",
+  "raw": "*   1.  Freshpet: Vital Chicken, Beef, Salmon & Egg Recipe; 2) JustFoodForDogs: PantryFresh Lamb & Brown Rice Recipe; 3) DASH: Premium Slow-Cooked Fresh Dog Food"
+ },
+ "tateandtaylor.com": {
+  "company": "Tate & Taylor",
+  "question": "What's the best dog lover hoodie to buy online?",
+  "own_named": false,
+  "competitor_brand": "Giant Hoodies",
+  "competitor_product": "Dog Mom Giant Hoodie",
+  "flag": "ok",
+  "raw": "*   1.  Giant Hoodies: Dog Mom Giant Hoodie; 2) Life Is Good: Men's Dog Dad Arch Simply True Fleece Hoodie; 3) GreaterGood: Life Happens Dogs Help Hoodie"
+ },
+ "spiritpieces.com": {
+  "company": "Spirit Pieces",
+  "question": "What's the best pet memorial keepsake with ashes to buy online?",
+  "own_named": true,
+  "competitor_brand": "Close By Me Jewelry",
+  "competitor_product": "Small Paw Print Cremation Necklace in Sterling Silver",
+  "flag": "ok",
+  "raw": "*   1.  Spirit Pieces: Memorial Glass Paw Print; 2) Close By Me Jewelry: Small Paw Print Cremation Necklace in Sterling Silver; 3) Sands of Time: Glass Paw Cremation Pendant with Ashes"
+ },
+ "puplid.com": {
+  "company": "PupLid",
+  "question": "What's the best dog lover hat to buy online?",
+  "own_named": false,
+  "competitor_brand": "Life Is Good",
+  "competitor_product": "Adult Unisex Dog Mom Chill Cap",
+  "flag": "ok",
+  "raw": "*   1.  Life Is Good: Adult Unisex Dog Mom Chill Cap; 2) Teddy the Dog: Dog Mom Baseball Cap; 3) Pawsionate: Best Dog Mom Personalized Classic Cap"
+ },
+ "incredpets.com": {
+  "company": "Incredible Pets",
+  "question": "What's the best dog toy to buy online?",
+  "own_named": false,
+  "competitor_brand": "KONG",
+  "competitor_product": "Classic Dog Toy",
+  "flag": "ok",
+  "raw": "*   1.  KONG: Classic Dog Toy; 2) Chuckit!: Ultra Rubber Ball; 3) West Paw: Toppl techgearlab.com+1\n    \n    Sources"
+ },
+ "safetypupxd.com": {
+  "company": "SafetyPUP XD",
+  "question": "What's the best reflective dog vest to buy online for around $20?",
+  "own_named": true,
+  "competitor_brand": "BUDDY GLOW",
+  "competitor_product": "Reflective Dog Vest",
+  "flag": "ok",
+  "raw": "*   1.  SafetyPUP XD: Reflective Dog Vest; 2) BUDDY GLOW: Reflective Dog Vest; 3) Frisco: Reflective Dog Safety Vest"
+ },
+ "goodnessgracioustreats.com": {
+  "company": "GOODNESS GRACIOUS LLC",
+  "question": "What's the best human-grade chicken jerky dog treats to buy online for around $20?",
+  "own_named": false,
+  "competitor_brand": "Full Moon",
+  "competitor_product": "Chicken Jerky",
+  "flag": "ok",
+  "raw": "*   1.  Full Moon: Chicken Jerky; 2) The Honest Kitchen: Human Grade Slow Cooked Jerky Chicken Recipe; 3) Beloved Pets: Chicken Breast Jerky fullmoonpet.com\n    \n    Sources"
+ },
+ "fullbuckethealth.com": {
+  "company": "FullBucket Health",
+  "question": "What's the best dog probiotic to buy online for around $31?",
+  "own_named": false,
+  "competitor_brand": "Purina Pro Plan",
+  "competitor_product": "FortiFlora Powder Probiotic",
+  "flag": "ok",
+  "raw": "*   1.  Purina Pro Plan: FortiFlora Powder Probiotic; 2) Zesty Paws: Probiotic Bites; 3) PetLab Co.: Probiotic Salmon Flavored Soft Chews chewy.com+1\n    \n    Sources"
+ },
+ "themoderndogcompany.com": {
+  "company": "The Modern Dog Company \u00ae",
+  "question": "What's the best dog grooming to buy online?",
+  "own_named": false,
+  "competitor_brand": "Wahl",
+  "competitor_product": "Bravura2 Cat, Dog & Horse Clipper",
+  "flag": "ok",
+  "raw": "*   1.  Wahl: Bravura2 Cat, Dog & Horse Clipper; 2) Chris Christensen: Big G Slicker Brush; 3) Earthbath: Oatmeal & Aloe Itch Relief Fragrance Free Dog & Cat Shampoo"
+ },
+ "boulderbarks.com": {
+  "company": "boulderbarks",
+  "question": "What's the best dog collar to buy online for around $31?",
+  "own_named": false,
+  "competitor_brand": "Ruffwear",
+  "competitor_product": "Front Range Dog Collar",
+  "flag": "ok",
+  "raw": "*   1.  Ruffwear: Front Range Dog Collar; 2) Max and Neo Dog Gear: Nylon Reflective Martingale Dog Collar; 3) Tailr: Premium BioThane Waterproof Dog Collar"
+ },
+ "getbistrocat.com": {
+  "company": "BistroCat",
+  "question": "What's the best smart cat feeder to buy online?",
+  "own_named": false,
+  "competitor_brand": "PETLIBRO",
+  "competitor_product": "Granary Smart Camera Feeder",
+  "flag": "ok",
+  "raw": "*   1.  PETLIBRO: Granary Smart Camera Feeder; 2) PETKIT: YumShare Dual-Hopper 2 Automatic Feeder with Camera; 3) Whisker: Feeder-Robot"
+ },
+ "pagerie.com": {
+  "company": "PAGERIE OFFICIAL",
+  "question": "What's the best luxury dog collar to buy online for around $395?",
+  "own_named": true,
+  "competitor_brand": "Christian Louboutin",
+  "competitor_product": "Loubicollar Medium",
+  "flag": "ok",
+  "raw": "*   1.  Pagerie: The Dorro; 2) Christian Louboutin: Loubicollar Medium; 3) Dolce & Gabbana: Dog Collar"
+ },
+ "shayapets.com": {
+  "company": "Shaya",
+  "question": "What's the best luxury dog leash to buy online for around $88?",
+  "own_named": false,
+  "competitor_brand": "Branni",
+  "competitor_product": "Multi-Position Leather Dog Leash",
+  "flag": "ok",
+  "raw": "*   1.  Branni: Multi-Position Leather Dog Leash; 2) ColsenKeane: No. 116 Dog Leash; 3) The Lille Bj\u00f6rn: Classic Leather Dog Leash"
+ },
+ "munchbird.com": {
+  "company": "Munchbird",
+  "question": "What's the best natural dog treats to buy online for around $24?",
+  "own_named": false,
+  "competitor_brand": "PureBites",
+  "competitor_product": "Beef Liver Freeze-Dried Raw Dog Treats",
+  "flag": "ok",
+  "raw": "*   1.  PureBites: Beef Liver Freeze-Dried Raw Dog Treats; 2) Vital Essentials: Duck Bites Freeze-Dried Raw Dog Treats; 3) Petsmont: Hearty Bites Beef Liver Freeze-Dried Dog Treats"
+ },
+ "pawpawsusa.com": {
+  "company": "Paw Paws USA",
+  "question": "What's the best dog treats to buy online for around $16?",
+  "own_named": false,
+  "competitor_brand": "Zuke's",
+  "competitor_product": "Mini Naturals Real Beef Training Treats",
+  "flag": "ok",
+  "raw": "*   1.  Zuke's: Mini Naturals Real Beef Training Treats; 2) Pupford: Train Chicken Natural Freeze-Dried Dog Treats; 3) Blue Buffalo: BLUE Bits Soft Dog Treats for Training nbcnews.com+1\n    \n    Sources"
+ },
+ "thegentlepit.com": {
+  "company": "The Gentle Pit",
+  "question": "What's the best pit bull lover apparel to buy online?",
+  "own_named": false,
+  "competitor_brand": "AnimalPride",
+  "competitor_product": "Black & White Pit Bull Lover Not Fighter Adult Unisex Hoodie",
+  "flag": "ok",
+  "raw": "*   1.  AnimalPride: Black & White Pit Bull Lover Not Fighter Adult Unisex Hoodie; 2) Piper Lou Collection: Pit Bull Mom Classic Tee; 3) BullySupplies: Pitbull Dad Vintage Heathered Raglan Pullover Hoodie"
+ },
+ "silidog.com": {
+  "company": "SiliDog",
+  "question": "What's the best QR dog ID tag to buy online?",
+  "own_named": false,
+  "competitor_brand": "PetHub",
+  "competitor_product": "QR Pet ID Tag \u2013 Classic Aluminum",
+  "flag": "ok",
+  "raw": "*   1.  PetHub: QR Pet ID Tag \u2013 Classic Aluminum; 2) Pawscout: PawscoutQR Smart Pet Tag; 3) Tailr: Slide QR Code Silent Dog & Cat ID Tag"
+ },
+ "invirox.com": {
+  "company": "INVIROX",
+  "question": "What's the best dog training collar to buy online for around $120?",
+  "own_named": false,
+  "competitor_brand": "SportDOG",
+  "competitor_product": "FieldTrainer 425X",
+  "flag": "ok",
+  "raw": "*   1.  SportDOG: FieldTrainer 425X; 2) SportDOG: YardTrainer 300; 3) PetSafe: Remote Trainer 15 Levels"
+ },
+ "mountainwildpet.com": {
+  "company": "Mountain Wild Pet",
+  "question": "What's the best antler dog chew to buy online for around $9?",
+  "own_named": false,
+  "competitor_brand": "Buck Bone Organics",
+  "competitor_product": "Medium Whole Elk Antler Dog Chew",
+  "flag": "ok",
+  "raw": "*   1.  Buck Bone Organics: Medium Whole Elk Antler Dog Chew; 2) Tibetan Dog Chew: Whole Antler Grain-Free Dog Treat; 3) K-9 Antler Co.: Small Whole Deer Antler Chew"
+ },
+ "6666equinesupplements.com": {
+  "company": "6666 Equine Supplements",
+  "question": "What's the best horse joint supplement to buy online for around $182?",
+  "own_named": false,
+  "competitor_brand": "Cosequin",
+  "competitor_product": "ASU Plus Equine Powder 1050g",
+  "flag": "ok",
+  "raw": "*   1.  Cosequin: ASU Plus Equine Powder 1050g; 2) Cosequin: ASU Plus Pellets; 3) MVP: Senior Flex H/A Pellets store.cosequin.com+1\n    \n    Sources"
+ },
+ "ketonaturalpetfoods.com": {
+  "company": "KetoNatural Pet Foods",
+  "question": "What's the best low-carb dog food to buy online for around $133?",
+  "own_named": true,
+  "competitor_brand": "ORIJEN",
+  "competitor_product": "Six Fish Recipe Grain-Free Dry Dog Food",
+  "flag": "ok",
+  "raw": "*   1.  Ketona: Chicken Recipe Adult Dry Dog Food; 2) Ketona: Salmon Recipe Adult Dry Dog Food; 3) ORIJEN: Six Fish Recipe Grain-Free Dry Dog Food"
+ },
+ "barkbistro.com": {
+  "company": "Bark Bistro Company",
+  "question": "What's the best dog peanut butter to buy online for around $30?",
+  "own_named": true,
+  "competitor_brand": "Mount Ara",
+  "competitor_product": "Everyday Wellness Peanut Butter Dog Treats (2-pack)",
+  "flag": "ok",
+  "raw": "*   1.  Bark Bistro Company: Buddy Budder Peanut Butter 6 Mixed Flavor Squeeze; 2) Mount Ara: Everyday Wellness Peanut Butter Dog Treats (2-pack); 3) Green Coast Pet: Pawnut Butter Flax\u2019n Good 16 oz"
+ },
+ "cavepets.com": {
+  "company": "Cave Pets",
+  "question": "What's the best cat cave bed to buy online?",
+  "own_named": false,
+  "competitor_brand": "Meowfia",
+  "competitor_product": "Premium Felt Cat Cave Bed",
+  "flag": "ok",
+  "raw": "*   1.  Meowfia: Premium Felt Cat Cave Bed; 2) K&H Pet Products: Thermo-Pet Cave Covered Indoor Heated Cat Bed; 3) Best Friends by Sheri: Meow Hut Covered Cat Cave Bed"
+ },
+ "yourcatbackpack.com": {
+  "company": "Travel Cat",
+  "question": "What's the best cat backpack carrier to buy online for around $160?",
+  "own_named": true,
+  "competitor_brand": "Petsfit",
+  "competitor_product": "Premium Airline Approved Backpack Dog & Cat Carrier",
+  "flag": "ok",
+  "raw": "*   1.  Travel Cat: The Navigator Convertible Cat Backpack; 2) Petsfit: Premium Airline Approved Backpack Dog & Cat Carrier; 3) ibiyaya: Adventure Cat Carrier Backpack and Frontpack"
+ },
+ "pupsew.com": {
+  "company": "Pup Sew",
+  "question": "What's the best dog bandana to buy online for around $22?",
+  "own_named": false,
+  "competitor_brand": "Lucy & Co.",
+  "competitor_product": "Geyser Dog Bandana",
+  "flag": "ok",
+  "raw": "*   1.  Lucy & Co.: Geyser Dog Bandana; 2) The Worthy Dog: Home Run Dog Bandana; 3) Lua Pets: Sweet as Can Bee Dog Bandana"
+ },
+ "purlifebrands.com": {
+  "company": "P\u016brLife Brands",
+  "question": "What's the best dog supplement to buy online?",
+  "own_named": false,
+  "competitor_brand": "Nutramax",
+  "competitor_product": "Cosequin DS Plus MSM",
+  "flag": "ok",
+  "raw": "*   1.  Nutramax: Cosequin DS Plus MSM; 2) Nordic Naturals: Omega-3 Pet; 3) Purina: FortiFlora Canine Probiotic Supplement petmd.com+2\n    \n    Sources"
+ },
+ "furrymuse.com": {
+  "company": "Furry Muse",
+  "question": "What's the best dog hair bow to buy online?",
+  "own_named": false,
+  "competitor_brand": "Vila",
+  "competitor_product": "Cute Ribbon Bows Elastic Rubber Band Hair Ties, 60 Count",
+  "flag": "ok",
+  "raw": "*   1.  Vila: Cute Ribbon Bows Elastic Rubber Band Hair Ties, 60 Count; 2) & Mutts Co.: Sweetheart Hair Bow; 3) Bark On, Pup: Classic Dog Hair Bows chewy.com\n    \n    Sources"
+ },
+ "bowwowlabs.com": {
+  "company": "Bow Wow Labs, Inc.",
+  "question": "What's the best bully sticks to buy online for around $35?",
+  "own_named": false,
+  "competitor_brand": "",
+  "competitor_product": "",
+  "flag": "no usable competitor",
+  "raw": "*   1.  Best Bully Sticks: 12-Inch Standard Odor-Free Bully Stick; 2) BullyStick.com: 12-Inch Bully Sticks; 3) Riley\u2019s: Steer 12-in Bully Sticks Dog Chews bullystick.com\n    \n    Sources"
+ },
+ "samandnala.com": {
+  "company": "Sam & Nala",
+  "question": "What's the best pet loss sympathy gift to buy online?",
+  "own_named": false,
+  "competitor_brand": "Astarin",
+  "competitor_product": "Personalized Pet Memorial Wind Chime",
+  "flag": "ok",
+  "raw": "*   1.  Astarin: Personalized Pet Memorial Wind Chime; 2) Love & Hope Candle Company: Paw Prints on My Heart Memorial Candle; 3) Pet Memory Shop: \u201cA Kiss on the Wind\u201d Pet Memorial 19-Inch Wind Chime"
+ },
+ "honestpaws.com": {
+  "company": "Honest Paws",
+  "question": "What's the best CBD oil for dogs to buy online for around $25?",
+  "own_named": true,
+  "competitor_brand": "cbdMD",
+  "competitor_product": "Broad Spectrum CBD Dog Oil Tincture",
+  "flag": "ok",
+  "raw": "*   1.  cbdMD: Broad Spectrum CBD Dog Oil Tincture; 2) Honest Paws: Well CBD Oil; 3) HolistaPet: CBD Oil for Dogs"
+ },
+ "bubbarose.com": {
+  "company": "Bubba Rose Biscuit Co.",
+  "question": "What's the best dog birthday cake to buy online for around $28?",
+  "own_named": true,
+  "competitor_brand": "Wufers",
+  "competitor_product": "Giant Shareable 8-Piece Happy Barkday Dog Cookie Cake",
+  "flag": "ok",
+  "raw": "*   1.  Wufers: Giant Shareable 8-Piece Happy Barkday Dog Cookie Cake; 2) Bubba Rose Biscuit Co.: Pink Dog Cake (Shelf Stable); 3) Puppy Cake: Peanut Butter Dog Birthday Cake Kit bubbarose.com\n    \n    Sources"
+ },
+ "walkeepaws.com": {
+  "company": "Walkee Paws",
+  "question": "What's the best dog boot leggings to buy online for around $65?",
+  "own_named": true,
+  "competitor_brand": "Canada Pooch",
+  "competitor_product": "Suspender Dog Boots",
+  "flag": "ok",
+  "raw": "*   1.  Walkee Paws: Deluxe Easy-On Dog Boot Leggings; 2) Canada Pooch: Suspender Dog Boots; 3) Walkee Paws: Deluxe Dog Boot Leggings"
+ },
+ "petoi.com": {
+  "company": "Petoi",
+  "question": "What's the best robot dog toy for kids to buy online?",
+  "own_named": false,
+  "competitor_brand": "Ruko",
+  "competitor_product": "18011 Smart Robot Dog",
+  "flag": "ok",
+  "raw": "*   1.  Ruko: 18011 Smart Robot Dog; 2) Contixo: R3 Interactive Smart Robot Pet Dog; 3) USA Toyz: Robo Pets Puppy Robot"
+ },
+ "spunkypup.com": {
+  "company": "Spunky Pup",
+  "question": "What's the best dog cookies to buy online for around $7?",
+  "own_named": false,
+  "competitor_brand": "Blue Buffalo",
+  "competitor_product": "Health Bars Apples & Yogurt",
+  "flag": "ok",
+  "raw": "*   1.  Blue Buffalo: Health Bars Apples & Yogurt; 2) Fruitables: Pumpkin & Blueberry Baked Treats; 3) WholeHearted: Peanut Butter Flavor Chip Cookie Treats petco.com+1\n    \n    Sources"
+ },
+ "awoopets.com": {
+  "company": "Awoo",
+  "question": "What's the best dog leash to buy online for around $56?",
+  "own_named": false,
+  "competitor_brand": "Ruffwear",
+  "competitor_product": "Roamer Lock",
+  "flag": "ok",
+  "raw": "*   1.  Ruffwear: Roamer Lock; 2) Wild One: Leash; 3) Fable: Magic Link Leash"
+ }
+}

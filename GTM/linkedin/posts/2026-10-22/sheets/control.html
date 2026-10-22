@@ -1,0 +1,70 @@
+<html><head><link rel="stylesheet" href="d.css"><style>
+h1{font-size:84px;margin:26px 0 6px}
+.tag{text-align:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;color:#2b3950;margin-bottom:12px}
+.lead{text-align:center;font-size:21px;color:#22314c;margin:0 70px 20px;line-height:1.35}
+.lead b{color:#0b1b35}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;margin:0 26px;height:1080px}
+.p{border:1.5px solid #cdd5e2;border-radius:10px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.ph{display:flex;align-items:center;gap:12px;font-weight:800;font-size:28px;padding:16px 18px;border-bottom:1.5px solid rgba(0,0,0,.08);color:#0b1b35}
+.n{width:38px;height:38px;border-radius:8px;color:#fff;font-size:21px;display:flex;align-items:center;justify-content:center;flex:none}
+.pb{padding:18px 20px 0;font-size:22px;line-height:1.38;color:#22314c;flex:1;display:flex;flex-direction:column}
+.pt{margin:14px 0 0;display:grid;grid-template-columns:22px 1fr;gap:4px}
+.pt:before{content:'▶';color:var(--acc);font-size:14px;padding-top:4px}
+.mock{border:1px solid #d9dfea;border-radius:8px;background:#fbfcfe;padding:14px 16px;font-size:18px}
+.mock .bar{display:flex;gap:5px;margin-bottom:7px}.mock .bar i{width:9px;height:9px;border-radius:50%;background:#d5dbe6}
+code{font-family:ui-monospace,Menlo,monospace;font-size:18px;display:block;line-height:1.5}
+.bad{color:#c0392b}.ok{color:#1e8a52}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini{border:1px solid #d9dfea;border-radius:8px;padding:13px 12px;background:#fff;font-size:18.5px;line-height:1.3}
+.mini b{display:block;font-size:14px;letter-spacing:1px;margin-bottom:3px}
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{border-radius:20px;padding:7px 14px;font-size:18px;font-weight:700;background:#fff;border:1px solid #d9dfea}
+.flow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:center;gap:4px;text-align:center}
+.flow .mini{text-align:center;padding:9px 6px}
+.ar{font-weight:900;color:var(--acc);font-size:20px}
+.do{margin:auto -20px 0;padding:15px 20px;font-size:20px;line-height:1.35;color:#fff}
+.do b{letter-spacing:1px;font-size:15px;display:block;margin-bottom:2px;opacity:.9}
+.b .ph{background:#cfe0ff}.b{background:#f5f8ff}.b .n,.b .do{background:#2350c8}
+.y .ph{background:#ffe4a8}.y{background:#fffaf0}.y .n,.y .do{background:#b7791f}
+.g .ph{background:#cdeedd}.g{background:#f3fbf6}.g .n,.g .do{background:#1e8a52}
+.v .ph{background:#d8d2fb}.v{background:#f7f5ff}.v .n,.v .do{background:#6c5ce7}
+.foot{text-align:center;font-size:19px;margin:18px 0 0;color:#22314c}
+</style></head><body>
+<h1><em>AI Shopping</em> Cheat Sheet</h1>
+<div class="tag">What e-commerce brands can control in 2027.</div>
+<div class="lead">AI doesn't recommend brands. <b>It recommends products.</b> These are the 4 things that decide whether yours get picked.</div>
+<div class="grid">
+
+<div class="p b"><div class="ph"><span class="n">1</span>Can AI read your store?</div><div class="pb">
+<div class="mock"><div class="bar"><i></i><i></i><i></i></div><code>yoursite.com/robots.txt<br><span class="bad">User-agent: OAI-SearchBot<br>Disallow: /</span>&nbsp;&nbsp;← AI can't get in</code></div>
+<div class="pt">If AI crawlers are blocked, nothing else on this sheet matters.</div>
+<div class="pt">Product info hidden in images or pop-ups is invisible to it.</div>
+<div class="pt">Re-check after every theme or app change.</div>
+<div class="do"><b>DO THIS TODAY</b>Open your robots.txt. Check it doesn't block OAI-SearchBot or PerplexityBot.</div></div></div>
+
+<div class="p y"><div class="ph"><span class="n">2</span>Does your page answer buyers?</div><div class="pb">
+<div class="two"><div class="mini"><b>BUYER ASKS</b>"running shoe for flat feet, under $150"</div><div class="mini"><b>YOUR PAGE SAYS</b><span class="bad">"Premium quality. Ultimate comfort."</span></div></div>
+<div class="pt">Buyers ask with sizes, materials, prices and use cases in the question.</div>
+<div class="pt">"Premium quality" answers none of them.</div>
+<div class="pt">State the answer the way the buyer phrases the question.</div>
+<div class="do"><b>DO THIS TODAY</b>Write the 3 questions buyers ask before buying your best seller. Check your page answers each in plain text.</div></div></div>
+
+<div class="p g"><div class="ph"><span class="n">3</span>Do other sites talk about you?</div><div class="pb">
+<div class="mock"><b style="font-size:14px;letter-spacing:1px">WHERE AI LOOKS</b><div class="pills" style="margin-top:6px"><span class="pill">Reddit threads</span><span class="pill">Reviews</span><span class="pill">"Best of" roundups</span><span class="pill">Forums</span><span class="pill">Your site</span></div></div>
+<div class="pt">AI leans on reviews, Reddit threads and "best of" roundups.</div>
+<div class="pt">Your own site is only part of what it reads.</div>
+<div class="pt">A product nobody mentions is hard for AI to recommend.</div>
+<div class="do"><b>DO THIS TODAY</b>Search "best [your product type]" on Reddit. Note which brands people mention.</div></div></div>
+
+<div class="p v"><div class="ph"><span class="n">4</span>Is your catalog where AI shops?</div><div class="pb">
+<div class="flow"><div class="mini"><b>YOUR</b>catalog</div><span class="ar">»</span><div class="mini"><b>PRODUCT</b>feeds</div><span class="ar">»</span><div class="mini"><b>AI</b>answers</div></div>
+<div class="pt">Google and ChatGPT both take product feeds directly.</div>
+<div class="pt">If you're not in them, you're relying on AI finding you by chance.</div>
+<div class="pt">Titles, prices and stock in the feed should match your page.</div>
+<div class="do"><b>DO THIS TODAY</b>Check your products are approved in Google Merchant Center.</div></div></div>
+
+</div>
+<div class="foot">Most brands are strong on one of these. <b>Which one is yours?</b></div>
+<div class="cta"><img src="logo.png"><div class="t">Kelian van Tulder · AI shopping for e-commerce brands</div><div class="u">Follow for more</div></div>
+<div class="wm">KELIAN VAN TULDER</div>
+</body></html>

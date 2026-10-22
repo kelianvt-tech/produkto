@@ -1,0 +1,35 @@
+# Produkto
+
+> Produkto shows Shopify brands how AI assistants recommend their products. Paste your store URL and Produkto measures your whole catalog: which products ChatGPT, Google AI Overviews and Perplexity name when shoppers ask buying questions, which competing products AI picks instead, and which sites it cites. It then lists what to fix and drafts the product page updates for you to review.
+
+Produkto measures at product level, across the whole catalog, not just the brand name. It is built for direct-to-consumer ecommerce brands on Shopify.
+
+## What it does
+
+- Visibility: how often AI names each of your products when shoppers ask the questions your buyers ask, and in what position.
+- Competitors: every competing product AI recommends in those answers, with share of voice. Nothing to configure.
+- Citations: the sites AI cites in those answers, and whether they mention you.
+- Opportunities: the questions you lose, the sites AI cites that don't mention you, and the details winning product pages state that yours don't.
+- Catalog Optimization Agent: drafts product page fixes and articles from your store's own facts. You review and approve everything before it goes live on Shopify.
+- Scans run daily, so you can see how visibility changes over time.
+
+## Pages
+
+- [Home](https://getprodukto.com/): what Produkto measures and how it works
+- [Press kit](https://getprodukto.com/press): descriptions, key facts, screenshots, logos and data for writers
+- [Pricing](https://getprodukto.com/pricing): Starter $99/month, Growth $297/month, Custom on request
+## Guides
+
+- [Best AI visibility tools for ecommerce brands in 2026](https://getprodukto.com/best-ai-visibility-tools-for-ecommerce): Eleven tools compared: what each measures, product-level features and prices.
+- [How AI recommends products: what 856 real answers show](https://getprodukto.com/how-ai-recommends-products-856-answers): Original data: how often AI names products, how much answers change, and what it reads.
+- [How to check if ChatGPT recommends your products](https://getprodukto.com/check-if-ai-recommends-your-products): A step-by-step manual check, with a sheet to record it in.
+- [What is AI shopping visibility?](https://getprodukto.com/what-is-ai-shopping-visibility): The definition, how it differs from SEO, and how to measure it.
+
+## Other
+
+- [Privacy policy](https://getprodukto.com/privacy)
+
+## Contact
+
+- Book a demo: https://getprodukto.com/#request
+- App: https://app.getprodukto.com

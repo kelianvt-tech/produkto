@@ -37,7 +37,8 @@ import config
 import db
 
 API_VERSION = '2026-10'
-SCOPES = 'read_products,write_products,read_content,write_content,read_online_store_pages,write_online_store_pages'
+SCOPES = ('read_products,write_products,read_content,write_content,read_online_store_pages,write_online_store_pages,'
+          'read_files,write_files')   # files (20 Oct 2026): photos the owner uploads for an article go into Shopify Files
 FAQ_START, FAQ_END = '<!-- produkto:faq -->', '<!-- /produkto:faq -->'
 _SHOP = re.compile(r'^[a-z0-9][a-z0-9-]*\.myshopify\.com$')
 _expected = {}               # store domain -> its myshopify address, read once
@@ -241,18 +242,155 @@ def _blog(domain):
     return d['blogCreate']['blog']
 
 
-def create_article(domain, title, body, author):
+def create_article(domain, title, body, author, image='', summary='', tags=None, published=True):
     blog = _blog(domain)
+    a = dict(blogId=blog['id'], title=title, body=body, isPublished=published, author=dict(name=author))
+    a.update(_article_extras(image, summary, tags))
     d = gql(domain, 'mutation($a:ArticleCreateInput!){articleCreate(article:$a){article{id handle} userErrors{field message}}}',
-            dict(a=dict(blogId=blog['id'], title=title, body=body, isPublished=True, author=dict(name=author))))
+            dict(a=a))
     _user_errors(d['articleCreate'])
     return d['articleCreate']['article'], blog
+
+
+def _article_extras(image='', summary='', tags=None):
+    """Cover photo, the excerpt the blog page shows, and the category as a tag (designed articles, 19 Oct)."""
+    out = {}
+    if image:
+        out['image'] = dict(url=re.sub(r'([?&])width=\d+', r'\1', image).rstrip('?&'), altText=summary[:120] or 'Cover')
+    if summary:
+        out['summary'] = summary
+    if tags:
+        out['tags'] = [t for t in tags if t][:5]
+    return out
+
+
+def update_article(domain, gid, title=None, body=None, published=None, image='', summary='', tags=None):
+    a = _article_extras(image, summary, tags)
+    if title is not None:
+        a['title'] = title
+    if body is not None:
+        a['body'] = body
+    if published is not None:
+        a['isPublished'] = published
+    d = gql(domain, 'mutation($id:ID!,$a:ArticleUpdateInput!){articleUpdate(id:$id,article:$a){article{id handle blog{handle}} '
+                    'userErrors{field message}}}', dict(id=gid, a=a))
+    _user_errors(d['articleUpdate'])
+    return d['articleUpdate']['article']
+
+
+def admin_article_url(shop, gid):
+    return 'https://admin.shopify.com/store/%s/content/articles/%s' % (shop.split('.')[0], gid.rsplit('/', 1)[-1])
+
+
+def preview(domain, draft_id):
+    """Put a designed article on the store as a HIDDEN draft (customers can't see it) so the merchant can
+    preview it in their own theme. Updates the same hidden draft on later calls. Returns the admin link."""
+    import content_review
+    row, body, prev = content_review.load(draft_id, domain)
+    if not row or body.get('layout') != 'article':
+        raise ShopifyError('Only AEO articles can be previewed on the store.')
+    if row['status'] == 'published':
+        raise ShopifyError('This article is already live.')
+    shop, _ = _token(domain)
+    host_uploads(domain, body)
+    content_review.rebuild(body, row['draft_type'])
+    name = body.get('author') or (db.brand(domain) or {}).get('brand_name') or 'The team'
+    extras = dict(image=body.get('cover', ''), summary=body.get('dek', ''), tags=[body.get('category', '')])
+    sd = body.get('shopify_draft') or {}
+    if sd.get('id') and sd.get('shop') == shop:
+        art = update_article(domain, sd['id'], title=body.get('title'), body=_clean(body.get('html', '')), published=False,
+                             **extras)
+        handle = art['handle']
+    else:
+        art, blog = create_article(domain, body.get('title') or row['title'], _clean(body.get('html', '')), name,
+                                   published=False, **extras)
+        handle = art['handle']
+    body['shopify_draft'] = dict(id=art['id'], handle=handle, shop=shop, at=time.time())
+    content_review.save_version(draft_id, body, prev, author='agent')
+    return admin_article_url(shop, art['id'])
 
 
 def delete(domain, kind, gid):
     name, field = {'page': ('pageDelete', 'deletedPageId'), 'article': ('articleDelete', 'deletedArticleId')}[kind]
     d = gql(domain, 'mutation($id:ID!){%s(id:$id){%s userErrors{field message}}}' % (name, field), dict(id=gid))
     _user_errors(d[name])
+
+
+# ---- the owner's uploaded photos, into Shopify Files (20 Oct 2026) ----------------------------------------
+# Photos uploaded in the article editor live at app.getprodukto.com/content/media/... until the article goes to the
+# store. Then each one is copied into the store's own Shopify Files (Shopify fetches it from our public link), and the
+# article points at Shopify's copy, so the store never depends on our server. One upload per photo per store.
+
+FILE_WAIT = 25          # seconds to wait for Shopify to finish processing a photo
+
+
+def can_upload(domain):
+    conn = connection(domain)
+    return bool(conn and 'write_files' in (conn['scopes'] or ''))
+
+
+def _media_shopify(token, shop, url=None):
+    import json as _j
+    import article_learning
+    article_learning._media_init()
+    with db.conn() as c:
+        cols = [r[1] for r in c.execute('PRAGMA table_info(content_media)')]
+        if 'shopify' not in cols:
+            c.execute('ALTER TABLE content_media ADD COLUMN shopify TEXT')
+    row = db.one('SELECT shopify FROM content_media WHERE token=?', (token,))
+    if not row:
+        return None
+    known = _j.loads(row['shopify'] or '{}')
+    if url:
+        known[shop] = url
+        db.write('UPDATE content_media SET shopify=? WHERE token=?', (_j.dumps(known), token))
+    return known.get(shop)
+
+
+def upload_file(domain, source_url, alt=''):
+    """Copy one image into the store's Shopify Files. Returns Shopify's CDN url."""
+    d = gql(domain, 'mutation($f:[FileCreateInput!]!){fileCreate(files:$f){files{id fileStatus ... on MediaImage{image{url}}} '
+                    'userErrors{field message}}}', dict(f=[dict(originalSource=source_url, contentType='IMAGE', alt=alt[:120])]))
+    _user_errors(d['fileCreate'])
+    f = (d['fileCreate']['files'] or [{}])[0]
+    url = ((f.get('image') or {}).get('url'))
+    end = time.time() + FILE_WAIT
+    while not url and time.time() < end:
+        time.sleep(1)
+        n = gql(domain, 'query($id:ID!){node(id:$id){... on MediaImage{fileStatus image{url}}}}', dict(id=f['id']))['node'] or {}
+        if n.get('fileStatus') == 'FAILED':
+            raise ShopifyError('Shopify couldn\'t process that photo.')
+        url = (n.get('image') or {}).get('url')
+    if not url:
+        raise ShopifyError('Shopify is still processing a photo. Try again in a minute.')
+    return url
+
+
+_MEDIA = re.compile(r'/content/media/([\w-]+)\.jpg$')
+
+
+def host_uploads(domain, body):
+    """Swap the article's uploaded photos for copies in the store's Shopify Files. Changes body in place.
+    Returns how many photos are still on Produkto's server (no permission yet, or Shopify was slow)."""
+    o = body.get('photo_overrides') or {}
+    left = 0
+    conn = connection(domain)
+    shop = conn['shop'] if conn else None
+    for slot, url in list(o.items()):
+        m = _MEDIA.search(url or '')
+        if not m:
+            continue
+        if not shop or not can_upload(domain):
+            left += 1
+            continue
+        try:
+            hosted = _media_shopify(m.group(1), shop) or _media_shopify(m.group(1), shop, upload_file(domain, url, body.get('title', '')))
+        except ShopifyError:
+            left += 1
+            continue
+        o[slot] = hosted
+    body['photos_on_produkto'] = left
+    return left
 
 
 # ---- publish and undo ---------------------------------------------------------------
@@ -292,6 +430,8 @@ def publish(domain, draft_id, by=None):
         raise ShopifyError('Only approved drafts can be published.')
     if content_agent.placeholders(body):
         raise ShopifyError('This draft still has gaps to fill.')
+    if body.get('layout') == 'article':
+        host_uploads(domain, body)
     content_review.rebuild(body, row['draft_type'])
     t = row['draft_type']
     shop, _ = _token(domain)
@@ -317,8 +457,17 @@ def publish(domain, draft_id, by=None):
         url = 'https://%s/pages/%s' % (shop, page['handle'])
         action, target = 'page', page['id']
     elif t == 'guide':
-        name = (db.brand(domain) or {}).get('brand_name') or 'The team'
-        art, blog = create_article(domain, body.get('title') or row['title'], _clean(body.get('html', '')), name)
+        name = body.get('author') or (db.brand(domain) or {}).get('brand_name') or 'The team'
+        extras = dict(image=body.get('cover', ''), summary=body.get('dek', ''), tags=[body.get('category', '')]) \
+            if body.get('layout') == 'article' else {}
+        sd = body.get('shopify_draft') or {}
+        if sd.get('id') and sd.get('shop') == shop:          # the hidden preview draft goes visible, same article
+            art = update_article(domain, sd['id'], title=body.get('title') or row['title'],
+                                 body=_clean(body.get('html', '')), published=True, **extras)
+            blog = art.get('blog') or _blog(domain)
+        else:
+            art, blog = create_article(domain, body.get('title') or row['title'], _clean(body.get('html', '')), name,
+                                       **extras)
         before, after = None, dict(title=body.get('title'), id=art['id'])
         url = 'https://%s/blogs/%s/%s' % (shop, blog['handle'], art['handle'])
         action, target = 'article', art['id']
@@ -332,7 +481,17 @@ def publish(domain, draft_id, by=None):
         c.execute("UPDATE content_drafts SET status='published', published_at=?, live_url=?, updated_at=? WHERE id=?",
                   (now, url, now, draft_id))
     _mark_done(domain, draft_id)
+    if t in ('guide', 'comparison'):
+        _resync_stories(domain)
     return url
+
+
+def _resync_stories(domain):
+    """The stories page (stories_hub.py) lists live articles: rewrite it in the background after one changes."""
+    import threading
+    import stories_hub
+    if stories_hub.settings(domain).get('id'):
+        threading.Thread(target=stories_hub.sync, args=(domain,), daemon=True).start()
 
 
 def _mark_done(domain, draft_id):
@@ -366,11 +525,18 @@ def undo(domain, draft_id):
         update_product(domain, log['target'], before['title'], before['body'])
     else:
         delete(domain, log['action'], log['target'])
+        import content_review
+        row, body, prev = content_review.load(draft_id, domain)
+        if body and body.get('shopify_draft', {}).get('id') == log['target']:
+            body.pop('shopify_draft')
+            content_review.save_version(draft_id, body, prev, author='agent')
     now = time.time()
     with db.conn() as c:
         c.execute('UPDATE content_publish_log SET undone_at=? WHERE id=?', (now, log['id']))
         c.execute("UPDATE content_drafts SET status='approved', published_at=NULL, live_url=NULL, updated_at=? WHERE id=?",
                   (now, draft_id))
+    if log['action'] in ('article', 'page'):
+        _resync_stories(domain)
 
 
 def publish_due(now=None):

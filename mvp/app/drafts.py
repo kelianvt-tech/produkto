@@ -24,9 +24,15 @@ import llm
 
 DRAFT_MODEL_NOTE = 'config.HELPER_MODEL'
 
+# First 40 words (22 Oct 2026). Peec AI's ChatGPT debug logs (BrightonSEO, 13 Oct 2026): US ChatGPT Shopping scores
+# a product on its feed description cut at 50 tokens (~40 words), partly by literal keyword match (BM25). For a
+# Shopify store the description is what goes into that feed. One vendor, few sessions, but cheap and in line
+# with "match the buyer's intent" (E-GEO). mvp/content-agent/RESEARCH-PEEC-CHATGPT-SHOPPING-2026-10-22.md
 PRODUCT_OPENING = """
 Opening and wording:
 - The description's first sentence says plainly what the product is and who or what it's for, so it makes sense quoted on its own. No warm-up.
+- The first 40 words carry the product type and the facts buyers filter on (key material or ingredient, size, main use, who it's for). Nothing a buyer would search for waits until later in the description.
+- When the facts support it, say a fact in the words buyers use ("fragrance-free", "for dry skin", "machine washable"), not a synonym.
 - Never use these (they read as AI): "elevate", "game-changer", "unlock", "look no further", "whether you're X or Y", "when it comes to", "the perfect addition", "take your X to the next level", "must-have", "holy grail", "seamless", "journey".
 """
 
@@ -49,11 +55,18 @@ PRODUCT_FIX_RULES = """You improve one product page of an online store so that A
 Hard rules:
 1. Use ONLY the facts given under PRODUCT FACTS and CURRENT DESCRIPTION. Never add a material, size, ingredient, certification, benefit, number or claim that is not stated there. If you are unsure whether something is stated, leave it out.
 2. When a buyer question needs a fact that is not stated, do not answer it: add it to open_questions so the merchant can supply it. Also add the 3-6 facts buyers of this kind of product usually check before buying that are missing (e.g. for a cap: size/fit, closure, care; for skincare: skin type, key ingredients and their amounts, size in ml, how to use). Each open question is one short question the merchant can answer in a few words.
-3. Write for a buyer, plainly. No superlatives ("best", "ultimate"), no hype, no mention of competitors, no mention of AI.
+3. Write for a buyer, plainly. No superlatives ("best", "ultimate"), no hype, no mention of competitors, no mention of AI. A fit statement the facts support is not hype: "for oily skin", "suits small and medium dogs", "made for daily commuting" is exactly what buyers ask, so say it.
 4. Keep the store's language, spelling and currency, and the tone of the current description.
 5. The title is what Google Shopping and AI shopping assistants match first. Shape it: BRAND, then the product's own name word for word, then the product type, then the one or two key facts buyers filter on (material, size, colour, count, key ingredient), most important first, e.g. "Acme Harbour Cap - 100% Cotton Structured Baseball Cap". Every word you add must come from the facts or current description. Keep it under 70 characters (Shopping cuts the rest). If the title already follows this shape, return it unchanged.
 6. spec_table rows: label and value must both come from the facts, value copied exactly. Leave out price, availability and stock, here and in the description (the store shows those itself and they change).
 7. Every sentence in description_html must be supported by the facts. Use simple HTML: <p>, <ul>, <li>, <strong>.
+8. Shape of description_html (from the product pages AI shopping assistants cite most, 19 Oct 2026; short pages get cited, so keep it about 60-170 words):
+   - One opening paragraph of at most 40 words: what it is, who it's for, and the facts buyers filter on.
+   - Then labelled lines, each a <p> starting with a <strong> label, only for labels the facts support: "<strong>Good for:</strong>" (skin types, uses, sizes, situations), "<strong>Not for:</strong>" or a stated limit, "<strong>Key ingredients:</strong>" / "<strong>Made from:</strong>" (named form and amount when stated, e.g. "7% tetrahexyldecyl ascorbate"), "<strong>Free of:</strong>", "<strong>How to use:</strong>" or "<strong>Care:</strong>". Skip any label the facts don't fill; never write "not stated".
+   - Feature bullets say the feature and, when the facts say it, why it matters, in one line: "Raglan sleeves, so pack straps don't rub."
+   - If the facts state a limit ("does not fold", "prone to pilling", "not waterproof"), keep it. Buyers ask about limits and a plain answer is useful.
+   - Numbers exactly as stated, with their units. Never round.
+9. Never write a price, discount, currency amount or stock level anywhere in description_html, spec_table or the title, even when the facts include one.
 Also, always:
 - Never write about the page or its wording ("its description says", "the product information should", "as stated above", "the stated refund policy", "is described as"). The store is speaking: say the fact itself ("Beauty products can't be returned", "It's lightweight").
 - Store policies (returns, shipping, refunds) only appear in an FAQ answer to a returns or shipping question, never in a product description.
@@ -95,6 +108,25 @@ def _lessons(brief, draft_type):
     ls = agent_review.current_lessons(brief.get('store'), lane)
     return ('\n\nLESSONS FROM LAST MONTH\'S RESULTS FOR THIS STORE (follow them unless a fact rule says otherwise):\n'
             + '\n'.join('- ' + l for l in ls)) if ls else ''
+
+
+def _owner_lessons(brief):
+    """The owner's product page answers (fix_setup.py, pre-filled once if never opened) and what they taught the
+    agent by changing earlier product pages (fix_learning.py), 20 Oct 2026."""
+    out = ''
+    try:
+        import fix_setup
+        if brief.get('store'):
+            fix_setup.ensure(brief['store'])
+            out += fix_setup.prompt(brief['store'])
+    except Exception:                                                     # noqa: BLE001
+        pass
+    try:
+        import fix_learning
+        out += fix_learning.prompt(brief.get('store'))
+    except Exception:                                                     # noqa: BLE001
+        pass
+    return out
 
 
 def _editor(brief):
@@ -151,6 +183,13 @@ def _research(brief):
             '\n'.join('- %s (%s): %s' % (c['page_title'] or c['site'], c['site'], c['page_excerpt'][:600]) for c in read[:3]))
 
 
+def _third_party(brief):
+    """Third-party context for these questions (third_party.py): Google Shopping, off-site pages, Trustpilot.
+    Each section already says it is research only. '' for briefs built before 22 Oct or stores never pulled."""
+    tp = brief.get('third_party') or {}
+    return ''.join('\n\n' + tp[k] for k in ('diagnose', 'citations', 'reviews') if tp.get(k))
+
+
 def _setup(brief):
     try:
         import content_setup
@@ -182,6 +221,35 @@ def unhedge(text):
     for pat, rep in _HEDGES:
         text = re.sub(pat, rep, text, flags=re.I)
     return re.sub(r'(^|[.!?]\s+|>)([a-z])', lambda m: m.group(1) + m.group(2).upper(), text)
+
+
+_PRICE = re.compile(r'(?:[$€£¥]\s?\d[\d.,]*|\d[\d.,]*\s?(?:€|EUR|USD|GBP|eur|usd|gbp)\b)|\b(?:priced at|retails? for|on sale)\b', re.I)
+
+
+def strip_prices(result):
+    """Drop any description sentence, list item or spec row that states a price (19 Oct 2026).
+
+    The prompt already forbids prices, but the Peau De Clubhouse Hat fix still said "Priced at £25.00" while the
+    store showed €30,95. Prices change and the store shows its own, so a price in the copy can only go stale.
+    Returns how many pieces were removed."""
+    n = 0
+    html_ = result.get('description_html') or ''
+
+    def drop_sentences(m):
+        nonlocal n
+        tag, inner = m.group(1), m.group(2)
+        parts = re.split(r'(?<=[.!?])\s+', inner)
+        keep = [p for p in parts if not _PRICE.search(re.sub(r'<[^>]+>', '', p))]
+        n += len(parts) - len(keep)
+        return '<%s>%s</%s>' % (tag, ' '.join(keep), tag) if keep else ''
+    html_ = re.sub(r'<(p|li)>(.*?)</\1>', drop_sentences, html_, flags=re.S)
+    result['description_html'] = re.sub(r'<ul>\s*</ul>', '', html_)
+    rows = result.get('spec_table') or []
+    kept = [r for r in rows if not _PRICE.search('%s %s' % (r.get('label', ''), r.get('value', '')))
+            and 'price' not in (r.get('label') or '').lower()]
+    n += len(rows) - len(kept)
+    result['spec_table'] = kept
+    return n
 
 
 def _unhedge_all(node):
@@ -217,7 +285,7 @@ def _input(brief, product, draft_type='product_fix'):
             'BUYER QUESTIONS THIS PAGE SHOULD ANSWER:\n%s\n\n'
             'PRODUCTS AI RECOMMENDED INSTEAD (context only - never mention them on the page):\n%s'
             % (_brand_name(brief), product['title'], product['url'], facts or '(none)', '\n'.join(product['description']) or '(empty)',
-               qs, comps or '(none)')) + _research(brief) + _voice(brief) + _examples(brief, draft_type) + _lessons(brief, draft_type) + _editor(brief)
+               qs, comps or '(none)')) + _research(brief) + _third_party(brief) + _voice(brief) + _examples(brief, draft_type) + _lessons(brief, draft_type) + _editor(brief) + _owner_lessons(brief)
 
 
 def _norm(s):
@@ -281,7 +349,17 @@ def product_fix(brief, product=None, usage=None):
     result = _unhedge_all(llm.json_call(PRODUCT_FIX_RULES, _input(brief, product), 'product_fix', PRODUCT_FIX_SCHEMA,
                            usage=usage))
     result['removed_specs'] = check_specs(result, product)
+    result['removed_prices'] = strip_prices(result)
+    result['description_html'] = re.sub(r'</strong>(?=[^\s<])', '</strong> ', result.get('description_html') or '')   # "Good for:</strong> Daily"
     result['title_reverted'] = check_title(result, product, _brand_name(brief))
+    try:
+        import fix_setup
+        if fix_setup.keep_titles(brief['store']):                         # the owner said: keep my titles
+            result['title'], result['title_reason'] = product['title'], 'Kept your title, as you asked in setup.'
+        if fix_setup.no_specs(brief['store']):
+            result['spec_table'] = []
+    except Exception:                                                     # noqa: BLE001
+        pass
     factcheck.check(result, 'product_fix', [product], usage=usage, rules=_rules(brief))
     result['product'] = dict(handle=product['handle'], title=product['title'], url=product['url'],
                              image=product.get('image', ''))
@@ -477,7 +555,10 @@ def _names(products, competitors):
 
 
 def comparison(brief, usage=None, max_own=4, max_other=2):
-    """Draft a comparison page: the store's products, plus up to two competitor products whose page we read."""
+    """Draft a comparison page: the store's products, plus up to two competitor products whose page we read.
+    With config.ARTICLES_V2 it's a designed article built around a comparison table (19 Oct 2026)."""
+    if config.ARTICLES_V2:
+        return article(brief, usage=usage, max_own=max_own, kind='comparison')
     products = [_with_brand(brief, p) for p in _ready(brief['products'])[:max_own]]
     never = {_norm(b) for b in _rules(brief).get('never_name', [])}
     competitors = [c for c in brief['competitors'] if c['page_read'] and c['page_excerpt']
@@ -556,7 +637,10 @@ def guide_html(result, products):
 
 
 def guide(brief, usage=None, max_own=6):
-    """Draft a buying guide that recommends only the store's own products."""
+    """Draft a buying guide that recommends only the store's own products (a designed article when
+    config.ARTICLES_V2 is on)."""
+    if config.ARTICLES_V2:
+        return article(brief, usage=usage, max_own=max_own)
     products = [_with_brand(brief, p) for p in _ready(brief['products'])[:max_own]]
     sources = _sources(products, [])
     result = _unhedge_all(llm.json_call(GUIDE_RULES, _many_input(brief, products, [], 'guide'), 'guide', GUIDE_SCHEMA, usage=usage))
@@ -576,6 +660,237 @@ def guide(brief, usage=None, max_own=6):
     result['html'] = guide_html(result, products)
     result['products'] = [dict(handle=p['handle'], title=p['title'], url=p['url'], image=p.get('image', ''))
                           for p in products]
+    result['product'] = result['products'][0]
+    return result
+
+
+# ---- AEO articles, designed (19 Oct 2026) ------------------------------------------------------------
+# Behind config.ARTICLES_V2. Kelian rejected the plain guides on the test store ("atrocious") and approved a
+# designed article instead (mvp/content-agent/shopify-test/article-mockup-skincare-2026-10-19.html): about
+# 1,000 words, built from blocks, in the store's own fonts and colours, with its own product photos, following
+# how the best brands in its niche build articles (niche_examples.py) and what the owner asked for before
+# (article_learning.py). The writer returns blocks; article_render.py turns them into the page.
+
+ARTICLE_RULES = """You write a blog article for an online store that answers the BUYER QUESTIONS so well that AI assistants cite it, and that recommends the store's own products where they genuinely fit. It must read like the best brands in this niche write, in the store's own voice.
+
+Facts:
+1. Anything about a specific product (what it is, does, contains, suits) must rest on that product's PRODUCT FACTS. For each pick, copy the supporting fact values or description phrases word for word into facts_used.
+2. General category knowledge is welcome where it helps the buyer decide (how a routine is ordered, what an ingredient type generally does, what to look for), stated carefully as general knowledge, never as a promise about a product. No numbers unless a product's facts state them, no medical or disease claims ("treats acne", "cures"), no statistics, no studies, no claims about other brands.
+3. Never name or criticise another brand. Never mention AI. No stock levels. Prices only when a buyer question names a budget, copied from the product's Price fact; otherwise leave prices to the product cards.
+4. When a buyer would expect a fact the store doesn't state, don't invent it: add it to open_questions.
+
+Shape (follow THE BEST BRANDS IN THIS NICHE section when given; it wins over these defaults):
+- title: a buyer's question or a plain "How to..." line. dek: 1-2 sentences that answer the title directly in the brand's voice. category: one or two words for the blog's category ("Routines", "Guides").
+- glance: 3-4 rows for an "At a glance" box (label of 1-3 words, text of one short sentence), e.g. The routine / Who it's for / Time / Start with.
+- sections: 4-7. Each heading is a buyer question or, for ordered steps, a plain imperative with step_label "Step 1", "Step 2" (else step_label ""). The first 1-2 sentences under each heading answer it directly; then detail. 2-3 paragraphs each. product_id: the store product the section recommends (P1, P2...) or "" if none; recommend each product in at most one section. photo: true for 2-4 sections where a wide lifestyle photo fits (usually the product sections).
+- picks: one per product that appears, with text (one sentence on why it fits, no repetition of the section) and labels (1-3 short words copied from that product's facts, e.g. key ingredients; [] if none stated).
+- tables: 0-1 small tables where buyers compare options (e.g. morning vs evening, which product for which need). Cells are product names or short stated values; no prices, no numbers that aren't in the facts. after_section: the index (0-based) of the section it follows. rows: first cell is the row label.
+- faqs: 4-6 real follow-up questions buyers ask, each answered in 1-3 sentences that start with the answer. faq_heading: usually "Questions people ask".
+- closing: a short banner for the product or set that fits the whole article (heading, one sentence, product_id), or empty strings if none fits.
+- Length: about LENGTH words in total. Say each thing once.
+""" + ANSWER_FIRST
+
+_ARTICLE_TEXT = {"type": "string"}
+ARTICLE_SCHEMA = {
+    "type": "object", "additionalProperties": False,
+    "required": ["title", "dek", "category", "glance", "sections", "picks", "tables", "faqs", "faq_heading", "closing",
+                 "open_questions"],
+    "properties": {
+        "title": _ARTICLE_TEXT, "dek": _ARTICLE_TEXT, "category": _ARTICLE_TEXT, "faq_heading": _ARTICLE_TEXT,
+        "glance": {"type": "array", "items": {"type": "object", "additionalProperties": False, "required": ["label", "text"],
+                                              "properties": {"label": _ARTICLE_TEXT, "text": _ARTICLE_TEXT}}},
+        "sections": {"type": "array", "items": {
+            "type": "object", "additionalProperties": False,
+            "required": ["step_label", "heading", "paragraphs", "product_id", "photo"],
+            "properties": {"step_label": _ARTICLE_TEXT, "heading": _ARTICLE_TEXT,
+                           "paragraphs": {"type": "array", "items": _ARTICLE_TEXT}, "product_id": _ARTICLE_TEXT,
+                           "photo": {"type": "boolean"}}}},
+        "picks": {"type": "array", "items": {
+            "type": "object", "additionalProperties": False, "required": ["id", "text", "labels", "facts_used"],
+            "properties": {"id": _ARTICLE_TEXT, "text": _ARTICLE_TEXT, "labels": {"type": "array", "items": _ARTICLE_TEXT},
+                           "facts_used": {"type": "array", "items": _ARTICLE_TEXT}}}},
+        "tables": {"type": "array", "items": {
+            "type": "object", "additionalProperties": False, "required": ["after_section", "heading", "columns", "rows", "note"],
+            "properties": {"after_section": {"type": "integer"}, "heading": _ARTICLE_TEXT, "note": _ARTICLE_TEXT,
+                           "columns": {"type": "array", "items": _ARTICLE_TEXT},
+                           "rows": {"type": "array", "items": {"type": "object", "additionalProperties": False,
+                                                               "required": ["cells"],
+                                                               "properties": {"cells": {"type": "array", "items": _ARTICLE_TEXT}}}}}}},
+        "faqs": {"type": "array", "items": {"type": "object", "additionalProperties": False, "required": ["question", "answer"],
+                                            "properties": {"question": _ARTICLE_TEXT, "answer": _ARTICLE_TEXT}}},
+        "closing": {"type": "object", "additionalProperties": False, "required": ["heading", "text", "product_id"],
+                    "properties": {"heading": _ARTICLE_TEXT, "text": _ARTICLE_TEXT, "product_id": _ARTICLE_TEXT}},
+        "open_questions": PRODUCT_FIX_SCHEMA["properties"]["open_questions"],
+    },
+}
+
+
+def _photos(domain, product):
+    """All of a product's photos, from the catalog record or its public /products/<handle>.json (free)."""
+    imgs = [u for u in product.get('images') or [] if u]
+    if len(imgs) > 1:
+        return imgs
+    try:
+        import catalog
+        status, raw = catalog._get('https://%s/products/%s.json' % (domain, product['handle']), timeout=15)
+        if status == 200:
+            imgs = [i.get('src') for i in json.loads(raw).get('product', {}).get('images') or [] if i.get('src')]
+    except Exception:                                                     # noqa: BLE001 - a card still has its main photo
+        pass
+    return imgs or ([product['image']] if product.get('image') else [])
+
+
+def _min_price(product):
+    prices = []
+    for v in product.get('variants') or []:
+        try:
+            prices.append(float(v.get('price')))
+        except (TypeError, ValueError):
+            pass
+    return min(prices) if prices else None
+
+
+def _slim(domain, p):
+    """Title, link, photos and lowest price for a product card. Briefs carry facts, not variants, so the price
+    comes from the catalog record."""
+    import catalog_facts
+    rec = next((r for r in catalog_facts.get(domain) if r['handle'] == p['handle']), None) or p
+    imgs = _photos(domain, dict(p, images=rec.get('images') or p.get('images') or []))
+    return dict(handle=p['handle'], title=p['title'], url=p['url'], image=p.get('image') or rec.get('image') or (imgs[0] if imgs else ''),
+                images=imgs, price=_min_price(rec))
+
+
+def _symbol(domain):
+    try:
+        import catalog
+        return catalog.SYMBOLS.get((db.brand(domain) or {}).get('currency') or '', '')
+    except Exception:                                                     # noqa: BLE001
+        return ''
+
+
+def _full_products(domain, slim):
+    """The catalog records (with facts) for the article's products, in P1.. order."""
+    import catalog_facts
+    recs = {r['handle']: r for r in catalog_facts.get(domain)}
+    brief = dict(store=domain)
+    return [_with_brand(brief, recs[p['handle']]) if p['handle'] in recs else dict(p, facts=[], description=[])
+            for p in slim]
+
+
+def article_facts_text(body):
+    domain = body.get('store', '')
+    products = _full_products(domain, body.get('products') or [])
+    parts = []
+    for i, p in enumerate(products):
+        parts.append('[P%d] %s\n%s\n  Description: %s' % (i + 1, p['title'], '\n'.join(
+            '  - %s: %s' % (f['label'], f['value']) for f in p['facts']), ' '.join(p.get('description') or [])[:1200]))
+    for a in body.get('answers') or []:
+        if a.get('answer'):
+            parts.append('Owner said: %s -> %s' % (a['question'], a['answer']))
+    return '\n\n'.join(parts) or '(none)'
+
+
+def _owner_facts(body):
+    """The owner's answers to gaps, as facts the check accepts."""
+    return [dict(label='Owner says', value=a['answer'], source='merchant')
+            for a in body.get('answers') or [] if a.get('answer')]
+
+
+def article_checks(result, domain, usage=None, ai=True, verified=()):
+    """Validate an article's blocks, fact-check its prose and render it. Changes result in place."""
+    import article_render
+    import brand_style
+    slim = result.get('products') or []
+    ids = ['P%d' % (i + 1) for i in range(len(slim))]
+    full = _full_products(domain, slim)
+    if full:
+        full[0] = dict(full[0], facts=list(full[0]['facts']) + _owner_facts(result))
+    sources = _sources(full, [])
+    for s in result.get('sections') or []:
+        if s.get('product_id') not in ids:
+            s['product_id'] = ''
+    kept, dropped = [], []
+    for k in result.get('picks') or []:
+        ok = k.get('id') in sources and (any(_stated(u, sources[k['id']]) for u in k.get('facts_used') or [])
+                                        or k.get('checked'))
+        if ok:
+            k['labels'] = [l for l in k.get('labels') or [] if _stated(l, sources[k['id']])][:4]
+            k['checked'] = True
+        (kept if ok else dropped).append(k)
+    result['picks'], result['removed_picks'] = kept, dropped
+    close = result.get('closing') or {}
+    if close.get('product_id') not in ids:
+        result['closing'] = dict(heading='', text='', product_id='')
+    brands = [_norm(b) for b in (result.get('competitor_brands') or []) if len(_norm(b)) > 2]
+    result.setdefault('removed_paragraphs', [])
+    for s in result.get('sections') or []:
+        ok = [t for t in s.get('paragraphs') or [] if not any(re.search(r'\b%s\b' % re.escape(b), _norm(t)) for b in brands)]
+        result['removed_paragraphs'] += [t for t in s.get('paragraphs') or [] if t not in ok]
+        s['paragraphs'] = ok
+    for t in result.get('tables') or []:
+        n = len(t.get('columns') or [])
+        t['rows'] = [r for r in t.get('rows') or [] if len(r.get('cells') or []) == n and n
+                     and not any(_norm(c) in ('not stated', 'n/a', '-', '') for c in r['cells'][1:])]
+    result['tables'] = [t for t in result.get('tables') or [] if t['rows']]
+    import catalog_facts
+    handles = {p['handle'] for p in slim}
+    others = [dict(r, description=(r.get('description') or [])[:12]) for r in catalog_facts.get(domain)
+              if r['handle'] not in handles][:12]
+    questions = ' '.join(q for q in result.get('questions') or [])
+    factcheck.check(result, 'article', full, usage=usage, ai=ai, rules=_rules(dict(store=domain)), context=others,
+                    number_source=questions, verified=verified)
+    style = brand_style.get(domain)
+    result['html'], result['cover'] = article_render.render(
+        result, slim, style, brand=result.get('author') or _brand_name(dict(store=domain)), symbol=_symbol(domain),
+        theme_title=bool(result.get('theme_title')))
+    return result
+
+
+COMPARISON_SHAPE = """
+
+THIS IS A COMPARISON PAGE: the buyer is choosing between the store's products. Put one comparison table straight after the first section (after_section 0), with a column per product (the products' names as column headings, first column the attribute) and 4-7 rows of attributes buyers compare that EVERY product's facts state, each cell copied from that product's facts. Never write "Not stated": leave out a row the facts don't cover for every product. Then one section per product on who it suits, a section on using them together if that fits, and the FAQ. The title names the products being compared or asks the buyer's choosing question."""
+
+
+def article(brief, usage=None, max_own=6, kind='guide'):
+    """Draft a designed AEO article (config.ARTICLES_V2). Returns the result dict."""
+    import article_learning
+    import article_setup
+    import brand_style
+    import niche_examples
+    domain = brief['store']
+    ab = article_setup.ensure(domain, usage=usage)            # the owner's article answers (pre-filled once if never opened)
+    never = article_setup.never_products(domain)
+    products = [_with_brand(brief, p) for p in _ready(brief['products'])
+                if not any(n and (n in p['title'].lower() or n == p['handle']) for n in never)][:max_own]
+    if not products:
+        raise ValueError('You asked the agent to leave these products out of articles.')
+    try:
+        playbook = niche_examples.get(domain)
+    except Exception:                                                     # noqa: BLE001 - no scans yet
+        playbook = dict(niche_examples.DEFAULT_PLAYBOOK)
+    try:
+        brand_style.get(domain)                                           # learn the look once, before rendering
+    except Exception:                                                     # noqa: BLE001
+        pass
+    rules = ARTICLE_RULES.replace('LENGTH', str(article_setup.length(domain) or playbook.get('length_words') or 1000)) \
+        + (COMPARISON_SHAPE if kind == 'comparison' else '')
+    text = (_many_input(brief, products, [], 'guide') + niche_examples.prompt(playbook)
+            + article_setup.prompt(domain) + article_learning.prompt(domain))
+    result = _unhedge_all(llm.json_call(rules, text, 'article', ARTICLE_SCHEMA, usage=usage))
+    result['layout'] = 'article'
+    result['store'] = domain
+    result['products'] = [_slim(domain, p) for p in products]
+    result['competitor_brands'] = [c['brand'] for c in brief.get('competitors') or [] if c.get('brand')]
+    result['questions'] = [q['question'] for q in brief.get('questions') or []]
+    result['playbook_sources'] = [s.get('site') for s in playbook.get('sources') or []]
+    result['author'] = article_setup.answer(ab, 'author') or ''
+    result['disclaimer'] = article_setup.answer(ab, 'disclaimer') or ''
+    try:
+        import shopify_connect
+        result['theme_title'] = bool(shopify_connect.mismatch(domain))   # a demo/test store: style its title too
+    except Exception:                                                     # noqa: BLE001
+        result['theme_title'] = False
+    article_checks(result, domain, usage=usage)
     result['product'] = result['products'][0]
     return result
 

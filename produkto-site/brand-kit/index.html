@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Produkto Brand Kit</title>
+<style>
+@font-face{font-family:Plex;font-weight:400;src:url(fonts/plexmono-400.woff2)}
+@font-face{font-family:Plex;font-weight:500;src:url(fonts/plexmono-500.woff2)}
+@font-face{font-family:Plex;font-weight:700;src:url(fonts/plexmono-700.woff2)}
+@font-face{font-family:Geist;font-weight:400;src:url(fonts/geist-400.woff2)}
+@font-face{font-family:Geist;font-weight:600;src:url(fonts/geist-600.woff2)}
+@font-face{font-family:Geist;font-weight:700;src:url(fonts/geist-700.woff2)}
+:root{--ink:#0b1b35;--deep:#07101f;--paper:#f2f1ee;--white:#fff;--green:#2fbf71;--red:#e5484d;--mute:#8a96a8;--line:#1c2b45}
+*{box-sizing:border-box;margin:0}
+body{background:var(--deep);color:var(--white);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:Plex,ui-monospace,monospace}
+section{padding:120px 8vw;border-bottom:1px solid var(--line);position:relative}
+.dots{background-image:radial-gradient(#1d2d4a 1px,transparent 1.4px);background-size:14px 14px}
+.label{font-family:Plex;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:40px}
+.label b{color:var(--green);font-weight:500}
+h1{font-family:Plex;font-weight:700;font-size:clamp(40px,7vw,96px);letter-spacing:-.02em;line-height:1}
+h2{font-family:Plex;font-weight:700;font-size:clamp(28px,4vw,52px);line-height:1.1}
+p.lead{font-size:20px;color:#c7d2e4;max-width:640px;line-height:1.5;margin-top:24px}
+.cursor{display:inline-block;width:.55em;height:.9em;background:var(--white);vertical-align:-.08em;animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center}
+.hero img{width:260px;margin-bottom:56px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.sw{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.sw div{height:150px}
+.sw p{padding:16px;font-family:Plex;font-size:13px;line-height:1.7;background:var(--deep)}
+.sw p span{color:var(--mute)}
+.ratio{display:flex;height:22px;border-radius:6px;overflow:hidden;margin-top:28px}
+.type-row{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--line);align-items:baseline}
+.type-row .mono.small{font-size:12px;color:var(--mute);line-height:1.8}
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:1px solid var(--line);border-radius:14px;padding:28px;background:#0a1529}
+.card h3{font-family:Plex;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.card li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:16px;color:#dde3ec}
+.yes h3{color:var(--green)} .no h3{color:var(--red)}
+.no li{color:var(--mute);text-decoration:line-through;text-decoration-color:#e5484d88}
+.lines{display:flex;flex-direction:column;gap:0}
+.lines div{font-family:Plex;font-weight:700;font-size:clamp(24px,3.4vw,44px);padding:22px 0;border-top:1px solid var(--line)}
+.lines div:nth-child(odd){color:var(--white)} .lines div:nth-child(even){color:#9fb3d6}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.shots figure{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.shots img{width:100%;display:block}
+.shots figcaption{font-family:Plex;font-size:12px;color:var(--mute);padding:12px 14px;background:#0a1529}
+.logos{display:flex;gap:36px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.logos img{height:34px;filter:invert(1) brightness(.9);opacity:.85}
+.motion{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.motion .card p{color:#c7d2e4;line-height:1.55;margin-top:6px}
+.motion .card b{font-family:Plex;font-size:22px}
+.paper{background:var(--paper);color:var(--ink)}
+.paper .label{color:#3c4c66}
+.end{text-align:center;padding:160px 8vw}
+@media(max-width:700px){section{padding:72px 16px}.voice{grid-template-columns:1fr}.type-row{grid-template-columns:1fr;gap:10px}}
+</style></head><body>
+
+<section class="hero dots">
+  <img src="logo.png" alt="Produkto">
+  <div class="label">Brand kit · v1 · from the launch film</div>
+  <h1>Is AI recommending<br>your products?<span class="cursor"></span></h1>
+  <p class="lead">Produkto feels like a terminal at night: dark navy, monospaced, quiet, precise. It doesn't shout. It types out a fact, cuts hard, and moves on. The message underneath everything: <b style="color:#fff">your catalog is now read by machines, and we take care of that for you.</b></p>
+</section>
+
+<section>
+  <div class="label"><b>01</b> · The aura</div>
+  <div class="grid">
+    <div class="card"><h3 style="color:#fff">Calm control</h3><li>A night-shift operator, not a hype machine. Composed, certain, slightly cold.</li></div>
+    <div class="card"><h3 style="color:#fff">Machine-native</h3><li>Mono type, dot-matrix marks, blinking cursors. It looks like it was built for how AI reads.</li></div>
+    <div class="card"><h3 style="color:#fff">Proof over promise</h3><li>Real AI answers, real products, real numbers. Show the screen, not a claim.</li></div>
+    <div class="card"><h3 style="color:#fff">Taken care of</h3><li>The payoff is relief. Agents do the work; the merchant just approves.</li></div>
+  </div>
+</section>
+
+<section>
+  <div class="label"><b>02</b> · Colour</div>
+  <div class="grid">
+    <div class="sw"><div style="background:#0b1b35"></div><p>Logo navy<br><span>#0B1B35 · primary, buttons, film backgrounds</span></p></div>
+    <div class="sw"><div style="background:#07101f"></div><p>Midnight<br><span>#07101F · deepest background</span></p></div>
+    <div class="sw"><div style="background:#fff"></div><p>White<br><span>#FFFFFF · type on navy</span></p></div>
+    <div class="sw"><div style="background:#f2f1ee"></div><p>Paper<br><span>#F2F1EE · the light "reveal" cut</span></p></div>
+    <div class="sw"><div style="background:#2fbf71"></div><p>Signal green<br><span>#2FBF71 · live, rising, done</span></p></div>
+    <div class="sw"><div style="background:#e5484d"></div><p>Alert red<br><span>#E5484D · missing, falling. Sparingly.</span></p></div>
+    <div class="sw"><div style="background:#8a96a8"></div><p>Steel<br><span>#8A96A8 · captions, metadata</span></p></div>
+    <div class="sw"><div style="background:#9fb3d6"></div><p>Haze blue<br><span>#9FB3D6 · secondary lines</span></p></div>
+  </div>
+  <div class="ratio"><span style="flex:70;background:#0b1b35;border:1px solid #1c2b45"></span><span style="flex:18;background:#fff"></span><span style="flex:7;background:#f2f1ee"></span><span style="flex:4;background:#2fbf71"></span><span style="flex:1;background:#e5484d"></span></div>
+  <p class="mono" style="color:var(--mute);font-size:12px;margin-top:10px">Usage ratio · 70 navy · 18 white · 7 paper · 4 green · 1 red</p>
+</section>
+
+<section>
+  <div class="label"><b>03</b> · Type</div>
+  <div class="type-row"><div class="mono small">IBM Plex Mono 700<br>Headlines, film titles</div><div class="mono" style="font-size:52px;font-weight:700">Taken care of.</div></div>
+  <div class="type-row"><div class="mono small">IBM Plex Mono 400<br>Labels, terminal, URLs</div><div class="mono" style="font-size:22px">kelian@produkto ~ % produkto scan<span class="cursor"></span></div></div>
+  <div class="type-row"><div class="mono small">Geist 600<br>UI headings</div><div style="font-size:36px;font-weight:600">Visibility across every AI assistant</div></div>
+  <div class="type-row"><div class="mono small">Geist 400<br>Body, dashboard</div><div style="font-size:18px;color:#c7d2e4;line-height:1.6;max-width:620px">Mentioned in 23% of answers this week. Average position 2.4. Your Crag leash now appears for "best leash for a golden retriever".</div></div>
+  <p class="mono" style="color:var(--mute);font-size:12px;margin-top:24px">Rule: mono speaks, Geist explains. Headlines end with a full stop.</p>
+</section>
+
+<section class="dots">
+  <div class="label"><b>04</b> · The message, in lines</div>
+  <div class="lines">
+    <div>Is AI recommending your products?</div>
+    <div>Your products? Not in any of them.</div>
+    <div>Your AI visibility.</div>
+    <div>Measured every day.</div>
+    <div>Across different LLMs.</div>
+    <div>Deploy agents across your catalog.</div>
+    <div>Taken care of.</div>
+  </div>
+</section>
+
+<section>
+  <div class="label"><b>05</b> · Voice</div>
+  <div class="voice">
+    <div class="card yes"><h3>We sound like</h3><ul style="padding:0">
+      <li>Short. Declarative. Full stop.</li><li>"AI", not a list of engines</li><li>Concrete: real products, real answers</li><li>Describe the work, not promise results</li><li>American spelling: catalog</li></ul></div>
+    <div class="card no"><h3>We never sound like</h3><ul style="padding:0">
+      <li>"Revolutionize your e-commerce journey!"</li><li>"Nobody else does this"</li><li>"This is just the beginning…"</li><li>An agency</li><li>Knocking competitors</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="label"><b>06</b> · Motion &amp; graphic devices</div>
+  <div class="motion">
+    <div class="card"><b>Hard cuts</b><p>No fades or swooshes. Cut on the beat, with a low sub-boom.</p></div>
+    <div class="card"><b>Typed text</b><p>Words appear character by character with a block cursor.</p></div>
+    <div class="card"><b>Dot matrix</b><p>The P, AI logos and agents built from dots. Dots light green when work is done.</p></div>
+    <div class="card"><b>Colour flip</b><p>One navy → paper cut for the reveal moment. Once per piece.</p></div>
+  </div>
+  <div class="logos"><img src="logo-openai.svg"><img src="logo-google.svg"><img src="logo-perplexity.svg"><img src="logo-gemini.svg"><img src="logo-copilot.svg"><img src="logo-claude.svg"></div>
+</section>
+
+<section>
+  <div class="label"><b>07</b> · In use · launch film</div>
+  <div class="shots">
+    <figure><img src="03-question.jpg"><figcaption>Real buyer question, typed live</figcaption></figure>
+    <figure><img src="10-vis-dark.jpg"><figcaption>Statement frame · Plex Mono on navy</figcaption></figure>
+    <figure><img src="15-agents.jpg"><figcaption>Dot-matrix agents</figcaption></figure>
+    <figure><img src="17-care.jpg"><figcaption>The payoff line</figcaption></figure>
+  </div>
+</section>
+
+<section class="end paper">
+  <h2 style="font-size:clamp(32px,5vw,64px)">Taken care of.</h2>
+  <p class="mono" style="margin-top:24px;color:#3c4c66">getprodukto.com<span class="cursor" style="background:#0b1b35"></span></p>
+</section>
+</body></html>

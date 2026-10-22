@@ -78,7 +78,7 @@ DEFAULT_SCREENING_REPLY = (
 # one per operator, named by their address.
 SETTINGS: dict[str, tuple[str, ...]] = {
     "brand": ("name",),
-    "call": ("screening_reply", "script", "script_file"),
+    "call": ("screening_reply", "script", "script_file", "scripts"),
 }
 OPERATOR_SETTINGS = ("name",)
 
@@ -109,6 +109,9 @@ class Profile:
     brand_is_set: bool = False
     screening_reply: str = DEFAULT_SCREENING_REPLY
     script: str = DEFAULT_SCRIPT
+    # Named talk tracks from [call.scripts], in file order; the first is the default. Empty when
+    # the file only has a single script.
+    scripts: tuple[tuple[str, str], ...] = ()
     # Display names by address, for those whose name is not just their address made readable.
     operators: dict[str, str] = field(default_factory=dict)
 
@@ -128,11 +131,24 @@ class Profile:
         """The talk track for one operator. [Name] and [Company] are left for the page."""
         return self.render(self.script, operator_email)
 
+    def script_names(self) -> list[str]:
+        return [name for name, _ in self.scripts]
+
+    def named_script_for(self, name: str, operator_email: str = "") -> str | None:
+        """One named talk track for one operator, or None when there is no script by that name."""
+        for script_name, text in self.scripts:
+            if script_name == name:
+                return self.render(text, operator_email)
+        return None
+
     def page_values(self, operator_email: str) -> dict[str, Any]:
         """What the dialer page needs to know, as plain data for its script."""
         return {
             "brand": self.brand,
             "script": self.script_for(operator_email),
+            "scripts": [
+                {"name": name, "script": self.render(text, operator_email)} for name, text in self.scripts
+            ],
             "screening_reply": self.render(self.screening_reply, operator_email),
         }
 
@@ -195,6 +211,17 @@ def parse_profile(data: dict[str, Any], base: Path) -> Profile:
         fields["script"] = _read_text_file(base, _text(call, "script_file"), "script_file")
     elif "script" in call:
         fields["script"] = _text(call, "script")
+    if "scripts" in call:
+        if "script" in call or "script_file" in call:
+            raise ProfileError("[call] has both script and [call.scripts]: use one.")
+        named = call["scripts"]
+        if not isinstance(named, dict) or not named:
+            raise ProfileError("[call.scripts] must be a table of named scripts, the default first.")
+        scripts = tuple((str(name).strip(), _text(named, name)) for name in named)
+        if any(not name or not text for name, text in scripts):
+            raise ProfileError("[call.scripts] needs a name and some text for every script.")
+        fields["scripts"] = scripts
+        fields["script"] = scripts[0][1]
 
     operators: dict[str, str] = {}
     for raw_email, table in raw_operators.items():

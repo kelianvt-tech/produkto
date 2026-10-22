@@ -1,0 +1,140 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Plex;font-weight:400;src:url(fonts/plexmono-400.woff2)}
+@font-face{font-family:Plex;font-weight:500;src:url(fonts/plexmono-500.woff2)}
+@font-face{font-family:Plex;font-weight:700;src:url(fonts/plexmono-700.woff2)}
+html,body{margin:0;background:#111;overflow:hidden}
+canvas{display:block}
+</style></head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// 5-second Produkto test in the Algosoup style: logo -> dot P -> terminal scan -> "Visibility" -> url.
+// Everything is drawn from t (seconds) so seek(t) gives the same frame every time.
+const W=1920,H=1080,FPS=30,DUR=5.0;
+const c=document.getElementById('c'),x=c.getContext('2d');
+const DARK='#111111',LIGHT='#f2f1ee',ACC='#8fb0ff';
+const CUTS=[0.08,0.95,1.35,2.90,3.60,4.55];   // hard cuts; the sound hits on these
+let logo,P=[];
+function rnd(a,b=0){let h=Math.sin(a*127.1+b*311.7)*43758.5453;return h-Math.floor(h);}
+function font(sz,w=400){x.font=`${w} ${sz}px Plex`;}
+function txt(s,X,Y,col,sz,w=400,al='left'){font(sz,w);x.fillStyle=col;x.textAlign=al;x.textBaseline='alphabetic';x.fillText(s,X,Y);}
+function typed(s,t0,t,cps){const n=Math.max(0,Math.floor((t-t0)*cps));return s.slice(0,n);}
+function cursor(t){return Math.floor(t*2.6)%2===0;}
+
+// ---------- texture helpers ----------
+function asciiField(t,col,alpha){ // faint scrolling character field behind the logo
+  font(16,400);x.fillStyle=col;x.globalAlpha=alpha;const ch=' .:-=+';
+  for(let gy=0;gy<H/22;gy++)for(let gx=0;gx<W/12;gx++){
+    const d=Math.hypot(gx*12-W/2,(gy*22-H/2)*1.6)/700;
+    const v=Math.sin(gx*.21+t*1.7)*Math.cos(gy*.33-t*1.1)*.5+.5-d*.55;
+    const k=Math.floor(Math.max(0,v)*ch.length);if(k>0)x.fillText(ch[Math.min(k,ch.length-1)],gx*12,gy*22);
+  }x.globalAlpha=1;
+}
+function halftone(cx,cy,R,col){ // dot sphere: dots grow towards the centre
+  x.fillStyle=col;const g=14;
+  for(let yy=g/2;yy<H;yy+=g)for(let xx=g/2;xx<W;xx+=g){
+    const d=Math.hypot(xx-cx,yy-cy)/R;if(d>1.6)continue;
+    const r=Math.max(0,(1.25-d))*g*.48;if(r<.35)continue;
+    x.beginPath();x.arc(xx,yy,Math.min(r,g*.5),0,7);x.fill();
+  }
+}
+function asciiP(cx,cy,size,t,col,reveal=1){ // the Produkto P drawn in characters
+  const set='%@#*+=$★',base=x.globalAlpha;font(Math.round(size*.022),700);x.fillStyle=col;x.textAlign='center';x.textBaseline='middle';
+  P.forEach((p,i)=>{if(rnd(i,7)>reveal)return;
+    const fl=Math.floor(t*14+rnd(i)*20);const s=p.edge?set[fl%3]:set[(fl+i)%set.length];
+    x.globalAlpha=(p.edge?.95:.55+.35*rnd(i,fl))*base;x.fillText(s,cx+p.x*size,cy+p.y*size);});
+  x.globalAlpha=1;
+}
+function dotP(cx,cy,size,col,t,reveal){
+  x.fillStyle=col;P.forEach((p,i)=>{const k=Math.min(1,Math.max(0,(reveal-rnd(i,3)*.6)/.4));if(!k)return;
+    const j=(1-k)*60;x.beginPath();x.arc(cx+p.x*size+(rnd(i,1)-.5)*j,cy+p.y*size+(rnd(i,2)-.5)*j,size*.0085*(p.edge?1:.8),0,7);x.fill();});
+}
+function bar(X,Y,pct,col,dim,label){
+  txt(label,X,Y-34,dim,22);const n=60,f=Math.round(n*pct);
+  txt('['+'#'.repeat(f)+'-'.repeat(n-f)+']  '+Math.round(pct*100)+'%',X,Y,col,22);
+}
+
+// ---------- terminal (shared by scan + Visibility frames) ----------
+const LINES=[
+ ['> reading catalog',1.74],['> writing buyer questions',1.84],['> asking ChatGPT · AI Overviews · Perplexity',1.96],
+ ['> reading answers',2.08],['',2.1],['q: "best leash for a golden retriever"',2.16],
+ ['   1  Ruffwear          Crag Leash',2.26],['   2  Halti             Multifunctional Lead',2.34],
+ ['   3  Ruffwear          Knot-a-Leash',2.42],['   4  Non-stop dogwear  Touring Bungee',2.50],
+];
+function terminal(t,fg,dim,box,light){
+  const L=110,T=110;
+  txt('kelian@produkto ~ % ',L,T,fg,30,400);
+  font(30,400);const pw=x.measureText('kelian@produkto ~ % ').width;
+  const cmd=typed('produkto scan',1.38,t,40);txt(cmd,L+pw,T,fg,30,700);
+  if(t<1.74&&cursor(t)){font(30,700);x.fillStyle=fg;x.fillRect(L+pw+x.measureText(cmd).width+4,T-26,16,32);}
+  if(t>1.68)txt('scanning catalog...',L,T+42,dim,26);
+  LINES.forEach(([s,t0],i)=>{if(t>=t0)txt(s,L,T+120+i*36,i>=6?fg:dim,24,i===5?500:400);});
+  // right column: live engine readouts, numbers flicker every frame
+  const R=W-520,f=Math.floor(t*FPS);
+  if(t>1.9){txt('{ engines.online }',R,T,fg,24,500);
+    [['chatgpt',41],['ai_overviews',63],['perplexity',37]].forEach(([n,b],i)=>{
+      txt(n.padEnd(16,' ')+(b+Math.floor(rnd(f,i)*9))+'ms',R,T+40+i*32,dim,22);});}
+  if(t>2.15){x.strokeStyle=box;x.lineWidth=1.5;x.strokeRect(R,T+150,380,190);
+    txt('answers.stream',R+16,T+178,dim,20);
+    [['answers',' read'],['products','ranked'],['citations',' found'],['status','  live']].forEach(([a,b],i)=>
+      txt(a.padEnd(14,' ')+b,R+16,T+218+i*30,i===3?fg:dim,22));}
+  // bottom: status line and progress bar
+  if(t>2.0){txt(light?'answers read. products ranked.':'answers in. products ranked.',L,H-170,fg,28,500);
+    const pct=Math.min(.99,Math.max(0,(t-2.0)/2.4));bar(L,H-100,pct*.9+.08,dim,dim,'reading answers');}
+  // binary noise lower right, like the reference
+  if(t>2.3){for(let i=0;i<3;i++){let s='';for(let k=0;k<4;k++)s+=Array.from({length:8},(_,j)=>rnd(f+k*9+j,i)>.5?'1':'0').join('')+' ';
+    txt(s,R,H-210+i*28,dim,18);}}
+}
+
+function glitch(t){ // two-frame slice offset right after each cut
+  const near=CUTS.find(k=>t>=k&&t<k+2/FPS);if(near===undefined)return;
+  for(let i=0;i<9;i++){const y0=Math.floor(rnd(i,near)*H),hh=8+Math.floor(rnd(i,near+1)*60),dx=(rnd(i,near+2)-.5)*90;
+    x.drawImage(c,0,y0,W,hh,dx,y0,W,hh);}
+}
+
+function draw(t){
+  x.setTransform(1,0,0,1,0,0);x.globalAlpha=1;
+  if(t<0.08){x.fillStyle=DARK;x.fillRect(0,0,W,H);return;}
+  if(t<0.95){ // A. logo on black
+    x.fillStyle=DARK;x.fillRect(0,0,W,H);asciiField(t,'#9a9a9a',.10);
+    const lw=600,lh=lw*logo.height/logo.width;x.drawImage(logo,(W-lw)/2,(H-lh)/2-10,lw,lh);
+    txt('is AI recommending your products?',W/2,H/2+lh/2+52,'#8a8a8a',22,400,'center');
+  } else if(t<1.35){ // B. halftone sweep, then the dot P forms on light
+    x.fillStyle=LIGHT;x.fillRect(0,0,W,H);
+    const k=(t-.95)/.4;
+    if(k<.5)halftone(W*(.2+k*1.4),H/2,430,'#8d8d8d');
+    else dotP(W/2,H/2,620,'#7a7a7a',t,(k-.5)/.5*1.4);
+  } else if(t<2.90){ // C. terminal scan on black
+    x.fillStyle=DARK;x.fillRect(0,0,W,H);
+    terminal(t,'#e9e9e9','#7d7d7d','#3a3a3a',false);
+    if(t>2.55)asciiP(W/2+40,H/2+60,330,t,ACC,Math.min(1,(t-2.55)/.35));
+  } else if(t<3.60){ // D. "Visibility" on light
+    x.fillStyle=LIGHT;x.fillRect(0,0,W,H);
+    terminal(t,'#1a1a1a','#8f8f8f','#cfcfcf',true);
+    x.fillStyle=LIGHT;x.fillRect(W/2-470,H/2-95,940,150);
+    txt('Visibility',W/2,H/2+30,'#111',132,700,'center');
+  } else if(t<4.55){ // E. "Visibility" on black, accent P behind it
+    x.fillStyle=DARK;x.fillRect(0,0,W,H);
+    terminal(t,'#e9e9e9','#7d7d7d','#3a3a3a',false);
+    x.globalAlpha=.75;asciiP(W/2+170,H/2,560,t,ACC,1);x.globalAlpha=1;
+    x.fillStyle='rgba(17,17,17,.82)';x.fillRect(W/2-470,H/2-70,940,150);
+    txt('Visibility',W/2,H/2+44,'#f4f4f4',132,700,'center');
+  } else { // F. url with cursor
+    x.fillStyle=DARK;x.fillRect(0,0,W,H);
+    font(44,500);const s='getprodukto.com',w=x.measureText(s).width;
+    txt(s,W/2-w/2-14,H/2+16,'#f4f4f4',44,500);
+    if(cursor(t-4.55+.01)){x.fillStyle='#f4f4f4';x.fillRect(W/2+w/2-8,H/2-22,24,46);}
+  }
+  glitch(t);
+}
+window.seek=t=>draw(t);
+window.ready=(async()=>{
+  await Promise.all([400,500,700].map(w=>document.fonts.load(`${w} 30px Plex`)));
+  logo=new Image();logo.src='produkto-wordmark-light.png';await logo.decode();
+  P=(await (await fetch('p-points.txt')).text()).trim().split(';').map(r=>{const p=r.split(',');return{x:+p[0],y:+p[1],edge:p[2]==='1'};});
+  draw(0);return true;
+})();
+// live preview when opened directly in a browser
+if(!navigator.webdriver){let s=performance.now();(function loop(){window.ready.then(()=>{draw(((performance.now()-s)/1000)%DUR);requestAnimationFrame(loop);});})();}
+</script></body></html>

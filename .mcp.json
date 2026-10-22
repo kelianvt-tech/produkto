@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "produkto": {
+      "command": "python3",
+      "args": ["/Users/kelianvantulder/Desktop/Kelian OS/AEO-for-eccomerce-brands/mvp/app/mcp_server.py"],
+      "env": {
+        "PRODUKTO_DB": "/Users/kelianvantulder/Desktop/Kelian OS/AEO-for-eccomerce-brands/mvp/app/produkto.db.server-copy",
+        "PRODUKTO_DAILY_SCANS": "0",
+        "PRODUKTO_SCANS": "0"
+      }
+    }
+  }
+}

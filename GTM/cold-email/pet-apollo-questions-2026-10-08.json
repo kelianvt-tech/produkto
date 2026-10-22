@@ -1,0 +1,2290 @@
+{
+ "openfarmpet.com": {
+  "company": "Open Farm Pet",
+  "product": {
+   "title": "Wild-Caught Salmon & Ancient Grains Dog Kibble",
+   "type": "Dog Food",
+   "price": 29.99,
+   "url": "https://openfarmpet.com/products/wild-caught-salmon-ancient-grains-dry-dog-food"
+  }
+ },
+ "petmate.com": {
+  "company": "Petmate",
+  "product": {
+   "title": "Pet Porter II/Vari Kennel Ultra/Sky Kennel/Ruffmaxx Kennel/Petco Premium Series 500-800 Kennel Replacement Door",
+   "type": "Replacement Parts",
+   "price": 39.99,
+   "url": "https://petmate.com/products/pet-porter-ii-vari-kennel-ultra-sky-kennel-ruffmaxx-kennel-petco-premium-series-500-800-kennel-replacement-door"
+  }
+ },
+ "bullymax.com": {
+  "company": "Bully Max",
+  "product": {
+   "title": "Bully Max 30/20 High Protein Chicken Dog Food",
+   "type": "Dog Food",
+   "price": 26.47,
+   "url": "https://bullymax.com/products/high-protein-dog-food"
+  }
+ },
+ "americanstalls.com": {
+  "company": "American Stalls",
+  "product": {
+   "title": "Bedding Blocker System for Horse Stalls",
+   "type": "",
+   "price": 120.0,
+   "url": "https://americanstalls.com/products/bedding-blocker-system"
+  }
+ },
+ "rawsugarliving.com": {
+  "company": "Raw Sugar Living",
+  "product": {
+   "title": "The Rosemary Vinegar Hair Rinse Shampoo Alternative | Rosemary + Mint | 6 fl oz",
+   "type": "Shampoo",
+   "price": 11.99,
+   "url": "https://rawsugarliving.com/products/the-rosemary-vinegar-hair-rinse-shampoo-alternative-rosemary-mint-6-fl-oz"
+  }
+ },
+ "antelopepets.com": {
+  "company": "Antelope",
+  "product": {
+   "title": "Fantasy Football Fuel",
+   "type": "Soft & Chewy",
+   "price": 10.0,
+   "url": "https://antelopepets.com/products/fantasy-football-fuel"
+  }
+ },
+ "wet-noses.com": {
+  "company": "Wet Noses",
+  "product": {
+   "title": "Peanut Butter & Banana Box Treats 5lbs",
+   "type": "Bulk Treats",
+   "price": 49.99,
+   "url": "https://wet-noses.com/products/peanut-butter-banana-box-treats-5lbs"
+  }
+ },
+ "wildone.com": {
+  "company": "Wild One",
+  "product": {
+   "title": "Quick-Release Dog Collar",
+   "type": "Collar",
+   "price": 25.0,
+   "url": "https://wildone.com/products/quick-release-dog-collar"
+  }
+ },
+ "majestichomegoods.com": {
+  "company": "Majestic Pet Products, Inc. | Majestic Home Goods, Inc.",
+  "product": {
+   "title": "Personalized Lumbar Pillow",
+   "type": "",
+   "price": 37.99,
+   "url": "https://majestichomegoods.com/products/personalized-lumbar-pillow"
+  }
+ },
+ "oxyfresh.com": {
+  "company": "Oxyfresh",
+  "product": {
+   "title": "Premium Pet Dental Water Additive - Best Way to Fight Pet Bad Breath",
+   "type": "Pet",
+   "price": 12.95,
+   "url": "https://oxyfresh.com/products/dog-cat-bad-breath-solution"
+  }
+ },
+ "catcaveco.com": {
+  "company": "Cat Cave Co",
+  "product": {
+   "title": "Charcoal & White Cat Cave",
+   "type": "",
+   "price": 49.99,
+   "url": "https://catcaveco.com/products/charcoal-white-cat-cave-new-collection"
+  }
+ },
+ "nupafeedusa.com": {
+  "company": "Nupafeed USA",
+  "product": {
+   "title": "Nupafeed\u00ae Magnesium For Horses | Daily Liquid",
+   "type": "Horse Supplements",
+   "price": 148.0,
+   "url": "https://nupafeedusa.com/products/magnesium-for-horses-daily-liquid-nupafeed"
+  }
+ },
+ "shoppuppyculture.com": {
+  "company": "Madcap University Press",
+  "product": {
+   "title": "With Open Arms and a Level Head",
+   "type": "Online Course",
+   "price": 99.0,
+   "url": "https://shoppuppyculture.com/products/with-open-arms-and-a-level-head"
+  }
+ },
+ "mightypaw.com": {
+  "company": "Mighty Paw",
+  "product": {
+   "title": "All-Natural Yak Cheese Dog Chews",
+   "type": "",
+   "price": 16.49,
+   "url": "https://mightypaw.com/products/mighty-paw-all-natural-yak-cheese-dog-chews-4-pack"
+  }
+ },
+ "smallpetselect.com": {
+  "company": "Small Pet Select",
+  "product": null
+ },
+ "madebynacho.com": {
+  "company": "Made by Nacho",
+  "product": {
+   "title": "Chicken, Duck, & Quail Kibble",
+   "type": "Dry Bag",
+   "price": 15.19,
+   "url": "https://madebynacho.com/products/cage-free-chicken-duck-quail-recipe"
+  }
+ },
+ "earthbath.com": {
+  "company": "earthbath\u00ae",
+  "product": {
+   "title": "Oatmeal & Aloe Itch Relief Shampoo - Vanilla & Almond",
+   "type": "Pet Shampoo & Conditioner",
+   "price": 19.99,
+   "url": "https://earthbath.com/products/oatmeal-aloe-shampoo-vanilla-almond"
+  }
+ },
+ "petroverusa.com": {
+  "company": "HPZ Pet Rover",
+  "product": {
+   "title": "HPZ\u2122 PET ROVER RUN Performance Jogging Sports Stroller for Small/Medium Dogs, Cats and Pets (Black)",
+   "type": "Pet Strollers",
+   "price": 329.0,
+   "url": "https://petroverusa.com/products/hpz-pet-rover-run-performance-jogging-sports-stroller-for-small-medium-dogs-cats-and-pets-black"
+  }
+ },
+ "earthanimal.com": {
+  "company": "Earth Animal | B Corp",
+  "product": {
+   "title": "Wisdom Air-Dried Pumpkin Spice Jerky",
+   "type": "Dog Treats",
+   "price": 9.99,
+   "url": "https://earthanimal.com/products/wisdom-air-dried-pumpkin-spice-jerky"
+  }
+ },
+ "theblissfuldog.com": {
+  "company": "The Blissful Dog\u00ae Inc.",
+  "product": {
+   "title": "Blissful Elbow\u00ae Butter Conditions Your Dog's Elbow Calluses",
+   "type": "ELBOW BUTTER",
+   "price": 7.95,
+   "url": "https://theblissfuldog.com/products/elbow-butter"
+  }
+ },
+ "metropaws.com": {
+  "company": "Metro Paws",
+  "product": {
+   "title": "Metro Paws\u00ae Degradable Poop Bags",
+   "type": "Poopy Packs",
+   "price": 6.99,
+   "url": "https://metropaws.com/products/metro-paws-poop-bags"
+  }
+ },
+ "spotonfence.com": {
+  "company": "SpotOn Fence",
+  "product": {
+   "title": "SpotOn GPS Dog Fence\u2122 - Nova Edition",
+   "type": "Collar",
+   "price": 999.0,
+   "url": "https://spotonfence.com/products/spoton-gps-fence"
+  }
+ },
+ "thefoggydog.com": {
+  "company": "The Foggy Dog",
+  "product": {
+   "title": "Active Slide-On Pet ID Tag",
+   "type": "Pet ID Tags",
+   "price": 20.0,
+   "url": "https://thefoggydog.com/products/active-slide-on-pet-id-tag"
+  }
+ },
+ "petreleaf.com": {
+  "company": "Pet Releaf",
+  "product": {
+   "title": "Calming Routine for Dogs",
+   "type": "",
+   "price": 57.58,
+   "url": "https://petreleaf.com/products/dog-calming-bundle"
+  }
+ },
+ "westminsterpet.com": {
+  "company": "Westminster Pet Products",
+  "product": null
+ },
+ "thehonestkitchen.com": {
+  "company": "The Honest Kitchen",
+  "product": {
+   "title": "Whole Grain Salmon & Whitefish Whole Food Clusters",
+   "type": "Dry Dog Food",
+   "price": 34.99,
+   "url": "https://thehonestkitchen.com/products/whole-grain-salmon-and-whitefish-whole-food-clusters-dry-dog-food"
+  }
+ },
+ "kingkanine.com": {
+  "company": "King Kanine",
+  "product": {
+   "title": "RAW Dog Food by King Kanine",
+   "type": "Dog Food",
+   "price": 135.84,
+   "url": "https://kingkanine.com/products/raw-dog-food-blt-beef-liver-tripe-ground-bone"
+  }
+ },
+ "playpetbrands.com": {
+  "company": "Play Pet Brands",
+  "product": {
+   "title": "Snuggle Bed\u00ae",
+   "type": "Bed",
+   "price": 48.3,
+   "url": "https://playpetbrands.com/products/snuggle-beds"
+  }
+ },
+ "jefferspet.com": {
+  "company": "Jeffers Pet, Equine, Livestock",
+  "product": {
+   "title": "Jeffers Ivermectin Horse Dewormer Gel, Apple Flavored",
+   "type": "Animal Health & Wellness > Medicine",
+   "price": 12.99,
+   "url": "https://jefferspet.com/products/jeffers-ivermectin-for-horses"
+  }
+ },
+ "tahoepetstation.com": {
+  "company": "PET STATION",
+  "product": {
+   "title": "NutriSource\u00ae Grain Free Small Bites Woodlands Select Recipe Dog Food",
+   "type": "",
+   "price": 21.99,
+   "url": "https://tahoepetstation.com/products/nutrisource-grain-free-woodlands-select-small-bites-dry-dog-food"
+  }
+ },
+ "stuntpuppy.com": {
+  "company": "Stunt Puppy, Inc.",
+  "product": {
+   "title": "Scout Leash\u2122",
+   "type": "Leashes",
+   "price": 49.0,
+   "url": "https://stuntpuppy.com/products/scout-leash-1"
+  }
+ },
+ "canophera.com": {
+  "company": "CANOPHERA LLC",
+  "product": {
+   "title": "Happy Chew Box",
+   "type": "",
+   "price": 36.46,
+   "url": "https://canophera.com/products/happy-chew-box"
+  }
+ },
+ "mypetchicken.com": {
+  "company": "My Pet Chicken",
+  "product": {
+   "title": "Baby Chicks: Black Copper Marans",
+   "type": "Live Birds",
+   "price": 10.99,
+   "url": "https://mypetchicken.com/products/baby-chicks-black-copper-marans"
+  }
+ },
+ "undertheweatherpet.com": {
+  "company": "Under the Weather Pet",
+  "product": {
+   "title": "Kidney Cal High Calorie Renal Support for Cats",
+   "type": "",
+   "price": 34.99,
+   "url": "https://undertheweatherpet.com/products/kidney-cal-high-calorie-kidney-support-for-cats"
+  }
+ },
+ "mclovinspet.com": {
+  "company": "McLovin's Pet",
+  "product": {
+   "title": "Freeze Dried Beef Liver Dog Treats, 4 oz",
+   "type": "Dog Treats",
+   "price": 12.99,
+   "url": "https://mclovinspet.com/products/supply-dog-beef-liver-treats"
+  }
+ },
+ "himalayan.pet": {
+  "company": "Himalayan Pet Supply",
+  "product": {
+   "title": "Yogurt Sticks | Pumpkin",
+   "type": "Chews",
+   "price": 7.48,
+   "url": "https://himalayan.pet/products/yogurt-sticks-pumpkin"
+  }
+ },
+ "incrediwearequine.com": {
+  "company": "Incrediwear Equine",
+  "product": {
+   "title": "Circulation Hoof Socks Grey",
+   "type": "Socks",
+   "price": 80.0,
+   "url": "https://incrediwearequine.com/products/circulation-hoof-socks-grey"
+  }
+ },
+ "greengruff.com": {
+  "company": "Green Gruff",
+  "product": {
+   "title": "Gruffies Functional Dog Treats",
+   "type": "",
+   "price": 6.99,
+   "url": "https://greengruff.com/products/gruffies-dog-treats"
+  }
+ },
+ "nextritionpet.com": {
+  "company": "Nextrition",
+  "product": {
+   "title": "All-Natural Chicken Recipe",
+   "type": "Dog Food",
+   "price": 54.98,
+   "url": "https://nextritionpet.com/products/chicken"
+  }
+ },
+ "redbarn.com": {
+  "company": "Redbarn Pet Products",
+  "product": {
+   "title": "Grab-A-Bull\u00ae Chew Holder for Dogs",
+   "type": "",
+   "price": 24.95,
+   "url": "https://redbarn.com/products/grab-a-bull-bully-stick-holder-for-dogs"
+  }
+ },
+ "friendsheepwool.com": {
+  "company": "Friendsheep",
+  "product": {
+   "title": "Cool Friends",
+   "type": "Eco Dryer Balls",
+   "price": 42.0,
+   "url": "https://friendsheepwool.com/products/cool-friends-eco-dryer-balls"
+  }
+ },
+ "lucyand.co": {
+  "company": "Lucy & Co.",
+  "product": {
+   "title": "Poop Clip",
+   "type": "Poop Clip",
+   "price": 10.0,
+   "url": "https://lucyand.co/products/the-poop-clip"
+  }
+ },
+ "prideandgroom.com": {
+  "company": "PRIDE+GROOM",
+  "product": {
+   "title": "FLEA + TICK SHAMPOO",
+   "type": "",
+   "price": 32.0,
+   "url": "https://prideandgroom.com/products/flea-tick-shampoo"
+  }
+ },
+ "campfiretreats.com": {
+  "company": "Campfire Treats",
+  "product": {
+   "title": "Chicken Feet for Dogs",
+   "type": "Chicken Feet",
+   "price": 15.98,
+   "url": "https://campfiretreats.com/products/chicken-feet-for-dogs"
+  }
+ },
+ "oreoriginals.com": {
+  "company": "Ore' Originals",
+  "product": {
+   "title": "Pet Bowl | Random Dogs",
+   "type": "Pet Bowl",
+   "price": 12.0,
+   "url": "https://oreoriginals.com/products/pet-bowl-random-dogs"
+  }
+ },
+ "stablefeed.com": {
+  "company": "StableFeed",
+  "product": {
+   "title": "Boosted Spirulina Chia - Immune Support",
+   "type": "Supplement",
+   "price": 28.95,
+   "url": "https://stablefeed.com/products/boosted-spirulina-chia"
+  }
+ },
+ "iandloveandyou.com": {
+  "company": "\"I and love and you\"\u200b pet",
+  "product": {
+   "title": "Naked Essentials\u00ae - Lamb + Bison",
+   "type": "Dry Dog",
+   "price": 19.99,
+   "url": "https://iandloveandyou.com/products/dog-kibble-naked-essentials-lamb-bison"
+  }
+ },
+ "lambertvetsupply.com": {
+  "company": "Lambert Vet Supply",
+  "product": {
+   "title": "Jeffers Foam Cooler for Vaccines",
+   "type": "Animal Health & Wellness > Vaccines",
+   "price": 9.99,
+   "url": "https://lambertvetsupply.com/products/insulated-cont-w-spec-ice-pk-packer-will-add-the-ice"
+  }
+ },
+ "mysquarepet.com": {
+  "company": "SquarePet Nutrition LLC",
+  "product": {
+   "title": "VFS\u00ae SKIN & DIGESTIVE SUPPORT",
+   "type": "Dry Dog Food",
+   "price": 32.99,
+   "url": "https://mysquarepet.com/products/squarepet-vfs"
+  }
+ },
+ "bangersaustin.com": {
+  "company": "Banger's Sausage House & Beer Garden",
+  "product": {
+   "title": "PEACH & RED SNAPBACK",
+   "type": "",
+   "price": 32.0,
+   "url": "https://bangersaustin.com/products/peach-red-snapback"
+  }
+ },
+ "brutusbroth.com": {
+  "company": "Brutus Broth",
+  "product": {
+   "title": "Goat Milk by Brutus Broth \u2014 100% Pure, Goat Milk for Dogs & Cats",
+   "type": "",
+   "price": 17.98,
+   "url": "https://brutusbroth.com/products/goat-milk"
+  }
+ },
+ "jiminys.com": {
+  "company": "Jiminy's",
+  "product": {
+   "title": "Cravin' Cricket",
+   "type": "",
+   "price": 23.65,
+   "url": "https://jiminys.com/products/cravin-cricket-dog-food"
+  }
+ },
+ "primalpetfoods.com": {
+  "company": "Primal Pet Foods",
+  "product": {
+   "title": "Freeze-Dried Raw Nuggets Dog Food - Beef Recipe",
+   "type": "Nuggets Dog",
+   "price": 16.99,
+   "url": "https://primalpetfoods.com/products/canine-freeze-dried-nuggets-beef"
+  }
+ },
+ "emmenyc.com": {
+  "company": "EMME nyc",
+  "product": {
+   "title": "Lychee \u2013 Candle Tin",
+   "type": "Candle Tin",
+   "price": 16.0,
+   "url": "https://emmenyc.com/products/lychee-candle-tin"
+  }
+ },
+ "caitec.com": {
+  "company": "CAITEC INC",
+  "product": {
+   "title": "Oven Fresh Bites - 4 oz Parrot Cookies",
+   "type": "",
+   "price": 6.99,
+   "url": "https://caitec.com/products/oven-fresh-bites-parrot-cookies"
+  }
+ },
+ "platopettreats.com": {
+  "company": "Plato Pet Treats",
+  "product": {
+   "title": "Wild Caught Baltic Herring",
+   "type": "variable",
+   "price": 11.99,
+   "url": "https://platopettreats.com/products/wild-caught-baltic-herring"
+  }
+ },
+ "apupabove.com": {
+  "company": "\ud83d\udc36 A Pup Above",
+  "product": {
+   "title": "Fresh Dog Food, Gently Cooked",
+   "type": "Non-prescription Dog Food",
+   "price": 13.99,
+   "url": "https://apupabove.com/products/fresh-dog-food"
+  }
+ },
+ "rawrycat.com": {
+  "company": "Rawry Pet Products",
+  "product": {
+   "title": "Pet Cabin",
+   "type": "Pet Houses",
+   "price": 129.0,
+   "url": "https://rawrycat.com/products/petcabin"
+  }
+ },
+ "beangoods.com": {
+  "company": "bean goods",
+  "product": {
+   "title": "swingin' wieners golf club unisex pocket tee | cream",
+   "type": "tees",
+   "price": 40.0,
+   "url": "https://beangoods.com/products/swingin-wieners-golf-club-unisex-pocket-tee-ivory"
+  }
+ },
+ "jacksongalaxy.com": {
+  "company": "Jackson Galaxy Enterprises Inc",
+  "product": {
+   "title": "Scratchify! Incline Scratcher by Jackson Galaxy",
+   "type": "Cat Scratcher",
+   "price": 47.99,
+   "url": "https://jacksongalaxy.com/products/scratchify-incline-scratcher-by-jackson-galaxy"
+  }
+ },
+ "doglinegroup.com": {
+  "company": "Dogline",
+  "product": {
+   "title": "Soft Leather Round Dog Collar",
+   "type": "Dog Collars",
+   "price": 14.99,
+   "url": "https://doglinegroup.com/products/soft-leather-round-collar"
+  }
+ },
+ "vivarawpets.com": {
+  "company": "Viva",
+  "product": {
+   "title": "Beef for Dogs",
+   "type": "Dog",
+   "price": 16.5,
+   "url": "https://vivarawpets.com/products/beef-for-dogs"
+  }
+ },
+ "approvedbyfritz.com": {
+  "company": "Approved by Fritz",
+  "product": {
+   "title": "The Fritz Dog Bowl Mat",
+   "type": "Pet Supplies",
+   "price": 23.0,
+   "url": "https://approvedbyfritz.com/products/the-fritz-bowl-mat"
+  }
+ },
+ "feedartie.com": {
+  "company": "Artie",
+  "product": {
+   "title": "The Artie System",
+   "type": "Appliance",
+   "price": 200.0,
+   "url": "https://feedartie.com/products/the-artie-system"
+  }
+ },
+ "frommfamily.com": {
+  "company": "Fromm Family Foods",
+  "product": null
+ },
+ "smarterpaw.com": {
+  "company": "SmarterPaw, Meowijuana\u00ae & Doggijuana\u00ae",
+  "product": {
+   "title": "Catnibas\u00ae King Size Rollies",
+   "type": "Catnip",
+   "price": 12.99,
+   "url": "https://smarterpaw.com/products/king-catnibas-j"
+  }
+ },
+ "comfurtcollar.com": {
+  "company": "COMFURT COLLAR",
+  "product": {
+   "title": "Cheetah - Pet Recovery Collar",
+   "type": "Pet Recovery Collar",
+   "price": 34.99,
+   "url": "https://comfurtcollar.com/products/leopard-print-recovery-collar"
+  }
+ },
+ "iconicpet.com": {
+  "company": "Iconic Pet",
+  "product": {
+   "title": "Anti Ant Stainless Steel Non Skid Pet Bowl for Dog or Cat",
+   "type": "Stainless Steel Bowls",
+   "price": 14.99,
+   "url": "https://iconicpet.com/products/anti-ant-stainless-steel-non-skid-pe-bowl-for-dog-or-cat"
+  }
+ },
+ "rebelraw.com": {
+  "company": "Rebel Raw",
+  "product": {
+   "title": "Besties Beef",
+   "type": "Build Your Own",
+   "price": 6.3,
+   "url": "https://rebelraw.com/products/besties-beef"
+  }
+ },
+ "stellarbiotics.com": {
+  "company": "Stellar Biotics LLC",
+  "product": {
+   "title": "del-IMMUNE V\u00ae DAILY - Daily Metabiotic Immune Support",
+   "type": "Del-Immune V",
+   "price": 44.99,
+   "url": "https://stellarbiotics.com/products/del-immune-v-daily"
+  }
+ },
+ "wellbredonline.com": {
+  "company": "Well Bred",
+  "product": {
+   "title": "Well Bred Bully Stick Odor Free Jumbo 6''",
+   "type": "Dog Chews",
+   "price": 8.99,
+   "url": "https://wellbredonline.com/products/bully-stick-odor-free-jumbo-6"
+  }
+ },
+ "wolfgangusa.com": {
+  "company": "Wolfgang",
+  "product": {
+   "title": "DayDream DOG COLLAR",
+   "type": "Dog Collars",
+   "price": 19.99,
+   "url": "https://wolfgangusa.com/products/daydream-dog-collar"
+  }
+ },
+ "petppi.com": {
+  "company": "Pet Product Innovations LLC",
+  "product": {
+   "title": "Bandana Bowl\u2122",
+   "type": "Animals & Pet Supplies",
+   "price": 8.95,
+   "url": "https://petppi.com/products/bandana-bowl"
+  }
+ },
+ "kingloupets.com": {
+  "company": "King Lou Pets",
+  "product": {
+   "title": "whole duck feet",
+   "type": "Dog Treats",
+   "price": 25.0,
+   "url": "https://kingloupets.com/products/whole-duck-feet"
+  }
+ },
+ "poshpuppyboutique.com": {
+  "company": "Posh Puppy Boutique",
+  "product": {
+   "title": "Brown Chewy Vuiton Purse Toy",
+   "type": "",
+   "price": 15.0,
+   "url": "https://poshpuppyboutique.com/products/large-brown-chewy-vuiton-purse-toy"
+  }
+ },
+ "shophiddin.com": {
+  "company": "Hiddin",
+  "product": {
+   "title": "Hiddin Metal Pet Bowls Set",
+   "type": "bowls",
+   "price": 28.0,
+   "url": "https://shophiddin.com/products/heavy-stainless-steel-dog-cat-bowl"
+  }
+ },
+ "visionarypet.com": {
+  "company": "Visionary Pet Foods",
+  "product": {
+   "title": "Freeze-Dried Beef Dog Food \u2013 High-Protein, Grain-Free Keto Recipe | 25oz Bag",
+   "type": "Dog Food",
+   "price": 63.99,
+   "url": "https://visionarypet.com/products/freeze-dried-beef-dog-food-high-protein-grain-free-keto-recipe-25oz-bag"
+  }
+ },
+ "dogisgood.com": {
+  "company": "Dog is Good",
+  "product": {
+   "title": "T-shirt: Never Drink Alone",
+   "type": "Apparel, Men, Never Alone, T-shirts",
+   "price": 19.99,
+   "url": "https://dogisgood.com/products/t-shirt-never-drink-alone-unisex-grey"
+  }
+ },
+ "wooftown.ca": {
+  "company": "Wooftown",
+  "product": {
+   "title": "Orijen Original GF Dog Food",
+   "type": "Dog Food Kibble",
+   "price": 5.09,
+   "url": "https://wooftown.ca/products/orijen-adult-dog-food"
+  }
+ },
+ "madebycleo.com": {
+  "company": "Made By Cleo LLC",
+  "product": {
+   "title": "AirTag\u00ae Holder for Small Pet Collars (15 Colors) - Sized for Cats + Small Dogs",
+   "type": "Pet Collar AirTag Holder",
+   "price": 9.95,
+   "url": "https://madebycleo.com/products/airtag-holder-for-small-pet-collars-15-colors-sized-for-cats-small-dogs"
+  }
+ },
+ "gotags.com": {
+  "company": "GoTags.com",
+  "product": {
+   "title": "Bone Pet ID Tag",
+   "type": "Pet ID Tags",
+   "price": 7.95,
+   "url": "https://gotags.com/products/bone-shape-dog-tag"
+  }
+ },
+ "auraorganicscbd.com": {
+  "company": "Aura Organics",
+  "product": {
+   "title": "Broad Spectrum Soft Gels",
+   "type": "Softgel",
+   "price": 25.0,
+   "url": "https://auraorganicscbd.com/products/cbd-softgels"
+  }
+ },
+ "myperfectpetfood.com": {
+  "company": "My Perfect Pet Inc.",
+  "product": {
+   "title": "Chicken and Beef",
+   "type": "",
+   "price": 194.0,
+   "url": "https://myperfectpetfood.com/products/chicken-and-beef"
+  }
+ },
+ "k9power.com": {
+  "company": "K9-Power\u00ae",
+  "product": {
+   "title": "K9 Power - Show Stopper\u00ae",
+   "type": "",
+   "price": 29.99,
+   "url": "https://k9power.com/products/show-stopper"
+  }
+ },
+ "bullybunches.ca": {
+  "company": "Bully Bunches",
+  "product": {
+   "title": "Bully Stick Safety Holder",
+   "type": "",
+   "price": 29.99,
+   "url": "https://bullybunches.ca/products/bully-stick-safety-holder"
+  }
+ },
+ "k9wear.com": {
+  "company": "K9 Wear",
+  "product": {
+   "title": "Tommy Bahama Pet - Collar & Leash Set",
+   "type": "",
+   "price": 20.99,
+   "url": "https://k9wear.com/products/tommy-bahama-pet-collar-leash-set"
+  }
+ },
+ "horseguard.com": {
+  "company": "Horse Guard Inc.",
+  "product": {
+   "title": "Lazy Cowboy Telescoping Hook",
+   "type": "Pickup Tool",
+   "price": 59.95,
+   "url": "https://horseguard.com/products/lazy-cowboy"
+  }
+ },
+ "agrifeedpetsupply.com": {
+  "company": "Agri Feed Pet Supply",
+  "product": {
+   "title": "NVR Miss Litterbox\u2122",
+   "type": "",
+   "price": 34.99,
+   "url": "https://agrifeedpetsupply.com/products/nvr-miss-litterbox"
+  }
+ },
+ "miraclevet.com": {
+  "company": "Miracle Vet",
+  "product": {
+   "title": "Slow Feeder Dog Bowl",
+   "type": "Dog Bowl",
+   "price": 7.99,
+   "url": "https://miraclevet.com/products/slow-feeder-dog-bowl"
+  }
+ },
+ "naturesanimals.com": {
+  "company": "Nature's Animals, Inc.",
+  "product": {
+   "title": "Original Bakery Biscuits (24 Count)",
+   "type": "",
+   "price": 34.99,
+   "url": "https://naturesanimals.com/products/original-bakery-biscuits"
+  }
+ },
+ "lovenala.com": {
+  "company": "Love, Nala",
+  "product": {
+   "title": "Beef Grain Free Recipe Air-Dried Adult Cat Food 1lb bag",
+   "type": "Dry Food",
+   "price": 28.99,
+   "url": "https://lovenala.com/products/love-nala-lamb-salmon-grain-free-recipe-air-dried-adult-cat-food"
+  }
+ },
+ "k9ballistics.com": {
+  "company": "K9 Ballistics",
+  "product": {
+   "title": "Tough Ripstop\u2122 Dog Crate Cover",
+   "type": "Crate Cover",
+   "price": 55.0,
+   "url": "https://k9ballistics.com/products/tough-rip-stop-dog-crate-cover"
+  }
+ },
+ "swiftpaws.com": {
+  "company": "Swift Paws, Inc",
+  "product": {
+   "title": "Critter Pack",
+   "type": "Accessories",
+   "price": 39.99,
+   "url": "https://swiftpaws.com/products/critter-pack"
+  }
+ },
+ "maupets.com": {
+  "company": "Mau Pets",
+  "product": {
+   "title": "Cento",
+   "type": "",
+   "price": 299.0,
+   "url": "https://maupets.com/products/cento-cat-trees-for-large-cats"
+  }
+ },
+ "lordjameson.com": {
+  "company": "Lord Jameson",
+  "product": {
+   "title": "Blue Bliss Organic Dog Treats",
+   "type": "Organic Dog Treats",
+   "price": 13.99,
+   "url": "https://lordjameson.com/products/blue-bliss-wild-blueberries-purple-carrot"
+  }
+ },
+ "roccoandroxie.com": {
+  "company": "Rocco & Roxie Supply Co.",
+  "product": {
+   "title": "Extreme Stain & Odor Eliminator",
+   "type": "Stain and Odor Eliminator",
+   "price": 27.97,
+   "url": "https://roccoandroxie.com/products/extreme-stain-odor-eliminator"
+  }
+ },
+ "mendotapet.com": {
+  "company": "Mendota Pet",
+  "product": {
+   "title": "Mendota Slip Leash",
+   "type": "Leashes",
+   "price": 20.99,
+   "url": "https://mendotapet.com/products/mendota-slip-leash-large"
+  }
+ },
+ "oscarnewman.com": {
+  "company": "Oscar Newman LLC",
+  "product": {
+   "title": "Elephant Safari Baby Pipsqueak Toy",
+   "type": "Toys",
+   "price": 8.95,
+   "url": "https://oscarnewman.com/products/elephant-safari-baby-pipsqueak-toy"
+  }
+ },
+ "earthbuddypet.com": {
+  "company": "Earth Buddy Pet",
+  "product": {
+   "title": "CBD Oil for Dogs \u2013 Hemp Extract",
+   "type": "Hemp Extracts",
+   "price": 65.0,
+   "url": "https://earthbuddypet.com/products/hemp-extract-for-dogs-1000mg"
+  }
+ },
+ "thebetterbone.com": {
+  "company": "BetterBone - Natural Plant-Based Dog Chew Toys & Essentials",
+  "product": {
+   "title": "BetterBone Wishbone Mini Chew Toy",
+   "type": "Dog Toys",
+   "price": 9.99,
+   "url": "https://thebetterbone.com/products/betterbone-mini-chew-toy"
+  }
+ },
+ "miamorepets.com": {
+  "company": "MiAmore Pets",
+  "product": {
+   "title": "Buckle-up Easy Dog Harness (Not Adjustable)",
+   "type": "Dog Harness",
+   "price": 32.0,
+   "url": "https://miamorepets.com/products/buckle-up-easy-dog-harness"
+  }
+ },
+ "farmtopettreats.com": {
+  "company": "Farm to Pet",
+  "product": {
+   "title": "Chicken Chips for Dogs | All-Natural Single-Ingredient Dog Treats",
+   "type": "Chip",
+   "price": 13.95,
+   "url": "https://farmtopettreats.com/products/chicken-chips"
+  }
+ },
+ "receptra.com": {
+  "company": "Receptra",
+  "product": {
+   "title": "Relief CBD Oil  + Turmeric (33mg)",
+   "type": "physical",
+   "price": 64.0,
+   "url": "https://receptra.com/products/relief-cbd-oil-turmeric-33mg"
+  }
+ },
+ "yak9chews.com": {
+  "company": "Yak9 Chews",
+  "product": {
+   "title": "100% Yak Milk Chews for Dogs",
+   "type": "100% YAK CHEWS",
+   "price": 12.99,
+   "url": "https://yak9chews.com/products/100-yak-milk-chews-for-dogs"
+  }
+ },
+ "barfworld.com": {
+  "company": "Barf World Inc",
+  "product": {
+   "title": "Freeze-Dried Beef Nuggets",
+   "type": "Freeze Dried",
+   "price": 38.97,
+   "url": "https://barfworld.com/products/freeze-dried-beef-nuggets"
+  }
+ },
+ "soykitty.com": {
+  "company": "SoyKitty, LLC",
+  "product": {
+   "title": "All-Natural, Non-Toxic Plant-Based Cat Litter",
+   "type": "Cat Litter",
+   "price": 36.0,
+   "url": "https://soykitty.com/products/ecofriendly-soybean-cat-litter"
+  }
+ },
+ "countrypet.com": {
+  "company": "CountryPet Naturals",
+  "product": {
+   "title": "New Zealand Grass-Fed Venison Frozen Dog Food - 1.5lb (8 rolls/case)",
+   "type": "Dog Food",
+   "price": 74.5,
+   "url": "https://countrypet.com/products/country-pet-naturals-new-zealand-venison-dog-food-frozen"
+  }
+ },
+ "thegreenpetshop.com": {
+  "company": "Green Pet",
+  "product": {
+   "title": "Cool Pet Pad",
+   "type": "",
+   "price": 24.99,
+   "url": "https://thegreenpetshop.com/products/cool-pet-pad"
+  }
+ },
+ "bubbleuniverse.com": {
+  "company": "Bubble Universe, LLC",
+  "product": {
+   "title": "16 cnt PDQ Bubble Lick Ice Cream Collection Cookie Dough, Mint Chocolate Chip, Strawberry & Vanilla Flavored Bubbles",
+   "type": "",
+   "price": 96.0,
+   "url": "https://bubbleuniverse.com/products/bubble-lick-ice-cream-collection-16-count-pdq-cookie-dough-mint-chocolate-chip-strawberry-vanilla-flavored-bubbles-copy"
+  }
+ },
+ "petfriendlybox.com": {
+  "company": "PetFriendly",
+  "product": null
+ },
+ "ropehounds.com": {
+  "company": "Rope Hounds",
+  "product": {
+   "title": "Neoprene Leash Grip",
+   "type": "",
+   "price": 7.5,
+   "url": "https://ropehounds.com/products/interchangeable-leash-grip"
+  }
+ },
+ "kradlemypet.com": {
+  "company": "Kradle",
+  "product": {
+   "title": "Kradle Plus CBD Calming Chews For Dogs",
+   "type": "Chews",
+   "price": 13.99,
+   "url": "https://kradlemypet.com/products/daily-calming-chews"
+  }
+ },
+ "neuroganpets.com": {
+  "company": "Neurogan Pets",
+  "product": {
+   "title": "Full Spectrum Dog Treats",
+   "type": "Animal",
+   "price": 30.0,
+   "url": "https://neuroganpets.com/products/full-spectrum-cbd-dog-treats"
+  }
+ },
+ "rockyandmaggies.com": {
+  "company": "Rocky and Maggie's, Inc.",
+  "product": {
+   "title": "Pop-Up Pee Pad for Male Dogs - Patented Fire Hydrant Target",
+   "type": "Training Pads and Diapers",
+   "price": 18.99,
+   "url": "https://rockyandmaggies.com/products/pop-up-pee-pad"
+  }
+ },
+ "pawfy.com": {
+  "company": "Pawfy",
+  "product": {
+   "title": "Allergy & Immune",
+   "type": "Soft Chews",
+   "price": 35.0,
+   "url": "https://pawfy.com/products/allergy-immune"
+  }
+ },
+ "cleoandhooman.com": {
+  "company": "Cleo&Hooman",
+  "product": {
+   "title": "Zoomie Wipes",
+   "type": "Pet Wipes",
+   "price": 20.0,
+   "url": "https://cleoandhooman.com/products/zoomie-wipes"
+  }
+ },
+ "moshiqa.com": {
+  "company": "MOSHIQA",
+  "product": {
+   "title": "Loves It Dog Sweater & Hat Set \u2014 Paris Hilton \u00d7 Moshiqa Luxury Pink Knit Set",
+   "type": "dog sweater",
+   "price": 95.0,
+   "url": "https://moshiqa.com/products/loves-it-dog-sweater-hat-paris-hilton-moshiqa"
+  }
+ },
+ "5elementfoodtherapy.com": {
+  "company": "5 Element Food Therapy",
+  "product": {
+   "title": "Farmhouse Beef Bites",
+   "type": "Healthy Treats",
+   "price": 18.99,
+   "url": "https://5elementfoodtherapy.com/products/beef-brownies"
+  }
+ },
+ "thecatthrone.com": {
+  "company": "The Cat Throne",
+  "product": {
+   "title": "Tuft & Paw Tofu Flushable Litter",
+   "type": "",
+   "price": 28.0,
+   "url": "https://thecatthrone.com/products/tuft-paw-litter"
+  }
+ },
+ "pezzypets.com": {
+  "company": "Pezzy Pets",
+  "product": {
+   "title": "Devil Fish Strips (Single Ingredient)",
+   "type": "A",
+   "price": 16.0,
+   "url": "https://pezzypets.com/products/pezzy-single-ingredient-treats-fish-strips"
+  }
+ },
+ "outdoordogsupply.com": {
+  "company": "Outdoor Dog Supply",
+  "product": {
+   "title": "Garmin Alpha XL Vehicle Dog Tracking and Training Device",
+   "type": "Price Locked Equipment",
+   "price": 1199.99,
+   "url": "https://outdoordogsupply.com/products/garmin-alpha-xl-vehicle-dog-tracking-and-training-device"
+  }
+ },
+ "healthydogma.com": {
+  "company": "Healthy Dogma",
+  "product": {
+   "title": "Homestyle PetMix with Beef",
+   "type": "",
+   "price": 33.99,
+   "url": "https://healthydogma.com/products/homestyle-petmix-with-beef"
+  }
+ },
+ "basicanimalhealth.com": {
+  "company": "Basic Animal Health",
+  "product": {
+   "title": "GutHealth Xtra Strength Pellets",
+   "type": "Pellets",
+   "price": 109.95,
+   "url": "https://basicanimalhealth.com/products/guthealth-pellets-horses"
+  }
+ },
+ "blue-9.com": {
+  "company": "Blue-9 Pet Products",
+  "product": {
+   "title": "Multi-Function Leash",
+   "type": "Balance Harness",
+   "price": 19.95,
+   "url": "https://blue-9.com/products/lsh"
+  }
+ },
+ "vetcs.com": {
+  "company": "VetCS",
+  "product": {
+   "title": "VetCS CBD Powder for Horses",
+   "type": "",
+   "price": 69.99,
+   "url": "https://vetcs.com/products/horse-cbd-powder"
+  }
+ },
+ "carolinapetcompany.com": {
+  "company": "Carolina Pet Company",
+  "product": {
+   "title": "Pendleton\u00ae National Park Pet Napper",
+   "type": "Pet Beds",
+   "price": 44.0,
+   "url": "https://carolinapetcompany.com/products/pendleton-national-park-pet-napper-1"
+  }
+ },
+ "thepetglider.com": {
+  "company": "The Pet Glider",
+  "product": {
+   "title": "360 Day Supply Vitamins - TPG Complete Multi-Vitamins with Calcium",
+   "type": "Vitamins",
+   "price": 49.99,
+   "url": "https://thepetglider.com/products/tpg-complete-multi-vitamins-with-calcium-360"
+  }
+ },
+ "chidog.com": {
+  "company": "Chi Dog",
+  "product": {
+   "title": "Custom Meal Plans For Dog",
+   "type": "",
+   "price": 98.97,
+   "url": "https://chidog.com/products/quiz-product"
+  }
+ },
+ "basepaws.com": {
+  "company": "Basepaws",
+  "product": null
+ },
+ "doggielawn.com": {
+  "company": "DoggieLawn",
+  "product": {
+   "title": "DoggieLawn",
+   "type": "simple",
+   "price": 34.85,
+   "url": "https://doggielawn.com/products/doggielawn-bundle"
+  }
+ },
+ "abettertreat.com": {
+  "company": "A Better Treat",
+  "product": {
+   "title": "Freeze Dried Raw Wild Caught Salmon Dog and Cat Treats",
+   "type": "Dog Treats",
+   "price": 9.99,
+   "url": "https://abettertreat.com/products/a-better-treat-freeze-dried-salmon-dog-treats-wild-caught-single-ingredient-natural-high-value-gluten-free-grain-free-high-protein-diabetic-friendly-natural-fish-oil-made-in-the-usa"
+  }
+ },
+ "5strands.com": {
+  "company": "5Strands Affordable Testing",
+  "product": {
+   "title": "Pet Food Intolerance & Environmental Sensitivity Test",
+   "type": "",
+   "price": 123.0,
+   "url": "https://5strands.com/products/pet-food-environmental-intolerance-test"
+  }
+ },
+ "saintroccostreats.shop": {
+  "company": "Saint Rocco's Treats",
+  "product": {
+   "title": "Cheeseburger Treats",
+   "type": "",
+   "price": 12.99,
+   "url": "https://saintroccostreats.shop/products/cheeseburger"
+  }
+ },
+ "mightypetz.com": {
+  "company": "Mighty Petz\u00ae",
+  "product": {
+   "title": "10-in-1 MAX Allergy Immunity Chews for Cats - Healthy Immune System Support",
+   "type": "Cat Supplements",
+   "price": 41.0,
+   "url": "https://mightypetz.com/products/10-in-1-max-allergy-immunity-for-cats"
+  }
+ },
+ "buckle-down.com": {
+  "company": "Buckle-Down, Inc.",
+  "product": {
+   "title": "Starburst Seat Belt Buckle Black Belt For Men",
+   "type": "Seatbelt Belts",
+   "price": 29.95,
+   "url": "https://buckle-down.com/products/starburst-seatbelt-belt-black-webbing"
+  }
+ },
+ "petsense.com": {
+  "company": "Petsense by Tractor Supply",
+  "product": {
+   "title": "Fromm Gold Adult Dry Dog Food",
+   "type": "Dog Food",
+   "price": 15.99,
+   "url": "https://petsense.com/products/fromm-gold-adult-dry-dog-food"
+  }
+ },
+ "healthextension.com": {
+  "company": "Health Extension Pet Care",
+  "product": {
+   "title": "Little Bites Chicken & Brown Rice Recipe",
+   "type": "Dry Dog Food",
+   "price": 6.99,
+   "url": "https://healthextension.com/products/little-bites-chicken-brown-rice-recipe"
+  }
+ },
+ "dogishuman.com": {
+  "company": "Dog is Human",
+  "product": {
+   "title": "Daily Multivitamin",
+   "type": "",
+   "price": 46.0,
+   "url": "https://dogishuman.com/products/multivitamin"
+  }
+ },
+ "tuftandpaw.com": {
+  "company": "Tuft & Paw",
+  "product": {
+   "title": "Really Great Cat Litter",
+   "type": "Cat Litter",
+   "price": 29.0,
+   "url": "https://tuftandpaw.com/products/really-great-cat-litter"
+  }
+ },
+ "2houndsdesign.com": {
+  "company": "2 Hounds Design",
+  "product": {
+   "title": "Freedom Harness Chewing Warranty",
+   "type": "",
+   "price": 12.99,
+   "url": "https://2houndsdesign.com/products/freedom-harness-chewing-warranty"
+  }
+ },
+ "v-dog.com": {
+  "company": "V-dog, Inc",
+  "product": {
+   "title": "happy harvest soft food",
+   "type": "",
+   "price": 16.75,
+   "url": "https://v-dog.com/products/happy-harvest-soft-food"
+  }
+ },
+ "pupford.com": {
+  "company": "Pupford",
+  "product": {
+   "title": "Peanut Butter Crunchies",
+   "type": "",
+   "price": 9.99,
+   "url": "https://pupford.com/products/peanut-butter-crunchies"
+  }
+ },
+ "boxiecat.com": {
+  "company": "BOXIE",
+  "product": {
+   "title": "BoxiePro\u00ae Deep Clean Clumping Clay Cat Litter",
+   "type": "",
+   "price": 25.99,
+   "url": "https://boxiecat.com/products/deep-clean-probiotic-clumping-clay-litter"
+  }
+ },
+ "suziespettreats.com": {
+  "company": "Suzie's CBD Treats",
+  "product": {
+   "title": "4 mg CBD Dog Treat Hearts",
+   "type": "",
+   "price": 20.95,
+   "url": "https://suziespettreats.com/products/4-mg-cbd-dog-treat-hearts"
+  }
+ },
+ "carlsonpetproducts.com": {
+  "company": "Carlson Pet Products, Inc.",
+  "product": {
+   "title": "Hardware Box",
+   "type": "",
+   "price": 15.0,
+   "url": "https://carlsonpetproducts.com/products/hardware-box-gray"
+  }
+ },
+ "pranapets.com": {
+  "company": "Prana Pets",
+  "product": {
+   "title": "CBD Oil for Dogs",
+   "type": "Pet Vitamins & Supplements",
+   "price": 59.99,
+   "url": "https://pranapets.com/products/cbd-oil-for-dogs"
+  }
+ },
+ "freshpatch.com": {
+  "company": "Fresh Patch",
+  "product": {
+   "title": "Doggy Twist'R",
+   "type": "",
+   "price": 69.99,
+   "url": "https://freshpatch.com/products/doggy-twistr"
+  }
+ },
+ "meowingtons.com": {
+  "company": "Meowingtons",
+  "product": {
+   "title": "Milton the Cat\u2122 2027 Page-A-Day Calendar | The Most Loved Cat Webcomic",
+   "type": "Paper Products",
+   "price": 24.95,
+   "url": "https://meowingtons.com/products/page-a-day-cat-calendar"
+  }
+ },
+ "animalplantsciences.com": {
+  "company": "Rooted Owl\u00ae Natural Pet Health",
+  "product": null
+ },
+ "pridebites.com": {
+  "company": "PrideBites, LLC",
+  "product": null
+ },
+ "kindtail.com": {
+  "company": "KindTail",
+  "product": {
+   "title": "PAWD\u00ae  Modern Collapsible Dog Crate",
+   "type": "Pet crate",
+   "price": 139.99,
+   "url": "https://kindtail.com/products/pawd-modern-collapsible-dog-crate"
+  }
+ },
+ "theestespawco.com": {
+  "company": "The Estes Paw Company",
+  "product": {
+   "title": "BEEF BULLY STICKS | JUMBO",
+   "type": "Dog Chews > Bully Sticks",
+   "price": 8.95,
+   "url": "https://theestespawco.com/products/beef-bully-sticks"
+  }
+ },
+ "toegrips.com": {
+  "company": "Dr. Buzby's Senior Dog Co.\u2122",
+  "product": null
+ },
+ "petsonbroadway.com": {
+  "company": "Pets on Broadway",
+  "product": {
+   "title": "Gold Adult Dry Dog Food",
+   "type": "Dog",
+   "price": 16.33,
+   "url": "https://petsonbroadway.com/products/gold-adult-dry-dog-food"
+  }
+ },
+ "shamelesspets.com": {
+  "company": "Shameless Pets",
+  "product": {
+   "title": "Blueberried Treasure Soft Baked 6oz",
+   "type": "Finished Goods",
+   "price": 6.99,
+   "url": "https://shamelesspets.com/products/blueberried-treasure-soft-baked-dog-treats-6oz"
+  }
+ },
+ "lifekey.co": {
+  "company": "Lifekey",
+  "product": {
+   "title": "Smart Stickers",
+   "type": "Lost and Found",
+   "price": 14.0,
+   "url": "https://lifekey.co/products/lifekey-taps"
+  }
+ },
+ "googipet.com": {
+  "company": "Googipet",
+  "product": {
+   "title": "Hemp Calming Chews for Dogs",
+   "type": "",
+   "price": 20.0,
+   "url": "https://googipet.com/products/hemp-calming-chews-for-dogs"
+  }
+ },
+ "roguepetscience.com": {
+  "company": "Rogue Pet Science, LLC",
+  "product": {
+   "title": "Origins 5-in-1 Fish | Dog Supplement Powder, Dog Food Topper for Gut Health, Skin & Coat, and Joint Support",
+   "type": "Dog Food Topper",
+   "price": 40.0,
+   "url": "https://roguepetscience.com/products/origins"
+  }
+ },
+ "thinkjinx.com": {
+  "company": "Jinx",
+  "product": {
+   "title": "Small Breed Grain-Free Atlantic Salmon Dog Food",
+   "type": "Dog Kibble",
+   "price": 18.0,
+   "url": "https://thinkjinx.com/products/small-breed-grain-free-atlantic-salmon-kibble-dog-food"
+  }
+ },
+ "hearthandsoul.com": {
+  "company": "Hearth & Soul",
+  "product": {
+   "title": "Apothecary Opal Glass Candle",
+   "type": "Candles",
+   "price": 48.0,
+   "url": "https://hearthandsoul.com/products/apothecary-opal-glass-candle"
+  }
+ },
+ "crateawayco.com": {
+  "company": "Crate Away",
+  "product": {
+   "title": "The Anywhere Crate",
+   "type": "",
+   "price": 495.0,
+   "url": "https://crateawayco.com/products/the-anywhere-crate"
+  }
+ },
+ "portlandpetfoodcompany.com": {
+  "company": "Portland Pet Food Company",
+  "product": {
+   "title": "Rosie's Beef N' Rice",
+   "type": "Dog Food",
+   "price": 6.99,
+   "url": "https://portlandpetfoodcompany.com/products/rosies-beef-n-rice-retort"
+  }
+ },
+ "nolaninterior.com": {
+  "company": "Nolan Interior",
+  "product": {
+   "title": "Magic Sofa Blanket - Nora Mink",
+   "type": "Magic Sofa Blankets",
+   "price": 119.99,
+   "url": "https://nolaninterior.com/products/magic-sofa-blanket-nora-mink"
+  }
+ },
+ "fabdog.com": {
+  "company": "fabdog, Inc.",
+  "product": {
+   "title": "Faball Pig",
+   "type": "Dog Toys",
+   "price": 13.0,
+   "url": "https://fabdog.com/products/pig-faball"
+  }
+ },
+ "gussysgut.com": {
+  "company": "Gussys Gut",
+  "product": {
+   "title": "Boost\u2122",
+   "type": "Dog Supplies",
+   "price": 47.0,
+   "url": "https://gussysgut.com/products/boost"
+  }
+ },
+ "dogtaginc.org": {
+  "company": "Dog Tag Inc.",
+  "product": {
+   "title": "Must Have Gift Box",
+   "type": "Gift Boxes",
+   "price": 50.0,
+   "url": "https://dogtaginc.org/products/must-have-gift-box-copy"
+  }
+ },
+ "woofcreek.com": {
+  "company": "Woof Creek Pet Wellness",
+  "product": {
+   "title": "Flea + Tick Defense Support | All-Natural Health Supplement for Dogs + Cats",
+   "type": "Dog + Cat Supplies",
+   "price": 34.0,
+   "url": "https://woofcreek.com/products/flea-tick-defense-essential-meal-topper-for-dogs"
+  }
+ },
+ "wasatchpup.com": {
+  "company": "Wasatch Pup",
+  "product": {
+   "title": "Luxury Orthopedic Dog Bed",
+   "type": "Dog Bed",
+   "price": 102.04,
+   "url": "https://wasatchpup.com/products/luxury-orthopedic-dog-bed"
+  }
+ },
+ "fluffandboots.com": {
+  "company": "Fluff & Boots",
+  "product": {
+   "title": "Knead-it Pad\u2122",
+   "type": "Knead-it Pad",
+   "price": 64.95,
+   "url": "https://fluffandboots.com/products/knead-it-pad"
+  }
+ },
+ "guarddog-security.com": {
+  "company": "Guard Dog Security",
+  "product": {
+   "title": "Stun Gun Baton With Flashlight \u2013 260 Lumen 3-Function Light | Titan",
+   "type": "Stun Gun",
+   "price": 59.99,
+   "url": "https://guarddog-security.com/products/titan-stun-gun"
+  }
+ },
+ "impactdogcrates.com": {
+  "company": "Impact Dog Crates",
+  "product": {
+   "title": "Collapsible Dog Crate",
+   "type": "Dog Crates",
+   "price": 760.0,
+   "url": "https://impactdogcrates.com/products/collapsible-dog-crate"
+  }
+ },
+ "kohapet.com": {
+  "company": "KOHA Pet",
+  "product": {
+   "title": "Limited Ingredient Bland Diet Wet Food Chicken & Rice Recipe for Cats",
+   "type": "",
+   "price": 25.99,
+   "url": "https://kohapet.com/products/limited-ingredient-chicken-bland-diet-for-cats"
+  }
+ },
+ "biomane.com": {
+  "company": "BioMane Products",
+  "product": {
+   "title": "Tailbag",
+   "type": "BioMane Tools",
+   "price": 14.0,
+   "url": "https://biomane.com/products/biomane-tailbag"
+  }
+ },
+ "fetcheyewear.com": {
+  "company": "Fetch Eyewear",
+  "product": {
+   "title": "Replacement Lenses",
+   "type": "Lens",
+   "price": 7.0,
+   "url": "https://fetcheyewear.com/products/replacement-lens"
+  }
+ },
+ "polkadog.com": {
+  "company": "Polkadog",
+  "product": {
+   "title": "Polkadog Cod Skins",
+   "type": "Polkadog",
+   "price": 12.99,
+   "url": "https://polkadog.com/products/cod-skin-tube-dehydrated-dog-treats"
+  }
+ },
+ "kittypooclub.com": {
+  "company": "Kitty Poo Club",
+  "product": null
+ },
+ "winpropet.com": {
+  "company": "WINPRO Pet",
+  "product": {
+   "title": "Allergy",
+   "type": "Supplements",
+   "price": 35.99,
+   "url": "https://winpropet.com/products/allergy"
+  }
+ },
+ "petalandpup.com": {
+  "company": "Petal & Pup",
+  "product": {
+   "title": "Julietta Ring - Gold Pearl",
+   "type": "ACCESSORIES",
+   "price": 15.0,
+   "url": "https://petalandpup.com/products/julietta-ring-gold-pearl"
+  }
+ },
+ "holistapet.com": {
+  "company": "Cheef Holdings",
+  "product": {
+   "title": "Broad-Spectrum CBD Oil for Dogs",
+   "type": "Oils",
+   "price": 29.95,
+   "url": "https://holistapet.com/products/broad-spectrum-cbd-oil-for-dogs"
+  }
+ },
+ "therapetmd.com": {
+  "company": "Therapet",
+  "product": {
+   "title": "Dog Calming Spray",
+   "type": "",
+   "price": 19.0,
+   "url": "https://therapetmd.com/products/therapet-dog-calming-spray-250ml"
+  }
+ },
+ "yumwoof.com": {
+  "company": "Yumwoof",
+  "product": {
+   "title": "Ancestral Blend",
+   "type": "",
+   "price": 28.41,
+   "url": "https://yumwoof.com/products/ancestral-blend"
+  }
+ },
+ "weratedogs.com": {
+  "company": "WeRateDogs",
+  "product": {
+   "title": "Cozy Pups Socks",
+   "type": "",
+   "price": 19.0,
+   "url": "https://weratedogs.com/products/tydish-socks"
+  }
+ },
+ "societyhounds.com": {
+  "company": "Society Hounds",
+  "product": {
+   "title": "Ralph Lauren Classic Polo",
+   "type": "apparel",
+   "price": 60.0,
+   "url": "https://societyhounds.com/products/ralph-lauren-classic-polos"
+  }
+ },
+ "petsmont.com": {
+  "company": "Petsmont",
+  "product": {
+   "title": "Petsmont Buddy Guard",
+   "type": "Dog Supplement",
+   "price": 42.95,
+   "url": "https://petsmont.com/products/organic-immune-support-and-allergy-relief"
+  }
+ },
+ "laylopets.com": {
+  "company": "LAY LO\u00ae",
+  "product": {
+   "title": "John Legend | Brown Fragment Dog Bed or Bed Cover",
+   "type": "John Legend",
+   "price": 76.0,
+   "url": "https://laylopets.com/products/john-legend-brown-fragment-dog-bed-or-bed-cover"
+  }
+ },
+ "ruffgreens.com": {
+  "company": "RUFF GREENS, INC.",
+  "product": {
+   "title": "Ruff Greens, VitaSmart",
+   "type": "Nutrition",
+   "price": 79.95,
+   "url": "https://ruffgreens.com/products/ruff-greens-vitasmart"
+  }
+ },
+ "maymaw.com": {
+  "company": "MayMaw",
+  "product": {
+   "title": "MayMaw\u00ae Foldable & 3 in 1 Pet Backpack Carrier",
+   "type": "",
+   "price": 99.98,
+   "url": "https://maymaw.com/products/foldable-breathable-pet-backpack-carrier"
+  }
+ },
+ "chippinpet.com": {
+  "company": "Chippin",
+  "product": {
+   "title": "Cricket Recipe Wet Dog Food",
+   "type": "Chippin Daily Food",
+   "price": 144.99,
+   "url": "https://chippinpet.com/products/dehydrated-cricket-dog-food"
+  }
+ },
+ "ferapets.com": {
+  "company": "Fera Pets",
+  "product": {
+   "title": "Longevity Soft Chews for Dogs",
+   "type": "Supplements",
+   "price": 49.95,
+   "url": "https://ferapets.com/products/longevity-chews"
+  }
+ },
+ "kittyupcats.com": {
+  "company": "Kitty Up",
+  "product": {
+   "title": "Cat Immune Support Pur\u00e9e | Beta Glucan + Colostrum",
+   "type": "Optimal Puree",
+   "price": 13.99,
+   "url": "https://kittyupcats.com/products/vitality-lickable-puree-real-chicken-cat-treats-immune-support-with-beta-glucan-bovine-colostrum-copy"
+  }
+ },
+ "thehungrypuppy.com": {
+  "company": "The Hungry Puppy",
+  "product": {
+   "title": "Fromm Gold Adult Dry Dog Food",
+   "type": "Dry Dog Food",
+   "price": 15.99,
+   "url": "https://thehungrypuppy.com/products/fromm-gold-adult-dry-dog-food"
+  }
+ },
+ "welovedoodles.com": {
+  "company": "We Love Doodles",
+  "product": null
+ },
+ "tomlinsons.com": {
+  "company": "Tomlinson's Feed",
+  "product": {
+   "title": "Fromm Gold Adult Dry Dog Food",
+   "type": "Dry Dog Food",
+   "price": 16.99,
+   "url": "https://tomlinsons.com/products/fromm-gold-adult-dog-food"
+  }
+ },
+ "weareplufl.com": {
+  "company": "Plufl",
+  "product": {
+   "title": "Plufl Human Dog Bed",
+   "type": "Napping Bed",
+   "price": 249.0,
+   "url": "https://weareplufl.com/products/plufl-the-dog-bed-for-humans"
+  }
+ },
+ "alphadognutrition.com": {
+  "company": "Alpha Dog Nutrition",
+  "product": {
+   "title": "Free Range Joint Supplement For Dogs",
+   "type": "Nutrition",
+   "price": 34.97,
+   "url": "https://alphadognutrition.com/products/free-range"
+  }
+ },
+ "pawsonify.com": {
+  "company": "Pawsonify",
+  "product": {
+   "title": "Rogue Leaf Ninja Collar",
+   "type": "Collar",
+   "price": 20.0,
+   "url": "https://pawsonify.com/products/naruto-shippuden-rogue-leaf-ninja-collar"
+  }
+ },
+ "fidobiotics.com": {
+  "company": "Fidobiotics",
+  "product": {
+   "title": "Good Guts for Cats",
+   "type": "",
+   "price": 21.99,
+   "url": "https://fidobiotics.com/products/good-guts-probiotic-powder-for-cats"
+  }
+ },
+ "fuzzycreekpetsupplies.com": {
+  "company": "Fuzzy Creek Pet Supplies",
+  "product": {
+   "title": "Fuzzy Dog Sweet & Sour Chicken Nugget Bites",
+   "type": "Dog Treats",
+   "price": 6.95,
+   "url": "https://fuzzycreekpetsupplies.com/products/fuzzy-dog-sweet-sour-chickjen-nugget-bites"
+  }
+ },
+ "furzapper.com": {
+  "company": "FurZapper",
+  "product": {
+   "title": "FurZapper\u2122 Pet Hair Remover - Double Pack",
+   "type": "",
+   "price": 14.99,
+   "url": "https://furzapper.com/products/furzapper-v2"
+  }
+ },
+ "dirtydogbeautyclub.com": {
+  "company": "Dirty Dog Beauty Club",
+  "product": {
+   "title": "Butter Pup Balm",
+   "type": "",
+   "price": 18.0,
+   "url": "https://dirtydogbeautyclub.com/products/butter-pup-balm"
+  }
+ },
+ "greenvalleynutrition.com": {
+  "company": "Green Valley Nutrition",
+  "product": {
+   "title": "Sleepy Night\u2122 CBN Gummies 750mg",
+   "type": "Dietary Supplement",
+   "price": 89.99,
+   "url": "https://greenvalleynutrition.com/products/cbn-gummies"
+  }
+ },
+ "petyupp.com": {
+  "company": "PetYupp",
+  "product": null
+ },
+ "wayzn.com": {
+  "company": "Wayzn",
+  "product": {
+   "title": "Wayzn Smart Pet Door",
+   "type": "Smart Pet Door",
+   "price": 549.0,
+   "url": "https://wayzn.com/products/wayzn-smart-pet-door"
+  }
+ },
+ "innovetpet.com": {
+  "company": "Innovet Pet Products",
+  "product": {
+   "title": "CBD Oil for Dogs",
+   "type": "CBD oil for Pets",
+   "price": 27.95,
+   "url": "https://innovetpet.com/products/cbd-oil-for-dogs"
+  }
+ },
+ "houndsy.com": {
+  "company": "Houndsy",
+  "product": {
+   "title": "Houndsy Kibble Dispenser",
+   "type": "Dog Supplies",
+   "price": 179.0,
+   "url": "https://houndsy.com/products/houndsy-kibble-dispenser"
+  }
+ },
+ "2dogstreats.com": {
+  "company": "2 Dogs Treats",
+  "product": {
+   "title": "Just Chicken Treats",
+   "type": "Dog Treats",
+   "price": 20.95,
+   "url": "https://2dogstreats.com/products/just-chicken-treats"
+  }
+ },
+ "nonaste.com": {
+  "company": "Nonast\u0113",
+  "product": {
+   "title": "Odor Eliminating Spray",
+   "type": "Odor Spray",
+   "price": 15.99,
+   "url": "https://nonaste.com/products/odor-eliminating-spray"
+  }
+ },
+ "goodboygravies.com": {
+  "company": "Goodboy Gravies",
+  "product": {
+   "title": "Goodboy Gravies Dog Food Topper",
+   "type": "",
+   "price": 49.0,
+   "url": "https://goodboygravies.com/products/honey-smoked-chicken-pumpkin"
+  }
+ },
+ "lolahemp.com": {
+  "company": "Lolahemp",
+  "product": {
+   "title": "Lolahemp Classic CBD Hemp Drops",
+   "type": "Tincture",
+   "price": 30.0,
+   "url": "https://lolahemp.com/products/cbd-oil-for-dogs"
+  }
+ },
+ "frenchiebulldog.com": {
+  "company": "Frenchie Bulldog LLC",
+  "product": {
+   "title": "Frenchie Duo Reversible Harness - Bad to the Bone",
+   "type": "Reversible Harness",
+   "price": 32.99,
+   "url": "https://frenchiebulldog.com/products/frenchie-duo-reversible-harness-bad-to-the-bone"
+  }
+ },
+ "4-legger.com": {
+  "company": "4-Legger",
+  "product": {
+   "title": "RESTORE Organic Apple Cider Vinegar Conditioning Rinse for Dogs",
+   "type": "USDA Certified Organic Dog Conditioner",
+   "price": 17.99,
+   "url": "https://4-legger.com/products/usda-certified-organic-apple-cider-vinegar-conditioning-rinse-for-dogs"
+  }
+ },
+ "epicdrops.com": {
+  "company": "Epic Drops",
+  "product": {
+   "title": "PET SIMULATOR - Mystery Pet Treasure Plush 2-Pack (Two 4\" Collectible Plushies, Series 1) [Includes DLC]",
+   "type": "Toys - Collectible Plushies",
+   "price": 19.99,
+   "url": "https://epicdrops.com/products/pet-simulator-mystery-pet-treasure-plush-2-pack-two-4-collectible-plushies-series-1-includes-dlc"
+  }
+ },
+ "catastrophicreations.com": {
+  "company": "Catastrophic Creations",
+  "product": {
+   "title": "Wall Mounted Cat Climbing Pole - Sisal",
+   "type": "Cat Scratcher",
+   "price": 137.0,
+   "url": "https://catastrophicreations.com/products/wall-mounted-cat-scratching-pole"
+  }
+ },
+ "pupring.com": {
+  "company": "PupRing",
+  "product": {
+   "title": "Pet Face Necklace",
+   "type": "",
+   "price": 79.0,
+   "url": "https://pupring.com/products/pet-face-necklace"
+  }
+ },
+ "identitypet.com": {
+  "company": "identity Pet Nutrition",
+  "product": {
+   "title": "95% Free-Range Canadian Duck & Duck Broth P\u00e2t\u00e9 Wet Cat Food",
+   "type": "Wet Cat Food",
+   "price": 84.99,
+   "url": "https://identitypet.com/products/95-free-range-canadian-duck-wet-cat-food"
+  }
+ },
+ "huxleyandkent.com": {
+  "company": "Huxley & Kent",
+  "product": {
+   "title": "High Street Plaid Hudson Harness",
+   "type": "Harnesses",
+   "price": 21.99,
+   "url": "https://huxleyandkent.com/products/hudson-dog-harness-patterned"
+  }
+ },
+ "huggibles.com": {
+  "company": "Huggibles Pet Nutrition",
+  "product": {
+   "title": "All-in-One Multi Liquid",
+   "type": "Pet Vitamins & Supplements",
+   "price": 28.97,
+   "url": "https://huggibles.com/products/all-in-one-multi-liquid"
+  }
+ },
+ "catsessentials.com": {
+  "company": "CatsEssentials",
+  "product": {
+   "title": "Organic Cat Blankets",
+   "type": "Blankets",
+   "price": 29.0,
+   "url": "https://catsessentials.com/products/organic-cat-blankets"
+  }
+ },
+ "feedpetaluma.com": {
+  "company": "Petaluma",
+  "product": {
+   "title": "Organic Sweet Potato Dog Jerky Treats",
+   "type": "Jerky",
+   "price": 18.99,
+   "url": "https://feedpetaluma.com/products/sweet-potato-jerky"
+  }
+ },
+ "gelatopique.us": {
+  "company": "Gelato Pique USA",
+  "product": {
+   "title": "\u3010Pok\u00e9mon\u3011\u3010Unisex\u3011One-Point Long Sleeve T-Shirt & Long Pants Set",
+   "type": "SET",
+   "price": 137.0,
+   "url": "https://gelatopique.us/products/pokemon-unisex-one-point-long-sleeve-t-shirt-long-pants-set"
+  }
+ },
+ "montanadogfoodco.com": {
+  "company": "MONTANA DOG FOOD CO",
+  "product": {
+   "title": "Grain-Free Beef Freeze-Dried Raw Adventure Fuel (Dog Food)",
+   "type": "Meals & Toppers",
+   "price": 19.99,
+   "url": "https://montanadogfoodco.com/products/grain-free-beef-freeze-dried-raw-dog-food-adventure-fuel"
+  }
+ },
+ "vitalpetlife.com": {
+  "company": "Vital Pet Life",
+  "product": {
+   "title": "Salmon Oil",
+   "type": "Pet Vitamins & Supplements",
+   "price": 15.95,
+   "url": "https://vitalpetlife.com/products/salmon-oil-for-dogs-and-cats"
+  }
+ },
+ "zoosnoods.com": {
+  "company": "Zoo Snoods",
+  "product": {
+   "title": "Reindeer Zoo Snood",
+   "type": "Dog Snood",
+   "price": 26.99,
+   "url": "https://zoosnoods.com/products/reindeer-zoo-snood"
+  }
+ },
+ "thebodhidog.com": {
+  "company": "Bodhi Dog",
+  "product": {
+   "title": "Bodhi Dog Natural Dog Cologne - Premium Scented Deodorizing Pet Perfume with Conditioner for Dogs & Cats - Keeps Pets Fresh & Clean - Gentle and Safe Formula, Made in USA (11 Scents)",
+   "type": "Pet Cologne",
+   "price": 17.99,
+   "url": "https://thebodhidog.com/products/natural-pet-cologne-11-scents"
+  }
+ },
+ "wagtantrum.com": {
+  "company": "Wag Tantrum",
+  "product": {
+   "title": "Starter Meal Plan",
+   "type": "",
+   "price": 120.0,
+   "url": "https://wagtantrum.com/products/starter-meal-plan-1"
+  }
+ },
+ "tateandtaylor.com": {
+  "company": "Tate & Taylor",
+  "product": {
+   "title": "Team Tate Hoodie",
+   "type": "Merch",
+   "price": 95.0,
+   "url": "https://tateandtaylor.com/products/f-ck-cancer-team-tate-hoodie"
+  }
+ },
+ "spiritpieces.com": {
+  "company": "Spirit Pieces",
+  "product": {
+   "title": "Memorial Glass Flame with Cremation Ashes",
+   "type": "Memorial Urns",
+   "price": 229.0,
+   "url": "https://spiritpieces.com/products/memorial-glass-flame-with-cremation-ashes-in-glass-from-people-and-pets"
+  }
+ },
+ "puplid.com": {
+  "company": "PupLid",
+  "product": {
+   "title": "hike life cat hat",
+   "type": "Foam Trucker Hat",
+   "price": 26.95,
+   "url": "https://puplid.com/products/puplid-cat-hats-hike-life-cat"
+  }
+ },
+ "incredpets.com": {
+  "company": "Incredible Pets",
+  "product": null
+ },
+ "safetypupxd.com": {
+  "company": "SafetyPUP XD",
+  "product": {
+   "title": "SafetyPUP XD\u00ae Reflective Dog Vest",
+   "type": "",
+   "price": 19.95,
+   "url": "https://safetypupxd.com/products/safetypup-xd-reflective-dog-vest"
+  }
+ },
+ "goodnessgracioustreats.com": {
+  "company": "GOODNESS GRACIOUS LLC",
+  "product": {
+   "title": "Hula Lula Chicken Jerky For Dogs",
+   "type": "Human Grade Jerky for Dogs",
+   "price": 19.99,
+   "url": "https://goodnessgracioustreats.com/products/hula-lula-chicken"
+  }
+ },
+ "fullbuckethealth.com": {
+  "company": "FullBucket Health",
+  "product": {
+   "title": "Daily Dog Probiotic",
+   "type": "Dog Products",
+   "price": 30.85,
+   "url": "https://fullbuckethealth.com/products/daily-dog-probiotic"
+  }
+ },
+ "themoderndogcompany.com": {
+  "company": "The Modern Dog Company \u00ae",
+  "product": {
+   "title": "Nail Trims - East Nashville Location Sign-up",
+   "type": "",
+   "price": 20.0,
+   "url": "https://themoderndogcompany.com/products/nail-trims-east-nashville-location-sign-up"
+  }
+ },
+ "boulderbarks.com": {
+  "company": "boulderbarks",
+  "product": {
+   "title": "Collar | Pheasant",
+   "type": "Standard Collars",
+   "price": 31.0,
+   "url": "https://boulderbarks.com/products/dog-collar-pheasant"
+  }
+ },
+ "getbistrocat.com": {
+  "company": "BistroCat",
+  "product": {
+   "title": "BistroCat",
+   "type": "",
+   "price": 95.0,
+   "url": "https://getbistrocat.com/products/bistro-cat-feeder"
+  }
+ },
+ "imperialreptiles.com": {
+  "company": "Imperial Reptiles & Exotics",
+  "product": {
+   "title": "Silkworm Pod (25Ct)",
+   "type": "Feeders",
+   "price": 18.99,
+   "url": "https://imperialreptiles.com/products/silkworms-to-go"
+  }
+ },
+ "pagerie.com": {
+  "company": "PAGERIE OFFICIAL",
+  "product": {
+   "title": "The Dorro",
+   "type": "Collar",
+   "price": 395.0,
+   "url": "https://pagerie.com/products/the-dorro-luxury-collar"
+  }
+ },
+ "shayapets.com": {
+  "company": "Shaya",
+  "product": {
+   "title": "Susan Leash - Black",
+   "type": "Leash",
+   "price": 88.0,
+   "url": "https://shayapets.com/products/susan-leash-black"
+  }
+ },
+ "munchbird.com": {
+  "company": "Munchbird",
+  "product": {
+   "title": "Chicken or Duck Jerky Wrapped Egg Yolk for Dogs",
+   "type": "Natural Dog Treats",
+   "price": 23.99,
+   "url": "https://munchbird.com/products/chicken-wrapped-egg-yolk-for-dogs"
+  }
+ },
+ "pawpawsusa.com": {
+  "company": "Paw Paws USA",
+  "product": {
+   "title": "Bulk Treats",
+   "type": "Dog Treat",
+   "price": 16.5,
+   "url": "https://pawpawsusa.com/products/s-bulk-treats"
+  }
+ },
+ "thegentlepit.com": {
+  "company": "The Gentle Pit",
+  "product": {
+   "title": "The PACK Unisex Jogger",
+   "type": "Joggers",
+   "price": 68.0,
+   "url": "https://thegentlepit.com/products/the-pack-jogger-1"
+  }
+ },
+ "silidog.com": {
+  "company": "SiliDog",
+  "product": {
+   "title": "Red Bone",
+   "type": "Bone",
+   "price": 19.99,
+   "url": "https://silidog.com/products/red-bone"
+  }
+ },
+ "invirox.com": {
+  "company": "INVIROX",
+  "product": {
+   "title": "INVIROX ULTRA K9 Dog Training Collar",
+   "type": "",
+   "price": 119.99,
+   "url": "https://invirox.com/products/invirox-ultra-k9-124-ip67-waterproof-receiver-ip65-remote-with-belt-clip-lanyard"
+  }
+ },
+ "mountainwildpet.com": {
+  "company": "Mountain Wild Pet",
+  "product": {
+   "title": "WHOLE ANTLER CHEWS",
+   "type": "Chews",
+   "price": 8.99,
+   "url": "https://mountainwildpet.com/products/whole-antler-chew"
+  }
+ },
+ "6666equinesupplements.com": {
+  "company": "6666 Equine Supplements",
+  "product": {
+   "title": "Equine Joint Health Pellets",
+   "type": "",
+   "price": 181.66,
+   "url": "https://6666equinesupplements.com/products/joint-pellet"
+  }
+ },
+ "ketonaturalpetfoods.com": {
+  "company": "KetoNatural Pet Foods",
+  "product": {
+   "title": "Ketona Chicken Recipe Dog Food - 24.2 Lbs",
+   "type": "",
+   "price": 132.99,
+   "url": "https://ketonaturalpetfoods.com/products/ketona-dry-food-for-adult-dogs-chicken-recipe-large"
+  }
+ },
+ "barkbistro.com": {
+  "company": "Bark Bistro Company",
+  "product": {
+   "title": "6pk Mix Squeeze Buddy Budder - Dog Peanut Butter",
+   "type": "Buddy Budder",
+   "price": 30.0,
+   "url": "https://barkbistro.com/products/6-pack-buddy-budder-4oz-squeeze-packs-100-all-natural-dog-peanut-butter-made-in-usa"
+  }
+ },
+ "cavepets.com": {
+  "company": "Cave Pets",
+  "product": null
+ },
+ "yourcatbackpack.com": {
+  "company": "Travel Cat",
+  "product": {
+   "title": "\"The Navigator\" Convertible Cat Backpack for Adventurous Cats and Humans",
+   "type": "Pet Carriers & Crates > Cat Backpack > Cat Backpack Carrier > Cat Carrier Backpack > Cat Bubble Backpack > Cat Backpack Bubble > Cat Carrier",
+   "price": 159.95,
+   "url": "https://yourcatbackpack.com/products/the-navigator-cat-backpack"
+  }
+ },
+ "pupsew.com": {
+  "company": "Pup Sew",
+  "product": {
+   "title": "\"Santa Paws\" Dog Collar Bandana, Reversible and Two-Tone",
+   "type": "",
+   "price": 22.0,
+   "url": "https://pupsew.com/products/santa-paws-dog-collar-bandana-reversible-and-two-tone"
+  }
+ },
+ "purlifebrands.com": {
+  "company": "P\u016brLife Brands",
+  "product": null
+ },
+ "furrymuse.com": {
+  "company": "Furry Muse",
+  "product": {
+   "title": "Satin Harness Bow - Blossom",
+   "type": "Bow",
+   "price": 19.95,
+   "url": "https://furrymuse.com/products/harness-bow-blossom"
+  }
+ },
+ "bowwowlabs.com": {
+  "company": "Bow Wow Labs, Inc.",
+  "product": {
+   "title": "Bully Sticks",
+   "type": "Natural Chews",
+   "price": 34.95,
+   "url": "https://bowwowlabs.com/products/bully-sticks"
+  }
+ },
+ "buenaondagames.com": {
+  "company": "Buena Onda Games",
+  "product": {
+   "title": "Magical Mystery Discs indoor",
+   "type": "",
+   "price": 13.49,
+   "url": "https://buenaondagames.com/products/magical-mystery-discs-indoor"
+  }
+ },
+ "samandnala.com": {
+  "company": "Sam & Nala",
+  "product": {
+   "title": "Worry Doll - Dog Worry",
+   "type": "",
+   "price": 7.0,
+   "url": "https://samandnala.com/products/dog-worry-doll-keyring-variant"
+  }
+ },
+ "honestpaws.com": {
+  "company": "Honest Paws",
+  "product": {
+   "title": "Mobility CBD Oil",
+   "type": "Tinctures Oil",
+   "price": 24.95,
+   "url": "https://honestpaws.com/products/mobility-tincture"
+  }
+ },
+ "lcsupply.com": {
+  "company": "Lion Country Supply, Inc.",
+  "product": {
+   "title": "Rex Specs - Dog Goggles",
+   "type": "Dog Goggles",
+   "price": 87.95,
+   "url": "https://lcsupply.com/products/rex-specs-dog-goggles"
+  }
+ },
+ "bubbarose.com": {
+  "company": "Bubba Rose Biscuit Co.",
+  "product": {
+   "title": "Blue Dog Cake (Perishable)",
+   "type": "Perishable",
+   "price": 27.99,
+   "url": "https://bubbarose.com/products/blue-dog-cake-perishable"
+  }
+ },
+ "walkeepaws.com": {
+  "company": "Walkee Paws",
+  "product": {
+   "title": "Deluxe Dog Boot Leggings",
+   "type": "Deluxe Easy-on boot leggings",
+   "price": 64.99,
+   "url": "https://walkeepaws.com/products/new-deluxe-easy-on-dog-boot-leggings"
+  }
+ },
+ "petoi.com": {
+  "company": "Petoi",
+  "product": {
+   "title": "Robo Dog Bittle X | A Coding Robot | Petoi",
+   "type": "Robot",
+   "price": 319.0,
+   "url": "https://petoi.com/products/petoi-robot-dog-bittle-x-voice-controlled"
+  }
+ },
+ "spunkypup.com": {
+  "company": "Spunky Pup",
+  "product": {
+   "title": "Frosted Cookies for Dogs",
+   "type": "Treats",
+   "price": 6.99,
+   "url": "https://spunkypup.com/products/frosted-cookies-for-dogs"
+  }
+ },
+ "awoopets.com": {
+  "company": "Awoo",
+  "product": {
+   "title": "Infinity Leash",
+   "type": "Leash",
+   "price": 56.0,
+   "url": "https://awoopets.com/products/infinity-leash"
+  }
+ }
+}

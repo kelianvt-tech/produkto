@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Produkto Launch Film v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+:root{--bg:#fafaf8;--ink:#0b1b35;--text:#1a2436;--mute:#586579;--faint:#8b95a5;--line:#e6e7e3;--card:#fff;--blue:#2f80ff;--violet:#7c3aed;--green:#1d9e6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow:hidden;background:var(--bg)}
+body{font-family:Geist,system-ui,sans-serif;color:var(--text)}
+#stage{position:absolute;left:0;top:0;overflow:hidden;background:var(--bg)}
+.L{position:absolute;left:0;top:0;width:100%;height:100%;visibility:hidden}
+.L *{visibility:inherit}
+.a{position:absolute;left:0;top:0}
+.m{position:absolute;overflow:hidden}.m>span{display:block;white-space:nowrap}
+img{display:block}
+.card{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 1px 2px rgba(11,27,53,.04),0 12px 40px -12px rgba(11,27,53,.12)}
+.glow{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+.grad{background:linear-gradient(90deg,var(--violet),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+#cursor{position:absolute;left:0;top:0;width:44px;height:44px;transform-origin:0 0;z-index:99}
+</style></head><body>
+<div id="stage">
+  <div class="L" id="Lglow" style="visibility:visible"></div>
+  <div class="L" id="L1"></div>
+  <div class="L" id="Lst"></div>
+  <div class="L" id="L2"></div>
+  <div class="L" id="L4"></div>
+  <div class="L" id="L5"></div>
+  <div class="L" id="L6"></div>
+  <div class="L" id="L7"></div>
+  <div class="L" id="L8"></div>
+  <div class="L" id="L9"></div>
+  <svg id="cursor" viewBox="0 0 24 24"><path d="M4 2.5l15 10.2-6.6 1.2 3.9 7.3-2.9 1.5-3.9-7.3-4.8 4.6z" fill="#0b1b35" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+</div>
+<script>
+// ---------- format ----------
+const VERT=new URLSearchParams(location.search).get('f')==='v';
+const W=VERT?1080:1440, H=VERT?1920:1440, CX=W/2, CY=H/2, PAD=VERT?70:130, CW=W-2*PAD, K=VERT?1.05:1;
+document.documentElement.style.cssText=`width:${W}px;height:${H}px`;
+const stage=document.getElementById('stage');stage.style.width=W+'px';stage.style.height=H+'px';
+const fs=n=>Math.round(n*K)+'px';
+// ---------- time (seconds) ----------
+const SPD=1.25, DUR=59.99, BPM=132, BT=60/BPM, SH=3.6;   // SPD: whole film plays 25% faster (Kelian 2026-10-20)   // SH: the stat beat pushes everything after the opening back
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const eio=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eo=p=>1-Math.pow(1-p,3);
+const eo5=p=>1-Math.pow(1-p,5);
+function S(tau,k=170,z=.78){if(tau<=0)return 0;const w=Math.sqrt(k);
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+(z*w/wd)*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);}
+const E=(t,a,b,f=eio)=>f(clamp((t-a)/(b-a)));
+const pop=(t,a,k=200,z=.72)=>Math.max(0,S(t-a,k,z));
+const on=(t,a,b)=>t>=a&&t<b;
+const $=id=>document.getElementById(id);
+const box=(el,x,y,w,h,r)=>{el.style.left=x+'px';el.style.top=y+'px';if(w!=null)el.style.width=Math.max(0,w)+'px';if(h!=null)el.style.height=Math.max(0,h)+'px';if(r!=null)el.style.borderRadius=r+'px';};
+const vis=(el,v)=>{const e=typeof el==='string'?$(el):el;e.style.visibility=v?(e.classList.contains('L')||e.id==='cursor'?'visible':'inherit'):'hidden';};
+const tf=(el,s)=>{el.style.transform=s;};
+function mk(par,html,css='',cls='a'){const d=document.createElement('div');d.className=cls;d.innerHTML=html;d.style.cssText+=css;(typeof par==='string'?$(par):par).appendChild(d);return d;}
+// word that rises out of its own line, with a soft blur-free fade in the motion only
+const rise=(el,p)=>{el.firstElementChild.style.transform=`translateY(${(1-p)*(el.clientHeight+12)}px)`;};  // always clears the whole mask
+const A='assets/v3/';
+const LOGO={openai:'logo-openai.svg',google:'logo-google.svg',perplexity:'logo-perplexity.svg',gemini:'logo-gemini.svg',copilot:'logo-copilot.svg',claude:'logo-claude.svg'};
+
+// ---------- SFX cue sheet (seconds) ----------
+const SFX=[];const cue=(t,n,v=1)=>SFX.push([t>=4.3?t+SH:t,n,v]);
+window.SFX=SFX;window.DUR=DUR;window.BPM=BPM;  // SFX times are scaled by SPD in seek's caller below
+
+// ---------- ambient glows (always on, drift slowly) ----------
+const G1=mk('Lglow','','background:rgba(47,128,255,.16)','glow'), G2=mk('Lglow','','background:rgba(124,58,237,.12)','glow');
+function glows(t,mood){ // mood 0 calm white, 1 stronger
+  t=REAL;const r=VERT?700:760;box(G1,CX-r/2+Math.sin(t*.25)*120-200,CY-r/2+Math.cos(t*.2)*90-120,r,r);
+  box(G2,CX-r/2+Math.cos(t*.22)*140+220,CY-r/2+Math.sin(t*.18)*100+160,r*.9,r*.9);
+  G1.style.opacity=.6+.4*mood;G2.style.opacity=.5+.5*mood;}
+
+// =====================================================================
+// S1 (0-4.6s): "In today's [ChatGPT] world," / "shoppers ask AI what to buy."
+// =====================================================================
+const s1fs=VERT?84:92;
+const s1a=mk('L1','',`left:0;width:${W}px;top:${CY-s1fs*1.1}px;display:flex;justify-content:center;align-items:center;gap:${s1fs*.28}px;font:600 ${s1fs}px Geist;letter-spacing:-.02em;color:var(--ink)`);
+const W1=['In','today’s','@','world,'].map(w=>w==='@'
+  ?mk(s1a,`<img src="${A}logo-openai.svg" style="width:${s1fs*.95}px;height:${s1fs*.95}px">`,`position:relative;width:${s1fs}px;height:${s1fs*1.2}px;display:flex;align-items:center;justify-content:center`,'')
+  :mk(s1a,`<span>${w}</span>`,`position:relative;height:${s1fs*1.25}px;overflow:hidden`,'m'));
+const s1b=mk('L1',`<span>shoppers ask AI what to buy.</span>`,`left:0;width:${W}px;text-align:center;top:${CY+s1fs*.25}px;height:${s1fs*1.3}px;font:500 ${Math.round(s1fs*.62)}px Geist;color:var(--mute)`,'m');
+function sc1(t){const show=t<4.9;vis('L1',show);if(!show)return;
+  W1.forEach((w,i)=>{const p=E(t,.25+i*.22,.95+i*.22,eo5);
+    if(i===2){const s=pop(t,.7,220,.6);tf(w,`scale(${s}) rotate(${(1-Math.min(1,s))*-90+t*0}deg)`);}else rise(w,p);});
+  rise(s1b,E(t,1.7,2.4,eo5));
+  const out=E(t,4.1,4.7,eio);s1a.style.transform=`translateY(${-out*60}px)`;s1a.style.opacity=1-out;s1b.style.opacity=1-out;s1b.style.transform=`translateY(${-out*60}px)`;}
+cue(.7,'pop',.5);
+
+// =====================================================================
+// STAT (real time 4.5-8.2s): NielsenIQ, 24 Sep 2026
+// =====================================================================
+const stN=mk('Lst',`<span class="grad">0%</span>`,`left:0;width:${W}px;text-align:center;top:${CY-(VERT?250:240)}px;height:${VERT?220:240}px;font:700 ${VERT?200:230}px Geist;letter-spacing:-.05em;line-height:1.05`,'m');
+const stL=mk('Lst',`<span>of U.S. consumers have used AI</span><span>to help them shop</span>`,`left:0;width:${W}px;text-align:center;top:${CY+(VERT?10:20)}px;height:${VERT?130:140}px;font:600 ${fs(VERT?44:54)} Geist;color:var(--ink);letter-spacing:-.02em;line-height:1.22`,'m');
+const stS=mk('Lst',`<span>Source: NielsenIQ, September 2026</span>`,`left:0;width:${W}px;text-align:center;top:${CY+(VERT?180:200)}px;height:40px;line-height:40px;font:500 ${fs(22)} Geist;color:var(--faint)`,'m');
+function scStat(t){const show=on(t,4.4,7.9);vis('Lst',show);if(!show)return;
+  rise(stN,E(t,4.75,5.35,eo5));stN.firstElementChild.textContent=Math.round(51*E(t,4.85,6.0,eo))+'%';
+  [...stL.children].forEach((c,i)=>{c.style.transform=`translateY(${(1-E(t,5.25+i*.15,5.95+i*.15,eo5))*240}%)`;});
+  rise(stS,E(t,6.0,6.6,eo5));
+  const out=E(t,7.3,7.85,eio);document.getElementById('Lst').style.opacity=1-out;document.getElementById('Lst').style.transform=`translateY(${-out*50}px)`;}
+
+// =====================================================================
+// S2+S3 (4.4-14.4s): search box, typed question, the real answer
+// =====================================================================
+const Q='What are the best dog leashes for my dog golden retriever?';
+const sbW=VERT?CW:Math.min(1060,CW), sbH=VERT?150:104;
+const sbGlow=mk('L2','','background:radial-gradient(closest-side,rgba(47,128,255,.28),rgba(124,58,237,.12),transparent)','glow');
+const sb=mk('L2','',`background:#fff;border:1px solid var(--line);box-shadow:0 18px 50px -18px rgba(47,128,255,.35)`);
+const sbTxt=mk(sb,'',`left:${VERT?34:40}px;top:0;right:${sbH}px;height:100%;display:flex;align-items:center;font:500 ${fs(VERT?34:34)} Geist;color:var(--text);line-height:1.25;white-space:${VERT?'normal':'nowrap'}`);
+const sbCaret=mk(sb,'',`width:3px;background:var(--blue);border-radius:2px`);
+const sbSend=mk(sb,`<svg viewBox="0 0 24 24" width="55%" height="55%"><path d="M12 19V5M5 12l7-7 7 7" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,`border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center`);
+// answer panel
+const ap=mk('L2','',`overflow:hidden`,'card');
+const apW=VERT?CW:Math.min(1060,CW);
+const apHead=mk(ap,`<img src="${A}logo-openai.svg" style="width:34px;height:34px"><span style="font:600 ${fs(26)} Geist;color:var(--ink)">ChatGPT</span>`,`left:36px;top:30px;display:flex;align-items:center;gap:14px`);
+const apIntro=mk(ap,`For a <b>Golden Retriever</b>, I would choose a leash that is strong, comfortable to hold, and preferably <b>1.5–2 metres long</b>.`,`left:36px;right:36px;top:${VERT?92:88}px;font:400 ${fs(VERT?27:25)} Geist;line-height:1.45;color:var(--text)`);
+const apTitle=mk(ap,`My top 5 dog leashes`,`left:36px;top:${VERT?230:178}px;font:600 ${fs(VERT?31:28)} Geist;color:var(--ink)`);
+const ROWS=[
+ ['rw-frontrange-riverrock.png','Ruffwear – Front Range Dog Leash With Padded Handle','Everyday walking · Padded handle','€26.95','Best overall'],
+ ['rw-crag-risingwave.png','Ruffwear Crag Dog Leash Everyday Lead','Best premium versatile leash','€40.95',''],
+ ['halti-anatomy-grey.jpg','Correa Multifuncional para Perros Halti Anatomía','Best for training and pulling','€34.99',''],
+ ['rw-knot-black.png','ruffwear Correa de cuerda Knot a Leash','Best strong rope leash','€44.95',''],
+ ['ns-touring-bungee-teal.jpg','Non-stop dogwear Touring Bungee','Best for hiking and active walks','',''],
+];
+const rowH=VERT?165:128, rowTop=VERT?300:236, thumb=rowH-26;
+const RW=ROWS.map((r,i)=>mk(ap,`
+ <div class="a" style="left:0;top:13px;width:${thumb}px;height:${thumb}px;border-radius:16px;background:#f3f3f1;overflow:hidden"><img src="${A+r[0]}" style="width:100%;height:100%;object-fit:contain;padding:8%"></div>
+ <div class="a" style="left:${thumb+24}px;top:0;right:0;height:100%;display:flex;flex-direction:column;justify-content:center;gap:5px">
+  ${r[4]?`<span style="align-self:flex-start;font:600 ${fs(17)} Geist;color:#15803d;background:#dcfce7;border-radius:999px;padding:3px 11px">${r[4]}</span>`:''}
+  <div style="font:600 ${fs(VERT?25:23)} Geist;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:underline;text-decoration-color:#c9ced6;text-underline-offset:4px">${r[1]}</div>
+  <div style="font:400 ${fs(18)} Geist;color:var(--mute)">${r[2]}</div>
+  ${r[3]?`<div style="font:600 ${fs(21)} Geist;color:var(--text)">${r[3]}</div>`:''}</div>`,`left:36px;right:36px;height:${rowH}px;border-top:1px solid var(--line)`));
+// the merchant that isn't there
+const miss=mk('L2',`
+ <div class="a" style="left:18px;top:16px;width:${thumb}px;height:${thumb}px;border-radius:16px;background:#f3f3f1;overflow:hidden"><img src="${A}wo-lightweight-limeade.jpg" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1);opacity:.55"></div>
+ <div class="a" style="left:${thumb+42}px;top:0;right:20px;height:100%;display:flex;flex-direction:column;justify-content:center;gap:8px">
+  <div style="font:600 ${fs(VERT?25:23)} Geist;color:#9aa3b2">Wild One Lightweight Dog Leash</div>
+  <span style="align-self:flex-start;font:600 ${fs(18)} Geist;color:#b93c0a;background:#fff2ea;border:1px solid #f8cdb5;border-radius:999px;padding:4px 12px">Not in the answer</span></div>`,
+ `border:1.5px dashed #c9ced6;background:rgba(255,255,255,.85)`,'card');
+function sc2(t){const show=on(t,4.3,14.6);vis('L2',show);if(!show)return;
+  // search box: rises in, types, then slides up and becomes the header of the answer
+  const pin=E(t,4.4,5.2,eo5), up=E(t,7.9,8.7,eio);
+  const yMid=CY-sbH/2, yTop=VERT?150:90;
+  const sy=lerp(yMid+60*(1-pin),yTop,up);
+  box(sb,CX-sbW/2,sy,sbW,sbH,sbH/2);sb.style.opacity=pin;
+  box(sbGlow,CX-sbW*.6,sy-sbH*1.6,sbW*1.2,sbH*4.2);sbGlow.style.opacity=pin*(1-up*.7);
+  box(sbSend,sbW-sbH*.78,sbH*.14,sbH*.64,sbH*.64,null);
+  const n=Math.floor(Q.length*E(t,5.3,7.3,x=>x));sbTxt.textContent=n?Q.slice(0,n):'Ask anything';sbTxt.style.color=n?'var(--text)':'var(--faint)';
+  const blink=(Math.floor(t*2.4)%2===0)||(t>5.3&&t<7.3);vis(sbCaret,blink&&t<7.6&&!VERT);box(sbCaret,40+Math.min(sbW-sbH-60,sbTxt.scrollWidth)+4,sbH*.3,3,sbH*.4);
+  tf(sbSend,`scale(${t>7.45&&t<7.6?.86:1})`);
+  // answer panel
+  const apY=yTop+sbH+28, apH=VERT?H-apY-110:H-apY-70;
+  const ap_in=E(t,8.5,9.3,eo5);
+  box(ap,CX-apW/2,apY+40*(1-ap_in),apW,apH);ap.style.opacity=ap_in;
+  apIntro.style.opacity=E(t,8.9,9.5);apTitle.style.opacity=E(t,9.3,9.8);
+  RW.forEach((r,i)=>{const p=E(t,9.6+i*.32,10.3+i*.32,eo5);r.style.top=(rowTop+i*rowH+20*(1-p))+'px';r.style.opacity=p;});
+  // camera: gentle push in on the list, then the missing card slides in beside/below
+  const push=E(t,11.6,13.2,eio);const s=1+push*(VERT?.04:.06);tf(ap,`scale(${s})`);ap.style.transformOrigin='50% 30%';
+  const mp=E(t,12.4,13.2,eo5), mW=VERT?CW-40:apW*.72, mH=thumb+32;
+  box(miss,CX-mW/2,H-(VERT?300:250)+(1-mp)*120,mW,mH);miss.style.opacity=mp;
+  const out=E(t,13.9,14.5,eio);[sb,ap,miss].forEach(e=>{e.style.filter=`blur(${out*8}px)`;});
+  document.getElementById('L2').style.opacity=1-out;}
+cue(4.4,'swoosh',.35);for(let i=0;i<24;i++)cue(5.3+i*2/24,'key',.22);cue(7.5,'click',.7);[9.6,9.92,10.24,10.56,10.88].forEach(x=>cue(x,'pop',.32));cue(12.4,'swoosh',.4);
+
+// =====================================================================
+// S4 (14.2-18.4s): blue gradient, agent name, P spins in 3D, wordmark
+// =====================================================================
+const s4bg=mk('L4','',`left:0;top:0;width:${W}px;height:${H}px;background:radial-gradient(120% 90% at 50% 110%,#c9dcff 0%,#4f8dff 38%,#1f5fe0 70%,#0b1b35 115%)`);
+const s4lbl=mk('L4',`<span style="display:flex;align-items:center;justify-content:center;gap:22px"><svg viewBox="0 0 20 20" width="${VERT?40:46}" height="${VERT?40:46}" style="overflow:visible"><path id="sp1" d="M8 2.5l1.5 4.2 4.2 1.5-4.2 1.5L8 13.9 6.5 9.7 2.3 8.2l4.2-1.5z" fill="#fff"/><path id="sp2" d="M15 11.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="#fff"/></svg>Catalog Optimization Agent</span>`,
+  `left:0;width:${W}px;top:${CY+(VERT?80:120)}px;height:80px;font:600 ${fs(VERT?40:46)} Geist;color:#fff;letter-spacing:-.01em;text-align:center`,'m');
+// 3D P: stacked layers give it thickness while it spins
+const P3=mk('L4','',`left:${CX}px;top:${CY-(VERT?40:30)}px;width:0;height:0;perspective:1400px`);
+const P3in=mk(P3,'',`left:0;top:0;transform-style:preserve-3d`);
+const PSZ=VERT?155:190, PLAY=14;
+const PL=[...Array(PLAY)].map((_,i)=>mk(P3in,i<PLAY-1?`<div style="width:${PSZ}px;height:${PSZ*486/480}px;border-radius:${PSZ*.22}px;background:#07142a"></div>`:`<img src="${A}produkto-mark-rounded.png" style="width:${PSZ}px;height:${PSZ*486/480}px;backface-visibility:hidden">`,`left:${-PSZ/2}px;top:${-PSZ/2}px;transform:translateZ(${(i-PLAY+1)*1.6}px)`));
+const s4in=mk('L4',`<span>Introducing</span>`,`left:0;width:${W}px;text-align:center;top:${CY-(VERT?250:280)}px;height:${VERT?90:100}px;font:600 ${fs(VERT?64:76)} Geist;color:#fff;letter-spacing:-.02em`,'m');
+const LK_I=VERT?155:190, LK_TH=Math.round(LK_I*.54), LK_TW=Math.round(LK_TH*509/64), LK_G=Math.round(LK_I*.2);
+const LK_W=LK_I+LK_G+LK_TW, LK_X=CX-LK_W/2, LK_Y=CY-(VERT?40:30);
+const s4wm=mk('L4',`<img src="${A}produkto-text-light.png" style="width:${LK_TW}px;height:${LK_TH}px">`,`left:${LK_X+LK_I+LK_G}px;top:${LK_Y-LK_TH/2}px;width:${LK_TW}px;height:${LK_TH}px;overflow:hidden`);
+function sc4(t){const show=on(t,14.2,18.6);vis('L4',show);if(!show)return;
+  const wipe=E(t,14.2,14.9,eio);s4bg.style.clipPath=`circle(${wipe*Math.hypot(W,H)*1.05}px at 50% 100%)`;
+  rise(s4in,E(t,14.6,15.2,eo5));
+  // P spins alone in the centre, then slides left as PRODUKTO wipes in beside it
+  const slide=E(t,16.5,17.2,eio);
+  P3.style.left=lerp(CX,LK_X+LK_I/2,slide)+'px';
+  // PRODUKTO slides out from behind the P: hidden left of the P's right edge, travelling with it
+  const pRight=lerp(CX,LK_X+LK_I/2,slide)+LK_I/2, mL=LK_X+LK_I+LK_G;
+  const out_=E(t,16.55,17.35,eio);
+  const tx=lerp(pRight-mL-LK_TW,0,out_);
+  s4wm.firstElementChild.style.transform=`translateX(${tx}px)`;
+  s4wm.style.clipPath=`inset(0 0 0 ${Math.max(0,pRight-mL+4)}px)`;s4wm.style.overflow='visible';
+  const lp=E(t,17.3,17.9,eo5), lo=0;rise(s4lbl,lp*(1-lo));
+  ['sp1','sp2'].forEach((id,i)=>{$(id).style.transformOrigin=i?'15px 14.3px':'8px 8.2px';$(id).style.transform=`scale(${.8+.2*Math.cos((t-14)*4+i*2)})`;});
+  // P: pops in, spins one full turn and a bit on Y with a little X tilt, settles
+  const pp=pop(t,15.2,180,.7), spin=E(t,15.2,16.8,eo5);
+  vis(P3,t>15.15);tf(P3in,`scale(${pp})`);  // no spin: Kelian 2026-10-20, a flat pop reads cleaner
+  const out=E(t,18.1,18.6,eio);document.getElementById('L4').style.opacity=1-out;}
+cue(14.2,'zoom',.5);cue(16.5,'swoosh',.45);
+
+// =====================================================================
+// S5 (18.4-21.6s): "Hundreds of thousands of data points"
+// =====================================================================
+const s5t=mk('L5',`<span class="grad">Hundreds of thousands</span>`,`left:0;width:${W}px;text-align:center;top:${CY-(VERT?120:110)}px;height:${VERT?110:120}px;font:700 ${fs(VERT?70:96)} Geist;letter-spacing:-.03em`,'m');
+const s5s=mk('L5',`<span>of data points on what AI recommends</span>`,`left:0;width:${W}px;text-align:center;top:${CY+(VERT?10:20)}px;height:70px;font:500 ${fs(VERT?36:42)} Geist;color:var(--ink)`,'m');
+const NET=[...Array(VERT?26:30)].map((_,i)=>{const r=(i*9301+49297)%233280/233280, r2=(i*4253+1173)%7919/7919;
+  return {x:r*W, y:r2*H, s:[10,14,18][i%3], c:['#2f80ff','#a9c6ff','#0b1b35'][i%3], d:.12*i%1.4};});
+const netSvg=mk('L5',`<svg width="${W}" height="${H}" id="netSvg"></svg>`,`left:0;top:0`);
+function sc5(t){const show=on(t,18.3,21.8);vis('L5',show);if(!show)return;
+  const pin=E(t,18.4,19.1,eo5);rise(s5t,pin);rise(s5s,E(t,18.8,19.5,eo5));
+  let h='';NET.forEach((n,i)=>{const p=pop(t,18.5+n.d,220,.6);if(p<=0)return;
+    if(Math.abs(n.x-CX)<CW*.42&&Math.abs(n.y-CY)<200)return;
+    const dx=Math.sin(t*.6+i)*8, dy=Math.cos(t*.5+i)*8;
+    if(i%2===0){const m=NET[(i+3)%NET.length];h+=`<line x1="${n.x+dx}" y1="${n.y+dy}" x2="${m.x}" y2="${m.y}" stroke="#c9d6ee" stroke-width="1.5" opacity="${Math.min(1,p)*.7}"/>`;}
+    const s=n.s*Math.min(1.1,p);h+=`<rect x="${n.x+dx-s/2}" y="${n.y+dy-s/2}" width="${s}" height="${s}" fill="${n.c}"/>`;});
+  $('netSvg').innerHTML=h;
+  const out=E(t,21.2,21.8,eio);document.getElementById('L5').style.opacity=1-out;}
+cue(18.5,'pop',.4);
+
+// =====================================================================
+// S6 (21.4-29.6s): wildone.com product page, the agent writes the fix
+// =====================================================================
+const brW=VERT?CW:860, brH=VERT?780:720, brX=VERT?CX-brW/2:PAD-40, brY=VERT?300:CY-360;
+const br=mk('L6','',`overflow:hidden`,'card');
+const brBar=mk(br,`<div style="display:flex;gap:9px;padding:0 22px;align-items:center;height:100%"><i style="width:13px;height:13px;border-radius:50%;background:#ff5f57"></i><i style="width:13px;height:13px;border-radius:50%;background:#febc2e"></i><i style="width:13px;height:13px;border-radius:50%;background:#28c840"></i>
+  <span style="margin-left:18px;background:#f3f4f1;border-radius:999px;padding:7px 18px;font:500 ${fs(18)} Geist;color:var(--mute)">wildone.com/products/lightweight-nylon-dog-leash</span></div>`,`left:0;top:0;right:0;height:56px;border-bottom:1px solid var(--line)`);
+const brShot=mk(br,`<img src="${A}wildone-pdp-desktop-full.png" style="width:100%">`,`left:0;top:56px;right:0;bottom:0;overflow:hidden`);
+// highlight of the description area + the new copy the agent writes there
+const hl=mk(br,'',`border:2.5px solid var(--blue);border-radius:14px;background:rgba(47,128,255,.06)`);
+const NEWCOPY='A 6-foot leash for everyday walks and travel. It handles pullers up to 90 lbs, and the 360° swivel hook moves with your dog, so it doesn’t tangle.';
+const nc=mk(br,'',`background:#fff;border-radius:12px;padding:16px 18px;font:500 ${fs(VERT?21:19)} Geist;line-height:1.45;color:var(--ink);box-shadow:0 10px 30px -10px rgba(47,128,255,.4)`);
+// agent panel
+const agW=VERT?CW:470, agH=VERT?500:560;
+const ag=mk('L6','',`overflow:hidden`,'card');
+const agHead=mk(ag,`<img src="${A}agent-label.svg" style="height:${VERT?32:30}px">`,`left:28px;top:24px`);
+const agSub=mk(ag,`Product page fix · Lightweight Dog Leash`,`left:28px;top:${VERT?72:68}px;font:500 ${fs(19)} Geist;color:var(--mute)`);
+const CHECK=['Opening line: what it’s for, and its 6 ft length','Pull strength and the swivel hook, up front','FAQ: length, pull strength, night walks','Only facts from your own product page'];
+const CK=CHECK.map((c,i)=>mk(ag,`<span class="ck" style="width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:#e9eef6"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cl" style="font:500 ${fs(VERT?22:20)} Geist;color:var(--text)"></span>`,
+  `left:28px;right:24px;top:${(VERT?128:118)+i*(VERT?62:58)}px;display:flex;align-items:center;gap:14px`));
+const agBtn=mk(ag,`Approve and publish`,`left:28px;right:28px;top:auto;bottom:26px;height:${VERT?74:66}px;border-radius:999px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font:600 ${fs(22)} Geist`);
+const toast=mk('L6',`<span style="display:flex;align-items:center;gap:12px"><svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="11" fill="#1d9e6b"/><path d="M6.5 12.5l3.5 3.5 7.5-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Published to wildone.com</span>`,
+  `padding:0 30px;height:70px;display:flex;align-items:center;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 40px -14px rgba(11,27,53,.3);font:600 ${fs(22)} Geist;color:var(--ink)`);
+function sc6(t){const show=on(t,21.4,29.9);vis('L6',show);if(!show)return;
+  const pin=E(t,21.5,22.4,eo5);
+  box(br,brX,brY+80*(1-pin),brW,brH);br.style.opacity=pin;
+  // the page image is 1440 wide; scale it to the browser width and scroll a touch
+  const sc_=brW/1440, scroll=E(t,22.6,24,eio)*(VERT?0:60);
+  const img=brShot.firstElementChild;img.style.transform=`translateY(${-scroll}px)`;
+  // description block on the page sits at x 770..1390, y 515..715 in the 1440 capture
+  const hx=770*sc_-10, hy=56+515*sc_-scroll*1-10, hw=620*sc_+20, hh=200*sc_+20;
+  const hp=E(t,23.6,24.2,eo5);box(hl,hx,hy,hw,hh,14);hl.style.opacity=hp*(1-E(t,28.2,28.6));
+  // agent panel slides in from the side (square) or bottom (vertical)
+  const ap_=E(t,23.2,24.1,eo5);
+  if(VERT){box(ag,CX-agW/2,brY+brH+40+(1-ap_)*200,agW,agH);}else{box(ag,brX+brW+30+(1-ap_)*120,brY+(brH-agH)/2,agW,agH);}
+  ag.style.opacity=ap_;
+  CK.forEach((c,i)=>{const t0=24.4+i*.75, full=CHECK[i];const n=Math.floor(full.length*E(t,t0,t0+.55,x=>x));
+    c.querySelector('.cl').textContent=full.slice(0,n);const k=c.querySelector('.ck');const d=t>t0+.55;
+    k.style.background=d?'var(--green)':'#e9eef6';tf(k,`scale(${d?Math.min(1.15,pop(t,t0+.55,300,.5)):1})`);});
+  // new copy replaces the highlighted block
+  const ncp=E(t,26.9,27.5,eo5);vis(nc,t>26.9);box(nc,hx+6,hy+6+(1-ncp)*16,hw-12,null);nc.style.opacity=ncp;
+  nc.textContent=NEWCOPY.slice(0,Math.floor(NEWCOPY.length*E(t,27,28.3,x=>x)));
+  tf(agBtn,`scale(${t>28.55&&t<28.7?.95:1})`);agBtn.style.background=t>28.7?'var(--green)':'var(--ink)';agBtn.textContent=t>28.7?'Published':'Approve and publish';
+  const tp=pop(t,28.85,220,.65);vis(toast,t>28.85);const tw=VERT?560:470;box(toast,CX-tw/2,(VERT?brY-110:brY-100)+(1-Math.min(1,tp))*-30,tw,70);toast.style.opacity=Math.min(1,tp);toast.style.justifyContent='center';
+  const out=E(t,29.3,29.9,eio);document.getElementById('L6').style.opacity=1-out;}
+cue(21.5,'swoosh',.35);cue(23.6,'pop',.3);[24.95,25.7,26.45,27.2].forEach(x=>cue(x,'pop2',.35));cue(28.6,'click',.7);cue(28.85,'ding',.55);
+
+// =====================================================================
+// S7 (29.6-35s): "Checked every day" + visibility trend
+// =====================================================================
+const s7t=mk('L7',`<span>Checked every day</span>`,`left:0;width:${W}px;text-align:center;top:${VERT?330:170}px;height:${VERT?100:110}px;font:700 ${fs(VERT?66:84)} Geist;letter-spacing:-.03em;color:var(--ink)`,'m');
+const chW=VERT?CW:CW, chH=VERT?820:760, chX=CX-chW/2, chY=VERT?560:360;
+const ch=mk('L7',`<div style="display:flex;justify-content:space-between;align-items:center;padding:28px 34px 0">
+  <div style="display:flex;align-items:center;gap:16px"><img src="${A}wo-lightweight-limeade.jpg" style="width:56px;height:56px;border-radius:12px;object-fit:cover"><div><div style="font:600 ${fs(24)} Geist;color:var(--ink)">Lightweight Dog Leash</div><div style="font:500 ${fs(18)} Geist;color:var(--mute)">Visibility in AI answers</div></div></div>
+  <div style="font:500 ${fs(18)} Geist;color:var(--mute)">Daily</div></div><svg id="trSvg" class="a" style="left:34px;top:120px"></svg>`,'','card');
+const DAYS=30, TR=[12,13,12,11,12,13,12,12,11,12,13,12,11,12,12,13,12,11,12,12,13,12,12,11,12,13,12,12,11,12];  // flat on purpose: no implied uplift
+function sc7(t){const show=on(t,29.6,35.3);vis('L7',show);if(!show)return;
+  rise(s7t,E(t,29.75,30.45,eo5));
+  const cp=E(t,30.1,30.9,eo5);box(ch,chX,chY+60*(1-cp),chW,chH);ch.style.opacity=cp;
+  const w=chW-68, h=chH-180, X=i=>60+i*(w-80)/(DAYS-1), Y=v=>h-50-v*(h-90)/30;const svg=$('trSvg');svg.setAttribute('width',w);svg.setAttribute('height',h);
+  const d=E(t,30.8,33.6,eio), nShow=d*(DAYS-1);
+  let g='';[0,10,20,30].forEach(v=>g+=`<line x1="60" x2="${w-10}" y1="${Y(v)}" y2="${Y(v)}" stroke="#eceee9" stroke-width="2" stroke-dasharray="3 7"/><text x="46" y="${Y(v)+7}" font-size="${18*K}" fill="#8b95a5" text-anchor="end" font-family="Geist">${v}%</text>`);
+  ['Sep 21','Sep 28','Oct 5','Oct 12','Oct 19'].forEach((s,i)=>g+=`<text x="${X(i*7+1)}" y="${h-8}" font-size="${18*K}" fill="#8b95a5" text-anchor="middle" font-family="Geist">${s}</text>`);
+  let pts=[];for(let i=0;i<=Math.floor(nShow);i++)pts.push([X(i),Y(TR[i])]);
+  const fi=Math.floor(nShow), fr=nShow-fi;if(fi<DAYS-1)pts.push([lerp(X(fi),X(fi+1),fr),lerp(Y(TR[fi]),Y(TR[fi+1]),fr)]);
+  if(pts.length>1){g+=`<path d="M${pts[0][0]},${h-50} L${pts.map(p=>p.join(',')).join(' L')} L${pts[pts.length-1][0]},${h-50}Z" fill="url(#tg)"/><polyline points="${pts.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#2f80ff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>`;
+    const L=pts[pts.length-1];g+=`<circle cx="${L[0]}" cy="${L[1]}" r="11" fill="#2f80ff" stroke="#fff" stroke-width="4"/>`;
+    // daily dots appear as each day is checked
+    for(let i=0;i<=fi;i++)g+=`<circle cx="${X(i)}" cy="${Y(TR[i])}" r="4" fill="#2f80ff"/>`;}
+  svg.innerHTML=`<defs><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f80ff" stop-opacity=".22"/><stop offset="1" stop-color="#2f80ff" stop-opacity="0"/></linearGradient></defs>`+g;
+  const out=E(t,34.7,35.3,eio);document.getElementById('L7').style.opacity=1-out;}
+cue(29.75,'swoosh',.35);
+
+// =====================================================================
+// S8 (35-39.2s): "Tracked across multiple language models"
+// =====================================================================
+const s8t=mk('L8',`<span>Tracked across multiple</span><span>language models</span>`,`left:0;width:${W}px;text-align:center;top:${VERT?560:400}px;height:${VERT?200:220}px;font:700 ${fs(VERT?62:76)} Geist;letter-spacing:-.03em;color:var(--ink);line-height:1.15`,'m');
+const ENG=[['openai','ChatGPT'],['google','AI Overviews'],['perplexity','Perplexity'],['gemini','Gemini'],['claude','Claude'],['copilot','Copilot'],['more','and more']];
+const EG=ENG.map(e=>mk('L8',`<div style="width:${VERT?112:120}px;height:${VERT?112:120}px;border-radius:28px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px -14px rgba(11,27,53,.25);display:flex;align-items:center;justify-content:center">${e[0]==='more'?`<span style="font:600 ${fs(40)} Geist;color:var(--mute)">+</span>`:`<img src="${A+LOGO[e[0]]}" style="width:56%;height:56%">`}</div><div style="margin-top:14px;font:500 ${fs(20)} Geist;color:var(--mute);text-align:center">${e[1]}</div>`,'width:160px;display:flex;flex-direction:column;align-items:center'));
+function sc8(t){const show=on(t,35.3,39.4);vis('L8',show);if(!show)return;
+  [...s8t.children].forEach((s,i)=>{s.style.transform=`translateY(${(1-E(t,35.4+i*.18,36.1+i*.18,eo5))*240}%)`;});
+  const cols=VERT?4:7, gx=VERT?230:170, y0=VERT?900:720;
+  EG.forEach((el,i)=>{const r=Math.floor(i/cols),c=i%cols, n=Math.min(cols,ENG.length-r*cols);
+    const x=CX+(c-(n-1)/2)*gx-80, y=y0+r*250+Math.sin(t*1.4+i)*4;box(el,x,y);tf(el,`scale(${pop(t,35.9+i*.16,240,.62)})`);});
+  const out=E(t,38.8,39.4,eio);document.getElementById('L8').style.opacity=1-out;}
+[35.9,36.06,36.22,36.38,36.54,36.7,36.86].forEach(x=>cue(x,'pop',.3));
+
+// =====================================================================
+// S9 (39.1s-end): the onboarding's particle P (from p-mark.js), deterministic in t
+// =====================================================================
+const s9bg=mk('L9','',`left:0;top:0;width:${W}px;height:${H}px;background:radial-gradient(90% 70% at 50% 45%,#13254a 0%,#0b1b35 60%,#081329 100%)`);
+const pc=document.createElement('canvas');pc.width=W*2;pc.height=H*2;pc.style.cssText=`position:absolute;left:0;top:0;width:${W}px;height:${H}px`;$('L9').appendChild(pc);
+const pctx=pc.getContext('2d');pctx.setTransform(2,0,0,2,0,0);
+const url9=mk('L9',`<span>getprodukto.com</span>`,`left:0;width:${W}px;text-align:center;top:${VERT?CY+330:CY+330}px;height:${VERT?70:76}px;font:500 ${fs(VERT?44:50)} Geist;color:#dbe4f4;letter-spacing:.01em`,'m');
+let PD=[];const GLY=['€','$','%','★','#1','↑','✓','tag','bag'],SPR9=[],SP9=28;
+GLY.forEach(g=>{const c=document.createElement('canvas');c.width=c.height=SP9;const x=c.getContext('2d');x.fillStyle='#fff';x.strokeStyle='#fff';x.lineWidth=2.2;x.lineJoin='round';x.lineCap='round';
+  if(g==='tag'){x.beginPath();x.moveTo(5,14);x.lineTo(13,6);x.lineTo(23,6);x.lineTo(23,16);x.lineTo(15,24);x.closePath();x.stroke();x.beginPath();x.arc(18.5,10.5,1.8,0,7);x.fill();}
+  else if(g==='bag'){x.strokeRect(6,11,16,13);x.beginPath();x.arc(14,11,4.5,Math.PI,0);x.stroke();}
+  else{x.font='600 '+(g.length>1?15:19)+'px Geist';x.textAlign='center';x.textBaseline='middle';x.fillText(g,SP9/2,SP9/2+1);}SPR9.push(c);});
+const hash=(a)=>{const x=Math.sin(a*127.1+311.7)*43758.5453;return x-Math.floor(x);};
+async function loadP(){const txt=await (await fetch(A+'p-points.txt')).text();
+  PD=txt.trim().split(';').map((r,i)=>{const p=r.split(',');return {hx:+p[0],hy:+p[1],edge:p[2]==='1',
+    sx:(hash(i)-.5)*2.4,sy:(hash(i+7)-.5)*2.4,sd:hash(i+13)*.5,gl:Math.floor(hash(i+29)*GLY.length),off:hash(i+41)*2.6};});}
+function sc9(t){const show=t>=39.1;vis('L9',show);if(!show)return;
+  const wipe=E(t,39.1,39.8,eio);s9bg.style.clipPath=`circle(${wipe*Math.hypot(W,H)*.6}px at 50% 50%)`;
+  const ctx=pctx;ctx.clearRect(0,0,W,H);
+  const unit=(VERT?620:680), ox=CX, oy=VERT?CY-90:CY-60, DEPTH=.07, FOCAL=2.6, tilt=.16;
+  const angle=Math.sin((t-39.4)*.45+.4)*.62, bob=Math.sin(t*.9)*.018;
+  const c=Math.cos(angle),sn=Math.sin(angle),ct=Math.cos(tilt),st=Math.sin(tilt);
+  const proj=(x,y,z)=>{const X=x*c+z*sn,Z0=-x*sn+z*c,Y=y*ct-Z0*st,Z=y*st+Z0*ct,k=FOCAL/(FOCAL+Z);return [ox+X*unit*k,oy+(Y+bob)*unit*k,Z,k];};
+  const detail=unit/360;
+  for(let i=0;i<PD.length;i++){const d=PD[i];
+    // dots fly in from a scatter and settle into the P
+    const a=E(t,39.5+d.sd,40.9+d.sd,eo5);if(a<=0)continue;
+    const hx=lerp(d.sx,d.hx,a), hy=lerp(d.sy,d.hy,a);
+    const zs=d.edge?[-.5,0,.5,-1,1]:[-1,1];
+    for(const zz of zs){const p=proj(hx,hy,zz*DEPTH);
+      const near=clamp((.12-p[2])/.24);
+      ctx.globalAlpha=((d.edge?.35:.22)+near*(d.edge?.6:.55))*Math.min(1,a*1.4);
+      ctx.fillStyle=d.edge?'#ffffff':'#dbe4f4';
+      const cyc=Math.floor((t+d.off)/2.6), glyphOn=!d.edge&&zz===-1&&a>=1&&hash(i*3.1+cyc)<.1;
+      if(glyphOn){const sz=10*p[3]*detail;ctx.globalAlpha=Math.min(1,ctx.globalAlpha+.15);ctx.drawImage(SPR9[(d.gl+cyc)%GLY.length],p[0]-sz/2,p[1]-sz/2,sz,sz);}
+      else{ctx.beginPath();ctx.arc(p[0],p[1],(d.edge?2:1.8)*p[3]*detail,0,Math.PI*2);ctx.fill();}}}
+  ctx.globalAlpha=1;
+  rise(url9,E(t,41.3,42,eo5));}
+cue(39.1,'swoosh',.45);cue(41.3,'pop',.35);
+
+// =====================================================================
+// SEEK
+// =====================================================================
+// Voiceover sync: [voice time, film time]. Between anchors the film plays at SPD (or faster if it must
+// catch up), then holds until the next line starts. Voice timings from assets/v3/vo/words.tsv.
+const VS=1.15; // voice sped up 15% (atempo); voice times below are already divided by it
+const SYNC=[[0.0, 0], [5.57, 4.0], [5.98, 4.75], [9.22, 7.25], [10.12, 8.9], [14.54, 13.2], [17.04, 16.0], [23.39, 16.9], [23.97, 18.2], [24.78, 20.1], [26.52, 20.9], [27.67, 22.0], [32.61, 24.7], [33.13, 25.3], [35.29, 28.0], [38.26, 30.6], [40.73, 31.9], [43.04, 32.45], [43.74, 33.0], [49.83, 39.4], [53.83, 42.2], [54.35, 42.8], [59.99, 48.6]];
+function toFilm(r){for(let i=SYNC.length-2;i>=0;i--){const [ar,af]=SYNC[i];if(r>=ar){const [br,bf]=SYNC[i+1];
+  const rate=Math.max(SPD,(bf-af)/Math.max(.01,br-ar));return Math.min(af+(r-ar)*rate,bf);}}return 0;}
+function toReal(f){for(let i=0;i<SYNC.length-1;i++){const [ar,af]=SYNC[i],[br,bf]=SYNC[i+1];if(f<=bf){
+  const rate=Math.max(SPD,(bf-af)/Math.max(.01,br-ar));return ar+(f-af)/rate;}}return DUR;}
+let REAL=0;
+async function seek(tReal){REAL=tReal;return seekFilm(toFilm(tReal));}
+async function seekFilm(t){
+  const t2=t<4.3?t:Math.max(4.3,t-SH);  // later scenes run on shifted time
+  glows(t,on(t2,14,18.5)&&t>8?1:.4);
+  sc1(t);scStat(t);if(t<8.2)vis('L2',false);
+  if(t>=7.9){sc2(t2);sc4(t2);sc5(t2);sc6(t2);sc7(t2);sc8(t2);sc9(t2);}else{['L4','L5','L6','L7','L8','L9'].forEach(id=>vis(id,false));}
+  // cursor: types the question, presses send, approves the fix
+  const cu=$('cursor');let cs=0,cx=0,cy=0;t=t2;
+  if(on(t,6.8,8.1)){const yTop=CY-sbH/2;cs=E(t,6.8,7.1,eo)*(1-E(t,7.8,8.1));cx=lerp(CX+300,CX+sbW/2-sbH*.46,E(t,6.8,7.4,eio));cy=lerp(yTop+260,yTop+sbH*.5,E(t,6.8,7.4,eio));}
+  if(on(t,27.9,29.1)){cs=E(t,27.9,28.2,eo)*(1-E(t,28.9,29.1));
+    const bx=VERT?CX:brX+brW+30+agW/2, by=VERT?brY+brH+40+agH-60:brY+(brH-agH)/2+agH-60;cx=lerp(bx+220,bx,E(t,27.9,28.5,eio));cy=lerp(by+160,by,E(t,27.9,28.5,eio));}
+  const press=(t>7.45&&t<7.6)||(t>28.55&&t<28.7)?.85:1;
+  vis(cu,cs>.01);cu.style.transform=`translate(${cx}px,${cy}px) scale(${cs*press*(VERT?1.2:1)})`;
+}
+window.seek=seek;window.SFX=SFX.map(c=>[toReal(c[0]),c[1],c[2]]);
+window.ready=(async()=>{await document.fonts.ready;await loadP();await Promise.all([...document.images].map(i=>i.complete?0:new Promise(r=>{i.onload=i.onerror=r;})));await seek(0);return true;})();
+const qt=new URLSearchParams(location.search).get('t');if(qt)window.ready.then(()=>seek(+qt));
+</script></body></html>

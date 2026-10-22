@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent · 2 Review queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* 2 · Review queue: a three-pane inbox. Folders, the queue, the page open beside it; approve and move on. */
+main{max-width:none;padding:0}
+.top{display:flex;align-items:center;gap:18px;padding:18px 24px;border-bottom:1px solid var(--line);background:var(--surface)}
+.top nav{display:flex;gap:4px;margin-left:10px;padding:4px;background:var(--surface-2);border-radius:10px}
+.top nav a{padding:6px 14px;border-radius:7px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+.top nav a[aria-current]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(11,27,53,.1)}
+.top .grow{flex:1}
+.panes{display:grid;grid-template-columns:200px 360px minmax(0,1fr);height:calc(100vh - 118px);min-height:560px}
+.folders{border-right:1px solid var(--line);padding:16px 10px;display:grid;align-content:start;gap:2px;background:var(--bg)}
+.folders a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink-2);font-weight:600;font-size:14px}
+.folders a span{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.folders a[aria-current]{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.folders .dot{width:8px;height:8px;border-radius:50%}
+.folders hr{border:0;border-top:1px solid var(--line);margin:10px 4px}
+.folders .k{font-size:12.5px;color:var(--muted);padding:6px 10px;line-height:1.6}
+kbd{font:600 11.5px var(--font);padding:1px 6px;border-radius:5px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink)}
+.queue{border-right:1px solid var(--line);overflow:auto;background:var(--surface)}
+.queue h2{font-size:13.5px;margin:0;padding:14px 18px;color:var(--muted);border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface)}
+.item{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;position:relative}
+.item:hover{background:var(--surface-2)}
+.item[aria-current]{background:var(--accent-soft)}
+.item[aria-current]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--accent)}
+.item .thumb{width:40px;height:40px}
+.item strong{display:block;font-size:14.5px;color:var(--ink);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item .meta{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.reader{overflow:auto;display:flex;flex-direction:column}
+.reader-head{padding:22px 32px 18px;border-bottom:1px solid var(--line);background:var(--surface)}
+.reader-head h1{font-size:22px;line-height:1.3;margin:10px 0 6px;color:var(--ink);letter-spacing:-.01em}
+.reader-head p{margin:0;color:var(--muted);font-size:14px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:0;flex:1}
+.ba section{padding:24px 32px}
+.ba section+section{border-left:1px solid var(--line);background:var(--surface)}
+.ba h3{font-size:12.5px;margin:0 0 14px;color:var(--muted);font-weight:700}
+.ba .now{color:var(--muted)}
+.ba .now h4,.ba .new h4{font-size:18px;margin:0 0 10px;line-height:1.35}
+.ba .now h4{color:var(--ink-2)}.ba .new h4{color:var(--ink)}
+.facts{margin:0 32px 24px;padding:16px 18px;border-radius:12px;background:var(--warn-soft)}
+.facts h3{margin:0 0 4px;font-size:15px;color:var(--warn)}
+.facts .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:12px}
+.facts label{font-size:13.5px;font-weight:600;color:var(--ink);display:block;margin-bottom:4px}
+.dock{position:sticky;bottom:0;display:flex;align-items:center;gap:10px;padding:14px 32px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(6px)}
+.dock .grow{flex:1}
+.dock .score{font-size:13.5px;color:var(--muted)}
+.dock .score b{color:var(--ink)}
+/* calendar as an agenda */
+.agenda{padding:24px 32px;display:grid;gap:22px}
+.week h2{font-size:14px;margin:0 0 8px;color:var(--muted)}
+.day{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+.day time{font-weight:700;color:var(--ink)}.day time small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+.slot{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:inherit;margin-bottom:6px}
+.slot:hover{border-color:var(--ink)}
+.slot[aria-current]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.slot strong{color:var(--ink);font-size:14.5px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.free{font-size:13.5px;color:var(--faint);padding:6px 0}
+.side{padding:24px;border-left:1px solid var(--line);background:var(--surface);overflow:auto}
+.side h2{font-size:19px;line-height:1.3;margin:10px 0;color:var(--ink)}
+.side dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:16px 0;font-size:14px}
+.side dt{color:var(--muted)}.side dd{margin:0;font-weight:600;color:var(--ink)}
+.cal-panes{display:grid;grid-template-columns:minmax(0,1fr) 360px;height:calc(100vh - 118px)}
+.cal-panes>div{overflow:auto}
+/* setup */
+.setup{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:calc(100vh - 118px)}
+.steps{border-right:1px solid var(--line);padding:24px 16px;display:grid;align-content:start;gap:4px;background:var(--bg)}
+.steps a{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;padding:10px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600}
+.steps a i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12.5px;border:1.5px solid var(--line-2);color:var(--muted)}
+.steps a.done i{background:var(--ok-soft);border-color:transparent;color:var(--ok)}
+.steps a.done i svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2}
+.steps a[aria-current]{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.steps a[aria-current] i{border-color:var(--ink);color:var(--ink)}
+.form{padding:34px 44px;max-width:860px}
+.form h1{font-size:24px;margin:0 0 4px;color:var(--ink);letter-spacing:-.01em}
+.form .lede{margin:0 0 26px;color:var(--muted)}
+@media (max-width:1100px){.panes{grid-template-columns:1fr;height:auto}.folders{display:flex;flex-wrap:wrap}.queue{max-height:340px}.ba{grid-template-columns:1fr}.ba section+section{border-left:0;border-top:1px solid var(--line)}.cal-panes,.setup{grid-template-columns:1fr;height:auto}.side{border-left:0}.facts .grid{grid-template-columns:1fr}.top{flex-wrap:wrap}}
+</style></head>
+<body>
+<script src="data.js"></script>
+<script src="shared.js"></script>
+<script>
+(function(){
+var A=AGENT,e=H.esc;
+function top(on){
+  return '<div class="top">'+H.title()+'<nav aria-label="Agent views">'+[['drafts','Review'],['calendar','Calendar'],['live','Live'],['setup/voice','Settings']].map(function(t){return '<a href="#'+t[0]+'"'+(on===t[0].split('/')[0]?' aria-current="page"':'')+'>'+t[1]+'</a>'}).join('')+'</nav><span class="grow"></span><span class="muted" style="font-size:13.5px">'+A.drafts.filter(function(d){return d.status==='draft'}).length+' waiting · 2 of 50 page fixes used this month</span></div>';
+}
+var FOLD=[['facts','Needs your facts','var(--warn)',function(d){return H.needsFacts(d)}],['ready','Ready to review','var(--accent)',function(d){return d.status==='draft'&&!d.gaps}],['scheduled','Scheduled','var(--ok)',function(d){return d.status==='approved'||d.status==='scheduled'}],['live','Live','var(--ink)',function(d){return d.status==='published'}]];
+function folders(on){
+  return '<nav class="folders" aria-label="Folders">'+FOLD.map(function(f){var n=A.drafts.filter(f[3]).length;return '<a href="#drafts/'+f[0]+'"'+(f[0]===on?' aria-current="page"':'')+'><i class="dot" style="background:'+f[2]+'"></i>'+f[1]+'<span class="num">'+n+'</span></a>'}).join('')+'<hr><p class="k"><kbd>J</kbd> <kbd>K</kbd> next, previous<br><kbd>A</kbd> approve · <kbd>R</kbd> reject</p></nav>';
+}
+function list(items,sel,base){
+  return items.map(function(d){return '<a class="item" href="#'+base+'/'+d.id+'"'+(d.id===sel?' aria-current="true"':'')+'>'+H.img(d)+'<div><strong>'+e(d.title)+'</strong><div class="meta">'+H.typeTag(d)+'<span>'+H.date(d.planned)+'</span></div></div></a>'}).join('')||'<p class="free" style="padding:18px">Nothing here.</p>';
+}
+function reader(d){
+  if(!d)return '<div class="reader"><p class="free" style="padding:32px">Pick a page on the left.</p></div>';
+  var now=d.type==='product_fix'?'<h4>'+e(d.cur_title)+'</h4><p>'+e(d.cur_desc)+'</p>':'<p>This page doesn\'t exist on your store yet.</p>';
+  var nu=d.type==='faq'?d.faqs.map(function(f){return '<h4 style="font-size:15.5px">'+e(f.q)+'</h4><p>'+e(f.a)+'</p>'}).join(''):'<h4>'+e(d.new_title||d.title)+'</h4>'+d.html+(d.specs.length?'<table><tbody>'+d.specs.map(function(s){return '<tr><th>'+e(s.label)+'</th><td>'+e(s.value)+'</td></tr>'}).join('')+'</tbody></table>':'');
+  var qs=d.open_questions.slice(0,d.gaps);
+  var rv=d.review||{scores:{answers:4,readable:4,voice:4}};
+  return '<div class="reader"><div class="reader-head">'+H.typeTag(d)+' '+H.status(d)+'<h1>'+e(d.title)+'</h1><p>'+e(d.product)+' · '+(d.planned?'goes live '+H.date(d.planned)+', 9:00 '+A.store.tz:'not on the calendar yet')+'</p></div>'+
+   (qs.length?'<div class="facts" style="margin-top:20px"><h3>Answer '+qs.length+' question'+(qs.length>1?'s':'')+' to approve</h3><span class="muted" style="font-size:13.5px">Facts only you know. Leave one empty and the agent drops that sentence.</span><div class="grid">'+qs.map(function(q,i){return '<div><label for="g'+i+'">'+e(q)+'</label><input class="input" id="g'+i+'"></div>'}).join('')+'</div></div>':'')+
+   '<div class="ba"><section class="now"><h3>Now on your store</h3><div class="doc">'+now+'</div></section><section class="new"><h3>With this draft</h3><div class="doc">'+nu+'</div></section></div>'+
+   '<div class="dock"><span class="score">Editor\'s check <b>'+rv.scores.answers+'</b> answers · <b>'+rv.scores.readable+'</b> reads well · <b>'+rv.scores.voice+'</b> sounds like you</span><span class="grow"></span><button class="btn ghost">Edit</button><button class="btn">'+H.icon('x')+'Reject</button><button class="btn primary"'+(qs.length?' disabled':'')+'>'+H.icon('check')+'Approve and next</button></div></div>';
+}
+function inbox(r){
+  var f=FOLD.filter(function(x){return x[0]===r[1]})[0]||FOLD[0];
+  var items=A.drafts.filter(f[3]);
+  var sel=r[2]?+r[2]:(items[0]&&items[0].id);
+  return top('drafts')+'<div class="panes">'+folders(f[0])+'<div class="queue"><h2>'+f[1]+' · '+items.length+'</h2>'+list(items,sel,'drafts/'+f[0])+'</div>'+reader(H.draft(sel))+'</div>';
+}
+function calendar(sel){
+  var weeks=[['This week',['2026-10-16','2026-10-17']],['Next week',['2026-10-19','2026-10-20','2026-10-21','2026-10-22','2026-10-23']],['Week of Oct 26',['2026-10-26','2026-10-27','2026-10-28']]];
+  var ag='<div class="agenda">'+weeks.map(function(w){return '<section class="week"><h2>'+w[0]+'</h2>'+w[1].map(function(iso){var evs=H.onDay(iso);return '<div class="day"><time>'+H.date(iso,{weekday:'short'})+'<small>'+H.date(iso,{month:'short',day:'numeric'})+'</small></time><div>'+(evs.length?evs.map(function(d){return '<a class="slot" href="#calendar/'+d.id+'"'+(String(d.id)===sel?' aria-current="true"':'')+'>'+H.img(d)+'<strong>'+e(d.title)+'</strong>'+H.typeTag(d)+H.status(d)+'</a>'}).join(''):'<p class="free">Free slot · the agent fills it from your top Opportunity</p>')+'</div></div>'}).join('')+'</section>'}).join('')+'</div>';
+  var d=sel&&H.draft(sel);
+  var side=d?'<aside class="side">'+H.typeTag(d)+'<h2>'+e(d.title)+'</h2>'+H.status(d)+'<dl><dt>When</dt><dd>'+H.date(d.planned,{weekday:'long',month:'long',day:'numeric'})+', 9:00 '+A.store.tz+'</dd><dt>Where</dt><dd>'+e(d.product)+'</dd><dt>Why</dt><dd style="font-weight:500">'+e(d.why||'')+'</dd></dl><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn primary" href="#drafts/'+(H.needsFacts(d)?'facts':'ready')+'/'+d.id+'">Review</a><label class="btn" for="mv">'+H.icon('cal')+'Move</label><input type="date" id="mv" class="input" style="max-width:170px" value="'+d.planned+'"></div></aside>':'<aside class="side"><p class="muted">Select a page to see what goes live and why.</p></aside>';
+  return top('calendar')+'<div class="cal-panes"><div>'+ag+'</div>'+side+'</div>';
+}
+function live(){
+  var l=H.byStatus(['published']);
+  return top('live')+'<div class="panes" style="grid-template-columns:200px 360px minmax(0,1fr)">'+folders('live')+'<div class="queue"><h2>Live · '+l.length+'</h2>'+list(l,l[0]&&l[0].id,'live')+'</div><div class="reader"><div class="reader-head">'+H.typeTag(l[0])+' <span class="tag ok">Live</span> <span class="example">Example</span><h1>'+e(l[0].title)+'</h1><p>Live since '+H.date(l[0].planned)+' · mentions before and after appear once there are enough answers</p></div><div class="ba"><section class="now"><h3>Before</h3><p class="muted">No FAQ on the page.</p></section><section class="new"><h3>Live now</h3><div class="doc">'+l[0].faqs.map(function(f){return '<h4 style="font-size:15.5px">'+e(f.q)+'</h4><p>'+e(f.a)+'</p>'}).join('')+'</div></section></div><div class="dock"><span class="grow"></span><a class="btn" href="'+e(l[0].live_url)+'">'+H.icon('link')+'View on store</a><button class="btn">'+H.icon('undo')+'Undo</button></div></div></div>';
+}
+function setup(step){
+  step=step||'voice';
+  var i0=H.STEPS.map(function(s){return s[0]}).indexOf(step);
+  return top('setup')+'<div class="setup"><nav class="steps" aria-label="Setup steps">'+H.STEPS.map(function(s,i){return '<a href="#setup/'+s[0]+'" class="'+(i<4&&i!==i0?'done':'')+'"'+(i===i0?' aria-current="step"':'')+'><i>'+(i<4&&i!==i0?H.icon('check'):i+1)+'</i>'+s[1]+'</a>'}).join('')+'</nav><div class="form"><h1>'+H.setupIntro[step][0]+'</h1><p class="lede">'+e(H.setupIntro[step][1])+'</p>'+H.setupBody(step)+'</div></div>';
+}
+window.V={name:'Review queue',render:function(r){
+  if(r[0]==='draft')return inbox(['drafts',H.needsFacts(H.draft(r[1]))?'facts':'ready',r[1]]);
+  if(r[0]==='calendar')return calendar(r[1]);
+  if(r[0]==='live')return live();
+  if(r[0]==='setup')return setup(r[1]);
+  return inbox(r);
+}};
+})();
+</script>
+</body></html>

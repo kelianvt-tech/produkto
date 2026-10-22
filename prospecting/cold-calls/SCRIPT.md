@@ -6,6 +6,33 @@ Each lead's line is ready in the call sheet (`leads/call-sheet.csv`) and in Clos
 
 ---
 
+## 0. Which opener (leads from 2026-10-05 onwards)
+
+These leads have no competitor checks, so they use the version without names. Close's **Call flag** field tells you which one, and the **Opener** field has it written out with their name and product type:
+
+- **PET** (pet brands):
+  > "Hey [Name], I'm Kelian, the founder of Produkto. I'm calling because I've been looking at which [dog treats] ChatGPT recommends when pet owners ask what to buy, and it only names two or three brands. Can I take 15 seconds to explain why I'm calling?"
+- **DTC** (other online brands, product type known):
+  > "Hey [Name], I'm Kelian, the founder of Produkto. I'm calling because I've been looking at which [candles] ChatGPT recommends when shoppers ask what to buy, and it only names two or three brands. Can I take 15 seconds to explain why I'm calling?"
+- **GENERIC** (online brand, product type not clear from their site):
+  > "Hey [Name], I'm Kelian, the founder of Produkto. I'm calling because I've been looking at which brands ChatGPT recommends when shoppers ask what to buy, and it only names two or three for each question. Can I take 15 seconds to explain why I'm calling?"
+
+- **EMAILED** (follow-up after a cold email; added 2026-10-06). Kelian's default opener for every lead, whether or not they were emailed (his call, 2026-10-06).
+  > "Hey [Name], it's Kelian from Produkto. I sent you guys an email the other day and was wondering if anyone got the chance to take a look at it?"
+
+  Pause and let them answer.
+  - **No / didn't see it / what was it about?** → "No worries, it's quick. I asked ChatGPT which [candles] it would recommend to buy, and it named the [Competitor product] from [Competitor brand]. I thought you'd want to see how AI picks between products like yours. Can I take 15 seconds to explain why I'm calling?" (Competitor = the one in their email 1.)
+  - **Yes, saw it** → "Oh nice. What did you think? Have you looked at how ChatGPT recommends products in your space before?" Let them talk, then section 2.
+  - **"Just send it again"** → "Sure, I'll resend it right after this. Honestly though, it's a live dashboard, so it's much easier to show. Would 20 minutes this week or next work?"
+
+- **JEWELRY** (batch 2026-10-19, 56 numbers; Close description "jewelry 2026-10-19"). Each lead has a real competitor: ChatGPT was asked one buyer question built from that brand's own best-seller (type + price), e.g. "What's the best stud earrings to buy online for around $300?", and the first named product from a jewelry brand (not a retailer like Nordstrom or Amazon) is in Close as **Competitor product** / **Competitor brand**. Common names: Monica Vinader, Mejuri, Brilliant Earth, Bony Levy.
+  - **Call flag ok** (46) → "Hey [Name], I'm Kelian, the founder of Produkto. I'm calling because I've been looking at which [stud earrings] ChatGPT recommends, and the [Competitor product] from [Competitor brand] keeps coming up. Can I take 15 seconds to explain why I'm calling?"
+  - **no names** (10, best-seller couldn't be read) → "…I've been looking at which pieces of jewelry ChatGPT recommends, and it only names two or three. Can I take 15 seconds…?"
+  - Long product names (engagement rings, tennis bracelets): say the short version, e.g. "the lab-grown oval solitaire from MiaDonna".
+  - These weren't emailed. If you use the EMAILED opener, the "No / what was it about?" answer uses the same competitor.
+
+From there, everything below is the same: sections 2 to 10. For PET leads, in section 2 you can say "when pet owners ask" in place of "shoppers".
+
 ## 1. Opener (first 10 seconds)
 
 *Structure from Marcos (Senecta), 2026-10-01: name and title, a competitor in the first sentence, then ask permission. The competitor is one ChatGPT actually recommended (see the call sheet), never a claimed customer.*

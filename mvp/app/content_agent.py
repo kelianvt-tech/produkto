@@ -251,7 +251,8 @@ def act(q, form):
                 else 'Approved' if row and row['status'] in ('approved', 'scheduled') else 'No date')
         return 200, ('json', json.dumps(dict(ok=True, when=when, status=row['status'] if row else '')))
     text = re.sub(r'</h1>\s*', '. ', out) if isinstance(out, str) else ''
-    text = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', text)).replace('..', '.').strip()
+    import html as _html
+    text = _html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', text)).replace('..', '.').strip())
     return 200, ('json', json.dumps(dict(ok=False, error=text or 'That didn\'t work. Try again.')))
 
 
@@ -263,13 +264,19 @@ def _act(q, form):
     import accounts
     init()
     domain, status = form.get('d', ''), form.get('status', '')
-    if form.get('action') in ('shopify_connect', 'shopify_disconnect', 'publish', 'unpublish'):
+    if form.get('action') in ('shopify_connect', 'shopify_disconnect', 'publish', 'unpublish', 'store_preview'):
         return _shopify_act(domain, form)
-    if form.get('action') in ('voice', 'voice_ok', 'brief_prefill', 'brief', 'scope', 'schedule', 'missing', 'facts'):
+    if form.get('action') in ('voice', 'voice_ok', 'brief_prefill', 'brief', 'scope', 'schedule', 'missing', 'facts',
+                              'look_save', 'look_relearn', 'lesson_remove', 'playbook_relearn', 'articles_prefill', 'articles',
+                              'fix_lesson_remove', 'fixpages_prefill', 'fixpages'):
         if not accounts.can_see(domain):
             return 400, '<h1>Bad request</h1>'
         import content_setup
         return content_setup.act(domain, form)
+    if form.get('action') in ('stories_publish', 'stories_remove', 'stories_instagram', 'instagram_handle', 'instagram_fetch'):
+        if not accounts.can_see(domain):
+            return 400, '<h1>Bad request</h1>'
+        return _stories_act(domain, form)
     if form.get('action') == 'draft':
         if not accounts.can_see(domain):
             return 400, '<h1>Bad request</h1>'
@@ -330,7 +337,8 @@ def _act(q, form):
         row = db.one('SELECT planned_at FROM content_drafts WHERE id=?', (did,))
         day = storetime.date_of(row['planned_at'], storetime.zone(domain)).isoformat()
         return 303, '/content?' + urllib.parse.urlencode(dict(d=domain, view='calendar', week=day, id=did))
-    if form.get('action') in ('fill', 'save'):
+    if form.get('action') in ('fill', 'save', 'revise', 'redesign', 'change_part', 'remove_part', 'photo', 'undo', 'restore',
+                              'set_text', 'move_section', 'add_section', 'swap_product', 'look_quick', 'upload_photo'):
         if not accounts.can_see(domain):
             return 400, '<h1>Bad request</h1>'
         import content_review
@@ -485,7 +493,8 @@ def page(q):
         view = 'inbox'
     import content_board                      # board, week and live feed: Kelian's pick, 16 Oct 2026
     inner = {'inbox': lambda: content_board.board(domain, q, ln), 'calendar': lambda: content_board.week(domain, q),
-             'published': lambda: content_board.live(domain, ln),
+             'published': lambda: (__import__('stories_hub').panel(domain, q) if ln == 'articles' else '') +
+             content_board.live(domain, ln),
              'results': lambda: __import__('agent_review').page(domain, ln)}[view]()
     name = (db.brand(domain) or {}).get('brand_name') or domain
     return 200, ('<div class="ca-page" data-rail-page="content" data-rail-lane="%s" data-rail-store="%s" '
@@ -806,6 +815,16 @@ def _shopify_act(domain, form):
     if not back.startswith('/content?'):
         back = '/content?' + urllib.parse.urlencode(dict(d=domain, view='draft', id=did))
     user = accounts.current()
+    if action == 'store_preview':
+        wrong = shopify_connect.mismatch(domain)
+        sep = '&' if '?' in back else '?'
+        if wrong:
+            return 303, back + sep + urllib.parse.urlencode(dict(error='This is connected to %s, which isn\'t %s.' % (wrong, domain)))
+        try:
+            link = shopify_connect.preview(domain, did)
+        except shopify_connect.ShopifyError as e:
+            return 303, back + sep + urllib.parse.urlencode(dict(error=str(e)))
+        return 303, back + sep + urllib.parse.urlencode(dict(store_preview=link))
     try:
         if action == 'publish':
             shopify_connect.publish(domain, did, by=user['email'] if user else None)
@@ -815,6 +834,36 @@ def _shopify_act(domain, form):
         sep = '&' if '?' in back else '?'
         return 303, back + sep + urllib.parse.urlencode(dict(error=str(e)))
     return 303, back
+
+
+def _stories_act(domain, form):
+    """The stories page (Live tab of AEO articles) and the Instagram photos (Settings > Look and lessons)."""
+    import shopify_connect
+    import social_photos
+    import stories_hub
+    a = form['action']
+    live = '/content?' + urllib.parse.urlencode(dict(d=domain, lane='articles', view='published'))
+    look = '/content?' + urllib.parse.urlencode(dict(d=domain, lane='articles', view='setup', step='look'))
+    try:
+        if a == 'stories_publish':
+            stories_hub.publish(domain)
+        elif a == 'stories_remove':
+            stories_hub.take_down(domain)
+        elif a == 'stories_instagram':
+            stories_hub.set_instagram(domain, form.get('on') == '1')
+            stories_hub.sync(domain)
+        elif a == 'instagram_handle':
+            social_photos.set_handle(domain, form.get('handle', ''))
+            return 303, look + '#instagram'
+        else:
+            social_photos.start(domain)
+            return 303, look + '#instagram'
+    except shopify_connect.ShopifyError as e:
+        return 303, live + '&' + urllib.parse.urlencode(dict(error=str(e)[:200]))
+    except ValueError as e:
+        return 303, (look if a.startswith('instagram') else live) + '&' + urllib.parse.urlencode(dict(error=str(e)[:200])) + \
+            ('#instagram' if a.startswith('instagram') else '')
+    return 303, live
 
 
 def shopify_callback(q):

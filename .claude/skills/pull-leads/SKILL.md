@@ -59,6 +59,8 @@ When Kelian asks for N leads for calling, N is the number of **mobiles** he want
 
 4. **Dedupe** against every earlier file in `prospecting/cold-calls/leads/` (by email, else by name + domain), plus anyone already emailed (`Cold Email Outreach agent/Research/sent-log-*.csv`). Trim to N.
 
+4b. **Niche check — mandatory, before split, lists or Close.** Print every kept company name and count how many are actually in the niche. Report that count to Kelian with the names. If it's low, don't label the batch as that niche and don't import it until he says so. (2026-10-06: 77 "pet" leads went into Close with zero pet brands.)
+
 5. **Always split** — Kelian's standing requirement:
    ```bash
    python3 prospecting/cold-calls/split_leads.py prospecting/cold-calls/leads/<file>.csv

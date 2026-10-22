@@ -66,6 +66,21 @@ This group matters more to us than the leaders, because they're moving toward ou
 
 ---
 
+## Direct competitors named by Kelian (2026-10-20)
+
+Kelian calls these two his **direct** competitors: both sell product-level AI visibility to ecommerce brands. Both came up when he asked ChatGPT a Produkto buyer's question. Checked from their own sites on 2026-10-20; no trials, no pricing seen yet.
+
+| Vendor | What they sell (their words) | What they do well in content |
+|---|---|---|
+| **AndromedAI** (andromed.ai; Milan HQ, San Francisco, London, Dublin; Google Cloud partner) | "Agentic Commerce Optimization (ACO) for brands and retailers." Scores every SKU, then creates and optimises product and category pages for SEO, ads and AI agents. Lead magnet: "Get a Free Catalog Audit"; also an ROI calculator. | A big guide hub (What is ACO, GEO for ecommerce, product page optimization, Merchant Center, feeds), a glossary, free tools, case studies and a "For AI assistants" page. Their GEO guide is the design reference for our guides. Coins its own term (ACO). |
+| **Sixthshop** (sixthshop.com) | "AI Shopping Visibility Platform": scan a product URL, see how AI interprets it, get product-level fixes for ChatGPT, Gemini, Perplexity and Claude. | ~30 blog posts (schema, feeds, GTINs, titles, ChatGPT Shopping guides), an `llms.txt` plus `llms-full.txt`, and six JSON-LD blocks on the home page. Owns the phrase "AI shopping visibility", which our first guide also targets. |
+
+**Where we may differ (unverified):** both lead with scoring pages or SKUs for AI readiness; Produkto leads with measuring real AI answers across the whole catalog. AndromedAI's guide also tells readers to track visibility on prompts, so check whether either measures answers before claiming this difference anywhere. Don't knock either in public copy.
+
+**AndromedAI, checked 2026-10-21 (homepage + /features):** their features page does not mention measuring real AI answers: no prompt tracking, no visibility over time, no share of voice, no competitors found in answers. Their "AI Readiness Score" is a score of the page itself (keyword coverage, attributes, use cases, target shopper, intent) plus a "market potential" score from search volume and competition. Overlap with Produkto: product page rewrites (title, description, attributes, FAQ, schema), brand voice, review before publish, Shopify publishing. They have and we don't: product page *creation* from line sheets/PDFs/supplier feeds, category page optimization, Google Merchant Center and Meta catalog feeds (ads angle, ROAS claims), 12+ languages and markets, PIM/ERP connectors (Akeneo, Plytix, SAP, Salesforce, Adobe, Shopware, WooCommerce), auto-approve above an AI-checker score, agency/partner program, published case studies (Bomboogie +1,800% AI chat clicks, Semprefarmacia +46.9% sales; their claims, not verified). We have and they don't (as far as their site says): daily measurement of real answers across several AI engines, competitors and cited sources from those answers, Opportunities ranked from what AI actually answered, AEO articles (buying guides, comparisons) with a calendar, and before/after measurement of each fix. No public pricing (credits-based, demo-led). Not yet verified inside their app.
+
+---
+
 ## Tier 2 — Product data enrichment (the category we missed)
 
 **These are the ones that actually do the work we claim is unique to us.** They came from the PIM/merchandising world rather than the SEO world, which is why they were invisible to us — but they are converging on the same pitch.
@@ -218,7 +233,7 @@ We are priced 3–10× the mid-market category norm. That is defensible **only**
 
 Still a real gap. Much narrower. And "too small for Zoovu, too big to hand-fix" is a niche someone else can enter next quarter.
 
-**⚠️ The Friday LinkedIn post in `linkedin-strategy-and-week-1.md` asserts the old, wrong version.** Rewrite it before posting. Publishing a differentiator that a prospect can disprove with one search is worse than posting nothing.
+**⚠️ The Friday LinkedIn post in `GTM/linkedin/linkedin-strategy-and-week-1.md` asserts the old, wrong version.** Rewrite it before posting. Publishing a differentiator that a prospect can disprove with one search is worse than posting nothing.
 
 **2. The category is consolidating, fast.** Scrunch acquired at ~$225M inside three years. Profound at $1B. $200M+ of VC into pure-plays. This validates the market and shortens our window simultaneously — `BUSINESS.md` already says we're renting a position, and this is the evidence for it.
 

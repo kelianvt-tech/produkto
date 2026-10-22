@@ -20,7 +20,7 @@ Both are new (not used in batches 1–4) and both already show up in our lead pu
 
 Hi {first_name},
 
-I asked ChatGPT "{buyer_question}" today. It recommended the {competitor_product} from {competitor_brand}.
+I asked ChatGPT "{buyer_question}" today. One of the products it recommended was {competitor_product}, made by {competitor_brand}, another brand in your category.
 
 I thought you'd want to see how AI picks between products like your {hero_product}.
 
@@ -62,3 +62,5 @@ Kelian
 - The comparison is a real ChatGPT answer captured that day. Brands ChatGPT already recommends are dropped.
 - No promise of results, no count of questions or runs, no "nobody does this".
 - Ask is "Book a demo" in spirit; no Calendly link in email 1 (deliverability). Link goes in the reply when they say yes.
+
+**Rule (2026-10-08):** the buyer question must not contain a word from the competitor's brand name (Sophie's Pet Food read "small-batch … SmallBatch" as a mix-up and replied "Wrong company, wrong product").

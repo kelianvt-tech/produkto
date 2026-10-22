@@ -129,6 +129,46 @@ def sheet(domain, it, tz, back, close):
     else:
         actions = live('unlive', 'Move back to Ready')
     after = ('<h4 class="cb-h">%s</h4>' % E(body['title'])) if body.get('title') else ''
+    if r['draft_type'] in PAGE_TYPES and body.get('product'):   # 20 Oct: the fix on the store's real product page
+        import product_preview
+        cur = body.get('current') or {}
+        title_note = ('<dl class="rv-dl"><dt>Title now</dt><dd class="rv-old">%s</dd><dt>New title</dt><dd class="rv-new">%s</dd></dl>'
+                      % (E(cur.get('title') or ''), E(body.get('title') or cur.get('title') or ''))) \
+            if r['draft_type'] == 'product_fix' and body.get('title') and body.get('title') != cur.get('title') else ''
+        return ('<aside class="cb-sheet cb-sheet-split" aria-label="Draft"><header><div class="cb-sheet-top"><span class="cb-type cb-t-%s"><i></i>%s</span>'
+                '<a class="cb-x" href="%s" aria-label="Close">&times;</a></div><h2>%s</h2><p class="cb-when">%s</p>'
+                '<div class="cb-stage">%s</div></header><div class="cb-body cb-split"><aside class="cb-side">%s%s%s'
+                '<p class="cb-more"><a href="%s" target="_blank" rel="noopener">Open the full page</a><br><a href="%s">Open the full view</a> '
+                'to edit the text or read the editor\'s check.</p></aside><div class="cb-main">%s%s%s%s</div></div>'
+                '<footer>%s</footer></aside>') % (
+            E(r['draft_type']), E(content_agent.DRAFT_TYPES.get(r['draft_type'], r['draft_type'])), E(close),
+            E(r['title'] or 'Untitled'), E(when),
+            ''.join('<span class="%s">%s</span>' % ('cb-on' if i == min(stage, 2) else 'cb-past' if i < min(stage, 2) else '', s)
+                    for i, s in enumerate(('Facts', 'Review', 'Live'))),
+            title_note, content_review._gap_form(domain, r['id'], body, back=back), content_review.history_box(domain, r['id']),
+            E('/content/fix-preview?' + urllib.parse.urlencode(dict(d=domain, id=r['id']))),
+            E(_url(domain, view='draft', id=r['id'])),
+            product_preview.toggle(domain, r['id']), content_review.editor_toolbar(domain, r['id'], body, kind='fix'),
+            product_preview.frame(domain, r['id'], 900), content_review.editor(domain, r['id'], body, kind='fix'), actions)
+    if content_review.has_preview(r, body):               # articles and comparisons (19 Oct): the styled preview, not raw HTML
+        return ('<aside class="cb-sheet cb-sheet-split" aria-label="Draft"><header><div class="cb-sheet-top"><span class="cb-type cb-t-%s"><i></i>%s</span>'
+                '<a class="cb-x" href="%s" aria-label="Close">&times;</a></div><h2>%s</h2><p class="cb-when">%s</p>'
+                '<div class="cb-stage">%s</div></header><div class="cb-body cb-split"><aside class="cb-side">%s'
+                '<p class="cb-more"><a href="%s" target="_blank" rel="noopener">Open full-page preview</a><br><a href="%s">Open the full view</a> '
+                'to ask for changes, edit the text or read the editor\'s check.</p></aside><div class="cb-main">%s</div></div>'
+                '<footer>%s</footer></aside>') % (
+            E(r['draft_type']), E(content_agent.DRAFT_TYPES.get(r['draft_type'], r['draft_type'])), E(close),
+            E(r['title'] or 'Untitled'), E(when),
+            ''.join('<span class="%s">%s</span>' % ('cb-on' if i == stage else 'cb-past' if i < stage else '', s)
+                    for i, s in enumerate(('Facts', 'Review', 'Scheduled', 'Live'))),
+            content_review._gap_form(domain, r['id'], body, back=back) + (
+                content_review.redesign_form(domain, r['id'], r, back) if body.get('layout') != 'article'
+                else content_review.history_box(domain, r['id'])),
+            E('/content/preview?' + urllib.parse.urlencode(dict(d=domain, id=r['id']))),
+            E(_url(domain, view='draft', id=r['id'])),
+            (content_review.editor_toolbar(domain, r['id'], body)
+             + content_review.preview_frame(body, 900, domain=domain, did=r['id']) + content_review.editor(domain, r['id'], body))
+            if body.get('layout') == 'article' else content_review.preview_frame(body, 900, domain=domain), actions)
     return ('<aside class="cb-sheet" aria-label="Draft"><header><div class="cb-sheet-top"><span class="cb-type cb-t-%s"><i></i>%s</span>'
             '<a class="cb-x" href="%s" aria-label="Close">&times;</a></div><h2>%s</h2><p class="cb-when">%s</p>'
             '<div class="cb-stage">%s</div></header><div class="cb-body">%s'
@@ -188,10 +228,17 @@ def board(domain, q, lane='fixes'):
         return head + ('<div class="ca-empty"><p>No product page fixes yet. They appear here when you ask the agent to fix '
                 'an Opportunity, and nothing goes to your store until you approve it.</p></div>')
     back = _url(domain, view='inbox', id=sel) if sel else _url(domain, view='inbox')
-    flow = '<div class="cb-flow cb-n%d%s" id="cb-board">%s</div>' % (len(LANE_COLS[lane]), ' cb-mini' if picked else '', cols)
+    flow = '<div class="cb-flow cb-n%d" id="cb-board">%s</div>' % (len(LANE_COLS[lane]), cols)
     if picked:
-        return head + note + '<div class="cb-wrap"><div class="cb-scroll">%s</div>%s</div>' % (
-            flow, sheet(domain, picked, tz, back, _url(domain, view='inbox'))) + _drag(domain, back)
+        # A clicked card opens full screen over the board (Kelian, 19 Oct 2026: "it should be full, covering the
+        # whole screen, because I clicked on it. It's the most important."). Esc, the cross or the backdrop close it.
+        close = _url(domain, view='inbox')
+        return head + note + flow + ('<div class="cb-overlay" role="dialog" aria-modal="true" data-close="%s">%s</div>'
+                                     '<script>(function(){var o=document.querySelector(".cb-overlay");if(!o)return;'
+                                     'document.documentElement.style.overflow="hidden";var go=function(){location.href=o.dataset.close};'
+                                     'document.addEventListener("keydown",function(e){if(e.key==="Escape")go()});'
+                                     'o.addEventListener("click",function(e){if(e.target===o)go()});})();</script>') % (
+            E(close), sheet(domain, picked, tz, back, close)) + _drag(domain, back)
     return head + note + flow + _drag(domain, back)
 
 
@@ -714,6 +761,35 @@ html.dark .cb-foot .rv-ok{color:#45d08c}html.dark .cb-foot .rv-warn{color:#e8a54
 .cb-body{padding:16px 22px}
 .cb-body h3{font-size:13px;color:var(--cb-muted);margin:16px 0 8px}
 .cb-body .cr-box{margin:0;padding:14px 16px}
+.cb-full{float:right;font-size:13px;font-weight:600}
+.cb-overlay{position:fixed;inset:0;z-index:300;background:rgba(5,12,25,.6);display:flex;justify-content:center;padding:24px}
+.cb-overlay .cb-sheet{position:relative;top:0;width:min(1200px,100%);height:100%;max-height:none;overflow:auto;border-radius:16px}
+.cb-overlay .cb-sheet header{padding:22px 32px 16px}
+.cb-overlay .cb-sheet h2{font-size:24px}
+.cb-overlay .cb-body{padding:22px 32px;max-width:none}
+.cb-overlay .cb-body > *{max-width:980px;margin-left:auto;margin-right:auto}
+.cb-overlay .cb-body > .cr-frame{max-width:none}
+.cb-overlay .cb-sheet footer{padding:16px 32px}
+.cb-overlay .cb-x{font-size:30px}
+.cb-overlay .cb-body.cb-split{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:24px;align-items:start}
+.cb-overlay .cb-split > *{max-width:none;margin:0}
+.cb-split .cb-main{order:1;min-width:0}
+.cb-split .cb-side{order:2;position:sticky;top:0;display:grid;gap:12px}
+.cb-split .cb-side .cr-box{margin:0}
+.cb-more{font-size:13.5px;line-height:1.6;margin:0}
+/* The article preview and the questions beside it scroll on their own (Kelian, 20 Oct 2026): the sheet itself doesn't. */
+.cb-overlay .cb-sheet-split{display:flex;flex-direction:column;overflow:hidden}
+.cb-overlay .cb-sheet-split header,.cb-overlay .cb-sheet-split footer{flex:none;position:static}
+.cb-overlay .cb-sheet-split .cb-body.cb-split{flex:1;min-height:0;overflow:hidden;padding-top:16px;padding-bottom:0}
+.cb-overlay .cb-sheet-split .cb-main{height:100%;overflow:visible;position:relative;display:flex;flex-direction:column;padding-bottom:16px}
+.cb-overlay .cb-sheet-split .cb-main .pk-tools{flex:none}
+.cb-overlay .cb-sheet-split .cb-main .cr-frame{flex:1;height:auto!important;min-height:0}
+.cb-overlay .cb-sheet-split .cb-side{height:100%;overflow:auto;position:static;padding-bottom:24px;align-content:start;overscroll-behavior:contain}
+@media (max-width:1000px){.cb-overlay .cb-body.cb-split{grid-template-columns:1fr}.cb-split .cb-side{order:0;position:static}
+.cb-overlay .cb-sheet-split{overflow:auto}.cb-overlay .cb-sheet-split .cb-body.cb-split{overflow:visible}
+.cb-overlay .cb-sheet-split .cb-main,.cb-overlay .cb-sheet-split .cb-side{height:auto;overflow:visible}
+.cb-overlay .cb-sheet-split .cb-main .cr-frame{height:80vh!important;flex:none}}
+@media (max-width:700px){.cb-overlay{padding:0}.cb-overlay .cb-sheet{border-radius:0}.cb-overlay .cb-sheet header,.cb-overlay .cb-body,.cb-overlay .cb-sheet footer{padding-left:16px;padding-right:16px}}
 .cb-before{padding:12px 14px;border-radius:10px;background:var(--cb-soft);font-size:14px;color:var(--cb-muted)}
 .cb-before p{margin:0 0 6px}
 .cb-doc{font-size:14.5px;line-height:1.6}

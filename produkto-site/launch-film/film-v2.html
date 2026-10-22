@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Produkto Launch Film v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Geist:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+:root{--bg:#0a0d14;--panel:#111622;--panel2:#171d2c;--line:#252e42;--text:#eef2f8;--mute:#8e98ab;--acc:#7c9cff;--good:#34d399;--warn:#fbbf24}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow:hidden;background:var(--bg)}
+body{font-family:Geist,system-ui,sans-serif;color:var(--text)}
+#stage{position:absolute;left:0;top:0;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#141b2c 0%,var(--bg) 60%)}
+.L{position:absolute;left:0;top:0;width:100%;height:100%;visibility:hidden}
+.L *{visibility:inherit}
+.a{position:absolute;left:0;top:0}
+.m{position:absolute;overflow:hidden}.m>span{display:block;white-space:nowrap}
+img{display:block}
+.ph{background:#f3f2ee;overflow:hidden}.ph img{width:100%;height:100%;object-fit:contain}
+.ph.cover img{object-fit:cover}
+.card{position:absolute;background:var(--panel);border:1.5px solid var(--line);border-radius:26px;overflow:hidden}
+.chip{display:inline-block;border-radius:999px;padding:6px 14px;font-weight:600}
+#cursor{position:absolute;left:0;top:0;width:52px;height:52px;transform-origin:0 0;z-index:99}
+</style></head><body>
+<div id="stage">
+  <div class="L" id="Lopen"></div>
+  <div class="L" id="Lask"></div>
+  <div class="L" id="Lmiss"></div>
+  <div class="L" id="Lscan"></div>
+  <div class="L" id="Ldash"></div>
+  <div class="L" id="Lopp"></div>
+  <div class="L" id="Lagent"></div>
+  <div class="L" id="Lfix"></div>
+  <div class="L" id="Lflood"><div class="a" id="flood" style="border-radius:50%;background:var(--acc)"></div></div>
+  <div class="L" id="Lend"></div>
+  <svg id="cursor" viewBox="0 0 24 24"><path d="M4 2.5l15 10.2-6.6 1.2 3.9 7.3-2.9 1.5-3.9-7.3-4.8 4.6z" fill="#fff" stroke="#0a0d14" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div>
+<script>
+// ---------- format ----------
+const VERT=new URLSearchParams(location.search).get('f')==='v';
+const W=VERT?1080:1440, H=VERT?1920:1440, CX=W/2, CY=H/2;
+const PAD=VERT?70:120, CW=W-2*PAD;
+const K=VERT?1.08:1;                       // vertical: slightly larger type
+document.documentElement.style.cssText=`width:${W}px;height:${H}px`;
+const stage=document.getElementById('stage');stage.style.width=W+'px';stage.style.height=H+'px';
+
+// ---------- time + springs (pure functions of t) ----------
+const BPM=128, B=60/BPM, DUR=56*B;
+const T=n=>(n-1)*B;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const eio=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eo=p=>1-Math.pow(1-p,3);
+function S(tau,k=190,z=.72){if(tau<=0)return 0;const w=Math.sqrt(k);
+  if(z<1){const wd=w*Math.sqrt(1-z*z);return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+(z*w/wd)*Math.sin(wd*tau));}
+  return 1-Math.exp(-w*tau)*(1+w*tau);}
+function V(t,v0,ch){let v=v0,prev=v0;for(const c of ch){v+=S(t-T(c[0]),c[2]||190,c[3]||.72)*(c[1]-prev);prev=c[1];}return v;}
+function E(t,b0,b1,f=eio){return f(clamp((t-T(b0))/(T(b1)-T(b0))));}
+const pop=(t,b,k=260,z=.6)=>Math.max(0,S(t-T(b),k,z));             // 0 -> 1 spring
+const $=id=>document.getElementById(id);
+const box=(el,x,y,w,h,r)=>{el.style.left=x+'px';el.style.top=y+'px';if(w!=null)el.style.width=Math.max(0,w)+'px';if(h!=null)el.style.height=Math.max(0,h)+'px';if(r!=null)el.style.borderRadius=Math.max(0,r)+'px';};
+const vis=(el,on)=>{const e=(typeof el==='string'?$(el):el);e.style.visibility=on?(e.classList.contains('L')||e.id==='cursor'?'visible':'inherit'):'hidden';};
+const on=(t,a,b)=>t>=T(a)&&t<T(b);
+const sc=(el,s,ox='50% 50%')=>{el.style.transformOrigin=ox;el.style.transform=`scale(${Math.max(0,s)})`;};
+function mk(par,html,css='',cls='a'){const d=document.createElement('div');d.className=cls;d.innerHTML=html;d.style.cssText+=css;(typeof par==='string'?$(par):par).appendChild(d);return d;}
+// text that rises out of a mask line: p 0 -> 1
+const rise=(el,p)=>{el.firstElementChild.style.transform=`translateY(${(1-p)*110}%)`;};
+const fs=n=>Math.round(n*K)+'px';
+
+// ---------- content (real captures, see CAPTURES-2026-10-20.md) ----------
+const A='assets/v2/';
+const Q=[
+ {q:'What are the best dog leashes for my golden retriever?',cards:[
+   ['rw-frontrange.png','Ruffwear Front Range Leash','Best overall · €26.95'],
+   ['rw-crag.png','Ruffwear Crag Leash','Best premium versatile · €40.95'],
+   ['ans-halti.png','Halti Multifunctional Lead','Best for training · €34.99'],
+   ['rw-knot.png','Ruffwear Knot-a-Leash','Best strong rope leash · €44.95']]},
+ {q:'What is the best moisturizer for dry, sensitive skin?',cards:[
+   ['ans-cerave.jpg','CeraVe Moisturizing Cream','Best overall · €10–16'],
+   ['ans-lrp.jpg','La Roche-Posay Toleriane','Dermallergo Cream · €23'],
+   ['ans-avene.jpg','Avène Tolérance Control','Skin Recovery Cream · €19–25'],
+   ['ans-vanicream.jpg','Vanicream Moisturizing Cream','']]},
+ {q:'Which magnesium glycinate should I buy for better sleep?',cards:[
+   ['ans-doctorsbest.jpg','Doctor’s Best Magnesium','Best value · €16–25'],
+   ['ans-vitobest.jpg','Vitobest Magnesium Bisglycinate','€11'],
+   ['ans-thorne.jpg','Thorne Magnesium Bisglycinate','Premium powder']]},
+];
+// the question ChatGPT recommends in the film; the actual typing of Q[0] keeps "dog" out for length
+const MISS=[['wo-lightweight.jpg','Wild One','Lightweight Dog Leash'],['t28-sos-cream.webp','Tower 28','SOS Recovery Cream'],['mo-magnesium.png','Momentous','Magnesium Bisglycinate']];
+const CAT=['wo-lightweight.jpg','wo-rope.jpg','wo-harness.jpg','wo-collar.jpg','wo-waterproof-leash.jpg','wo-stepin.jpg','wo-pbc.jpg','wo-lightweight.jpg'];
+
+// ---------- SFX cue sheet ----------
+const SFX=[];const cue=(b,n,v=1)=>SFX.push([T(b),n,v]);
+[[1.2,'pop',.6],[2.5,'swoosh',.5],[3,'pop',.8],[6,'swoosh',.6],[8,'click',1],[8.25,'pop2',.7],[8.5,'pop2',.7],[8.75,'pop2',.7],[9,'pop2',.7],
+ [10.5,'swoosh',.6],[10.75,'pop2',.5],[11,'pop2',.5],[12.5,'swoosh',.6],[12.75,'pop2',.5],[13,'pop2',.5],
+ [14.5,'swoosh',.6],[15,'pop',.8],[15.25,'pop',.8],[15.5,'pop',.8],[18,'click',1],[18.2,'swoosh',.5],[19.25,'click',1],
+ [19.6,'pop',.4],[19.9,'pop',.4],[20.2,'pop',.4],[20.5,'pop',.4],[23,'ding',.8],[23.5,'zoom',.9],[25.5,'pop2',.6],[26,'swoosh',.5],
+ [31.5,'click',1],[31.75,'swoosh',.6],[32.5,'pop',.7],[33,'pop',.7],[33.5,'pop',.7],[36.5,'click',1],[37,'swoosh',.6],[38,'pop',.6],
+ [39.5,'click',1],[39.7,'zoom',.7],[41,'pop2',.5],[41.5,'pop2',.5],[42,'pop2',.5],[42.5,'pop2',.5],[44,'click',.9],[45,'click',.8],[46,'swoosh',.6],[46.3,'ding',.9],
+ [47.5,'zoom',.9],[49,'pop',.7],[51.5,'swoosh',.6],[52.2,'pop',.8],[53,'pop2',.8]].forEach(c=>cue(...c));
+const typeCues=(b0,b1,n)=>{for(let i=0;i<n;i+=2)cue(b0+(b1-b0)*i/n,'key',.35);};
+typeCues(6.5,7.8,40);typeCues(18.5,19,10);
+window.SFX=SFX;window.DUR=DUR;window.BPM=BPM;
+
+// =====================================================================
+// OPEN: wordmark -> pill with the question
+// =====================================================================
+const WORD='PRODUKTO', WFS=VERT?120:150, LS=WFS*.16;
+const oWord=mk('Lopen','',`top:${CY-WFS*.6}px;height:${WFS*1.2}px;width:${W}px;font:700 ${WFS}px Montserrat;color:#fff`);
+const LET=WORD.split('').map(ch=>mk(oWord,ch,'top:0;transform-origin:50% 60%'));
+const pill=mk('Lopen','',`background:var(--acc);overflow:hidden`);
+const OPEN_LINE='Is AI recommending your products?';
+const pillTxt=mk(pill,`<span>${OPEN_LINE}</span>`,`left:0;width:100%;text-align:center;font:600 ${fs(VERT?44:60)} Geist;color:#0a0d14`,'m');
+const END_LINE=['See where you stand.','Fix your product pages.'];
+const pillEnd=mk(pill,`<span>${END_LINE[0]}</span><span>${END_LINE[1]}</span>`,`left:0;width:100%;text-align:center;font:600 ${fs(VERT?50:58)} Geist;color:#0a0d14;line-height:1.2`,'m');
+const url=mk('Lend',`<span>getprodukto.com</span>`,`left:0;width:${W}px;text-align:center;top:${CY+WFS*.75}px;font:500 ${fs(44)} Geist;color:var(--mute)`,'m');
+let letW=[];
+function measureLetters(){const c=document.createElement('canvas').getContext('2d');c.font=`700 ${WFS}px Montserrat`;letW=LET.map(l=>c.measureText(l.textContent).width);}
+function wordmark(t,squeeze,show){ // squeeze 0 = spread, 1 = all letters collapsed into the centre dot
+  const tot=letW.reduce((a,b)=>a+b,0)+LS*(LET.length-1);let x=CX-tot/2;
+  LET.forEach((l,i)=>{const lx=x;x+=letW[i]+LS;const cxl=lx+letW[i]/2;
+    const px=lerp(cxl,CX,squeeze)-letW[i]/2;l.style.left=px+'px';
+    const s=show[i]*(1-squeeze*.9);l.style.transform=`scale(${Math.max(0,s)})`;});}
+
+// =====================================================================
+// ASK: ChatGPT prompt bar + real answer cards
+// =====================================================================
+const barY=VERT?420:200, barH=VERT?170:110;
+const bar=mk('Lask','',`background:var(--panel2);border:1.5px solid var(--line);overflow:hidden`);
+const barTxt=mk(bar,'',`left:${barH*.42}px;top:0;height:100%;display:flex;align-items:center;font:500 ${fs(VERT?34:36)} Geist;white-space:${VERT?'normal':'nowrap'};line-height:1.25;right:${barH*.9}px;color:var(--text)`);
+const barSend=mk(bar,'↑',`width:${barH*.62}px;height:${barH*.62}px;border-radius:50%;background:#fff;color:#0a0d14;display:flex;align-items:center;justify-content:center;font:700 ${barH*.34}px Geist`);
+const askLbl=mk('Lask',`<span>ChatGPT</span>`,`left:${PAD}px;top:${barY-80}px;font:600 ${fs(30)} Geist;color:var(--mute);height:50px`,'m');
+const cardH=VERT?250:170, cardG=VERT?26:22, cardY0=barY+barH+(VERT?70:50);
+const CARDS=Q.map((qq,qi)=>qq.cards.map((c,i)=>{const el=mk('Lask',`
+  <div class="ph a" style="left:18px;top:18px;width:${cardH-36}px;height:${cardH-36}px;border-radius:18px"><img src="${A+c[0]}"></div>
+  <div class="a" style="left:${cardH+10}px;top:0;height:100%;display:flex;flex-direction:column;justify-content:center;gap:8px;right:24px">
+   <div style="font:600 ${fs(VERT?34:36)} Geist;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${i+1}. ${c[1]}</div>
+   <div style="font:500 ${fs(26)} Geist;color:var(--mute)">${c[2]}</div></div>`,'','card');return el;}));
+function askScene(t){
+  const show=on(t,6,15.2);vis('Lask',show);if(!show)return;
+  // bar grows out of the pill
+  const g=E(t,6,6.9,eo), gs=pop(t,6,200,.75);
+  const bw=lerp(VERT?900:1100,CW,gs), bh=lerp(VERT?150:170,barH,gs), by=lerp(CY-bh/2,barY,gs);
+  box(bar,CX-bw/2,by,bw,bh,bh/2);box(barSend,bw-bh*.62-bh*.19,bh*.19,null,null);barSend.style.width=barSend.style.height=bh*.62+'px';
+  rise(askLbl,E(t,6.5,7.2,eo));
+  // question text: typed Q0, then pushed to Q1 and Q2
+  let qi=t<T(10.5)?0:t<T(12.5)?1:2;
+  let txt=Q[qi].q;
+  if(qi===0){const n=Math.floor(txt.length*E(t,6.5,7.8,x=>x));txt=txt.slice(0,n)||'Ask anything';barTxt.style.color=n?'var(--text)':'var(--mute)';}else barTxt.style.color='var(--text)';
+  const swapB=qi===1?10.5:qi===2?12.5:-9, sw=E(t,swapB,swapB+.35,eo);
+  barTxt.textContent=txt;barTxt.style.transform=qi&&sw<1?`translateY(${(1-sw)*60}px)`:'';
+  // vertical: fit long question
+  barTxt.style.fontSize=fs((VERT?31:34));
+  // cards: each set pops in, then pushes left as the next set arrives
+  CARDS.forEach((set,si)=>{const inB=[8.25,10.75,12.75][si], outB=[10.5,12.5,14.5][si];
+    set.forEach((el,i)=>{const p=pop(t,inB+i*.25,240,.68), out=E(t,outB,outB+.5,p=>p*p);
+      const y=cardY0+i*(cardH+cardG), x=PAD-out*(W+200)+(1-p)*80;
+      vis(el,t>=T(inB+i*.25)&&out<1);box(el,x,y,CW,cardH);el.style.transform=`scale(${.85+.15*Math.min(1,p)})`;el.style.transformOrigin='0 50%';});});
+}
+
+// =====================================================================
+// MISSING: three merchants not in their answers
+// =====================================================================
+const missH=VERT?1:0;
+const mTitle=mk('Lmiss',`<span>None of these were in the answer.</span>`,`left:0;width:${W}px;text-align:center;top:${VERT?380:190}px;font:600 ${fs(VERT?50:58)} Geist`,'m');
+const mW=VERT?CW:(CW-2*40)/3, mH=VERT?380:560;
+const MT=MISS.map((m,i)=>mk('Lmiss',`
+  <div class="ph a" style="left:0;top:0;width:${VERT?mH:mW}px;height:${VERT?mH:mW}px"><img src="${A+m[0]}"></div>
+  <div class="a" style="left:${VERT?mH+34:28}px;top:${VERT?60:mW+22}px;right:20px">
+    <div style="font:600 ${fs(26)} Geist;color:var(--mute)">${m[1]}</div>
+    <div style="font:600 ${fs(34)} Geist;margin-top:4px">${m[2]}</div>
+    <div class="chip" style="margin-top:16px;background:rgba(251,113,133,.14);color:#fb7185;font-size:${fs(24)}">Not mentioned</div></div>`,'','card'));
+// scan URL bar (the Wild One card becomes it)
+const sBar=mk('Lmiss','',`background:var(--panel2);border:1.5px solid var(--line);overflow:hidden`);
+const sTxt=mk(sBar,'',`left:40px;top:0;height:100%;display:flex;align-items:center;font:500 ${fs(38)} Geist`);
+const sBtn=mk(sBar,'<span>Scan</span>',`top:12px;bottom:12px;right:12px;width:190px;border-radius:999px;background:var(--acc);color:#0a0d14;display:flex;align-items:center;justify-content:center;font:600 ${fs(34)} Geist`);
+function missScene(t){
+  const show=on(t,14.5,19.6);vis('Lmiss',show);if(!show)return;
+  rise(mTitle,E(t,15.8,16.5,eo)*(1-E(t,18,18.4)));
+  const gx=PAD, gy=VERT?520:330;
+  const morph=E(t,18.1,18.9,eio);
+  MT.forEach((el,i)=>{const p=pop(t,15+i*.25,240,.62);
+    let x=VERT?gx:gx+i*(mW+40), y=VERT?gy+i*(mH+40):gy, w=mW, h=mH;
+    if(i===0){ // becomes the URL bar
+      const bx=PAD, by=VERT?CY-70:CY-60, bw=CW, bh=VERT?140:120;
+      x=lerp(x,bx,morph);y=lerp(y,by,morph);w=lerp(w,bw,morph);h=lerp(h,bh,morph);}
+    const shrink=i>0?1-E(t,18,18.4,p=>p*p):1;
+    vis(el,i===0?morph<1:shrink>0);box(el,x,y,w,h,lerp(26,h/2,i===0?morph:0));sc(el,Math.min(1,p)*shrink);});
+  const bOn=morph>=1;vis(sBar,bOn);
+  if(bOn){const bh=VERT?140:120;box(sBar,PAD,VERT?CY-70:CY-60,CW,bh,bh/2);
+    const u='wildone.com';sTxt.textContent=u.slice(0,Math.floor(u.length*E(t,18.5,19,x=>x)))||' ';
+    const press=t>T(19.25)&&t<T(19.45)?.92:1;sc(sBtn,press);}
+}
+
+// =====================================================================
+// SCAN: Wild One catalog read + status pill
+// =====================================================================
+const scW=VERT?CW:CW, cols=4, cg=22, tw=(scW-cg*(cols-1))/cols;
+const scTop=VERT?820:520;
+const sTiles=CAT.map((f,i)=>{const el=mk('Lscan',`<img src="${A+f}" style="width:100%;height:100%;object-fit:cover">
+  <div class="a chk" style="left:auto;right:12px;top:12px;width:44px;height:44px;border-radius:50%;background:var(--acc);color:#0a0d14;font:700 26px Geist;display:flex;align-items:center;justify-content:center">✓</div>`,'border-radius:20px;overflow:hidden;background:#f3f2ee','a');return el;});
+const sPill=mk('Lscan','',`background:var(--panel2);border:1.5px solid var(--line);overflow:hidden`);
+const sFill=mk(sPill,'',`left:0;top:0;height:100%;background:rgba(124,156,255,.22)`);
+const SL=['Reading catalog','Asking buyer questions','Reading answers','Scan complete ✓'];
+const sLbl=SL.map(s=>mk(sPill,`<span>${s}</span>`,`left:44px;top:0;height:100%;display:flex;align-items:center;font:600 ${fs(36)} Geist`,'m'));
+const sHead=mk('Lscan',`<span>wildone.com · ${'57'} products</span>`,`left:${PAD}px;top:${VERT?scTop-80:scTop-70}px;font:600 ${fs(32)} Geist;color:var(--mute)`,'m');
+function scanScene(t){
+  const show=on(t,19.5,24.4);vis('Lscan',show);if(!show)return;
+  const bh=VERT?140:120, py0=VERT?CY-70:CY-60, py1=VERT?scTop-280:scTop-230;box(sPill,PAD,lerp(py0,py1,E(t,19.5,20.2,eo)),CW,bh,bh/2);
+  rise(sHead,E(t,20,20.6,eo));
+  const stage_=t<T(20.5)?0:t<T(21.5)?1:t<T(23)?2:3;
+  sLbl.forEach((l,i)=>{const pin=E(t,[19.5,20.5,21.5,23][i],[19.5,20.5,21.5,23][i]+.4,eo), pout=i<3?E(t,[20.5,21.5,23][i],[20.5,21.5,23][i]+.3,eo):0;
+    l.style.width=CW+'px';l.style.height=bh+'px';l.firstElementChild.style.transform=`translateY(${(1-pin)*100-pout*100}%)`;vis(l,i===stage_||(pout>0&&pout<1));});
+  sFill.style.width=(CW*E(t,19.6,23,x=>x))+'px';
+  sTiles.forEach((el,i)=>{const r=Math.floor(i/cols),c=i%cols;const p=pop(t,19.6+i*.15,260,.62);
+    box(el,PAD+c*(tw+cg),scTop+r*(tw+cg),tw,tw);sc(el,Math.min(1.05,p));
+    const ck=el.querySelector('.chk');sc(ck,pop(t,20.6+i*.25,320,.55));});
+}
+
+// =====================================================================
+// FLOOD helper
+// =====================================================================
+function flood(t,b0,cx,cy){ // expands over 0.35 beats, contracts over next 0.5
+  const R=Math.hypot(W,H)*1.1, g=E(t,b0,b0+.7,eio), c=E(t,b0+1,b0+1.6,eio);
+  const r=R*g*(1-c);return r;}
+
+// =====================================================================
+// DASHBOARD (dark mode)
+// =====================================================================
+const dSide=VERT?0:170;
+const dash=mk('Ldash','',`left:0;top:0;width:${W}px;height:${H}px`);
+if(!VERT){mk(dash,`<div style="padding:40px 26px;display:flex;flex-direction:column;gap:26px;font:500 24px Geist;color:var(--mute)">
+  <div style="display:flex;align-items:center;gap:12px;color:var(--text);font-weight:600"><img src="${A}wo-lightweight.jpg" style="width:44px;height:44px;border-radius:12px;object-fit:cover">Wild One</div>
+  <div id="nOv" style="color:var(--text)">Overview</div><div id="nOpp">Opportunities</div><div id="nAg">Agent</div><div>Answers</div><div>Citations</div></div>`,
+  `left:0;top:0;width:${dSide}px;height:${H}px;background:#0d111b;border-right:1.5px solid var(--line)`);}
+const dX=dSide+(VERT?PAD:60), dW=W-dX-(VERT?PAD:60);
+const dTitle=mk(dash,`<span>Overview</span>`,`left:${dX}px;top:${VERT?180:60}px;font:700 ${fs(54)} Geist`,'m');
+const KP=[['Visibility','12%',12,'%'],['Avg. position','4.1',4.1,''],['Share of voice','5.8%',5.8,'%'],['Competing products','37',37,'']];
+const kW=VERT?(dW-20)/2:(dW-3*20)/4, kH=VERT?230:170;
+const KC=KP.map((k,i)=>mk(dash,`<div style="font:500 ${fs(24)} Geist;color:var(--mute)">${k[0]}</div><div class="kv" style="font:700 ${fs(64)} Geist;margin-top:8px;font-variant-numeric:tabular-nums">0</div>`,
+  `padding:28px 30px`,'card'));
+const chTop=VERT?620:(60+100+kH+40), chH=VERT?1000:620;
+const chart=mk(dash,`<div style="font:600 ${fs(30)} Geist">Visibility over time</div><svg class="a" id="chSvg" style="left:30px;top:90px" width="${dW-60}" height="${chH-200}"></svg><div id="leg" class="a" style="left:30px;bottom:26px;display:flex;flex-wrap:wrap;gap:14px 30px;right:20px"></div>`,'padding:30px','card');
+const SER=[['Ruffwear','rw-frontrange.png','#34d399',[52,55,51,58,56,59,57,60]],['Halti','ans-halti.png','#60a5fa',[33,35,31,36,34,37,35,36]],['Non-stop dogwear','','#c084fc',[21,19,23,22,25,23,24,24]],['Wild One','wo-lightweight.jpg','#ffffff',[9,11,8,12,10,13,11,12]]];
+function buildChart(){const s=$('chSvg'), w=dW-60, h=chH-200;const X=i=>40+i*(w-60)/7, Y=v=>h-50-v*(h-80)/70;let html='';
+  [0,20,40,60].forEach(v=>html+=`<line x1="40" x2="${w}" y1="${Y(v)}" y2="${Y(v)}" stroke="#252e42" stroke-width="2" stroke-dasharray="4 8"/><text x="30" y="${Y(v)+8}" font-size="${20*K}" fill="#6b7590" text-anchor="end" font-family="Geist">${v}%</text>`);
+  ['Aug 31','Sep 7','Sep 14','Sep 21','Sep 28','Oct 5','Oct 12','Oct 19'].forEach((d,i)=>{if(VERT&&i%2)return;html+=`<text x="${X(i)}" y="${h-10}" font-size="${20*K}" fill="#6b7590" text-anchor="middle" font-family="Geist">${d}</text>`;});
+  SER.forEach((sr,j)=>{html+=`<polyline id="ln${j}" pathLength="1" fill="none" stroke="${sr[2]}" stroke-width="${j===3?6:4}" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1 1" points="${sr[3].map((v,i)=>X(i)+','+Y(v)).join(' ')}"/><circle id="dt${j}" cx="${X(7)}" cy="${Y(sr[3][7])}" r="10" fill="${sr[2]}" stroke="#111622" stroke-width="4"/>`;});
+  s.innerHTML=html;
+  $('leg').innerHTML=SER.map(sr=>`<div style="display:flex;align-items:center;gap:10px;font:500 ${fs(22)} Geist;color:${sr[0]==='Wild One'?'#fff':'var(--mute)'}"><span style="width:14px;height:14px;border-radius:50%;background:${sr[2]}"></span>${sr[0]}</div>`).join('');}
+function dashScene(t){
+  const show=on(t,24.3,32.2);vis('Ldash',show);if(!show)return;
+  const push=E(t,31.75,32.2,eio);dash.style.transform=`translateX(${-push*W*.25}px)`;
+  rise(dTitle,E(t,24.6,25.2,eo));
+  KC.forEach((el,i)=>{const p=pop(t,25+i*.2,260,.65);const r=VERT?Math.floor(i/2):0,c=VERT?i%2:i;
+    box(el,dX+c*(kW+20),(VERT?340:180)+r*(kH+20),kW,kH);sc(el,Math.min(1,p));
+    const cp=E(t,25.5,26.6,eo),k=KP[i];el.querySelector('.kv').textContent=(k[2]%1?(k[2]*cp).toFixed(1):Math.round(k[2]*cp))+k[3];});
+  const cy=VERT?340+2*(kH+20)+30:chTop;box(chart,dX,cy,dW,chH);sc(chart,Math.min(1,pop(t,26,220,.75)),'50% 0%');
+  SER.forEach((sr,j)=>{const d=E(t,26.4+j*.25,28.6+j*.25,eio);$('ln'+j).style.strokeDashoffset=1-d;sc($('dt'+j),pop(t,28.6+j*.25,300,.55));});
+  if(!VERT){$('nOpp').style.color=t>T(31.5)?'var(--text)':'var(--mute)';$('nOv').style.color=t>T(31.5)?'var(--mute)':'var(--text)';}
+}
+
+// =====================================================================
+// OPPORTUNITIES
+// =====================================================================
+const opp=mk('Lopp','',`left:0;top:0;width:${W}px;height:${H}px`);
+if(!VERT){mk(opp,`<div style="padding:40px 26px;display:flex;flex-direction:column;gap:26px;font:500 24px Geist;color:var(--mute)">
+  <div style="display:flex;align-items:center;gap:12px;color:var(--text);font-weight:600"><img src="${A}wo-lightweight.jpg" style="width:44px;height:44px;border-radius:12px;object-fit:cover">Wild One</div>
+  <div>Overview</div><div style="color:var(--text)">Opportunities</div><div id="nAg2">Agent</div><div>Answers</div><div>Citations</div></div>`,
+  `left:0;top:0;width:${dSide}px;height:${H}px;background:#0d111b;border-right:1.5px solid var(--line)`);}
+const oTitle=mk(opp,`<span>Opportunities</span>`,`left:${dX}px;top:${VERT?180:60}px;font:700 ${fs(54)} Geist`,'m');
+const OP=[
+ ['Lost question','#fb7185','“Best dog leashes for my golden retriever”','Ruffwear Front Range is recommended instead of your Lightweight Dog Leash.','Fix product page'],
+ ['Content gap','#fbbf24','Answers compare leash length and clip type','Your page mentions both, but deep in a paragraph.','Fix product page'],
+ ['Product data','#60a5fa','Show customer reviews','AI answers lean on reviews. Your product page doesn’t show them.','See how'],
+];
+const oH=VERT?400:250;
+const OC=OP.map(o=>mk(opp,`<div class="chip" style="background:${o[1]}22;color:${o[1]};font-size:${fs(22)}">${o[0]}</div>
+  <div style="font:600 ${fs(34)} Geist;margin-top:16px">${o[2]}</div>
+  <div style="font:500 ${fs(25)} Geist;color:var(--mute);margin-top:10px;max-width:${VERT?dW-80:dW-360}px">${o[3]}</div>
+  <div class="ob" style="position:absolute;${VERT?'left:34px;bottom:30px':'right:34px;top:50%;margin-top:-34px'};height:68px;padding:0 30px;border-radius:999px;background:${o[4]==='See how'?'var(--panel2)':'var(--acc)'};color:${o[4]==='See how'?'var(--text)':'#0a0d14'};display:flex;align-items:center;font:600 ${fs(26)} Geist">${o[4]}</div>`,'padding:34px','card'));
+function oppScene(t){
+  const show=on(t,31.75,38.2);vis('Lopp',show);if(!show)return;
+  const pin=E(t,31.75,32.2,eio), pout=E(t,37,37.5,eio);opp.style.transform=`translateX(${(1-pin)*W-pout*W*.25}px)`;
+  rise(oTitle,E(t,32,32.6,eo));
+  OC.forEach((el,i)=>{box(el,dX,(VERT?320:190)+i*(oH+24),dW,oH);sc(el,Math.min(1,pop(t,32.5+i*.5,240,.68)));});
+  sc(OC[0].querySelector('.ob'),t>T(36.5)&&t<T(36.7)?.9:1);
+}
+
+// =====================================================================
+// CATALOG OPTIMIZATION AGENT: board, full-screen fix, drag to Live
+// =====================================================================
+const ag=mk('Lagent','',`left:0;top:0;width:${W}px;height:${H}px`);
+if(!VERT){mk(ag,`<div style="padding:40px 26px;display:flex;flex-direction:column;gap:26px;font:500 24px Geist;color:var(--mute)">
+  <div style="display:flex;align-items:center;gap:12px;color:var(--text);font-weight:600"><img src="${A}wo-lightweight.jpg" style="width:44px;height:44px;border-radius:12px;object-fit:cover">Wild One</div>
+  <div>Overview</div><div>Opportunities</div><div style="color:var(--text)">Agent</div><div>Answers</div><div>Citations</div></div>`,
+  `left:0;top:0;width:${dSide}px;height:${H}px;background:#0d111b;border-right:1.5px solid var(--line)`);}
+const aTitle=mk(ag,`<span>Catalog Optimization Agent</span>`,`left:${dX}px;top:${VERT?180:60}px;font:700 ${fs(VERT?46:50)} Geist`,'m');
+const aSub=mk(ag,`<span>Product page fixes</span>`,`left:${dX}px;top:${VERT?250:130}px;font:500 ${fs(28)} Geist;color:var(--mute)`,'m');
+const colG=VERT?16:22, colW=(dW-2*colG)/3, colTop=VERT?340:210, colH=VERT?1300:1130;
+const COLS=['Needs your facts','Ready to review','Live'].map((c,i)=>mk(ag,`<div style="font:600 ${fs(VERT?24:26)} Geist;color:var(--mute);padding:22px 20px">${c}</div>`,
+  `background:#0d111b;border:1.5px solid var(--line);border-radius:22px`));
+const bc=(img,name,line,status,col)=>mk(ag,`<div class="ph cover a" style="left:14px;top:14px;right:14px;height:${VERT?200:190}px;border-radius:14px"><img src="${A+img}"></div>
+  <div class="a" style="left:18px;right:14px;top:${VERT?228:220}px">
+  <div style="font:600 ${fs(VERT?23:25)} Geist">${name}</div>
+  <div style="font:500 ${fs(VERT?19:21)} Geist;color:var(--mute);margin-top:6px;line-height:1.3">${line}</div>
+  <div class="chip" style="margin-top:12px;font-size:${fs(VERT?18:20)};background:${col}22;color:${col}">${status}</div></div>`,'','card');
+const cardBH=VERT?470:440;
+const BC=[bc('wo-rope.jpg','Hands-Free Rope Leash','Lead with length and how it clips.','1 fact needed','#fbbf24'),
+          bc('wo-lightweight.jpg','Lightweight Dog Leash','Put length, pull strength and the swivel clip up front.','Ready','#34d399'),
+          bc('wo-harness.jpg','Cushioned Dog Harness','Sizing and fit, stated plainly.','Live','#7c9cff')];
+// full-screen fix preview
+const fx=mk('Lfix','',`left:0;top:0;width:${W}px;height:${H}px;background:rgba(5,7,12,.7)`);
+const fxP=mk(fx,'','overflow:hidden','card');
+const fxIn=mk(fxP,'',`left:0;top:0;right:0;bottom:0`);
+const fxW=VERT?CW:W-2*90, fxH=VERT?1500:1260;
+const AFTER=[['Length','6 ft'],['Pull strength','Handles 90 lbs of pulling'],['Clip','Swivel hook that moves with your dog, so it doesn’t tangle'],['Night walks','Reflective Black option']];
+fxIn.innerHTML=`<div class="a" style="left:44px;top:40px;font:600 ${fs(24)} Geist;color:var(--mute)">PRODUCT PAGE FIX · wildone.com</div>
+ <div class="ph cover a" style="left:44px;top:100px;width:${VERT?300:380}px;height:${VERT?300:380}px;border-radius:22px"><img src="${A}wo-lightweight.jpg"></div>
+ <div class="a" style="left:${VERT?380:470}px;top:110px;right:44px"><div style="font:700 ${fs(46)} Geist">Lightweight Dog Leash</div><div style="font:500 ${fs(28)} Geist;color:var(--mute);margin-top:8px">Wild One · $30</div></div>
+ <div class="a fxBefore" style="left:44px;right:44px;top:${VERT?440:520}px">
+   <div style="font:600 ${fs(22)} Geist;color:#fb7185;letter-spacing:.06em">BEFORE</div>
+   <div style="font:500 ${fs(27)} Geist;color:#6b7590;margin-top:10px;line-height:1.45;text-decoration:line-through;text-decoration-color:rgba(251,113,133,.5)">As useful as it is chic. Ultra-flexible yet super strong, this 6-foot leash comfortably handles 90 lbs of pulling…</div></div>
+ <div class="a" style="left:44px;right:44px;top:${VERT?690:720}px"><div style="font:600 ${fs(22)} Geist;color:#34d399;letter-spacing:.06em">AFTER</div>
+   ${AFTER.map((r,i)=>`<div class="fxR m" style="position:relative;margin-top:${i?14:16}px;height:auto"><span style="font:500 ${fs(30)} Geist;line-height:1.35;white-space:normal"><b style="color:#fff">${r[0]}:</b> <span style="color:#c8d0de">${r[1]}</span></span></div>`).join('')}</div>
+ <div class="a fxApprove" style="left:auto;top:auto;right:44px;bottom:40px;height:76px;padding:0 36px;border-radius:999px;background:var(--acc);color:#0a0d14;display:flex;align-items:center;font:600 ${fs(28)} Geist">Approve</div>`;
+const toast=mk('Lagent',`<span style="display:flex;align-items:center;gap:14px">✓ Live on wildone.com</span>`,`padding:0 32px;height:76px;display:flex;align-items:center;border-radius:999px;background:#34d399;color:#0a0d14;font:600 ${fs(28)} Geist`);
+function agentScene(t){
+  const show=on(t,37,47.6);vis('Lagent',show);if(!show){vis('Lfix',false);return;}
+  const pin=E(t,37,37.5,eio);ag.style.transform=`translateX(${(1-pin)*W}px)`;
+  rise(aTitle,E(t,37.3,37.9,eo));rise(aSub,E(t,37.6,38.2,eo));
+  COLS.forEach((el,i)=>{box(el,dX+i*(colW+colG),colTop,colW,colH);sc(el,Math.min(1,pop(t,37.8+i*.15,240,.75)),'50% 0%');});
+  const slot=(col,row)=>[dX+col*(colW+colG)+12,colTop+80+row*(cardBH+16)];
+  const [s0x,s0y]=slot(0,0),[s1x,s1y]=slot(1,0),[s2x,s2y]=slot(2,0),[s3x,s3y]=slot(2,1);
+  box(BC[0],s0x,s0y,colW-24,cardBH);sc(BC[0],Math.min(1,pop(t,38.3,260,.65)));
+  box(BC[2],s2x,s2y,colW-24,cardBH);sc(BC[2],Math.min(1,pop(t,38.6,260,.65)));
+  // the Ready card: lifts 45, drags to Live, drops 46
+  const dg=E(t,45,46,eio), lift=E(t,45,45.25,eo)*(1-E(t,46,46.2,eo));
+  const live=t>=T(46);const tx=lerp(s1x,s3x,dg), ty=lerp(s1y,s3y-(live?0:0),dg);
+  box(BC[1],tx,ty,colW-24,cardBH);BC[1].style.transform=`scale(${Math.min(1,pop(t,38.45,260,.65))*(1+.05*lift)}) rotate(${-3*lift}deg)`;
+  BC[1].style.boxShadow=lift>0?`0 30px 60px rgba(0,0,0,${.5*lift})`:'none';BC[1].style.zIndex=5;
+  const chip=BC[1].querySelector('.chip');chip.textContent=live?'Live':'Ready';chip.style.color=live?'#7c9cff':'#34d399';chip.style.background=live?'#7c9cff22':'#34d39922';
+  // toast
+  const tp=pop(t,46.3,260,.62)*(1-E(t,47.2,47.5));vis(toast,t>=T(46.3));const tw_=VERT?560:520;box(toast,CX-tw_/2+(VERT?0:dSide/2),H-(VERT?260:150),tw_,76);toast.style.justifyContent='center';sc(toast,tp);
+  // full-screen fix: opens 39.7 (card click), rows rise, approve 44, closes 44.3
+  const fOn=on(t,39.6,44.6);vis('Lfix',fOn);
+  if(fOn){const o=E(t,39.6,40.1,eio), c=E(t,44.1,44.6,eio), p=o*(1-c);
+    // grows from the card's rectangle to full screen
+    const fx0=s1x,fy0=s1y,fw0=colW-24,fh0=cardBH, fx1=(W-fxW)/2+(VERT?0:dSide/2-30), fy1=(H-fxH)/2;
+    box(fxP,lerp(fx0,fx1,p),lerp(fy0,fy1,p),lerp(fw0,fxW-(VERT?0:dSide-60),p),lerp(fh0,fxH,p),lerp(26,30,p));
+    fx.style.background=`rgba(5,7,12,${.75*p})`;fxIn.style.opacity=clamp((p-.6)/.4);
+    fxIn.style.width=(fxW-(VERT?0:dSide-60))+'px';fxIn.style.height=fxH+'px';
+    [...fxIn.querySelectorAll('.fxR')].forEach((r,i)=>rise(r,E(t,41+i*.5,41.5+i*.5,eo)));
+    sc(fxIn.querySelector('.fxApprove'),t>T(44)&&t<T(44.2)?.9:Math.min(1,pop(t,43.2,260,.6)));}
+}
+
+// =====================================================================
+// CURSOR
+// =====================================================================
+const missX=i=>VERT?PAD+mH/2:PAD+i*(mW+40)+mW/2, missY=i=>VERT?520+i*(mH+40)+mH/2:330+mH/2;
+let CUR;
+function buildCursor(){
+  const btnX=W-PAD-110, btnY=(VERT?CY:CY);
+  const navOpp=VERT?[W-140,180]:[80,190];
+  const oppBtn=VERT?[dX+150,(VERT?320:190)+oH-64]:[W-60-140,190+oH/2];
+  const colW_=colW, s1=[dX+colW_+colG+12+(colW_-24)/2, colTop+80+cardBH/2];
+  const s3=[dX+2*(colW_+colG)+12+(colW_-24)/2, colTop+80+cardBH+16+cardBH/2];
+  const appr=VERT?[W-PAD-120,(H+fxH)/2-78]:[W-90-130,(H+fxH)/2-78];
+  CUR={show:[[17,1],[19.6,0],[30.6,1],[31.9,0],[35.6,1],[39.8,0],[43.4,1],[46.4,0]],
+   pos:[[17,[W-120,H-160]],[17.4,[missX(0),missY(0)]],[18.7,[btnX,btnY]],[30.6,[W-200,H-300]],[31,navOpp],[35.6,[W-200,H-200]],[36,oppBtn],[38.8,s1],[43.4,[W/2,H-300]],[43.7,appr],[44.6,s1],[45,s1],[46,s3]],
+   click:[18,19.25,31.5,36.5,39.5,44]};}
+function cursor(t){let s=V(t,0,CUR.show.map(c=>[c[0],c[1],320,.62]));
+  const x=V(t,CUR.pos[0][1][0],CUR.pos.map(c=>[c[0],c[1][0],120,.9])), y=V(t,CUR.pos[0][1][1],CUR.pos.map(c=>[c[0],c[1][1],120,.9]));
+  for(const c of CUR.click){const d=t-T(c)+.06;if(d>0&&d<.18)s*=1-.22*Math.sin(Math.PI*d/.18);}
+  const cu=$('cursor');vis(cu,s>.01);cu.style.transform=`translate(${x}px,${y}px) scale(${Math.max(0,s)*(VERT?1.15:1)})`;}
+
+// =====================================================================
+// SEEK
+// =====================================================================
+async function seek(t){
+  // ---- open + end (wordmark / pill) ----
+  const openOn=t<T(6.6)||t>=T(48);vis('Lopen',openOn);vis('Lend',t>=T(52));
+  if(openOn){
+    const intro=t<T(10);
+    const show=LET.map((_,i)=>intro?pop(t,1+i*.08,300,.6):pop(t,52.1+i*.06,300,.6));
+    const sq=intro?E(t,2.4,3,p=>p*p):1-E(t,51.6,52.2,eo);
+    wordmark(t,sq,show);vis(oWord,intro?t<T(3.1):t>=T(51.7));
+    // pill
+    let pw,ph,py=CY;
+    if(intro){const g=pop(t,3,170,.78);pw=lerp(40,VERT?980:1180,g);ph=lerp(40,VERT?150:170,g);
+      const toBar=E(t,6,6.6,eio);ph=lerp(ph,barH,toBar);pw=lerp(pw,CW,toBar);py=lerp(CY,barY+barH/2,toBar);}
+    else {const g=t<T(51.5)?pop(t,48.6,170,.78):1-E(t,51.5,52,p=>p*p);pw=lerp(40,VERT?940:1180,g);ph=lerp(40,VERT?240:250,g);}
+    vis(pill,intro?t>=T(2.9):on(t,48.5,52));
+    box(pill,CX-pw/2,py-ph/2,pw,ph,ph/2);
+    pillTxt.style.top=(ph/2-parseInt(fs(VERT?44:60))*.7)+'px';pillTxt.style.height=(parseInt(fs(VERT?44:60))*1.4)+'px';
+    vis(pillTxt,intro);rise(pillTxt,E(t,3.5,4.2,eo)*(1-E(t,5.8,6.1)));
+    vis(pillEnd,!intro);const eh=parseInt(fs(VERT?50:58))*2.5;pillEnd.style.top=(ph/2-eh/2)+'px';pillEnd.style.height=eh+'px';
+    const sp=pillEnd.children;[0,1].forEach(i=>{sp[i].style.transform=`translateY(${(1-E(t,49+i*.4,49.6+i*.4,eo))*220}%)`;});
+    rise(url,E(t,53,53.6,eo));
+  }
+  askScene(t);missScene(t);scanScene(t);dashScene(t);oppScene(t);agentScene(t);
+  // ---- floods: scan -> dashboard, agent -> end ----
+  let fr=0,fcx=CX,fcy=CY;
+  if(on(t,23.4,25.2)){fr=flood(t,23.5);fcy=(VERT?scTop-280:scTop-230)+(VERT?70:60);}
+  if(on(t,47.4,49.2)){fr=flood(t,47.5);}
+  vis('Lflood',fr>1);box($('flood'),fcx-fr,fcy-fr,2*fr,2*fr);
+  cursor(t);
+}
+window.seek=seek;window.ready=(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.complete?0:new Promise(r=>{i.onload=i.onerror=r;})));
+  measureLetters();buildChart();buildCursor();await seek(0);return true;})();
+// scrub with ?t=seconds for quick checks
+const qt=new URLSearchParams(location.search).get('t');if(qt)window.ready.then(()=>seek(+qt));
+</script></body></html>

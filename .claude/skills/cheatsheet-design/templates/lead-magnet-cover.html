@@ -1,0 +1,26 @@
+<html><head><link rel="stylesheet" href="d.css"><style>
+body{background:radial-gradient(ellipse at 50% 45%,#ffffff 0%,#eef1f6 70%);display:flex;align-items:center;justify-content:center}
+.stage{perspective:1800px;transform:translateY(-40px)}
+.book{width:640px;height:880px;position:relative;transform:rotateY(-24deg) rotateX(6deg);transform-style:preserve-3d}
+.front{position:absolute;inset:0;background:linear-gradient(160deg,#16306a 0%,#0b1b35 60%,#081226 100%);border-radius:4px 10px 10px 4px;color:#fff;padding:70px 60px;box-shadow:30px 40px 60px rgba(11,27,53,.35)}
+.spine{position:absolute;left:-60px;top:0;width:60px;height:100%;background:linear-gradient(90deg,#06101f,#0f2550);transform:rotateY(-90deg);transform-origin:right;display:flex;align-items:center;justify-content:center}
+.spine span{writing-mode:vertical-rl;transform:scaleX(-1) rotate(180deg);font-family:'DM Serif Display',serif;font-size:26px;color:#cfdcff;letter-spacing:1px}
+.pages{position:absolute;right:-14px;top:8px;bottom:8px;width:14px;background:repeating-linear-gradient(90deg,#f3f3f0 0 2px,#dcdcd6 2px 3px);transform:rotateY(90deg);transform-origin:left}
+.logo{width:72px;height:72px;border-radius:16px}
+.t{font-family:'DM Serif Display',serif;font-size:82px;line-height:1.02;margin-top:60px}
+.t em{color:#9fbaff}
+.s{font-size:28px;line-height:1.35;margin-top:30px;color:#d5def2;font-weight:500}
+.by{position:absolute;left:60px;bottom:64px;font-family:'DM Serif Display',serif;font-style:italic;font-size:30px;color:#cfdcff}
+.shadow{width:620px;height:40px;margin:30px auto 0;background:radial-gradient(ellipse,rgba(11,27,53,.35),transparent 70%)}
+.badge2{position:absolute;right:70px;bottom:120px;background:var(--acc);color:#fff;font-weight:800;font-size:28px;letter-spacing:1px;padding:16px 26px;border-radius:6px;box-shadow:0 6px 18px rgba(35,80,200,.35)}
+</style></head><body>
+<div class="stage"><div class="book">
+<div class="spine"><span>The AI Shelf Playbook</span></div>
+<div class="front"><img class="logo" src="logo.png">
+<div class="t">The <em>AI Shelf</em> Playbook</div>
+<div class="s">What ChatGPT, Perplexity and Google AI look for before they recommend a product.</div>
+<div class="by">By Kelian van Tulder</div></div>
+<div class="pages"></div>
+</div><div class="shadow"></div></div>
+<div class="badge2">+ FREE CHECK OF YOUR STORE</div>
+</body></html>

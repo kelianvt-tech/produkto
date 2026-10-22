@@ -235,15 +235,20 @@ def build(domain, opp_type, opp_key):
     page_gap.init()
     questions = _questions(ps, opp)
     competitors = _competitors(questions, wins)
+    products = _products(ps, questions, domain)
+    import third_party
     return dict(
         store=domain,
         opportunity=dict(type=opp_type, key=opp_key, impact=opp.get('impact', ''),
                          title=_plain(opp.get('title')), text=re.sub(r'\s*Read the answers\.?$', '', _plain(opp.get('text')))),
         questions=[dict(question=q, **stats.get(q, dict(answers=0, own=0, theirs=0))) for q in questions],
-        products=_products(ps, questions, domain),
+        products=products,
         competitors=competitors,
         cited_pages=_cited(questions, cites, domain, {c['url'] for c in competitors if c['url']}),
         winnable=winnable(questions, cites),
+        # Google Shopping, off-site pages and Trustpilot from the latest admin pull (third_party.py), per agent
+        # step. Research only, like cited_pages; {} until a store has been pulled with the switch on.
+        third_party=third_party.for_brief(domain, questions, products),
         built_at=time.time(),
     )
 

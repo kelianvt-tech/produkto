@@ -1,0 +1,67 @@
+<html><head><link rel="stylesheet" href="d.css"><style>
+h1{font-size:78px;margin:20px 0 2px}
+.tag{text-align:center;font-family:'DM Serif Display',serif;font-style:italic;font-size:28px;color:#2b3950;margin-bottom:16px}
+.rows{margin:0 28px;display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:14px;height:212px}
+.L{border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1.5px solid rgba(0,0,0,.08)}
+.L .big{font-family:'DM Serif Display',serif;font-size:110px;line-height:.9}
+.L .w{font-size:16px;font-weight:700;letter-spacing:2px;margin-top:6px}
+.P{border:1.5px solid #cdd5e2;border-radius:10px;background:#fff;padding:12px 18px;display:flex;flex-direction:column}
+.pt{font-family:'DM Serif Display',serif;font-size:27px;margin-bottom:8px}
+.pt span{color:var(--muted);font-family:Outfit;font-size:18px;font-weight:500}
+.flow{display:flex;align-items:flex-start;justify-content:space-between;flex:1}
+.node{flex:1;text-align:center;font-size:15px;line-height:1.25;color:#2b3950;padding:0 4px}
+.node .ic{width:48px;height:48px;border-radius:12px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff}
+.node b{display:block;font-size:16.5px;color:var(--ink);margin-bottom:2px}
+.ar{font-size:26px;color:#9aa6bb;padding-top:10px}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;font-size:18px;line-height:1.28;margin-top:6px}
+.li{display:grid;grid-template-columns:24px 1fr;gap:8px}
+.li .n{width:22px;height:22px;border-radius:5px;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.li b{color:var(--ink)}
+.eq{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+.chip{border-radius:6px;padding:8px 14px;font-weight:700;font-size:17px;border:1.5px solid}
+.op{font-weight:800;font-size:22px;color:#9aa6bb}
+.sub{font-size:15.5px;color:#2b3950;margin-top:10px}
+.S .L{background:var(--y)}.S .ic,.S .n{background:var(--yb)}
+.H .L{background:var(--l)}.H .ic,.H .n{background:var(--lb)}
+.E .L{background:var(--p)}.E .ic,.E .n{background:var(--pb)}
+.Lr .L{background:var(--m)}.Lr .ic,.Lr .n{background:var(--mb)}
+.F .L{background:var(--b)}.F .ic,.F .n{background:var(--bb)}
+.S .L .w{color:var(--yb)}.H .L .w{color:var(--lb)}.E .L .w{color:var(--pb)}.Lr .L .w{color:var(--mb)}.F .L .w{color:var(--bb)}
+.line{position:absolute;left:103px;top:300px;bottom:270px;width:3px;background:#cdd5e2;z-index:-1}
+</style></head><body>
+<h1>The <em>"SHELF"</em> Framework</h1>
+<div class="tag">Use this sheet to get your products onto the AI shelf.</div>
+<div class="rows">
+<div class="row S"><div class="L"><div class="big">S</div><div class="w">STRUCTURED</div></div>
+<div class="P"><div class="pt">1. Structured: <span>make your store readable</span></div>
+<div class="flow"><div class="node"><div class="ic">⌁</div><b>Crawlers in</b>robots.txt allows OAI-SearchBot &amp; PerplexityBot</div><div class="ar">→</div>
+<div class="node"><div class="ic">T</div><b>Text, not images</b>Price, size, stock in the page text</div><div class="ar">→</div>
+<div class="node"><div class="ic">{ }</div><b>Schema</b>Product markup that passes Google's test</div><div class="ar">→</div>
+<div class="node"><div class="ic">≡</div><b>Feed</b>Clean feed in Merchant Center</div></div></div></div>
+
+<div class="row H"><div class="L"><div class="big">H</div><div class="w">HELPFUL</div></div>
+<div class="P"><div class="pt">2. Helpful: <span>answer the buyer's question on the page</span></div>
+<div class="list"><div class="li"><span class="n">1</span><span><b>Who it's for:</b> state it in one line</span></div><div class="li"><span class="n">4</span><span><b>Specs:</b> the numbers buyers compare</span></div>
+<div class="li"><span class="n">2</span><span><b>What it's for:</b> name the use case</span></div><div class="li"><span class="n">5</span><span><b>Who it's not for:</b> builds trust</span></div>
+<div class="li"><span class="n">3</span><span><b>Materials &amp; fit:</b> in words, not a pop-up</span></div><div class="li"><span class="n">6</span><span><b>FAQ:</b> the 3 questions asked before buying</span></div></div></div></div>
+
+<div class="row E"><div class="L"><div class="big">E</div><div class="w">EARNED</div></div>
+<div class="P"><div class="pt">3. Earned: <span>get talked about where AI reads</span></div>
+<div class="flow"><div class="node"><div class="ic">★</div><b>Reviews</b>That name the use case, not just "love it"</div><div class="node"><div class="ic">r/</div><b>Reddit</b>Real threads where your buyers ask</div><div class="node"><div class="ic">#1</div><b>Roundups</b>"Best X for Y" articles and gift guides</div><div class="node"><div class="ic">▶</div><b>Creators</b>YouTube and TikTok reviews</div><div class="node"><div class="ic">✎</div><b>Press</b>Category features and comparisons</div></div></div></div>
+
+<div class="row Lr"><div class="L"><div class="big">L</div><div class="w">LISTED</div></div>
+<div class="P"><div class="pt">4. Listed: <span>be in the places AI shops from</span></div>
+<div class="eq"><span class="chip" style="border-color:#22887b;color:#16645a">Google Merchant Center</span><span class="op">+</span><span class="chip" style="border-color:#22887b;color:#16645a">ChatGPT shopping</span><span class="op">+</span><span class="chip" style="border-color:#22887b;color:#16645a">Perplexity</span><span class="op">+</span><span class="chip" style="border-color:#22887b;color:#16645a">Marketplaces</span><span class="op">=</span><span class="chip" style="background:#22887b;border-color:#22887b;color:#fff">More shelves to be picked from</span></div>
+<div class="sub">Same title, price and specs on every one. If they disagree, AI trusts none of them.</div></div></div>
+
+<div class="row F"><div class="L"><div class="big">F</div><div class="w">FOLLOWED</div></div>
+<div class="P"><div class="pt">5. Followed: <span>check it like you check your ads</span></div>
+<div class="flow"><div class="node"><div class="ic">?</div><b>Ask</b>Your buyer's questions, not your brand name</div><div class="ar">→</div>
+<div class="node"><div class="ic">✓</div><b>Note</b>Which products get named, and who beats you</div><div class="ar">→</div>
+<div class="node"><div class="ic">✚</div><b>Fix</b>Add what the winners state that you don't</div><div class="ar">→</div>
+<div class="node"><div class="ic">↻</div><b>Re-ask</b>Same questions, a few weeks later</div></div></div></div>
+</div>
+<div class="cta"><img src="logo.png"><div class="t">Produkto runs step 5 for your whole catalog, every day</div><div class="u">Comment "CHECK"</div></div>
+<div class="wm">KELIAN VAN TULDER</div>
+</body></html>

@@ -83,7 +83,7 @@ The agent is the destination and it's what makes this scale. But it's only worth
 
 ## Out of scope right now
 
-No write access to anyone's store. No Shopify app, no agent. Building the agent before knowing which fixes actually move visibility means automating a guess.
+No write access to anyone's store, except the content agent's Shopify publishing (decided 2026-10-15, see `DECISIONS.md`): merchant-approved drafts only, with undo. Building the agent before knowing which fixes actually move visibility means automating a guess.
 
 **Required before the first paying customer gets the onboarding link** (2026-09-28): hosting (the app runs on a laptop at `localhost:8010`), accounts so each customer sees only their own store, and daily scans that don't depend on Kelian's Mac being awake. Until someone pays, Produkto stays a local tool Kelian demos from.
 

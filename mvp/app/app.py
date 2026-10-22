@@ -180,6 +180,10 @@ import content_setup as _content_setup
 CSS += _content_setup.CSS
 import content_board as _content_board  # noqa: E402
 CSS += _content_board.CSS
+import stories_hub as _stories_hub  # noqa: E402
+CSS += _stories_hub.CSS
+import product_preview as _product_preview  # noqa: E402
+CSS += _product_preview.CSS
 import p_loader as _p_loader  # noqa: E402
 CSS += _p_loader.CSS
 import content_export as _content_export
@@ -905,7 +909,11 @@ def view_result(token, query=None):
                    s["error"] or "Unknown error.")
         return 200, page("Scan failed", body)
 
-    return 200, page("Insights: " + p["title"], dashboard.overview(s, ps, p, sc, query))
+    user = accounts.current()
+    key = ("overview", s["id"], ps["id"], p["id"], sc["id"] if "id" in sc.keys() else 0,
+           tuple(sorted((query or {}).items())), user["id"] if user else 0, time.strftime("%Y-%m-%d"))
+    return 200, page("Insights: " + p["title"], db.memo(key, lambda: dashboard.overview(s, ps, p, sc, query),
+                                                       stamp=db.data_stamp()))
 
 
 def view_answers(token, query=None):
@@ -996,12 +1004,17 @@ class Handler(BaseHTTPRequestHandler):
             self._send_cookies()
             self.end_headers()
             return
-        ctype = "text/html; charset=utf-8"
-        if isinstance(payload, tuple):
+        ctype, csp = "text/html; charset=utf-8", None
+        if isinstance(payload, tuple) and payload[0] == "csp":     # a store's own page, shown inside Produkto
+            import product_preview
+            csp, payload = product_preview.CSP, payload[1]
+        elif isinstance(payload, tuple):
             ctype, payload = "application/json", payload[1]
         data = payload.encode()
         self.send_response(code)
         self.send_header("Content-Type", ctype)
+        if csp:
+            self.send_header("Content-Security-Policy", csp)
         self.send_header("Content-Length", str(len(data)))
         self._send_cookies()
         self.end_headers()
@@ -1064,6 +1077,8 @@ class Handler(BaseHTTPRequestHandler):
             if session:
                 self._set_cookie = accounts.cookie_header(session)
             return code, payload
+        if path == "/forgot":
+            return accounts.request_reset(form) if method == "POST" else accounts.forgot_page()
         if path == "/welcome":
             return accounts.welcome_page(q)
         if path.startswith("/invite/"):
@@ -1081,9 +1096,15 @@ class Handler(BaseHTTPRequestHandler):
                 nxt = self.path if self.path != "/" else ""
                 return 303, "/login" + ("?next=" + urllib.parse.quote(nxt) if nxt else "")
             return 401, ("json", json.dumps({"error": "Your session ended. Sign in again."}))
-        if path in ("/admin", "/admin/invite", "/admin/reset", "/admin/disable", "/costs") and not user["is_admin"]:
+        if (path == "/admin" or path.startswith("/admin/") or path == "/costs") and not user["is_admin"]:
             return 404, page("Not found", "<h1>Not found</h1>")
-        if path == "/admin":
+        if path == "/admin":                             # hub.py: the admin hub, everything in one place
+            import hub
+            return 200, hub.document(q)
+        if path == "/admin/self-visibility" and method == "POST":   # self_visibility.py: Produkto's own AI visibility
+            import self_visibility
+            return 303, "/admin?sv=" + urllib.parse.quote(self_visibility.start()[1])
+        if path == "/admin/accounts":
             return accounts.admin_page(q)
         if path == "/admin/invite" and method == "POST":
             return accounts.create_invite(form)
@@ -1091,6 +1112,10 @@ class Handler(BaseHTTPRequestHandler):
             return accounts.create_reset(form)
         if path == "/admin/disable" and method == "POST":
             return accounts.set_disabled(form)
+        if path == "/admin/third-party":                 # third_party.py: manual pull, off unless PRODUKTO_THIRD_PARTY=1
+            import third_party
+            note = third_party.start(form.get("d", ""))[1] if method == "POST" else ""
+            return 200, page("Third-party context", third_party.admin_body(form if method == "POST" else q, note))
         # Store access: every store named in the request must be one this user owns.
         # A new store being added (POST /store) is claimed inside act_store instead.
         domains = [v for v in (q.get("d"), form.get("d"), q.get("domain") if path != "/new" else None) if v]
@@ -1132,6 +1157,27 @@ class Handler(BaseHTTPRequestHandler):
             if method == "GET":
                 if u.path == "/shopify/callback":
                     return self._send(_content_agent.shopify_callback(q))
+                if u.path.startswith("/content/media/") and u.path.endswith(".jpg"):   # an owner's uploaded photo
+                    import article_learning
+                    got = article_learning.media(u.path[len("/content/media/"):-len(".jpg")])
+                    if not got:
+                        return self._send((404, "<h1>Not found</h1>"))
+                    self.send_response(200)
+                    self.send_header("Content-Type", got[0])
+                    self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+                    self.send_header("Content-Length", str(len(got[1])))
+                    self.end_headers()
+                    self.wfile.write(got[1])
+                    return
+                if u.path == "/content/fix-preview":             # a product fix on the real product page
+                    import product_preview
+                    return self._send(product_preview.preview(q))
+                if u.path == "/content/stories":                 # the stories page (stories_hub.py), previewed
+                    import stories_hub
+                    return self._send(stories_hub.preview(q))
+                if u.path == "/content/preview":                 # an AEO article, full page, as a shopper sees it
+                    import content_review
+                    return self._send(content_review.full_preview(q))
                 if u.path.startswith("/content/cal/") and u.path.endswith(".ics"):
                     import content_calendar
                     code, text = content_calendar.ical(u.path[len("/content/cal/"):-len(".ics")]) \

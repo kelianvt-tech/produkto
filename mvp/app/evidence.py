@@ -13,6 +13,8 @@ that disagree with each other.
 """
 import json
 import os
+import re
+from collections import Counter
 import db
 import config
 from functools import lru_cache
@@ -78,8 +80,45 @@ def _raw(path, ids, revision):
     # no link. It is not a buyable product, so it is not a competitor and must
     # not sit in the share-of-voice denominator.
     identifiable="AND (COALESCE(TRIM(m.brand),'')<>'' OR COALESCE(TRIM(m.url),'')<>'' OR m.matched_product_id IS NOT NULL)"
-    mentions=tuple(dict(m) for m in db.all_('SELECT m.* FROM mentions m JOIN answers a ON a.id=m.answer_id WHERE a.scan_id IN (%s) '%marks+identifiable+' ORDER BY a.id,m.rank',ids))
-    return answers,mentions
+    mentions=[dict(m) for m in db.all_('SELECT m.* FROM mentions m JOIN answers a ON a.id=m.answer_id WHERE a.scan_id IN (%s) '%marks+identifiable+' ORDER BY a.id,m.rank',ids)]
+    merge_brands(mentions)
+    return answers,tuple(mentions)
+
+
+_WORD=re.compile(r'[a-z0-9]+')
+_NOT_BRANDS={'the','a','an','by','and','co','inc','ltd','skin','beauty'}
+
+
+def merge_brands(mentions):
+    """One competitor written several ways becomes one brand.
+
+    AI writes "adidas" and "adidas Originals", "e.l.f." and "e.l.f. Skin". Left
+    alone, every panel counts them as separate brands and splits their share
+    of voice (15 such pairs for Clubhouse Skin, 8 Oct 2026). A name is merged
+    into a shorter one when the shorter one's words are the first words of
+    the longer one: "adidas originals" starts with "adidas". Whole words only,
+    so "Dove" never swallows "Dovetail". The label kept is the most common
+    spelling of the shorter name. The stored rows are not changed."""
+    counts={}
+    for m in mentions:
+        b=(m['brand'] or '').strip()
+        words=tuple(_WORD.findall(b.lower().replace('.','')))
+        if words:
+            counts.setdefault(words,Counter())[b]+=1
+    roots={}
+    for words in sorted(counts,key=len):
+        if ''.join(words) in _NOT_BRANDS or len(''.join(words))<3:
+            continue
+        root=next((r for r in roots.values() if words[:len(r)]==r and r!=words),None)
+        roots[words]=roots.get(root,root) if root else words
+    label={r:counts[r].most_common(1)[0][0] for r in set(roots.values())}
+    for m in mentions:
+        b=(m['brand'] or '').strip()
+        words=tuple(_WORD.findall(b.lower().replace('.','')))
+        root=roots.get(words)
+        if root and root!=words:
+            m['brand_as_written']=b
+            m['brand']=label[root]
 
 
 def _mtime():

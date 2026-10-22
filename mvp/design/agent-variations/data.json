@@ -1,0 +1,782 @@
+{
+ "store": {
+  "name": "Clubhouse Skin",
+  "domain": "clubhouseskin.com",
+  "tz": "BST"
+ },
+ "drafts": [
+  {
+   "id": 1,
+   "type": "product_fix",
+   "title": "Peau De Clubhouse Hat: page fix",
+   "status": "draft",
+   "planned": null,
+   "product": "Peau De Clubhouse Hat",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710",
+   "products": 1,
+   "gaps": 0,
+   "questions": 0,
+   "review": null,
+   "why": null,
+   "cur_title": "Peau De Clubhouse Hat",
+   "cur_desc": "A 100% cotton cap inspired by 1990s golf culture. Structured, unisex, and designed to look better with every wear.",
+   "new_title": "Peau De Clubhouse Hat - 100% Cotton Structured Cap",
+   "html": "<p>A 100% cotton cap inspired by 1990s golf culture.</p><p>Structured, unisex, and designed to look better with every wear.</p>",
+   "specs": [
+    {
+     "label": "Brand",
+     "value": "Clubhouse Skin"
+    },
+    {
+     "label": "Price",
+     "value": "GBP 25.00"
+    },
+    {
+     "label": "Weight",
+     "value": "150 g"
+    },
+    {
+     "label": "Availability",
+     "value": "InStock"
+    }
+   ],
+   "faqs": [],
+   "open_questions": []
+  },
+  {
+   "id": 2,
+   "type": "product_fix",
+   "title": "Peau De Clubhouse Hat: page fix",
+   "status": "draft",
+   "planned": null,
+   "product": "Peau De Clubhouse Hat",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710",
+   "products": 1,
+   "gaps": 0,
+   "questions": 5,
+   "review": null,
+   "why": null,
+   "cur_title": "Peau De Clubhouse Hat",
+   "cur_desc": "A 100% cotton cap inspired by 1990s golf culture. Structured, unisex, and designed to look better with every wear.",
+   "new_title": "Peau De Clubhouse Hat - 100% Cotton Structured Cap",
+   "html": "<p>The Peau De Clubhouse Hat is a 100% cotton cap inspired by 1990s golf culture.</p><p>It is structured and unisex, and is designed to look better with every wear.</p><p>Priced at \u00a325.00.</p>",
+   "specs": [
+    {
+     "label": "Brand",
+     "value": "Clubhouse Skin"
+    },
+    {
+     "label": "Material",
+     "value": "100% cotton"
+    },
+    {
+     "label": "Structure",
+     "value": "Structured"
+    },
+    {
+     "label": "Style",
+     "value": "Unisex"
+    },
+    {
+     "label": "Inspiration",
+     "value": "1990s golf culture"
+    },
+    {
+     "label": "Weight",
+     "value": "150 g"
+    }
+   ],
+   "faqs": [],
+   "open_questions": [
+    "What size or head measurement does the hat fit?",
+    "What closure does the hat use?",
+    "What is the brim style or length?",
+    "How should the hat be cared for?",
+    "What colour is the hat?"
+   ]
+  },
+  {
+   "id": 3,
+   "type": "product_fix",
+   "title": "Amalfi Vitamin-C Face Oil: page fix",
+   "status": "draft",
+   "planned": null,
+   "product": "Amalfi Vitamin-C Face Oil",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304",
+   "products": 1,
+   "gaps": 0,
+   "questions": 5,
+   "review": null,
+   "why": null,
+   "cur_title": "Amalfi Vitamin-C Face Oil",
+   "cur_desc": "A vitamin-C face oil that brightens , protects , and balances . Lightweight enough to wear daily. Considered enough to earn its place on your shelf. Inspired by eating grapefruit on the Amalfi coast \u2014 sun on your skin, salt in the air. Grapefruit Peel Oil and Vitamin C defend against environmental damage while bringing a natural glow . Jojoba mimics your skin's own oils, so it absorbs the way it should.",
+   "new_title": "Amalfi Vitamin-C Face Oil",
+   "html": "<p>A vitamin-C face oil that brightens, protects and balances. Lightweight enough to wear daily.</p><p>Inspired by eating grapefruit on the Amalfi coast \u2014 sun on your skin, salt in the air. Grapefruit Peel Oil and Vitamin C defend against environmental damage while bringing a natural glow. Jojoba mimics your skin's own oils, so it absorbs the way it should.</p>",
+   "specs": [
+    {
+     "label": "Brand",
+     "value": "Clubhouse Skin"
+    },
+    {
+     "label": "Weight",
+     "value": "92 g"
+    }
+   ],
+   "faqs": [],
+   "open_questions": [
+    "What skin types is this face oil suitable for?",
+    "What type and amount of Vitamin C does it contain?",
+    "What is the bottle size in ml?",
+    "How should the face oil be used?",
+    "Does it absorb without a greasy feel?"
+   ]
+  },
+  {
+   "id": 4,
+   "type": "faq",
+   "title": "Helsinki Moisturiser: FAQ",
+   "status": "draft",
+   "planned": null,
+   "product": "Helsinki Moisturiser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451",
+   "products": 1,
+   "gaps": 0,
+   "questions": 0,
+   "review": null,
+   "why": null,
+   "cur_title": null,
+   "cur_desc": "",
+   "new_title": null,
+   "html": "<h3>Is the Helsinki Moisturiser lightweight enough for daily hydration?</h3><p>Yes, it is a lightweight moisturiser that hydrates deeply without heaviness. It is designed to provide moisture all day without the weight.</p><h3>What ingredients is the Helsinki Moisturiser formulated around?</h3><p>It is formulated around Snow Mushroom, sourced from tropical forests, alongside Squalane and Niacinamide. Snow Mushroom has water-retention properties, while Squalane and Niacinamide work alongside it to lock in moisture and support your skin&#x27;s natural function.</p><h3>What kind of finish does this moisturiser have?</h3><p>It has a comfortable, lightweight feel without heaviness. The formula is described as providing hydration without the weight.</p><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Is the Helsinki Moisturiser lightweight enough for daily hydration?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes, it is a lightweight moisturiser that hydrates deeply without heaviness. It is designed to provide moisture all day without the weight.\"}}, {\"@type\": \"Question\", \"name\": \"What ingredients is the Helsinki Moisturiser formulated around?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It is formulated around Snow Mushroom, sourced from tropical forests, alongside Squalane and Niacinamide. Snow Mushroom has water-retention properties, while Squalane and Niacinamide work alongside it to lock in moisture and support your skin's natural function.\"}}, {\"@type\": \"Question\", \"name\": \"What kind of finish does this moisturiser have?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It has a comfortable, lightweight feel without heaviness. The formula is described as providing hydration without the weight.\"}}]}</script>",
+   "specs": [],
+   "faqs": [
+    {
+     "q": "Is the Helsinki Moisturiser lightweight enough for daily hydration?",
+     "a": "Yes, it is a lightweight moisturiser that hydrates deeply without heaviness. It is designed to provide moisture all day without the weight."
+    },
+    {
+     "q": "What ingredients is the Helsinki Moisturiser formulated around?",
+     "a": "It is formulated around Snow Mushroom, sourced from tropical forests, alongside Squalane and Niacinamide. Snow Mushroom has water-retention properties, while Squalane and Niacinamide work alongside it to lock in moisture and support your skin's natural function."
+    },
+    {
+     "q": "What kind of finish does this moisturiser have?",
+     "a": "It has a comfortable, lightweight feel without heaviness. The formula is described as providing hydration without the weight."
+    }
+   ],
+   "open_questions": []
+  },
+  {
+   "id": 5,
+   "type": "product_fix",
+   "title": "Frontier Cleanser: page fix",
+   "status": "approved",
+   "planned": "2026-10-16",
+   "product": "Frontier Cleanser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370",
+   "products": 1,
+   "gaps": 0,
+   "questions": 5,
+   "review": null,
+   "why": "AI recommends products whose pages state what the buyer asks; this makes Frontier Cleanser state it too, using only facts your catalog already has.",
+   "cur_title": "Frontier Cleanser",
+   "cur_desc": "A daily cleanser that respects your skin's natural balance. Built around ingredients that clean without stripping \u2014 because healthy skin starts with not getting in the way. Inspired by the Spanish coast. Prickly Pear protects against free radicals. Sea Salt gently exfoliates. Squalane and Jojoba replenish what your skin naturally produces, without disrupting what it already does well.",
+   "new_title": "Frontier Cleanser | Daily Gentle Exfoliating Cleanser",
+   "html": "<p>Frontier Cleanser is a daily cleanser that respects your skin's natural balance.</p><p>Built around ingredients that clean without stripping, it is inspired by the Spanish coast.</p><ul><li>Prickly Pear protects against free radicals.</li><li>Sea Salt gently exfoliates.</li><li>Squalane and Jojoba replenish what your skin naturally produces, without disrupting what it already does well.</li></ul>",
+   "specs": [
+    {
+     "label": "Brand",
+     "value": "Clubhouse Skin"
+    },
+    {
+     "label": "Weight",
+     "value": "276 g"
+    }
+   ],
+   "faqs": [],
+   "open_questions": [
+    "Which skin types is it suitable for?",
+    "How should it be used?",
+    "What is the full ingredient list?",
+    "What is the product size in ml?",
+    "Does it contain fragrance?"
+   ]
+  },
+  {
+   "id": 6,
+   "type": "product_fix",
+   "title": "Helsinki Moisturiser: page fix",
+   "status": "draft",
+   "planned": "2026-10-21",
+   "product": "Helsinki Moisturiser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451",
+   "products": 1,
+   "gaps": 0,
+   "questions": 5,
+   "review": null,
+   "why": "AI recommends products whose pages state what the buyer asks; this makes Helsinki Moisturiser state it too, using only facts your catalog already has.",
+   "cur_title": "Helsinki Moisturiser",
+   "cur_desc": "A lightweight mushroom-powered moisturiser that hydrates deeply without heaviness. The kind of product that quietly becomes non-negotiable. Formulated around Snow Mushroom , sourced from tropical forests, with remarkable water-retention properties. Working alongside Squalane and Niacinamide to lock in moisture and support your skin's natural function. All day, without the weight.",
+   "new_title": "Helsinki Moisturiser",
+   "html": "<p>A lightweight mushroom-powered moisturiser that hydrates deeply without heaviness.</p><p>Formulated around Snow Mushroom, sourced from tropical forests, with water-retention properties. Working alongside Squalane and Niacinamide to lock in moisture and support your skin\u2019s natural function.</p><ul><li>Lightweight texture</li><li>Deep hydration without heaviness</li><li>Contains Snow Mushroom, Squalane and Niacinamide</li></ul>",
+   "specs": [
+    {
+     "label": "Brand",
+     "value": "Clubhouse Skin"
+    },
+    {
+     "label": "Weight",
+     "value": "60 g"
+    }
+   ],
+   "faqs": [],
+   "open_questions": [
+    "Which skin types is it suitable for?",
+    "How should it be used?",
+    "What is the product order in a routine?",
+    "What are the ingredient amounts?",
+    "Is it scented or fragrance-free?"
+   ]
+  },
+  {
+   "id": 7,
+   "type": "guide",
+   "title": "What should I use for a simple, non-stripping, hydrating routine?",
+   "status": "draft",
+   "planned": "2026-10-20",
+   "product": "Full Clubhouse Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416",
+   "products": 3,
+   "gaps": 0,
+   "questions": 3,
+   "review": null,
+   "why": "The question spans several products, so one guide can cover them and link to each.",
+   "cur_title": null,
+   "cur_desc": "",
+   "new_title": "What should I use for a simple, non-stripping, hydrating routine?",
+   "html": "<p>Keep the routine considered. Start with a cleanser, follow with a moisturiser, and add only what earns its place. Choose products that feel comfortable for your skin and fit easily into daily use.</p><h2>A simple three-product routine</h2><p>The Full Clubhouse Set brings the routine together in a clear sequence: Frontier Cleanser, Amalfi Vitamin-C Face Oil, then Helsinki Moisturiser.</p><p>It is designed as a considered system rather than a ten-step routine, with products formulated to work in sequence without competing with each other.</p><h2>Start with cleansing that respects balance</h2><p>Look for a daily cleanser that removes what does not belong without leaving your skin feeling uncomfortable or tight. Frontier Cleanser respects your skin\u2019s natural balance while removing what does not belong.</p><p>Its description is built around cleaning without stripping, with Squalane and Jojoba to replenish what your skin naturally produces.</p><h2>Finish with lightweight hydration</h2><p>Helsinki Moisturiser is a lightweight moisturiser that hydrates deeply without heaviness. Its description says it works alongside Squalane and Niacinamide to lock in moisture and support your skin\u2019s natural function.</p><p>For a simple routine, apply the cleanser first and the moisturiser afterwards. If you want the complete three-product sequence, choose the Full Clubhouse Set.</p><h2>Choose the format that suits you</h2><p>Choose the Full Clubhouse Set if you want the complete three-product routine in one considered system.</p><p>Choose Frontier Cleanser if cleansing is your immediate priority, or Helsinki Moisturiser if you are looking to add lightweight hydration to an existing routine.</p><h2>Our picks</h2><ul><li><a href=\"https://clubhouseskin.com/products/full-clubhouse-routine\"><strong>Full Clubhouse Set</strong></a> - For someone who wants a complete, simple routine: The Full Clubhouse Set includes Frontier Cleanser, Amalfi Vitamin-C Face Oil and Helsinki Moisturiser. The products are formulated to work in sequence, and the set is described as a considered system with no ten-step routine.</li><li><a href=\"https://clubhouseskin.com/products/frontier-cleanser\"><strong>Frontier Cleanser</strong></a> - For someone who wants cleansing without stripping: Frontier Cleanser is a daily cleanser that respects your skin\u2019s natural balance. Its description says it cleans without stripping and includes Squalane and Jojoba to replenish what your skin naturally produces.</li><li><a ",
+   "specs": [],
+   "faqs": [],
+   "open_questions": [
+    "Which skin types are each product suitable for?",
+    "How often should each product be used, and how much should be applied?",
+    "Has each product been tested for sensitivity or irritation?"
+   ]
+  },
+  {
+   "id": 8,
+   "type": "comparison",
+   "title": "Complete skincare set or separate products?",
+   "status": "draft",
+   "planned": "2026-10-21",
+   "product": "Full Clubhouse Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416",
+   "products": 4,
+   "gaps": 0,
+   "questions": 4,
+   "review": null,
+   "why": "The buyer is choosing between options, so a side-by-side page answers it directly.",
+   "cur_title": null,
+   "cur_desc": "",
+   "new_title": "Complete skincare set or separate products?",
+   "html": "<p>A side-by-side comparison for choosing between a complete three-product routine and individual cleanser, face oil and moisturiser products. Compare what is included, how the products fit together and what each product is designed to do.</p><table><tr><th></th><th>Full Clubhouse Set</th><th>Helsinki Moisturiser</th><th>Frontier Cleanser</th><th>Amalfi Vitamin-C Face Oil</th></tr><tr><th>Format</th><td>Set includes: 1x Frontier Cleanser 1x Amalfi Vitamin-C Face Oil 1x Helsinki Moisturiser 1x Free limited edition merch</td><td>Not stated</td><td>Not stated</td><td>Not stated</td></tr><tr><th>Product focus</th><td>Everything your skin needs. Nothing it doesn&#x27;t. Three products formulated to work in sequence.</td><td>A lightweight mushroom-powered moisturiser that hydrates deeply without heaviness.</td><td>A daily cleanser that respects your skin&#x27;s natural balance.</td><td>A vitamin-C face oil that brightens , protects , and balances .</td></tr><tr><th>Cleanser details</th><td>Not stated</td><td>Not stated</td><td>Built around ingredients that clean without stripping \u2014 because healthy skin starts with not getting in the way.</td><td>Not stated</td></tr><tr><th>Face oil details</th><td>Amalfi Vitamin-C Oil defends against environmental damage and brings a natural glow.</td><td>Not stated</td><td>Not stated</td><td>Grapefruit Peel Oil and Vitamin C defend against environmental damage while bringing a natural glow .</td></tr><tr><th>Moisturiser details</th><td>Helsinki Moisturiser locks everything in with deep, lasting hydration.</td><td>Working alongside Squalane and Niacinamide to lock in moisture and support your skin&#x27;s natural function.</td><td>Not stated</td><td>Not stated</td></tr><tr><th>Routine order</th><td>The products are formulated to work in sequence: Frontier Cleanser, Amalfi Vitamin-C Face Oil, then Helsinki Moisturiser.</td><td>Not stated</td><td>Not stated</td><td>Not stated</td></tr><tr><th>Feel and finish</th><td>Our formulas are designed to be lightweight and non-greasy, including a daily face oil and a moisturiser that hydrates without heaviness.</td><td>All day, without the weight.</td><td>Squalane and Jojoba replenish what your skin naturally produces, without disrupting what it already does well.</td><td>Lightweight enough to wear daily.</td></tr><tr><th>Named ingredients</th><td>Not stated</td><td>Snow Mushroom , sourced from tropical forests, with remarkable water-retention properties. Working alongside Squalane and Niaci",
+   "specs": [],
+   "faqs": [],
+   "open_questions": [
+    "Which skin types is each product suitable for?",
+    "What are the recommended application amounts and steps for each product?",
+    "Does the Full Clubhouse Set contain the same product sizes as the individual products?",
+    "What is the saving, if any, when buying the complete set rather than the three products separately?"
+   ]
+  },
+  {
+   "id": 9,
+   "type": "guide",
+   "title": "What\u2019s the best simple three-step skincare routine for cleansing, brightening and hydrating?",
+   "status": "draft",
+   "planned": "2026-10-26",
+   "product": "Full Clubhouse Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416",
+   "products": 1,
+   "gaps": 0,
+   "questions": 3,
+   "review": null,
+   "why": "The question spans several products, so one guide can cover them and link to each.",
+   "cur_title": null,
+   "cur_desc": "",
+   "new_title": "What\u2019s the best simple three-step skincare routine for cleansing, brightening and hydrating?",
+   "html": "<p>Keep your routine considered. Start with cleansing, follow with a face oil, then moisturise. Three clear steps, without unnecessary layers.</p><h2>1. Cleanse</h2><p>Begin with Frontier Cleanser. It is designed to respect the skin\u2019s natural balance while removing what does not belong.</p><p>A cleanser should feel like a practical first step, not an extra complication. Choose one that fits comfortably into your daily routine.</p><h2>2. Add a natural glow</h2><p>Follow with Amalfi Vitamin-C Face Oil. The oil brings a natural glow and is described as lightweight and non-greasy for daily use.</p><p>Apply your face oil after cleansing, before moisturiser. If you are introducing a new product, start gradually and pay attention to how your skin responds.</p><h2>3. Hydrate</h2><p>Finish with Helsinki Moisturiser. It locks everything in with deep, lasting hydration and is designed to hydrate without heaviness.</p><p>This three-step order keeps each product in a clear role: cleanse, add the face oil, then moisturise.</p><h2>A considered set for the full routine</h2><p>Full Clubhouse Set brings the three steps together: Frontier Cleanser, Amalfi Vitamin-C Face Oil and Helsinki Moisturiser. The products are formulated to work in sequence.</p><p>It suits shoppers looking for a complete three-product routine rather than a ten-step system.</p>",
+   "specs": [],
+   "faqs": [],
+   "open_questions": [
+    "Which skin types are the three products suitable for?",
+    "Should the routine be used once or twice daily?",
+    "Are there any specific precautions or patch-testing instructions for the Amalfi Vitamin-C Face Oil?"
+   ]
+  },
+  {
+   "id": 10,
+   "type": "product_fix",
+   "title": "Amalfi Vitamin-C Face Oil: page fix",
+   "status": "draft",
+   "planned": null,
+   "product": "Amalfi Vitamin-C Face Oil",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304",
+   "products": 1,
+   "gaps": 0,
+   "questions": 5,
+   "review": {
+    "scores": {
+     "answers": 4,
+     "readable": 4,
+     "voice": 4
+    },
+    "issues": [
+     {
+      "problem": "The environmental-protection claim shifts between \u201cprotects\u201d and \u201cdefend against environmental damage\u201d, which can sound stronger than the more measured brand voice.",
+      "fix": "Use the more cautious phrasing consistently, such as \u201chelps defend against environmental damage\u201d."
+     },
+     {
+      "problem": "\u201cIt absorbs the way it should\u201d is vague and slightly awkward for shoppers assessing texture.",
+      "fix": "Use clearer, skin-focused wording that describes the stated lightweight texture without adding a new claim."
+     },
+     {
+      "problem": "\u201cLightweight\u201d is repeated in the title, opening, bullet list and texture line.",
+      "fix": "Keep it in the title or opening, then remove one or two repeated mentions."
+     }
+    ],
+    "passed": true
+   },
+   "why": "AI recommends products whose pages state what the buyer asks; this makes Amalfi Vitamin-C Face Oil state it too, using only facts your catalog already has.",
+   "cur_title": "Amalfi Vitamin-C Face Oil",
+   "cur_desc": "A vitamin-C face oil that brightens , protects , and balances . Lightweight enough to wear daily. Considered enough to earn its place on your shelf. Inspired by eating grapefruit on the Amalfi coast \u2014 sun on your skin, salt in the air. Grapefruit Peel Oil and Vitamin C defend against environmental damage while bringing a natural glow . Jojoba mimics your skin's own oils, so it absorbs the way it should.",
+   "new_title": "Clubhouse Skin Amalfi Vitamin-C Face Oil - Lightweight",
+   "html": "<p>A vitamin-C face oil that brightens, protects and balances. Lightweight enough to wear daily.</p><p>Grapefruit Peel Oil and Vitamin C defend against environmental damage while bringing a natural glow. Jojoba mimics your skin\u2019s own oils, so it absorbs the way it should.</p><ul><li>Lightweight for daily wear</li><li>Helps defend against environmental damage</li><li>Brings a natural glow</li><li>Designed to absorb like your skin\u2019s own oils</li></ul>",
+   "specs": [
+    {
+     "label": "Texture",
+     "value": "Lightweight"
+    },
+    {
+     "label": "Key ingredients",
+     "value": "Grapefruit Peel Oil and Vitamin C"
+    },
+    {
+     "label": "Additional ingredient",
+     "value": "Jojoba"
+    }
+   ],
+   "faqs": [],
+   "open_questions": [
+    "How much product is in the bottle, in ml?",
+    "What type and concentration of Vitamin C does it contain?",
+    "Which skin types is it suitable for?",
+    "How should it be used in a routine?",
+    "Is it fragrance-free?"
+   ]
+  }
+ ],
+ "voice": {
+  "traits": [
+   {
+    "name": "Short, paired sentences",
+    "how": "Use crisp statements and deliberate contrasts, as in \u201cEverything your skin needs. Nothing it doesn't.\u201d and \u201cNo ten-step routine. No products competing with each other.\u201d"
+   },
+   {
+    "name": "Considered, direct language",
+    "how": "Write in a calm, assured first-person brand voice, introducing products as practical parts of a simple, intentional routine rather than making grand claims."
+   },
+   {
+    "name": "Balance-led benefits",
+    "how": "Return to ideas of natural balance, protection, hydration and glow, using clear verbs such as \u201crespects,\u201d \u201cdefends,\u201d \u201clocks\u201d and \u201cworks.\u201d"
+   },
+   {
+    "name": "Shelf-worthy simplicity",
+    "how": "Emphasise routines and products that earn their place on the shelf and get used, while avoiding cluttered steps, unnecessary products and exaggerated promises."
+   }
+  ],
+  "examples": [
+   "Everything your skin needs. Nothing it doesn't.",
+   "Three products formulated to work in sequence.",
+   "Just a considered system, designed to sit on your shelf and actually get used."
+  ],
+  "sample": "Everything your skin needs. Nothing it doesn't. Three products formulated to work in sequence: Frontier Cleanser respects your skin's natural balance, Amalfi Vitamin-C Face Oil defends against environmental damage, and Helsinki Moisturiser locks everything in with deep, lasting hydration. No ten-step routine. Just a considered system, designed to sit on your shelf and actually get used.",
+  "sample_product": "Full Clubhouse Set",
+  "pages": [
+   "Full Clubhouse Set",
+   "Essentials Set",
+   "Amalfi Vitamin-C Face Oil",
+   "Homepage"
+  ],
+  "adjust": [],
+  "confirmed": false,
+  "at": 1792147430.270445
+ },
+ "brief": {
+  "customers": "People looking for a considered, effective skincare routine without unnecessary steps or heaviness.",
+  "story": "Clubhouse Skin was created as a breath of fresh air from the stuffy conventions of skincare. We make considered, natural-feeling products with a clear purpose\u2014designed to work together, look good on your shelf and actually get used.",
+  "different": [
+   "We create considered systems rather than ten-step routines.",
+   "Our products are formulated to work in sequence, without products competing with each other.",
+   "Frontier Cleanser respects the skin\u2019s natural balance while removing what does not belong.",
+   "Our formulas are designed to be lightweight and non-greasy, including a daily face oil and a moisturiser that hydrates without heaviness.",
+   "Our products take inspiration from places including the Spanish coast, the Amalfi coast and Helsinki.",
+   "We offer curated skincare sets covering the fundamentals or a complete three-product routine."
+  ],
+  "proof": [],
+  "policies": [
+   "We offer a 30-day return policy from the date your item is received.",
+   "Returned items must be unworn or unused, with tags, in their original packaging and accompanied by proof of purchase.",
+   "Personal care goods such as beauty products are non-returnable under the stated refund policy.",
+   "Sale items and gift cards cannot be returned.",
+   "For accepted returns, we provide a return shipping label and instructions.",
+   "For orders shipped into the European Union, customers have a 14-day cooling-off right to cancel or return an order without giving a reason, subject to the stated condition requirements.",
+   "Approved refunds are made to the original payment method within 10 business days of the return being received and inspected.",
+   "Damaged, defective or incorrect items should be reported immediately after delivery."
+  ],
+  "objections": [
+   "Which products do I need to start a routine?",
+   "Can I use the products together and in what order?",
+   "Will the cleanser strip or dry out my skin?",
+   "Is the face oil lightweight enough to wear every day?",
+   "Will the moisturiser feel heavy or greasy?",
+   "Which skin types are the products suitable for?",
+   "Can I return skincare products if I change my mind?",
+   "How long will a refund take after my return is accepted?"
+  ],
+  "naming": "We use distinctive place-inspired names paired with clear product descriptions, such as Frontier Cleanser, Amalfi Vitamin-C Face Oil and Helsinki Moisturiser.",
+  "always_words": [
+   "considered",
+   "natural balance",
+   "lightweight",
+   "deep, lasting hydration",
+   "natural glow",
+   "without stripping",
+   "skin\u2019s natural function"
+  ],
+  "never_words": [
+   "miracle",
+   "revolutionary",
+   "flawless",
+   "instant",
+   "best",
+   "luxurious"
+  ],
+  "no_claims": [
+   "Do not claim to treat, cure or prevent medical skin conditions without appropriate evidence.",
+   "Do not claim that products are clinically proven without clinical proof.",
+   "Do not promise guaranteed results or imply that every customer will achieve the same outcome.",
+   "Do not make unsubstantiated anti-ageing, healing or SPF claims."
+  ],
+  "never_name": [],
+  "love_page": "https://clubhouseskin.com/products/full-clubhouse-routine",
+  "length": "Medium",
+  "format": "Bullet points where possible",
+  "spelling": "British"
+ },
+ "allowed": [
+  "titles",
+  "descriptions",
+  "specs",
+  "faqs",
+  "comparisons",
+  "guides"
+ ],
+ "leave_alone": [],
+ "schedule": {
+  "days": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "pace": 3,
+  "hour": 9
+ },
+ "missing": [
+  {
+   "handle": "members-hat",
+   "title": "Peau De Clubhouse Hat",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710",
+   "items": [
+    {
+     "label": "Size",
+     "question": "What head sizes does the cap fit?",
+     "suggestion": ""
+    },
+    {
+     "label": "Fit",
+     "question": "How does the structured cap fit?",
+     "suggestion": ""
+    },
+    {
+     "label": "Closure",
+     "question": "What type of fastening or size adjustment does it have?",
+     "suggestion": ""
+    },
+    {
+     "label": "Care",
+     "question": "How should the cotton cap be cleaned and cared for?",
+     "suggestion": ""
+    },
+    {
+     "label": "Colour",
+     "question": "What colour is the cap?",
+     "suggestion": ""
+    }
+   ]
+  },
+  {
+   "handle": "almafi-vit-c",
+   "title": "Amalfi Vitamin-C Face Oil",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304",
+   "items": [
+    {
+     "label": "Size",
+     "question": "How much face oil is in the bottle?",
+     "suggestion": ""
+    },
+    {
+     "label": "How to use",
+     "question": "How and when should the face oil be applied?",
+     "suggestion": ""
+    },
+    {
+     "label": "Skin type",
+     "question": "Which skin types is the face oil suitable for?",
+     "suggestion": ""
+    },
+    {
+     "label": "Vitamin C amount",
+     "question": "What form and concentration of vitamin C does it contain?",
+     "suggestion": ""
+    },
+    {
+     "label": "Fragrance",
+     "question": "Is the face oil fragranced, and what does it smell like?",
+     "suggestion": ""
+    },
+    {
+     "label": "Ingredients",
+     "question": "What are the full ingredients?",
+     "suggestion": ""
+    }
+   ]
+  },
+  {
+   "handle": "frontier-cleanser",
+   "title": "Frontier Cleanser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370",
+   "items": [
+    {
+     "label": "Size",
+     "question": "How much cleanser is in the bottle?",
+     "suggestion": "",
+     "web": {
+      "value": "255ml bottle",
+      "url": "https://goodhoodstore.com/products/clubhouse-skin-frontier-cleanser-255ml",
+      "site": "goodhoodstore.com"
+     }
+    },
+    {
+     "label": "Skin type",
+     "question": "Which skin types is the cleanser suitable for?",
+     "suggestion": "",
+     "web": {
+      "value": "Suitable for dry, oily and combination skin types",
+      "url": "https://goodhoodstore.com/products/clubhouse-skin-frontier-cleanser-255ml",
+      "site": "goodhoodstore.com"
+     }
+    },
+    {
+     "label": "How to use",
+     "question": "How should the cleanser be applied and rinsed off?",
+     "suggestion": ""
+    },
+    {
+     "label": "Natural-origin content",
+     "question": "What percentage of the ingredients are naturally derived?",
+     "suggestion": "",
+     "web": {
+      "value": "97% naturally derived ingredients",
+      "url": "https://goodhoodstore.com/products/clubhouse-skin-frontier-cleanser-255ml",
+      "site": "goodhoodstore.com"
+     }
+    },
+    {
+     "label": "Fragrance",
+     "question": "Is the cleanser fragranced, and what does it smell like?",
+     "suggestion": ""
+    },
+    {
+     "label": "Country of manufacture",
+     "question": "Where is the cleanser made?",
+     "suggestion": "",
+     "web": {
+      "value": "Made in Great Britain",
+      "url": "https://goodhoodstore.com/products/clubhouse-skin-frontier-cleanser-255ml",
+      "site": "goodhoodstore.com"
+     }
+    }
+   ]
+  },
+  {
+   "handle": "helsinki-face-moisturiser",
+   "title": "Helsinki Moisturiser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451",
+   "items": [
+    {
+     "label": "Size",
+     "question": "How much moisturiser is in the container?",
+     "suggestion": "",
+     "web": {
+      "value": "75ml",
+      "url": "https://goodhoodstore.com/en-ca/products/clubhouse-skin-helsinki-moisturiser-75ml",
+      "site": "goodhoodstore.com"
+     }
+    },
+    {
+     "label": "Skin type",
+     "question": "Which skin types is the moisturiser suitable for?",
+     "suggestion": ""
+    },
+    {
+     "label": "How to use",
+     "question": "When and how should the moisturiser be applied?",
+     "suggestion": ""
+    },
+    {
+     "label": "Natural-origin content",
+     "question": "What percentage of the ingredients are from natural origin?",
+     "suggestion": "",
+     "web": {
+      "value": "96% natural origin ingredients",
+      "url": "https://goodhoodstore.com/en-ca/products/clubhouse-skin-helsinki-moisturiser-75ml",
+      "site": "goodhoodstore.com"
+     }
+    },
+    {
+     "label": "Fragrance",
+     "question": "Is the moisturiser fragranced, and what does it smell like?",
+     "suggestion": ""
+    },
+    {
+     "label": "Country of manufacture",
+     "question": "Where is the moisturiser made?",
+     "suggestion": "",
+     "web": {
+      "value": "Made in Great Britain",
+      "url": "https://goodhoodstore.com/en-ca/products/clubhouse-skin-helsinki-moisturiser-75ml",
+      "site": "goodhoodstore.com"
+     }
+    }
+   ]
+  },
+  {
+   "handle": "full-clubhouse-routine",
+   "title": "Full Clubhouse Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416",
+   "items": [
+    {
+     "label": "Product sizes",
+     "question": "What are the sizes of each included skincare product?",
+     "suggestion": ""
+    },
+    {
+     "label": "Routine order",
+     "question": "What is the exact order for using the three products?",
+     "suggestion": ""
+    },
+    {
+     "label": "How to use",
+     "question": "How should each product be applied?",
+     "suggestion": ""
+    },
+    {
+     "label": "Skin types",
+     "question": "Which skin types is the complete set suitable for?",
+     "suggestion": ""
+    },
+    {
+     "label": "Merchandise details",
+     "question": "What is the free limited-edition merchandise item?",
+     "suggestion": ""
+    },
+    {
+     "label": "Returns",
+     "question": "Can the skincare products be returned if I change my mind?",
+     "suggestion": "Personal care goods such as beauty products are non-returnable under the stated refund policy."
+    }
+   ]
+  },
+  {
+   "handle": "essentials-set",
+   "title": "Essentials Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CHS_Essentials-Set_PDP_1.jpg?v=1739727326",
+   "items": [
+    {
+     "label": "Skin types",
+     "question": "Which skin types is this set suitable for?",
+     "suggestion": ""
+    },
+    {
+     "label": "Product sizes",
+     "question": "What are the individual sizes or volumes of the cleanser and moisturiser?",
+     "suggestion": ""
+    },
+    {
+     "label": "Ingredients",
+     "question": "What are the full ingredient lists and key ingredient amounts?",
+     "suggestion": ""
+    },
+    {
+     "label": "How to use",
+     "question": "How should each product be used, and how often?",
+     "suggestion": ""
+    },
+    {
+     "label": "Fragrance",
+     "question": "Are the cleanser and moisturiser fragranced?",
+     "suggestion": ""
+    },
+    {
+     "label": "Return policy",
+     "question": "Can I return this set if I change my mind?",
+     "suggestion": "Personal care goods such as beauty products are non-returnable under the stated refund policy."
+    }
+   ]
+  }
+ ],
+ "products": [
+  {
+   "handle": "almafi-vit-c",
+   "title": "Amalfi Vitamin-C Face Oil",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_AMALFI-VIT-C_PDP_DT_01_676ee991-b6f2-49f8-b4b1-ace3a42de234.jpg?v=1731852304"
+  },
+  {
+   "handle": "essentials-set",
+   "title": "Essentials Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CHS_Essentials-Set_PDP_1.jpg?v=1739727326"
+  },
+  {
+   "handle": "frontier-cleanser",
+   "title": "Frontier Cleanser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-FRONTIER-CLEANSER_PDP_DT_01_65449da1-a297-41eb-a3e5-35ec80153b11.jpg?v=1731852370"
+  },
+  {
+   "handle": "full-clubhouse-routine",
+   "title": "Full Clubhouse Set",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_ROUTINE_PDP_DT_01_bc3da229-b518-464f-8dcf-b508d8a18deb.jpg?v=1731852416"
+  },
+  {
+   "handle": "helsinki-face-moisturiser",
+   "title": "Helsinki Moisturiser",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN-HELSINKI-MOISTURISER_PDP_DT_01_f1010d1d-8596-4dbf-9d11-91a4ddcf9ace.jpg?v=1731852451"
+  },
+  {
+   "handle": "members-hat",
+   "title": "Peau De Clubhouse Hat",
+   "image": "https://cdn.shopify.com/s/files/1/0638/3901/1004/files/CLUBHOUSE-SKIN_MEMBERS-HAT_PDP_DT_01_90467aed-8988-475f-a39c-b2878915b6dc.jpg?v=1737227710"
+  }
+ ]
+}

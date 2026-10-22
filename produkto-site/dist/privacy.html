@@ -14,11 +14,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=50">
+  <link rel="stylesheet" href="styles.css?v=62">
   <script>document.documentElement.classList.add('js')</script>
   <script src="booking-config.js?v=5" defer></script>
-  <script src="app.js?v=41" defer></script>
+  <script src="app.js?v=42" defer></script>
   <script src="p-mark.js?v=2" defer></script>
+<script>/* Signed in to the app? Swap Log in / Sign up for Go to dashboard. The app sets this cookie. */try{if(/(?:^|; )pk_signed_in=1/.test(document.cookie))document.documentElement.classList.add('signed-in')}catch(e){}</script>
+  <link rel="canonical" href="https://getprodukto.com/privacy">
 </head>
 <body>
 
@@ -66,7 +68,7 @@
 
 <header class="site-header" data-header>
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Produkto home"><img src="assets/produkto-wordmark.png" alt="Produkto" width="2000" height="2000"></a>
+    <a class="brand" href="index.html" aria-label="Produkto home"><img src="assets/produkto-wordmark-transparent.png" alt="Produkto" width="2000" height="2000"></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html#how">How it works</a>
       <a href="index.html#features">Features</a>
@@ -74,6 +76,9 @@
       <a href="index.html#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
+      <a class="btn btn-ghost btn-sm auth-out" href="https://app.getprodukto.com/login">Log in</a>
+      <a class="btn btn-secondary btn-sm auth-out" href="pricing.html">Sign up</a>
+      <a class="btn btn-secondary btn-sm auth-in" href="https://app.getprodukto.com/">Go to dashboard</a>
       <a class="btn btn-primary btn-sm" href="index.html#request">Book a demo <svg class="icon icon-sm icon-shift" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
@@ -83,6 +88,9 @@
     <a href="index.html#features">Features</a>
     <a href="pricing.html">Pricing</a>
     <a href="index.html#faq">FAQ</a>
+    <a class="auth-out" href="https://app.getprodukto.com/login">Log in</a>
+    <a class="auth-out" href="pricing.html">Sign up</a>
+    <a class="btn btn-secondary btn-lg auth-in" href="https://app.getprodukto.com/">Go to dashboard</a>
     <a class="btn btn-primary btn-lg" href="index.html#request">Book a demo</a>
   </nav>
 </header>
@@ -180,6 +188,8 @@
         <h4>Company</h4>
         <a href="pricing.html">Pricing</a>
         <a href="index.html#faq">FAQ</a>
+        <a href="guides.html">Guides</a>
+        <a href="press.html">Press kit</a>
       </div>
       <div class="footer-col">
         <h4>Get started</h4>

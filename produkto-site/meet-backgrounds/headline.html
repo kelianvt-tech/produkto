@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1920px;height:1080px;overflow:hidden;font-family:Geist,system-ui,sans-serif;color:#fff;
+ background:radial-gradient(900px 600px at 1700px 120px,#1f4a8f88,transparent 70%),
+ radial-gradient(800px 600px at 150px 1050px,#1a3a7a66,transparent 70%),#0b1b35;position:relative}
+.logo{position:absolute;left:96px;top:88px;width:420px}
+.copy{position:absolute;left:96px;top:400px;width:700px}
+h1{font-size:62px;white-space:nowrap;line-height:1.05;letter-spacing:-.035em;font-weight:600}
+h1 span{color:#7cc4ff}
+p{margin-top:26px;font-size:24px;line-height:1.4;color:#a9b6cc}
+.url{position:absolute;left:96px;bottom:84px;font-size:28px;color:#a9b6cc}
+.side{position:absolute;right:80px;top:150px;width:440px;display:flex;flex-direction:column;gap:22px}
+.card{background:linear-gradient(180deg,#ffffff14,#ffffff08);border:1px solid #ffffff1f;border-radius:18px;padding:22px 24px;box-shadow:0 20px 50px -20px #0008}
+.lbl{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#8a9bb8;font-weight:500}
+.row{display:flex;gap:22px}.row .card{flex:1}
+.big{font-size:44px;font-weight:600;margin-top:8px;letter-spacing:-.02em}
+.up{font-size:15px;color:#4ade80;margin-top:4px}
+svg{display:block;margin-top:12px}
+.prod{display:flex;align-items:center;gap:14px;padding:11px 0;border-top:1px solid #ffffff12}
+.prod:first-of-type{border-top:0}
+.ph{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,#3b6fd1,#1a3a7a)}
+.prod b{font-weight:500;font-size:17px;flex:1}.prod i{font-style:normal;font-size:17px;color:#cfe0ff}
+.prod.me b{color:#fff}.prod.me .ph{background:linear-gradient(135deg,#7cc4ff,#3b6fd1)}
+</style></head><body>
+<img class="logo" src="../dist/assets/produkto-wordmark-light.png">
+<div class="copy"><h1>Is AI recommending<br><span>your products?</span></h1>
+<p>Track every product across ChatGPT &amp; AI search.</p></div>
+<div class="url">getprodukto.com</div>
+<div class="side">
+ <div class="row">
+  <div class="card"><div class="lbl">Visibility</div><div class="big">38%</div><div class="up">▲ 9 pts</div></div>
+  <div class="card"><div class="lbl">Avg. position</div><div class="big">#2.1</div><div class="up">▲ 0.6</div></div>
+ </div>
+ <div class="card"><div class="lbl">Visibility over time</div>
+  <svg width="390" height="150" viewBox="0 0 390 150">
+   <g stroke="#ffffff14" stroke-dasharray="3 5"><line x1="0" y1="30" x2="390" y2="30"/><line x1="0" y1="75" x2="390" y2="75"/><line x1="0" y1="120" x2="390" y2="120"/></g>
+   <polyline fill="none" stroke="#6b7a96" stroke-width="2.5" points="0,95 55,90 110,100 165,88 220,96 275,92 330,98 390,94"/>
+   <polyline fill="none" stroke="#a78bfa" stroke-width="2.5" points="0,110 55,104 110,96 165,100 220,84 275,80 330,74 390,70"/>
+   <polyline fill="none" stroke="#4ade80" stroke-width="3.5" points="0,128 55,120 110,112 165,96 220,82 275,60 330,40 382,20"/>
+   <circle cx="382" cy="20" r="5" fill="#4ade80"/>
+  </svg></div>
+ <div class="card"><div class="lbl">Product ranking</div>
+  <div style="margin-top:10px">
+  <div class="prod me"><div class="ph"></div><b>Your product</b><i>38%</i></div>
+  <div class="prod"><div class="ph"></div><b>Competitor A</b><i>27%</i></div>
+  <div class="prod"><div class="ph"></div><b>Competitor B</b><i>19%</i></div>
+  <div class="prod"><div class="ph"></div><b>Competitor C</b><i>6%</i></div>
+  </div></div>
+</div>
+</body></html>

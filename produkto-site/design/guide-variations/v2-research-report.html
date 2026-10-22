@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research report | What is AI shopping visibility?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus,#2f5bd3);outline-offset:3px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+:root{--bg:#fbfbfa;--ink:#0b1b35;--text:#1d2433;--muted:#5b6475;--line:#e3e5e8;--blue:#2448c4;--soft:#eef1f8;--focus:#2448c4}
+::selection{background:#d6defa}
+body{background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 'IBM Plex Sans',system-ui,sans-serif}
+.bar{position:sticky;top:0;z-index:10;background:rgba(251,251,250,.94);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.bar img{height:24px;width:auto}
+.bar a.cta{font:500 .9rem 'IBM Plex Sans';background:var(--ink);color:#fff;padding:9px 16px;border-radius:6px;text-decoration:none}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--blue);width:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px}
+.head{grid-column:1/-1;padding:72px 0 40px;border-bottom:1px solid var(--ink);display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px}
+.head .meta{font:400 .85rem/1.6 'IBM Plex Sans';color:var(--muted);padding-top:12px}
+.head .meta b{display:block;color:var(--ink);font-weight:600}
+h1{font:600 clamp(2.4rem,5.2vw,4rem)/1.04 'IBM Plex Sans';color:var(--ink);letter-spacing:-.03em;max-width:16ch;text-wrap:balance}
+.dek{font-size:1.3rem;line-height:1.5;color:var(--muted);margin-top:20px;max-width:46ch}
+.def{margin-top:32px;font:400 1.35rem/1.5 'IBM Plex Serif',serif;color:var(--ink);max-width:56ch}
+.def strong{font-weight:600}
+nav.toc{position:sticky;top:84px;align-self:start;padding-top:40px;font-size:.88rem}
+nav.toc p{font-weight:600;color:var(--ink);margin-bottom:10px}
+nav.toc a{display:block;padding:6px 0 6px 12px;color:var(--muted);text-decoration:none;border-left:1px solid var(--line)}
+nav.toc a.on{color:var(--ink);border-left:2px solid var(--blue);padding-left:11px;font-weight:500}
+main{padding:40px 0 96px;min-width:0}
+section{padding:32px 0 40px;border-bottom:1px solid var(--line);scroll-margin-top:90px}
+h2{font:600 1.75rem/1.2 'IBM Plex Sans';color:var(--ink);letter-spacing:-.02em;margin-bottom:16px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.prose p+p{margin-top:1em}
+.prose ol{margin:1em 0 0 1.2em}.prose li{margin:.45em 0;padding-left:.2em}
+.prose b,.prose strong{color:var(--ink)}
+figure.fig{margin:8px 0 0}
+figure.fig figcaption{font-size:.85rem;color:var(--muted);margin-top:10px;line-height:1.5}
+figure.fig figcaption b{color:var(--ink)}
+.chart{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{font-family:'IBM Plex Sans';fill:var(--text)}
+.statlist{margin-top:18px;border-top:1px solid var(--line)}
+.statlist div{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.statlist b{font:600 1.15rem/1.3 'IBM Plex Sans';color:var(--ink);font-variant-numeric:tabular-nums}
+.statlist a{color:var(--muted);font-size:.85rem}
+table{width:100%;border-collapse:collapse;font-size:.93rem;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--soft);font-weight:600;color:var(--ink);font-size:.85rem}
+.hl{background:#f3f6fd}
+thead .hl{background:var(--ink);color:#fff}
+tbody th{font-weight:600;color:var(--ink);width:16%}
+.tw{overflow-x:auto;margin-top:8px}
+.tw table{min-width:640px}
+.answer{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.answer .q{background:var(--soft);padding:14px 18px;font-weight:500;color:var(--ink)}
+.answer .a{padding:14px 18px 6px;color:var(--muted)}
+.answer ol{list-style:none;padding:0 18px 14px}
+.answer li{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line);font-size:.93rem}
+.answer li span:first-child{font-variant-numeric:tabular-nums;color:var(--muted)}
+.answer li b{color:var(--ink)}
+.answer small{display:block;color:var(--muted)}
+.tag{font-size:.75rem;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--soft);color:var(--muted)}
+li.yours .tag{background:var(--blue);color:#fff}
+li.missing b{color:var(--muted)}
+li.missing .tag{background:#fdecea;color:#a1271b}
+dl.def-list{display:grid;grid-template-columns:12em 1fr;border-top:1px solid var(--line);margin-top:8px}
+dl.def-list dt,dl.def-list dd{padding:12px 0;border-bottom:1px solid var(--line)}
+dl.def-list dt{font-weight:600;color:var(--ink)}
+.note{margin-top:20px;padding:16px 18px;background:var(--soft);border-radius:8px;color:var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:10px;height:10px;border-right:1.5px solid var(--blue);border-bottom:1.5px solid var(--blue);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq p{padding:0 0 16px;max-width:62ch}
+.cta-band{margin-top:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px;border:1px solid var(--ink);border-radius:10px}
+.cta-band p{font:600 1.3rem/1.3 'IBM Plex Sans';color:var(--ink)}
+.cta-band a{background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:6px;font-weight:500;white-space:nowrap}
+.refs{margin-top:28px;font-size:.82rem;color:var(--muted)}.refs li{margin:.3em 0 0 1.4em}
+@media(max-width:960px){.wrap,.head{grid-template-columns:1fr;gap:0}nav.toc{display:none}.cols{grid-template-columns:1fr;gap:24px}dl.def-list{grid-template-columns:1fr}dl.def-list dt{border-bottom:0;padding-bottom:0}.cta-band{flex-direction:column;align-items:flex-start}}
+
+</style></head><body>
+
+<div class="bar"><div class="in"><img src="logo-dark.png" alt="Produkto" style="height:24px;width:auto"><a class="cta" href="#">Book a demo</a></div><div class="progress" id="prog"></div></div>
+<div class="wrap">
+  <header class="head"><div class="meta"><b>Guide</b>October 20, 2026<br>By Kelian Van Tulder<br>6 minute read</div>
+    <div><h1>What is AI shopping visibility?</h1><p class="dek">Shoppers now ask AI what to buy and get a few named products back. What AI shopping visibility is, how it differs from SEO, how to measure it, and what you can work on.</p><p class="def"><strong>AI shopping visibility is how often AI assistants like ChatGPT, Google AI Overviews and Perplexity name your products when a shopper asks what to buy.</strong> It is measured per product, on the questions your buyers actually ask, and compared against the competing products AI recommends instead.</p></div></header>
+  <nav class="toc" aria-label="Contents"><p>On this page</p><a href="#short">The short version</a><a href="#why-now">Why it matters now</a><a href="#vs-seo">How it differs from SEO</a><a href="#how-ai-chooses">How AI assistants choose products</a><a href="#measure">How to measure it</a><a href="#work-on">What you can work on</a><a href="#faq">Questions people ask</a></nav>
+  <main>
+    <section id="short"><h2>The short version</h2><div class="prose"><ol><li>Shoppers now ask ChatGPT, Perplexity and Google what to buy. They get back an answer that names a few products, not ten blue links.</li><li>A product that isn&#x27;t named in that answer is never considered. There is no page two.</li><li>AI shopping visibility is the share of those answers that name your product, measured per product, on the questions your buyers actually ask.</li><li>Answers change from one run to the next, so it is measured across many answers and tracked over time, not checked once.</li><li>It is also called AEO, GEO, AI search visibility or LLM visibility. “Shopping” narrows it to the thing a store sells: products.</li></ol></div></section>
+    <section id="why-now"><h2>Why it matters now</h2><div class="cols"><div class="prose"><p>Shoppers are already using AI to decide what to buy, the visitors it sends convert well, and fewer people click through to search results when an AI answer sits on top.</p><div class="statlist"><div><b>42%</b><span>of consumers have used AI assistants for online shopping, up 4 points since March 2026. <a href="https://business.adobe.com/assets/pdfs/resources/sdk/ai-traffic-trends-report-august-2026/ai-traffic-trends-report-2026-08-19.pdf">Adobe Consumer Survey, July 2026</a></span></div><div><b>+127%</b><span>year-over-year growth in AI-driven traffic to US retail sites in August 2026. <a href="https://business.adobe.com/resources/holiday-shopping-report.html">Adobe Digital Insights</a></span></div><div><b>60%</b><span>higher conversion rate for AI-referred retail visitors than for non-AI traffic, July 2026. <a href="https://business.adobe.com/assets/pdfs/resources/sdk/ai-traffic-trends-report-august-2026/ai-traffic-trends-report-2026-08-19.pdf">Adobe Digital Insights</a></span></div><div><b>~50%</b><span>of consumers already use AI-powered search. <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search">McKinsey</a></span></div><div><b>$750B</b><span>in US revenue projected to flow through AI-powered search by 2028. <a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search">McKinsey projection</a></span></div><div><b>8% vs 15%</b><span>of Google visits led to a click on a search result when an AI summary appeared, versus without one. <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center, 2025</a></span></div></div></div>
+      <figure class="fig"><div class="chart"><svg viewBox="0 0 420 225" role="img" aria-label="Bar chart: 42% of consumers have used AI assistants to shop; about 50% use AI-powered search; Google visits with a result click: 15% without an AI summary, 8% with one."><text x="0" y="18" font-size="13">Consumers who have used AI assistants to shop (Adobe, Jul 2026)</text><rect x="0" y="26" width="252" height="18" rx="3" fill="#2448c4"/><text x="260" y="40" font-size="13" font-weight="600">42%</text><text x="0" y="72" font-size="13">Consumers using AI-powered search (McKinsey)</text><rect x="0" y="80" width="300" height="18" rx="3" fill="#2448c4"/><text x="308" y="94" font-size="13" font-weight="600">50%</text><text x="0" y="126" font-size="13">Google visits with a result click, no AI summary (Pew)</text><rect x="0" y="134" width="90" height="18" rx="3" fill="#0b1b35"/><text x="98" y="148" font-size="13" font-weight="600">15%</text><text x="0" y="180" font-size="13">Google visits with a result click, with an AI summary (Pew)</text><rect x="0" y="188" width="48" height="18" rx="3" fill="#7f8db3"/><text x="56" y="202" font-size="13" font-weight="600">8%</text></svg></div><figcaption><b>Figure 1.</b> Share of consumers, or of Google visits, by source. Sources linked on the left.</figcaption></figure></div></section>
+    <section id="vs-seo"><h2>How it differs from SEO</h2><div class="prose"><p>SEO asks whether a page is relevant to a search. AI shopping visibility asks whether a product gets named when a shopper describes what they need.</p></div><figure class="fig"><div class="tw"><table><thead><tr><th></th><th>SEO</th><th>AEO / GEO</th><th class="hl">AI shopping visibility</th></tr></thead><tbody><tr><th>Goal</th><td>Rank pages in search results</td><td>Be quoted or cited in AI answers</td><td class='hl'>Be one of the products AI recommends</td></tr><tr><th>Where</th><td>Google, Bing</td><td>ChatGPT, Perplexity, Google AI Overviews, Gemini</td><td class='hl'>The same assistants, on shopping questions</td></tr><tr><th>Unit</th><td>A web page</td><td>A piece of content or a brand</td><td class='hl'>A single product</td></tr><tr><th>Metric</th><td>Rankings, clicks</td><td>Mentions, citations</td><td class='hl'>Share of answers naming the product, position, share of voice</td></tr><tr><th>Stability</th><td>Rankings move slowly</td><td>Answers vary by run</td><td class='hl'>Answers vary by run, so it’s measured repeatedly</td></tr></tbody></table></div><figcaption><b>Table 1.</b> Three ways of being found.</figcaption></figure><div class="prose" style="margin-top:18px;max-width:62ch"><p>Strong SEO still helps. Assistants with web search read the same pages search engines rank. But a page can rank well and still leave out the details an assistant needs to match the product to a specific need, like who it suits, what it’s made of or what it can’t do.</p></div></section>
+    <section id="how-ai-chooses"><h2>How AI assistants choose products</h2><div class="cols"><div class="prose"><p>With web search on, an assistant reads a handful of pages and writes its answer from them.</p><ol><li><b>The shopper asks with a need.</b> “A waterproof jacket for hiking in heavy rain, under $250.” One question carries a category, a use, a condition and a budget.</li><li><b>The assistant searches.</b> It runs one or more web searches built from the question. Google describes running several related searches at once for AI Mode.</li><li><b>It reads sources.</b> Product pages, editorial roundups, retailer listings, reviews and forum threads.</li><li><b>It matches products to the need.</b> Products whose pages confirm the conditions (waterproof rating, use, price) are easy to recommend. Vague pages give it nothing to work with.</li><li><b>It names the few it can justify.</b> Usually three to five products, often with links to the sources it used.</li></ol></div>
+      <figure class="fig"><div class="answer"><p class="q">What’s a good waterproof jacket for hiking in heavy rain, under $250?</p><p class="a">For steady heavy rain, look for a 3-layer shell with fully taped seams. Good options:</p><ol><li class='named'><span>1</span><span><b>Ridgeline Storm Shell</b><small>3-layer, 20K waterproof rating, pit zips</small></span><span class='tag'>Named</span></li><li class='named'><span>2</span><span><b>Northpass Rain Jacket</b><small>Light, packs into its pocket</small></span><span class='tag'>Named</span></li><li class='yours'><span>3</span><span><b>Your jacket</b><small>Named third: its page states the rating and seam taping</small></span><span class='tag'>Yours</span></li><li class='missing'><span>—</span><span><b>Your other jacket</b><small>Not named: its page doesn’t say how waterproof it is</small></span><span class='tag'>Missing</span></li></ol></div><figcaption><b>Figure 2.</b> An illustrative answer. The products are invented.</figcaption></figure></div></section>
+    <section id="measure"><h2>How to measure it</h2><div class="prose" style="max-width:62ch"><p>Ask your buyer questions several times, on more than one assistant, and track four numbers per product over time.</p></div><dl class="def-list"><dt>Visibility</dt><dd>The share of answers that name your product.</dd><dt>Average position</dt><dd>Where your product appears when it’s named. First beats fourth.</dd><dt>Share of voice</dt><dd>Your mentions as a share of all product mentions in those answers.</dd><dt>Citations</dt><dd>The sites AI cites, and whether they mention you.</dd></dl><p class="note">An assistant can recommend one of your products for one need and never mention the rest of your catalog. A brand-level number hides that.</p></section>
+    <section id="work-on"><h2>What you can work on</h2><div class="prose" style="max-width:62ch"><p>Most of it is product data: making each page state the facts a shopper’s question depends on, and being mentioned on the sites AI reads.</p></div><dl class="def-list"><dt>Who it’s for and what it’s for</dt><dd>“For hiking in heavy rain” can be matched to a question. “For any adventure” can’t.</dd><dt>The specs buyers filter on</dt><dd>Materials or ingredients, sizes, weight, ratings, compatibility. Written in text, not only in images.</dd><dt>Stated limits</dt><dd>What it isn’t suited for. It helps AI recommend the product for the right question.</dd><dt>Answers on the page</dt><dd>The questions customers ask support, answered in a sentence or two on the product page.</dd><dt>Complete structured data</dt><dd>Product markup with price, availability and reviews, matching what the page says.</dd><dt>Mentions where AI looks</dt><dd>The roundups, retailers and forums that keep showing up in the citations for your questions.</dd></dl><p class="note">Which of these moves visibility most is still an open question, for us and for everyone working on it. Measure first, change one thing, and measure again on the same questions.</p></section>
+    <section id="faq" style="border-bottom:0"><h2>Questions people ask</h2><div class="faq"><details><summary>Is AI shopping visibility the same as AEO or GEO?</summary><p>Close. AEO and GEO cover any content an AI might quote or cite. AI shopping visibility is the part that matters to an online store: whether your products get recommended.</p></details><details><summary>Does ranking on Google mean AI will recommend my products?</summary><p>Not necessarily. Assistants read pages that rank well, but they recommend specific products for specific needs. A product page that doesn’t state what the product is for can rank and still be left out of the answer.</p></details><details><summary>Why does my product show up in one answer but not the next?</summary><p>AI answers are generated fresh each time, so they vary. That is why visibility is measured as a share of many answers, not from a single check.</p></details><details><summary>Can I measure it for my whole catalog?</summary><p>Checking by hand works for a few products. Produkto measures every product in a Shopify catalog on your buyer questions, daily, across ChatGPT, Google AI Overviews and Perplexity, and shows the competing products AI picks instead.</p></details></div>
+      <div class="cta-band"><p>See which of your products AI recommends.</p><a href="#">Book a demo</a></div><ol class="refs"><li><a href="https://business.adobe.com/assets/pdfs/resources/sdk/ai-traffic-trends-report-august-2026/ai-traffic-trends-report-2026-08-19.pdf">Adobe Consumer Survey, July 2026</a></li><li><a href="https://business.adobe.com/resources/holiday-shopping-report.html">Adobe Digital Insights</a></li><li><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/new-front-door-to-the-internet-winning-in-the-age-of-ai-search">McKinsey</a></li><li><a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research Center, 2025</a></li></ol></section>
+  </main>
+</div>
+<script>
+(()=>{const p=document.getElementById('prog'),links=[...document.querySelectorAll('nav.toc a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{const h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+let cur=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<140)cur=i});links.forEach((a,i)=>a.classList.toggle('on',i===cur))},{passive:true})})();
+</script>
+</body></html>

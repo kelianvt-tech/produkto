@@ -1,0 +1,666 @@
+first_name,last_name,title,organization_name,organization_primary_domain,email,mobile_number_formatted,state,time_zone,linkedin_url,source
+Eric,Scheibling,Co-Founder,Feals,feals.com,eric@feals.com,+19493000462,California,America/Los_Angeles,https://www.linkedin.com/in/ericscheibling,2026-10-07-pet-other.csv
+Adam,Steiner,Co Founder,Noka Organics,nokaorganics.com,adam@nokaorganics.com,+17609024181,Utah,America/Denver,http://www.linkedin.com/in/adam-steiner-90b35013,2026-10-07-pet-other.csv
+Alex,Iwanchuk,Co-founder,Feals,feals.com,alex@feals.com,+17814546437,Colorado,America/Denver,http://www.linkedin.com/in/alex-iwanchuk-5911309,2026-10-07-pet-other.csv
+Shunan,Teng,"CEO, Founder",Tea Drunk,teadrunk.com,steng@tea-drunk.com,+19172755187,New York,America/New_York,http://www.linkedin.com/in/shunanteng,2026-10-07-pet-other.csv
+Sammy,Rothman,CEO & Co-Founder,Ohma World,ohmaworld.com,sammy@ohmaworld.com,+15625379933,California,America/Los_Angeles,https://www.linkedin.com/in/sammy-rothman-bb4ba228,2026-10-07-pet-other.csv
+Alexey,Bogomolov,Ecommerce Business Owner,Just Smarty,justsmarty.com,alexey@justsmarty.com,+17039153657,Florida,America/New_York,http://www.linkedin.com/in/alexey-bogomolov-mba-30403a6,2026-10-07-pet-other.csv
+Edouard,Andre-Hessig,CEO / Founder,ARTVENTURE LLC,myartventure.com,edouard@myartventure.com,+16092162613,New Jersey,America/New_York,http://www.linkedin.com/in/edouardandrehessig,2026-10-07-pet-other.csv
+Matt,Canepa,Co-Founder,Grinds Pouches,getgrinds.com,matt@getgrinds.com,+14155298058,California,America/Los_Angeles,https://www.linkedin.com/in/matt-canepa-ab36ba1a,2026-10-07-pet-other.csv
+Patrick,Pezet,Co Founder,Grinds Pouches,getgrinds.com,pat@getgrinds.com,+14155339533,Indiana,America/New_York,https://www.linkedin.com/in/patrick-pezet-67b03125,2026-10-07-pet-other.csv
+Nate,Gunn,Co-Founder & CEO,WildBird,wildbird.co,nate@wildbird.co,+14156407948,California,America/Los_Angeles,https://pr.linkedin.com/in/nate-gunn?trk=org-employees,2026-10-07-pet-other.csv
+Jake,Kloberdanz,Co-Founder,"Napa Valley Fumé, LLC.",fumebrands.com,jake@onehopewine.com,+15102199646,California,America/Los_Angeles,https://www.linkedin.com/in/jakekloberdanz/,2026-10-07-pet-other.csv
+Laurel,Valchuis,Founder/Owner,al FreshCo,al-freshco.com,laurel@al-freshco.com,+16179718762,Massachusetts,America/New_York,http://www.linkedin.com/in/laurel-valchuis-0274b77,2026-10-07-pet-other.csv
+Jessica,Severt,Co-Founder,morepeas,morepeas.com,jessica@morepeas.com,+12064544449,Washington,America/Los_Angeles,https://www.linkedin.com/in/jessica-severt-765a961b,2026-10-07-pet-other.csv
+Hans,Vandanelzen,President/Owner,YoYoFactory,yoyofactory.com,hansvandanelzen@yoyofactory.com,+14803296843,Arizona,America/Phoenix,http://www.linkedin.com/in/hans-vandanelzen-39805723,2026-10-07-pet-other.csv
+Kate,Ferguson,CEO & Founder,Flourish Plant,flourishplant.com,kate@flourishplant.com,+12035054763,Texas,America/Chicago,http://www.linkedin.com/in/katebeschferguson,2026-10-07-pet-other.csv
+Suzanne,Tucker,Founder and CEO,Generation Mindful,genmindful.com,suzanne@genmindful.com,+18168768897,Missouri,America/Chicago,http://www.linkedin.com/in/tuckersuzanne,2026-10-07-pet-other.csv
+Ryan,Turner,Co-Founder,The Sola Company,thesolacompany.com,ryan@thesolacompany.com,+12073509287,Texas,America/Chicago,http://www.linkedin.com/in/ryan-turner-a6468459,2026-10-07-pet-other.csv
+Disha,Gulati,CEO and Founder,Here Here Market,hereheremarket.com,disha@hereheremarket.com,+13124513822,Illinois,America/Chicago,https://www.linkedin.com/in/disha-gulati,2026-10-07-pet-other.csv
+Clay,Hood,"CEO, Co-Founder",Precision Pro Golf,precisionprogolf.com,clay@precisionprogolf.com,+17272883041,Ohio,America/New_York,https://www.linkedin.com/in/clay-hood-255aa757,2026-10-07-pet-other.csv
+Don,Colbert,"CEO, Founder",HOSS Boot Company,hossboots.com,don@hossbootco.com,+14433401236,Georgia,America/New_York,http://www.linkedin.com/in/don-colbert-90803946,2026-10-07-pet-other.csv
+Fatima,Aslam,Co-Founder,Kishmish,shopkishmish.com,fatima@shopkishmish.com,+12246284746,California,America/Los_Angeles,https://www.linkedin.com/in/fatima-aslam-93690788,2026-10-07-pet-other.csv
+Julia,Kahlig-Garuba,Founder & CEO,Herb & Root Inc.,herbandroot.com,julia@herbandroot.com,+17183136196,Texas,America/Chicago,http://www.linkedin.com/in/julia-kahlig-garuba-0a00b2118,2026-10-07-pet-other.csv
+Kurt,Maclaurin,Co-Founder,Earth+Kin,earth-kin.com,kurt@earth-kin.com,+18585251285,Massachusetts,America/New_York,http://www.linkedin.com/in/kurt-maclaurin-3469814,2026-10-07-pet-other.csv
+Jeff,Reinhart,Co-Founder,Lumitory,lumitory.com,jeff@lumitory.com,+17027524090,Arizona,America/Phoenix,http://www.linkedin.com/in/jeffreinhart,2026-10-07-pet-other.csv
+Echo,Hopkins,Co-Founder,Ordinary Habit,ordinaryhabit.com,echo@ordinaryhabit.com,+16464699788,New York,America/New_York,http://www.linkedin.com/in/echo-hopkins-2019916,2026-10-07-pet-other.csv
+Prem,Thomas,Co-Founder,Gurus,ilovegurus.com,prem@ilovegurus.com,+19194527317,Florida,America/New_York,http://www.linkedin.com/in/premt,2026-10-07-pet-other.csv
+Rocky,Williform,Founder & CEO,BlackCool & Co.,blackcool.com,rocky@blackcool.com,+16782077630,Georgia,America/New_York,http://www.linkedin.com/in/rockywilliform,2026-10-07-pet-other.csv
+Isaac,Mertens,Co-Founder,Flux Footwear,fluxfootwear.com,isaac@fluxfootwear.com,+14022009225,Texas,America/Chicago,http://www.linkedin.com/in/isaac-mertens-5b107964,2026-10-07-pet-other.csv
+Shawn,Langton,"Founder, CEO",Kujo Yardwear,kujo.com,shawn@kujo.com,+17347779627,North Carolina,America/New_York,http://www.linkedin.com/in/shawn-langton-2624a547,2026-10-07-pet-other.csv
+Ryan,Hurley,Co-Founder,Vert & Vogue,vertandvogue.com,ryan@vertandvogue.com,+12174190112,North Carolina,America/New_York,http://www.linkedin.com/in/ryanhurley,2026-10-07-pet-other.csv
+Gus,Pernetz,Co-Founder,Stryd,stryd.com,gus@stryd.com,+19703904747,Colorado,America/Denver,http://www.linkedin.com/in/gus-pernetz-36315233,2026-10-07-pet-other.csv
+Andrew,Zahornacky,Co-Founder,noshinku,noshinku.com,andrew@noshinku.com,+19148444779,Illinois,America/Chicago,https://www.linkedin.com/in/andrewzahornacky,2026-10-07-pet-other.csv
+Caue,Suplicy,Founder & Chairman,"Barnana, PBC",barnana.com,caue@barnana.com,+18584059864,California,America/Los_Angeles,https://www.linkedin.com/in/caue-suplicy-19a49012,2026-10-07-pet-other.csv
+Hiro,Shinn,Co-Founder,Koa,livingkoa.com,hiro@livingkoa.com,+18085544630,Hawaii,Pacific/Honolulu,https://www.linkedin.com/in/hiro-shinn-77139a69,2026-10-07-pet-other.csv
+John,Freeman,Owner / Founder,Johnny Fly,johnnyfly.com,john@johnnyfly.com,+17044885295,North Carolina,America/New_York,http://www.linkedin.com/in/johnny-freeman,2026-10-07-pet-other.csv
+Lolita,Healy,CEO/Founder,"Designs By Lolita, Inc.",designsbylolita.com,lolita@designsbylolita.com,+14019658692,Georgia,America/New_York,http://www.linkedin.com/in/lolita-healy-29454946,2026-10-07-pet-other.csv
+Jannise,Babbush,"Co-Founder, Chief Product Officer",Ciencia Labs,ciencialabs.com,jannise@youdreamt.com,+14083555149,California,America/Los_Angeles,https://www.linkedin.com/in/jannisebabbush/,2026-10-07-pet-other.csv
+Tim,Hollinger,"Co-Founder / CEO, Bathing Culture",Bathing Culture,bathingculture.com,tim@bathingculture.com,+16032855484,California,America/Los_Angeles,https://www.linkedin.com/in/tim-hollinger-3200b231,2026-10-07-pet-other.csv
+Jess,Page,Co-founder & Chief Brand Officer,Open Water,drinkopenwater.com,jess@drinkopenwater.com,+17745731894,Vermont,America/New_York,http://www.linkedin.com/in/imjesspage,2026-10-07-pet-other.csv
+Darren,Rosenberg,Founder & CEO,Lens & Frame Co.,lensandframe.co,darren.rosenberg@lensandframe.co,+15628221200,California,America/Los_Angeles,https://www.linkedin.com/in/darren-rosenberg-7696414,2026-10-07-pet-other.csv
+Lorrie,King,Co-Founder,Caire Beauty,cairebeauty.com,lorrie@cairebeauty.com,+19173653365,New York,America/New_York,http://www.linkedin.com/in/lorrieking,2026-10-07-pet-other.csv
+Cameron,Weiss,CEO + Founder,Weiss Watch Company,weisswatchcompany.com,cameron@weisswatchcompany.com,+13109516677,Tennessee,America/Chicago,http://www.linkedin.com/in/cameron-weiss-8169843b,2026-10-07-pet-other.csv
+Tina,Bologna,Co Owner,Just Jersey,justjerseygoods.com,tina@justjerseygoods.com,+19736709730,New Jersey,America/New_York,http://www.linkedin.com/in/tina-bologna-1b590a1b4,2026-10-07-pet-other.csv
+Louis,Guarin,"CEO, Co-Creative Director & Co-Founder",STIVALI NEW YORK,stivalinewyork.com,leguarin@stivali.us,+16304648829,New York,America/New_York,http://www.linkedin.com/in/louis-guarin,2026-10-07-pet-other.csv
+Matt,A,Co Founder,RAWVOLUTION,rawvolution.com,matt@rawvolution.com,,California,America/Los_Angeles,,2026-10-07-pet-other.csv
+George,Parker,Founder & Owner,PEREGRUNE,peregrune.com,george@peregrune.com,,Georgia,America/New_York,http://www.linkedin.com/in/georgeaparker,2026-10-07-pet-other.csv
+Jack,Miller,Co-Founder,Move2Play,move2play.com,jack@move2play.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jack-miller-68969a5b,2026-10-07-pet-other.csv
+Misti,Mathis,Co-Founder,Harvest Gold Organics,harvestgoldorganics.com,misti@harvestgoldsilica.com,,Texas,America/Chicago,http://www.linkedin.com/in/misti-mathis-43ba2a167,2026-10-07-pet-other.csv
+Brian,Bonnett,CEO,Bonkers Toys,bonkerstoys.com,brian@bonkerstoys.com,,California,America/Los_Angeles,https://www.linkedin.com/in/brian-bonnett-7a594311,2026-10-07-pet-other.csv
+Kerry,Don,Co-Founder,Coconut Warrior,coconutwarrior.com,kdon@coconutwarrior.com,,Nevada,America/Los_Angeles,https://www.linkedin.com/in/kerry-don-48aa0353/,2026-10-07-pet-other.csv
+Judy,Tan,Founder/CEO,Purely,purelydrinks.com,judy@purelydrinks.com,,California,America/Los_Angeles,https://www.linkedin.com/in/judyqtan,2026-10-07-pet-other.csv
+Israel,Engel,Founder,"HEY, HOOPLAH! Snack Co.",heyhooplah.com,israel.engel@heyhooplah.com,,New York,America/New_York,http://www.linkedin.com/in/israel-engel-a472071b5,2026-10-07-pet-other.csv
+Jennifer,Boone,Founder/Owner,Boone Mountain Sports,boonemountainsports.com,jennifer.boone@boonemountainsports.com,,Colorado,America/Denver,http://www.linkedin.com/in/jennifer-boone-9bb1735a,2026-10-07-pet-other.csv
+Brenden,Mcmorrow,Co-Founder,Move2Play,move2play.com,brenden@move2play.com,,California,America/Los_Angeles,https://www.linkedin.com/in/brenden-mcmorrow-474b6462,2026-10-07-pet-other.csv
+Heather,Weavers,Founder,Pi Baby Boutique,pibaby.com,heather@pibaby.com,,Idaho,America/Denver,http://www.linkedin.com/in/heatherweavers,2026-10-07-pet-other.csv
+Daniel,Heifes,"Co-Founder, CMO",Cliganic,cliganic.com,daniel@cliganic.com,,California,America/Los_Angeles,https://www.linkedin.com/in/daniel-heifes-34b07a210,2026-10-07-pet-other.csv
+Jena,Chambers,Founder & CEO,Pandora's Pops,pandoraspops.com,jena@pandoraspops.com,,New York,America/New_York,http://www.linkedin.com/in/jenachambers,2026-10-07-pet-other.csv
+Yida,Spielman,Co-Founder,Morning Pep,morningpep.com,yida@morningpep.com,,New York,America/New_York,http://www.linkedin.com/in/yida-spielman-449081240,2026-10-07-pet-other.csv
+Chris,H,"Founder, CEO",Brisk It,briskit.ai,christopher@briskitgrills.com,,California,America/Los_Angeles,https://www.linkedin.com/in/christopherhuang-550,2026-10-07-pet-other.csv
+Thomas,Morse,Co-Founder and LLC Manager,Zolli Candy,zollipops.com,tom@zollipops.com,,Michigan,America/New_York,http://www.linkedin.com/in/thomas-morse-63a396173,2026-10-07-pet-other.csv
+Allison,Holshouser,Co-Founder,morepeas,morepeas.com,allison@morepeas.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/allison-holshouser-36703210,2026-10-07-pet-other.csv
+Lila,Sullivan,President and Co-Founder,Flourish Plant,flourishplant.com,lila@flourishplant.com,,New York,America/New_York,http://www.linkedin.com/in/lilareidsullivan,2026-10-07-pet-other.csv
+Jeremy,Zobrist,Founder,Top Fox Snacks,topfoxsnacks.com,jeremy@topfoxsnacks.com,,Illinois,America/Chicago,https://www.linkedin.com/in/jeremy-zobrist-9158826,2026-10-07-pet-other.csv
+Jhustin,H,Co-Founder,Sea Witch Botanicals®,seawitchbotanicals.com,jhustin@seawitchbotanicals.com,,Washington,America/Los_Angeles,,2026-10-07-pet-other.csv
+Bailey,Y,Co-Founder,After The Tone,afterthetone.co,bailey@afterthetone.co,,California,America/Los_Angeles,,2026-10-07-pet-other.csv
+Oren,S,CEO & Founder,BabyPatent,babypatent.com,oren@babypatent.com,,California,America/Los_Angeles,,2026-10-07-pet-other.csv
+Eric,Sola,Co-Founder,"iPolish, Inc.",ipolish.fashion,esola@ipolish.fashion,,Florida,America/New_York,http://www.linkedin.com/in/eric-sola-phd-pe-pmp-a9286a21,2026-10-07-pet-other.csv
+Erin,Lillis,Co-Founder,Nomon,nomon.flowers,erin@nomon.flowers,,Illinois,America/Chicago,https://www.linkedin.com/in/erinlillis,2026-10-07-pet-other.csv
+Carl,Arnold,Co-Founder,Bathing Culture,bathingculture.com,spencer@bathingculture.com,,California,America/Los_Angeles,https://www.linkedin.com/in/carlsarnold,2026-10-07-pet-other.csv
+Paul,Miller,Co-Owner,Just Jersey,justjerseygoods.com,paul@justjerseygoods.com,,New Jersey,America/New_York,http://www.linkedin.com/in/paul-miller-10b49914,2026-10-07-pet-other.csv
+Nathan,Cozzolino,Founder,Rose Los Angeles,roselosangeles.com,nathan@roselosangeles.com,,California,America/Los_Angeles,https://www.linkedin.com/in/nathancozzolino,2026-10-07-pet-other.csv
+Joe,Masi,Founder CEO,Believe Baby,believebaby.com,jmasi@believebaby.com,,New York,America/New_York,http://www.linkedin.com/in/joe-masi-a9554337,2026-10-07-pet-other.csv
+Steve,Shouse,Co-Founder,"Broken Top Brands, Inc.",brokentopcandleco.com,steve@brokentopcandleco.com,,Oregon,America/Los_Angeles,http://www.linkedin.com/in/steve-shouse-b8394a211,2026-10-07-pet-other.csv
+Susan,Anderson,Co Founder,ANDERSON LILLEY,mgreengrass.com,susan@mgreengrass.com,,California,America/Los_Angeles,https://www.linkedin.com/in/susan-sheffler-anderson-07a1018,2026-10-07-pet-other.csv
+Teresa,Hopkins,Co-Founder,Ordinary Habit,ordinaryhabit.com,teresa@ordinaryhabit.com,,New York,America/New_York,http://www.linkedin.com/in/teresa-hopkins-25a02431,2026-10-07-pet-other.csv
+Jocelyn,Atkinson,Founder & CEO,Silicone Arts Labs,dermaflage.com,jocelyn@siliconeartslabs.com,,Tennessee,America/Chicago,http://www.linkedin.com/in/jocelynatkinson,2026-10-07-pet-other.csv
+Maha,Khan,Co-Founder,Seenaya,seenaya.com,maha@seenaya.com,,New York,America/New_York,http://www.linkedin.com/in/maha-khan-7648487b,2026-10-07-pet-other.csv
+Yael,Alkalay,Founder & CEO,Red Flower Inc,redflower.com,yael@redflower.com,,New York,America/New_York,http://www.linkedin.com/in/yael-alkalay-b32a5b3,2026-10-07-pet-other.csv
+Dustin,Belt,Co-Founder,BroglieBox,brogliebox.com,dustin@brogliebox.com,,California,America/Los_Angeles,https://www.linkedin.com/in/dustin-belt-0489a6139,2026-10-07-pet-other.csv
+Paolo,Dibenedetto,Co-Founder,Polish Pops,polishpops.com,paolo@polishpops.com,,South Carolina,America/New_York,http://www.linkedin.com/in/paolo-dibenedetto-52696023,2026-10-07-pet-other.csv
+Cannon,Fletcher,Co-founder,reBounces,rebounces.com,cannon@rebounces.com,,Arkansas,America/Chicago,http://www.linkedin.com/in/cannonfletcher,2026-10-07-pet-other.csv
+Heidi,Stewart,Co-Owner,Bellocq Tea,bellocqtea.com,heidi@bellocq.com,,New York,America/New_York,http://www.linkedin.com/in/heidi-johannsen-stewart-3a74b8128,2026-10-07-pet-other.csv
+Tayler,Gunn,Co-Founder,WildBird,wildbird.co,tayler@wildbird.co,,Utah,America/Denver,http://www.linkedin.com/in/tayler-gunn-759200114,2026-10-07-pet-other.csv
+Austin,Smith,Co-Founder,season eqpt.,seasoneqpt.com,austin@seasoneqpt.com,,Oregon,America/Los_Angeles,http://www.linkedin.com/in/austin-smith-a109a672,2026-10-07-pet-other.csv
+Nadira,Hurley,Co-Founder,Vert & Vogue,vertandvogue.com,nadira@vertandvogue.com,,North Carolina,America/New_York,http://www.linkedin.com/in/nadira-k-hurley-75315920,2026-10-07-pet-other.csv
+Mike,Stanley,Founder & CEO,Arzarf,arzarf.com,michael.stanley@arzarf.com,,Colorado,America/Denver,http://www.linkedin.com/in/mike-stanley-a039251a5,2026-10-07-pet-other.csv
+Mellina,Soheili,Co-Founder,Omm Collection,ommcollection.com,mellina@ommcollection.com,,Maryland,America/New_York,http://www.linkedin.com/in/mez-ommcollection,2026-10-07-pet-other.csv
+Holly,Garrard,Founder & CEO,Fundae,fundae.com,holly@fundae.com,,Illinois,America/Chicago,https://www.linkedin.com/in/fundae-founder-holly-garrard,2026-10-07-pet-other.csv
+Dao,Chung,Co-Founder,Sapo All Natural,sapoallnatural.com,dao@sapoallnatural.com,,California,America/Los_Angeles,https://www.linkedin.com/in/dao-chung,2026-10-07-pet-other.csv
+Fred,Northup,"Co-Founder, Co-Inventor, Co-Owner","RainGlobes, LLC.",rainglobes.com,fred@rainglobes.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/frednorthup/,2026-10-07-pet-other.csv
+Bryan,Perla,Founder/CEO,"Little ELF Products, Inc.",littleelfproducts.com,bryan.perla@littleelfproducts.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/bryan-perla-8b4061158,2026-10-07-pet-other.csv
+Jennifer,Newton,Founder & CEO,DefineMe,definemefragrance.com,jennifer@definemefragrance.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jennifer-mckay-newton-2227893b,2026-10-07-pet-other.csv
+Sarah,Burch,Founder/Owner,EverWild Florals,everwildflorals.com,sarah@everwildflorals.com,,Missouri,America/Chicago,http://www.linkedin.com/in/sarah-jaeger-burch-47238828,2026-10-07-pet-other.csv
+Ardy,S,President (Co-Founder),Oru Kayak,orukayak.com,ardy@orukayak.com,,California,America/Los_Angeles,,2026-10-07-pet-other.csv
+Zach,Frey,Co-Founder / Designer,Flux Footwear,fluxfootwear.com,zach@fluxfootwear.com,,Colorado,America/Denver,http://www.linkedin.com/in/zach-frey-a6b5101b,2026-10-07-pet-other.csv
+Marie,Arlet,COO/Co-Founder,Somebody,shopsomebody.com,marie@sheabrand.com,,New York,America/New_York,http://www.linkedin.com/in/marie-arlet-7431ba3a,2026-10-07-pet-other.csv
+Valerie,Zecchetto,Co-Founder and Designer,LOQ,loq.us,valerie@loq.us,,California,America/Los_Angeles,https://www.linkedin.com/in/valerie-quant-zecchetto-33386935,2026-10-07-pet-other.csv
+Sam,Sheppard,Owner,Welcome Home Brands,welcomehomebrands.com,sam@welcomehomebrands.com,,New York,America/New_York,http://www.linkedin.com/in/sam-sheppard-13a82a23,2026-10-07-pet-other.csv
+April,Budney,"Founder, Co-President",Old Whaling Co,oldwhalingcompany.com,april@oldwhalingcompany.com,,South Carolina,America/New_York,http://www.linkedin.com/in/april-budney-901b26161,2026-10-07-pet-other.csv
+Logan,Rackliff,Founder,The Rope Company,theropeco.com,logan@theropeco.com,,Maine,America/New_York,http://www.linkedin.com/in/logan-rackliff-98a3871ab,2026-10-07-pet-other.csv
+Lisa,Dykema,Founder and CEO,l.a.cool,shoplacool.com,lisa@shoplacool.com,,Michigan,America/New_York,http://www.linkedin.com/in/lisa-dykema-671895153,2026-10-07-pet-other.csv
+David,Manshoory,Co-Founder & COO,Alleyoop,meetalleyoop.com,david@meetalleyoop.com,,California,America/Los_Angeles,https://www.linkedin.com/in/dmanshoory,2026-10-07-pet-other.csv
+Jina,Kim,CEO,LIVING JIN,livingjin.com,jinakim@livingjin.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/wellnessjina,2026-10-07-pet-other.csv
+Timothy,George,Founder,eLo Vegan Lifestyle,helloelo.co,george@helloelo.co,,New York,America/New_York,http://www.linkedin.com/in/timothy-george-900230101,2026-10-07-pet-other.csv
+Monique,Dibenedetto,Founder,Polish Pops,polishpops.com,monique@polishpops.com,,South Carolina,America/New_York,http://www.linkedin.com/in/moniquedibenedetto,2026-10-07-pet-other.csv
+Vanessa,Phillips,Co-Founder and Executive Chairman,Feel Good Foods,feel-good-foods.com,vanessa@feel-good-foods.com,,New York,America/New_York,http://www.linkedin.com/in/phillipsvanessa,2026-10-07-pet-other.csv
+Elaine,Lu,Owner/CEO,ASHE Society,ashesociety.com,elaine@ashesociety.com,,California,America/Los_Angeles,https://www.linkedin.com/in/elaine-lu-87901820b,2026-10-07-pet-other.csv
+Steve,Kass,Ceo/cfo,"Tofutti Brands, Inc.",tofutti.com,skass@tofutti.com,,New Jersey,America/New_York,http://www.linkedin.com/in/stevekass,2026-10-07-pet-other.csv
+Heather,Itzla,Founder,Wisdom Supply,wisdomsupply.org,heather@wisdomsupply.org,,California,America/Los_Angeles,https://www.linkedin.com/in/heather-itzla-56138018,2026-10-07-pet-other.csv
+Ryan,Werner,Owner,Noka Organics,nokaorganics.com,ryan@nokaorganics.com,,California,America/Los_Angeles,https://www.linkedin.com/in/ryan-werner-0a9b20a0,2026-10-07-pet-other.csv
+Nadia,Babar,Founder,Kálos,kalosskin.com,nadia@kalosskin.com,,New York,America/New_York,http://www.linkedin.com/in/nadiababar,2026-10-07-pet-other.csv
+Charles,Mellen,Founder and CEO,"Knack, Inc.",knackbags.com,chad@knackbags.com,,Rhode Island,America/New_York,http://www.linkedin.com/in/chadmellen,2026-10-07-pet-other.csv
+Chris,Oestereich,Founder,Morph,morphbags.com,chris@morphbags.com,,Missouri,America/Chicago,http://www.linkedin.com/in/chrisoestereich,2026-10-07-pet-other.csv
+Itamar,Cohen,Co-owner and CEO,ZIPIT,just-zipit.com,itamar@just-zipit.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/itamarcohen,2026-10-07-pet-other.csv
+Chris,Nemeth,Founder,FaceSoft Towel Company,facesofttowel.com,chris.nemeth@facesofttowel.com,,Colorado,America/Denver,http://www.linkedin.com/in/chris-nemeth-6363651,2026-10-07-pet-other.csv
+Chef,Rogers,Founder/Chief NOoodlist,NOoodle noodle & dough  are 100% non soluble fiber. It slows down our digestion of sugar,nooodle.com,chefterri@nooodle.com,,Colorado,America/Denver,http://www.linkedin.com/in/chefterri-nooodle,2026-10-07-pet-other.csv
+Amanda,Lorenzetti,Founder,"Petals that Inspire, LLC",petalsthatinspire.com,amanda@petalsthatinspire.com,,Ohio,America/New_York,https://www.linkedin.com/in/amandagreenwood-81426a5b/,2026-10-07-pet-other.csv
+Ivaylo,Gatev,CEO & Co-Founder,Kaerwell,kaerwell.com,ivaylo.gatev@kaerwell.com,(407) 276-4060,Florida,America/New_York,http://www.linkedin.com/in/ivaylo-b-gatev,2026-09-29-test-100.csv
+Lisa,Strain,Co-founder,Kari Gran Skincare,karigran.com,lisa@karigran.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/lisa-strain-0507433,2026-09-29-test-100.csv
+Kadion,Preston,Founder & CEO,Caribshopper,caribshopper.com,kadion@caribshopper.com,,Florida,America/New_York,http://www.linkedin.com/in/kadion-preston-88777aa,2026-09-29-test-100.csv
+Jane,Stricker,Owner,Threads - Footloose & Fancy,footlooseandfancy.com,jane@footlooseandfancy.com,,Nebraska,America/Chicago,http://www.linkedin.com/in/jane-stricker-434391181,2026-09-29-test-100.csv
+Simone,Carrica,Co-Founder & CEO,OSAY THE LABEL,osaythelabel.com,simone@osaythelabel.com,,New York,America/New_York,http://www.linkedin.com/in/simone-carrica-24b064161,2026-09-29-test-100.csv
+Gregg,Dean,Co-Founder | CEO,Layla Sleep Inc.,laylasleep.com,gregg@laylasleep.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/greggdean,2026-09-29-test-100.csv
+Shinu,Gupta,Founder & CEO,Zifiti.com,zifiti.com,sgupta@zifiti.com,(973) 725-6352,New Jersey,America/New_York,http://www.linkedin.com/in/shinug,2026-09-29-test-100.csv
+Paul,Jauregui,Co-Founder,BK Beauty,bkbeauty.com,paul@bkbeauty.com,(512) 799-6033,Texas,America/Chicago,http://www.linkedin.com/in/myover,2026-09-29-test-100.csv
+Amy,Myers,CEO and Founder,AMMD,amymyersmd.com,amy@amymyersmd.com,(504) 250-2467,Texas,America/Chicago,http://www.linkedin.com/in/amymyersmd,2026-09-29-test-100.csv
+John,Heathco,Founder,LES Labs,leslabs.com,john@leslabs.com,(949) 939-7087,California,America/Los_Angeles,https://www.linkedin.com/in/john-heathco-851a103,2026-09-29-test-100.csv
+Elizabeth,Giannuzzi,Co-Founder & CEO,Siren Snacks,sirensnacks.com,elizabeth@sirensnacks.com,(781) 431-1256,California,America/Los_Angeles,https://www.linkedin.com/in/elizabeth-giannuzzi-7bb887b2,2026-09-29-test-100.csv
+Dylan,Grace,Co-Founder,EAST x EAST,eastxeast.com,dylan@eastxeast.com,,New York,America/New_York,http://www.linkedin.com/in/dylan-g-27373034,2026-09-29-test-100.csv
+Eugenia,Alliegro,"Co-Founder, Creative Director",Betterway,gobetterway.com,eugenia@gobetterway.com,,Florida,America/New_York,http://www.linkedin.com/in/eugy-alliegro,2026-09-29-test-100.csv
+Lisa,Jauregui,Founder & CEO,BK Beauty,bkbeauty.com,lisa@bkbeauty.com,(512) 751-4217,Texas,America/Chicago,http://www.linkedin.com/in/lisa-jauregui-3b8b056,2026-09-29-test-100.csv
+Martha,Nolan,Founder,EAST x EAST,eastxeast.com,martha@eastxeast.com,,New York,America/New_York,http://www.linkedin.com/in/martha-nolan-219aaa4b,2026-09-29-test-100.csv
+Stephanie,Tan,Founder & CEO,NOOCI,mynooci.com,stephanie@mynooci.com,,,,http://www.linkedin.com/in/sjtan06,2026-09-29-test-100.csv
+Brandon,Greenhalgh,Founder,Tether Fitness,tetherfitness.com,brandon@tetherfitness.com,(480) 797-1947,Arizona,America/Phoenix,http://www.linkedin.com/in/brandon-greenhalgh-ba104778,2026-09-29-test-100.csv
+Asia,Hall,CEO and Designer,Neon Cowboys ®,neoncowboys.com,asia@neoncowboys.com,,California,America/Los_Angeles,https://www.linkedin.com/in/asiahall,2026-09-29-test-100.csv
+Steven,Tiller,Founder & CEO,"SeaVees Footwear, Inc.",seavees.com,steven@seavees.com,,California,America/Los_Angeles,https://www.linkedin.com/in/steven-tiller-6361603a,2026-09-29-test-100.csv
+Monica,Miguel,"CEO & Founder, Brand Marketing & Business Consultancy Studio","HueTrition, LLC",huetrition.com,monica@huetrition.com,,Maryland,America/New_York,http://www.linkedin.com/in/monicahs,2026-09-29-test-100.csv
+Kenza,Fourati,Co-Founder and President,OSAY THE LABEL,osaythelabel.com,kenza@osaythelabel.com,,New York,America/New_York,http://www.linkedin.com/in/kenza-fourati-1072a6122,2026-09-29-test-100.csv
+Jennifer,Fernandez,Founder,Angels Avenue,angelsavenue.net,jennifer@angelsavenue.net,(917) 675-9924,New York,America/New_York,http://www.linkedin.com/in/jennfernandez,2026-09-29-test-100.csv
+Manuel,Rappard,CEO & Co-founder,Tumbler Holdings Inc,tumblerware.com,manuel@tumblerware.com,(415) 828-3636,Washington,America/Los_Angeles,https://www.linkedin.com/in/manuelrappard,2026-09-29-test-100.csv
+Ricky,Williams,President & Co-founder,Highsman,highsman.com,ricky@highsman.com,(803) 448-7652,Texas,America/Chicago,http://www.linkedin.com/in/ricky-williams-213b9822,2026-09-29-test-100.csv
+Kirby,Watson,Co-Founder,Smart Canister™,smartcanister.com,kirby@smartcanister.com,(616) 635-4729,California,America/Los_Angeles,https://www.linkedin.com/in/kirbycoffeetech,2026-09-29-test-100.csv
+Michael,Brenner,Co-Founder,Prime6 Brands,prime6brands.com,michael@prime6brands.com,,,Europe/Berlin,http://www.linkedin.com/in/michaelbrenner1,2026-09-29-test-100.csv
+Joey,Goodwin,Founder,Overthrow New York,overthrownyc.com,joeygoodwin@overthrownyc.com,,New York,America/New_York,http://www.linkedin.com/in/joey-goodwin-96915759,2026-09-29-test-100.csv
+Erica,Reh,Co-Founder,Wellbeam Consumer Health,wellbeam.com,ereh@wellbeam.com,,California,America/Los_Angeles,https://www.linkedin.com/in/erica-reh-87760022,2026-09-29-test-100.csv
+Sky,Lima,VP of Sales & Co-Founder,Highsman,highsman.com,sky@highsman.com,,California,America/Los_Angeles,https://www.linkedin.com/in/skylima,2026-09-29-test-100.csv
+Tony,Heisterkamp,CEO,Lifebrook™ - The Aronia Company,akroniavalley.com,tony@akroniavalley.com,,South Dakota,America/Chicago,https://www.linkedin.com/in/tony-heisterkamp-821342187,2026-09-29-test-100.csv
+Andrew,Goldstein,Co-Owner,Train-X,trainxwellness.com,andrew@trainxwellness.com,,California,America/Los_Angeles,https://www.linkedin.com/in/andrew-goldstein-dc-388559103,2026-09-29-test-100.csv
+Shane,Lesky,"Co-Founder, CEO",Rootcha,rootcha.com,slesky@rootcha.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/shane-lesky-149aa5b2,2026-09-29-test-100.csv
+Jasmin,Molina,"Co-Founder, Creative Strategist at Rootcha",Rootcha,rootcha.com,jmolina@rootcha.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/jasmin-m-594b5437,2026-09-29-test-100.csv
+Gisselle,Hernandez,Founder,Glamlite Cosmetics,glamlite.com,gisselle@glamlite.com,(619) 737-6239,California,America/Los_Angeles,https://www.linkedin.com/in/gisselle,2026-09-29-test-100.csv
+Joshua,Jane,Founder,Contraband Fitness,contrabandfitness.com,josh@contrabandfitness.com,,Virginia,America/New_York,http://www.linkedin.com/in/joshua-jan%c3%a9-958058ba,2026-09-29-test-100.csv
+Nicole,Mazzeo,Founder,Pleasure Pie,pleasurepie.org,nicole@pleasurepie.org,(508) 631-0077,Massachusetts,America/New_York,http://www.linkedin.com/in/nicolemazzeo,2026-09-29-test-100.csv
+Jason,Mitchell,Founder & President Probulin Probiotics,Healist Naturals,healistnaturals.com,jmitchell@healistnaturals.com,,Kansas,America/Chicago,http://www.linkedin.com/in/jason-mitchell-n-d-80176837,2026-09-29-test-100.csv
+Carlos,Ferreiro,Founder / President,Pharma Natural Inc.,pharmanatural.com,carlos@pharmanatural.com,(305) 216-6092,Florida,America/New_York,http://www.linkedin.com/in/carlos-ferreiro-79797512,2026-09-29-test-100.csv
+Shayne,Morris,Company Owner,"Systemic Formulas, Inc.",systemicformulas.com,shayne@systemicformulas.com,,Utah,America/Denver,http://www.linkedin.com/in/shayne-morris-90b29532b,2026-09-29-test-100.csv
+Ronnie,Coleman,Owner,Ronnie Coleman Signature Series,ronniecoleman.net,ronnie@ronniecoleman.net,,Texas,America/Chicago,http://www.linkedin.com/in/ronnie-coleman-38730320,2026-09-29-test-100.csv
+Akrum,Sheikh,Founder / CFO,Layla Sleep Inc.,laylasleep.com,akrum@laylasleep.com,,Connecticut,America/New_York,http://www.linkedin.com/in/akrum-sheikh-26803197,2026-09-29-test-100.csv
+Susie,Spigelman,Co-Founder and COO,Beacon,beaconlight.co,susie@beaconlight.co,,Illinois,America/Chicago,https://www.linkedin.com/in/susie-spigelman-33b9054,2026-09-29-test-100.csv
+Vanessa,Nabhani,Founder & CEO,PlayLab Beauty,playlabbeauty.com,vanessa@playlabbeauty.com,(626) 203-6026,California,America/Los_Angeles,https://www.linkedin.com/in/vanessanabhani,2026-09-29-test-100.csv
+Joy,Wang,Founder & CEO,SHO Nutrition LLC,shonutrition.com,joy@shonutrition.com,(646) 388-2718,New York,America/New_York,http://www.linkedin.com/in/joyqwang,2026-09-29-test-100.csv
+Eric,Wiedel,Founder,NutraGrow Brands,nutragrowbrands.com,ericwiedel@nutragrowbrands.com,(402) 570-4419,Texas,America/Chicago,http://www.linkedin.com/in/eric-wiedel-059578139,2026-09-29-test-100.csv
+Maryam,Behrouzi,Founder / CEO,Spela Cosmetics Inc.,spelacosmetics.com,maryam@spelacosmetics.com,(503) 866-9924,Oregon,America/Los_Angeles,http://www.linkedin.com/in/maryam-behrouzi-583aa37,2026-09-29-test-100.csv
+Andrea,Clark,Founder & Head of Product and Research,Beacon,beaconlight.co,andrea@beaconlight.co,,Illinois,America/Chicago,https://www.linkedin.com/in/andrealeeclark/,2026-09-29-test-100.csv
+Bruno,Tuykom,Co-founder and CEO,Twentyeight Health,twentyeighthealth.com,bruno@twentyeighthealth.com,,New York,America/New_York,http://www.linkedin.com/in/bruno-van-tuykom-a9a24019,2026-09-29-test-100.csv
+Alison,Monette,Founder,Fieldlab,myfieldlab.com,alison@myfieldlab.com,(860) 420-7403,Connecticut,America/New_York,http://www.linkedin.com/in/alison-monette-nd-5798154,2026-09-29-test-100.csv
+Daniella,Shevel,Founder,DANIELLA SHEVEL,daniellashevel.com,daniella@daniellashevel.com,(858) 602-2148,New York,America/New_York,http://www.linkedin.com/in/daniella-shevel-93323933,2026-09-29-test-100.csv
+Jeanha,Joo,Co-Founder & Chief Merchant,PlayLab Beauty,playlabbeauty.com,jeanha@playlabbeauty.com,(917) 385-3251,California,America/Los_Angeles,https://www.linkedin.com/in/jeanhajoo,2026-09-29-test-100.csv
+Julia,Kalinowska,Co-founder,Rocque Co.,rocque.co,julia@rocque.co,,,Europe/London,http://www.linkedin.com/in/juliakalinowska,2026-09-29-test-100.csv
+Frank,McDermott,"CEO, Founder",DAR.WIN,dar.win,frank@dar.win,(646) 533-8441,Georgia,America/New_York,http://www.linkedin.com/in/frankmcdermott,2026-09-29-test-100.csv
+Joy,Musacchio,Co-Owner and President,Stillpoint Aromatics,stillpointaromatics.com,joy@stillpointaromatics.com,,Arizona,America/Phoenix,http://www.linkedin.com/in/joy-musacchio-51916874,2026-09-29-test-100.csv
+Adeel,Shams,Founder & CEO,COOLKICKS,shopcoolkicks.com,adeel@shopcoolkicks.com,,California,America/Los_Angeles,https://www.linkedin.com/in/adeel-shams-59514583?challengeId=AQErNJgsDbDR9gAAAYwH7MMilU84ow4S8AHzRaIJMG_Hb1FHUZHvZATbUL7RoI6A--mH7z6R7CFK7vCo6FtF0CesuemGTFYp8w&submissionId=dc21ad5c-ecf3-9a17-465a-05e6156af721&challengeSource=AgGzz6eKyvyrLwAAAYwH7PCPhSb8G7tQICUhDfIUfbS2naGQ3aL39AD2Tw-MXgQ&challegeType=AgG99-u8yVmg0gAAAYwH7PCSSI8TcGokNVxFhJ2KisbXAVBV0JhoCFA&memberId=AgEKV9cHPdKmowAAAYwH7PCVWhSKKWYRTn1yPh3tTDWKTHU&recognizeDevice=AgG_zN8E_JdvTQAAAYwH7PCYSx9wTaAyIUA4NTtxNd-kzEYryFEt,2026-09-29-test-100.csv
+Iva,Fearing,Owner,"Tassels of Morehead City, Inc.",tasselsshoes.com,iva@tasselsshoes.com,(252) 241-7823,North Carolina,America/New_York,http://www.linkedin.com/in/iva-fearing-99136530,2026-09-29-test-100.csv
+Monique,Zauner,Co Founder,Universal Yums,universalyums.com,monique@universalyums.com,(614) 448-6730,New Jersey,America/New_York,http://www.linkedin.com/in/monique-zauner-0a2b3255,2026-09-29-test-100.csv
+Ken,Laner,Co-Founder,Neuro Health Neuropathy Formula,neuro-health.net,ken@neuro-health.net,(847) 477-9093,Colorado,America/Denver,http://www.linkedin.com/in/kenlaner,2026-09-29-test-100.csv
+Eric,Adams,Founder,Dog & Whistle,dogandwhistle.com,eric@dogandwhistle.com,(702) 241-4848,Nevada,America/Los_Angeles,https://www.linkedin.com/in/eric-adams-dw/,2026-09-29-test-100.csv
+Jeremy,Briggs,President and Co-Founder,Luosh American Made Face Masks,luoshusa.com,jeremy@luoshusa.com,(404) 405-5116,Georgia,America/New_York,http://www.linkedin.com/in/briggsjeremy,2026-09-29-test-100.csv
+Armanda,Hughes,Founder and President,mella®,mellahome.com,armanda@mellahome.com,,New York,America/New_York,http://www.linkedin.com/in/armanda-hughes-7630a77b,2026-09-29-test-100.csv
+Marisa,Goldstein,Co-Founder,Noén,feelnoen.com,marisa@feelnoen.com,,New York,America/New_York,http://www.linkedin.com/in/marisagoldstein,2026-09-29-batch2-500.csv
+Claire,Fang,Founder & CEO,Wholly Moly!,whollymoly.com,claire@whollymoly.com,,California,America/Los_Angeles,https://www.linkedin.com/in/clairecaofang,2026-09-29-batch2-500.csv
+Steven,Salstein,Co-Founder & CEO,GotSneakers,gotsneakers.com,steven@gotsneakers.com,(305) 798-6522,Florida,America/New_York,http://www.linkedin.com/in/steven-salstein-8632b248,2026-09-29-batch2-500.csv
+Alexis,Nidorusso,Founder,Local Eclectic,localeclectic.com,alexis@localeclectic.com,(417) 849-9004,Illinois,America/Chicago,https://www.linkedin.com/in/alexis-nido-russo-22059131,2026-09-29-batch2-500.csv
+Justin,Schneider,CEO + Founder,Wolf & Shepherd,wolfandshepherd.com,js@wolfandshepherd.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jds10,2026-09-29-batch2-500.csv
+Salvatore,Pluchino,Founder & CEO,Seligo,seligoexperience.com,sal@seligoexperience.com,,New York,America/New_York,http://www.linkedin.com/in/salvatorepluchino,2026-09-29-batch2-500.csv
+Hope,Schneider,CEO + Founder,Wolf & Shepherd,wolfandshepherd.com,hope@wolfandshepherd.com,(330) 631-9395,California,America/Los_Angeles,https://www.linkedin.com/in/hope-schneider-548a1128,2026-09-29-batch2-500.csv
+Erick,Sicard,Founder,Veutee,veutee.us,esicard@veutee.com,(786) 484-8572,Florida,America/New_York,http://www.linkedin.com/in/erick-sicard,2026-09-29-batch2-500.csv
+Steve,Silver,Co Founder,Xhibition & Next Stores,xhibition.co,steve@xhibition.co,(216) 214-0144,Ohio,America/New_York,https://www.linkedin.com/in/steve-silver-2338596,2026-09-29-batch2-500.csv
+Natalie,Mankarious,Co-Founder,Noén,feelnoen.com,natalie@feelnoen.com,,New York,America/New_York,http://www.linkedin.com/in/natalie-mankarious,2026-09-29-batch2-500.csv
+Cindy,Hussey,Founder & CEO,Velvet Eyewear®,velveteyewear.com,cindy@velveteyewear.com,,Florida,America/New_York,http://www.linkedin.com/in/cindyhussey,2026-09-29-batch2-500.csv
+Madison,Lee,CEO,Nēmah,nemah.com,madison@nemah.com,(318) 423-7932,Tennessee,America/Chicago,http://www.linkedin.com/in/madisonelee,2026-09-29-batch2-500.csv
+Andrew,Jacob,Founder,Pointview Products LLC,pointviewproducts.com,andrew@pointviewproducts.com,,Michigan,America/New_York,http://www.linkedin.com/in/andrew-jacob-43b9807a,2026-09-29-batch2-500.csv
+Santino,Loconte,Founder,7017 REIGN,7017reign.com,sl@7017reign.com,,New York,America/New_York,http://www.linkedin.com/in/santinoloconte,2026-09-29-batch2-500.csv
+Andrea,Dinnick,CEO and Founder,DESAVERY,desavery.co,andrea@desavery.co.uk,,Texas,America/Chicago,http://www.linkedin.com/in/andrea-dinnick1,2026-09-29-batch2-500.csv
+Chris,Bobik,Co-Owner,The Tree Center,thetreecenter.com,chris@thetreecenter.com,,Maryland,America/New_York,http://www.linkedin.com/in/chrisbobik,2026-09-29-batch2-500.csv
+Ceata,Lash,"Founder, Inventor & CEO",PUFFCUFF,thepuffcuff.com,ceata@thepuffcuff.com,(815) 904-3017,Georgia,America/New_York,http://www.linkedin.com/in/ceataelash,2026-09-29-batch2-500.csv
+Marsha,Stephanson,Founder,Cater to Mom,catertomom.com,marsha@catertomom.com,(512) 731-7793,Texas,America/Chicago,http://www.linkedin.com/in/marsha-stephanson-5b131611,2026-09-29-batch2-500.csv
+Leah,Kirpalani,Founder and CEO,Shop Good,shop-good.co,leah@shop-good.co,(480) 510-1454,California,America/Los_Angeles,https://www.linkedin.com/in/leahkirpalani,2026-09-29-batch2-500.csv
+Elizabeth,Davis,Founder & CEO,Shedavi,shedavi.com,elizabeth@shedavi.com,,Georgia,America/New_York,http://www.linkedin.com/in/elizabeth-davis-11143810,2026-09-29-batch2-500.csv
+Brad,Mondo,CEO / Founder,XMONDO HAIR,xmondohair.com,brad@xmondohair.com,,New York,America/New_York,http://www.linkedin.com/in/brad-mondo-8a45a9ba,2026-09-29-batch2-500.csv
+Clint,Stelfox,Co-Owner,The Tree Center,thetreecenter.com,clint@thetreecenter.com,,Maryland,America/New_York,http://www.linkedin.com/in/clint-stelfox-447781169,2026-09-29-batch2-500.csv
+Christine,Mason,Founder and CEO,Rosebud Woman,rosewoman.com,christine@rosewoman.com,(415) 471-7010,California,America/Los_Angeles,https://www.linkedin.com/in/christinemason,2026-09-29-batch2-500.csv
+Jonathan,Wanchalk,Co-Owner,The Tree Center,thetreecenter.com,jonathan@thetreecenter.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jonathan-wanchalk-a85aa4117/,2026-09-29-batch2-500.csv
+Alex,Dorr,Founder and CEO,Mushroom Revival Inc.,mushroomrevival.com,alexdorr@mushroomrevival.com,,Texas,America/Chicago,http://www.linkedin.com/in/mushroomrevival,2026-09-29-batch2-500.csv
+Jason,Pratt,Founder,JoySpring,joyspringvitamins.com,jason@joyspringvitamins.com,(336) 575-3069,North Carolina,America/New_York,http://www.linkedin.com/in/jasonmpratt,2026-09-29-batch2-500.csv
+Susie,H,Founder,Chocolate Sun,chocolatesun.com,susie@chocolatesun.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Holly,S,Executive Assistant to the Founder,Henry Rose,henryrose.com,holly@henryrose.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Jeremy,H,Chief Executive Officer and Co-Founder,Hume Supernatural,humesupernatural.com,jeremy@humesupernatural.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Tim,Parr,Founder / CEO,Caddis,caddislife.com,tim@caddislife.com,(415) 385-4254,New York,America/New_York,http://www.linkedin.com/in/tim-parr-53147025,2026-09-29-batch2-500.csv
+Maria,Gangemi,"Founder, Chief Merchant",M.Gemi,mgemi.com,maria@mgemi.com,(305) 733-0623,Florida,America/New_York,http://www.linkedin.com/in/maria-gangemi-5a140717,2026-09-29-batch2-500.csv
+Morrisa,Barnes,Founder,Freedom Apothecary,freedomapothecary.com,morrisa@freedomapothecary.com,,Louisiana,America/Chicago,https://www.linkedin.com/in/morrisa-barnes-32b89b49/,2026-09-29-batch2-500.csv
+Tyler,Smith,Founder,Microdose®,microdose.com,tyler@microdose.com,,Oregon,America/Los_Angeles,http://www.linkedin.com/in/tyler-smith-85104a104,2026-09-29-batch2-500.csv
+Kari,Dowiak,Founder,Memorí,memorieyewear.com,kari@memorieyewear.com,,Florida,America/New_York,http://www.linkedin.com/in/kari-dowiak-46183b50,2026-09-29-batch2-500.csv
+Radhika,Jhaver,Founder,Kosh-a Footwear,kosh-a.com,radhika@kosh-a.com,,Texas,America/Chicago,http://www.linkedin.com/in/radhika-jhaver-72757960,2026-09-29-batch2-500.csv
+Sean,Farver,CEO/E-Commerce/Business Owner,Peak Revival-X Supplements,peakrevivalx.com,sean@peakrevivalx.com,,Florida,America/New_York,http://www.linkedin.com/in/sfarver,2026-09-29-batch2-500.csv
+Mary,Leber,Owner,BeautyProphet,beautyprophet.com,mary.leber@beautyprophet.com,,New York,America/New_York,http://www.linkedin.com/in/mary-leber-2325258,2026-09-29-batch2-500.csv
+Neeta,Patel,CEO,Estella Collection,estellacollection.com,neeta@estellacollection.com,,Texas,America/Chicago,http://www.linkedin.com/in/estellacollection,2026-09-29-batch2-500.csv
+Kate,Solomon,Founder,Babo Botanicals,babobotanicals.com,kate@babobotanicals.com,,New York,America/New_York,http://www.linkedin.com/in/kate-solomon-45213314,2026-09-29-batch2-500.csv
+Marielle,Saums,"Founder, Chief Pot Dealer",Spoons Kitchen Exchange,spoonskitchenexchange.com,marielle@spoonskitchenexchange.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/mariellesaums,2026-09-29-batch2-500.csv
+Xi,Huang,Founder and President,i-On By Dr. Xi,ionskincare.com,drxihuang@ionskincare.com,,New York,America/New_York,http://www.linkedin.com/in/xi-huang-675a87b,2026-09-29-batch2-500.csv
+John,Fisher,Founder & CEO,CBD Pros USA,cbdprosusa.com,johnfisher@cbdprosusa.com,,Texas,America/Chicago,http://www.linkedin.com/in/john-fisher-4b6b24107,2026-09-29-batch2-500.csv
+Justin,Falk,Owner,Shop Good,shop-good.co,justin@shopgoodokc.com,,Oklahoma,America/Chicago,http://www.linkedin.com/in/justin-falk-6b3522288,2026-09-29-batch2-500.csv
+Tomei,Thomas,CEO,Klassy,klassyshop.com,tomei@klassynetwork.com,,Florida,America/New_York,http://www.linkedin.com/in/tomei-thomas-4321aa25,2026-09-29-batch2-500.csv
+Matan,Shmoueli,Founder,Virtail,virtail.com,matan@virtail.com,,California,America/Los_Angeles,https://www.linkedin.com/in/matan-shmoueli-5bb69663,2026-09-29-batch2-500.csv
+Rachel,Grossman,CEO / Co-Founder,H-PROOF,h-proof.com,rachel@h-proof.com,,Florida,America/New_York,http://www.linkedin.com/in/rachelkgrossman,2026-09-29-batch2-500.csv
+Moe,Kittaneh,Co-Founder,Herbal Dynamics Beauty,herbaldynamicsbeauty.com,moe@herbaldynamicsbeauty.com,,Arizona,America/Phoenix,http://www.linkedin.com/in/moekittaneh,2026-09-29-batch2-500.csv
+Melissa,Christenson,Co-Founder & Head of Product Development,Hume Supernatural,humesupernatural.com,melissa@humesupernatural.com,(612) 963-6437,Minnesota,America/Chicago,http://www.linkedin.com/in/melissamchristenson,2026-09-29-batch2-500.csv
+Colleen,Rothschild,Founder/President,Colleen Rothschild Beauty,colleenrothschild.com,colleen@colleenrothschild.com,,Texas,America/Chicago,http://www.linkedin.com/in/colleen-rothschild-a4b6b99,2026-09-29-batch2-500.csv
+Jacob,Soto,Co-Founder & Chief Operating Officer,Klassy,klassyshop.com,jacob@klassynetwork.com,(407) 463-0703,Florida,America/New_York,http://www.linkedin.com/in/jacob-soto-174321104,2026-09-29-batch2-500.csv
+Matthew,Berk,CEO,Bean Box,beanbox.com,matthew@beanbox.com,(206) 910-6161,New York,America/New_York,http://www.linkedin.com/in/matthewberk,2026-09-29-batch2-500.csv
+Jordan,Lafragola,Founder & Formulator,Flora Mirabilis,floramirabilis.com,jordan@floramirabilis.com,(908) 463-0238,California,America/Los_Angeles,https://www.linkedin.com/in/jordan-lafragola,2026-09-29-batch2-500.csv
+Natalie,Soto,Founder,Klassy,klassyshop.com,natalie@klassynetwork.com,(407) 437-3059,Florida,America/New_York,http://www.linkedin.com/in/itsnatalierogers,2026-09-29-batch2-500.csv
+Bruce,Fields,Owner,WODoutlet.com,wodoutlet.com,bruce@wodoutlet.com,(704) 300-8330,North Carolina,America/New_York,http://www.linkedin.com/in/bruce-fields-77227b1b9,2026-09-29-batch2-500.csv
+Udae,Sandhu,Co-Founder and Co-CEO,Toniiq,toniiq.com,udae@toniiq.com,(734) 546-1216,New York,America/New_York,http://www.linkedin.com/in/udaesandhu,2026-09-29-batch2-500.csv
+Colin,Stuckert,Co-Founder / CEO,INNR,innr.bio,colin@innr.bio,(239) 297-9283,Texas,America/Chicago,http://www.linkedin.com/in/colin-stuckert-82b650173,2026-09-29-batch2-500.csv
+Elyse,Petersen,Founder,Tealet,tealet.com,elyse@tealet.com,(808) 927-8330,Nevada,America/Los_Angeles,https://www.linkedin.com/in/peacelyse/,2026-09-29-batch2-500.csv
+Hiba,Malik,Founder & CEO,Live Fraiche,livefraiche.com,hmalik@livefraiche.com,(847) 525-3335,Texas,America/Chicago,http://www.linkedin.com/in/malikhiba,2026-09-29-batch2-500.csv
+Jon,Singer,CEO/Founder,SINGER22.com,singer22.com,jon@singer22.com,(516) 650-6541,New York,America/New_York,http://www.linkedin.com/in/jon-singer-7a299713,2026-09-29-batch2-500.csv
+Matthew,Goldby,Founder,Hoss Co.,bethehoss.com,matthew@bethehoss.com,,Illinois,America/Chicago,https://www.linkedin.com/in/matthewgoldby,2026-09-29-batch2-500.csv
+Jocelyn,Drew,Co-Founder & CEO,Bijou Candles,bijoucandles.com,jdrew@bijoucandles.com,,New York,America/New_York,http://www.linkedin.com/in/jocelyn-drew-1a5047156,2026-09-29-batch2-500.csv
+Lindy-Erica,Williams,Owner,EBL Lashes,extensionsbylindy.com,lindy@ebllashes.com,,Utah,America/Denver,http://www.linkedin.com/in/lindy-erica-williams-a083b544,2026-09-29-batch2-500.csv
+Crystal,Etienne,CEO | Founder at Ruby Love (formerly PantyProp),Ruby Love,rubylove.com,crystal@rubylove.com,,New York,America/New_York,http://www.linkedin.com/in/crystal-etienne-18440a125,2026-09-29-batch2-500.csv
+Brigitte,White,Co-Founder,Bright Whites Oral Care LLC,brightwhitesoralcare.com,brigitte@brightwhitesoralcare.com,,Maryland,America/New_York,http://www.linkedin.com/in/drbrigittewhite,2026-09-29-batch2-500.csv
+Kendall,Reynolds,CEO / Design Director,Kendall Miles Designs,kendallmilesdesigns.com,kreynolds@kendallmilesdesigns.com,,California,America/Los_Angeles,https://www.linkedin.com/in/kendall-reynolds-a4343a72,2026-09-29-batch2-500.csv
+Chad,Brown,Founder / Owner,Mythic Gaming (Alter Sleeves),mythicgaming.com,chad@mythicgaming.com,(608) 577-4078,Wisconsin,America/Chicago,http://www.linkedin.com/in/cabrown11,2026-09-29-batch2-500.csv
+John,McBean,Co-founder of Kiinde,Kiinde,kiinde.com,jmcbean@kiinde.com,(617) 947-8155,Massachusetts,America/New_York,http://www.linkedin.com/in/john-mcbean-1a742b96,2026-09-29-batch2-500.csv
+Robin,Boesch,Co-Founder,y&i clothing boutique,shopyandi.com,robin@shopyandi.com,,Texas,America/Chicago,http://www.linkedin.com/in/robin-boesch-737b1a3,2026-09-29-batch2-500.csv
+Max,Mikhaylenko,CEO & Co-founder,Snap Supplements®,snapsupplements.com,max@snapsupplements.com,,Oregon,America/Los_Angeles,http://www.linkedin.com/in/maxmstudio,2026-09-29-batch2-500.csv
+Seda,Bilginer,"CEO, Co-founder",ESAS NYC,esasnyc.com,seda@esasnyc.com,,New York,America/New_York,http://www.linkedin.com/in/seda-bilginer-858a69197,2026-09-29-batch2-500.csv
+David,Gordon,Co-Founder CEO,evanhealy,evanhealy.com,david.gordon@evanhealy.com,,California,America/Los_Angeles,https://www.linkedin.com/in/david-gordon-a46607345,2026-09-29-batch2-500.csv
+David,Sandusky,Co-founder & VP Independent Retail Sales Distribution,Idea Chíc,ideachic.net,david@ideachic.net,(303) 325-3225,Colorado,America/Denver,http://www.linkedin.com/in/sandusky,2026-09-29-batch2-500.csv
+Julie,Sandusky,"Co-Founder, Product Design and Operations",Idea Chíc,ideachic.net,julie@ideachic.net,(303) 884-7787,Colorado,America/Denver,http://www.linkedin.com/in/juliesandusky,2026-09-29-batch2-500.csv
+Nina,Zilka,Co-Founder and Chief Executive Officer,Alder New York,aldernewyork.com,nina@aldernewyork.com,(847) 975-1408,New York,America/New_York,http://www.linkedin.com/in/nina-zilka,2026-09-29-batch2-500.csv
+Marisol,Rivas,CEO,Faith Fitter Store,faithfitterstore.com,marisol@faithfitterstore.com,(201) 697-5979,New Jersey,America/New_York,http://www.linkedin.com/in/marisol-rivas-69a3ab71,2026-09-29-batch2-500.csv
+Nick,Bond,Chief Growth Officer & Co-Founder,Flora Mirabilis,floramirabilis.com,nick@floramirabilis.com,(734) 578-0002,California,America/Los_Angeles,https://www.linkedin.com/in/nickolasbond,2026-09-29-batch2-500.csv
+Miri,Torres,CEO,Arianna Skincare,arianna-skincare.com,miri@arianna-skincare.com,(347) 598-7046,New York,America/New_York,http://www.linkedin.com/in/miri-torres-10a891169,2026-09-29-batch2-500.csv
+Zachary,Munoz,Co-Founder,UNALTERED Athletics,unalteredathletics.com,zmunoz@unalteredathletics.com,(407) 924-4282,Florida,America/New_York,http://www.linkedin.com/in/zacharyomunoz,2026-09-29-batch2-500.csv
+Cesar,Cruz,Co-Founder,Sebastian Cruz Couture,sebastiancruzcouture.com,ccruz@sebastiancruzcouture.com,(786) 367-5921,Florida,America/New_York,http://www.linkedin.com/in/cesarrcruz,2026-09-29-batch2-500.csv
+Heather,Marshall,Owner/ Creative Director,Wolf & Shepherd,wolfandshepherd.com,heather@wolfandshepherd.com,,California,America/Los_Angeles,https://www.linkedin.com/in/heathermarshall2786,2026-09-29-batch2-500.csv
+Patrick,Mateer,"CEO, Co-Founder",Seal the Seasons,sealtheseasons.com,patrick@sealtheseasons.com,(919) 360-7618,North Carolina,America/New_York,http://www.linkedin.com/in/patrick-mateer-5653649a,2026-09-29-batch2-500.csv
+Cyndal,Norment,Co-Founder,Stork Exchange,storkexchange.co,cyndal@storkexchange.co,,Massachusetts,America/New_York,http://www.linkedin.com/in/cyndal-norment-22973a27,2026-09-29-batch2-500.csv
+Rebecca,Mariolis-Baker,Co-Founder & CEO,urmawm,urmawm.com,rebecca@urmawm.com,,Georgia,America/New_York,http://www.linkedin.com/in/rebecca-mariolis-baker-2a289b7,2026-09-29-batch2-500.csv
+Katie,Kennedy,Advisor/ Co-Owner,Hume Supernatural,humesupernatural.com,katie@humesupernatural.com,,California,America/Los_Angeles,https://www.linkedin.com/in/katie-kennedy-56935351,2026-09-29-batch2-500.csv
+Kim,Otto,Owner,Moon Valley Organics,moonvalleyorganics.com,kim@moonvalleyorganics.com,(206) 396-2803,Washington,America/Los_Angeles,https://www.linkedin.com/in/kim-otto-88954648,2026-09-29-batch2-500.csv
+Victoria,Taukatch,Co-Owner,SwissWatchExpo,swisswatchexpo.com,victoria@swisswatchexpo.com,,Georgia,America/New_York,http://www.linkedin.com/in/victoria-taukatch-129b4635,2026-09-29-batch2-500.csv
+Brooke,Kildey,"Co-Founder, CEO",Wondrous World,wondrousworld.org,brooke@wondrousworld.org,,Colorado,America/Denver,http://www.linkedin.com/in/brooke-kildey-1a6a2a11,2026-09-29-batch2-500.csv
+Chris,Savage,Founder & CEO,True Honey Teas,truehoneyteas.com,csavage@truehoneyteas.com,(703) 728-8369,Virginia,America/New_York,http://www.linkedin.com/in/chris-savage-777b204b,2026-09-29-batch2-500.csv
+Edwin,Wai,President & CEO,GEMORIE™,gemorie.com,edwin@gemorie.com,(626) 202-6630,California,America/Los_Angeles,https://www.linkedin.com/in/edwinwai,2026-09-29-batch2-500.csv
+Will,Smelko,Co-founder & CEO,Ora,ora.organic,will@ora.organic,(619) 504-3627,Texas,America/Chicago,http://www.linkedin.com/in/willsmelko,2026-09-29-batch2-500.csv
+Enich,Harris,Co-Founder,Caddis,caddislife.com,enich@caddislife.com,(949) 614-3096,California,America/Los_Angeles,https://www.linkedin.com/in/enich-harris-abab2536,2026-09-29-batch2-500.csv
+Makini,Allwood,Founder & CEO,plait,getplait.co,makini@getplait.co,(651) 278-8860,Illinois,America/Chicago,https://www.linkedin.com/in/makiniallwood,2026-09-29-batch2-500.csv
+Sheri,Davis,Founder,Professional Supplement Center,professionalsupplementcenter.com,sherid@professionalsupplementcenter.com,(941) 232-6000,Florida,America/New_York,http://www.linkedin.com/in/sheri-davis-38676115,2026-09-29-batch2-500.csv
+Liz,Edlich,CEO - Founder,Radical Skincare,radicalskincare.com,liz@radicalskincare.com,(310) 709-6831,California,America/Los_Angeles,https://www.linkedin.com/in/liz-edlich-00781866,2026-09-29-batch2-500.csv
+Payam,Pourmehr,CEO/Founder,SHANY Cosmetics,shany.com,payam@shany.com,(832) 766-0707,Texas,America/Chicago,http://www.linkedin.com/in/payampourmehr,2026-09-29-batch2-500.csv
+Lisa,Murphy,Co-Founder,Starling Skincare,buystarling.com,lisa@buystarling.com,,New York,America/New_York,http://www.linkedin.com/in/lisa-larson-murphy-8877617,2026-09-29-batch2-500.csv
+Abena,Boamahacheampong,Founder/CEO,hanahana beauty,hanahanabeauty.com,abena.boamah@hanahanabeauty.com,(614) 619-0003,Illinois,America/Chicago,https://www.linkedin.com/in/abena-boamah-acheampong-9a159a58,2026-09-29-batch2-500.csv
+Razvan,Romanescu,Co-founder & CEO,Underlining,underlining.com,raz@underlining.com,,California,America/Los_Angeles,https://www.linkedin.com/in/razromanescu,2026-09-29-batch2-500.csv
+Aaron,Otto,Owner,Moon Valley Organics,moonvalleyorganics.com,aaron@moonvalleyorganics.com,(360) 547-9600,Washington,America/Los_Angeles,https://www.linkedin.com/in/aaron-otto-4912a438,2026-09-29-batch2-500.csv
+Alison,Cohen,"Co-Founder, CEO",Wonder Valley,welcometowondervalley.com,acohen@bicycletransit.com,(503) 701-9696,California,America/Los_Angeles,https://www.linkedin.com/in/alison-cohen-ba76744,2026-09-29-batch2-500.csv
+Catharine,Arnston,Founder & Chief Executive Officer,ENERGYbits,energybits.com,catharine@energybits.com,(617) 642-0782,Florida,America/New_York,http://www.linkedin.com/in/catharinearnston,2026-09-29-batch2-500.csv
+Vanessa,M,"Co-Founder, CEO",raan,raan.com,vanessa@raan.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Tania,Actress,Co-Founder,"Chloe and Olive, LLC",chloeandolive.com,tania@chloeandolive.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Sean,Smith,Owner & CEO,Zoe,zoebaby.com,sean@zoebaby.com,,North Carolina,America/New_York,http://www.linkedin.com/in/sean-smith-060522a4,2026-09-29-batch2-500.csv
+Sean,Matson,Co-Founder & CEO,CardoMax,cardomax.com,sean@cardomax.com,,Virginia,America/New_York,http://www.linkedin.com/in/sean-matson,2026-09-29-batch2-500.csv
+Elena,Bakar,Co-Founder,izé skincare,izeskincare.com,elena@izeskincare.com,,New York,America/New_York,http://www.linkedin.com/in/elenabakar,2026-09-29-batch2-500.csv
+Mahdi,Ibrahim,Founder,Boswellness,boswellness.com,mahdi@boswellness.com,,Vermont,America/New_York,http://www.linkedin.com/in/mahdi-i-ibrahim-5b121557,2026-09-29-batch2-500.csv
+Jeremy,Dhanani,Co-Founder + CEO,Malagassi,malagassi.com,jeremy@malagassi.com,,New York,America/New_York,http://www.linkedin.com/in/jeremy-dhanani-090b0a126,2026-09-29-batch2-500.csv
+Hannah,Harrison,Co-Founder,TYS Beauty,tysbeauty.co,hannah@tysbeauty.co,,California,America/Los_Angeles,https://www.linkedin.com/in/hannah-harrison-212b97232,2026-09-29-batch2-500.csv
+Jeffrey,Tousey,Co-Founder,Florida Squeezed,floridasqueezed.com,jeffrey@floridasqueezed.com,(239) 410-2764,New York,America/New_York,http://www.linkedin.com/in/jeffrey-tousey-7a77178a,2026-09-29-batch2-500.csv
+Arielle,Moody,CEO & Co-Founder,Mama Sol,shopmamasol.com,arielle@shopmamasol.com,(410) 746-9099,California,America/Los_Angeles,https://www.linkedin.com/in/arielle-moody-2325a422,2026-09-29-batch2-500.csv
+Michael,Opalski,Co-Founder,City Bonfires®,citybonfires.com,michael@citybonfires.com,,Maryland,America/New_York,http://www.linkedin.com/in/michael-opalski-053bb17a,2026-09-29-batch2-500.csv
+Steven,Geduld,CEO and Co-Founder,Vicci Eyewear,viccieyewear.com,steven@viccieyewear.com,(305) 790-4879,Florida,America/New_York,http://www.linkedin.com/in/steven-geduld-38092946,2026-09-29-batch2-500.csv
+Gulshan,Kumar,Co-Founder & CEO,swishables,getswishables.com,gulshan@getswishables.com,,Texas,America/Chicago,http://www.linkedin.com/in/gulshan-kumar-b23900b6,2026-09-29-batch2-500.csv
+Lisa,Guerrera,Co-founder & CEO,Experiment,experimentbeauty.com,lisa@experimentbeauty.com,,New York,America/New_York,http://www.linkedin.com/in/lisa-guerrera-824219121,2026-09-29-batch2-500.csv
+Loryn,Schiffer,Co-Founder,maskSAFE,getmasksafe.org,loryn@schifferbooks.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/loryn-wilson-schiffer-2bbba596,2026-09-29-batch2-500.csv
+Micheal,Mcneeley,"Co-Owner/Creator, Co-Owner/Founder","Lively Up Your Breath, LLC",livelyupyourbreath.com,micheal@livelyupyourbreath.com,,California,America/Los_Angeles,https://www.linkedin.com/in/micheal-mcneeley-43326049,2026-09-29-batch2-500.csv
+Michael,Redmond,Co-Founder & CEO,V&Co. Beauty,vandcobeauty.com,mike@vandcobeauty.com,,Minnesota,America/Chicago,http://www.linkedin.com/in/michael-redmond-0214bb84,2026-09-29-batch2-500.csv
+Matthew,Maroon,Co-Owner,Love Olive Co,loveoliveco.com,matt@loveoliveco.com,,Idaho,America/Denver,http://www.linkedin.com/in/matthew-maroon,2026-09-29-batch2-500.csv
+Fara,Homidi,CEO / Founder,Fara Homidi beauty,farahomidi.com,fara@farahomidi.com,,New York,America/New_York,http://www.linkedin.com/in/fara-homidi-43b25b221,2026-09-29-batch2-500.csv
+Nate,Gunderson,Owner and CEO,Bucket Wonders,bucketwonders.com,nate@bucketwonders.com,,Utah,America/Denver,http://www.linkedin.com/in/nategunderson,2026-09-29-batch2-500.csv
+Chris,McCasland,Co-Founder,City Bonfires®,citybonfires.com,chris@citybonfires.com,,Maryland,America/New_York,http://www.linkedin.com/in/chris-mccasland-0a89ab232,2026-09-29-batch2-500.csv
+Terry,Zickerman,CEO,Love Sun Body,lovesunbody.com,zickerman@lovesunbody.com,,New Jersey,America/New_York,http://www.linkedin.com/in/dr-terry-zickerman,2026-09-29-batch2-500.csv
+Haylee,Harrison,Co-Founder,TYS Beauty,tysbeauty.co,haylee@tysbeauty.co,,California,America/Los_Angeles,https://www.linkedin.com/in/haylee-harrison-031a6a28a,2026-09-29-batch2-500.csv
+Ryan,Bishop,CEO & Co-Founder,Rho Nutrition,rhonutrition.com,ryan@rhonutrition.com,,Florida,America/New_York,http://www.linkedin.com/in/ryan-bishop-6b7a8214b,2026-09-29-batch2-500.csv
+Salome,Tordjman,CEO & Co-Founder,Gentlehomme,gentlehomme.com,salome@gentlehomme.com,,Florida,America/New_York,http://www.linkedin.com/in/salome-tordjman-000083110,2026-09-29-batch2-500.csv
+Erica,Anderson,"CEO, Co-founder",The New Savant,thenewsavant.com,erica@thenewsavant.com,,New York,America/New_York,http://www.linkedin.com/in/ericaanderson08,2026-09-29-batch2-500.csv
+Eileen,Kelly,Founder and Co-Owner,Farm Hounds,farmhounds.com,eileen@farmhounds.com,,Georgia,America/New_York,http://www.linkedin.com/in/eileen-kelly-75413b19b,2026-09-29-batch2-500.csv
+Catherine,Dini,Co-Founder & CEO,Educated Mess,educatedmess.com,catherine@educatedmess.com,,Texas,America/Chicago,http://www.linkedin.com/in/catherine-chick-dini6a69592,2026-09-29-batch2-500.csv
+Chase,Hansen,Co-Founder & CEO,Oomph,oomphathlete.com,chansen@thrivecorp.com,,Utah,America/Denver,http://www.linkedin.com/in/chase-hansen-78a303141,2026-09-29-batch2-500.csv
+Max,Meier,CEO & Co-Founder,Aonic,aoniclife.com,max@aoniclife.com,,California,America/Los_Angeles,https://www.linkedin.com/in/maxjmeier,2026-09-29-batch2-500.csv
+Audrey,Napoleon,"Founder, CEO",Gostrider,gostrider.com,audrey@gostrider.com,,New York,America/New_York,http://www.linkedin.com/in/audrey-napoleon,2026-09-29-batch2-500.csv
+Tiffany,Scott,Co-Founder and CEO,RÓEN Beauty,roenbeauty.com,tiffany@roenbeauty.com,,California,America/Los_Angeles,https://www.linkedin.com/in/tiffany-scott-a9445320b,2026-09-29-batch2-500.csv
+Tom,Crowley,Co-Founder & Partner,Taste Beauty,taste-beauty.com,tom@taste-beauty.com,,New York,America/New_York,http://www.linkedin.com/in/tom-crowley-a5211624,2026-09-29-batch2-500.csv
+David,Schoenfeld,Founder,RING BEAR,ringbear.com,david@ringbear.com,,California,America/Los_Angeles,https://www.linkedin.com/in/davidschoenfeld9,2026-09-29-batch2-500.csv
+Patricia,Leon,Co-Founder,PDL Cosmetics,pdlcosmetics.com,patricia.leon@pdlcosmetics.com,,California,America/Los_Angeles,https://www.linkedin.com/in/patricia-de-leon-8169859,2026-09-29-batch2-500.csv
+Derek,Curry,Founder and CEO,Sneaker Politics,sneakerpolitics.com,derek.curry@sneakerpolitics.com,(337) 254-7194,Louisiana,America/Chicago,https://www.linkedin.com/in/derek-curry-6b69589,2026-09-29-batch2-500.csv
+Kelly,Gasink,Co-founder,Austin Cocktails,austincocktails.com,kelly@austincocktails.com,,Texas,America/Chicago,http://www.linkedin.com/in/kelly-peterson-gasink-1bbbb43,2026-09-29-batch2-500.csv
+Veronica,Konecke,Co-Founder,Aloisia Beauty,aloisiabeauty.com,veronica@aloisiabeauty.com,(858) 922-2208,California,America/Los_Angeles,https://www.linkedin.com/in/veronica-konecke-020086168,2026-09-29-batch2-500.csv
+Jeff,Prescott,CEO/Co-Founder,DAILY DEFENSE®,mydailydefense.com,jeff@mydailydefense.com,(518) 572-8754,Tennessee,America/Chicago,http://www.linkedin.com/in/jeffprescottdreamstime,2026-09-29-batch2-500.csv
+Drew,Deters,CEO & Co-Founder,LESSE,lesseofficial.com,d@lesseofficial.com,(858) 205-4262,New York,America/New_York,http://www.linkedin.com/in/drew-deters-0242a336,2026-09-29-batch2-500.csv
+Taryn,Hemmings,Co-Founder,Hustle Beauty,hustlebeauty.com,taryn@hustlebeauty.com,(970) 381-8999,Arizona,America/Phoenix,http://www.linkedin.com/in/taryn-hemmings-03994410,2026-09-29-batch2-500.csv
+Michael,Mast,CFO/Co-Founder,Mast Market,mastmarket.com,michael@mastmarket.com,(914) 733-9020,New York,America/New_York,http://www.linkedin.com/in/michael-mast-5542b0108,2026-09-29-batch2-500.csv
+Kathryn,Shah,Founder,Spring & Mulberry,springandmulberry.com,kathryn@springandmulberry.com,(617) 800-5374,North Carolina,America/New_York,http://www.linkedin.com/in/kathryn-shah-50b51b1,2026-09-29-batch2-500.csv
+Jamie,Garvey,Co-Owner,Boswellness,boswellness.com,jamie@boswellness.com,(802) 233-2655,Vermont,America/New_York,http://www.linkedin.com/in/jamie-garvey-3542b110,2026-09-29-batch2-500.csv
+Brian,Keller,Co-Founder & CEO,Rorra,rorra.com,brian@rorra.com,(612) 801-2319,Minnesota,America/Chicago,http://www.linkedin.com/in/briandavid7,2026-09-29-batch2-500.csv
+Donte,Jones,Co-Founder/CEO,Lyrically Correct,lyricallycorrect.com,djones@lyricallycorrect.com,(646) 418-0948,New York,America/New_York,http://www.linkedin.com/in/donterjones,2026-09-29-batch2-500.csv
+Nikki,Hynek,Founder,Pretty Lane Beauty Boutique,theprettylane.com,nikki@theprettylane.com,(319) 721-3575,Iowa,America/Chicago,http://www.linkedin.com/in/nikkihynek,2026-09-29-batch2-500.csv
+Tamara,Kleidermacher,Co Founder,"Chloe and Olive, LLC",chloeandolive.com,tamara@chloeandolive.com,(805) 452-6685,California,America/Los_Angeles,https://www.linkedin.com/in/tkleideramcher,2026-09-29-batch2-500.csv
+Braden,Rawls,CEO & Co-Founder,Vital Plan,vitalplan.com,braden@vitalplan.com,(919) 636-1506,North Carolina,America/New_York,http://www.linkedin.com/in/braden-rawls-192b7517,2026-09-29-batch2-500.csv
+Blake,Niemann,Founder & CEO,Levels,levelsprotein.com,blake@levelsprotein.com,(732) 456-4990,Florida,America/New_York,http://www.linkedin.com/in/blake-niemann-137b0523,2026-09-29-batch2-500.csv
+Lori,Machiorlette,Co-Founder,blendSMART - A New Spin on Beauty - Currently raising a seed/bridge round to support growth,blendsmart.com,lori@blendsmart.com,(713) 927-2181,Texas,America/Chicago,http://www.linkedin.com/in/lorimachiorlette,2026-09-29-batch2-500.csv
+Emily,Doyle,"Co-Founder, CEO",DUNE SUNCARE,dunesuncare.com,emily@dunesuncare.com,(401) 263-1115,New York,America/New_York,http://www.linkedin.com/in/emily-doyle-b593b813,2026-09-29-batch2-500.csv
+Austin,Rovetti,Co-Founder & COO,"Shottys, LLC",shottys.com,austin@shottys.com,(541) 729-3996,California,America/Los_Angeles,https://www.linkedin.com/in/austin-rovetti-22098091,2026-09-29-batch2-500.csv
+Chris,Parente,Co-Founder,Bombi,bombigear.com,chris@bombigear.com,(401) 714-6080,Rhode Island,America/New_York,http://www.linkedin.com/in/chris-parente-27960b27,2026-09-29-batch2-500.csv
+Pete,Christel,"Co-Founder, Owner",Kiala Nutrition,kialanutrition.com,pete@kialanutrition.com,(770) 286-7460,Florida,America/New_York,http://www.linkedin.com/in/pete-christel,2026-09-29-batch2-500.csv
+Sean,Kim,Founder and CEO,Zillabeau,zillabeau.com,sean@zillabeau.com,(718) 852-6677,New Jersey,America/New_York,http://www.linkedin.com/in/sean-kim-88085a7,2026-09-29-batch2-500.csv
+Karen,Horiuchi,"CEO, Founder",Glambot,glambot.com,karen@glambot.com,(530) 867-3599,California,America/Los_Angeles,https://www.linkedin.com/in/karen-horiuchi-0b679113,2026-09-29-batch2-500.csv
+Emily,Parr,Co-Founder,Current State,currentstateofbeauty.com,emily@currentstateofbeauty.com,(516) 503-5582,Massachusetts,America/New_York,http://www.linkedin.com/in/emily-parr-0726a97,2026-09-29-batch2-500.csv
+George,Miller,Co-Founder,Coffee & Chill,coffeeandchill.com,george@coffeeandchill.com,,California,America/Los_Angeles,https://www.linkedin.com/in/george-miller-8961abb8,2026-09-29-batch2-500.csv
+Mehrbod,Mohammadi,Co-Founder,Panda Supplements,pandasupps.com,mehrbod@pandasupps.com,,Arizona,America/Phoenix,http://www.linkedin.com/in/mehrbod-mohammadi-5a410678,2026-09-29-batch2-500.csv
+Stephanie,Farsht,Co-Founder and CEO,Small Wonder,smallwonder.world,stephanie@smallwonder.world,,Illinois,America/Chicago,https://www.linkedin.com/in/stephaniefarsht,2026-09-29-batch2-500.csv
+Chelsey,Hayes,Co-Founder & CEO,Brown Babee Co.,brownbabee.com,chelsey@brownbabee.com,,Maryland,America/New_York,http://www.linkedin.com/in/chelseyrhayes,2026-09-29-batch2-500.csv
+Braven,Grant,Founder & CEO,Gains In Bulk,gainsinbulk.com,braven@gainsinbulk.com,,Arizona,America/Phoenix,http://www.linkedin.com/in/braven-grant-135858b5,2026-09-29-batch2-500.csv
+Paradis,Winslet,Founder & Chief Creative Officer,PARADIS WINSLET NEW YORK,paradiswinslet.com,paradis@paradiswinslet.com,,New York,America/New_York,http://www.linkedin.com/in/paradis-w-06532149,2026-09-29-batch2-500.csv
+Jay,Carroll,Creative Director / Co-founder,Wonder Valley,welcometowondervalley.com,jay@welcometowondervalley.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jay-carroll-58186b21,2026-09-29-batch2-500.csv
+Nicole,Doucet,CEO & Co-Founder,Open Water,drinkopenwater.com,nicole@drinkopenwater.com,(305) 972-7437,Florida,America/New_York,http://www.linkedin.com/in/nicole-doucet-0a23b83a,2026-09-29-batch2-500.csv
+Jeremy,Priest,"Co-Founder, President & CEO",Knotty Tie Co.,knottytie.com,jeremy@knottytie.com,(720) 253-3804,Colorado,America/Denver,http://www.linkedin.com/in/jeremy-priest-159bb958,2026-09-29-batch2-500.csv
+Haim,Nigri,Co-founder & CEO,Live it Up,letsliveitup.com,haim@letsliveitup.com,(917) 445-5708,New York,America/New_York,http://www.linkedin.com/in/haimnigri,2026-09-29-batch2-500.csv
+Ari,Tulla,CEO & Co-Founder,Elo Health,elo.health,ari@elo.health,(415) 307-0306,California,America/Los_Angeles,https://www.linkedin.com/in/aritulla,2026-09-29-batch2-500.csv
+Youmna,Aoukar,Co-Founder & CEO,INARA,inarasense.com,youmna@inarasense.com,(917) 587-2237,New York,America/New_York,http://www.linkedin.com/in/youmna-aoukar-bbb30729,2026-09-29-batch2-500.csv
+Michelle,Ballard,CEO/Co-Founder,Miche Beauty,michebeauty.com,mballard@michebeauty.com,(202) 604-9870,Maryland,America/New_York,http://www.linkedin.com/in/michelle-ballard-10ab42100,2026-09-29-batch2-500.csv
+Deborah,Mccormick,Founder & Owner,Herban Essentials,herbanessentials.com,deborah@herbanessentials.com,(805) 689-6298,California,America/Los_Angeles,https://www.linkedin.com/in/deborah-mccormick-b361946,2026-09-29-batch2-500.csv
+Dave,Spandorfer,CEO + Co-Founder,Janji,janji.com,dave@janji.com,(610) 637-5344,Massachusetts,America/New_York,http://www.linkedin.com/in/dave-spandorfer-3473092a,2026-09-29-batch2-500.csv
+Paul,Tupper,Co-founder and President,Onda Origins,ondaorigins.com,tupper.paul@ondaorigins.com,(678) 910-5880,Washington,America/Los_Angeles,https://www.linkedin.com/in/paul-tupper-4b4a5614,2026-09-29-batch2-500.csv
+Amanda,Mccarroll,Co-Founder,büddhi Moves,buddhimoves.com,amanda@buddhimoves.com,(858) 775-2055,California,America/Los_Angeles,https://www.linkedin.com/in/amandamccarroll,2026-09-29-batch2-500.csv
+Jill,Burns,Co-Founder,Austin Cocktails,austincocktails.com,jill@austincocktails.com,(415) 606-4249,Texas,America/Chicago,http://www.linkedin.com/in/jill-peterson-burns,2026-09-29-batch2-500.csv
+Mark,Miller,Co-Founder & CEO,PURRA Performance LLC.,purraperformance.com,markmiller@purraperformance.com,(619) 200-6002,California,America/Los_Angeles,https://www.linkedin.com/in/millermark,2026-09-29-batch2-500.csv
+Kristin,Hirano,CEO & Founder,JUST BETTER BRANDS,getjustbetter.com,kristin@getjustbetter.com,(206) 719-7060,Washington,America/Los_Angeles,https://www.linkedin.com/in/kristinhirano,2026-09-29-batch2-500.csv
+Maggie,Drake,Co-Founder/CEO,BANDOLIER,bandolierstyle.com,maggie@bandolierstyle.com,(661) 607-1705,California,America/Los_Angeles,https://www.linkedin.com/in/maggie-drake-1a125382,2026-09-29-batch2-500.csv
+Carolina,Vivas,Co-Founder,büddhi Moves,buddhimoves.com,carolina@buddhimoves.com,(619) 793-6399,California,America/Los_Angeles,https://www.linkedin.com/in/carolinavivas1,2026-09-29-batch2-500.csv
+Jesse,Golden,Founder & CEO,The Golden Secrets,thegoldensecrets.com,jesse@thegoldensecrets.com,(310) 691-4584,California,America/Los_Angeles,https://www.linkedin.com/in/jesse-golden-22b7bb21,2026-09-29-batch2-500.csv
+James,S,Founder and CEO,Elixirshots,elixirshots.com,james@elixirshots.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Sahar,R,Co-Founder & CEO,SOSHE Beauty,soshebeauty.com,sahar@soshebeauty.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Paige,Shaw,Founder | Designer,Either/Or,shopeitheror.com,paige@shopeitheror.com,,Washington,America/Los_Angeles,https://uk.linkedin.com/in/paige-shaw-4b47b691,2026-09-29-batch2-500.csv
+Lauren,Zucker,Co-Founder & CEO,Sage + Sound,sage-sound.com,lzucker@sage-sound.com,,New York,America/New_York,http://www.linkedin.com/in/lauren-zucker-0591b2202,2026-09-29-batch2-500.csv
+Gina,Stevenson,Co-founder & CEO,Bioligent,bioligent.com,gina@bioligent.com,,Idaho,America/Denver,http://www.linkedin.com/in/gina-stevenson-92137115,2026-09-29-batch2-500.csv
+Alex,Reed,Co-Founder & CEO,HygieneLab,hygienelab.com,alex@hygienelab.com,,California,America/Los_Angeles,https://www.linkedin.com/in/alex-reed-4b913474,2026-09-29-batch2-500.csv
+Elina,Wang,Co-Founder & CEO,ESW Beauty,eswbeauty.com,elina@eswbeauty.com,,New York,America/New_York,http://www.linkedin.com/in/elina-sofia-wang-ab78409a,2026-09-29-batch2-500.csv
+Metta,Murdaya,CEO/Co-Founder,JUARA Skincare,juaraskincare.com,metta.murdaya@juaraskincare.com,,New York,America/New_York,http://www.linkedin.com/in/metta-murdaya-8554181,2026-09-29-batch2-500.csv
+Bob,Dyer,Co-Owner,Running Niche,runningniche.com,bdyer@runningniche.com,(314) 960-3279,Missouri,America/Chicago,http://www.linkedin.com/in/bobdyerglobal221,2026-09-29-batch2-500.csv
+Olivia,Abrams,CEO & Co-Founder,TiCK MiTT,tickmitt.com,olivia@tick-mitt.com,,New York,America/New_York,http://www.linkedin.com/in/olivia-abrams,2026-09-29-batch2-500.csv
+Robbie,Salter,"Founder, Co-CEO",Jupiter,hellojupiter.com,robbie@hellojupiter.com,(248) 961-2191,New York,America/New_York,http://www.linkedin.com/in/robbiesalter,2026-09-29-batch2-500.csv
+Dana,Bomar,Founder/CEO,Melt Cosmetics,meltcosmetics.com,dana@meltcosmetics.com,,California,America/Los_Angeles,https://www.linkedin.com/in/dana-bomar-885639270,2026-09-29-batch2-500.csv
+Ryan,Walther,Co-Founder / CEO,Prank-O,pranko.com,walther@pranko.com,,Minnesota,America/Chicago,http://www.linkedin.com/in/ryan-walther-0a765732b,2026-09-29-batch2-500.csv
+Sofy,Tarud,Founder & CEO,OYĀYO,oyayo.co,sofy@oyayo.co,(857) 204-3006,Texas,America/Chicago,http://www.linkedin.com/in/sofytarud,2026-09-29-batch2-500.csv
+Quinn,Roukema,CEO | Co-Founder,SACHEU,sacheu.com,quinn@sacheu.com,(514) 885-2868,California,America/Los_Angeles,https://www.linkedin.com/in/quinnroukema,2026-09-29-batch2-500.csv
+Dani,Egna,Co-Founder & CEO,INKED by Dani,inkedbydani.com,dani@inkedbydani.com,(516) 439-5488,New York,America/New_York,http://www.linkedin.com/in/dani-egna-0b9796a8,2026-09-29-batch2-500.csv
+Danielle,Raynor,Founder & CEO,LAVANILA LABORATORIES,lavanila.com,danielle@lavanila.com,(917) 664-1104,New Jersey,America/New_York,http://www.linkedin.com/in/danielle-raynor-0b23a940,2026-09-29-batch2-500.csv
+Micah,Katz,"Founder, Co-CEO",Move,move.one,micah@tentoesdown.co,(310) 402-6094,Georgia,America/New_York,http://www.linkedin.com/in/micah-katz-76a7473,2026-09-29-batch2-500.csv
+Keyur,Gohel,CEO & Co-Founder,RK Pigments,rkpigments.com,keyur@rkpigments.com,(352) 219-3091,Florida,America/New_York,http://www.linkedin.com/in/keyur-gohel-0741017,2026-09-29-batch2-500.csv
+Tony,Post,CEO/Founder,Topo Athletic LLC,topoathletic.com,tony.post@topoathletic.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/tony-post-a5b0966,2026-09-29-batch2-500.csv
+Oksana,Matsegora,Founder | CEO,GLEO NAILS,gleonails.com,oksana@gleonails.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/oksana-matsegora-568535164,2026-09-29-batch2-500.csv
+Russell,Saks,CEO & Co-Founder,Be Amazing,shopbeamazing.com,russell@shopbeamazing.com,,Tennessee,America/Chicago,http://www.linkedin.com/in/russell-saks,2026-09-29-batch2-500.csv
+Magda,Radtke,COO and Co-Founder,"JustNeem, LLC",justneem.com,magda@justneem.com,,North Carolina,America/New_York,http://www.linkedin.com/in/magda-radtke-a165242b,2026-09-29-batch2-500.csv
+Anna,Buss,Founder & CEO,Fitglow Beauty,fitglowbeauty.com,anna@fitglowbeauty.com,,Florida,America/New_York,http://www.linkedin.com/in/anna-buss-b7483516,2026-09-29-batch2-500.csv
+Bryan,Chu,Co-founder & CEO,pureskin®,trypureskin.com,bryan@trypureskin.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/bryanchu7,2026-09-29-batch2-500.csv
+Benny,Shabtai,Co-Founder & CEO,BOTANIKA LIFE,botanika.life,benny@botanika.life,,Florida,America/New_York,http://www.linkedin.com/in/bennyshabtai,2026-09-29-batch2-500.csv
+Justin,Adair,Co- Founder,Earlybird CBD,earlybirdcbd.com,justin@earlybirdcbd.com,,Texas,America/Chicago,http://www.linkedin.com/in/justin-adair-ab35007a,2026-09-29-batch2-500.csv
+Cynthia,Elliott,Co-Founder; CEO,Sliquid,sliquid.com,cynthia@sliquid.com,,Texas,America/Chicago,http://www.linkedin.com/in/cynthiawielgosz,2026-09-29-batch2-500.csv
+Mark,Hulings,Co-Founder,Earlybird CBD,earlybirdcbd.com,mark@earlybirdcbd.com,,Texas,America/Chicago,http://www.linkedin.com/in/markjhulings,2026-09-29-batch2-500.csv
+Jim,Otto,Co-Founder,"Majestic Pet Products, Inc. | Majestic Home Goods, Inc.",majestichomegoods.com,jim@majestichomegoods.com,,Texas,America/Chicago,http://www.linkedin.com/in/jim-otto-526aab8,2026-09-29-batch2-500.csv
+Howard,Kaufman,Co-Founder | CEO,ORL,orlcares.com,howard@orllabs.com,,Arizona,America/Phoenix,http://www.linkedin.com/in/hojo5,2026-09-29-batch2-500.csv
+Steve,Elassy,Co-Founder,Nosta Beauty,nostabeauty.com,steve@nostabeauty.com,,New York,America/New_York,http://www.linkedin.com/in/steve-elassy-b6749944,2026-09-29-batch2-500.csv
+Siffat,Haider,Co-Founder & CEO,Arrae,arrae.com,siff@arrae.com,,California,America/Los_Angeles,https://www.linkedin.com/in/siffat-haider-35954461,2026-09-29-batch2-500.csv
+Sandi,Ateser,Co-Founder & CEO,Monika Blunder Beauty,monikablunderbeauty.com,sandi@monikablunderbeauty.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/slateser,2026-09-29-batch2-500.csv
+Jake,Carney,CEO & Co-Founder,UpWellness,upwellness.com,jake@upwellness.com,,Florida,America/New_York,http://www.linkedin.com/in/jakecarney,2026-09-29-batch2-500.csv
+Pooja,Chopra,Co-Founder,Mudita Earth,muditaearth.com,pooja@muditaearth.com,,Illinois,America/Chicago,https://www.linkedin.com/in/poojachopra2018,2026-09-29-batch2-500.csv
+Shyam,Kuntawala,Co-Founder,BARKER WELLNESS,barkerwellness.com,shyam@barkerwellness.com,,Texas,America/Chicago,http://www.linkedin.com/in/shyam-kuntawala-12a425379,2026-09-29-batch2-500.csv
+Jessy,Shenfeld,Co-Founder & CEO,Cowboy Colostrum,cowboycolostrum.com,jessy@cowboycolostrum.com,,New York,America/New_York,http://www.linkedin.com/in/jessy-shenfeld-917525136,2026-09-29-batch2-500.csv
+Mariana,Kanellos,Co-Founder,Visp,drinkvisp.com,mariana@drinkvisp.com,,Florida,America/New_York,http://www.linkedin.com/in/mariana-kanellos-b35b38175,2026-09-29-batch2-500.csv
+Rob,Wilcox,CEO/Co-Founder,Reuzel,reuzel.com,rob@reuzel.com,,Colorado,America/Denver,http://www.linkedin.com/in/rob-w-7929256,2026-09-29-batch2-500.csv
+Mary,Butler,Co-Founder,Intelligent Elixirs,ieskincare.com,mary.butler@ieskincare.com,,Colorado,America/Denver,http://www.linkedin.com/in/mary-butler-b6719b30,2026-09-29-batch2-500.csv
+Sienna,McCormick,Co-Founder/Co-CEO,Create Wellness,trycreate.co,sienna@trycreate.co,,New York,America/New_York,http://www.linkedin.com/in/sienna-mccormick-86b42255,2026-09-29-batch2-500.csv
+Cat,Tatman,Co-Founder,Intelligent Elixirs,ieskincare.com,cat.tatman@ieskincare.com,,Colorado,America/Denver,http://www.linkedin.com/in/cat-tatman-0455806a,2026-09-29-batch2-500.csv
+DJ,Mastronardo,"Founder, Owner",Nardos Natural Inc,nardosnatural.com,dj@nardosnatural.com,,Florida,America/New_York,http://www.linkedin.com/in/dj-mastronardo-2860602a,2026-09-29-batch2-500.csv
+Eugene,Tutunikov,CEO,SwissWatchExpo,swisswatchexpo.com,eugene@swisswatchexpo.com,(267) 992-0543,Georgia,America/New_York,http://www.linkedin.com/in/eugenetutunikov,2026-09-29-batch2-500.csv
+Devin,Aracena,Co-Founder + CEO,Canvast Supply Co.,canvastsupplyco.com,devin@canvastsupplyco.com,(720) 428-1389,Tennessee,America/Chicago,http://www.linkedin.com/in/devin-aracena-19872434,2026-09-29-batch2-500.csv
+Dave,Nelson,Co-Founder & CEO,SAVU,savu.cc,dave@savu.cc,(808) 344-5847,Vermont,America/New_York,http://www.linkedin.com/in/dave-nelson-a447a052,2026-09-29-batch2-500.csv
+Cindy,Kang,Co-Founder,hey dewy,heydewy.com,cindyk@heydewy.com,(213) 507-7773,California,America/Los_Angeles,https://www.linkedin.com/in/cindy-kang-a527275,2026-09-29-batch2-500.csv
+Lacey,Tisch,Co-Founder & CEO,Sage + Sound,sage-sound.com,ltisch@sage-sound.com,(917) 685-4309,New York,America/New_York,http://www.linkedin.com/in/lacey-tisch-841b1117,2026-09-29-batch2-500.csv
+Brittany,Stone,Co-Founder,Bask Suncare,basksuncare.com,brittany.stone@basksuncare.com,(978) 621-5100,New York,America/New_York,http://www.linkedin.com/in/brittany-stone,2026-09-29-batch2-500.csv
+Brenda,Brock,Founder/Formulator/CEO,Farmaesthetics,farmaesthetics.com,bb@farmaesthetics.com,(401) 683-0546,Rhode Island,America/New_York,http://www.linkedin.com/in/brenda-brock-a7727b7,2026-09-29-batch2-500.csv
+Sean,Scott,Co-Founder & CEO,"COMUNITYmade, INC",comunitymade.com,sean@comunitymade.com,(310) 913-4881,California,America/Los_Angeles,https://www.linkedin.com/in/seanjscott,2026-09-29-batch2-500.csv
+Lee,Veldkamp,Co-Founder & CEO,Simply Earth,simplyearth.com,lee.veldkamp@simplyearth.com,(920) 889-0163,Wisconsin,America/Chicago,http://www.linkedin.com/in/leeveldkamp,2026-09-29-batch2-500.csv
+Heather,Holker,Co-Founder | CEO,LIVEDEN,liveden.com,heather@liveden.com,(801) 472-6258,Utah,America/Denver,http://www.linkedin.com/in/heather-holker-9a174842,2026-09-29-batch2-500.csv
+Andrew,Vrbas,CEO/Co-Founder,Pacha Soap Co.,pachasoap.com,andrew@pachasoap.com,(785) 626-4395,Nebraska,America/Chicago,http://www.linkedin.com/in/andrew-vrbas-8a897228,2026-09-29-batch2-500.csv
+Nurit,Raphael,CEO + Co-Founder,ONA.Life,ona.life,nurit@ona.life,(415) 328-5467,California,America/Los_Angeles,https://www.linkedin.com/in/nurit-raphael-2241224b,2026-09-29-batch2-500.csv
+Connor,Toohill,Co-Founder & CEO,Ritual,ritual.io,connor@ritual.io,(858) 625-1612,New York,America/New_York,http://www.linkedin.com/in/connor-toohill-29069823,2026-09-29-batch2-500.csv
+Julie,Weiss-Schwartz,Co-Founder/CEO,Beauty Releaf,beautyreleaf.com,julie@beautyreleaf.com,(215) 275-3047,Pennsylvania,America/New_York,http://www.linkedin.com/in/julie-weiss-schwartz-0a67458,2026-09-29-batch2-500.csv
+Ryan,Greve,Co-Founder/CEO,Beauty By Earth,beautybyearth.com,ryan@beautybyearth.com,(972) 896-1285,Texas,America/Chicago,http://www.linkedin.com/in/ryangreve,2026-09-29-batch2-500.csv
+Derek,Halpern,Co-Founder / Co-CEO,Truvani,truvani.com,derek@truvani.com,(516) 417-6582,Florida,America/New_York,http://www.linkedin.com/in/thederekhalpern,2026-09-29-batch2-500.csv
+Brianna,Arps,"Founder, Owner, CEO",MOODEAUX®,moodeaux.com,brianna@moodeaux.com,(314) 803-0826,Oklahoma,America/Chicago,http://www.linkedin.com/in/briannaarps,2026-09-29-batch2-500.csv
+Rachel,Edlich,President/Co-Founder/ Author,Radical Skincare,radicalskincare.com,rachel@radicalskincare.com,(424) 208-1057,California,America/Los_Angeles,https://www.linkedin.com/in/racheledlich,2026-09-29-batch2-500.csv
+Melanie,Petschke,Co-Founder & Owner,Crunchi®,crunchi.com,melanie@crunchi.com,(408) 396-6355,Florida,America/New_York,http://www.linkedin.com/in/melanie-petschke-62b02ba3,2026-09-29-batch2-500.csv
+Lexi,Hampton,Co-Founder,ThirdLeaf NW,thirdleafnw.com,lexi@thirdleafnw.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/lexi-hampton-968b6757,2026-09-29-batch2-500.csv
+Arash,Aftabi,CEO/Co-Founder,Bala Enzyme,balaenzyme.com,arash@balaenzyme.com,,California,America/Los_Angeles,https://www.linkedin.com/in/arash-aftabi-b44352325,2026-09-29-batch2-500.csv
+Laurie,Lane,Owner/Co-Founder,Create A Castle,createacastle.com,llane@createacastle.com,,Connecticut,America/New_York,http://www.linkedin.com/in/laurie-lane-07880323,2026-09-29-batch2-500.csv
+Ben,Bower,CEO & Co-Founder,Stinkbug Naturals,stinkbugorganics.com,ben@stinkbugorganics.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/ben-bower-81138411a,2026-09-29-batch2-500.csv
+Janeta,Surila,Co Founder,NOOZ,noozmints.com,janeta@noozmints.com,,California,America/Los_Angeles,https://www.linkedin.com/in/janeta-surila-56768b44,2026-09-29-batch2-500.csv
+Claire,Schlemme,Co-Founder & CEO,Renewal Mill,renewalmill.com,claire@renewalmill.com,(845) 392-8307,California,America/Los_Angeles,https://www.linkedin.com/in/claireschlemme,2026-09-29-batch2-500.csv
+Deanna,Muniz,Owner/Co-Founder,Recovery ReLeaf LLC,recoveryreleaf.com,deanna@recoveryreleaf.com,(954) 594-4833,Florida,America/New_York,http://www.linkedin.com/in/deanna-muniz-518b2765,2026-09-29-batch2-500.csv
+Staci,Morris,Founder & Builder,"Liberation Nails, Inc.",liberation-nails.com,staci.morris@liberation-nails.com,(415) 702-5665,California,America/Los_Angeles,https://www.linkedin.com/in/stacimorris,2026-09-29-batch2-500.csv
+Steven,Wiggins,Founder & CEO,Stay Cool,drinkstaycool.com,steven@drinkstaycool.com,(512) 971-1316,Texas,America/Chicago,http://www.linkedin.com/in/steven-wiggins-b2a65a40,2026-09-29-batch2-500.csv
+Ben-David,Imberman,CEO & Co Founder,Clean Skin Club,cleanskinclub.com,ben@cleanskinclub.com,(203) 997-2491,Florida,America/New_York,http://www.linkedin.com/in/ben-david-imberman-432b1414a,2026-09-29-batch2-500.csv
+Irina,Gottesman,Co- Founder / CEO,House of Grō,houseofgro.com,irina@houseofgro.com,(917) 697-3711,New York,America/New_York,http://www.linkedin.com/in/irina-gottesman-997a29173,2026-09-29-batch2-500.csv
+Danielle,Haschak,Co-Founder,ThirdLeaf NW,thirdleafnw.com,danielle@thirdleafnw.com,(509) 952-2307,Washington,America/Los_Angeles,https://www.linkedin.com/in/daniellelariviere,2026-09-29-batch2-500.csv
+Kat,R,Founder & CEO,KÁT RUDU Beauty,katrudu.com,kat@katrudu.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Michael,M,"Co-Founder, President & CEO",Kaged,kaged.com,michael@kaged.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Ryan,Miner,Co-CEO,Petit Vour,petitvour.com,ryanminer@petitvour.com,,Texas,America/Chicago,http://www.linkedin.com/in/ryan-miner-01b880140,2026-09-29-batch2-500.csv
+Mike,Mcadams,Co-Founder/CEO,"drinkwel, LLC",drinkwel.com,mike@drinkwel.com,,California,America/Los_Angeles,https://www.linkedin.com/in/mcadamsmike,2026-09-29-batch2-500.csv
+Joe,Johnson,Founder and CEO,VADE Nutrition,vade-nutrition.com,joe@vade-nutrition.com,(248) 345-9224,Michigan,America/New_York,http://www.linkedin.com/in/joe-johnson-b57210123,2026-09-29-batch2-500.csv
+Jean,Finney,Founder and Owner,Farm Hounds,farmhounds.com,jean@farmhounds.com,,Georgia,America/New_York,http://www.linkedin.com/in/jean-finney-a02bb1179,2026-09-29-batch2-500.csv
+Emily,Didonato,Co-Founder,Covey Skin,coveyskin.com,emily@coveyskin.com,,New York,America/New_York,http://www.linkedin.com/in/emily-didonato-9217a6194,2026-09-29-batch2-500.csv
+Lani,Cooper,Founder and CEO,MOBOT,mobot.com,lani@mobot.com,,California,America/Los_Angeles,https://www.linkedin.com/in/lani-cooper-aa8621118,2026-09-29-batch2-500.csv
+Hayim,Langer,Co-Founder and CEO,ForestLeaf,forestleaf.com,hayim@forestleaf.com,,New York,America/New_York,http://www.linkedin.com/in/hayim-langer-594000234,2026-09-29-batch2-500.csv
+Don,Mastrangelo,Founder | CEO,Jacked Up Fitness,jackedupfitness.com,don@jackedupfitness.com,,California,America/Los_Angeles,https://www.linkedin.com/in/don-mastrangelo-3091931,2026-09-29-batch2-500.csv
+Carl,Pradelli,Co-Founder,NatureCity,naturecity.com,carl@naturecity.com,,Florida,America/New_York,http://www.linkedin.com/in/carl-pradelli-7304,2026-09-29-batch2-500.csv
+Emily,Sindlinger,Co-Founder,Sorella Apothecary,sorellaapothecary.com,emily@sorellaapothecary.com,,Nevada,America/Los_Angeles,https://www.linkedin.com/in/emily-sindlinger-a1a4413a,2026-09-29-batch2-500.csv
+Amanda,Sichon,COO & Co-founder,ESAS NYC,esasnyc.com,amanda@esasnyc.com,,New York,America/New_York,http://www.linkedin.com/in/amanda-sichon-1ab3411b2,2026-09-29-batch2-500.csv
+Jake,Rokhlin,Business Owner,SwissWatchExpo,swisswatchexpo.com,jake@swisswatchexpo.com,,Georgia,America/New_York,http://www.linkedin.com/in/jake-rokhlin-854017257,2026-09-29-batch2-500.csv
+Soraya,Benitez,CEO/Founder,MommaBear Organics,mommabearusa.com,soraya@mommabearusa.com,,New York,America/New_York,http://www.linkedin.com/in/soraya-benitez-1b81225,2026-09-29-batch2-500.csv
+Harry,Slatkin,Founder and CEO,Slatkin + Co.,slatkinandco.com,harry@slatkinandco.com,,Florida,America/New_York,http://www.linkedin.com/in/harry-slatkin-03346645,2026-09-29-batch2-500.csv
+Hana,Lee,Founder & CEO,Melixir,melixir.com,hana@melixir.com,,California,America/Los_Angeles,https://www.linkedin.com/in/hana-lee-7389758b,2026-09-29-batch2-500.csv
+Mark,Founder,Founder/CEO,beautymark.,btymark.com,mark@btymark.com,,California,America/Los_Angeles,https://www.linkedin.com/in/mark-founder-1b50932ba,2026-09-29-batch2-500.csv
+Brad,Miles,Co-Founder & CEO,LEVER Movement,levermovement.com,bradm@leverrunning.com,(215) 353-8273,Colorado,America/Denver,http://www.linkedin.com/in/bradmiles1,2026-09-29-batch2-500.csv
+Ann,Ahl,Co-Founder,nfuse Magnesium,nfusemagnesium.com,ann@nfusemagnesium.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/ann-ahl-29751317,2026-09-29-batch2-500.csv
+Emily,Edmonds,Co-Founder,GUNNER,gunner.com,emily@gunner.com,(228) 217-7827,Tennessee,America/Chicago,http://www.linkedin.com/in/emily-edmonds-b1597238,2026-09-29-batch2-500.csv
+Julia,Straus,Co-Founder and CEO,sincerely yours,sincerely-yours.com,julia@sincerely-yours.com,(646) 531-2750,New York,America/New_York,http://www.linkedin.com/in/julia-straus-5a98a211,2026-09-29-batch2-500.csv
+Sadie,Salazar,Co-Founder,Beard Care Club,beardcareclub.com,sadie@beardcareclub.com,(801) 673-0427,Utah,America/Denver,http://www.linkedin.com/in/sadie-salazar-0b2b7164,2026-09-29-batch2-500.csv
+Eden,Stelmach,Co-Founder,TruHeight Vitamins,truheightvitamins.com,eden@truheightvitamins.com,(310) 586-8753,Nevada,America/Los_Angeles,https://www.linkedin.com/in/eden-stelmach-486420112,2026-09-29-batch2-500.csv
+Allison,Krongard,Co-Founder,Her Highness,herhighness.com,allison@herhighness.com,(631) 907-2737,Connecticut,America/New_York,http://www.linkedin.com/in/allison-krongard-2798124,2026-09-29-batch2-500.csv
+Franchesca,Hashim,Co-Founder and CEO,Good Weather Skin,goodweatherskin.com,franchesca@goodweatherskin.com,(510) 557-7542,California,America/Los_Angeles,https://www.linkedin.com/in/franchescahashim,2026-09-29-batch2-500.csv
+Michelle,Ranavat,Founder + CEO,RANAVAT,ranavat.com,michelle@ranavat.com,(630) 886-4940,California,America/Los_Angeles,https://www.linkedin.com/in/michelle-ranavat-61725b11/,2026-09-29-batch2-500.csv
+Selmin,Karatas,Co-Founder and CEO,Kazani Beauty,kazanibeauty.com,selmin@kazanibeauty.com,,New York,America/New_York,http://www.linkedin.com/in/worldpartnering,2026-09-29-batch2-500.csv
+Alex,Lomov,CTO & Co-Founder,Snap Supplements®,snapsupplements.com,alex@snapsupplements.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/alomov,2026-09-29-batch2-500.csv
+Mike,Fusco,President / Co-Founder,Bombi,bombigear.com,mike@bombigear.com,,Rhode Island,America/New_York,http://www.linkedin.com/in/mike-fusco-518565363,2026-09-29-batch2-500.csv
+Amitay,Eshel,Co-Founder and Co-CEO,Young Goose,younggoose.com,amitay@younggoose.com,,Florida,America/New_York,http://www.linkedin.com/in/amitay-eshel-037757173,2026-09-29-batch2-500.csv
+Sue,Mandini,CO-Founder and CEO,Pure Mana Hawaii®,puremanahawaii.com,sue@puremanahawaii.com,,Hawaii,Pacific/Honolulu,https://www.linkedin.com/in/sue-mandini-b333a7162,2026-09-29-batch2-500.csv
+Emily,Treger,Founder & CEO,NUFYX®,nufyx.com,esmith@nufyx.com,,California,America/Los_Angeles,https://www.linkedin.com/in/esmithprofile,2026-09-29-batch2-500.csv
+Carson,Matthews,Founder & CEO,Ballboyz,ballboyzsoap.com,carson@ballboyzsoap.com,,California,America/Los_Angeles,https://www.linkedin.com/in/carson-matthews-73b7b32a8,2026-09-29-batch2-500.csv
+Jennifer,Bogan,Founder & CEO,Bluejay Electric Bicycles,bluejaybikes.com,jen@bluejaybikes.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jennifercohenbogan,2026-09-29-batch2-500.csv
+De,Collier,Co-Founder,BLOOMBALLA BEAUTY,bloomballabeauty.com,deanne@bloomballabeauty.com,,Florida,America/New_York,http://www.linkedin.com/in/drdeanne,2026-09-29-batch2-500.csv
+Tylor,Johnson,Founder + CEO,Nous Haircare,noushaircare.com,tylor@noushaircare.com,,California,America/Los_Angeles,https://www.linkedin.com/in/tylorjohnson,2026-09-29-batch2-500.csv
+Ericka,Parker,Founder & CEO,SILKENN,silkenn.com,ericka@silkenn.com,,New York,America/New_York,http://www.linkedin.com/in/erickaparker,2026-09-29-batch2-500.csv
+Laura,Eisman,Co-Founder,Her Highness,herhighness.com,laura@herhighness.com,(917) 428-0137,New York,America/New_York,http://www.linkedin.com/in/laura-eisman-7302855,2026-09-29-batch2-500.csv
+Amy,Granger,Co-Founder & President,M2U NYC,m2unyc.com,amy.granger@m2unyc.com,,New York,America/New_York,http://www.linkedin.com/in/chihfenchou,2026-09-29-batch2-500.csv
+Christina,Fisher,Co-Founder | Co-Owner,"Rightful Ventures, Inc  PharmaCBD",pharmacbd.com,christina@pharmacbd.com,,North Carolina,America/New_York,http://www.linkedin.com/in/christina-fisher-1199a530,2026-09-29-batch2-500.csv
+Matt,Jacobs,Co-Founder,Pedestrian Project,pedestrianproject.com,matt@pedestrianproject.com,,New York,America/New_York,http://www.linkedin.com/in/mattjacobs5,2026-09-29-batch2-500.csv
+Kevin,McQuiston,Co-Founder & CEO,The Earthling Co.,theearthlingco.com,kevin@theearthlingco.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/kevin-mcquiston-0848bb80,2026-09-29-batch2-500.csv
+Patricia,Gallardo,CEO/Co-Founder,EpicLight Beauty,epiclightbeauty.com,patricia@epiclightbeauty.com,,New York,America/New_York,http://www.linkedin.com/in/patricia-gallardo-547174b1,2026-09-29-batch2-500.csv
+Amy,Taylor,President/CEO & Co-Founder,Cloud City Supply Inc,cloudcitysupplyinc.com,amy@cloudcitysupplyinc.com,,California,America/Los_Angeles,https://www.linkedin.com/in/amy-taylor-0b42b8a,2026-09-29-batch2-500.csv
+Maritza,Berger,"Founder, CEO & Designer",Maritza Marie,maritzamarie.com,mberger@maritzamarie.com,,North Carolina,America/New_York,http://www.linkedin.com/in/maritza-berger-82038940,2026-09-29-batch2-500.csv
+Dre,Rodriguez,Company Owner,Norden,nordengoods.com,dre@nordengoods.com,,Tennessee,America/Chicago,http://www.linkedin.com/in/drerodriguez,2026-09-29-batch2-500.csv
+Ryan,Cope,Co Founder,WANDRD,wandrd.com,ryan@wandrd.com,(801) 850-7458,Utah,America/Denver,http://www.linkedin.com/in/ryanmcope,2026-09-29-batch2-500.csv
+Victoria,Makinde,Founder / CEO,Hello Wellness,hellowellness.com,victoria@hellowellnessnaturals.com,(301) 254-1999,Virginia,America/New_York,http://www.linkedin.com/in/victoria-makinde,2026-09-29-batch2-500.csv
+Robert,Gomez,Founder & CEO,Kaffe Products,kaffeproducts.com,rgomez@kaffeproducts.com,(678) 863-5854,Georgia,America/New_York,http://www.linkedin.com/in/robertgom,2026-09-29-batch2-500.csv
+Andreas,Nezel,Co-Founder & Ceo/cfo,Brotzeit Bakery Inc.,thebrotbox.com,andreas@thebrotbox.com,(805) 539-5433,California,America/Los_Angeles,https://www.linkedin.com/in/andreas-nezel-07a295128,2026-09-29-batch2-500.csv
+Carlos,Velez,Co-Founder,Epic Cycles,epic-cycles.com,carlos@epic-cycles.com,(303) 641-0880,Colorado,America/Denver,http://www.linkedin.com/in/carlos-velez-b4b60380,2026-09-29-batch2-500.csv
+Kelly,Love,Co-Founder,Branch Basics,branchbasics.com,kelly@branchbasics.com,(225) 252-6905,Texas,America/Chicago,http://www.linkedin.com/in/kelly-love-aa886213,2026-09-29-batch2-500.csv
+Dasia,Sterling,CEO/Founder,CandyGoth,candygoth.com,gothbarbie@candygoth.com,(214) 407-1579,Texas,America/Chicago,http://www.linkedin.com/in/dasia-sterling-aba00651,2026-09-29-batch2-500.csv
+Candice,Westphal,Co-Founder,re-trēt,re-tret.com,cwestphal@re-tret.com,(816) 206-4722,,,http://www.linkedin.com/in/candicewestphal,2026-09-29-batch2-500.csv
+Spencer,Cope,Co-Founder,WANDRD,wandrd.com,spencer@wandrd.com,(801) 857-0481,Utah,America/Denver,http://www.linkedin.com/in/spencer-cope-670a2a15,2026-09-29-batch2-500.csv
+Josh,Graves,Co-Founder,BullFit,bullfit.com,josh@bullfit.com,(801) 831-3377,Utah,America/Denver,http://www.linkedin.com/in/josh-graves,2026-09-29-batch2-500.csv
+Ken,Berlin,Co-Founder,Pearhead Inc,pearhead.com,kberlin@pearhead.com,(917) 627-8842,New York,America/New_York,http://www.linkedin.com/in/ken-berlin-a7334120,2026-09-29-batch2-500.csv
+Michael,Duff,Co-Founder and CEO,IN YOUR FACE SKINCARE,inyourfaceskincare.com,michael@inyourfaceskincare.com,(818) 974-7900,Florida,America/New_York,http://www.linkedin.com/in/michaelduff,2026-09-29-batch2-500.csv
+Brian,Wargula,Co-Founder / COO / CEO,Transformation Protein LLC,transformationprotein.com,brian@transformationprotein.com,(262) 490-6298,Wisconsin,America/Chicago,http://www.linkedin.com/in/brianwargula,2026-09-29-batch2-500.csv
+Daniel,Kahalani,CEO and Founder,DNA Footwear,dnafootwear.com,danielk@dnafootwear.com,(929) 308-0075,New York,America/New_York,http://www.linkedin.com/in/daniel-kahalani-933b7250,2026-09-29-batch2-500.csv
+Hudson,Davis-Ross,Co-Founder & CEO,Plant People,plantpeople.co,hudson@plantpeople.co,(347) 623-4601,Texas,America/Chicago,http://www.linkedin.com/in/hudsongr,2026-09-29-batch2-500.csv
+Katie,Caniglia,Co-Founder & President,GRIZZLY Cookware,grizzlycookware.com,katie@grizzlycookware.com,(704) 421-8709,North Carolina,America/New_York,http://www.linkedin.com/in/kmcaniglia,2026-09-29-batch2-500.csv
+Chase,Wilson,Founder / CEO,BYRD Hairdo Products,byrdhair.com,chase@byrdhair.com,,California,America/Los_Angeles,https://www.linkedin.com/in/chase-wilson-47582481,2026-09-29-batch2-500.csv
+Patrick,Sullivan,CEO & Co-Founder,Jigsaw Health,jigsawhealth.com,patrick.sullivan@jigsawhealth.com,(480) 221-5051,Arizona,America/Phoenix,http://www.linkedin.com/in/patricksullivanjr,2026-09-29-batch2-500.csv
+Kelsey,Adams,Co-Founder | CMO,Bombi,bombigear.com,kelsey@bombigear.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/kelsey-adams-4b622926b,2026-09-29-batch2-500.csv
+Jane,Wong,"Co-Founder & CEO, CCO",NOON WORLD,noon.world,jane@noon.world,(646) 400-3960,New York,America/New_York,http://www.linkedin.com/in/janekatewong,2026-09-29-batch2-500.csv
+Lina,Hanson,Co-Founder / Creator / CEO,Lina Hanson,linahanson.com,lina@linahanson.com,,California,America/Los_Angeles,https://www.linkedin.com/in/lina-hanson,2026-09-29-batch2-500.csv
+Sasha,Millstein,Founder,Aunt Ethel's Pot Pies,auntethels.com,sasha@auntethels.com,,New York,America/New_York,http://www.linkedin.com/in/sasha-millstein-90b99249,2026-09-29-batch2-500.csv
+Jeanne,Chan,Co-Founder,Harlow & Grey,harlowandgrey.com,jeanne@harlowandgrey.com,(415) 812-8830,California,America/Los_Angeles,https://www.linkedin.com/in/jeannechan,2026-09-29-batch2-500.csv
+Lindsay,White,Founder | CEO,The Little Milk Bar,thelittlemilkbar.com,lindsay@thelittlemilkbar.com,(801) 867-1884,Utah,America/Denver,http://www.linkedin.com/in/lindsay-white-9a405b53,2026-09-29-batch2-500.csv
+Jessica,Glasner,Founder & CEO,envy formulations,envyformulations.com,jessica@envyformulations.com,(760) 717-6339,California,America/Los_Angeles,https://www.linkedin.com/in/jessicairene,2026-09-29-batch2-500.csv
+Lisa,Thurman,Co-Founder,AMAZINGCOSMETICS,amazingcosmetics.com,lthurman@amazingcosmetics.com,(708) 705-6088,Illinois,America/Chicago,https://www.linkedin.com/in/lisa-thurman-0a95951a4,2026-09-29-batch2-500.csv
+David,Thurston,Founder and CEO,Danger Jones,dangerjonescreative.com,david@dangerjonescreative.com,(323) 336-1022,California,America/Los_Angeles,https://www.linkedin.com/in/davidthurston1,2026-09-29-batch2-500.csv
+Shauna,Blanch,Co-Founder & Owner,Color Up CBD,colorupco.com,shauna@colorupco.com,(303) 929-9633,Colorado,America/Denver,http://www.linkedin.com/in/shaunablanch,2026-09-29-batch2-500.csv
+Brandon,Dodd,Founder | CEO,Ride Concepts,rideconcepts.com,bdodd@rideconcepts.com,(530) 277-5959,California,America/Los_Angeles,https://www.linkedin.com/in/brandon-dodd-782b1833,2026-09-29-batch2-500.csv
+Anne,Harper,CEO & Founder,OMG Accessories,omgaccessories.com,ms.omg@omghandbag.com,(315) 727-6088,New York,America/New_York,http://www.linkedin.com/in/anne-harper-75847020,2026-09-29-batch2-500.csv
+Lillian,Zhao,Founder & CEO,Further Food,furtherfood.com,lillian@furtherfood.com,(415) 702-7053,Florida,America/New_York,http://www.linkedin.com/in/lillian-zhao-2009783,2026-09-29-batch2-500.csv
+Sima,Mostafavi,CEO & Founder,Pistaché Skincare,pistacheskincare.com,sima@pistacheskincare.com,(310) 770-0247,California,America/Los_Angeles,https://www.linkedin.com/in/sima-mostafavi-0168bb50,2026-09-29-batch2-500.csv
+Kevin,N,Co-Founder,PrettyBoy,yoprettyboy.com,kevin@yoprettyboy.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Madison,H,Co-Founder and CEO,760 Skin,760skin.com,madison@760skin.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Will,A,Co-Founder,Tanning Club,tanningclub.com,will@tanningclub.com,,California,America/Los_Angeles,,2026-09-29-batch2-500.csv
+Lindsey,Garcia,Co-Founder,Skin at Peace,skinatpeace.com,lindsey@skinatpeace.com,,Florida,America/New_York,http://www.linkedin.com/in/lindsey-garcia-283136189,2026-09-29-batch2-500.csv
+Annie,Babayan,Founder/CEO,California Crisps,californiacrisps.com,annieb@californiacrisps.com,(818) 822-5511,California,America/Los_Angeles,https://www.linkedin.com/in/annie-babayan-06011644,2026-09-29-batch2-500.csv
+Hope,Smith,Founder & CEO,MUTHA®,mutha.com,hope@mutha.com,,Florida,America/New_York,http://www.linkedin.com/in/hope-dworaczyk-smith,2026-09-29-batch2-500.csv
+Raymond,Truong,Co-Founder,Sud Scrub,sudscrub.com,raymond@sudscrub.com,,Nevada,America/Los_Angeles,https://www.linkedin.com/in/raytruong0313,2026-09-29-batch2-500.csv
+James,Jang,Founder & CEO,Teluris,teluris.com,james.jang@teluris.com,(201) 965-0198,New York,America/New_York,http://www.linkedin.com/in/jamesjanginc,2026-09-29-batch2-500.csv
+Evan,Goldstein,Co-Founder,Future Method,futuremethod.com,evan@futuremethod.com,,New York,America/New_York,http://www.linkedin.com/in/evan-goldstein-b5a93348,2026-09-29-batch2-500.csv
+Peter,Kanaat,Co-Founder,GoBiotix,gobiotix.com,peter@gobiotix.com,,Florida,America/New_York,http://www.linkedin.com/in/peter-kanaat-2141a5146,2026-09-29-batch2-500.csv
+Emily,Zollinger,Co-Founder,nfuse Magnesium,nfusemagnesium.com,emily@nfusemagnesium.com,,Maryland,America/New_York,http://www.linkedin.com/in/emily-zollinger-23b60b33,2026-09-29-batch2-500.csv
+Jack,Levine,Founder & CEO,Town to Table,towntotable.com,jlevine@towntotable.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/jack-levine-202b30182,2026-09-29-batch2-500.csv
+Aaron,Johnson,Founder/CEO,Grava Adventure Corporation,gograva.com,aaron@gograva.com,(610) 741-4997,Pennsylvania,America/New_York,http://www.linkedin.com/in/aaronsjohnson2,2026-09-29-batch2-500.csv
+Taylor,Ahlmark,Co-Founder,Maak Lab,maaklab.com,taylor@maaklab.com,(480) 231-2507,Oregon,America/Los_Angeles,http://www.linkedin.com/in/taylor-ahlmark-1a899393,2026-09-29-batch2-500.csv
+Mike,Howland,CEO/Founder,GIBS Grooming,gibsgrooming.com,bigsmooth@gibsgrooming.com,(970) 286-9876,Colorado,America/Denver,http://www.linkedin.com/in/mike-howland-346a907,2026-09-29-batch2-500.csv
+Kendall,Tichner,"Founder, CEO",Wild Captives,wildcaptives.com,kendall@wildcaptives.com,(516) 707-6494,New York,America/New_York,http://www.linkedin.com/in/kendall-tichner-5111342b,2026-09-29-batch2-500.csv
+Ying,Laohachewin,Co-Founder,By Kind,by-kind.com,ying@by-kind.com,,New York,America/New_York,http://www.linkedin.com/in/yinglaohachewin,2026-09-29-batch2-500.csv
+Steven,Truong,Co-Founder,Sud Scrub,sudscrub.com,steven@sudscrub.com,,Nevada,America/Los_Angeles,https://www.linkedin.com/in/stevenptruong,2026-09-29-batch2-500.csv
+Jason,Goode,Founder / CEO,Flakes,byeflakes.com,jason@byeflakes.com,,New York,America/New_York,http://www.linkedin.com/in/jason-goode-1aa30448,2026-09-29-batch2-500.csv
+Kyle,Koehler,Co-Founder,Wildway,wildwayoflife.com,kyle@wildwayoflife.com,,Texas,America/Chicago,http://www.linkedin.com/in/kyle-koehler-8b630624,2026-09-29-batch2-500.csv
+Sabrina,Castenfelt,Co-Founder and CEO,Brunel,brunelbeauty.com,sabrina@brunelbeauty.com,,New York,America/New_York,http://www.linkedin.com/in/sabrina-castenfelt,2026-09-29-batch2-500.csv
+Lindsey,Martin,Founder + CEO,Kiramoon,kiramoon.com,lindsey@kiramoon.com,,Texas,America/Chicago,http://www.linkedin.com/in/lindsey-martin-88590216,2026-09-29-batch2-500.csv
+Alejandra,Thompson,Co-Founder,ESTAS Beauty,estasbeauty.com,alejandra@estasbeauty.com,,New York,America/New_York,http://www.linkedin.com/in/alejandra-thompson-2a77a23b,2026-09-29-batch2-500.csv
+Jessica,Schiller,Founder & CEO,Schiller Bikes,schillerbikes.com,jessica@schillerbikes.com,,California,America/Los_Angeles,https://www.linkedin.com/in/jessica-schiller-b16708,2026-09-29-batch2-500.csv
+Fee,Steinvorth,Founder & CEO,neoNutritions,neonutritions.com,fee@neonutritions.com,,California,America/Los_Angeles,https://www.linkedin.com/in/feesteinvorth/en,2026-09-29-batch2-500.csv
+Pedro,Negron,Co-Founder,Bee Stinger Brands,getkums.com,pedro@getkums.com,,Florida,America/New_York,http://www.linkedin.com/in/pedro-m-negron-05a879182,2026-09-29-batch2-500.csv
+Bobby,Willis,Co-Founder,Average Bros Co.,averagebros.com,bobby@averagebros.com,,Minnesota,America/Chicago,http://www.linkedin.com/in/bobbywillis,2026-09-29-batch2-500.csv
+Mark,Turnipseed,Co-Founder,Halo42,halo42.com,markt@halo42.com,,Florida,America/New_York,http://www.linkedin.com/in/markaturnipseed,2026-09-29-batch2-500.csv
+Shelby,Wild,Founder & CEO,California Naturals,thecalifornianaturals.com,shelby@thecalifornianaturals.com,,California,America/Los_Angeles,https://www.linkedin.com/in/shelby-wild-a8338b214,2026-09-29-batch2-500.csv
+Lin,Chen,CEO & Founder,Pink Moon,pinkmoon.co,lin@pinkmoon.co,,New York,America/New_York,http://www.linkedin.com/in/linychen,2026-09-29-batch2-500.csv
+Dave,Phillips,Co-Founder,For Wellness,forwellness.com,dave@forwellness.com,,California,America/Los_Angeles,https://www.linkedin.com/in/dave-phillips-413563ab,2026-09-29-batch2-500.csv
+Hannah,Kim,Founder & CEO,Botanical Republic,botanicalrepublic.com,hannah@botanicalrepublic.com,,California,America/Los_Angeles,https://www.linkedin.com/in/hannah-kim-69b978186,2026-09-29-batch2-500.csv
+Bronson,Holbeck,Founder & CEO,PWDRS,pwdrs.com,bronson@pwdrs.com,,Texas,America/Chicago,http://www.linkedin.com/in/bronson-holbeck-415220ab,2026-09-29-batch2-500.csv
+Sarah,Tan,Co-Founder,By Kind,by-kind.com,sarah@by-kind.com,,New York,America/New_York,http://www.linkedin.com/in/sarahhstan,2026-09-29-batch2-500.csv
+Paolo,Esteban,Founder & CEO,Bayani Designs,bayanidesigns.com,paolo@bayanidesigns.com,,Oregon,America/Los_Angeles,http://www.linkedin.com/in/paolo-esteban-61a06657,2026-09-29-batch2-500.csv
+Jack,Szymczak,Founder / Owner,Kiala Nutrition,kialanutrition.com,jack@kialanutrition.com,,Florida,America/New_York,http://www.linkedin.com/in/jack-szymczak-55a504128,2026-09-29-batch2-500.csv
+Hye,Kim,CEO & Founder,OLIVIAUMMA Beauty,oliviaumma.com,hye@oliviaumma.com,,Florida,America/New_York,http://www.linkedin.com/in/hyeyoungkimoliviaumma,2026-09-29-batch2-500.csv
+Alina,Vike,Co-Founder and CEO,VIKE Beauty,vikebeauty.com,alina@vikebeauty.com,,New York,America/New_York,http://www.linkedin.com/in/alina-vike-1b5415b4,2026-09-29-batch2-500.csv
+Sarah,Dewees,Founder / CEO,Dermwel,dermwel.com,sdewees@dermwel.com,,Texas,America/Chicago,http://www.linkedin.com/in/sarah-dewees-51ba5266,2026-09-29-batch2-500.csv
+Sara,Happ,Founder,"Sara Happ, Inc.",sarahapp.com,sara@sarahapp.com,,California,America/Los_Angeles,https://www.linkedin.com/in/sara-happ-12b76a6,2026-09-29-batch2-500.csv
+Melissa,Goidel,Co-Founder,The Ware Company,thewarecompany.com,melissa@thewarecompany.com,,New York,America/New_York,http://www.linkedin.com/in/melissagoidel,2026-09-29-batch2-500.csv
+Alex,Padgett,Co-Founder,Educated Mess,educatedmess.com,alex@educatedmess.com,,Texas,America/Chicago,http://www.linkedin.com/in/alex-padgett-141a58111,2026-09-29-batch2-500.csv
+Eli,Zelmati,CEO & Founder,Gymati,gymati.com,eliz@gymati.com,,Florida,America/New_York,http://www.linkedin.com/in/eli-zelmati-162925186,2026-09-29-batch2-500.csv
+Naomi,Garlick,Founder & CEO,Glow Gummies,glowgummies.com,naomi@glowgummies.com,,New York,America/New_York,http://www.linkedin.com/in/naomi-garlick-8b096789,2026-09-29-batch2-500.csv
+Kelly,Kreusler,Co-Founder,Crunchi®,crunchi.com,kelly@crunchi.com,,Florida,America/New_York,http://www.linkedin.com/in/kelly-kreusler-829722177,2026-09-29-batch2-500.csv
+Paige,Hathaway,Co-Founder,LIV Body,livbody.com,paige@livbody.com,,Texas,America/Chicago,http://www.linkedin.com/in/paige-hathaway-6652732b0,2026-09-29-batch2-500.csv
+Mei,Kwok,Co-Founder,DUNE SUNCARE,dunesuncare.com,mei@dunesuncare.com,,California,America/Los_Angeles,https://www.linkedin.com/in/mei-kwok-9b120a42,2026-09-29-batch2-500.csv
+Joseph,Rafael,Co-Founder,PetsWorld Inc,petpads.net,josephrafael@petpads.net,,New York,America/New_York,http://www.linkedin.com/in/joseph-rafael-49a317181,2026-09-29-batch2-500.csv
+Ervina,Wu,Co-Founder and CEO,"YINA, Inc.",yina.co,ewu@yina.co,,California,America/Los_Angeles,https://www.linkedin.com/in/ervinawu,2026-09-29-batch2-500.csv
+John,Oswald,Co-Founder,Tanning Club,tanningclub.com,john@tanningclub.com,,Utah,America/Denver,http://www.linkedin.com/in/john-oswald-47a89910,2026-09-29-batch2-500.csv
+Tori,Paide,Co-Founder,TOMA Essential Skin Therapy,tomaskintherapies.com,tp@tomaskintherapies.com,,Maryland,America/New_York,http://www.linkedin.com/in/thestillpoint,2026-09-29-batch2-500.csv
+Ray,Chay,Co-Founder & CEO,Alex Crown,alexcrown.com,ray@alexcrown.com,+13128908732,Illinois,America/Chicago,https://www.linkedin.com/in/raychay,2026-10-06-mixed-dtc.csv
+Asaf,Tamir,"Co-Founder, CEO",PowersourceEV,powersourceev.com,asaf.tamir@powersourceev.com,,New Jersey,America/New_York,http://www.linkedin.com/in/asaf-tamir-cpa-aa914a74,2026-10-06-mixed-dtc.csv
+Josh,Leonardi,Co-Founder,BALTINI,baltini.com,josh@baltini.com,,New York,America/New_York,http://www.linkedin.com/in/josh-leonardi-a1b2637b,2026-10-06-mixed-dtc.csv
+Vincent,Moiras,Co-founder,BALTINI,baltini.com,vincent@baltini.com,,New York,America/New_York,http://www.linkedin.com/in/vincent-moiras-96a9471b3,2026-10-06-mixed-dtc.csv
+Aaron,Thompson,Co-Founder,Bicycle Brüstop,bicyclebrustop.com,aaront@bicyclebrustop.com,+14083688912,California,America/Los_Angeles,https://www.linkedin.com/in/aaron-thompson-4b49014,2026-10-06-mixed-dtc.csv
+Vanessa,Dubischar,"Founder, CEO",Green Tomato,greentomatomarket.com,vanessa@greentomatomarket.com,,Florida,America/New_York,http://www.linkedin.com/in/vanessa-aflalourdaneta,2026-10-06-mixed-dtc.csv
+Katrina,Camarillo,Co-Founder,Sarap Now,sarapnow.com,katrina@sarapnow.com,,California,America/Los_Angeles,https://www.linkedin.com/in/katrina-camarillo-0609161bb,2026-10-06-mixed-dtc.csv
+Bobby,Clayson,CEO | Founder,Crofter Market,crofter.com,bobby.clayson@crofter.com,,Utah,America/Denver,http://www.linkedin.com/in/bobbyclayson,2026-10-06-mixed-dtc.csv
+Robbie,Dye,Co-Founder & CEO,Our Farms,ourfarms.com,robbie@ourfarms.com,,North Carolina,America/New_York,http://www.linkedin.com/in/robbiedye,2026-10-06-mixed-dtc.csv
+Myka,Harris,Co Founder,Highbrow Hippie,highbrowhippie.com,myka@highbrowhippie.com,,California,America/Los_Angeles,https://www.linkedin.com/in/mykabarbato,2026-10-06-mixed-dtc.csv
+Tiffany,Fluhme,CEO/Founder,Fluhme Beauty,fluhmebeauty.com,tiffanyfluhme@fluhme.com,+17243665403,Pennsylvania,America/New_York,http://www.linkedin.com/in/tiffany-fluhme-38689b64,2026-10-06-mixed-dtc.csv
+Billy,Annesley,Co-Founder and CEO,Bantee,banteegolf.com,billy@banteegolf.com,,Pennsylvania,America/New_York,http://www.linkedin.com/in/billyannesley,2026-10-06-mixed-dtc.csv
+Alessandro,Albanese,Co-Founder,Tasty Ribbon,tastyribbon.com,alessandro@tastyribbon.com,+12124617310,New York,America/New_York,http://www.linkedin.com/in/alessandro-albanese-a9a06214,2026-10-06-mixed-dtc.csv
+Giulia,Scargetta,Founder & CEO,Tasty Ribbon,tastyribbon.com,giulia@tastyribbon.com,,New York,America/New_York,http://www.linkedin.com/in/giulia-scargetta-79059635,2026-10-06-mixed-dtc.csv
+Meghan,Holly,Co-Owner,"Knife Merchant, LLC.",knifemerchant.com,meghan@knifemerchant.com,+18583822680,Tennessee,America/Chicago,http://www.linkedin.com/in/meghan-holly-650bb57a,2026-10-06-mixed-dtc.csv
+Sandy,Hall,Co-Founder,Paramount Billiards,paramountbilliardsllc.com,shall@paramountbilliardsllc.com,,Michigan,America/New_York,http://www.linkedin.com/in/sandy-hall-5b50521b7,2026-10-06-mixed-dtc.csv
+Greg,M,CEO & Co-Founder,WAIR,getwair.com,greg@getwair.com,,California,America/Los_Angeles,,2026-10-06-mixed-dtc.csv
+Ty,L,CMO & Founder,"Hoopla Doopla, Inc.",hoopladoopla.com,ty@hoopladoopla.com,,California,America/Los_Angeles,,2026-10-06-mixed-dtc.csv
+Joe,Silva,"Co-founder, Chief Executive Officer",Zuka,thezuka.com,joe@thezuka.com,,Nevada,America/Los_Angeles,https://www.linkedin.com/in/joesilva189,2026-10-06-mixed-dtc.csv
+Marc,Rosenberg,Founder and CEO,The Edge Desk,theedgedesk.com,marc@theedgedesk.com,+18479172774,Illinois,America/Chicago,https://www.linkedin.com/in/marc-rosenberg-931a397/,2026-10-06-mixed-dtc.csv
+Charles,Markham,Founder,Bjorn Collection,bjorncollection.com,charles@cortenstudio.com,+13107037042,California,America/Los_Angeles,https://www.linkedin.com/in/charlesmarkham,2026-10-06-mixed-dtc.csv
+Eunice,Byun,Co-Founder and CEO,Material,materialkitchen.com,eunice@materialkitchen.com,+18476445669,New York,America/New_York,http://www.linkedin.com/in/eunice-byun-12385ab,2026-10-06-mixed-dtc.csv
+Ashley,Tyrrell,Founder,Kin & Thread Studio,kinandthreadstudio.com,ashley@kinandthreadstudio.com,+18057663828,California,America/Los_Angeles,https://www.linkedin.com/in/ashley-kelley-tyrrell,2026-10-06-mixed-dtc.csv
+Abigail,Opiah,Co-Founder,UNRULY,un-ruly.com,abigail@un-ruly.com,+15618464607,New York,America/New_York,http://www.linkedin.com/in/abigailopiah,2026-10-06-mixed-dtc.csv
+Mark,Tsigounis,Founder,Hibear,hibear.co,mark@hibear.co,+16035918183,California,America/Los_Angeles,https://www.linkedin.com/in/mtsigounis,2026-10-06-mixed-dtc.csv
+Tamara,Tribula,Co-Owner & Buyer,August Market,augustmarket.com,tamara@augustmarket.com,+17164327651,New York,America/New_York,http://www.linkedin.com/in/tamaratribula,2026-10-06-mixed-dtc.csv
+Randy,Chiang,Founder // CEO,HEAVY PLAY,heavyplay.com,randy@heavyplay.com,+14088024634,California,America/Los_Angeles,https://www.linkedin.com/in/randy-chiang-39737916,2026-10-06-mixed-dtc.csv
+Dylan,Riffle,"Co-Founder, Venture Associate",Leprendo,leprendo.com,dylan@leprendo.com,,New York,America/New_York,http://www.linkedin.com/in/dylan-riffle,2026-10-06-mixed-dtc.csv
+Kyle,Mayers,Co-Founder,WheelPrice 🛞,wheelprice.com,kyle@wheelprice.com,,North Carolina,America/New_York,http://www.linkedin.com/in/kylemayers,2026-10-06-mixed-dtc.csv
+Alli,Cavasino,Co-Founder + CEO,JoyLet,joylet.com,alli@joylet.com,,Connecticut,America/New_York,http://www.linkedin.com/in/allicavasino,2026-10-06-mixed-dtc.csv
+Sandra,Lifshits,Founder & CEO,Retrofit (YC W25),retrofit.shop,sandra@retrofit.shop,,New York,America/New_York,http://www.linkedin.com/in/sandra-lifshits,2026-10-06-mixed-dtc.csv
+Line,Daems,Founder and Owner,Kreatelier,kreatelier.com,line@kreatelier.com,,Rhode Island,America/New_York,http://www.linkedin.com/in/line-daems-8544b49,2026-10-06-mixed-dtc.csv
+Edgar,Ramon,CEO/Co-Founder Fields Cannary,Fields Cannary,fieldscannary.com,edgar@fieldscannary.com,,Michigan,America/New_York,http://www.linkedin.com/in/edgar-ramon-3a698320,2026-10-06-mixed-dtc.csv
+Heather,Chan,Co-founder & CEO,Moonbow,moonbowskin.com,heather@moonbowskin.com,,New York,America/New_York,http://www.linkedin.com/in/heather-chan-7826015b,2026-10-06-mixed-dtc.csv
+Rachel,Daily,Co-Owner / Founder,'Cure Studios,curestudios.com,rachel@curestudios.com,+15125687412,Texas,America/Chicago,http://www.linkedin.com/in/racheldaily,2026-10-06-mixed-dtc.csv
+Christopher,Tung,"Co-Founder, CEO",Raremarq,raremarq.com,chris@raremarq.com,,California,America/Los_Angeles,https://www.linkedin.com/in/christopher-tung?miniProfileUrn=urn:li:fs_miniProfile:ACoAAAL_v_oBoigPoRt6FXIGZMni-f-CNg5ld30,2026-10-06-mixed-dtc.csv
+David,Nguyen,Co-founder,Material,materialkitchen.com,david@materialkitchen.com,+17147975004,New York,America/New_York,http://www.linkedin.com/in/david-nguyen-15067623,2026-10-06-mixed-dtc.csv
+Ronnie,Ekelund,Owner/CEO,"Bebe au Lait, LLC",bebeaulait.com,ronnie@bebeaulait.com,+14084824068,California,America/Los_Angeles,https://www.linkedin.com/in/ronnie-ekelund-1885a16,2026-10-06-mixed-dtc.csv
+Engle,Saez,Founder & CEO,The Atlantic Rancher Company,atlanticrancher.com,engle@atlanticrancher.com,+16235334059,Washington,America/Los_Angeles,https://www.linkedin.com/in/englesaez,2026-10-06-mixed-dtc.csv
+Maegan,Brown,Founder,The BakerMama,thebakermama.com,maegan@thebakermama.com,+15804215637,Texas,America/Chicago,http://www.linkedin.com/in/maegan-brown-206125191,2026-10-06-mixed-dtc.csv
+Alaina,Drew,Co-Founder & Creative Director,Bijou Candles,bijoucandles.com,adrew@bijoucandles.com,+16464172466,New York,America/New_York,http://www.linkedin.com/in/alaina-drew-930676155,2026-10-06-mixed-dtc.csv
+Andrew,Yeung,"CEO, Founder",CompAndSave.com,compandsave.com,andrew@compandsave.com,+14082158373,California,America/Los_Angeles,https://www.linkedin.com/in/andrew-yeung-4821a438/,2026-10-06-mixed-dtc.csv
+Neill,Davis,Co-Founder and Co-Owner,FOUND for the home,foundforthehome.com,neill@foundforthehome.com,+18324969503,Texas,America/Chicago,http://www.linkedin.com/in/neillpdavis,2026-10-06-mixed-dtc.csv
+Taylor,Wright,Co Owner,Leisure Time Inc,leisuretimeinc.com,taylor@leisuretimeinc.com,,Idaho,America/Denver,http://www.linkedin.com/in/taylor-wright-a99b1439,2026-10-06-mixed-dtc.csv
+Sanjana,Agarwal,Founder,ReflectMe,reflectmedolls.com,sanjana@reflectmedolls.com,,Illinois,America/Chicago,https://www.linkedin.com/in/sanjanaragarwal,2026-10-06-mixed-dtc.csv
+Emily,Schromm,Founder,PEEL 🍊,joinpeel.com,emily@joinpeel.com,,Colorado,America/Denver,http://www.linkedin.com/in/emilyschromm,2026-10-06-mixed-dtc.csv
+BJ,Minson,Founder/Designer,GRIP6,grip6.com,bj@grip6.com,,Utah,America/Denver,http://www.linkedin.com/in/bj-minson-270869117,2026-10-06-mixed-dtc.csv
+Lily,Walla,Founder + CEO,Auggie,auggie.com,lily@auggie.com,,New York,America/New_York,http://www.linkedin.com/in/lily-walla-527b082b,2026-10-06-mixed-dtc.csv
+David,Schuster,Owner,"Clear Water Outdoor, LLC",clearwateroutdoor.com,david@clearwateroutdoor.com,,Wisconsin,America/Chicago,http://www.linkedin.com/in/david-schuster-a9b2a814,2026-10-06-mixed-dtc.csv
+Greg,Wolf,Founder,Kasala,kasala.com,greg@kasala.com,,Washington,America/Los_Angeles,https://www.linkedin.com/in/greg-b-wolf,2026-10-06-mixed-dtc.csv
+Michael,Murray,CEO Teakhaus LLC,Teakhaus,teakhaus.com,michael@teakhaus.com,,New York,America/New_York,http://www.linkedin.com/in/michael-murray-5b940885,2026-10-06-mixed-dtc.csv
+Rick,Hopper,Founder,Readerest,readerest.com,rick@readerest.com,+14696447616,Texas,America/Chicago,http://www.linkedin.com/in/rick-hopper-b083b620,2026-10-06-mixed-dtc.csv
+Amber,Hawthorne,Founder,Bambu Earth,bambuearth.com,amber@bambuearth.com,,North Carolina,America/New_York,http://www.linkedin.com/in/amber-hawthorne-19817626,2026-10-06-mixed-dtc.csv
+Dhaman,Rakhra,Co-founder & CEO,Melrose,getmelrose.com,dhaman.rakhra@getmelrose.com,,California,America/Los_Angeles,https://www.linkedin.com/in/dhamanrakhra/,2026-10-06-mixed-dtc.csv
+Avishai,Greenstein,Owner and CEO,Bamboozle Home,bamboozlehome.com,avishai@methodsourcing.com,,North Carolina,America/New_York,http://www.linkedin.com/in/avishai-greenstein-8900446,2026-10-06-mixed-dtc.csv
+Grace,Hwang,Founder/Owner,GoGo Heel,gogoheel.com,grace@gogoheel.com,,California,America/Los_Angeles,https://www.linkedin.com/in/hwanggrace,2026-10-06-mixed-dtc.csv
+Keith,Rogers,Co-Founder,323 Sports,323sports.com,keith@323sports.com,,North Carolina,America/New_York,http://www.linkedin.com/in/keith-rogers-41605a15,2026-10-06-mixed-dtc.csv
+Margit,Ragland,President and Co-founder,Plum Print,plumprint.com,meg@plumprint.com,+16178990941,North Carolina,America/New_York,http://www.linkedin.com/in/megragland,2026-10-06-mixed-dtc.csv
+Julia,Huang,Co-Founder,Haldi,haldi.com,julia@kulturacap.com,+14159009933,California,America/Los_Angeles,https://www.linkedin.com/in/julia-huang-8707354/,2026-10-06-mixed-dtc.csv
+Jennifer,Fairfield,Owner,The Garden Mill,thegardenmill.com,jennifer@thegardenmill.com,+17344767093,Michigan,America/New_York,http://www.linkedin.com/in/jennifercfairfield,2026-10-06-mixed-dtc.csv
+Leslie,Hsu,Co-founder & Chief Creative Officer,"Sunflow, Inc.",getsunflow.com,leslie@getsunflow.com,+18622163114,Florida,America/New_York,http://www.linkedin.com/in/leslie-hsu-643524119,2026-10-06-mixed-dtc.csv
+John,Woodward,Founder - Maker,John Allen Woodward | USA,johnallenwoodward.com,john@johnallenwoodward.com,,Colorado,America/Denver,http://www.linkedin.com/in/john-allen-woodward-624118133,2026-10-06-mixed-dtc.csv
+Cody,Townsend,Co-Founder,Arcade Belt Co.,arcadebelts.com,cody.townsend@arcadebelts.com,,California,America/Los_Angeles,https://www.linkedin.com/in/cody-townsend-9998916b,2026-10-06-mixed-dtc.csv
+Neftaly,Ramirez,Founder,Roots & Fruits,rootsandfruits.me,neftaly@kiboexprss.me,,California,America/Los_Angeles,https://www.linkedin.com/in/neftaly-ramirez,2026-10-06-mixed-dtc.csv
+Dhananjay,Goel,Co-Founder,DetoXyFi,detoxyfi.com,dhananjay@detoxyfi.com,,Massachusetts,America/New_York,http://www.linkedin.com/in/goeldhananjay,2026-10-06-mixed-dtc.csv
+Becky,McKinnell,Founder/Designer of Wildwood Oyster Co.,Wildwood Oyster Co.,wildwoodoysterco.com,becky@wildwoodoysterco.com,+12073188375,Maine,America/New_York,http://www.linkedin.com/in/beckymckinnell,2026-10-06-mixed-dtc.csv
+Brian,Smith,Co-Founder,Huckleberry Bicycles,huckleberrybikes.com,brian@huckleberrybicycles.com,+14154122473,California,America/Los_Angeles,https://www.linkedin.com/in/bjeffreysmith,2026-10-06-mixed-dtc.csv
+Brian,Waspi,CEO,"Clear Water Outdoor, LLC",clearwateroutdoor.com,waspi@clearwateroutdoor.com,+14802319380,Wisconsin,America/Chicago,http://www.linkedin.com/in/brianwaspi,2026-10-06-mixed-dtc.csv
+Mansi,D,Co-Founder,Revurge,revurge.com,mansi@revurge.com,,California,America/Los_Angeles,,2026-10-06-mixed-dtc.csv
+Brooke,Hill,Co-Founder and CEO,Swella,swellabeauty.com,brooke@swellabeauty.com,,Georgia,America/New_York,http://www.linkedin.com/in/brooke-hill-14425290,2026-10-06-mixed-dtc.csv
+Kirk,Vanderheijden,Co-Founder & Creative Director,WheelPrice 🛞,wheelprice.com,kirk@wheelprice.com,,North Carolina,America/New_York,http://www.linkedin.com/in/kirk-vanderheijden-822025101,2026-10-06-mixed-dtc.csv
+Cora,Mercer,Founder & CEO,Tailored In White,tailoredinwhite.com,cora@tailoredinwhite.com,,Texas,America/Chicago,http://www.linkedin.com/in/cora-mercer-46036523b,2026-10-06-mixed-dtc.csv
+Ryan,Stauffer,Co-owner,Market Street Shoes,marketstreetshoes.com,ryan@marketstreetshoes.com,+12062934666,Washington,America/Los_Angeles,https://www.linkedin.com/in/ryan-stauffer-66a8a731,2026-10-06-mixed-dtc.csv
+Shilpa,Iyengar,President | Founder,Alterre,alterreny.com,shilpa@alterreny.com,,Florida,America/New_York,http://www.linkedin.com/in/shilpa-iyengar-82343318,2026-10-06-mixed-dtc.csv
+Peter,Jenkins,Co-Founder,Atelier Eva,ateliereva.com,peter.jenkins@ateliereva.com,,New York,America/New_York,http://www.linkedin.com/in/peterajenkins,2026-10-06-mixed-dtc.csv
+Arielle,Bauman,Co-Founder,ReVased,revased.com,arielle@revased.com,,New York,America/New_York,http://www.linkedin.com/in/arielle-vogelstein-bauman-04047956,2026-10-06-mixed-dtc.csv
+Nicolas,Perrupato,Owner & Strategic Operator,Cooks Innovations,cooksinnovations.com,nicolas@cooksinnovations.com,,Florida,America/New_York,http://www.linkedin.com/in/nicolas-perrupato-038b0a15,2026-10-06-mixed-dtc.csv
+Jessica,Bowdoin,Co Founder,SwatchPop!,swatchpop.com,jessica@swatchpop.com,+17702654142,Georgia,America/New_York,http://www.linkedin.com/in/jessicabmcrae,2026-10-06-mixed-dtc.csv
+Lanne,Stauffer,Co-Owner,Market Street Shoes,marketstreetshoes.com,lanne@marketstreetshoes.com,+12066182977,Washington,America/Los_Angeles,https://www.linkedin.com/in/lanne-stauffer-412b331a7,2026-10-06-mixed-dtc.csv
+Kevin,Iszler,Co-Owner/Brand Manager,LAND Leather,landleather.com,kevin@landleather.com,+17864171331,Florida,America/New_York,http://www.linkedin.com/in/kevin-iszler,2026-10-06-mixed-dtc.csv
+Flavia,Cassani,Co-Founder/CMO,FK+,fkplus.com,flavia@fkplus.com,+16504850524,Florida,America/New_York,http://www.linkedin.com/in/flavia-cassani-9804a418,2026-10-06-mixed-dtc.csv
+Surinder,Multani,CEO,BBQ Outlets,bbqoutlets.com,smultani@bbqoutlets.com,+15597370948,California,America/Los_Angeles,https://www.linkedin.com/in/surinder-multani-0a621529,2026-10-06-mixed-dtc.csv
+Siarhei,Zubkouski,Founder,Gamine New York,gamine.nyc,sergei@gamine.nyc,+17187535204,New York,America/New_York,http://www.linkedin.com/in/siarhei-zubkouski-477319153,2026-10-06-mixed-dtc.csv
+Tameem,Aljanabi,Founder & CEO,XO Bestie,xobestie.com,tameem.a@xobestie.com,,Texas,America/Chicago,http://www.linkedin.com/in/in-t-aj,2026-10-06-mixed-dtc.csv
+Austin,Cope,Co-CEO & Director of Operations/Finance,WANDRD,wandrd.com,austin@wandrd.com,+18013608941,Utah,America/Denver,http://www.linkedin.com/in/austin-cope-b1a35216,2026-10-06-mixed-dtc.csv
+Watson,Hoggan,Co-Founder,Alta Water Holdings,drinkaltawater.com,watson@drinkaltawater.com,,Utah,America/Denver,http://www.linkedin.com/in/watson-hoggan-1b32271a6,2026-10-06-mixed-dtc.csv
+Steve,Canal,Co-Founder,SAINT MILES®,saintmiles.co,canal@saintmiles.co,,Georgia,America/New_York,http://www.linkedin.com/in/stevecanal,2026-10-06-mixed-dtc.csv
+Sam,Kelly,Co-founder,TINY ZAPS,tinyzaps.com,sam@tinyzaps.com,+13399270458,New York,America/New_York,http://www.linkedin.com/in/samuelkelly,2026-10-06-mixed-dtc.csv
+Chelsea,Shannon,Founder + CEO,"BOXFOX, Inc.",boxfox.com,chelsea@shopboxfox.com,,California,America/Los_Angeles,https://www.linkedin.com/in/chelsea-moore-shannon-b558b92b,2026-10-06-mixed-dtc.csv
+Michael,Mojica,"Impact Partner, Founder",Outdoor Element LLC,outdoorelement.com,mmojica@outdoorelement.com,+17203394416,Colorado,America/Denver,http://www.linkedin.com/in/michael-mojica-942630a,2026-10-06-mixed-dtc.csv
+Joseph,Perello,Founder & CEO,Props,props.co,joseph@props.us,,New York,America/New_York,http://www.linkedin.com/in/perello,2026-10-06-mixed-dtc.csv
+Shawn,Smith,Founder & CEO,Soleil Tans,soleiltans.net,shawn@soleiltans.net,+19083079497,New York,America/New_York,http://www.linkedin.com/in/shawn-j-smith-2539ab51,2026-10-06-mixed-dtc.csv
+Jonathan,Ebert,Co-Founder,Alta Water Holdings,drinkaltawater.com,jono@drinkaltawater.com,,Utah,America/Denver,http://www.linkedin.com/in/jonathan-ebert,2026-10-06-mixed-dtc.csv
+Hardik,Tuteja,Founder,Morni,mymorni.com,hardik@mymorni.com,+14045098585,California,America/Los_Angeles,https://www.linkedin.com/in/hardik-tuteja,2026-10-06-mixed-dtc.csv
+Oscar,Hoggan,Co-Founder,Alta Water Holdings,drinkaltawater.com,oscar@drinkaltawater.com,,Utah,America/Denver,http://www.linkedin.com/in/oscar-hoggan-5431831a2,2026-10-06-mixed-dtc.csv
+Christopher,Wu,"CEO, Co-Founder, Paper Culture",Paper Culture,paperculture.com,christopher@paperculture.com,+17604762506,California,America/Los_Angeles,https://www.linkedin.com/in/christopherwu,2026-10-06-mixed-dtc.csv
+Brandon,Aversano,Founder & CEO,The Alloy Market,thealloymarket.com,brandon@thealloymarket.com,+16102097945,Pennsylvania,America/New_York,http://www.linkedin.com/in/brandonaversano,2026-10-06-mixed-dtc.csv
+Anthony,Nguyen,Founder and CEO,The DART Company,thedartco.com,anthony@thedartco.com,+13109851025,California,America/Los_Angeles,https://www.linkedin.com/in/anthony-nguyen-8b7034147,2026-10-06-mixed-dtc.csv
+Andy,Christensen,Co-Founder,NewlyNamed,newlynamed.com,andy@newlynamed.com,+17012388758,Minnesota,America/Chicago,http://www.linkedin.com/in/andrewchristensen17,2026-10-06-mixed-dtc.csv
+Danielle,Whisenand,Founder,Backhouse Gifting,backhousefragrances.com,danielle@backhousefragrances.com,+19494228116,California,America/Los_Angeles,https://www.linkedin.com/in/danielle-whisenand?miniProfileUrn=urn:li:fs_miniProfile:ACoAABbEzjIBdoAnDUO-EfQyH9rv-QGZe1mbjoc&lipi=urn:li:page:d_flagship3_search_srp_people;vfFlAxPcQZaciq4hb//ngw==,2026-10-06-mixed-dtc.csv

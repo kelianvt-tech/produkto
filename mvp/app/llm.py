@@ -30,6 +30,29 @@ class LLMError(Exception):
     """Message is meant to be shown to the user as-is."""
 
 
+# Shown to a customer when the problem is on our side (missing or revoked key,
+# no OpenAI credit). The technical reason goes to Kelian by email instead.
+OUR_SIDE = ("This step is unavailable right now because of a problem on our side. "
+            "We've been alerted and are fixing it. Please try again in a little while.")
+
+
+def _account_problem(detail):
+    """Missing key, rejected key or no credit: alert Kelian (at most once an
+    hour), log it, and give the customer a plain message."""
+    print("OpenAI account problem:", detail, flush=True)
+    try:
+        import mailer
+        mailer.alert("openai", "OpenAI is failing: %s" % detail[:120], [
+            "The app could not use OpenAI: %s" % detail,
+            "Customers see a 'problem on our side' message at the Topics and Questions steps, and scans "
+            "can't read their answers until it's fixed. Put a working key in /opt/produkto/app/.env "
+            "(OPENAI_API_KEY=...) and run: systemctl restart produkto",
+        ])
+    except Exception:                                       # noqa: BLE001
+        pass
+    return LLMError(OUR_SIDE)
+
+
 class Usage:
     """Running token/search count for one scan (thread-safe)."""
 
@@ -102,9 +125,7 @@ class Usage:
 def _post(body, attempts=5, timeout=180):
     key = config.api_key()
     if not key:
-        raise LLMError("No OpenAI API key found. Create mvp/app/.env from "
-                       ".env.example and paste your key into it, then "
-                       "restart the app.")
+        raise _account_problem("No OpenAI API key found in mvp/app/.env.")
     data = json.dumps(body).encode()
     for attempt in range(attempts):
         req = urllib.request.Request(URL, data=data, method="POST", headers={
@@ -121,8 +142,9 @@ def _post(body, attempts=5, timeout=180):
             except Exception:                                   # noqa: BLE001
                 pass
             if e.code == 401:
-                raise LLMError("OpenAI rejected the API key (401). Check the "
-                               "key in mvp/app/.env.")
+                raise _account_problem("OpenAI rejected the API key (401).")
+            if e.code == 429 and "quota" in detail.lower():
+                raise _account_problem("OpenAI is out of credit: " + detail)
             if e.code in RETRYABLE and attempt < attempts - 1:
                 time.sleep(2 ** attempt + random.random())
                 continue

@@ -47,14 +47,25 @@ FALLBACK = 'UTC'
 _cache = {}
 
 
+def _chosen(domain):
+    """A zone the merchant picked in the agent's setup (content_settings), if any. Country is the fallback."""
+    try:
+        import json
+        row = db.one('SELECT data FROM content_settings WHERE store_domain=?', (domain,))
+        return (json.loads(row['data']) if row and row['data'] else {}).get('timezone') or None
+    except Exception:                                           # noqa: BLE001 - table not made yet
+        return None
+
+
 def zone_name(domain):
     """The IANA zone name for a store, e.g. 'America/New_York'."""
     if not domain:
         return FALLBACK
     if domain not in _cache:
+        chosen = _chosen(domain)
         row = db.one('SELECT country FROM stores WHERE domain=?', (domain,))
         country = ((row['country'] if row else '') or '').strip().upper()
-        _cache[domain] = ZONES.get(country, FALLBACK)
+        _cache[domain] = chosen or ZONES.get(country, FALLBACK)
     return _cache[domain]
 
 

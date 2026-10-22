@@ -135,10 +135,13 @@ SEARCH_PRICE = .01
 # Every store that has finished onboarding is scanned daily, so opening any
 # dashboard shows today's reading without anyone pressing anything. A store
 # earns this by having saved buyer questions; nothing else is needed.
-DAILY_SCANS = True
+DAILY_SCANS = os.environ.get("PRODUKTO_DAILY_SCANS", "1") != "0"  # set to 0 for a local test copy
+# PRODUKTO_SCANS=0 blocks every paid scan, including the Run scan button. Set it
+# for the local test copy: a button press there on 8 Oct 2026 bought a real scan.
+SCANS_ALLOWED = os.environ.get("PRODUKTO_SCANS", "1") != "0"
 # Stores held back from the daily scan. A domain listed here still scans when
 # the operator starts one by hand; it just doesn't scan on its own.
-DAILY_SCAN_EXCLUDE = ("molivings.com",)
+DAILY_SCAN_EXCLUDE = ("molivings.com", "5strands.com", "clubhouseskin.com")   # no daily scans for non-clients (Kelian, 2026-10-21)
 
 # Scans before this date (UTC) are left out of every dashboard view for that
 # store. Clubhouse Skin's 18 and 20 Sep scans used the OpenAI API and a
@@ -153,3 +156,38 @@ SCAN_WINDOW_HOURS = 6
 # How often the scheduler wakes to look for stores that are due.
 SCHEDULER_TICK_SECONDS = 300
 SCANS_PER_MONTH = 30
+
+
+# --- Features in development --------------------------------------------------
+# Opportunities (mvp/OPPORTUNITIES-PLAN-2026-10-05.md) is hidden until it is
+# ready. Off unless PRODUKTO_OPPORTUNITIES=1 is set in the environment or in
+# .env - which is only done on the laptop, never on the server.
+SHOW_OPPORTUNITIES = env("PRODUKTO_OPPORTUNITIES") == "1"
+# Content agent (mvp/content-agent/PLAN.md): the Content tab that replaces the
+# "Content agents" waitlist page. Off unless PRODUKTO_CONTENT_AGENT=1 - laptop only.
+SHOW_CONTENT_AGENT = env("PRODUKTO_CONTENT_AGENT") == "1"
+# PRODUKTO_CONTENT_AGENT=admin: visible only to admins (Kelian's demos on the server), never to customers.
+CONTENT_AGENT_ADMIN_ONLY = env("PRODUKTO_CONTENT_AGENT") == "admin"
+# One AI sentence per most-cited page on an Opportunities card: why that page
+# picks competitors. Costs money (HELPER_MODEL, page text capped at ~12k
+# characters, cached forever per page): roughly $0.05-0.10 a month per store
+# for the top pages. Off unless PRODUKTO_PAGE_EXPLAIN=1 (Kelian, 9 Oct 2026).
+PAGE_EXPLAIN = env("PRODUKTO_PAGE_EXPLAIN") == "1"
+# Designed AEO articles (19 Oct 2026): brand-styled, ~1,000 words, learned from the niche's best brands and from
+# the owner's changes (drafts.article, article_render.py, niche_examples.py, article_learning.py). Off unless
+# PRODUKTO_ARTICLES_V2=1, so the live app keeps the old guides until Kelian switches it on.
+ARTICLES_V2 = env("PRODUKTO_ARTICLES_V2") == "1"
+# Pages that block a plain request (Boots, Next, John Lewis) are read through
+# Apify's RAG Web Browser instead: $0.0019 a page on the Bronze plan (checked
+# 9 Oct 2026), at most PAGE_BROWSER_MAX pages per refresh, cached 14 days.
+# Off unless PRODUKTO_PAGE_BROWSER=1.
+PAGE_BROWSER = env("PRODUKTO_PAGE_BROWSER") == "1"
+PAGE_BROWSER_MAX = 30
+# Third-party context for the Catalog Optimization Agent (third_party.py, 22 Oct 2026): Google Shopping,
+# Google web results and Trustpilot for one store, ~$1-2 a pull on the shared Apify account. Started by
+# an admin only (/admin/third-party), never on a schedule. Off unless PRODUKTO_THIRD_PARTY=1.
+THIRD_PARTY = env("PRODUKTO_THIRD_PARTY") == "1"
+# The agent's brain (brain.py, 22 Oct 2026): a nightly collector that learns what works in AI search from
+# outside sources (competitor blogs, studies, expert LinkedIn posts, talks, engine help pages). Read at run
+# time with env(): PRODUKTO_BRAIN=1 turns it on, PRODUKTO_BRAIN_CAP sets the nightly dollar cap (default 1),
+# PRODUKTO_BRAIN_DIGEST=1 sends Kelian a Monday email. All off by default.

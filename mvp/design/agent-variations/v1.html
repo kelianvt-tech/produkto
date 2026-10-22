@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent · 1 Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* 1 · Document: every draft is read as the page it will become, with tracked changes and margin questions. */
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+.head p{margin:6px 0 0;color:var(--muted)}
+.tabs{display:flex;gap:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.tabs a{padding:0 0 11px;text-decoration:none;color:var(--muted);font-weight:600;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs a[aria-current]{color:var(--ink);border-color:var(--ink)}
+.tabs a b{font-weight:600;color:var(--faint);margin-left:4px}
+
+/* drafts as a ledger of pages */
+.group{margin-bottom:30px}
+.group h2{font-size:15px;margin:0 0 10px;color:var(--ink);display:flex;align-items:center;gap:10px}
+.group h2 small{font-weight:500;color:var(--muted);font-size:13.5px}
+.rows{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+.row{display:grid;grid-template-columns:44px minmax(0,1fr) 150px 130px 150px;align-items:center;gap:16px;padding:12px 16px;border-top:1px solid var(--line);text-decoration:none;color:inherit;transition:background .15s}
+.row:first-child{border-top:0}
+.row:hover{background:var(--surface-2)}
+.row strong{display:block;color:var(--ink);font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .sub{font-size:13px;color:var(--muted)}
+.row .when{font-size:13.5px;color:var(--ink-2)}
+
+/* the document */
+.paper-wrap>*,.cal-wrap>*{min-width:0}
+.paper-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.bar{position:sticky;top:45px;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0;background:var(--bg);margin-bottom:6px}
+.bar .grow{flex:1}
+.crumb{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+.crumb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:44px 56px 52px}
+.paper .where{display:flex;align-items:center;gap:12px;margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.paper .where p{margin:0;font-size:13.5px;color:var(--muted)}
+.paper .where b{color:var(--ink);font-size:14.5px}
+.paper h1.ttl{font-size:28px;line-height:1.25;letter-spacing:-.015em;margin:0 0 18px;color:var(--ink)}
+del{background:var(--bad-soft);color:var(--bad);text-decoration-thickness:1px}
+ins{background:var(--ok-soft);color:var(--ink);text-decoration:none;box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--ok) 45%,transparent)}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin:0 0 18px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px}
+.chg{margin:0 0 14px}
+.chg p{margin:0 0 8px}
+.mark{background:var(--warn-soft);color:var(--warn);border-radius:4px;padding:0 4px;font-weight:600;cursor:pointer}
+.margin{position:sticky;top:110px;display:grid;gap:12px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.note h3{font-size:14px;margin:0 0 8px;color:var(--ink)}
+.note label{display:block;font-size:13.5px;color:var(--ink-2);margin:10px 0 5px}
+.scores{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:13.5px;margin:0}
+.scores dd{margin:0;font-weight:700;color:var(--ink)}
+.scores dt{color:var(--muted)}
+
+/* calendar */
+.cal-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.cal-wrap.open{grid-template-columns:minmax(0,1fr) 340px}
+.cal-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.cal-top h2{font-size:18px;margin:0;color:var(--ink)}
+.month{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.month>div{min-height:112px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px;background:var(--surface)}
+.month .dow{min-height:auto;font-size:12.5px;font-weight:600;color:var(--muted);background:var(--surface-2)}
+.month .out{background:var(--bg)}.month .out .n{color:var(--faint)}
+.n{font-size:13px;font-weight:600;color:var(--ink-2)}
+.month .today .n{color:var(--accent-ink)}
+.ev{display:flex;align-items:center;gap:6px;margin-top:6px;padding:4px 6px;border-radius:6px;font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--surface-2);overflow:hidden;white-space:nowrap}
+.ev span{overflow:hidden;text-overflow:ellipsis}
+.ev.pend{background:transparent;outline:1px dashed var(--line-2);outline-offset:-1px;color:var(--ink-2)}
+.ev[aria-current]{background:var(--ink);color:var(--surface)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;position:sticky;top:60px}
+.panel h3{font-size:19px;line-height:1.3;margin:12px 0 4px;color:var(--ink)}
+.panel dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px;margin:18px 0}
+.panel dt{color:var(--muted)}.panel dd{margin:0;color:var(--ink);font-weight:600}
+.panel .q{margin:0 0 6px;padding:10px 12px;border-radius:9px;background:var(--surface-2);font-size:14px}
+
+/* live */
+.live{display:grid;gap:12px}
+.live article{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.live h3{margin:0;font-size:16px;color:var(--ink)}
+.live p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.empty{padding:28px;border:1px dashed var(--line-2);border-radius:12px;color:var(--muted);text-align:center}
+
+/* setup: one document with an outline */
+.setup{display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px;align-items:start}
+.outline{position:sticky;top:70px;display:grid;gap:2px;margin:0;padding:0;list-style:none}
+.outline a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+.outline a[aria-current]{color:var(--ink);background:var(--surface)}
+.outline i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:11px;border:1.5px solid var(--line-2)}
+.outline .done i{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.outline i svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.4}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:34px 40px;margin-bottom:22px}
+.sec h2{font-size:22px;letter-spacing:-.01em;margin:0 0 4px;color:var(--ink)}
+.sec .lede{margin:0 0 24px;color:var(--muted)}
+.traits{display:grid;gap:0;margin:0 0 26px}
+.traits div{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:14px 0;border-top:1px solid var(--line)}
+.traits dt{font-weight:700;color:var(--ink)}.traits dd{margin:0;color:var(--ink-2);font-size:14.5px}
+.sample{font-size:18px;line-height:1.65;color:var(--ink);margin:0 0 24px;padding:22px 26px;background:var(--accent-soft);border-radius:12px}
+.sample cite{display:block;font-style:normal;font-size:13px;font-weight:700;color:var(--accent-ink);margin-bottom:8px}
+.fields{display:grid;gap:18px}
+.field label{display:block;font-weight:600;color:var(--ink);margin-bottom:4px}
+.field .hint{font-size:13px;color:var(--muted);margin:0 0 6px}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.check{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--ink)}
+.days{display:flex;gap:8px;flex-wrap:wrap}
+.days label{padding:8px 14px;border:1px solid var(--line-2);border-radius:999px;font-weight:600;font-size:14px;cursor:pointer}
+.days input{display:none}.days input:checked+span{color:var(--surface)}
+.days label:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.prod{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.prod img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.prod h3{margin:0 0 10px;font-size:16px;color:var(--ink)}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.qa label{font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.foot{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
+.shop{display:flex;align-items:center;gap:18px;padding:20px;border:1px solid var(--line);border-radius:12px}
+.shop svg{width:40px;height:40px}
+@media (max-width:1000px){.paper-wrap,.cal-wrap.open,.setup{grid-template-columns:1fr}.margin,.outline,.panel{position:static}.row{grid-template-columns:44px 1fr;}.row .when,.row>span:last-child{grid-column:2}.paper{padding:28px 22px}.month{overflow-x:auto}.cal-top{flex-wrap:wrap}.traits div{grid-template-columns:1fr;gap:4px}.qa,.checks{grid-template-columns:1fr}}
+</style></head>
+<body>
+<script src="data.js"></script>
+<script src="shared.js"></script>
+<script>
+(function(){
+var A=AGENT,e=function(s){return H.esc(s)};
+function tabs(on){
+  var n=H.byStatus(['draft']).length,s=H.byStatus(['approved','scheduled']).length,l=H.byStatus(['published']).length;
+  return '<div class="head"><div>'+H.title()+'<p>Every page the agent writes, as it will read on your store.</p></div><a class="btn" href="#setup/voice">'+H.icon('gear')+'Settings</a></div>'+
+  '<nav class="tabs" aria-label="Agent views">'+[['drafts','Drafts',n],['calendar','Calendar',s],['live','Live',l]].map(function(t){return '<a href="#'+t[0]+'"'+(t[0]===on?' aria-current="page"':'')+'>'+t[1]+'<b class="num">'+t[2]+'</b></a>'}).join('')+'</nav>';
+}
+function row(d){
+  return '<a class="row" href="#draft/'+d.id+'">'+H.img(d)+'<div><strong>'+e(d.title)+'</strong><span class="sub">'+e(d.product)+(d.products>1?' + '+(d.products-1)+' more':'')+'</span></div>'+H.typeTag(d)+'<span class="when">'+H.date(d.planned)+'</span><span>'+H.status(d)+'</span></a>';
+}
+function drafts(){
+  var need=A.drafts.filter(H.needsFacts),ready=A.drafts.filter(function(d){return d.status==='draft'&&!d.gaps}),sch=H.byStatus(['approved','scheduled']);
+  function g(t,sub,list){return list.length?'<section class="group"><h2>'+t+'<small>'+sub+'</small></h2><div class="rows">'+list.map(row).join('')+'</div></section>':''}
+  return tabs('drafts')+g('Needs your facts',need.length+' pages wait on an answer only you have',need)+g('Ready to review',ready.length+' pages',ready)+g('Scheduled',sch.length+' approved',sch);
+}
+function body(d){
+  if(d.type==='product_fix'){
+    var specs=d.specs.length?'<table><tbody>'+d.specs.map(function(s){return '<tr><th>'+e(s.label)+'</th><td><ins>'+e(s.value)+'</ins></td></tr>'}).join('')+'</tbody></table>':'';
+    return '<h1 class="ttl">'+(d.new_title&&d.new_title!==d.cur_title?'<del>'+e(d.cur_title)+'</del> <ins>'+e(d.new_title)+'</ins>':e(d.cur_title))+'</h1>'+
+      '<div class="legend"><span><i style="background:var(--bad-soft)"></i>Removed</span><span><i style="background:var(--ok-soft)"></i>Added by the agent</span></div>'+
+      '<div class="chg doc"><p><del>'+e(d.cur_desc)+'</del></p><ins style="display:block;padding:2px 0">'+d.html+'</ins>'+specs+'</div>';
+  }
+  if(d.type==='faq')return '<h1 class="ttl">'+e(d.product)+': questions buyers ask</h1><div class="doc">'+d.faqs.map(function(f){return '<h2><ins>'+e(f.q)+'</ins></h2><p><ins>'+e(f.a)+'</ins></p>'}).join('')+'</div>';
+  return '<h1 class="ttl"><ins>'+e(d.title)+'</ins></h1><div class="doc">'+d.html+'</div>';
+}
+function draft(id){
+  var d=H.draft(id);if(!d)return '<p>Not found.</p>';
+  var qs=d.open_questions.slice(0,d.gaps||3);
+  var actions=H.needsFacts(d)?'<button class="btn primary" disabled title="Answer the questions first">Approve</button>':(d.status==='draft'?'<button class="btn primary">'+H.icon('check')+'Approve</button>':'');
+  var rv=d.review||{scores:{answers:4,readable:4,voice:4},passed:true};
+  return '<div class="bar"><a class="crumb" href="#drafts">'+H.icon('back')+'Drafts</a><span class="grow"></span>'+H.status(d)+'<button class="btn ghost">Edit text</button><button class="btn">Reject</button>'+actions+'</div>'+
+  '<div class="paper-wrap"><article class="paper"><div class="where">'+H.img(d)+'<div><b>'+e(d.product)+'</b><p>'+H.TYPES[d.type]+' · goes live '+H.date(d.planned)+' at 9:00 '+A.store.tz+'</p></div></div>'+body(d)+'</article>'+
+  '<aside class="margin">'+(qs.length?'<div class="note"><h3>'+qs.length+' question'+(qs.length>1?'s':'')+' before this can go live</h3>'+qs.map(function(q,i){return '<label for="q'+i+'">'+e(q)+'</label><input class="input" id="q'+i+'" placeholder="Leave empty to drop the sentence">'}).join('')+'<div class="foot"><button class="btn primary">Save answers</button></div></div>':'')+
+  '<div class="note"><h3>Editor\'s check</h3><dl class="scores"><dt>Answers the buyer question</dt><dd>'+rv.scores.answers+'/5</dd><dt>Reads well</dt><dd>'+rv.scores.readable+'/5</dd><dt>Sounds like you</dt><dd>'+rv.scores.voice+'/5</dd></dl></div>'+
+  '<div class="note"><h3>Why this page</h3><p class="muted" style="margin:0;font-size:13.5px">'+e(d.why||'Buyers ask about this and the page doesn\'t answer it yet.')+'</p></div></aside></div>';
+}
+function calendar(sel){
+  var weeks=H.month(2026,9),days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var grid='<div class="month">'+days.map(function(x){return '<div class="dow">'+x+'</div>'}).join('')+weeks.map(function(w){return w.map(function(dt){var iso=H.iso(dt),evs=H.onDay(iso);
+    return '<div class="'+(dt.getMonth()!==9?'out':'')+(iso===H.today?' today':'')+'"><span class="n num">'+dt.getDate()+'</span>'+evs.map(function(d){return '<a class="ev t-'+d.type+(d.status==='draft'?' pend':'')+'" href="#calendar/'+d.id+'"'+(String(d.id)===sel?' aria-current="true"':'')+' title="'+e(d.title)+'"><i class="type-dot"></i><span>'+e(d.product)+'</span></a>'}).join('')+'</div>'}).join('')}).join('')+'</div>';
+  var d=sel&&H.draft(sel),panel='';
+  if(d)panel='<aside class="panel">'+H.typeTag(d)+'<h3>'+e(d.title)+'</h3>'+H.status(d)+'<dl><dt>Goes live</dt><dd>'+H.date(d.planned,{weekday:'long',month:'long',day:'numeric'})+', 9:00 '+A.store.tz+'</dd><dt>Page</dt><dd>'+e(d.product)+'</dd><dt>Changes</dt><dd>'+(d.type==='product_fix'?'Title, description, specs':d.type==='faq'?'New FAQ section':'New page')+'</dd></dl>'+
+    (d.open_questions.length?'<p class="muted" style="font-size:13.5px;margin:0 0 8px">Waiting on</p>'+d.open_questions.slice(0,2).map(function(q){return '<p class="q">'+e(q)+'</p>'}).join(''):'')+
+    '<div class="foot" style="justify-content:flex-start"><a class="btn primary" href="#draft/'+d.id+'">Open the page</a><a class="btn" href="#calendar">Close</a></div></aside>';
+  return tabs('calendar')+'<div class="cal-top"><button class="btn ghost" aria-label="Previous month">'+H.icon('back')+'</button><h2>October 2026</h2><button class="btn ghost" aria-label="Next month">'+H.icon('arrow')+'</button><span class="muted" style="margin-left:auto;font-size:13.5px">Times in '+A.store.tz+'. Dashed pages still need your approval.</span></div><div class="cal-wrap'+(d?' open':'')+'"><div>'+grid+'</div>'+panel+'</div>';
+}
+function live(){
+  var l=H.byStatus(['published']);
+  return tabs('live')+(l.length?'<div class="live">'+l.map(function(d){return '<article>'+H.img(d)+'<div><h3>'+e(d.title)+' '+(d.synthetic?'<span class="example">Example</span>':'')+'</h3><p>Live since '+H.date(d.planned)+' · '+H.TYPES[d.type]+'</p></div><div style="display:flex;gap:8px"><a class="btn" href="'+e(d.live_url)+'" target="_blank" rel="noopener">'+H.icon('link')+'View on store</a><button class="btn ghost">'+H.icon('undo')+'Undo</button></div></article>'}).join('')+'</div>':'<p class="empty">Nothing live yet.</p>');
+}
+function setup(step){
+  var v=A.voice,b=A.brief||{};
+  var sec={
+   voice:'<h2>This is how you write</h2><p class="lede">Read from '+e(v.pages.join(', '))+'.</p><dl class="traits">'+v.traits.map(function(t){return '<div><dt>'+e(t.name)+'</dt><dd>'+e(t.how)+'</dd></div>'}).join('')+'</dl><figure class="sample" style="margin:0 0 24px"><cite>A sample in your voice: '+e(v.sample_product)+'</cite>'+e(v.sample)+'</figure><div class="field"><label for="adj">Not quite? Tell it what to change</label><input class="input" id="adj" placeholder="e.g. shorter sentences, less poetic"></div><div class="foot"><button class="btn">Try again</button><button class="btn primary">Sounds like us</button></div>',
+   brand:'<h2>Your brand</h2><p class="lede">Filled in from your pages. Correct anything that isn\'t right.</p><div class="fields">'+[['customers','Who buys from you?'],['story','Your brand in one or two sentences'],['different','What makes your products different?'],['policies','Shipping, returns and guarantees'],['objections','What customers ask or worry about most']].map(function(f){var val=b[f[0]];val=Array.isArray(val)?val.join('\n'):val;return '<div class="field"><label for="b-'+f[0]+'">'+f[1]+'</label><textarea class="input" id="b-'+f[0]+'">'+e(val)+'</textarea></div>'}).join('')+'</div><div class="foot"><button class="btn primary">Save and continue</button></div>',
+   scope:'<h2>What it may change</h2><p class="lede">Nothing reaches your store until you approve it.</p><div class="checks">'+[['titles','Product titles'],['descriptions','Product descriptions'],['specs','Spec tables'],['faqs','FAQs on product pages'],['comparisons','Comparison pages'],['guides','Buying guides on your blog']].map(function(c){return '<label class="check"><input type="checkbox"'+(A.allowed.indexOf(c[0])>=0?' checked':'')+'>'+c[1]+'</label>'}).join('')+'</div><div class="foot"><button class="btn primary">Save and continue</button></div>',
+   schedule:'<h2>Time zone and pace</h2><p class="lede">The calendar and publish times use your store\'s time zone.</p><div class="fields"><div class="field"><label for="tz">Time zone</label><select class="input select" id="tz"><option>Europe/London ('+A.store.tz+')</option><option>America/New_York</option></select></div><div class="field"><label>Days the agent publishes</label><div class="days">'+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(function(x,i){return '<label><input type="checkbox"'+(A.schedule.days.indexOf(i)>=0?' checked':'')+'><span>'+x+'</span></label>'}).join('')+'</div></div><div class="field"><label for="pace">Pages a week</label><select class="input select" id="pace"><option>'+A.schedule.pace+' a week</option></select></div></div><div class="foot"><button class="btn primary">Save and continue</button></div>',
+   facts:'<h2>Facts your pages leave out</h2><p class="lede">Buyers check these before buying. Every answer becomes a fact the agent can use; skip anything you\'re unsure of.</p>'+A.missing.slice(0,3).map(function(p){return '<div class="prod"><img src="'+e(p.image)+'" alt=""><div><h3>'+e(p.title)+'</h3><div class="qa">'+p.items.slice(0,4).map(function(it,i){return '<div><label for="m'+p.handle+i+'">'+e(it.question)+'</label><input class="input" id="m'+p.handle+i+'" value="'+e(it.suggestion||'')+'" placeholder="Leave empty if you don\'t know"></div>'}).join('')+'</div></div></div>'}).join('')+'<div class="foot"><button class="btn primary">Save and plan my first two weeks</button></div>',
+   shopify:'<h2>Shopify</h2><p class="lede">Connect once and approved pages publish themselves on their date, with undo.</p><div class="shop"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#95BF47"/><path d="M25 12.5c-.1-.6-.6-.9-1-.9l-2-.1-1.6-1.5c-.2-.1-.4-.1-.5-.1l-1 .3C18.4 9.1 17.7 8.5 16.7 8.5c-2.4 0-3.6 3-4 4.6l-1.7.5c-.5.2-.5.2-.6.7L8.5 28.5l13.4 2.5 7.3-1.6zm-5.2-1.2l-1.5.5c0-.9-.1-2-.5-2.9 1.2.2 1.7 1.5 2 2.4z" fill="#fff"/></svg><div style="flex:1"><b style="color:var(--ink)">Not connected</b><p class="muted" style="margin:2px 0 0;font-size:13.5px">Until then, approved pages download as a file to import.</p></div><button class="btn primary">Connect Shopify</button></div>'
+  };
+  return tabs('setup').replace(/<nav class="tabs"[\s\S]*<\/nav>/,'')+'<div class="setup"><ol class="outline">'+H.STEPS.map(function(s,i){return '<li><a href="#setup/'+s[0]+'"'+(s[0]===step?' aria-current="step"':'')+' class="'+(i<4?'done':'')+'"><i>'+(i<4?H.icon('check'):i+1)+'</i>'+s[1]+'</a></li>'}).join('')+'</ol><div><section class="sec">'+sec[step||'voice']+'</section></div></div>';
+}
+window.V={name:'Document',render:function(r){
+  if(r[0]==='draft')return draft(r[1]);
+  if(r[0]==='calendar')return calendar(r[1]);
+  if(r[0]==='live')return live();
+  if(r[0]==='setup')return setup(r[1]);
+  return drafts();
+}};
+})();
+</script>
+</body></html>

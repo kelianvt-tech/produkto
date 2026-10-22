@@ -120,7 +120,7 @@ def picks(text):
 def first_email(first, product, noun, q, cb, cp):
     return (
         "Hi %s,\n\n"
-        "I asked ChatGPT \"%s\" today. It recommended the %s from %s.\n\n"
+        "I asked ChatGPT \"%s\" today. One of the products it recommended was %s, made by %s, another brand in your category.\n\n"
         "I thought you'd want to see how AI picks between products like your %s.\n\n"
         "I run Produkto. It shows which of your products different AI models "
         "recommend, for which buyer questions, across your whole catalog.\n\n"

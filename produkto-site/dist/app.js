@@ -186,7 +186,8 @@
   }
 
   if ('IntersectionObserver' in window) {
-    const navLinks = $$('.nav-links a');
+    /* Only in-page links: Netlify rewrites pricing.html to /pricing, which isn't a valid selector. */
+    const navLinks = $$('.nav-links a').filter((a) => (a.getAttribute('href') || '').startsWith('#'));
     const sections = navLinks.map((a) => $(a.getAttribute('href'))).filter(Boolean);
     const navIO = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -324,12 +325,65 @@
     if (animate) playAnswer(root, i);
   };
 
+  /* Sets the answer to a point in its playback, 0 to 1. Used while the section is pinned,
+     so scrolling plays it like the statement above; finishes at 0.85 to leave a beat to read. */
+  const scrubAnswer = (root, i, p) => {
+    const q = ANSWERS[i].q;
+    const at = (a, b) => Math.min(1, Math.max(0, (p - a) / (b - a)));
+    const composer = $('.composer', root);
+    const typed = $('.composer-text', root);
+    const sent = p >= 0.24;
+    const chars = sent ? 0 : Math.round(at(0.02, 0.22) * q.length);
+    if (typed.textContent.length !== chars) {
+      typed.textContent = q.slice(0, chars);
+      typed.parentElement.scrollLeft = typed.parentElement.scrollWidth;
+    }
+    composer.classList.toggle('is-typing', p > 0.01 && !sent);
+    composer.classList.toggle('has-text', chars > 0);
+    composer.classList.toggle('is-sending', p >= 0.22 && !sent);
+    root.classList.toggle('is-sent', sent);
+    root.classList.toggle('is-thinking', p >= 0.27 && p < 0.37);
+    root.classList.toggle('is-answering', p >= 0.37);
+    const words = $$('.ai-text .w', root);
+    const lit = Math.round(at(0.37, 0.62) * words.length);
+    words.forEach((w, n) => w.classList.toggle('in', n < lit));
+    const cards = $$('.p-card', root);
+    const shown = Math.floor(at(0.62, 0.78) * (cards.length + 0.999));
+    cards.forEach((c, n) => c.classList.toggle('in', n < shown));
+    $('.chat-flag', root).classList.toggle('in', p >= 0.85);
+  };
+
   if (switchEl && chatEl) {
   switchEl.innerHTML = ANSWERS.map((a) => `<button type="button" aria-pressed="false"><span>“${esc(a.q)}”</span>${icon('arrow-right')}</button>`).join('');
-  $$('button', switchEl).forEach((b, i) => b.addEventListener('click', () => showAnswer(i)));
+  /* Keep in step with the #answer pin media query in styles.css. */
+  const PIN_ANSWER = matchMedia('(min-width: 1101px) and (min-height: 760px) and (prefers-reduced-motion: no-preference)');
+  const answerSection = $('#answer');
+  let scrubbing = PIN_ANSWER.matches;
+  $$('button', switchEl).forEach((b, i) => b.addEventListener('click', () => { scrubbing = false; showAnswer(i); }));
 
-  /* First answer waits, hidden, until the message box is on screen, then plays once. */
-  if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+  if (scrubbing) {
+    /* Pinned: scroll position plays the first answer until a visitor picks a question. */
+    const scrubRoot = renderAnswer(0, true);
+    let scrubFrame = 0;
+    const updateScrub = () => {
+      scrubFrame = 0;
+      if (!scrubbing) return;
+      const r = answerSection.getBoundingClientRect();
+      const lead = window.innerHeight * 0.15;
+      const travel = r.height - window.innerHeight + lead;
+      scrubAnswer(scrubRoot, 0, Math.min(1, Math.max(0, (lead - r.top) / travel)));
+    };
+    const queueScrub = () => { if (!scrubFrame) scrubFrame = requestAnimationFrame(updateScrub); };
+    window.addEventListener('scroll', queueScrub, { passive: true });
+    window.addEventListener('resize', queueScrub);
+    PIN_ANSWER.addEventListener('change', () => {
+      if (PIN_ANSWER.matches || !scrubbing) return;
+      scrubbing = false;
+      renderAnswer(current, false);
+    });
+    updateScrub();
+  } else if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+    /* First answer waits, hidden, until the message box is on screen, then plays once. */
     const firstRoot = renderAnswer(0, true);
     const chatIO = new IntersectionObserver((entries) => {
       if (!entries.some((e) => e.isIntersecting)) return;

@@ -6,12 +6,13 @@ Every page now needs a sign-in. Invite-only: no public sign-up, because each
 store costs real money in daily scans.
 
 - **First admin:** `python3 mvp/app/app.py --create-admin you@example.com` (asks for a password; run it once, on each machine/server).
-- **Inviting a brand:** sign in as admin → `/admin` → email + plan (Starter 25, Growth 75, Custom) → send the one-time link. The brand sets a password and lands in onboarding.
+- **Admin hub (`/admin`, `hub.py`, 22 Oct 2026):** one page with everything: the live app, every store (demo stores marked "only you") with links into each tool, the agent brain, internal tools, a free live check of getprodukto.com (pages, robots.txt, sitemap, llms.txt, AI crawlers), Apify usage vs limit, and links to Stripe, Hetzner, Netlify, Instantly, Close and the rest. Admin only (every `/admin/*` path is Not found for customers), its own page with no product sidebar (bookmark it). Live checks run only on a `produkto.db*` database, cached 10 minutes, and cost nothing. Accounts and invites moved to `/admin/accounts`.
+- **Inviting a brand:** sign in as admin → `/admin/accounts` → email + plan (Starter 25, Growth 75, Custom) → send the one-time link. The brand sets a password and lands in onboarding.
 - **What a customer sees:** only the store they add (one store per account by default). Any other store, scan, product or `/admin` / `/costs` returns Not found. The admin sees everything, including the Clubhouse Skin demo.
 - **Plan cap:** saving more buyer questions than the plan allows is refused with a message. The cap follows the store's owner, so it holds for daily scans too.
 - On the server set `PRODUKTO_BASE_URL=https://app.getprodukto.com` (invite links) and `PRODUKTO_SECURE_COOKIES=1` (HTTPS-only cookies).
 
-- **Forgotten password:** the sign-in page tells customers to email kelian@getprodukto.com. At `/admin`, "Reset link" next to their account gives a one-time link (24 hours). Setting a new password signs them out everywhere else. No email is sent by the app yet.
+- **Forgotten password:** the sign-in page tells customers to email kelian@getprodukto.com. At `/admin/accounts`, "Reset link" next to their account gives a one-time link (24 hours). Setting a new password signs them out everywhere else. No email is sent by the app yet.
 - **Backups (server):** `produkto-backup.timer` copies the database nightly at 02:30 to `/opt/produkto/backups/produkto-YYYY-MM-DD.db.gz` (integrity-checked, 14 days kept). Restore: stop `produkto`, `gunzip -c <file> > /opt/produkto/app/produkto.db`, fix ownership, start. These live on the same server, so they don't survive the server itself failing.
 
 Code: `accounts.py`; the sign-in and store-access check runs first in `Handler._accounts` (`app.py`). Tests: `test_accounts.py`.
